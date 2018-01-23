@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: go_fox_development
+
+test:
+  <<: *default
+  database: go_fox_test
+
+production:
+  <<: *default
+  database: go_fox_production
+  username: go_fox
+  password: <%= ENV['FUTURE_OF_CONSERVATION_DATABASE_PASSWORD'] %>
