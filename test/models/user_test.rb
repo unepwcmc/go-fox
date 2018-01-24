@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "saving a new user" do
+    user = FactoryBot.build(:user)
+    assert user.save, "User was not saved"
+  end
 end
