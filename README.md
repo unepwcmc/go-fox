@@ -8,6 +8,5 @@
 ## Setup
 
 - `bundle install`
-- `bundle exec rake db:create`
-- `bundle exec rake db:migrate`
+- `rails db:create db:migrate db:seed`
 - `rails s`
