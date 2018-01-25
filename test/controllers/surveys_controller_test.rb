@@ -6,18 +6,23 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "cannot access surveys index page when not logged in" do
+    assert false
   end
 
   test "admin can see all surveys" do
+    assert false
   end
 
   test "non admin only sees their own surveys" do
+    assert false
   end
 
   test "admin can edit anyones survey" do
+    assert false
   end
 
   test "non admins can only edit their own surveys" do
+    assert false
   end
 
   test "should get index" do
