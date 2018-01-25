@@ -6,11 +6,7 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    if current_user.admin
-      @surveys = Survey.all
-    else
-      @surveys = current_user.surveys
-    end
+    @surveys = current_user.admin? ? Survey.all : current_user.surveys
   end
 
   # GET /surveys/1
