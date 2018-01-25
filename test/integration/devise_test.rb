@@ -19,7 +19,7 @@ class DeviseTest < ActionDispatch::IntegrationTest
 
       post user_registration_path, params: {
         user: {
-          name: user.name,
+          username: user.username,
           organisation_name: user.organisation_name,
           email: user.email,
           password: user.password,

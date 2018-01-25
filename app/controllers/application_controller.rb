@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     keys = [
       :organisation_name,
       :email,
-      :name,
+      :username,
       :password,
       :password_confirmation,
       :admin
