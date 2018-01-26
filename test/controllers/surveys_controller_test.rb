@@ -4,9 +4,11 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user   = create(:user)
-    @survey = create(:survey, user: @user)
-    @admin  = create(:admin)
+    @user    = create(:user)
+    @user2   = create(:user)
+    @survey  = create(:survey, user: @user)
+    @survey2 = create(:survey, user: @user2)
+    @admin   = create(:admin)
   end
 
   test "cannot access surveys index page when not logged in" do
@@ -74,6 +76,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update survey" do
+    sign_in @user
     patch survey_url(@survey), params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
     assert_redirected_to survey_url(@survey)
   end
