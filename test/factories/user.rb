@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
     organisation_name "UNEP-WCMC"
-    username "Informatics"
-    email "test@test.com"
+    username "Informatics User"
+    email "user@test.com"
     password "test1234"
     password_confirmation "test1234"
     admin false
@@ -10,8 +10,8 @@ FactoryBot.define do
 
   factory :admin, class: User do
     organisation_name "UNEP-WCMC"
-    username "Informatics"
-    email "test@test.com"
+    username "Informatics Admin"
+    email "admin@test.com"
     password "test1234"
     password_confirmation "test1234"
     admin true

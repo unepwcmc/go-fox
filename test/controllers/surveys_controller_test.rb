@@ -6,6 +6,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user   = create(:user)
     @survey = create(:survey, user: @user)
+    @admin  = create(:admin)
   end
 
   test "cannot access surveys index page when not logged in" do
@@ -14,11 +15,15 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can see all surveys" do
-    assert false
+    sign_in @admin
+    get surveys_url
+    assert_equal @survey.length, Survey.all.count
   end
 
   test "non admin only sees their own surveys" do
-    assert false
+    sign_in @user
+    get surveys_url
+    assert_equal @survey.length, @user.surveys.count
   end
 
   test "admin can edit anyones survey" do
@@ -30,7 +35,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show page for unpublished survey should redirect to root" do
-    assert false
+    sign_in @user
+    post surveys_url, params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
+    assert_redirected_to root_path
   end
 
   test "should get index for logged in user" do
@@ -40,11 +47,13 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    sign_in @user
     get new_survey_url
     assert_response :success
   end
 
   test "should create survey" do
+    sign_in @user
     assert_difference('Survey.count') do
       post surveys_url, params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
     end
@@ -53,11 +62,13 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show survey" do
+    sign_in @user
     get survey_url(@survey)
     assert_response :success
   end
 
   test "should get edit" do
+    sign_in @user
     get edit_survey_url(@survey)
     assert_response :success
   end
