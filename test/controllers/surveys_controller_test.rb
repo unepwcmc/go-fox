@@ -8,6 +8,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     @user2   = create(:user)
     @survey  = create(:survey, user: @user)
     @survey2 = create(:survey, user: @user2, published: true)
+    @surveys = [@survey, @survey2]
     @admin   = create(:admin)
   end
 
@@ -19,13 +20,13 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   test "admin can see all surveys" do
     sign_in @admin
     get surveys_url
-    assert_equal @survey.count, Survey.all.count
+    assert_equal @surveys.count, Survey.all.count
   end
 
   test "non admin only sees their own surveys" do
     sign_in @user
     get surveys_url
-    assert_equal @survey.count, @user.surveys.count
+    assert_equal @surveys.where(user: @user), @user.surveys.count
   end
 
   test "admin can edit anyones survey" do
