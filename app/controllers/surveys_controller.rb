@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :require_ownership, only: [:edit, :update, :destroy]
-  after_action  :require_published, only: [:create, :update]
+  before_action :require_published, only: [:show]
   before_action :authenticate_user!
 
   # GET /surveys
@@ -13,7 +13,6 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
-    redirect_to root_path if !@survey.published?
   end
 
   # GET /surveys/new
@@ -77,7 +76,7 @@ class SurveysController < ApplicationController
 
     def require_published
       path = @survey.published ? survey_path(@survey) : root_path
-      redirect_to path path, notice: 'Survey was successfully updated.' && return
+      redirect_to path path, notice: 'Survey was successfully updated.'
     end
 
 end
