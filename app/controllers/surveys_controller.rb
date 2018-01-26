@@ -30,20 +30,28 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     @survey.user = current_user
 
-    if @survey.save
-      p "Created survey"
-    else
-      render :new
+    respond_to do |format|
+      if @survey.save
+        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.json { render :show, status: :created, location: @survey }
+      else
+        format.html { render :new }
+        format.json { render json: @survey.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
-    if @survey.update(survey_params)
-      p "Updated survey"
-    else
-      render :edit
+    respond_to do |format|
+      if @survey.update(survey_params)
+        format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
+        format.json { render :show, status: :ok, location: @survey }
+      else
+        format.html { render :edit }
+        format.json { render json: @survey.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -76,7 +84,7 @@ class SurveysController < ApplicationController
 
     def require_published
       path = @survey.published ? survey_path(@survey) : root_path
-      redirect_to path path, notice: 'Survey was successfully updated.'
+      redirect_to path, notice: 'Survey was successfully updated.'
     end
 
 end
