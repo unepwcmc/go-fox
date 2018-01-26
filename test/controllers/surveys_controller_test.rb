@@ -84,9 +84,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   test "should update survey" do
     sign_in @user
     new_name = "My new survey"
-    assert_changes :@survey3 do
-      patch survey_url(@survey3), params: { survey: { name: new_name, published: true, user_id: @survey3.user_id } }
-    end
+    patch survey_path(@survey3), params: { survey: { name: new_name, published: true } }
+    @survey3.reload
+    assert_equal new_name, @survey3.name
   end
 
   test "should destroy survey" do
