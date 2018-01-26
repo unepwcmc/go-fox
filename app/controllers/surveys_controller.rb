@@ -55,7 +55,7 @@ class SurveysController < ApplicationController
           if @survey.published?
             redirect_to @survey, notice: 'Survey was successfully updated.'
           else
-            redirect_to root_path
+            redirect_to root_path, notice: 'Survey was successfully updated.'
           end
         }
         format.json { render :show, status: :ok, location: @survey }
