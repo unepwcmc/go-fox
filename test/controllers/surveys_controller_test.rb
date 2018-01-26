@@ -8,7 +8,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     @user2   = create(:user)
     @survey  = create(:survey, user: @user)
     @survey2 = create(:survey, user: @user2, published: true)
-    @surveys = [@survey, @survey2]
+    @survey3 = create(:survey, user: @user)
+    @surveys = [@survey, @survey2, @survey3]
     @admin   = create(:admin)
   end
 
@@ -26,7 +27,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   test "non admin only sees their own surveys" do
     sign_in @user
     get surveys_url
-    assert_equal @surveys.where(user: @user), @user.surveys.count
+    assert_equal @surveys.select{ |s| s.user == @user }.count, @user.surveys.count
   end
 
   test "admin can edit anyones survey" do
@@ -36,7 +37,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "non admins can only edit their own surveys" do
-    assert false
+    sign_in @user
+    get edit_survey_url(@survey2)
+    assert_redirected_to root_path
   end
 
   test "show page for unpublished survey should redirect to root" do
@@ -68,8 +71,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should show survey" do
     sign_in @user2
-    get survey_url(@survey2)
-    assert_response :success
+    get survey_path(@survey2)
+    assert_redirected_to survey_path(@survey2)
   end
 
   test "should get edit" do
@@ -80,8 +83,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should update survey" do
     sign_in @user
-    assert_changes(@survey.name) do
-      patch survey_url(@survey), params: { survey: { name: "Test", published: true, user_id: @survey.user_id } }
+    new_name = "My new survey"
+    assert_changes :@survey3 do
+      patch survey_url(@survey3), params: { survey: { name: new_name, published: true, user_id: @survey3.user_id } }
     end
   end
 

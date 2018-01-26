@@ -83,7 +83,7 @@ class SurveysController < ApplicationController
     end
 
     def require_published
-      path = @survey.published ? survey_path(@survey) : root_path
+      path = @survey.published? ? survey_path(@survey) : root_path
       redirect_to path, notice: 'Survey was successfully updated.'
     end
 
