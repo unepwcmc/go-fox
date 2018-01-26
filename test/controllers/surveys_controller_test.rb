@@ -7,7 +7,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     @user    = create(:user)
     @user2   = create(:user)
     @survey  = create(:survey, user: @user)
-    @survey2 = create(:survey, user: @user2)
+    @survey2 = create(:survey, user: @user2, published: true)
     @admin   = create(:admin)
   end
 
@@ -19,17 +19,19 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   test "admin can see all surveys" do
     sign_in @admin
     get surveys_url
-    assert_equal @survey.length, Survey.all.count
+    assert_equal @survey.count, Survey.all.count
   end
 
   test "non admin only sees their own surveys" do
     sign_in @user
     get surveys_url
-    assert_equal @survey.length, @user.surveys.count
+    assert_equal @survey.count, @user.surveys.count
   end
 
   test "admin can edit anyones survey" do
-    assert false
+    sign_in @admin
+    get edit_survey_url(@survey)
+    assert_response :success
   end
 
   test "non admins can only edit their own surveys" do
@@ -38,7 +40,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "show page for unpublished survey should redirect to root" do
     sign_in @user
-    post surveys_url, params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
+    get survey_url(@survey)
     assert_redirected_to root_path
   end
 
@@ -64,8 +66,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show survey" do
-    sign_in @user
-    get survey_url(@survey)
+    sign_in @user2
+    get survey_url(@survey2)
     assert_response :success
   end
 
@@ -77,11 +79,13 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should update survey" do
     sign_in @user
-    patch survey_url(@survey), params: { survey: { name: "Test", published: true, user_id: @survey.user_id } }
-    assert_redirected_to survey_url(@survey)
+    assert_changes(@survey.name) do
+      patch survey_url(@survey), params: { survey: { name: "Test", published: true, user_id: @survey.user_id } }
+    end
   end
 
   test "should destroy survey" do
+    sign_in @user
     assert_difference('Survey.count', -1) do
       delete survey_url(@survey)
     end

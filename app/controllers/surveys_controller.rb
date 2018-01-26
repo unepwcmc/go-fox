@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :require_ownership, only: [:edit, :update, :destroy]
+  after_action  :require_published, only: [:create, :update]
   before_action :authenticate_user!
 
   # GET /surveys
@@ -12,6 +13,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    redirect_to root_path if !@survey.published?
   end
 
   # GET /surveys/new
@@ -29,40 +31,20 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     @survey.user = current_user
 
-    respond_to do |format|
-      if @survey.save
-        format.html {
-          if @survey.published?
-            redirect_to @survey, notice: 'Survey was successfully created.'
-          else
-            redirect_to root_path, notice: 'Survey was successfully created.'
-          end
-        }
-        format.json { render :show, status: :created, location: @survey }
-      else
-        format.html { render :new }
-        format.json { render json: @survey.errors, status: :unprocessable_entity }
-      end
+    if @survey.save
+      p "Created survey"
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
-    respond_to do |format|
-      if @survey.update(survey_params)
-        format.html {
-          if @survey.published?
-            redirect_to @survey, notice: 'Survey was successfully updated.'
-          else
-            redirect_to root_path, notice: 'Survey was successfully updated.'
-          end
-        }
-        format.json { render :show, status: :ok, location: @survey }
-      else
-        format.html { render :edit }
-        format.json { render json: @survey.errors, status: :unprocessable_entity }
-      end
+    if @survey.update(survey_params)
+      p "Updated survey"
+    else
+      render :edit
     end
   end
 
@@ -92,4 +74,10 @@ class SurveysController < ApplicationController
         redirect_to root_path, notice: "You are not the owner of that survey or an admin"
       end
     end
+
+    def require_published
+      path = @survey.published ? survey_path(@survey) : root_path
+      redirect_to path path, notice: 'Survey was successfully updated.' && return
+    end
+
 end
