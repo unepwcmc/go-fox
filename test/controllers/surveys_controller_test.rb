@@ -77,7 +77,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should update survey" do
     sign_in @user
-    patch survey_url(@survey), params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
+    patch survey_url(@survey), params: { survey: { name: "Test", published: true, user_id: @survey.user_id } }
     assert_redirected_to survey_url(@survey)
   end
 
