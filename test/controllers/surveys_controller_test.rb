@@ -83,7 +83,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should update survey" do
     sign_in @user
-    new_name = "My new survey"
+    new_name = "My updated survey"
     patch survey_path(@survey3), params: { survey: { name: new_name, published: true } }
     @survey3.reload
     assert_equal new_name, @survey3.name
