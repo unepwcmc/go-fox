@@ -4,13 +4,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user    = create(:user)
-    @user2   = create(:user)
-    @survey  = create(:survey, user: @user)
-    @survey2 = create(:survey, user: @user2, published: true)
-    @survey3 = create(:survey, user: @user)
-    @surveys = [@survey, @survey2, @survey3]
-    @admin   = create(:admin)
+    @user  = create(:user)
+    @admin = create(:admin)
   end
 
   test "cannot access surveys index page when not logged in" do
@@ -19,15 +14,21 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can see all surveys" do
+    create(:survey, user: @user)
+    create(:survey, user: @admin)
+
     sign_in @admin
     get surveys_url
-    assert_equal @surveys.count, Survey.all.count
+    assert_equal 2, @controller.instance_variable_get("@surveys").count
   end
 
   test "non admin only sees their own surveys" do
+    create(:survey, user: @user)
+    create(:survey, user: @admin)
+
     sign_in @user
     get surveys_url
-    assert_equal @surveys.select{ |s| s.user == @user }.count, @user.surveys.count
+    assert_equal 1, @controller.instance_variable_get("@surveys").count
   end
 
   test "admin can edit anyones survey" do
