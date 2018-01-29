@@ -105,6 +105,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy survey" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
     assert_difference('Survey.count', -1) do
       delete survey_url(@survey)
