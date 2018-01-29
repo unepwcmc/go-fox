@@ -20,8 +20,8 @@
 
 FactoryBot.define do
   factory :survey do
-    name "MyString"
-    published false
+    name "Survey name"
+    published true
     user nil
   end
 end
