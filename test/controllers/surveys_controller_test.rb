@@ -32,18 +32,24 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can edit anyones survey" do
+    @survey = create(:survey, user: @user)
+
     sign_in @admin
     get edit_survey_url(@survey)
     assert_response :success
   end
 
   test "non admins can only edit their own surveys" do
+    @survey = create(:survey, user: @admin)
+
     sign_in @user
-    get edit_survey_url(@survey2)
+    get edit_survey_url(@survey)
     assert_redirected_to root_path
   end
 
   test "show page for unpublished survey should redirect to root" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
     get survey_url(@survey)
     assert_redirected_to root_path
@@ -62,6 +68,8 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create survey" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
     assert_difference('Survey.count') do
       post surveys_url, params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
@@ -71,23 +79,29 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show survey" do
-    sign_in @user2
-    get survey_path(@survey2)
-    assert_redirected_to survey_path(@survey2)
+    @survey = create(:survey, user: @user, published: true)
+
+    sign_in @user
+    get survey_path(@survey)
+    assert_redirected_to survey_path(@survey)
   end
 
   test "should get edit" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
     get edit_survey_url(@survey)
     assert_response :success
   end
 
   test "should update survey" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
     new_name = "My updated survey"
-    patch survey_path(@survey3), params: { survey: { name: new_name, published: true } }
-    @survey3.reload
-    assert_equal new_name, @survey3.name
+    patch survey_path(@survey), params: { survey: { name: new_name, published: true } }
+    @survey.reload
+    assert_equal new_name, @survey.name
   end
 
   test "should destroy survey" do
