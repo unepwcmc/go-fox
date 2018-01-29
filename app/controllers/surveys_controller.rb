@@ -83,7 +83,8 @@ class SurveysController < ApplicationController
     end
 
     def require_published
-      redirect_to root_path, notice: 'Survey not published.' if !@survey.published?
+      return if @survey.published?
+      redirect_to root_path, notice: "You cannot view an unpublished survey"
     end
 
 end
