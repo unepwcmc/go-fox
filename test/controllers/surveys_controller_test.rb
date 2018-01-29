@@ -48,7 +48,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show page for unpublished survey should redirect to root" do
-    @survey = create(:survey, user: @user)
+    @survey = create(:survey, user: @user, published: false)
 
     sign_in @user
     get survey_url(@survey)
@@ -83,7 +83,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
     sign_in @user
     get survey_path(@survey)
-    assert_redirected_to survey_path(@survey)
+    assert_response :success
   end
 
   test "should get edit" do
@@ -99,7 +99,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
     sign_in @user
     new_name = "My updated survey"
-    patch survey_path(@survey), params: { survey: { name: new_name, published: true } }
+    patch survey_path(@survey), params: { survey: { name: new_name } }
     @survey.reload
     assert_equal new_name, @survey.name
   end

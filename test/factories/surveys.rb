@@ -21,7 +21,7 @@
 FactoryBot.define do
   factory :survey do
     name "Survey name"
-    published false
+    published true
     user nil
   end
 end
