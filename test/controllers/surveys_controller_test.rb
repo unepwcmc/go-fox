@@ -68,11 +68,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create survey" do
-    @survey = create(:survey, user: @user)
-
     sign_in @user
     assert_difference('Survey.count') do
-      post surveys_url, params: { survey: { name: @survey.name, published: @survey.published, user_id: @survey.user_id } }
+      post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id } }
     end
 
     assert_redirected_to survey_url(Survey.last)
