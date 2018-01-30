@@ -22,7 +22,7 @@ set :scm_username, "unepwcmc-read"
 
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.5.5'
+set :rvm_ruby_version, '2.5.0'
 
 
 
