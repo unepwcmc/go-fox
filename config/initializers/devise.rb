@@ -254,12 +254,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  require 'yaml'
-  secrets = YAML.load(File.open('config/secrets.yml'))[Rails.env]
-
-
-
-
+  config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
 
 
 
