@@ -88,7 +88,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     @survey = create(:survey, user: @user)
 
     sign_in @user
-    get edit_survey_url(@survey.uuid)
+    get edit_survey_url(@survey)
     assert_response :success
   end
 
@@ -97,7 +97,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
     sign_in @user
     new_name = "My updated survey"
-    patch survey_path(@survey.uuid), params: { survey: { name: new_name } }
+    patch survey_path(@survey), params: { survey: { name: new_name } }
     @survey.reload
     assert_equal new_name, @survey.name
   end
