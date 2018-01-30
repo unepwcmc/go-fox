@@ -8,6 +8,7 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  uuid       :string           not null
 #
 # Indexes
 #
@@ -20,4 +21,18 @@
 
 class Survey < ApplicationRecord
   belongs_to :user
+  before_create :set_uuid
+
+  def to_param
+    uuid
+  end
+
+  private
+    def set_uuid
+      loop do
+        self.uuid = SecureRandom.urlsafe_base64
+        break unless Survey.where(uuid: uuid).exists?
+      end
+    end
+
 end

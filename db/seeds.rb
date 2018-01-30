@@ -9,7 +9,7 @@
 User.where(email: "test@test.com").first_or_create do |u|
   u.admin                 = true
   u.organisation_name     = "UNEP WCMC"
-  u.name                  = "Informatics"
+  u.username              = "Informatics"
   u.password              = "test1234"
   u.password_confirmation = "test1234"
 

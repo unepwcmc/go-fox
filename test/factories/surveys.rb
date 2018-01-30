@@ -8,6 +8,7 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  uuid       :string           not null
 #
 # Indexes
 #
@@ -23,5 +24,6 @@ FactoryBot.define do
     name "Survey name"
     published true
     user nil
+    uuid nil
   end
 end
