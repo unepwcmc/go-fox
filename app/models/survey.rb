@@ -23,9 +23,16 @@ class Survey < ApplicationRecord
   belongs_to :user
   before_create :set_uuid
 
+  def to_param
+    uuid
+  end
+
   private
     def set_uuid
-      self.uuid = SecureRandom.urlsafe_base64
+      loop do
+        self.uuid = SecureRandom.urlsafe_base64
+        break unless Survey.where(uuid: uuid).exists?
+      end
     end
 
 end

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   root to: "static_pages#index"
 
-  resources :surveys, except: :show
-  get 'surveys/:uuid', to: 'surveys#show'
+  resources :surveys, param: :uuid
+  # get 'surveys/:uuid', to: 'surveys#show'
 
   get 'static_pages/index'
 end

@@ -23,7 +23,7 @@
           <td><%= survey.user.username %> (<%= survey.user.organisation_name %>)</td>
         <% end %>
         <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey.uuid) %></td>
+        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
