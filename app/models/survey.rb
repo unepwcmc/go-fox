@@ -34,5 +34,4 @@ class Survey < ApplicationRecord
         break unless Survey.where(uuid: uuid).exists?
       end
     end
-
 end

@@ -22,7 +22,17 @@
 require 'test_helper'
 
 class SurveyTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @user = FactoryBot.create(:user)
+  end
+
+  test "saving a survey" do
+    survey = FactoryBot.build(:survey, user: @user)
+    assert survey.save, "Survey was not saved"
+  end
+
+  test "creating a survey generate and assigns a uuid" do
+    survey = FactoryBot.create(:survey, user: @user)
+    assert_not_nil survey.uuid, "UUID was not generated or saved for a survey"
+  end
 end
