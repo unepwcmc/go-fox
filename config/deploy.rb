@@ -1,6 +1,14 @@
 # config valid only for current version of Capistrano
 lock "3.8.2"
 
+
+
+set :nvm_type, :user # or :system, depends on your nvm setup
+set :nvm_node, 'v9.0.0'
+set :nvm_map_bins, %w{node npm yarn}
+
+
+
 set :application, 'go-fox'
 
 set :repo_url, 'git@github.com:unepwcmc/go-fox.git'
