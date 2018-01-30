@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Devise for authentication
 gem 'devise', '~> 4.4'
+# dotenv-rails for .env file usage
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -43,8 +45,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "factory_bot_rails", "~> 4.0"
 end
-
-gem 'dotenv-rails'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
