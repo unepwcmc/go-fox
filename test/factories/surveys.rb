@@ -24,5 +24,6 @@ FactoryBot.define do
     name "Survey name"
     published true
     user nil
+    uuid nil
   end
 end
