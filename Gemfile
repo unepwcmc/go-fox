@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Devise for authentication
 gem 'devise', '~> 4.4'
+# dotenv-rails for .env file usage
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -52,6 +54,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'capistrano', '~> 3.8.2', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-passenger', '~> 0.1.1', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
