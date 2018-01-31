@@ -139,3 +139,76 @@ questions.each do |question|
     puts "Created question with the text: #{question[:text]}..."
   end
 end
+
+demographic_questions = [
+  {
+    text: "What is your age?",
+  },
+  {
+    text: "Select your gender?",
+  },
+  {
+    text: "At what level is your highest completed educational qualification?",
+  },
+  {
+    text: "Which of the following best describes your educational specialism?",
+  },
+  {
+    text: "What is your country of nationality?",
+  },
+  {
+    text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
+  },
+  {
+    text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
+  },
+  {
+    text: "In which of the following sectors have you done conservation work in your career?",
+  },
+  {
+    text: "Do you have any substantial professional experience in a field other than conservation during your career?",
+  },
+  {
+    text: "In which of the following sectors have you done non-conservation work in your career?",
+  },
+  {
+    text: "Which of the following categories best describes your current professional engagement in conservation?",
+  },
+  {
+    text: "Which of the following categories best describes the seniority of your current role within conservation?",
+  },
+  {
+    text: "In which of the following contexts have you done significant amounts of professional conservation work?",
+  },
+  {
+    text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, certification)?",
+  },
+  {
+    text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
+  },
+  {
+    text: "Please feel free to tell us about anything else that you think was important in shaping your values",
+  },
+  {
+    text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey.\\r\\n\\r\\nWe will not use your address for any other reason.",
+  },
+  {
+    text: "Have you taken this survey before?",
+  },
+  {
+    text: "Are you taking part in the WWF UK staff survey?",
+  },
+  {
+    text: "If you are answering this as part of the WWF UK survey please choose your programme",
+  },
+  {
+    text: "Are you taking part in the Ol Pejeta staff survey?",
+  }
+]
+
+demographic_questions.each do |demographic_question|
+  DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |dq|
+    dq.text = demographic_question[:text]
+    puts "Created question with the text: #{demographic_question[:text]}..."
+  end
+end
