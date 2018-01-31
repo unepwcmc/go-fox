@@ -1,8 +1,8 @@
 class SurveysController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :require_ownership, only: [:edit, :update, :destroy]
   before_action :require_published, only: [:show]
-  before_action :authenticate_user!
 
   # GET /surveys
   # GET /surveys.json
