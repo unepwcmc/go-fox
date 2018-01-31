@@ -1,5 +1,6 @@
 class DemographicQuestionsController < ApplicationController
   before_action :set_demographic_question, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin
 
   # GET /demographic_questions
   # GET /demographic_questions.json

@@ -1,8 +1,8 @@
 class SurveysController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :require_ownership, only: [:edit, :update, :destroy]
   before_action :require_published, only: [:show]
-  before_action :authenticate_user!
 
   # GET /surveys
   # GET /surveys.json
@@ -68,7 +68,7 @@ class SurveysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
-      @survey = Survey.find_by_uuid(params[:uuid])
+      @survey = Survey.find_by(uuid: params[:uuid])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

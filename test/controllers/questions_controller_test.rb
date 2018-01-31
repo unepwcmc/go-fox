@@ -1,16 +1,24 @@
 require 'test_helper'
 
 class QuestionsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @user  = create(:user)
-    @admin = create(:admin)
-    @question = questions(:one)
+    @user     = create(:user)
+    @admin    = create(:admin)
+    @question = create(:question)
   end
 
   test "admin should get index" do
     sign_in @admin
     get questions_url
     assert_response :success
+  end
+
+  test "user should not be able to get index" do
+    sign_in @user
+    get questions_url
+    assert_redirected_to root_path
   end
 
   test "admin should get new" do
