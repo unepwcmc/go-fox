@@ -10,6 +10,6 @@
 
 FactoryBot.define do
   factory :question do
-    text "MyString"
+    text "An example question"
   end
 end
