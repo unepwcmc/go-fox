@@ -132,3 +132,10 @@ questions = [
     text: "When communities manage their own resources, their efforts are more effective than top-down approaches",
   }
 ]
+
+questions.each do |question|
+  Question.where(text: question[:text]).first_or_create do |q|
+    q.text = question[:text]
+    puts "Created question with the text: #{question[:text]}..."
+  end
+end
