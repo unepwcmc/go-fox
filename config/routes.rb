@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :responses
   resources :demographic_questions
   resources :questions
   devise_for :users

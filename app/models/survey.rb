@@ -22,6 +22,7 @@
 class Survey < ApplicationRecord
   belongs_to :user
   before_create :set_uuid
+  has_many :responses
 
   def to_param
     uuid
