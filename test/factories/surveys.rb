@@ -23,7 +23,7 @@ FactoryBot.define do
   factory :survey do
     name "Survey name"
     published true
-    user nil
+    association :user, factory: :user
     uuid nil
   end
 end

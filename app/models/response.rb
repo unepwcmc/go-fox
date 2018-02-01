@@ -21,7 +21,7 @@
 
 class Response < ApplicationRecord
   belongs_to :survey
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   accepts_nested_attributes_for :answers
   before_create :set_uuid
@@ -29,12 +29,4 @@ class Response < ApplicationRecord
   def to_param
     uuid
   end
-
-  private
-    def set_uuid
-      loop do
-        self.uuid = SecureRandom.urlsafe_base64
-        break unless Response.where(uuid: uuid).exists?
-      end
-    end
 end

@@ -22,17 +22,9 @@
 class Survey < ApplicationRecord
   belongs_to :user
   before_create :set_uuid
-  has_many :responses
+  has_many :responses, dependent: :destroy
 
   def to_param
     uuid
   end
-
-  private
-    def set_uuid
-      loop do
-        self.uuid = SecureRandom.urlsafe_base64
-        break unless Survey.where(uuid: uuid).exists?
-      end
-    end
 end

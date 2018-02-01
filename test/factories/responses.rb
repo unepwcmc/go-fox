@@ -21,9 +21,9 @@
 
 FactoryBot.define do
   factory :response do
-    references ""
-    ip_address "MyString"
-    langauge "MyString"
-    uuid "MyString"
+    association :survey, factory: :survey
+    ip_address nil
+    langauge nil
+    uuid nil
   end
 end

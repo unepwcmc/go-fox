@@ -22,6 +22,7 @@
 
 FactoryBot.define do
   factory :answer do
+    association :answerable, factory: :question
     response nil
     raw ""
   end
