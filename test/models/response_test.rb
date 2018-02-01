@@ -23,9 +23,8 @@ require 'test_helper'
 
 class ResponseTest < ActiveSupport::TestCase
   setup do
-    @user     = FactoryBot.create(:user)
-    @survey   = FactoryBot.create(:survey, user: @user)
-    @answers_attributes = [FactoryBot.build(:answer)]
+    @user   = FactoryBot.create(:user)
+    @survey = FactoryBot.create(:survey, user: @user)
   end
 
   test "saving a response" do
