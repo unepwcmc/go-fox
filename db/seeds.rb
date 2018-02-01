@@ -135,7 +135,6 @@ questions = [
 
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
-    q.text = question[:text]
     puts "Created question with the text: #{question[:text]}..."
   end
 end
@@ -208,7 +207,6 @@ demographic_questions = [
 
 demographic_questions.each do |demographic_question|
   DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |dq|
-    dq.text = demographic_question[:text]
     puts "Created question with the text: #{demographic_question[:text]}..."
   end
 end
