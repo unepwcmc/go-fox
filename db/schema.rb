@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180131113237) do
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
+    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|

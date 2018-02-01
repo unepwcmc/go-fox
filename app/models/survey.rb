@@ -13,6 +13,7 @@
 # Indexes
 #
 #  index_surveys_on_user_id  (user_id)
+#  index_surveys_on_uuid     (uuid) UNIQUE
 #
 # Foreign Keys
 #
