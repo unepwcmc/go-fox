@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129170151) do
+ActiveRecord::Schema.define(version: 20180131164012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "response_id"
+    t.jsonb "raw"
+    t.string "answerable_type"
+    t.bigint "answerable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answerable_type", "answerable_id"], name: "index_answers_on_answerable_type_and_answerable_id"
+    t.index ["response_id"], name: "index_answers_on_response_id"
+  end
+
+  create_table "demographic_questions", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "ip_address"
+    t.string "langauge"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_responses_on_survey_id"
+  end
 
   create_table "surveys", force: :cascade do |t|
     t.string "name"
@@ -23,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180129170151) do
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
+    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,5 +79,7 @@ ActiveRecord::Schema.define(version: 20180129170151) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "responses"
+  add_foreign_key "responses", "surveys"
   add_foreign_key "surveys", "users"
 end

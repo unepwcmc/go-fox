@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :responses
+  resources :demographic_questions, except: [:destroy]
+  resources :questions, except: [:destroy]
   devise_for :users
 
   authenticated :user do
