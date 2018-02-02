@@ -22,7 +22,7 @@
 <%= link_to "Take the survey", new_survey_response_path(@survey) %>
 
 <% @survey.responses.each do |response| %>
-  <%= link_to "#{response.id} - #{response.created_at.to_formatted_s(:long)}", survey_response_path(response) %>
+  <%= "#{response.id} - #{response.created_at.to_formatted_s(:long)}" %>
 <% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
