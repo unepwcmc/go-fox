@@ -53,13 +53,4 @@ class DemographicQuestionsControllerTest < ActionDispatch::IntegrationTest
     patch demographic_question_url(@demographic_question), params: { demographic_question: { text: @demographic_question.text } }
     assert_redirected_to demographic_question_url(@demographic_question)
   end
-
-  test "admin should destroy demographic_question" do
-    sign_in @admin
-    assert_difference('DemographicQuestion.count', -1) do
-      delete demographic_question_url(@demographic_question)
-    end
-
-    assert_redirected_to demographic_questions_url
-  end
 end
