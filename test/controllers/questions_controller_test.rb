@@ -53,13 +53,4 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
     patch question_url(@question), params: { question: { text: @question.text } }
     assert_redirected_to question_url(@question)
   end
-
-  test "admin should destroy question" do
-    sign_in @admin
-    assert_difference('Question.count', -1) do
-      delete question_url(@question)
-    end
-
-    assert_redirected_to questions_url
-  end
 end
