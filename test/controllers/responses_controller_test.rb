@@ -46,8 +46,12 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "show can not be accessed wihtout being logged in" do
-    assert false
+  test "show can not be accessed without being logged in" do
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
+
+    get survey_response_url(@survey, @response)
+    assert_redirected_to new_user_session_path
   end
 
   test "new can be accessed by anyone" do
