@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :require_survey_published, only: [:new]
   before_action :set_response, only: [:show, :destroy]
 
