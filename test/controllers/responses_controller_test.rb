@@ -36,7 +36,14 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "an admin can delete any response" do
-    assert false
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
+
+    sign_in @admin
+
+    assert_difference('Response.count', -1) do
+      delete survey_response_url(@survey, @response)
+    end
   end
 
   test "show can not be accessed wihtout being logged in" do
