@@ -4,12 +4,12 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user  = create(:user)
-    @admin = create(:admin)
+    @user   = create(:user)
+    @admin  = create(:admin)
+    @survey = create(:survey, user: @user)
   end
 
   test "response can only be destroyed by a logged in user" do
-    @survey   = create(:survey, user: @user)
     @response = create(:response, survey: @survey)
 
     delete survey_response_url(@survey, @response)
@@ -17,16 +17,15 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "response can only be deleted by owner of the survey" do
-    @survey   = create(:survey, user: @admin)
-    @response = create(:response, survey: @survey)
+    @survey2  = create(:survey, user: @admin)
+    @response = create(:response, survey: @survey2)
 
     sign_in @user
-    delete survey_response_url(@survey, @response)
-    assert_redirected_to survey_path(@survey)
+    delete survey_response_url(@survey2, @response)
+    assert_redirected_to survey_path(@survey2)
   end
 
   test "a user cannot delete another user's responses" do
-    @survey   = create(:survey, user: @user)
     @response = create(:response, survey: @survey)
     @user2    = create(:user)
 
@@ -36,7 +35,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "an admin can delete any response" do
-    @survey   = create(:survey, user: @user)
     @response = create(:response, survey: @survey)
 
     sign_in @admin
@@ -47,7 +45,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show can not be accessed without being logged in" do
-    @survey   = create(:survey, user: @user)
     @response = create(:response, survey: @survey)
 
     get survey_response_url(@survey, @response)
@@ -55,16 +52,12 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "new can be accessed by anyone" do
-    @survey = create(:survey, user: @user)
-
     get new_survey_response_path(@survey)
     assert_response :success
   end
 
   test "create can be accessed by anyone" do
-    @survey = create(:survey, user: @user)
-
-    assert_difference('Response.count') do
+    assert_difference('Response.count', 1) do
       post survey_responses_path(@survey), params: { }
     end
 
