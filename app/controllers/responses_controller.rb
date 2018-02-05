@@ -27,8 +27,9 @@ class ResponsesController < ApplicationController
 
   private
     def require_survey_published
-      # return if @survey.published?
-      # redirect_to root_path, notice: "You cannot view an unpublished survey"
+      survey = Survey.find_by_uuid(params[:survey_uuid])
+      return if survey.published?
+      redirect_to root_path, notice: "You cannot submit a response for an unpublished survey"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
