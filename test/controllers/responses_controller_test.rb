@@ -55,10 +55,19 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "new can be accessed by anyone" do
-    assert false
+    @survey = create(:survey, user: @user)
+
+    get new_survey_response_path(@survey)
+    assert_response :success
   end
 
   test "create can be accessed by anyone" do
-    assert false
+    @survey = create(:survey, user: @user)
+
+    assert_difference('Response.count') do
+      post survey_responses_path(@survey), params: { }
+    end
+
+    assert_redirected_to root_path
   end
 end
