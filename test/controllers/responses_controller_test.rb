@@ -25,8 +25,14 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to survey_path(@survey)
   end
 
-  test "a user cannot delete another user's reponses" do
-    assert false
+  test "a user cannot delete another user's responses" do
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
+    @user2    = create(:user)
+
+    sign_in @user2
+    delete survey_response_url(@survey, @response)
+    assert_redirected_to survey_path(@survey)
   end
 
   test "an admin can delete any response" do
