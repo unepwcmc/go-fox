@@ -48,11 +48,18 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show page for logged in user" do
-    assert false
+    sign_in @user
+    get surveys_url
+    assert_response :success
   end
 
   test "show page should list responses for that survey" do
-    assert false
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
+
+    sign_in @user
+    get survey_url(@survey)
+    assert_equal 1, @controller.instance_variable_get("@survey").responses.count
   end
 
   test "should get index for logged in user" do
