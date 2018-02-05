@@ -23,6 +23,7 @@
 
 <% @survey.responses.each do |response| %>
   <%= link_to "#{response.id} - #{response.created_at.to_formatted_s(:long)}", survey_response_path(@survey, response) %>
+  <%= link_to 'Destroy', survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |

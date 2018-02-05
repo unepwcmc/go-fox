@@ -1,7 +1,7 @@
 class ResponsesController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :require_survey_published, only: [:new]
-  before_action :set_response, only: [:show]
+  before_action :set_response, only: [:show, :destroy]
 
   def new
     @response = Response.new
@@ -24,6 +24,11 @@ class ResponsesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @response.destroy
+    redirect_to survey_path(@response.survey), notice: 'Response was succesfully deleted.'
   end
 
   private
