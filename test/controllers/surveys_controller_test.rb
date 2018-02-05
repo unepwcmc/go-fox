@@ -48,8 +48,10 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show page for logged in user" do
+    @survey = create(:survey, user: @user)
+
     sign_in @user
-    get surveys_url
+    get survey_url(@survey)
     assert_response :success
   end
 
