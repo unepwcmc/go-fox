@@ -4,29 +4,29 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user   = create(:user)
-    @admin  = create(:admin)
-    @survey = create(:survey, user: @user)
+    @user     = create(:user)
+    @admin    = create(:admin)
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
   end
 
   test "response can only be destroyed by a logged in user" do
-    @response = create(:response, survey: @survey)
-
-    delete survey_response_url(@survey, @response)
+    assert_difference('Response.count', 0) do
+      delete survey_response_url(@survey, @response)
+    end
     assert_redirected_to new_user_session_path
   end
 
   test "response can only be deleted by owner of the survey" do
-    @survey2  = create(:survey, user: @admin)
-    @response = create(:response, survey: @survey2)
+    @survey2   = create(:survey, user: @admin)
+    @response2 = create(:response, survey: @survey2)
 
     sign_in @user
-    delete survey_response_url(@survey2, @response)
+    delete survey_response_url(@survey2, @response2)
     assert_redirected_to survey_path(@survey2)
   end
 
   test "a user cannot delete another user's responses" do
-    @response = create(:response, survey: @survey)
     @user2    = create(:user)
 
     sign_in @user2
@@ -35,8 +35,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "an admin can delete any response" do
-    @response = create(:response, survey: @survey)
-
     sign_in @admin
 
     assert_difference('Response.count', -1) do
@@ -45,8 +43,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show can not be accessed without being logged in" do
-    @response = create(:response, survey: @survey)
-
     get survey_response_url(@survey, @response)
     assert_redirected_to new_user_session_path
   end
