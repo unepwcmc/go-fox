@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
 
   resources :surveys, param: :uuid do
-    resources :responses
+    resources :responses, param: :uuid
   end
 
   get 'static_pages/index'

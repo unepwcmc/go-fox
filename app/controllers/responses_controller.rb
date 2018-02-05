@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :require_survey_published, only: [:new]
+  before_action :set_response, only: [:show]
 
   def new
     @response = Response.new
@@ -35,5 +36,9 @@ class ResponsesController < ApplicationController
     def response_params
       #params.require(:response).permit(:name, :published)
       return nil
+    end
+
+    def set_response
+      @response = Response.find_by_uuid(params[:uuid])
     end
 end
