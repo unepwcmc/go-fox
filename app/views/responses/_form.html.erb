@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
+
   <% questions.each do |question| %>
     <p><%= question.text %></p>
 
     <%= form.fields_for :answers do |answer_form| %>
-      <%= answer_form.collection_radio_buttons :raw, [["Strongly Disagree", "Strongly Disagree"], ["Disagree", "Disagree"], ["Neutral", "Neutral"], ["Agree", "Agree"], ["Strongly Agree", "Strongly Agree"]], :last, :first, checked: answer_form.object.raw %>
+      <%= answer_form.collection_radio_buttons :raw, scale_options_for_answers, :last, :first, checked: answer_form.object.raw %>
 
       <%= answer_form.hidden_field :answerable_type, value: question.class.name %>
       <%= answer_form.hidden_field :answerable_id, value: question.id %>
