@@ -1,3 +1,36 @@
 <h1>New response</h1>
 
-<%= render 'form', response: @response %>
+<%= form_with(model: [:survey, @response], local: true) do |form| %>
+  <% if @response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% @response.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Loop through the questions and build an answer for each of them -->
+
+  <% @questions.each do |question| %>
+    <p><%= question.text %></p>
+
+    <%= form.fields_for :answers do |answer_form| %>
+      <%= answer_form.label :raw, "Your answer" %>
+      <%= answer_form.text_field :raw %>
+
+      <%= answer_form.hidden_field :answerable_type, value: question.class.name %>
+      <%= answer_form.hidden_field :answerable_id, value: question.id %>
+    <% end %>
+  <% end %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%# <%= render 'form', response: @response %> %>

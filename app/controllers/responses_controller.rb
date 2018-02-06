@@ -5,7 +5,9 @@ class ResponsesController < ApplicationController
   before_action :require_ownership, only: [:destroy]
 
   def new
+    @questions = Question.all
     @response = Response.new
+    1.times { @response.answers.build }
   end
 
   def create
@@ -41,8 +43,7 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      #params.require(:response).permit(:name, :published)
-      return nil
+      params.require(:response).permit(answers_attributes: [:raw, :answerable_type, :answerable_id])
     end
 
     def set_response
