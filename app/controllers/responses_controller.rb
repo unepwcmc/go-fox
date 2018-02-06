@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :require_survey_published, only: [:new]
   before_action :set_response, only: [:show, :destroy]
+  before_action :require_ownership, only: [:destroy]
 
   def new
     @response = Response.new
@@ -46,5 +47,11 @@ class ResponsesController < ApplicationController
 
     def set_response
       @response = Response.find_by_uuid(params[:uuid])
+    end
+
+    def require_ownership
+      unless (current_user == @response.survey.user) || (current_user.admin?)
+        redirect_to survey_path(@response.survey), notice: "You are not the owner of that survey or an admin"
+      end
     end
 end
