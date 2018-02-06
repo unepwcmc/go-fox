@@ -11,7 +11,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "response can only be destroyed by a logged in user" do
-    assert_difference('Response.count', 0) do
+    assert_no_difference('Response.count') do
       delete survey_response_url(@survey, @response)
     end
     assert_redirected_to new_user_session_path
@@ -30,7 +30,9 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     user2 = create(:user)
 
     sign_in user2
-    delete survey_response_url(@survey, @response)
+    assert_no_difference('Response.count') do
+      delete survey_response_url(@survey, @response)
+    end
     assert_redirected_to survey_path(@survey)
   end
 
