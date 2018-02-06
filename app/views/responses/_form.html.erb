@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+  <% questions.each do |question| %>
+    <p><%= question.text %></p>
+
+    <%= form.fields_for :answers do |answer_form| %>
+      <%= answer_form.label :raw, "Your answer" %>
+      <%= answer_form.text_field :raw %>
+      <%= answer_form.hidden_field :answerable_type, value: question.class.name %>
+      <%= answer_form.hidden_field :answerable_id, value: question.id %>
+    <% end %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
