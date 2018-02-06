@@ -1,5 +1,7 @@
 {
   "name": "go-fox",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "milligram": "^1.3.0"
+  }
 }
