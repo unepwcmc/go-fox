@@ -18,18 +18,18 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "response can only be deleted by owner of the survey" do
-    @survey2   = create(:survey, user: @admin)
-    @response2 = create(:response, survey: @survey2)
+    survey2   = create(:survey, user: @admin)
+    response2 = create(:response, survey: survey2)
 
     sign_in @user
-    delete survey_response_url(@survey2, @response2)
-    assert_redirected_to survey_path(@survey2)
+    delete survey_response_url(survey2, response2)
+    assert_redirected_to survey_path(survey2)
   end
 
   test "a user cannot delete another user's responses" do
-    @user2    = create(:user)
+    user2 = create(:user)
 
-    sign_in @user2
+    sign_in user2
     delete survey_response_url(@survey, @response)
     assert_redirected_to survey_path(@survey)
   end
@@ -45,6 +45,13 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   test "show can not be accessed without being logged in" do
     get survey_response_url(@survey, @response)
     assert_redirected_to new_user_session_path
+  end
+
+  test "unpublished survey will not allow responses by anyone" do
+    survey2 = create(:survey, user: @user, published: false)
+
+    get new_survey_response_path(survey2)
+    assert_redirected_to root_path
   end
 
   test "new can be accessed by anyone" do
