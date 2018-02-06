@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @survey.name %>
-</p>
+<h1><%= @survey.name %></h1>
 
 <p>
   <strong>Published:</strong>
@@ -12,8 +7,33 @@
 
 <p>
   <strong>User:</strong>
-  <%= @survey.user %>
+  <%= @survey.user.email %> (<%= @survey.user.organisation_name %>)
 </p>
 
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to "Take the survey", new_survey_response_path(@survey), class: 'button' %>
+<%= link_to 'Edit', edit_survey_path(@survey), class: 'button' %>
+<%= link_to 'Back', surveys_path, class: 'button' %>
+
+<hr>
+
+<h2>Responses for this survey</h2>
+
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Created at</th>
+    <th colspan="2"></th>
+  </thead>
+  <tbody>
+    <% @survey.responses.each do |response| %>
+      <tr>
+        <td><%= response.id %></td>
+        <td><%= response.created_at.to_formatted_s(:short) %></td>
+        <td><%= link_to "Show", survey_response_path(@survey, response) %></td>
+        <td><%= link_to 'Destroy', survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

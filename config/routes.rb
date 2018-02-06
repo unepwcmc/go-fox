@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :responses
   resources :demographic_questions, except: [:destroy]
   resources :questions, except: [:destroy]
   devise_for :users
@@ -10,7 +9,9 @@ Rails.application.routes.draw do
 
   root to: "static_pages#index"
 
-  resources :surveys, param: :uuid
+  resources :surveys, param: :uuid do
+    resources :responses, param: :uuid
+  end
 
   get 'static_pages/index'
 end

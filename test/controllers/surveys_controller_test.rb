@@ -47,12 +47,21 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 
-  test "show page for unpublished survey should redirect to root" do
-    @survey = create(:survey, user: @user, published: false)
+  test "should get show page for logged in user" do
+    @survey = create(:survey, user: @user)
 
     sign_in @user
     get survey_url(@survey)
-    assert_redirected_to root_path
+    assert_response :success
+  end
+
+  test "show page should list responses for that survey" do
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey)
+
+    sign_in @user
+    get survey_url(@survey)
+    assert_equal 1, @controller.instance_variable_get("@survey").responses.count
   end
 
   test "should get index for logged in user" do
