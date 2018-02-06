@@ -61,9 +61,11 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "create can be accessed by anyone" do
+  test "post to create action saves a response" do
+    res = build(:response)
+
     assert_difference('Response.count', 1) do
-      post survey_responses_path(@survey), params: { }
+      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id, ip_address: res.ip_address } }
     end
 
     assert_redirected_to root_path
