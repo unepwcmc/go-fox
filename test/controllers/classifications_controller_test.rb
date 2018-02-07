@@ -47,13 +47,4 @@ class ClassificationsControllerTest < ActionDispatch::IntegrationTest
     patch classification_url(@classification), params: { classification: { description: @classification.description, name: @classification.name, results_description: @classification.results_description } }
     assert_redirected_to classification_url(@classification)
   end
-
-  test "should destroy classification" do
-    sign_in @admin
-    assert_difference('Classification.count', -1) do
-      delete classification_url(@classification)
-    end
-
-    assert_redirected_to classifications_url
-  end
 end
