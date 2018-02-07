@@ -4,6 +4,7 @@
     <% if current_user.admin? %>
       <li><%= link_to "Questions", questions_path %></li>
       <li><%= link_to "Demographic questions", demographic_questions_path %></li>
+      <li><%= link_to "Classifications", classifications_path %></li>
     <% end %>
     <li><%= link_to "My surveys", surveys_path %></li>
     <li><%= link_to "My account", edit_user_registration_path %></li>

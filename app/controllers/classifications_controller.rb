@@ -1,5 +1,6 @@
 class ClassificationsController < ApplicationController
   before_action :set_classification, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin
 
   # GET /classifications
   # GET /classifications.json
@@ -48,16 +49,6 @@ class ClassificationsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @classification.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /classifications/1
-  # DELETE /classifications/1.json
-  def destroy
-    @classification.destroy
-    respond_to do |format|
-      format.html { redirect_to classifications_url, notice: 'Classification was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
