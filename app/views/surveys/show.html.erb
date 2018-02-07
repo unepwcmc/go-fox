@@ -16,24 +16,4 @@
 
 <hr>
 
-<h2>Responses for this survey</h2>
-
-
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Created at</th>
-    <th colspan="2"></th>
-  </thead>
-  <tbody>
-    <% @survey.responses.each do |response| %>
-      <tr>
-        <td><%= response.id %></td>
-        <td><%= response.created_at.to_formatted_s(:short) %></td>
-        <td><%= link_to "Show", survey_response_path(@survey, response) %></td>
-        <td><%= link_to 'Destroy', survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= render partial: "surveys/responses_table", locals: { survey: @survey } %>
