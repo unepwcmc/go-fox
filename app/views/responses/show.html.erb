@@ -4,3 +4,8 @@
   <strong>ip address:</strong>
   <%= @response.ip_address %>
 </p>
+
+<% @response.answers.each do |answer| %>
+  <h3><%= answer.question.text %></h3>
+  <%= answer.raw %>
+<% end %>

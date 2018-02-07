@@ -1,9 +1,9 @@
 class ResponsesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :results]
   before_action :set_survey
   before_action :require_survey_published, only: [:new]
-  before_action :set_response, only: [:show, :destroy]
-  before_action :require_ownership, only: [:destroy]
+  before_action :set_response, only: [:show, :results, :destroy]
+  before_action :require_ownership, only: [:show, :destroy]
 
   def new
     @questions  = Question.all
@@ -30,6 +30,9 @@ class ResponsesController < ApplicationController
   def show
   end
 
+  def results
+  end
+
   def destroy
     @response.destroy
     redirect_to survey_path(@response.survey), notice: 'Response was succesfully deleted.'
@@ -54,10 +57,9 @@ class ResponsesController < ApplicationController
       @survey = Survey.find_by_uuid(params[:survey_uuid])
     end
 
-
     def require_ownership
       unless (current_user == @response.survey.user) || (current_user.admin?)
-        redirect_to survey_path(@response.survey), notice: "You are not the owner of that survey or an admin"
+        redirect_to root_path, notice: "You are not the owner of that survey or an admin"
       end
     end
 end
