@@ -135,6 +135,12 @@ questions = [
 
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
+    # for development only generate random x,y,z weights
+    if Rails.env == 'development'
+      q.x_weight = (rand(0...10)-5)/10
+      q.y_weight = (rand(0...10)-5)/10
+      q.z_weight = (rand(0...10)-5)/10
+    end
     puts "Created question with the text: #{question[:text]}..."
   end
 end

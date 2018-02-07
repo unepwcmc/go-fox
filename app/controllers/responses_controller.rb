@@ -16,8 +16,6 @@ class ResponsesController < ApplicationController
     @response.survey      = @survey
     @response.ip_address  = request.remote_ip
 
-    results = build_results
-
     respond_to do |format|
       if @response.save
         format.html { redirect_to root_path, notice: 'Response was successfully created.' }
@@ -56,48 +54,9 @@ class ResponsesController < ApplicationController
       @survey = Survey.find_by_uuid(params[:survey_uuid])
     end
 
-
     def require_ownership
       unless (current_user == @response.survey.user) || (current_user.admin?)
         redirect_to survey_path(@response.survey), notice: "You are not the owner of that survey or an admin"
       end
-    end
-
-    def build_results
-      answers_array   = []
-      @response.answers.each do |answer|
-        question = answer.question
-        value    = calculate_value(answer.raw)
-        question_data = {
-          question_text:        question.text,
-          question_x_weight:    question.x_weight,
-          question_y_weight:    question.y_weight,
-          question_z_weight:    question.z_weight,
-          answer_inputted:      calculate_value(answer.raw),
-          x_answer_calculated:  calculate_answer(value, question.x_weight),
-          y_answer_calculated:  calculate_answer(value, question.y_weight),
-          z_answer_calculated:  calculate_answer(value, question.z_weight)
-        }
-        answers_array << question_data
-      end
-    end
-
-    def calculate_value(raw)
-      case raw
-      when "Strongly Disagree"
-        -1
-      when "Disagree"
-        -0.5
-      when "Agree"
-        0.5
-      when "Strongly Agree"
-        1
-      else
-        0
-      end
-    end
-
-    def calculate_answer(value, weight)
-      value
     end
 end
