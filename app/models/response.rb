@@ -54,9 +54,11 @@ class Response < ApplicationRecord
       z_total_sum += z rescue nil
     end
 
-    self.x_axis_scaled = x_total_sum / total_number_questions
-    self.y_axis_scaled = y_total_sum / total_number_questions
-    self.z_axis_scaled = z_total_sum / total_number_questions
+    unless total_number_questions == 0
+      self.x_axis_scaled = x_total_sum / total_number_questions
+      self.y_axis_scaled = y_total_sum / total_number_questions
+      self.z_axis_scaled = z_total_sum / total_number_questions
+    end
   end
 
   def calculate_value(raw)
