@@ -31,7 +31,7 @@ class Response < ApplicationRecord
 
   accepts_nested_attributes_for :answers
   before_create :set_uuid
-  before_create :calculate_classification
+  before_validation :calculate_classification
 
   def to_param
     uuid
@@ -81,6 +81,19 @@ class Response < ApplicationRecord
   end
 
   def choose_quadrant
-    Classification.find_by(name: "Critical Social Science")
+    x = self.x_axis_scaled
+    y = self.y_axis_scaled
+
+    if x.between?(-1, 0) && y.between?(-1, 0)
+      Classification.find_by(name: "Market Biocentrism")
+    elsif x.between?(0, 1) && y.between?(-1, 0)
+      Classification.find_by(name: "Critical Social Science")
+    elsif x.between?(-1, 0) && y.between?(0, 1)
+      Classification.find_by(name: "New Conservation")
+    elseif x.between?(0, 1) && y.between?(0, 1)
+      Classification.find_by(name: "Traditional Conservation")
+    else
+      Classification.find_by(name: "Undecided")
+    end
   end
 end
