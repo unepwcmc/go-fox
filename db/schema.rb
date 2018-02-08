@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131164012) do
+ActiveRecord::Schema.define(version: 20180208144309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,16 +26,37 @@ ActiveRecord::Schema.define(version: 20180131164012) do
     t.index ["response_id"], name: "index_answers_on_response_id"
   end
 
+  create_table "classifications", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "results_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "demographic_questions", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "question_translations", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["locale"], name: "index_question_translations_on_locale"
+    t.index ["question_id"], name: "index_question_translations_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "x_weight"
+    t.float "y_weight"
+    t.float "z_weight"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -45,6 +66,11 @@ ActiveRecord::Schema.define(version: 20180131164012) do
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "x_axis_scaled"
+    t.float "y_axis_scaled"
+    t.float "z_axis_scaled"
+    t.bigint "classification_id"
+    t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"
   end
 
