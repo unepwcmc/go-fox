@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207144653) do
+ActiveRecord::Schema.define(version: 20180208092702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20180207144653) do
     t.float "x_axis_scaled"
     t.float "y_axis_scaled"
     t.float "z_axis_scaled"
+    t.bigint "classification_id"
+    t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"
   end
 

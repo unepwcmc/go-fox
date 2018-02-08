@@ -11,4 +11,5 @@
 #
 
 class Classification < ApplicationRecord
+  has_many :responses
 end

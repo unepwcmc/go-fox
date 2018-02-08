@@ -6,12 +6,13 @@ class ResponsesController < ApplicationController
   before_action :require_ownership, only: [:destroy]
 
   def new
-    @questions  = Question.all
-    @response   = Response.new
+    @questions = Question.all
+    @response  = Response.new
     @response.answers.build
   end
 
   def create
+    @questions = Question.all
     @response             = Response.new(response_params)
     @response.survey      = @survey
     @response.ip_address  = request.remote_ip
