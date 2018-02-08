@@ -1,6 +1,8 @@
 class AddTranslationsToQuestions < ActiveRecord::Migration[5.1]
   def up
-    Question.create_translation_table!({text: :string}, {migrate_data: true})
+    I18n.with_locale(:en) do
+      Question.create_translation_table!({text: :string}, {migrate_data: true})
+    end
   end
 
   def down
