@@ -6,15 +6,19 @@ class ResponsesController < ApplicationController
   before_action :require_ownership, only: [:show, :destroy]
 
   def new
-    @questions  = Question.all
-    @response   = Response.new
-    @response.answers.build
+    @response = Response.new
+
+    Question.all.each do |question|
+      @response.answers.build do |answer|
+        answer.answerable = question
+      end
+    end
   end
 
   def create
-    @response             = Response.new(response_params)
-    @response.survey      = @survey
-    @response.ip_address  = request.remote_ip
+    @response            = Response.new(response_params)
+    @response.survey     = @survey
+    @response.ip_address = request.remote_ip
 
     respond_to do |format|
       if @response.save

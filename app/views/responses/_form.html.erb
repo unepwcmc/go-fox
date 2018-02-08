@@ -1,4 +1,4 @@
-<%= form_with(model: [:survey, @response], local: true) do |form| %>
+<%= form_with(model: [:survey, response], local: true) do |form| %>
   <% if response.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
@@ -11,16 +11,11 @@
     </div>
   <% end %>
 
-
-  <% questions.each do |question| %>
-    <h3><%= question.text %></h3>
-
-    <%= form.fields_for :answers do |answer_form| %>
-      <%= answer_form.collection_radio_buttons :raw, scale_options_for_answers, :last, :first, checked: answer_form.object.raw %>
-
-      <%= answer_form.hidden_field :answerable_type, value: question.class.name %>
-      <%= answer_form.hidden_field :answerable_id, value: question.id %>
-    <% end %>
+  <%= form.fields_for :answers do |answer_form| %>
+    <h3><%= answer_form.object.question.text %></h3>
+    <p><%= answer_form.collection_radio_buttons :raw, scale_options_for_answers, :last, :first, checked: answer_form.object.raw %></p>
+    <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
+    <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
   <% end %>
 
   <div class="actions">
