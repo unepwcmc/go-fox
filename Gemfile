@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.4'
 # dotenv-rails for .env file usage
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+# globalize gem for translations
+gem 'globalize', git: 'https://github.com/globalize/globalize', branch: 'master'
+gem 'activemodel-serializers-xml'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
