@@ -4,10 +4,11 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user     = create(:user)
-    @admin    = create(:admin)
-    @survey   = create(:survey, user: @user)
-    @response = create(:response, survey: @survey)
+    @user           = create(:user)
+    @admin          = create(:admin)
+    @survey         = create(:survey, user: @user)
+    @classification = create(:classification)
+    @response       = create(:response, survey: @survey, classification: @classification)
   end
 
   test "response can only be destroyed by a logged in user" do
@@ -18,8 +19,9 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "response can only be deleted by owner of the survey" do
-    survey2   = create(:survey, user: @admin)
-    response2 = create(:response, survey: survey2)
+    survey2         = create(:survey, user: @admin)
+    classification2 = create(:classification)
+    response2       = create(:response, survey: survey2, classification: classification2)
 
     sign_in @user
     delete survey_response_url(survey2, response2)

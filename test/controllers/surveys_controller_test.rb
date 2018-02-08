@@ -56,8 +56,9 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show page should list responses for that survey" do
-    @survey   = create(:survey, user: @user)
-    @response = create(:response, survey: @survey)
+    @survey         = create(:survey, user: @user)
+    @classification = create(:classification)
+    @response       = create(:response, survey: @survey, classification: @classification)
 
     sign_in @user
     get survey_url(@survey)
