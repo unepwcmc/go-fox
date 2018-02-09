@@ -11,10 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_field :text, id: :question_text %>
-  </div>
+  <% I18n.available_locales.each do |locale| %>
+    <%= form.globalize_fields_for locale do |translation_builder| %>
+      <div class="field">
+        <%= translation_builder.label :text %>
+        <%= translation_builder.text_field :text %>
+      </div>
+    <% end %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
