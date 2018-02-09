@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208152748) do
+ActiveRecord::Schema.define(version: 20180209150038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180208152748) do
   create_table "responses", force: :cascade do |t|
     t.bigint "survey_id"
     t.string "ip_address"
-    t.string "langauge"
+    t.string "language"
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20180208152748) do
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
+    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|
