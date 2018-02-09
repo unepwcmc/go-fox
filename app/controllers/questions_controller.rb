@@ -60,6 +60,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:text)
+      params.require(:question).permit(:text, translations_attributes: [:id, :text, :locale])
     end
 end

@@ -12,11 +12,11 @@
   <% end %>
 
   <% I18n.available_locales.each do |locale| %>
-    <%= form.globalize_fields_for locale do |translation_builder| %>
-      <div class="field">
-        <%= translation_builder.label :text %>
-        <%= translation_builder.text_field :text %>
-      </div>
+    <h1><%= locale %></h1>
+    <%= form.globalize_fields_for locale do |ff| %>
+      <p>
+      <%= ff.text_field :text %>
+      </p>
     <% end %>
   <% end %>
 
