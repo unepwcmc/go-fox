@@ -37,52 +37,35 @@ class Response < ApplicationRecord
     uuid
   end
 
-  def calculate_classification
-    total_number_questions = Question.count
-    x_total_sum = 0
-    y_total_sum = 0
-    z_total_sum = 0
+  def total_scores
+    x_total = self.answers.sum {|score| score[:x] }
+    y_total = self.answers.sum {|score| score[:y] }
+    z_total = self.answers.sum {|score| score[:z] }
 
-    self.answers.each do |answer|
-      question = answer.question
-      # calculate the preliminary values of x, y, z
-      # question weight * answer value
-      x = question.x_weight * calculate_value(answer.raw) rescue 0
-      y = question.y_weight * calculate_value(answer.raw) rescue 0
-      z = question.z_weight * calculate_value(answer.raw) rescue 0
-
-      # sum up the totals for each axis
-      x_total_sum += x rescue 0
-      y_total_sum += y rescue 0
-      z_total_sum += z rescue 0
-    end
-
-    unless total_number_questions == 0
-      self.x_axis_scaled  = x_total_sum / total_number_questions
-      self.y_axis_scaled  = y_total_sum / total_number_questions
-      self.z_axis_scaled  = z_total_sum / total_number_questions
-      self.classification = choose_quadrant
-    end
+    {x_total: x_total, y_total: y_total, z_total: z_total}
   end
 
-  def calculate_value(raw)
-    case raw
-    when "Strongly Disagree"
-      -1
-    when "Disagree"
-      -0.5
-    when "Agree"
-      0.5
-    when "Strongly Agree"
-      1
-    else
-      0
-    end
+  def scaled_scores
+    total_number_of_questions = Question.count.to_f
+
+    {
+      x_scaled: total_scores[:x] / total_number_of_questions,
+      y_scaled: total_scores[:y] / total_number_of_questions,
+      z_scaled: total_scores[:z] / total_number_of_questions,
+    }
   end
 
-  def choose_quadrant
-    x = self.x_axis_scaled
-    y = self.y_axis_scaled
+  def assign_classification
+    self.x_score = scaled_scores[:x]
+    self.y_score = scaled_scores[:y]
+    self.z_score = scaled_scores[:z]
+
+    self.classification = choose_classification_quadrant
+  end
+
+  def choose_classification_quadrant
+    x = self.x_score
+    y = self.y_score
 
     if x.between?(-1, 0) && y.between?(-1, 0)
       Classification.find_by(name: "Critical Social Science")

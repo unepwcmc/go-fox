@@ -27,4 +27,28 @@ class Answer < ApplicationRecord
   def question
     answerable
   end
+
+  def value
+    case self.raw
+    when "Strongly Disagree"  then -1.0
+    when "Disagree"           then -0.5
+    when "Agree"              then 0.5
+    when "Strongly Agree"     then 1.0
+    else
+      0.0
+    end
+  end
+
+  def score
+    return nil if self.answerable_type != Question
+
+    question  = self.question
+    value     = self.value
+
+    {
+      x: value * question.x_weight,
+      y: value * question.y_weight,
+      z: value * question.z_weight,
+    }
+  end
 end
