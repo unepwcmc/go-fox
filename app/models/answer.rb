@@ -40,7 +40,8 @@ class Answer < ApplicationRecord
   end
 
   def score
-    return nil if self.answerable_type != Question
+    # Only return a score for scale answers using the Question class
+    return nil if self.answerable_type != "Question"
 
     question  = self.question
     value     = self.value

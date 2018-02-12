@@ -137,8 +137,6 @@ questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
     # for development only generate random x,y,z weights
     if Rails.env == 'development'
-      Random.srand(Random.new_seed)
-      # this will include -1 and 1
       q.x_weight = rand(-1.0...1.0)
       q.y_weight = rand(-1.0...1.0)
       q.z_weight = rand(-1.0...1.0)

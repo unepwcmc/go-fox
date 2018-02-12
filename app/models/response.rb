@@ -38,20 +38,23 @@ class Response < ApplicationRecord
   end
 
   def total_scores
-    x_total = self.answers.sum {|score| score[:x] }
-    y_total = self.answers.sum {|score| score[:y] }
-    z_total = self.answers.sum {|score| score[:z] }
+    scores = self.answers.map(&:score)
 
-    {x_total: x_total, y_total: y_total, z_total: z_total}
+    x_total = scores.sum {|score| score[:x]}
+    y_total = scores.sum {|score| score[:y]}
+    z_total = scores.sum {|score| score[:z]}
+
+    {x: x_total, y: y_total, z: z_total}
   end
 
   def scaled_scores
     total_number_of_questions = Question.count.to_f
+    total_scores              = self.total_scores
 
     {
-      x_scaled: total_scores[:x] / total_number_of_questions,
-      y_scaled: total_scores[:y] / total_number_of_questions,
-      z_scaled: total_scores[:z] / total_number_of_questions,
+      x: total_scores[:x] / total_number_of_questions,
+      y: total_scores[:y] / total_number_of_questions,
+      z: total_scores[:z] / total_number_of_questions
     }
   end
 
