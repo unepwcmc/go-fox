@@ -47,14 +47,14 @@ class Response < ApplicationRecord
       question = answer.question
       # calculate the preliminary values of x, y, z
       # question weight * answer value
-      x = question.x_weight * calculate_value(answer.raw) rescue nil
-      y = question.y_weight * calculate_value(answer.raw) rescue nil
-      z = question.z_weight * calculate_value(answer.raw) rescue nil
+      x = question.x_weight * calculate_value(answer.raw) rescue 0
+      y = question.y_weight * calculate_value(answer.raw) rescue 0
+      z = question.z_weight * calculate_value(answer.raw) rescue 0
 
       # sum up the totals for each axis
-      x_total_sum += x rescue nil
-      y_total_sum += y rescue nil
-      z_total_sum += z rescue nil
+      x_total_sum += x rescue 0
+      y_total_sum += y rescue 0
+      z_total_sum += z rescue 0
     end
 
     unless total_number_questions == 0
@@ -90,7 +90,7 @@ class Response < ApplicationRecord
       Classification.find_by(name: "Critical Social Science")
     elsif x.between?(-1, 0) && y.between?(0, 1)
       Classification.find_by(name: "New Conservation")
-    elseif x.between?(0, 1) && y.between?(0, 1)
+    elsif x.between?(0, 1) && y.between?(0, 1)
       Classification.find_by(name: "Traditional Conservation")
     else
       Classification.find_by(name: "Undecided")
