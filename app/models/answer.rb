@@ -24,6 +24,8 @@ class Answer < ApplicationRecord
   belongs_to :response
   belongs_to :answerable, polymorphic: true
 
+  validates :raw, :answerable_type, :answerable_id, presence: true
+
   def question
     answerable
   end
