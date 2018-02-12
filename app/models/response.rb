@@ -85,13 +85,13 @@ class Response < ApplicationRecord
     y = self.y_axis_scaled
 
     if x.between?(-1, 0) && y.between?(-1, 0)
-      Classification.find_by(name: "Market Biocentrism")
-    elsif x.between?(0, 1) && y.between?(-1, 0)
       Classification.find_by(name: "Critical Social Science")
+    elsif x.between?(0, 1) && y.between?(-1, 0)
+      Classification.find_by(name: "Traditional Conservation")
     elsif x.between?(-1, 0) && y.between?(0, 1)
       Classification.find_by(name: "New Conservation")
     elsif x.between?(0, 1) && y.between?(0, 1)
-      Classification.find_by(name: "Traditional Conservation")
+      Classification.find_by(name: "Market Biocentrism")
     else
       Classification.find_by(name: "Undecided")
     end
