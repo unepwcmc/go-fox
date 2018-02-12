@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :classifications, except: [:destroy]
   resources :demographic_questions, except: [:destroy]
   resources :questions, except: [:destroy]
   devise_for :users

@@ -9,9 +9,9 @@
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  x_axis_scaled     :float
-#  y_axis_scaled     :float
-#  z_axis_scaled     :float
+#  x_score           :float
+#  y_score           :float
+#  z_score           :float
 #  classification_id :integer
 #
 # Indexes
@@ -38,7 +38,15 @@ class ResponseTest < ActiveSupport::TestCase
   end
 
   test "creating a response generates and assigns a uuid" do
-    response = FactoryBot.create(:response, survey: @survey)
+    response = FactoryBot.create(:response)
     assert_not_nil response.uuid, "UUID was not generated or saved for a response"
+  end
+
+  test "creating a response assigns a classification" do
+    response = FactoryBot.create(:response)
+    assert_not_nil response.x_score
+    assert_not_nil response.y_score
+    assert_not_nil response.z_score
+    assert_not_nil response.classification_id
   end
 end
