@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180212122700) do
   create_table "responses", force: :cascade do |t|
     t.bigint "survey_id"
     t.string "ip_address"
-    t.string "langauge"
+    t.string "language"
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,7 +91,9 @@ ActiveRecord::Schema.define(version: 20180212122700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
+    t.text "description"
     t.index ["user_id"], name: "index_surveys_on_user_id"
+    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|

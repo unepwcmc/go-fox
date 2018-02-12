@@ -10,10 +10,12 @@
 #  updated_at          :datetime         not null
 #
 
+classification_names = ["Critical Social Science", "Market Biocentrism", "New Conservation", "Traditional Conservation", "Undecided"]
+
 FactoryBot.define do
   factory :classification do
-    name "MyString"
-    description "MyText"
-    results_description "MyText"
+    sequence(:name) { |n| "#{classification_names[n-1]}" }
+    description "description"
+    results_description "results description"
   end
 end

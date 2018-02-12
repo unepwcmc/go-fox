@@ -5,7 +5,7 @@
 #  id                :integer          not null, primary key
 #  survey_id         :integer
 #  ip_address        :string
-#  langauge          :string
+#  language          :string
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
@@ -28,7 +28,7 @@ FactoryBot.define do
   factory :response do
     association :survey, factory: :survey
     ip_address nil
-    langauge nil
+    language nil
     uuid nil
   end
 end

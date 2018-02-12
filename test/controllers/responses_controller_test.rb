@@ -4,11 +4,11 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user           = create(:user)
-    @admin          = create(:admin)
-    @survey         = create(:survey, user: @user)
-    @classification = create(:classification)
-    @response       = create(:response, survey: @survey, classification: @classification)
+    5.times {@classification = create(:classification)}
+    @user     = create(:user)
+    @admin    = create(:admin)
+    @survey   = create(:survey, user: @user)
+    @response = create(:response, survey: @survey, classification: @classification)
   end
 
   test "response can only be destroyed by a logged in user" do
@@ -64,10 +64,15 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "post to create action saves a response" do
+    answer = build(:answer)
     res = build(:response)
 
     assert_difference('Response.count', 1) do
-      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id, ip_address: res.ip_address } }
+      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id,
+                                           answers_attributes: [{raw: answer.raw,
+                                                                 answerable_type: answer.answerable_type,
+                                                                 answerable_id: answer.answerable_id
+                                                                 }]}}
     end
 
     assert_redirected_to root_path
