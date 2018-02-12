@@ -80,10 +80,15 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "post to create action saves a response" do
+    answer = build(:answer)
     res = build(:response)
 
     assert_difference('Response.count', 1) do
-      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id, ip_address: res.ip_address } }
+      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id,
+                                           answers_attributes: [{raw: answer.raw,
+                                                                 answerable_type: answer.answerable_type,
+                                                                 answerable_id: answer.answerable_id
+                                                                 }]}}
     end
 
     assert_redirected_to root_path

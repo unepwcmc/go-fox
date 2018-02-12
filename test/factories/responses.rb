@@ -2,17 +2,22 @@
 #
 # Table name: responses
 #
-#  id         :integer          not null, primary key
-#  survey_id  :integer
-#  ip_address :string
-#  langauge   :string
-#  uuid       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  survey_id         :integer
+#  ip_address        :string
+#  language          :string
+#  uuid              :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  x_score           :float
+#  y_score           :float
+#  z_score           :float
+#  classification_id :integer
 #
 # Indexes
 #
-#  index_responses_on_survey_id  (survey_id)
+#  index_responses_on_classification_id  (classification_id)
+#  index_responses_on_survey_id          (survey_id)
 #
 # Foreign Keys
 #
@@ -25,5 +30,13 @@ FactoryBot.define do
     ip_address nil
     langauge nil
     uuid nil
+
+    after(:create) do |response|
+      create_list(:answer, 3, response: response)
+    end
+
+    after(:build) do |response|
+      build_list(:answer, 3, response: response)
+    end
   end
 end

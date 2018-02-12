@@ -1,0 +1,32 @@
+<%= form_with(model: classification, local: true) do |form| %>
+  <% if classification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(classification.errors.count, "error") %> prohibited this classification from being saved:</h2>
+
+      <ul>
+      <% classification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :classification_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :classification_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :results_description %>
+    <%= form.text_area :results_description, id: :classification_results_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

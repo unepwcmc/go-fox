@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131164012) do
+ActiveRecord::Schema.define(version: 20180212122700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,25 +26,61 @@ ActiveRecord::Schema.define(version: 20180131164012) do
     t.index ["response_id"], name: "index_answers_on_response_id"
   end
 
+  create_table "classifications", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "results_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "demographic_question_translations", force: :cascade do |t|
+    t.integer "demographic_question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["demographic_question_id"], name: "index_9bfb807794557055896440a7791a7c2d67eb43cb"
+    t.index ["locale"], name: "index_demographic_question_translations_on_locale"
+  end
+
   create_table "demographic_questions", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "question_translations", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["locale"], name: "index_question_translations_on_locale"
+    t.index ["question_id"], name: "index_question_translations_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "x_weight"
+    t.float "y_weight"
+    t.float "z_weight"
   end
 
   create_table "responses", force: :cascade do |t|
     t.bigint "survey_id"
     t.string "ip_address"
-    t.string "langauge"
+    t.string "language"
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "x_score"
+    t.float "y_score"
+    t.float "z_score"
+    t.bigint "classification_id"
+    t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"
   end
 
@@ -55,6 +91,7 @@ ActiveRecord::Schema.define(version: 20180131164012) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
+    t.text "description"
     t.index ["user_id"], name: "index_surveys_on_user_id"
     t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
