@@ -44,7 +44,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
     sign_in @user
     get edit_survey_url(@survey)
-    assert_redirected_to root_path
+    assert_redirected_to root_path(locale: :en)
   end
 
   test "should get show page for logged in user" do
@@ -82,7 +82,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
       post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id } }
     end
 
-    assert_redirected_to survey_url(Survey.last)
+    assert_redirected_to survey_url(Survey.last, locale: :en)
   end
 
   test "should show survey" do
@@ -119,6 +119,6 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
       delete survey_url(@survey)
     end
 
-    assert_redirected_to surveys_url
+    assert_redirected_to surveys_url(locale: :en)
   end
 end

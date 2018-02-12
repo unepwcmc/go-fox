@@ -25,7 +25,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference('Response.count') do
       delete survey_response_url(survey2, response2)
     end
-    assert_redirected_to root_path
+    assert_redirected_to root_path(locale: :en)
   end
 
   test "an admin can delete any response" do
@@ -53,7 +53,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
 
     sign_in user
     get survey_response_url(@survey, @response)
-    assert_redirected_to root_path
+    assert_redirected_to root_path(locale: :en)
   end
 
   test "show response can be accessed by an admin" do
@@ -71,7 +71,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     survey2 = create(:survey, user: @user, published: false)
 
     get new_survey_response_path(survey2)
-    assert_redirected_to root_path
+    assert_redirected_to root_path(locale: :en)
   end
 
   test "new response can be accessed by anyone" do
@@ -91,6 +91,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
                                                                  }]}}
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to root_path(locale: :en)
   end
 end
