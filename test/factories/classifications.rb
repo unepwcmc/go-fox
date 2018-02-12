@@ -14,7 +14,7 @@ classification_names = ["Critical Social Science", "Market Biocentrism", "New Co
 
 FactoryBot.define do
   factory :classification do
-    sequence(:name) { |n| "#{classification_names[n-1]}" }
+    sequence(:name) { |n| classification_names[n-1] }
     description "description"
     results_description "results description"
   end

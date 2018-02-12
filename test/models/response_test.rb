@@ -33,14 +33,16 @@ class ResponseTest < ActiveSupport::TestCase
   end
 
   test "saving a response" do
-    classification = FactoryBot.build(:classification)
-    response = FactoryBot.build(:response, survey: @survey, classification: classification)
+    response = FactoryBot.build(:response, survey: @survey)
     assert response.save, "Response was not saved"
+    assert_not_nil response.x_score
+    assert_not_nil response.y_score
+    assert_not_nil response.z_score
+    assert_not_nil response.classification_id
   end
 
   test "creating a response generates and assigns a uuid" do
-    classification = FactoryBot.build(:classification)
-    response = FactoryBot.create(:response, survey: @survey, classification: classification)
+    response = FactoryBot.create(:response, survey: @survey)
     assert_not_nil response.uuid, "UUID was not generated or saved for a response"
   end
 end

@@ -28,7 +28,15 @@ FactoryBot.define do
   factory :response do
     association :survey, factory: :survey
     ip_address nil
-    language nil
+    langauge nil
     uuid nil
+
+    after(:create) do |response|
+      create_list(:answer, 3, response: response)
+    end
+
+    after(:build) do |response|
+      build_list(:answer, 3, response: response)
+    end
   end
 end

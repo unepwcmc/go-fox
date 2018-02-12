@@ -8,7 +8,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     @user     = create(:user)
     @admin    = create(:admin)
     @survey   = create(:survey, user: @user)
-    @response = create(:response, survey: @survey, classification: @classification)
+    @response = create(:response, survey: @survey)
   end
 
   test "response can only be destroyed by a logged in user" do
