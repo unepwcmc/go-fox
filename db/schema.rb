@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208092702) do
+ActiveRecord::Schema.define(version: 20180212122700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,30 @@ ActiveRecord::Schema.define(version: 20180208092702) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "demographic_question_translations", force: :cascade do |t|
+    t.integer "demographic_question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["demographic_question_id"], name: "index_9bfb807794557055896440a7791a7c2d67eb43cb"
+    t.index ["locale"], name: "index_demographic_question_translations_on_locale"
+  end
+
   create_table "demographic_questions", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "question_translations", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["locale"], name: "index_question_translations_on_locale"
+    t.index ["question_id"], name: "index_question_translations_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -56,9 +76,9 @@ ActiveRecord::Schema.define(version: 20180208092702) do
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "x_axis_scaled"
-    t.float "y_axis_scaled"
-    t.float "z_axis_scaled"
+    t.float "x_score"
+    t.float "y_score"
+    t.float "z_score"
     t.bigint "classification_id"
     t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"
@@ -72,7 +92,6 @@ ActiveRecord::Schema.define(version: 20180208092702) do
     t.datetime "updated_at", null: false
     t.string "uuid", null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
-    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|

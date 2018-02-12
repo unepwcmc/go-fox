@@ -9,9 +9,9 @@
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  x_axis_scaled     :float
-#  y_axis_scaled     :float
-#  z_axis_scaled     :float
+#  x_score           :float
+#  y_score           :float
+#  z_score           :float
 #  classification_id :integer
 #
 # Indexes
@@ -31,7 +31,7 @@ class Response < ApplicationRecord
 
   accepts_nested_attributes_for :answers
   before_create :set_uuid
-  before_validation :calculate_classification
+  before_validation :assign_classification
 
   def to_param
     uuid
@@ -56,10 +56,9 @@ class Response < ApplicationRecord
   end
 
   def assign_classification
-    self.x_score = scaled_scores[:x]
-    self.y_score = scaled_scores[:y]
-    self.z_score = scaled_scores[:z]
-
+    self.x_score        = scaled_scores[:x]
+    self.y_score        = scaled_scores[:y]
+    self.z_score        = scaled_scores[:z]
     self.classification = choose_classification_quadrant
   end
 
