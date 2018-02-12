@@ -42,7 +42,7 @@ class ResponseTest < ActiveSupport::TestCase
   end
 
   test "creating a response generates and assigns a uuid" do
-    response = FactoryBot.create(:response, survey: @survey)
+    response = FactoryBot.create(:response)
     assert_not_nil response.uuid, "UUID was not generated or saved for a response"
   end
 end

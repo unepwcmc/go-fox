@@ -30,8 +30,11 @@ class Response < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   accepts_nested_attributes_for :answers
-  before_create :set_uuid
-  before_validation :assign_classification
+
+  before_validation :set_uuid, on: :create
+  before_validation :assign_classification, on: :create
+
+  validates :uuid, presence: true
 
   def to_param
     uuid

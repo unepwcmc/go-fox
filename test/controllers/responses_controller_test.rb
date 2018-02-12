@@ -4,7 +4,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    5.times {@classification = create(:classification)}
     @user     = create(:user)
     @admin    = create(:admin)
     @survey   = create(:survey, user: @user)
