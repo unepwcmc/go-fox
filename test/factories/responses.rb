@@ -31,9 +31,9 @@ FactoryBot.define do
     language nil
     uuid nil
 
-    # after(:create) do |response|
-      # create_list(:answer, 3, response: response)
-    # end
+    after(:create) do |response|
+      create_list(:answer, 3, response: response)
+    end
 
     after(:build) do |response|
       build_list(:answer, 3, response: response)
