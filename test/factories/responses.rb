@@ -28,7 +28,7 @@ FactoryBot.define do
   factory :response do
     association :survey, factory: :survey
     ip_address nil
-    langauge nil
+    language nil
     uuid nil
 
     after(:create) do |response|

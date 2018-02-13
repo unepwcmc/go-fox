@@ -13,7 +13,10 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-      <%= render 'layouts/navigation' %>
+      <div class="clearfix">
+        <%= render 'layouts/navigation' %>
+        <%= render 'layouts/i18n' %>
+      </div>
       <%= yield %>
     </div>
   </body>

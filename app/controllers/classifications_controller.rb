@@ -60,6 +60,7 @@ class ClassificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classification_params
-      params.require(:classification).permit(:name, :description, :results_description)
+      params.require(:classification).permit(:name, :description, :results_description,
+                                             translations_attributes: [:id, :name, :description, :results_description, :locale])
     end
 end

@@ -14,7 +14,6 @@
 # Indexes
 #
 #  index_surveys_on_user_id  (user_id)
-#  index_surveys_on_uuid     (uuid) UNIQUE
 #
 # Foreign Keys
 #
@@ -25,6 +24,8 @@ class Survey < ApplicationRecord
   belongs_to :user
   before_create :set_uuid
   has_many :responses, dependent: :destroy
+  translates :name, :description
+  accepts_nested_attributes_for :translations
 
   def to_param
     uuid

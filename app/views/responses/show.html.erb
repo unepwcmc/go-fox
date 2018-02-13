@@ -3,6 +3,10 @@
   <%= @response.ip_address %>
 </p>
 
+<strong>language:</strong>
+<%= @response.language %>
+</p>
+
 <% @response.answers.each do |answer| %>
   <h3><%= answer.question.text %></h3>
   <%= answer.raw %>

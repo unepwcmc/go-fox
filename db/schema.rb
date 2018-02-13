@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212122700) do
+ActiveRecord::Schema.define(version: 20180213114421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20180212122700) do
     t.datetime "updated_at", null: false
     t.index ["answerable_type", "answerable_id"], name: "index_answers_on_answerable_type_and_answerable_id"
     t.index ["response_id"], name: "index_answers_on_response_id"
+  end
+
+  create_table "classification_translations", force: :cascade do |t|
+    t.integer "classification_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.text "results_description"
+    t.index ["classification_id"], name: "index_classification_translations_on_classification_id"
+    t.index ["locale"], name: "index_classification_translations_on_locale"
   end
 
   create_table "classifications", force: :cascade do |t|
@@ -84,6 +96,17 @@ ActiveRecord::Schema.define(version: 20180212122700) do
     t.index ["survey_id"], name: "index_responses_on_survey_id"
   end
 
+  create_table "survey_translations", force: :cascade do |t|
+    t.integer "survey_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.index ["locale"], name: "index_survey_translations_on_locale"
+    t.index ["survey_id"], name: "index_survey_translations_on_survey_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.string "name"
     t.boolean "published"
@@ -93,7 +116,6 @@ ActiveRecord::Schema.define(version: 20180212122700) do
     t.string "uuid", null: false
     t.text "description"
     t.index ["user_id"], name: "index_surveys_on_user_id"
-    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|

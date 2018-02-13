@@ -19,6 +19,7 @@ class ResponsesController < ApplicationController
     @response            = Response.new(response_params)
     @response.survey     = @survey
     @response.ip_address = request.remote_ip
+    @response.language   = params[:locale]
 
     respond_to do |format|
       if @response.save
