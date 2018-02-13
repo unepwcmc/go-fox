@@ -25,7 +25,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference('Response.count') do
       delete survey_response_url(survey2, response2)
     end
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path
   end
 
   test "an admin can delete any response" do
