@@ -13,11 +13,6 @@ module GoFox
 
     config.autoload_paths += %W(#{config.root}/lib)
 
-    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
-
-    I18n.available_locales = [:en, :es, :fr]
-
-    I18n.default_locale = :en
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

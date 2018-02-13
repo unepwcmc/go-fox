@@ -2,15 +2,18 @@
 #
 # Table name: classifications
 #
-#  id                  :integer          not null, primary key
-#  name                :string
-#  description         :text
-#  results_description :text
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
-classification_names = ["Critical Social Science", "Market Biocentrism", "New Conservation", "Traditional Conservation", "Undecided"]
+classification_names = [
+  "Critical Social Science",
+  "Market Biocentrism",
+  "New Conservation",
+  "Traditional Conservation",
+  "Undecided"
+]
 
 FactoryBot.define do
   factory :classification do
