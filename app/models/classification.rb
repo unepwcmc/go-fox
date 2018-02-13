@@ -13,6 +13,6 @@
 class Classification < ApplicationRecord
   has_many :responses
 
-  translates :name#, :description, :results_description
+  translates :name, :description, :results_description
   accepts_nested_attributes_for :translations
 end

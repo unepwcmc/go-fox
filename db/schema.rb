@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20180213083901) do
     t.index ["response_id"], name: "index_answers_on_response_id"
   end
 
+  create_table "classification_translations", force: :cascade do |t|
+    t.integer "classification_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.text "results_description"
+    t.index ["classification_id"], name: "index_classification_translations_on_classification_id"
+    t.index ["locale"], name: "index_classification_translations_on_locale"
+  end
+
   create_table "classifications", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -93,7 +105,6 @@ ActiveRecord::Schema.define(version: 20180213083901) do
     t.string "uuid", null: false
     t.text "description"
     t.index ["user_id"], name: "index_surveys_on_user_id"
-    t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|
