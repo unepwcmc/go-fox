@@ -9,6 +9,7 @@
 
 class DemographicQuestion < ApplicationRecord
   has_many :answers, as: :answerable
+  has_many :options
 
   translates :text
   accepts_nested_attributes_for :translations
