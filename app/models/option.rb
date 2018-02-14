@@ -9,4 +9,6 @@
 #
 
 class Option < ApplicationRecord
+  translates :text
+  accepts_nested_attributes_for :translations
 end
