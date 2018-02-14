@@ -2,11 +2,11 @@
 #
 # Table name: demographic_questions
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  type       :string
-#  validation :jsonb
+#  id            :integer          not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  question_type :string
+#  validation    :jsonb
 #
 
 class DemographicQuestion < ApplicationRecord
