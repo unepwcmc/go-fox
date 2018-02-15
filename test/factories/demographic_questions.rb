@@ -12,5 +12,6 @@
 FactoryBot.define do
   factory :demographic_question do
     text "An example demographic question"
+    question_type "Radio button"
   end
 end
