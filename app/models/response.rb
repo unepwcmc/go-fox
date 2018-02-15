@@ -41,7 +41,7 @@ class Response < ApplicationRecord
   end
 
   def total_scores
-    scores = self.answers.map(&:score)
+    scores = self.answers.where(answerable_type: "Question").map(&:score)
 
     x_total = scores.sum {|score| score[:x]}
     y_total = scores.sum {|score| score[:y]}

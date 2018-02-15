@@ -8,7 +8,9 @@ class ResponsesController < ApplicationController
   def new
     @response = Response.new
 
-    Question.all.each do |question|
+    @questions = Question.order("RANDOM()") + DemographicQuestion.first(1)
+
+    @questions.each do |question|
       @response.answers.build do |answer|
         answer.answerable = question
       end
