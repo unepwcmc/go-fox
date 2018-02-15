@@ -30,7 +30,12 @@ class DemographicQuestionsControllerTest < ActionDispatch::IntegrationTest
   test "admin should create demographic_question" do
     sign_in @admin
     assert_difference('DemographicQuestion.count') do
-      post demographic_questions_url, params: { demographic_question: { text: @demographic_question.text } }
+      post demographic_questions_url, params: {
+        demographic_question: {
+          text: @demographic_question.text,
+          question_type: @demographic_question.question_type
+          }
+        }
     end
 
     assert_redirected_to demographic_question_url(DemographicQuestion.last, locale: :en)
