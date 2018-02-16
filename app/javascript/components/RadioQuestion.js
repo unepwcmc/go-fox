@@ -3,12 +3,14 @@ import PropTypes from "prop-types"
 
 export default class RadioQuestion extends React.Component {
   // Takes in a text question and renders the form
+  fieldNameFor(value) {
+    return(this.props.model + "[" + this.props.attribute + "][" + this.props.index + "][" + value + "]")
+  }
 
   render () {
-    const fieldName = this.props.model + "[" + this.props.attribute + "][" + this.props.index + "]"
     const radioButtons = this.props.options.map((option, index) =>
       <div>
-        <input name={fieldName + "[raw]"} value={option.text} key={index} type="radio"/>{option.text}
+        <input name={this.fieldNameFor("raw")} value={option.text} key={index} type="radio"/>{option.text}
       </div>
     );
 
@@ -16,8 +18,8 @@ export default class RadioQuestion extends React.Component {
       <div>
         <h3>{this.props.question.text}</h3>
         {radioButtons}
-        <input name={fieldName + "[answerable_type]"} type="hidden" value="DemographicQuestion"/>
-        <input name={fieldName + "[answerable_id]"} type="hidden" value={this.props.question.id}/>
+        <input name={this.fieldNameFor("answerable_type")} type="hidden" value="DemographicQuestion"/>
+        <input name={this.fieldNameFor("answerable_id")} type="hidden" value={this.props.question.id}/>
       </div>
     );
   }

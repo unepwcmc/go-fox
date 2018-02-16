@@ -4,15 +4,18 @@ import PropTypes from "prop-types"
 export default class TextQuestion extends React.Component {
   // Takes in a text question and renders the form
 
+  fieldNameFor(value) {
+    return(this.props.model + "[" + this.props.attribute + "][" + this.props.index + "][" + value + "]")
+  }
+
   render () {
-    const fieldName = this.props.model + "[" + this.props.attribute + "][" + this.props.index + "]"
     return(
       <div>
         <h3>{this.props.question.text}</h3>
         <p>
-          <input name={fieldName + "[raw]"} type="text"/>
-          <input name={fieldName + "[answerable_type]"} type="hidden" value="DemographicQuestion"/>
-          <input name={fieldName + "[answerable_id]"} type="hidden" value={this.props.question.id}/>
+          <input name={this.fieldNameFor("raw")} type="text"/>
+          <input name={this.fieldNameFor("answerable_type")} type="hidden" value="DemographicQuestion"/>
+          <input name={this.fieldNameFor("answerable_id")} type="hidden" value={this.props.question.id}/>
         </p>
       </div>
     );
