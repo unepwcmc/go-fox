@@ -151,6 +151,8 @@ demographic_questions = [
   },
   {
     text: "Select your gender?",
+    options: ["Male", "Female", "Other", "Prefer not to say"],
+    question_type: "Radio button"
   },
   {
     text: "At what level is your highest completed educational qualification?",
@@ -212,7 +214,12 @@ demographic_questions = [
 ]
 
 demographic_questions.each do |demographic_question|
-  DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |dq|
+  DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |new_demographic_question|
+    new_demographic_question.question_type = demographic_question[:question_type]
+    if demographic_question[:options].present?
+      options = demographic_question[:options].map {|option| {text: option}}
+      new_demographic_question.options.build(options)
+    end
     puts "Created question with the text: #{demographic_question[:text]}..."
   end
 end

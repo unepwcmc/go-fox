@@ -20,16 +20,16 @@
     <% else %>
       <%= answer_form.object.inspect%>
       <%= answer_form.index %>
-      <%= react_component "TextQuestion", {
+      <%= react_component "RadioQuestion", {
         question: answer_form.object.question,
         model: "response",
         attribute: "answers_attributes",
         index: answer_form.index,
+        options: answer_form.object.question.options,
         field: "raw"
       } %>
     <% end %>
   <% end %>
-
 
   <div class="actions">
     <%= form.submit %>
