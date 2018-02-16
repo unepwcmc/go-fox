@@ -8,7 +8,7 @@ class ResponsesController < ApplicationController
   def new
     @response = Response.new
 
-    @questions = Question.order("RANDOM()") + DemographicQuestion.where(id: 2).first(1)
+    @questions = Question.order("RANDOM()") + DemographicQuestion.last(1)
 
     @questions.each do |question|
       @response.answers.build do |answer|
@@ -22,6 +22,8 @@ class ResponsesController < ApplicationController
     @response.survey     = @survey
     @response.ip_address = request.remote_ip
     @response.language   = params[:locale]
+
+    byebug
 
     respond_to do |format|
       if @response.save
@@ -53,7 +55,7 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(answers_attributes: [:raw, :answerable_type, :answerable_id])
+      params.require(:response).permit(answers_attributes: [{raw: {}, :answerable_type, :answerable_id}])
     end
 
     def set_response

@@ -20,7 +20,7 @@
     <% else %>
       <%= answer_form.object.inspect%>
       <%= answer_form.index %>
-      <%= react_component "RadioQuestion", {
+      <%= react_component "CheckBoxQuestion", {
         question: answer_form.object.question,
         model: "response",
         attribute: "answers_attributes",
