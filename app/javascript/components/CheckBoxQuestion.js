@@ -11,8 +11,7 @@ export default class CheckBoxQuestion extends React.Component {
   render() {
     const checkBoxes = this.props.options.map((option, index) =>
       <div key={index}>
-        <input name={this.fieldNameFor("raw")+"[]"} value="0" type="hidden"/>
-        <input name={this.fieldNameFor("raw")+"[]"} value={option.text} type="checkbox"/>{option.text}
+        <input name={this.fieldNameFor("raw") + "[]"} value={option.text} type="checkbox"/>{option.text}
       </div>
     );
 
