@@ -26,6 +26,8 @@ class Answer < ApplicationRecord
 
   validates :raw, :answerable_type, :answerable_id, presence: true
 
+  serialize :raw
+
   def question
     answerable
   end

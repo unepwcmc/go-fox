@@ -7,7 +7,6 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
-
     @questions = Question.order("RANDOM()") + DemographicQuestion.first(1)
 
     @questions.each do |question|
@@ -53,7 +52,8 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(answers_attributes: [:raw, :answerable_type, :answerable_id])
+      # Raw can be passed as either a string or an array in case of multiple answer questions like checkboxes
+      params.require(:response).permit(answers_attributes: [{raw: []}, :raw, :answerable_type, :answerable_id])
     end
 
     def set_response

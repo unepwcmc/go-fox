@@ -171,6 +171,8 @@ demographic_questions = [
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
+    options: ["Academia/educational institution", "Not for profit/non governmental organisation", "Private sector", "Government", "Other", "Not applicable"],
+    question_type: "Check box"
   },
   {
     text: "Do you have any substantial professional experience in a field other than conservation during your career?",
@@ -214,7 +216,7 @@ demographic_questions = [
 ]
 
 demographic_questions.each do |demographic_question|
-  DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |new_demographic_question|
+  DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |new_demographic_question|
     new_demographic_question.question_type = demographic_question[:question_type]
     if demographic_question[:options].present?
       options = demographic_question[:options].map {|option| {text: option}}
