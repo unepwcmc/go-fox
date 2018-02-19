@@ -9,8 +9,9 @@ export default class RadioQuestion extends React.Component {
 
   render () {
     const radioButtons = this.props.options.map((option, index) =>
-      <div>
-        <input name={this.fieldNameFor("raw")} value={option.text} key={index} type="radio"/>{option.text}
+      <div key={index}>
+        <input name={this.fieldNameFor("raw")} value={option.text} type="radio"/>
+        {option.text}
       </div>
     );
 
