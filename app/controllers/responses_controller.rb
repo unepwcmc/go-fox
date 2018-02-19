@@ -23,8 +23,6 @@ class ResponsesController < ApplicationController
     @response.ip_address = request.remote_ip
     @response.language   = params[:locale]
 
-    byebug
-
     respond_to do |format|
       if @response.save
         format.html { redirect_to root_path, notice: 'Response was successfully created.' }
