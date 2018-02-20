@@ -285,7 +285,7 @@ demographic_questions = [
     question_type: "Checkbox"
   },
   {
-    text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, certification)?",
+    text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, mitigation or species banking, certification)?",
     options: ["Yes, as a researcher",
               "Yes, as a practitioner",
               "Yes, both as a researcher and as a practitioner",
@@ -312,21 +312,11 @@ demographic_questions = [
     question_type: "Free Text"
   },
   {
-    text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey.\\r\\n\\r\\nWe will not use your address for any other reason.",
+    text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason.",
     question_type: "Free Text"
   },
   {
     text: "Have you taken this survey before?",
-    options: ["Yes", "No"],
-    question_type: "Radio button"
-  },
-  {
-    text: "Are you taking part in the WWF UK staff survey?",
-    options: ["Yes", "No"],
-    question_type: "Radio button"
-  },
-  {
-    text: "Are you taking part in the Ol Pejeta staff survey?",
     options: ["Yes", "No"],
     question_type: "Radio button"
   }
