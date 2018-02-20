@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import TextQuestion from "./TextQuestion"
 import RadioQuestion from "./RadioQuestion"
 import SelectBoxQuestion from "./SelectBoxQuestion"
+import CheckBoxQuestion from "./CheckBoxQuestion"
+import MultiSelectQuestion from "./MultiSelectQuestion"
 
 export default class DemographicQuestion extends React.Component {
   renderComponent() {
@@ -23,6 +25,10 @@ export default class DemographicQuestion extends React.Component {
         return <RadioQuestion {...sharedProps}/>;
       case 'Select box':
         return <SelectBoxQuestion {...sharedProps}/>;
+      case 'Checkbox':
+        return <CheckBoxQuestion {...sharedProps}/>;
+      case 'Multiple Select Box':
+        return <MultiSelectQuestion {...sharedProps}/>;
       default:
         return null;
     }
