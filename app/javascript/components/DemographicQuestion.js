@@ -40,12 +40,3 @@ export default class DemographicQuestion extends React.Component {
     );
   }
 }
-
-// DemographicQuestion.propTypes = {
-  // question:   PropTypes.array.isRequired,
-  // options:    PropTypes.array.isRequired,
-  // model:      PropTypes.string.isRequired,
-  // attribute:  PropTypes.string.isRequired,
-  // index:      PropTypes.integer.isRequired,
-  // field:      PropTypes.string.isRequired
-// };

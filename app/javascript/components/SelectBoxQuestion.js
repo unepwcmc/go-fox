@@ -2,8 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default class SelectBoxQuestion extends React.Component {
-  // Takes in a text question and renders the form
-
   fieldNameFor(value) {
     return(this.props.model + "[" + this.props.attribute + "][" + this.props.index + "][" + value + "]")
   }
@@ -29,8 +27,3 @@ export default class SelectBoxQuestion extends React.Component {
     );
   }
 }
-
-// TextQuestion.propTypes = {
-  // text:     PropTypes.string.isRequired,
-  // answers:  PropTypes.array.isRequired
-// };

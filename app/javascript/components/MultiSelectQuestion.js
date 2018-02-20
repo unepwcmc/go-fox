@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default class MultiSelectQuestion extends React.Component {
-
   fieldNameFor(value) {
     return(this.props.model + "[" + this.props.attribute + "][" + this.props.index + "][" + value + "]")
   }

@@ -2,8 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default class CheckBoxQuestion extends React.Component {
-  // Takes in a check box question and renders the form
-
   fieldNameFor(value) {
     return(this.props.model + "[" + this.props.attribute + "][" + this.props.index + "][" + value + "]")
   }
