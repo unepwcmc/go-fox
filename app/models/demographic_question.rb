@@ -12,6 +12,7 @@
 class DemographicQuestion < ApplicationRecord
   has_many :answers, as: :answerable
   has_many :options, dependent: :destroy
+  has_many :customised_questions
 
   validates :question_type, presence: true
 

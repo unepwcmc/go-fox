@@ -17,6 +17,7 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
+    1.times { @survey.customised_questions.build }
   end
 
   # GET /surveys/1/edit
@@ -28,6 +29,7 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     @survey.user = current_user
+    @survey.customised_questions.map {|cq| cq.survey = @survey }
 
     respond_to do |format|
       if @survey.save
@@ -73,7 +75,8 @@ class SurveysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:name, :description, :published,
-                                             translations_attributes: [:id, :name, :description, :locale])
+                                             translations_attributes: [:id, :name, :description, :locale],
+                                             customised_questions_attributes: [:id, :text, :demographic_question_id])
     end
 
     def require_ownership

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214154105) do
+ActiveRecord::Schema.define(version: 20180220155910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,26 @@ ActiveRecord::Schema.define(version: 20180214154105) do
     t.text "results_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "customised_question_translations", force: :cascade do |t|
+    t.integer "customised_question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["customised_question_id"], name: "index_396ea3e95db45ddb3189b19b1ec5229bbf128f0a"
+    t.index ["locale"], name: "index_customised_question_translations_on_locale"
+  end
+
+  create_table "customised_questions", force: :cascade do |t|
+    t.bigint "demographic_question_id"
+    t.bigint "survey_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["demographic_question_id"], name: "index_customised_questions_on_demographic_question_id"
+    t.index ["survey_id"], name: "index_customised_questions_on_survey_id"
   end
 
   create_table "demographic_question_translations", force: :cascade do |t|
@@ -160,6 +180,8 @@ ActiveRecord::Schema.define(version: 20180214154105) do
   end
 
   add_foreign_key "answers", "responses"
+  add_foreign_key "customised_questions", "demographic_questions"
+  add_foreign_key "customised_questions", "surveys"
   add_foreign_key "options", "demographic_questions"
   add_foreign_key "responses", "surveys"
   add_foreign_key "surveys", "users"

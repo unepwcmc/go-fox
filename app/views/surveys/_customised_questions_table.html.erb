@@ -1,0 +1,9 @@
+<% if survey.customised_questions.any? %>
+  <ul>
+    <% survey.customised_questions.each do |customised_question| %>
+      <li>
+        <%= customised_question.text %><%= customised_question.inspect %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
