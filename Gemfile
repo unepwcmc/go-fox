@@ -37,6 +37,8 @@ gem 'activemodel-serializers-xml'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'webpacker', '~> 3.2.2'
+gem 'react-rails', '~> 2.4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -145,74 +145,190 @@ questions.each do |question|
   end
 end
 
+countries = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
+  "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria",
+  "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+  "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina",
+  "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria",
+  "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands",
+  "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands",
+  "Colombia", "Comoros", "Congo", "Congo, The Democratic Republic of the", "Cook Islands", "Costa Rica",
+  "Côte d'Ivoire", "Croatia", "Cuba", "Curaçao", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+  "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea",
+  "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France",
+  "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia",
+  "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam",
+  "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands",
+  "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia",
+  "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan",
+  "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of",
+  "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon",
+  "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao",
+  "Macedonia, Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
+  "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of",
+  "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar",
+  "Namibia", "Nauru", "Nepal", "Netherlands Antilles", "Netherlands", "New Caledonia", "New Zealand",
+  "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman",
+  "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines",
+  "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Réunion", "Romania", "Russian Federation",
+  "Rwanda", "Saint Barthélemy", "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis",
+  "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines",
+  "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
+  "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands",
+  "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain",
+  "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland",
+  "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste",
+  "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan",
+  "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+  "United States Minor Outlying Islands", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
+  "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.",
+  "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
+
 demographic_questions = [
   {
     text: "What is your age?",
+    question_type: "Free Text"
   },
   {
     text: "Select your gender?",
+    options: ["Male", "Female", "Other", "Prefer not to say"],
+    question_type: "Radio button"
   },
   {
     text: "At what level is your highest completed educational qualification?",
+    options: ["School level",
+              "Post-high school, but at an institution other than a university",
+              "Undergraduate/bachelors university degree",
+              "Masters degree/postgraduate qualification",
+              "Doctorate",
+              "Not applicable"],
+    question_type: "Radio button"
   },
   {
     text: "Which of the following best describes your educational specialism?",
+    options: ["Biological sciences (e.g. zoology, plant sciences)",
+              "Non-biological natural sciences (e.g. chemistry, maths, engineering)",
+              "Social sciences (e.g. economics, human geography, political science)",
+              "Humanities (e.g. literature, history, philosophy, languages)",
+              "Interdisciplinary (a combination of at least two of natural science, social science and humanities)",
+              "Not applicable"],
+    question_type: "Radio button"
   },
   {
     text: "What is your country of nationality?",
+    options: countries,
+    question_type: "Select box"
   },
   {
     text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
+    options: countries,
+    question_type: "Multiple Select Box"
   },
   {
     text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
+    question_type: "Free Text"
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
+    options: ["Academia/educational institution",
+              "Not for profit/non governmental organisation",
+              "Private sector",
+              "Government",
+              "Other",
+              "Not applicable"],
+    question_type: "Checkbox"
   },
   {
     text: "Do you have any substantial professional experience in a field other than conservation during your career?",
+    options: ["Yes", "No", "Not applicable"],
+    question_type: "Radio button"
   },
   {
     text: "In which of the following sectors have you done non-conservation work in your career?",
+    options: ["Academia/educational institution",
+              "Not for profit/non governmental organisation",
+              "Private sector",
+              "Government",
+              "Other",
+              "Not applicable"],
+    question_type: "Checkbox"
   },
   {
     text: "Which of the following categories best describes your current professional engagement in conservation?",
+    options: ["Exclusively a researcher",
+             "Mostly a researcher",
+             "Both a researcher and practitioner",
+             "Mostly a practitioner",
+             "Exclusively a practitioner",
+             "Not applicable"],
+    question_type: "Radio button"
   },
   {
     text: "Which of the following categories best describes the seniority of your current role within conservation?",
+    options: ["Very junior position",
+              "Fairly junior position",
+              "Neither senior nor junior position",
+              "Fairly senior position",
+              "Very senior position",
+              "I am not currently working in conservation"],
+    question_type: "Radio button"
   },
   {
     text: "In which of the following contexts have you done significant amounts of professional conservation work?",
+    options: ["Very heavily modified ecosystems (e.g. urban areas)",
+              "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)",
+              "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)",
+              "Largely unmodified ecosystems (e.g. sustainable use area)",
+              "Unmodified or very little modified ecosystem (e.g. wilderness areas)",
+              "Other",
+              "Not applicable"],
+    question_type: "Checkbox"
   },
   {
-    text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, certification)?",
+    text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, mitigation or species banking, certification)?",
+    options: ["Yes, as a researcher",
+              "Yes, as a practitioner",
+              "Yes, both as a researcher and as a practitioner",
+              "No"],
+    question_type: "Radio button"
   },
   {
     text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
+    options: ["Values of family and friends during childhood",
+              "Values of family and friends during adulthood",
+              "Outdoor play/recreation during childhood",
+              "Outdoor play/recreation during adulthood",
+              "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood",
+              "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood",
+              "Formal education experience (e.g. field trip, classroom session) during childhood",
+              "Formal education experience (e.g. field trip, classroom session) during adulthood",
+              "Professional experience during adulthood",
+              "None of the above",
+              "Not applicable"],
+     question_type: "Checkbox"
   },
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",
+    question_type: "Free Text"
   },
   {
-    text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey.\\r\\n\\r\\nWe will not use your address for any other reason.",
+    text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason.",
+    question_type: "Free Text"
   },
   {
     text: "Have you taken this survey before?",
-  },
-  {
-    text: "Are you taking part in the WWF UK staff survey?",
-  },
-  {
-    text: "If you are answering this as part of the WWF UK survey please choose your programme",
-  },
-  {
-    text: "Are you taking part in the Ol Pejeta staff survey?",
+    options: ["Yes", "No"],
+    question_type: "Radio button"
   }
 ]
 
 demographic_questions.each do |demographic_question|
-  DemographicQuestion.where(text: demographic_question[:text]).first_or_create do |dq|
+  DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |new_demographic_question|
+    new_demographic_question.question_type = demographic_question[:question_type]
+    if demographic_question[:options].present?
+      options = demographic_question[:options].map {|option| {text: option}}
+      new_demographic_question.options.build(options)
+    end
     puts "Created question with the text: #{demographic_question[:text]}..."
   end
 end

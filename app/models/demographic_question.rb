@@ -11,9 +11,11 @@
 
 class DemographicQuestion < ApplicationRecord
   has_many :answers, as: :answerable
-  has_many :options
+  has_many :options, dependent: :destroy
+
   validates :question_type, presence: true
 
   translates :text
+
   accepts_nested_attributes_for :translations
 end
