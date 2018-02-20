@@ -18,7 +18,7 @@
       <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
       <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
     <% else %>
-      <%= react_component "MultiSelectQuestion", {
+      <%= react_component "DemographicQuestion", {
         question: answer_form.object.question,
         model: "response",
         attribute: "answers_attributes",
