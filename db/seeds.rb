@@ -326,11 +326,6 @@ demographic_questions = [
     question_type: "Radio button"
   },
   {
-    text: "If you are answering this as part of the WWF UK survey please choose your programme",
-    options: ["Yes", "No"],
-    question_type: "Radio button"
-  },
-  {
     text: "Are you taking part in the Ol Pejeta staff survey?",
     options: ["Yes", "No"],
     question_type: "Radio button"
