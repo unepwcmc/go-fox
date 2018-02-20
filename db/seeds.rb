@@ -165,9 +165,11 @@ demographic_questions = [
   },
   {
     text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
+    options: ["France", "Germany", "Spain", "United Kingdom"],
+    question_type: "Multiple Select Box"
   },
   {
-    text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
+    text: "If more than three, please tell us how many countries you have worked in as a conservationist in total."
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
@@ -194,6 +196,13 @@ demographic_questions = [
   },
   {
     text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
+    options: ["Values of family and friends during childhood", "Values of family and friends during adulthood",
+              "Outdoor play/recreation during childhood", "Outdoor play/recreation during adulthood",
+              "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood",
+              "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood",
+              "Formal education experience (e.g. field trip, classroom session) during childhood",
+              "Formal education experience (e.g. field trip, classroom session) during adulthood",
+              "Professional experience during adulthood", "None of the above", "Not applicable"],
   },
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",

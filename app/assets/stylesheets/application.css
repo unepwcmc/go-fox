@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  *= require milligram/dist/milligram
+ *= require select2/dist/css/select2
  */

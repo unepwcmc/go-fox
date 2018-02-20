@@ -7,7 +7,9 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
-    @questions = Question.order("RANDOM()") + DemographicQuestion.first(1)
+    @questions = Question.order("RANDOM()") + DemographicQuestion.where(
+      text: "Where have you done most of your work as a conservationist? Please select up to three countries."
+    )
 
     @questions.each do |question|
       @response.answers.build do |answer|
