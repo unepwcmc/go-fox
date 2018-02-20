@@ -173,7 +173,12 @@ demographic_questions = [
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
-    options: ["Academia/educational institution", "Not for profit/non governmental organisation", "Private sector", "Government", "Other", "Not applicable"],
+    options: ["Academia/educational institution",
+              "Not for profit/non governmental organisation",
+              "Private sector",
+              "Government",
+              "Other",
+              "Not applicable"],
     question_type: "Check box"
   },
   {
@@ -196,13 +201,17 @@ demographic_questions = [
   },
   {
     text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
-    options: ["Values of family and friends during childhood", "Values of family and friends during adulthood",
-              "Outdoor play/recreation during childhood", "Outdoor play/recreation during adulthood",
+    options: ["Values of family and friends during childhood",
+              "Values of family and friends during adulthood",
+              "Outdoor play/recreation during childhood",
+              "Outdoor play/recreation during adulthood",
               "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood",
               "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood",
               "Formal education experience (e.g. field trip, classroom session) during childhood",
               "Formal education experience (e.g. field trip, classroom session) during adulthood",
-              "Professional experience during adulthood", "None of the above", "Not applicable"],
+              "Professional experience during adulthood",
+              "None of the above",
+              "Not applicable"],
   },
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",
