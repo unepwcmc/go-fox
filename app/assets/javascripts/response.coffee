@@ -1,3 +1,6 @@
 $(document).on 'turbolinks:load', ->
-  $(document).find('select').not('.select2-hidden-accessible').select2()
+  $(document).find('select').select2( {
+    allowClear: true,
+    placeholder: "Select an option"
+  });
   return
