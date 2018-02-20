@@ -15,8 +15,8 @@ export default class MultiSelectQuestion extends React.Component {
     return(
       <div>
         <h3>{this.props.question.text}</h3>
-          <select className="js-example-basic-multiple" name={this.fieldNameFor("raw")} multiple="multiple">
-            <option> </option>
+          <select className="js-example-placeholder-multiple form-control" name={this.fieldNameFor("raw")} multiple="multiple">
+            <option></option>
             {selectOptions}
         </select>
       </div>
