@@ -323,14 +323,21 @@ demographic_questions = [
 ]
 
 demographic_questions.each do |demographic_question|
-  DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |new_demographic_question|
-    new_demographic_question.question_type = demographic_question[:question_type]
-    if demographic_question[:options].present?
-      options = demographic_question[:options].map {|option| {text: option}}
-      new_demographic_question.options.build(options)
+  question  = DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |dq|
+                dq.question_type = demographic_question[:question_type]
+                puts "+ Adding demographic question..."
+                puts demographic_question[:text]
+              end
+
+
+  # Add options for question if they don't exist
+  if demographic_question[:options]
+    demographic_question[:options].each do |option|
+      Option.where(text: option, optionable_id: question, optionable_type: "DemographicQuestion").first_or_create
+      puts "\t- #{option}"
     end
-    puts "Created question with the text: #{demographic_question[:text]}..."
   end
+
 end
 
 classifications = [
@@ -362,21 +369,10 @@ classifications = [
 ]
 
 classifications.each do |classification|
-  cls = Classification.where(name: classification[:name]).first_or_create do |c|
-    c.description = classification[:description]
+  Classification.where(name: classification[:name]).first_or_create do |c|
+    c.description         = classification[:description]
     c.results_description = classification[:results_description]
-    puts "Created classification with the name: #{classification[:name]}..."
-  end
 
-  # If there is a change from the saved record, update it
-  unless cls.description == classification[:description] ||
-    cls.results_description == classification[:results_description] ||
-    cls.name == classification[:name]
-
-    cls.update_attributes(
-      name:                 classification[:name],
-      description:          classification[:description],
-      results_description:  classification[:results_description]
-    )
+    puts "+ Created Classification: #{classification[:name]}"
   end
 end
