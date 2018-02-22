@@ -5,7 +5,6 @@
 #  id                      :integer          not null, primary key
 #  demographic_question_id :integer
 #  survey_id               :integer
-#  text                    :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #
@@ -28,6 +27,7 @@ class CustomisedQuestion < ApplicationRecord
 
   translates :text
   accepts_nested_attributes_for :translations
+  accepts_nested_attributes_for :options
 
   def question_type
     self.demographic_question.question_type

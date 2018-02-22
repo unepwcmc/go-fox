@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222114618) do
+ActiveRecord::Schema.define(version: 20180222152356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,10 +98,8 @@ ActiveRecord::Schema.define(version: 20180222114618) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "demographic_question_id"
     t.integer "optionable_id"
     t.string "optionable_type"
-    t.index ["demographic_question_id"], name: "index_options_on_demographic_question_id"
     t.index ["optionable_id", "optionable_type"], name: "index_options_on_optionable_id_and_optionable_type"
   end
 
@@ -185,7 +183,6 @@ ActiveRecord::Schema.define(version: 20180222114618) do
   add_foreign_key "answers", "responses"
   add_foreign_key "customised_questions", "demographic_questions"
   add_foreign_key "customised_questions", "surveys"
-  add_foreign_key "options", "demographic_questions"
   add_foreign_key "responses", "surveys"
   add_foreign_key "surveys", "users"
 end
