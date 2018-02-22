@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <p>
+    <%= f.label :demographic_question_id %>
+    <%= f.collection_select :demographic_question_id, DemographicQuestion.all, :id, :text %>
+  </p>
+
+  <p>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </p>
+
+  <%= link_to_remove_association "Remove Custom Question", f, {class: "button"} %>
+</div>

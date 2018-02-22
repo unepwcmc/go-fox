@@ -15,4 +15,8 @@ class Question < ApplicationRecord
 
   translates :text
   accepts_nested_attributes_for :translations
+
+  def question_type
+    "Scale"
+  end
 end

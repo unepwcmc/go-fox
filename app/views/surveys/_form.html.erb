@@ -26,17 +26,12 @@
   <h3>Customised Questions</h3>
   <hr>
 
-  <%= form.fields_for :customised_questions do |customised_questions_form| %>
-    <p>
-      <%= customised_questions_form.label :demographic_question_id %>
-      <%= customised_questions_form.collection_select :demographic_question_id, DemographicQuestion.all, :id, :text %>
-    </p>
-
-    <p>
-      <%= customised_questions_form.label :text %>
-      <%= customised_questions_form.text_field :text %>
-    </p>
-  <% end %>
+  <div class="field">
+    <%= form.fields_for :customised_questions do |customised_questions_form| %>
+      <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
+      <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
+    <% end %>
+  </div>
 
 
   <div class="field">

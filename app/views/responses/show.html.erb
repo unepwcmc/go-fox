@@ -9,5 +9,5 @@
 
 <% @response.answers.each do |answer| %>
   <h3><%= answer.question.text %></h3>
-  <%= answer.raw %>
+  <%= format_answer(answer) %>
 <% end %>

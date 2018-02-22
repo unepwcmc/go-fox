@@ -20,7 +20,7 @@ export default class SelectBoxQuestion extends React.Component {
             {selectOptions}
           </select>
 
-          <input name={this.fieldNameFor("answerable_type")} type="hidden" value="DemographicQuestion"/>
+          <input name={this.fieldNameFor("answerable_type")} type="hidden" value={this.props.questionClass}/>
           <input name={this.fieldNameFor("answerable_id")} type="hidden" value={this.props.question.id}/>
         </p>
       </div>

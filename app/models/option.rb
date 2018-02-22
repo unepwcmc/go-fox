@@ -18,6 +18,7 @@
 
 class Option < ApplicationRecord
   belongs_to :demographic_question
+
   translates :text
   accepts_nested_attributes_for :translations
 end

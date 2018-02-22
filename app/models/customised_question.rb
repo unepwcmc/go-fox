@@ -21,9 +21,14 @@
 #
 
 class CustomisedQuestion < ApplicationRecord
+  has_many :answers, as: :answerable
   belongs_to :demographic_question
   belongs_to :survey
 
   translates :text
   accepts_nested_attributes_for :translations
+
+  def question_type
+    self.demographic_question.question_type
+  end
 end

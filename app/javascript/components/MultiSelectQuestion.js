@@ -17,7 +17,7 @@ export default class MultiSelectQuestion extends React.Component {
         <select className="js-select2" name={this.fieldNameFor("raw") + "[]"} multiple="multiple">
           {selectOptions}
         </select>
-        <input name={this.fieldNameFor("answerable_type")} type="hidden" value="DemographicQuestion"/>
+        <input name={this.fieldNameFor("answerable_type")} type="hidden" value={this.props.questionClass}/>
         <input name={this.fieldNameFor("answerable_id")} type="hidden" value={this.props.question.id}/>
       </div>
     );

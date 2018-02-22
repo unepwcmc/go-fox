@@ -76,7 +76,7 @@ class SurveysController < ApplicationController
     def survey_params
       params.require(:survey).permit(:name, :description, :published,
                                              translations_attributes: [:id, :name, :description, :locale],
-                                             customised_questions_attributes: [:id, :text, :demographic_question_id])
+                                             customised_questions_attributes: [:id, :text, :demographic_question_id, :_destroy])
     end
 
     def require_ownership
