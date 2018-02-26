@@ -1,7 +1,7 @@
 <div class="nested-fields">
   <p>
     <%= f.label :demographic_question_id %>
-    <%= f.collection_select :demographic_question_id, DemographicQuestion.all, :id, :text %>
+    <%= f.collection_select :demographic_question_id, @customisable_questions, :id, :text %>
   </p>
 
   <p>

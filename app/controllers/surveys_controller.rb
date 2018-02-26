@@ -16,9 +16,8 @@ class SurveysController < ApplicationController
 
   # GET /surveys/new
   def new
-    @survey = Survey.new
-    # @survey.customised_questions.build
-    # @survey.customised_questions.each {|cq| cq.options.build }
+    @survey                 = Survey.new
+    @customisable_questions = DemographicQuestion.where(customisable: true)
   end
 
   # GET /surveys/1/edit
@@ -28,11 +27,9 @@ class SurveysController < ApplicationController
   # POST /surveys
   # POST /surveys.json
   def create
-    @survey = Survey.new(survey_params)
-    @survey.user = current_user
-    @survey.customised_questions.map do |cq|
-      cq.survey = @survey
-    end
+    @survey       = Survey.new(survey_params)
+    @survey.user  = current_user
+    @survey.customised_questions.map {|cq| cq.survey = @survey }
 
     respond_to do |format|
       if @survey.save
@@ -78,9 +75,10 @@ class SurveysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:name, :description, :published,
-                                             translations_attributes: [:id, :name, :description, :locale],
-                                             customised_questions_attributes: [:id, :text, :demographic_question_id, :locale, :_destroy,
-                                                                               options_attributes: [:optionable_id, :optionable_type, :text, :locale]])
+                                     translations_attributes: [:id, :name, :description, :locale],
+                                     customised_questions_attributes: [:id, :text, :demographic_question_id, :locale,
+                                       options_attributes: [:optionable_id, :optionable_type, :text, :locale]
+                                     ])
     end
 
     def require_ownership

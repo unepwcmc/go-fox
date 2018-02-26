@@ -17,18 +17,7 @@
       <p><%= answer_form.collection_radio_buttons :raw, scale_options_for_answers, :to_s, :to_s, checked: answer_form.object.raw %></p>
       <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
       <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
-    <% elsif answer_form.object.question.class.name == "DemographicQuestion" %>
-      <%= react_component "DemographicQuestion", {
-        question: answer_form.object.question,
-        questionType: answer_form.object.question.question_type,
-        questionClass: answer_form.object.question.class.name,
-        model: "response",
-        attribute: "answers_attributes",
-        index: answer_form.index,
-        options: answer_form.object.question.options,
-        field: "raw"
-      } %>
-    <% elsif answer_form.object.question.class.name == "CustomisedQuestion" %>
+    <% else answer_form.object.question.class.name == "DemographicQuestion" %>
       <%= react_component "DemographicQuestion", {
         question: answer_form.object.question,
         questionType: answer_form.object.question.question_type,
