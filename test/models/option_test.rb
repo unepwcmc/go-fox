@@ -18,7 +18,7 @@ require 'test_helper'
 class OptionTest < ActiveSupport::TestCase
   test "saving an option" do
     dq = FactoryBot.build(:demographic_question)
-    option = FactoryBot.build(:option, demographic_question: dq)
+    option = FactoryBot.build(:option, optionable: dq)
     assert option.save, "Option was not saved"
   end
 end

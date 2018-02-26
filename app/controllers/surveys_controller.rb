@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_customisable_questions, only: [:new, :edit]
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
   # GET /surveys
@@ -16,8 +17,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/new
   def new
-    @survey                 = Survey.new
-    @customisable_questions = DemographicQuestion.where(customisable: true)
+    @survey = Survey.new
   end
 
   # GET /surveys/1/edit
@@ -70,6 +70,10 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find_by_uuid(params[:uuid])
+    end
+
+    def set_customisable_questions
+      @customisable_questions = DemographicQuestion.where(customisable: true)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
