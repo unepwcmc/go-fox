@@ -29,8 +29,9 @@
   <div class="field">
     <%= form.fields_for :customised_questions do |customised_questions_form| %>
       <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
-      <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
     <% end %>
+
+    <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
   </div>
 
 

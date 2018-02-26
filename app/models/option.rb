@@ -14,7 +14,7 @@
 #
 
 class Option < ApplicationRecord
-  belongs_to :optionable, polymorphic: true
+  belongs_to :optionable, polymorphic: true, optional: true
 
   translates :text
   accepts_nested_attributes_for :translations

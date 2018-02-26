@@ -4,7 +4,14 @@
   <ul>
     <% survey.customised_questions.each do |customised_question| %>
       <li>
-        <%= customised_question.text %><%= customised_question.inspect %>
+        <%= customised_question.text %>
+        <% if customised_question.options.any? %>
+          <ul>
+            <% customised_question.options.each do |option| %>
+              <li><%= option.text %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </li>
     <% end %>
   </ul>

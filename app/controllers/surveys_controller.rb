@@ -17,6 +17,8 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
+    # @survey.customised_questions.build
+    # @survey.customised_questions.each {|cq| cq.options.build }
   end
 
   # GET /surveys/1/edit
@@ -28,7 +30,9 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     @survey.user = current_user
-    @survey.customised_questions.map {|cq| cq.survey = @survey }
+    @survey.customised_questions.map do |cq|
+      cq.survey = @survey
+    end
 
     respond_to do |format|
       if @survey.save
@@ -75,7 +79,8 @@ class SurveysController < ApplicationController
     def survey_params
       params.require(:survey).permit(:name, :description, :published,
                                              translations_attributes: [:id, :name, :description, :locale],
-                                             customised_questions_attributes: [:id, :text, :demographic_question_id, :_destroy])
+                                             customised_questions_attributes: [:id, :text, :demographic_question_id, :locale, :_destroy,
+                                                                               options_attributes: [:optionable_id, :optionable_type, :text, :locale]])
     end
 
     def require_ownership

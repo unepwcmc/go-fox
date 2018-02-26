@@ -22,6 +22,7 @@
 class CustomisedQuestion < ApplicationRecord
   has_many :answers, as: :answerable
   has_many :options, as: :optionable
+
   belongs_to :demographic_question
   belongs_to :survey
 
