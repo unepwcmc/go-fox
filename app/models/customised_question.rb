@@ -28,7 +28,7 @@ class CustomisedQuestion < ApplicationRecord
 
   translates :text
   accepts_nested_attributes_for :translations
-  accepts_nested_attributes_for :options
+  accepts_nested_attributes_for :options, allow_destroy: true
 
   def question_type
     self.demographic_question.question_type

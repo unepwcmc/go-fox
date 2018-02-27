@@ -29,7 +29,7 @@ class Survey < ApplicationRecord
   translates :name, :description
 
   accepts_nested_attributes_for :translations
-  accepts_nested_attributes_for :customised_questions
+  accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
   def to_param
     uuid
