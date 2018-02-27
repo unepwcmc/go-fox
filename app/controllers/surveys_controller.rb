@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_customisable_questions, only: [:new, :edit]
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
   # GET /surveys
@@ -26,8 +27,9 @@ class SurveysController < ApplicationController
   # POST /surveys
   # POST /surveys.json
   def create
-    @survey = Survey.new(survey_params)
-    @survey.user = current_user
+    @survey       = Survey.new(survey_params)
+    @survey.user  = current_user
+    @survey.customised_questions.map {|cq| cq.survey = @survey }
 
     respond_to do |format|
       if @survey.save
@@ -70,10 +72,17 @@ class SurveysController < ApplicationController
       @survey = Survey.find_by_uuid(params[:uuid])
     end
 
+    def set_customisable_questions
+      @customisable_questions = DemographicQuestion.where(customisable: true)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:name, :description, :published,
-                                             translations_attributes: [:id, :name, :description, :locale])
+                                     translations_attributes: [:id, :name, :description, :locale, :_destroy],
+                                     customised_questions_attributes: [:id, :text, :demographic_question_id, :locale, :_destroy,
+                                       options_attributes: [:id, :optionable_id, :optionable_type, :text, :locale, :_destroy]
+                                     ])
     end
 
     def require_ownership

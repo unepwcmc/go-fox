@@ -10,15 +10,17 @@ import MultiSelectQuestion from "./MultiSelectQuestion"
 export default class DemographicQuestion extends React.Component {
   renderComponent() {
     let sharedProps = {
-      question:   this.props.question,
-      options:    this.props.options,
-      model:      this.props.model,
-      attribute:  this.props.attribute,
-      index:      this.props.index,
-      field:      this.props.field
+      index:          this.props.index,
+      question:       this.props.question, // This can either be a demographic or customised question
+      questionType:   this.props.questionType,
+      questionClass:  this.props.questionClass,
+      options:        this.props.options,
+      model:          this.props.model,
+      attribute:      this.props.attribute,
+      field:          this.props.field
     };
 
-    switch(this.props.question.question_type) {
+    switch(this.props.questionType) {
       case 'Free Text':
         return <TextQuestion {...sharedProps}/>;
       case 'Radio button':

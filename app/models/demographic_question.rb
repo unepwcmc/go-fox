@@ -7,11 +7,13 @@
 #  updated_at    :datetime         not null
 #  question_type :string
 #  validation    :jsonb
+#  customisable  :boolean          default(FALSE)
 #
 
 class DemographicQuestion < ApplicationRecord
   has_many :answers, as: :answerable
-  has_many :options, dependent: :destroy
+  has_many :options, as: :optionable, dependent: :destroy
+  has_many :customised_questions
 
   validates :question_type, presence: true
 

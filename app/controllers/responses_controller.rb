@@ -7,7 +7,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
-    @questions = Question.order("RANDOM()") + DemographicQuestion.all
+    @questions = @survey.questions
 
     @questions.each do |question|
       @response.answers.build do |answer|

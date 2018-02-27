@@ -7,6 +7,7 @@
 #  updated_at    :datetime         not null
 #  question_type :string
 #  validation    :jsonb
+#  customisable  :boolean          default(FALSE)
 #
 
 require 'test_helper'

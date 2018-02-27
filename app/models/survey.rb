@@ -20,13 +20,29 @@
 #
 
 class Survey < ApplicationRecord
-  belongs_to :user
   before_create :set_uuid
+
   has_many :responses, dependent: :destroy
+  has_many :customised_questions, dependent: :destroy
+  belongs_to :user
+
   translates :name, :description
+
   accepts_nested_attributes_for :translations
+  accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
   def to_param
     uuid
+  end
+
+  def questions
+    # Returns all the questions for this survey,
+    # taking into account customised questions,
+    # and excluding and demographic questions that they may override.
+    customised_questions      = self.customised_questions
+    excluded_demographic_ids  = customised_questions.pluck(:demographic_question_id)
+    demographic_questions     = DemographicQuestion.all.reject {|question| excluded_demographic_ids.include?(question.id) }
+
+    Question.order("RANDOM()") + demographic_questions + customised_questions
   end
 end

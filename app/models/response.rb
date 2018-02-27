@@ -29,7 +29,7 @@ class Response < ApplicationRecord
   belongs_to :classification
   has_many :answers, dependent: :destroy
 
-  accepts_nested_attributes_for :answers
+  accepts_nested_attributes_for :answers, reject_if: lambda { |a| a[:raw].blank? }
 
   before_validation :set_uuid, on: :create
   before_validation :assign_classification, on: :create
