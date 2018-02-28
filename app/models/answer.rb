@@ -32,6 +32,14 @@ class Answer < ApplicationRecord
     answerable
   end
 
+  def raw_formatted
+    if ["Checkbox", "Multiple Select Box"].include?(question_type)
+      self.raw.join(", ")
+    else
+      self.raw
+    end
+  end
+
   def value
     case self.raw
     when "Strongly Disagree"  then -1.0
