@@ -40,6 +40,17 @@ class Response < ApplicationRecord
     uuid
   end
 
+  def answer_for(question)
+    # If the question is a demographic question, we'll also find the answer for any customised instance of this question
+    if question.class.name == "DemographicQuestion"
+      customised_question = question.customised_questions.find_by(survey: self.survey, demographic_question: question)
+    end
+
+    question = customised_question ? customised_question : question
+
+    self.answers.find_by(answerable: question)
+  end
+
   def total_scores
     scores = self.answers.where(answerable_type: "Question").map(&:score)
 
