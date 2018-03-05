@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require milligram/dist/milligram
+ *= milligram/dist/milligram
  *= require select2/dist/css/select2
  */
 
@@ -22,3 +22,6 @@
 @import './utilities/flexbox.scss';
 @import './utilities/base.scss';
 @import './utilities/helpers.scss';
+
+// components
+@import './components/*';
