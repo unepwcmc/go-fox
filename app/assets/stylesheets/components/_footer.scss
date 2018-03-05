@@ -1,3 +1,9 @@
 //--------------------------------------------------
 // footer
 //--------------------------------------------------
+.footer {
+  background-color: $primary;
+  color: $white;
+  padding: 0 $gutter-large;
+  width: auto; height: rem-calc(66);
+}

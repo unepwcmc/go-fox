@@ -1,10 +1,12 @@
-<div class="topbar flex flex-v-center f-h-between">
+<div class="topbar flex flex-v-center flex-h-between">
   <%= link_to '/', title: 'gofox' do %>
     <%#= image_tag 'logo.svg', alt: 'gofox logo' %>
     LOGO
   <% end %>
+  
+  <p>
+    <%= link_to 'Log in', new_user_session_path, title: 'Log in' %>
 
-  <%= link_to 'Log in', new_user_session_path, title: 'Log in' %>
-
-  <%= link_to 'Sign up', new_user_registration_path, title: 'Sign up' %>
+    <%= link_to 'Sign up', new_user_registration_path, title: 'Sign up' %>
+  </p>
 </div>
