@@ -10,23 +10,31 @@
 //--------------------------------------------------
 // colours
 //--------------------------------------------------
-$black: #000000;
+$white: #ffffff;
 
 $grey-light: #f4f4f4;
 $grey: #7f7f7f;
 $grey-dark: #343434;
 
-$primary: red;
-$secondary: blue;
+$black: #000000;
 
-$accent: green;
+// $blue-light:
+$blue: #2486B8;
+$blue-dark: #466882;
+
+$purple-light: #E9EDF0;
+
+$primary: $blue-dark;
+$secondary: $purple-light;
+
+$accent: $blue;
 
 //--------------------------------------------------
 // fonts
 //--------------------------------------------------
-$font-roboto: 'Roboto', sans-serif;
+$font-quattro: 'Quattrocento Sans', sans-serif;
 
-$body-font: $font-roboto;
+$body-font: $font-quattro;
 $body-font-color: $black;
 
 //--------------------------------------------------
