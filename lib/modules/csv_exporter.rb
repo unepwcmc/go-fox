@@ -3,7 +3,7 @@ module CsvExporter
   @@default_na = "n/a"
   @@questions  = Question.all + DemographicQuestion.all
 
-  def self.export(survey=nil, from_date=nil, to_date=nil)
+  def self.export(survey, from_date, to_date)
     filepath  = self.create_filepath
     responses = self.find_responses(survey, from_date, to_date)
 
@@ -26,7 +26,7 @@ module CsvExporter
     conditions[:created_at] = from_date..to_date        if (from_date.present? && to_date.present?)
     conditions[:survey]     = survey                    if survey.present?
 
-    Response.all(conditions: conditions).find_in_batches(batch_size: @@batch_size)
+    Response.where(conditions: conditions).find_in_batches(batch_size: @@batch_size)
   end
 
   def format_response_row(response, default=@@default_na)

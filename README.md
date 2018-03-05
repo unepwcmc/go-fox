@@ -12,6 +12,11 @@
 - `bundle install`
 - `rails db:create db:migrate db:seed`
 - `yarn install`
-- `rails s`
 
-In a seperate window, run `webpack-dev-server`
+You'll need to open a separate tab for each of these to run in...
+
+- `rails s`
+- `webpack-dev-server`
+- `redis-server`
+- `sidekiq`
+
