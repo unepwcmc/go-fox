@@ -1,0 +1,45 @@
+//--------------------------------------------------
+// buttons
+//--------------------------------------------------
+//--------------------------------------------------
+// reusable styles
+//--------------------------------------------------
+%button {
+  text-decoration: none;
+
+  &--blue {
+    background-color: $accent;
+    color: $white;
+  }
+
+  &--oblong { 
+    border: solid 1px $primary;
+    border-radius: rem-calc(12); 
+    font-weight: bold;
+    padding: rem-calc(14 20);
+  }
+}
+
+
+//--------------------------------------------------
+// button classes
+//--------------------------------------------------
+.button {
+  &--log-in {
+    @extend %button;
+    @extend %button--oblong;
+    color: $primary;
+
+    &:hover { background-color: $white; }
+  }
+
+  &--sign-up {
+    @extend %button;
+    @extend %button--oblong;
+    background-color: lighten($accent, 16%);
+    border-color: $accent;
+    color: white;
+
+    &:hover { background-color: $accent; }
+  }
+}
