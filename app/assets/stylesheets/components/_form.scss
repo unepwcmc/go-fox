@@ -19,7 +19,7 @@ input[type='submit'] {
   @extend %button--blue;
   @extend %button--rounded;
   box-shadow: $grey 0 2px 12px 0;
-  margin-bottom: rem-calc(20);
+  margin: rem-calc(20 0);
   padding: rem-calc(11 25);
 }
 

@@ -13,14 +13,14 @@
   display: inline-flex;
 
   &--blue {
-    background-color: $accent;
+    background-color: $primary;
     color: $white;
 
-    &:hover { background-color: darken($accent, 10%); }
+    &:hover { background-color: $blue-dark; }
   }
 
   &--oblong { 
-    border: solid 1px $accent;
+    border: solid 1px $primary;
     border-radius: rem-calc(12); 
     font-weight: bold;
     padding: rem-calc(14 20);
@@ -68,7 +68,7 @@
   &--log-in {
     @extend %button;
     @extend %button--oblong;
-    color: $blue;
+    color: $primary;
 
     &:hover { 
       border-color: $blue-dark;
@@ -79,10 +79,10 @@
   &--sign-up {
     @extend %button;
     @extend %button--oblong;
-    background-color: lighten($accent, 16%);
+    background-color: $blue-light;
     color: white;
 
-    &:hover { background-color: $accent; }
+    &:hover { background-color: $primary; }
   }
 
   &--new-survey {
