@@ -1,3 +1,31 @@
 //--------------------------------------------------
 // form
 //--------------------------------------------------
+//--------------------------------------------------
+// labels
+//--------------------------------------------------
+label {
+  font-weight: bold;
+  margin: rem-calc(20 0 6 0);
+
+  display: inline-block;
+}
+
+//--------------------------------------------------
+// inputs
+//--------------------------------------------------
+input[type='submit'] {
+  @extend %button;
+  @extend %button--blue;
+  @extend %button--rounded;
+  padding: rem-calc(11 25);
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  border: solid 1px $grey;
+  border-radius: rem-calc(8);
+  font-size: rem-calc(16);
+  padding: rem-calc(15);
+}

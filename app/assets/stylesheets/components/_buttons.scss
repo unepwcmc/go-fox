@@ -5,6 +5,8 @@
 // reusable styles
 //--------------------------------------------------
 %button {
+  border: none;
+  font-size: rem-calc(16);
   text-decoration: none;
 
   &--blue {
@@ -17,6 +19,10 @@
     border-radius: rem-calc(12); 
     font-weight: bold;
     padding: rem-calc(14 20);
+  }
+
+  &--rounded {
+    border-radius: rem-calc(40);
   }
 }
 
