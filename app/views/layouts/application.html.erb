@@ -3,22 +3,26 @@
   <head>
     <title>GoFox</title>
     <%= csrf_meta_tags %>
-
+    
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
+    <%= render 'global/topbar' %>
+
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
       <div class="clearfix">
-        <%= render 'layouts/navigation' %>
         <%= render 'layouts/i18n' %>
       </div>
       <%= yield %>
     </div>
+
+    <%= render 'global/footer' %>
   </body>
 </html>

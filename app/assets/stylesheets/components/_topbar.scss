@@ -1,0 +1,12 @@
+//--------------------------------------------------
+// topbar
+//--------------------------------------------------
+.topbar {
+  background-color: $secondary;
+  height: rem-calc(102);
+  padding: 0 $gutter-large;
+
+  &__logo {
+    width: rem-calc(113); height: rem-calc(51);
+  }
+}

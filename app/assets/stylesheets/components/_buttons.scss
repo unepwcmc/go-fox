@@ -1,0 +1,123 @@
+//--------------------------------------------------
+// buttons
+//--------------------------------------------------
+//--------------------------------------------------
+// reusable styles
+//--------------------------------------------------
+%button {
+  border: none;
+  cursor: pointer;
+  font-size: rem-calc(16);
+  text-decoration: none;
+
+  display: inline-flex;
+
+  &--blue {
+    background-color: $primary;
+    color: $white;
+
+    &:hover { background-color: $blue-dark; }
+  }
+
+  &--oblong { 
+    border: solid 1px $primary;
+    border-radius: rem-calc(12); 
+    font-weight: bold;
+    padding: rem-calc(14 20);
+  }
+
+  &--rounded {
+    border-radius: rem-calc(40);
+  }
+
+  &--beige {
+    @extend %button;
+    @extend %button--rounded;
+    background-color: $beige;
+    color: $beige-xdark;
+    font-weight: bold;
+    padding: rem-calc(7 18 7 14);
+
+    &:hover {
+      background-color: $beige-dark;
+      color: $white;
+
+      .material-icons { color: white; }
+    }
+
+    .material-icons { 
+      color: $beige-dark;
+      font-size: inherit;
+      margin-right: rem-calc(4);
+    }
+  }
+}
+
+
+//--------------------------------------------------
+// button classes
+//--------------------------------------------------
+.button {
+  &--beige { @extend %button--beige; }
+
+  &--beige-dark { 
+    @extend %button--beige; 
+    background-color: $beige-dark;
+  }
+
+  &--log-in {
+    @extend %button;
+    @extend %button--oblong;
+    color: $primary;
+
+    &:hover { 
+      border-color: $blue-dark;
+      color: $blue-dark;
+    }
+  }
+
+  &--sign-up {
+    @extend %button;
+    @extend %button--oblong;
+    background-color: $blue-light;
+    color: white;
+
+    &:hover { background-color: $primary; }
+  }
+
+  &--new-survey {
+    @extend %button;
+    @extend %button--rounded;
+    border: solid 1px $beige-xdark;
+    color: $beige-xdark;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    padding: rem-calc(16 48 16 40);
+
+    .material-icons { 
+      font-size: rem-calc(32);
+      margin-right: rem-calc(4);
+    }
+  }
+
+  &--edit {
+    @extend %button--beige;
+  }
+
+  &--share {
+    @extend %button--beige;
+    margin-left: rem-calc(8);
+  }
+
+  &--results {
+    @extend %button;
+    @extend %button--rounded;
+    background-color: $blue;
+    color: $white;
+    font-weight: bold;
+    margin-left: rem-calc(20);
+    padding: rem-calc(8 24 8 16);
+
+    .material-icons { margin-right: rem-calc(-18); }
+  }
+}

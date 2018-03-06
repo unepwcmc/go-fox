@@ -1,0 +1,63 @@
+//--------------------------------------------------
+// variables
+//--------------------------------------------------
+// - colours
+// - fonts
+// - dimensions
+// - breakpoins
+// - padding
+//
+//--------------------------------------------------
+// colours
+//--------------------------------------------------
+$white: #ffffff;
+
+$grey-light: #F4F4F4;
+$grey: #BDC9CF;
+$grey-dark: #343434;
+
+$black: #242C3A;
+
+$beige-light: #F5F5F1;
+$beige: #E8E5D9;
+$beige-dark: #B1AEA3;
+$beige-xdark: #676660;
+
+$blue-light: #59A8D1;
+$blue: #2486B8;
+$blue-dark: #1E678D;
+$blue-xdark: #466882;
+
+$purple-light: #E9EDF0;
+
+$primary: $blue;
+$secondary: $purple-light;
+
+// $accent: $blue;
+
+//--------------------------------------------------
+// fonts
+//--------------------------------------------------
+$font-quattro: 'Quattrocento Sans', sans-serif;
+
+$body-font: $font-quattro;
+$body-font-color: $black;
+
+//--------------------------------------------------
+// dimensions
+//--------------------------------------------------
+$site-width: rem-calc(1332);
+
+//--------------------------------------------------
+// breakpoints
+//--------------------------------------------------
+$small: rem-calc(720);
+$medium: rem-calc(960);
+$large: $site-width;
+
+//--------------------------------------------------
+// padding
+//--------------------------------------------------
+$gutter-small: rem-calc(11); 
+$gutter-medium: rem-calc(16);
+$gutter-large: rem-calc(20);

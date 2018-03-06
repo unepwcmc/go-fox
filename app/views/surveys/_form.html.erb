@@ -1,46 +1,90 @@
-<%= form_with(model: survey, local: true) do |form| %>
-  <% if survey.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+<div class="flex flex-h-center">
+  <div class="container--small">
+    <%= form_with(model: survey, local: true) do |form| %>
+      <% if survey.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
 
-      <ul>
-      <% survey.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% survey.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <% I18n.available_locales.each do |locale| %>
-    <h1><%= locale %></h1>
-    <%= form.globalize_fields_for locale do |ff| %>
-      <p>
-        <%= ff.label :name %>
-        <%= ff.text_field :name, id: :survey_name %>
-        <%= ff.label :description %>
-        <%= ff.text_area :description, id: :survey_description %>
-      </p>
+      <% I18n.available_locales.each do |locale| %>
+        <h1><%= locale %></h1>
+        <%= form.globalize_fields_for locale do |ff| %>
+          <div class="field">
+            <%= ff.label :name %>
+            <%= ff.text_field :name, id: :survey_name %>
+          </div>
+
+          <div class="field">
+            <%= ff.label :description %>
+            <%= ff.text_area :description, id: :survey_description %>
+          </div>
+
+          <div class="field">
+            <label for="">Survey logo <span class="italic">(Optional)</span></label>
+            File upload
+          </div>
+
+          <div class="field">
+            <label for="">Select default survey language</label>
+            Select
+          </div>
+
+          <div class="field">
+            <label for="">Intended respondents of survey?</label>
+            Select
+          </div>
+
+          <div class="field">
+            <label for="">Is this a follow up to a previous survey you have run? If so, what was the ID of the survey?</label>
+            Input
+          </div>
+          
+          <div class="field">
+            <label for="">How many people do you plan to send the survey to?</label>
+            Select
+          </div>
+
+          <div class="field">
+            <label for="">Are you planning a face to face session with your respondents to discuss results?</label>
+            Radio buttons
+            - Yes
+            - No
+          </div>
+
+          <div class="field">
+            <label for="">What are your reasons for using the GO-FOX tool?</label>
+            Select
+          </div>
+        <% end %>
+      <% end %>
+
+      <h4>Customised Questions</h3>
+      <hr>
+
+      <div class="field">
+        <%= form.fields_for :customised_questions do |customised_questions_form| %>
+          <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
+        <% end %>
+
+        <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
+      </div>
+
+
+      <div class="field">
+        <%= form.label :published %>
+        <%= form.check_box :published, id: :survey_published %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
     <% end %>
-  <% end %>
-
-  <h4>Customised Questions</h3>
-  <hr>
-
-  <div class="field">
-    <%= form.fields_for :customised_questions do |customised_questions_form| %>
-      <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
-    <% end %>
-
-    <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
   </div>
-
-
-  <div class="field">
-    <%= form.label :published %>
-    <%= form.check_box :published, id: :survey_published %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
