@@ -6,6 +6,7 @@
 //--------------------------------------------------
 %button {
   border: none;
+  cursor: pointer;
   font-size: rem-calc(16);
   text-decoration: none;
 
@@ -14,10 +15,12 @@
   &--blue {
     background-color: $accent;
     color: $white;
+
+    &:hover { background-color: darken($accent, 10%); }
   }
 
   &--oblong { 
-    border: solid 1px $primary;
+    border: solid 1px $accent;
     border-radius: rem-calc(12); 
     font-weight: bold;
     padding: rem-calc(14 20);
@@ -55,19 +58,28 @@
 // button classes
 //--------------------------------------------------
 .button {
+  &--beige { @extend %button--beige; }
+
+  &--beige-dark { 
+    @extend %button--beige; 
+    background-color: $beige-dark;
+  }
+
   &--log-in {
     @extend %button;
     @extend %button--oblong;
-    color: $primary;
+    color: $blue;
 
-    &:hover { background-color: $white; }
+    &:hover { 
+      border-color: $blue-dark;
+      color: $blue-dark;
+    }
   }
 
   &--sign-up {
     @extend %button;
     @extend %button--oblong;
     background-color: lighten($accent, 16%);
-    border-color: $accent;
     color: white;
 
     &:hover { background-color: $accent; }
@@ -94,7 +106,6 @@
 
   &--share {
     @extend %button--beige;
-    cursor: pointer;
     margin-left: rem-calc(8);
   }
 
@@ -105,7 +116,7 @@
     color: $white;
     font-weight: bold;
     margin-left: rem-calc(20);
-    padding: rem-calc(8 24 8 14);
+    padding: rem-calc(8 24 8 16);
 
     .material-icons { margin-right: rem-calc(-18); }
   }

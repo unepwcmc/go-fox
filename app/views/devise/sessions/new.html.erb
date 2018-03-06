@@ -1,5 +1,5 @@
-<div class="flex flex-h-center">
-  <div>
+<div class="content-padding--large flex flex-h-center">
+  <div class="container--small">
     <h1>Log in</h1>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,11 +20,10 @@
         </div>
       <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="actions center">
+        <%= f.submit "Log in", class: '' %>
+        <%= render "devise/shared/forgot-password" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
   </div>
 </div>

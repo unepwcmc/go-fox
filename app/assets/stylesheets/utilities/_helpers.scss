@@ -4,7 +4,9 @@
 // - fouc
 // - font
 // - lists
+// - display
 // - positioning
+// - margin & padding
 // - boxes
 //
 //--------------------------------------------------
@@ -30,11 +32,22 @@
 .ul-inline li { display: inline-block; }
 
 //--------------------------------------------------
+// display
+//--------------------------------------------------
+.display-block { display: block; }
+.display-inline { display: inline-block; }
+
+//--------------------------------------------------
 // positioning
 //--------------------------------------------------
 .center { text-align: center; }
 .right { text-align: right; }
 .left { text-align: left; }
+
+//--------------------------------------------------
+// margin & padding
+//--------------------------------------------------
+.no-margin { margin: 0; }
 
 //--------------------------------------------------
 // boxes
@@ -45,4 +58,15 @@
     padding: rem-calc(18 34);
     margin-bottom: rem-calc(28);
   }
+
+  &--beige-light { 
+    background-color: $beige-light; 
+    color: $beige-xdark;
+  }
+
+  &-margin-left { margin-left: rem-calc(36); }
+
+  &-padding { padding: rem-calc(22 20); }
+
+  &__header--beige { background-color: $beige; }
 }
