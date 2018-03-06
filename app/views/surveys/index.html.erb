@@ -1,7 +1,9 @@
 <h1>Surveys</h1>
 
 <div class="box--grey-light">
-  <%= link_to 'Create new survey', new_survey_path, class: 'button--new-survey' %>
+  <%= link_to new_survey_path, title: 'Create new survey', class: 'button--new-survey flex-v-center' do %>
+    <i class="material-icons">add</i>Create new survey
+  <% end %>
 
   <ul class="table ul-unstyled">
     <li class="table__header flex">
@@ -21,12 +23,16 @@
         <% if current_user.admin? %>
           <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
         <% end %>
-        <p class="table__buttons">
+        <p class="table__buttons flex flex-v-center">
           <%= link_to 'Show', survey %>
           <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'Edit', edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' %>
-          <button class="button--share">Share</button>
-          <%= link_to 'Results', 'TODO', title: 'View survey results', class: 'button--results' %>
+          <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
+            <i class="material-icons">mode_edit</i>Edit
+          <% end %>
+          <button class="button--share"><i class="material-icons">share</i>Share</button>
+          <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+             Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+          <% end %>
         </p>
       </li>
     <% end %>

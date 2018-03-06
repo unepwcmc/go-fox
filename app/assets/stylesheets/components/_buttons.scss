@@ -9,7 +9,7 @@
   font-size: rem-calc(16);
   text-decoration: none;
 
-  display: inline-block;
+  display: inline-flex;
 
   &--blue {
     background-color: $accent;
@@ -33,11 +33,19 @@
     background-color: $beige;
     color: $beige-xdark;
     font-weight: bold;
-    padding: rem-calc(7 12);
+    padding: rem-calc(7 18 7 14);
 
     &:hover {
       background-color: $beige-dark;
       color: $white;
+
+      .material-icons { color: white; }
+    }
+
+    .material-icons { 
+      color: $beige-dark;
+      font-size: inherit;
+      margin-right: rem-calc(4);
     }
   }
 }
@@ -72,7 +80,12 @@
     color: $beige-xdark;
     font-size: rem-calc(18);
     font-weight: bold;
-    padding: rem-calc(22 40);
+    padding: rem-calc(16 48 16 40);
+
+    .material-icons { 
+      font-size: rem-calc(32);
+      margin-right: rem-calc(4);
+    }
   }
 
   &--edit {
@@ -82,6 +95,7 @@
   &--share {
     @extend %button--beige;
     cursor: pointer;
+    margin-left: rem-calc(8);
   }
 
   &--results {
@@ -90,6 +104,9 @@
     background-color: $blue;
     color: $white;
     font-weight: bold;
-    padding: rem-calc(7 12);
+    margin-left: rem-calc(20);
+    padding: rem-calc(8 24 8 14);
+
+    .material-icons { margin-right: rem-calc(-18); }
   }
 }

@@ -15,6 +15,9 @@
  *= require select2/dist/css/select2
  */
 
+ // fonts
+@import './fonts/*';
+
 // utilities 
 @import './utilities/rem-calc.scss';
 @import './utilities/variables.scss';
