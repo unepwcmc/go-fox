@@ -33,6 +33,8 @@ class Answer < ApplicationRecord
   end
 
   def raw_formatted
+    question_type = self.question.question_type
+
     if ["Checkbox", "Multiple Select Box"].include?(question_type)
       self.raw.join(", ")
     else
