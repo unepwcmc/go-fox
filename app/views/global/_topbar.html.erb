@@ -1,12 +1,7 @@
 <div class="topbar flex flex-v-center flex-h-between">
   <%= link_to '/', title: 'gofox' do %>
-    <%#= image_tag 'logo.svg', alt: 'gofox logo' %>
-    LOGO
+    <%= image_tag 'logos/logo.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
   <% end %>
-  
-  <p>
-    
-  </p>
 
   <ul class="nav--primary ul-inline">
     <% if user_signed_in? %>
@@ -24,6 +19,3 @@
     <% end %>
   </ul>
 </div>
-
-
-
