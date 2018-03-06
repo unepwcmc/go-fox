@@ -5,6 +5,7 @@
 // - font
 // - lists
 // - positioning
+// - boxes
 //
 //--------------------------------------------------
 // fouc (flash of unstyled content)
@@ -34,3 +35,14 @@
 .center { text-align: center; }
 .right { text-align: right; }
 .left { text-align: left; }
+
+//--------------------------------------------------
+// boxes
+//--------------------------------------------------
+.box {
+  &--grey-light {
+    background-color: $grey-light;
+    padding: rem-calc(18 34);
+    margin-bottom: rem-calc(28);
+  }
+}

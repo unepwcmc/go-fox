@@ -5,8 +5,25 @@
   <% end %>
   
   <p>
-    <%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %>
-
-    <%= link_to 'Sign up', new_user_registration_path, title: 'Sign up', class: 'button--sign-up' %>
+    
   </p>
+
+  <ul class="nav--primary ul-inline">
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <li><%= link_to "Questions", questions_path %></li>
+        <li><%= link_to "Demographic questions", demographic_questions_path %></li>
+        <li><%= link_to "Classifications", classifications_path %></li>
+      <% end %>
+      <li><%= link_to "My surveys", surveys_path %></li>
+      <li><%= link_to "My account", edit_user_registration_path %></li>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %></li>
+      <li><%= link_to 'Sign up', new_user_registration_path, title: 'Sign up', class: 'button--sign-up' %></li>
+    <% end %>
+  </ul>
 </div>
+
+
+

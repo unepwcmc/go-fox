@@ -1,33 +1,35 @@
 <h1>Surveys</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Published</th>
+<div class="box--grey-light">
+  <%= link_to 'Create new survey', new_survey_path, class: 'button--new-survey' %>
+
+  <ul class="table ul-unstyled">
+    <li class="table__header flex">
+      <p class="table__heading table__heading-created">Created surveys</p>
+      <p class="table__heading table__heading-results">Results</p>
+      <p class="table__heading table__heading-published">Published</p>
       <% if current_user.admin? %>
-        <th>User</th>
+        <p class="table__heading table__heading-user">User</p>
       <% end %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    </li>
 
-  <tbody>
     <% @surveys.each do |survey| %>
-      <tr>
-        <td><%= survey.name %></td>
-        <td><%= survey.published %></td>
+      <li class="table__row flex flex-v-center">
+        <p class="table__heading-created"><%= survey.name %></p>
+        <p class="table__heading-results">Results</p>
+        <p class="table__heading-published"><%= survey.published %></p>
         <% if current_user.admin? %>
-          <td><%= survey.user.username %> (<%= survey.user.organisation_name %>)</td>
+          <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
         <% end %>
-        <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <p class="table__buttons">
+          <%= link_to 'Show', survey %>
+          <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' %>
+          <button class="button--share">Share</button>
+          <%= link_to 'Results', 'TODO', title: 'View survey results', class: 'button--results' %>
+        </p>
+      </li>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Survey', new_survey_path, class: 'button' %>
+  </ul>
+</div>

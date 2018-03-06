@@ -1,0 +1,34 @@
+//--------------------------------------------------
+// table
+//--------------------------------------------------
+.table {
+  margin: rem-calc(26 0 0 0);
+
+  &__header {
+    padding-left: rem-calc(21);
+  }
+
+  &__row {
+    background-color: $white; 
+    border: solid 1px $beige;
+    border-radius: 6px;
+    margin-bottom: rem-calc(9);
+    padding: rem-calc(21);
+
+    p { margin-bottom: 0; }
+  }
+
+    &__heading {
+      font-weight: bold;
+
+      &-created { width: rem-calc(200); }
+      &-results { width: rem-calc(100); }
+      &-published { width: rem-calc(100); }
+      &-user { width: rem-calc(100); }
+    }
+
+    &__buttons {
+      justify-self: flex-end;
+      margin-left: auto;
+    }
+}

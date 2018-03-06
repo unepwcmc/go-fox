@@ -3,11 +3,11 @@
 //--------------------------------------------------
 * { 
   box-sizing: border-box;
+  font-family: $body-font;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  font-family: $body-font;
   margin: 0;
 }
 
@@ -25,6 +25,7 @@ h4 {
 }
 
 p {
+  margin: rem-calc(0 0 14 0);
 }
 
 a {

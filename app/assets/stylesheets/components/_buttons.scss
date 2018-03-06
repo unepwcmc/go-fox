@@ -9,6 +9,8 @@
   font-size: rem-calc(16);
   text-decoration: none;
 
+  display: inline-block;
+
   &--blue {
     background-color: $accent;
     color: $white;
@@ -23,6 +25,20 @@
 
   &--rounded {
     border-radius: rem-calc(40);
+  }
+
+  &--beige {
+    @extend %button;
+    @extend %button--rounded;
+    background-color: $beige;
+    color: $beige-xdark;
+    font-weight: bold;
+    padding: rem-calc(7 12);
+
+    &:hover {
+      background-color: $beige-dark;
+      color: $white;
+    }
   }
 }
 
@@ -47,5 +63,33 @@
     color: white;
 
     &:hover { background-color: $accent; }
+  }
+
+  &--new-survey {
+    @extend %button;
+    @extend %button--rounded;
+    border: solid 1px $beige-xdark;
+    color: $beige-xdark;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    padding: rem-calc(22 40);
+  }
+
+  &--edit {
+    @extend %button--beige;
+  }
+
+  &--share {
+    @extend %button--beige;
+    cursor: pointer;
+  }
+
+  &--results {
+    @extend %button;
+    @extend %button--rounded;
+    background-color: $blue;
+    color: $white;
+    font-weight: bold;
+    padding: rem-calc(7 12);
   }
 }
