@@ -42,7 +42,8 @@ class Response < ApplicationRecord
 
   def answer_for(question)
     if question.class.name == "DemographicQuestion"
-      question = question.customised_questions.find_by(survey: self.survey, demographic_question: question)
+      customised_question = question.customised_questions.find_by(survey: self.survey, demographic_question: question)
+      question = customised_question unless customised_question.nil?
     end
 
     self.answers.find_by(answerable: question)
