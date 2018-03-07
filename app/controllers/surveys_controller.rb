@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :export]
   before_action :set_customisable_questions, only: [:new, :edit]
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
@@ -66,6 +66,16 @@ class SurveysController < ApplicationController
     end
   end
 
+
+  def export
+    to_email  = params[:to_email]
+    from_date = params[:from_date]
+    to_date   = params[:to_date]
+
+    CsvExporterJob.perform_later(to_email, @survey, from_date, to_date)
+    redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
@@ -82,7 +92,7 @@ class SurveysController < ApplicationController
                                      translations_attributes: [:id, :name, :description, :locale, :_destroy],
                                      customised_questions_attributes: [:id, :text, :demographic_question_id, :locale, :_destroy,
                                        options_attributes: [:id, :optionable_id, :optionable_type, :text, :locale, :_destroy]
-                                     ])
+                                      ])
     end
 
     def require_ownership
