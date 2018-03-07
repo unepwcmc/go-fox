@@ -65,6 +65,11 @@
     background-color: $beige-dark;
   }
 
+  &--plain {
+    @extend %button;
+    padding: 0;
+  }
+
   &--log-in {
     @extend %button;
     @extend %button--oblong;
