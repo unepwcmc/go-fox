@@ -40,6 +40,15 @@ class Response < ApplicationRecord
     uuid
   end
 
+  def answer_for(question)
+    if question.class.name == "DemographicQuestion"
+      customised_question = question.customised_questions.find_by(survey: self.survey, demographic_question: question)
+      question = customised_question unless customised_question.nil?
+    end
+
+    self.answers.find_by(answerable: question)
+  end
+
   def total_scores
     scores = self.answers.where(answerable_type: "Question").map(&:score)
 

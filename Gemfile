@@ -37,6 +37,7 @@ gem 'activemodel-serializers-xml'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cocoon', '~> 1.2.11'
+gem 'sidekiq', '~> 5.1.1'
 
 gem 'webpacker', '~> 3.2.2'
 gem 'react-rails', '~> 2.4.3'
@@ -66,6 +67,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-passenger', '~> 0.1.1', require: false
   gem 'rails-erd', require: false
+  gem "letter_opener", '~> 1.6.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

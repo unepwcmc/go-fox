@@ -12,6 +12,9 @@ module GoFox
     config.load_defaults 5.1
 
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib/modules)
+
+    config.active_job.queue_adapter = :sidekiq
 
 
     # Settings in config/environments/* take precedence over those specified here.

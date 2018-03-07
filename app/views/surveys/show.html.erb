@@ -18,6 +18,7 @@
 <%= link_to "Take the survey", new_survey_response_path(@survey), class: 'button' %>
 <%= link_to 'Edit', edit_survey_path(@survey), class: 'button' %>
 <%= link_to 'Back', surveys_path, class: 'button' %>
+<%= render partial: "surveys/export_form", locals: { survey: @survey } %>
 
 <hr>
 
