@@ -47,11 +47,4 @@ module CsvExporter
   def self.headers
     @@questions.pluck(:text).map {|text| text.delete(",")}
   end
-
-  def self.date_valid?(date)
-    # Formats date from params to date object
-    return nil if date.blank?
-    year, month, day = date&.split("-").map(&:to_i)
-    Date.valid_date?(year, month, day)
-  end
 end

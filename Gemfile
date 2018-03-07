@@ -67,6 +67,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-passenger', '~> 0.1.1', require: false
   gem 'rails-erd', require: false
+  gem "letter_opener", '~> 1.6.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

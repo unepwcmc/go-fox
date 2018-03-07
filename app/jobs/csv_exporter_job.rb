@@ -5,6 +5,6 @@ class CsvExporterJob < ApplicationJob
 
   def perform(to_email, survey, from_date, to_date)
     filepath = CsvExporter.export(survey, from_date, to_date)
-    # NotificationMailer.csv_exported(filepath.to_s, to_email).deliver_now
+    NotificationMailer.csv_exported(filepath.to_s, to_email).deliver_now
   end
 end
