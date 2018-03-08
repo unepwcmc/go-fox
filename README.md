@@ -12,6 +12,7 @@
 - `bundle install`
 - `rails db:create db:migrate db:seed`
 - `yarn install`
+- `brew install redis`
 
 You'll need to open a separate tab for each of these to run in...
 
@@ -19,4 +20,3 @@ You'll need to open a separate tab for each of these to run in...
 - `webpack-dev-server`
 - `redis-server`
 - `sidekiq`
-

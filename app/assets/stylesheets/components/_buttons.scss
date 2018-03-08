@@ -19,6 +19,17 @@
     &:hover { background-color: $blue-dark; }
   }
 
+  &--blue-light {
+    background-color: $blue-light;
+    color: white;
+
+    &:hover { background-color: $primary; }
+  }
+
+  &--green {
+    background-color: $green;
+  }
+
   &--oblong { 
     border: solid 1px $primary;
     border-radius: rem-calc(12); 
@@ -83,11 +94,8 @@
 
   &--sign-up {
     @extend %button;
+    @extend %button--blue-light;
     @extend %button--oblong;
-    background-color: $blue-light;
-    color: white;
-
-    &:hover { background-color: $primary; }
   }
 
   &--new-survey {
@@ -112,6 +120,18 @@
   &--share {
     @extend %button--beige;
     margin-left: rem-calc(8);
+  }
+
+  &--copy {
+    @extend %button;
+    @extend %button--rounded;
+    @extend %button--blue-light;
+  }
+
+  &--copied {
+    @extend %button--green;
+
+    &:hover { @extend %button--green; }
   }
 
   &--results {
