@@ -1,0 +1,61 @@
+//--------------------------------------------------
+// keyframes
+//--------------------------------------------------
+@keyframes fadeSlide {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes hideSlide {
+  from { height: 100%; }
+  to { height: 0; }
+}
+
+//--------------------------------------------------
+// carousel
+//--------------------------------------------------
+.carousel {
+  position: relative;
+
+  h1 {
+    border-bottom: solid $grey 1px;
+    padding-bottom: rem-calc(12);
+  }
+
+//--------------------------------------------------
+// slide nav
+//--------------------------------------------------
+  &__steps {
+    color: $grey;
+    font-size: rem-calc(25);
+
+    position: absolute;
+    top: rem-calc(12);
+    right: 0;
+  }
+
+//--------------------------------------------------
+// slides
+//--------------------------------------------------
+  &__slides {
+
+  }
+//--------------------------------------------------
+// slide
+//--------------------------------------------------
+    &__slide {
+      opacity: 0;
+      overflow: hidden;
+      width: $content-small;
+
+      &--first { opacity: 1; }
+
+      &--hide { 
+        animation: fadeSlide .5s 1 normal forwards ease-out, hideSlide .001s 1 normal forwards linear .5s;
+      }
+
+      &--show {
+        opacity: 1;
+      }
+    }
+}

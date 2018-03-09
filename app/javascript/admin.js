@@ -1,6 +1,8 @@
 import Vue from 'vue/dist/vue.esm'
 
 import store from './store/store.js'
+import Carousel from './components/carousel/Carousel.vue'
+import Slide from './components/carousel/Slide.vue'
 import Modal from './components/modal/Modal.vue'
 import ModalTrigger from './components/modal/ModalTrigger.vue'
 import ModalWrapper from './components/modal/ModalWrapper.vue'
@@ -14,6 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#v-app',
     store,
-    components: { Modal, ModalTrigger, ModalWrapper, Popup }
+    components: { Carousel, Slide, Modal, ModalTrigger, ModalWrapper, Popup }
   })
 })
