@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   root to: "static_pages#index"
 
+  namespace :admin do
+    resources :users, controller: "users", except: [:new, :create]
+  end
+
   resources :surveys, param: :uuid do
     member do
       post :export
