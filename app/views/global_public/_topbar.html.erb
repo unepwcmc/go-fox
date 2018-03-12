@@ -1,13 +1,15 @@
-<div class="topbar flex flex-v-center flex-h-between">
-  <%= link_to '/', title: 'gofox' do %>
-    <%= image_tag 'logos/logo.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
-  <% end %>
-
-  <ul class="nav--primary ul-inline">
-    <% if user_signed_in? %>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %></li>
+<div class="topbar--public gutters">
+  <div class="topbar__content flex flex-v-center flex-h-between">
+    <%= link_to '/', title: 'gofox' do %>
+      <%#= image_tag 'logos/logo.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
     <% end %>
-  </ul>
+
+    <ul class="nav--secondary ul-inline">
+      <% if user_signed_in? %>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
