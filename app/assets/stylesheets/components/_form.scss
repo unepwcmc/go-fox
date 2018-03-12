@@ -15,12 +15,7 @@ label {
 // inputs
 //--------------------------------------------------
 input[type='submit'] {
-  @extend %button;
-  @extend %button--blue;
-  @extend %button--rounded;
-  box-shadow: $grey 0 2px 12px 0;
-  margin: rem-calc(20 0);
-  padding: rem-calc(11 25);
+  @extend .button--blue-shadow;
 }
 
 input[type='email'],

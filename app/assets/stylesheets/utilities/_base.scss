@@ -17,6 +17,11 @@ h1 {
 }
 
 h2 {
+  color: $beige-xdark;
+  font-size: rem-calc(16);
+  letter-spacing: rem-calc(2);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -51,7 +56,7 @@ a {
   @include breakpoint($medium){ padding: rem-calc(0 $gutter-medium); }
   @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
 
-  &--small { width: rem-calc(380); }
+  &--small { width: $content-small; }
 }
 
 .content-padding {
