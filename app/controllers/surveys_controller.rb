@@ -7,7 +7,11 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = current_user.admin? ? Survey.all : current_user.surveys
+    @surveys = current_user.surveys
+
+    if params[:user].present? && current_user.admin?
+      @surveys = Survey.where(user_id: params[:user])
+    end
   end
 
   # GET /surveys/1
