@@ -6,8 +6,10 @@
     
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application-vue' %>
   </head>
 
   <body>
@@ -20,7 +22,15 @@
       <div class="clearfix">
         <%= render 'layouts/i18n' %>
       </div>
-      <%= yield %>
+
+      <div id="v-app">
+
+        <modal>
+          <h2>Account details</h2>
+        </modal>
+        <modal-wrapper></modal-wrapper>
+        <%= yield %>
+      </div>
     </div>
 
     <%= render 'global/footer' %>

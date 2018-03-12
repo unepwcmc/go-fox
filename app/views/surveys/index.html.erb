@@ -26,12 +26,13 @@
               <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
             <% end %>
             <p class="table__buttons flex flex-v-center">
-              <%= link_to 'Show', survey %>
               <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
               <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
                 <i class="material-icons">mode_edit</i>Edit
               <% end %>
-              <button class="button--share"><i class="material-icons">share</i>Share</button>
+
+              <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
+              
               <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
                  Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
               <% end %>
@@ -43,7 +44,7 @@
     </div>
   </div>
 
-  <div class="flex-1-fith box--beige-light box-margin-left">
+  <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
     <div class="box__header--beige box-padding flex flex-v-center">
       <i class='material-icons'>person</i>
       <p class="no-margin">
@@ -51,7 +52,7 @@
       </p>
     </div>
     <div class="box-padding">
-      <button class="button--beige-dark">View/Edit details</button>
+      <modal-trigger>View/Edit details</modal-trigger>
     </div>
   </div>
 </div>

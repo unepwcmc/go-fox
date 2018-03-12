@@ -1,0 +1,42 @@
+//--------------------------------------------------
+// popup
+//--------------------------------------------------
+.popup {
+
+//--------------------------------------------------
+// box
+//--------------------------------------------------
+  &__box {
+    background-color: $white;
+    box-shadow: lighten($grey-dark, 40%) 0 0 2px 0;
+    font-size: rem-calc(14);
+    margin: rem-calc(11 0 0 8);
+    padding: rem-calc(12);
+    width: rem-calc(250);
+    
+    z-index: 1;
+    
+     &:before {
+      box-shadow: lighten($grey-dark, 40%) -2px -2px 2px -2px;
+      background-color: $white;
+      content: '';
+      width: rem-calc(18); height: rem-calc(18);
+
+      position: absolute;
+      top: rem-calc(-7);
+      left: 50%;
+
+      transform: translateX(-50%) rotateZ(45deg);
+     }
+  }
+    
+    input[type='text'] {
+      cursor: not-allowed;
+      font-size: rem-calc(14);
+      padding: rem-calc(8);
+
+      z-index: 1;
+    }
+
+    &__button { margin-top: rem-calc(8); }
+}
