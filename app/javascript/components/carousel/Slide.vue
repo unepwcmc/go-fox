@@ -34,7 +34,7 @@
       nextStep () {
         this.hide = true
 
-        eventHub.$commit('carousel/nextStep')
+        eventHub.$emit('nextStep', this.index)
       }
     }
   }

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  import { eventHub } from '../../admin.js'
   export default {
     name: 'carousel',
 
@@ -24,6 +25,10 @@
       }
     },
 
+    created () {
+      eventHub.$on('nextStep', this.nextStep)
+    },
+
     mounted () {
       this.totalSteps = this.children.length
       this.addIndices()
@@ -33,6 +38,15 @@
       addIndices () {
         this.children.forEach( (child, index) => {
           child.index = index
+        })
+      },
+
+      nextStep (currentIndex) {
+        console.log('nextStep', currentIndex)
+        let nextIndex = currentIndex + 1
+
+        this.children.forEach(child => {
+          child.show = child.index === nextIndex
         })
       }
     }

@@ -1,9 +1,14 @@
 //--------------------------------------------------
 // keyframes
 //--------------------------------------------------
-@keyframes fadeSlide {
+@keyframes fadeOutSlide {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes hideSlide {
@@ -11,10 +16,17 @@
   to { height: 0; }
 }
 
+@keyframes showSlide {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
 //--------------------------------------------------
 // carousel
 //--------------------------------------------------
 .carousel {
+  min-height: rem-calc(550);
+
   position: relative;
 
   h1 {
@@ -38,7 +50,7 @@
 // slides
 //--------------------------------------------------
   &__slides {
-
+    
   }
 //--------------------------------------------------
 // slide
@@ -46,16 +58,19 @@
     &__slide {
       opacity: 0;
       overflow: hidden;
-      width: $content-small;
+      width: $content-small; height: 0;
 
-      &--first { opacity: 1; }
+      &--first { 
+        opacity: 1; 
+        height: 100%;
+      }
 
       &--hide { 
-        animation: fadeSlide .5s 1 normal forwards ease-out, hideSlide .001s 1 normal forwards linear .5s;
+        animation: fadeOutSlide .3s 1 normal forwards ease-out, hideSlide .001s 1 normal forwards linear .3s;
       }
 
       &--show {
-        opacity: 1;
+        animation: showSlide .001s 1 normal forwards linear .3s, fadeInSlide .2s 1 normal forwards ease-in .601s;
       }
     }
 }
