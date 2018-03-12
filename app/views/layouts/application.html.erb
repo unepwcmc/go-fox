@@ -27,14 +27,11 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-      <div class="clearfix">
-        <%= render 'layouts/i18n' %>
-      </div>
-
       <div id="v-app">
 
         <modal>
           <h2>Account details</h2>
+          <%= render 'global/my_account' %>
         </modal>
         <modal-wrapper></modal-wrapper>
         <%= yield %>

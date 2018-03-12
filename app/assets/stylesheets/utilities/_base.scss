@@ -17,6 +17,11 @@ h1 {
 }
 
 h2 {
+  color: $beige-xdark;
+  font-size: rem-calc(16);
+  letter-spacing: rem-calc(2);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h3 {
