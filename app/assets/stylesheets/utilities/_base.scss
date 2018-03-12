@@ -56,7 +56,7 @@ a {
   @include breakpoint($medium){ padding: rem-calc(0 $gutter-medium); }
   @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
 
-  &--small { width: rem-calc(380); }
+  &--small { width: $content-small; }
 }
 
 .content-padding {

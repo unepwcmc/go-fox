@@ -76,6 +76,15 @@
     background-color: $beige-dark;
   }
 
+  &--blue-shadow {
+    @extend %button;
+    @extend %button--blue;
+    @extend %button--rounded;
+    box-shadow: $grey 0 2px 12px 0;
+    margin: rem-calc(20 0);
+    padding: rem-calc(11 25);
+  }
+
   &--plain {
     @extend %button;
     padding: 0;
@@ -144,5 +153,9 @@
     padding: rem-calc(8 24 8 16);
 
     .material-icons { margin-right: rem-calc(-18); }
+  }
+
+  &--icon-chevron {
+    .material-icons { font-size: rem-calc(28); } 
   }
 }
