@@ -1,26 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Demographic Questions</h1>
+  <h1>Demographic Questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @demographic_questions.each do |demographic_question| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= demographic_question.text %></td>
-        <td><%= link_to 'Show', demographic_question %></td>
-        <td><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
+        <th>Text</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @demographic_questions.each do |demographic_question| %>
+        <tr>
+          <td><%= demographic_question.text %></td>
+          <td><%= link_to 'Show', demographic_question %></td>
+          <td><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Demographic Question', new_demographic_question_path %>
+  <br>
+
+  <%= link_to 'New Demographic Question', new_demographic_question_path %>
+</div>

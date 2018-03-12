@@ -24,18 +24,18 @@
     <%= render 'global/topbar' %>
 
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %><p class="notice"><%= notice %></p><% end %>
+      <% if alert %><p class="alert"><%= alert %></p><% end %>
+    </div>
 
-      <div id="v-app">
+    <div id="v-app">
 
-        <modal>
-          <h2>Account details</h2>
-          <%= render 'global/my_account' %>
-        </modal>
-        <modal-wrapper></modal-wrapper>
-        <%= yield %>
-      </div>
+      <modal>
+        <h2>Account details</h2>
+        <%= render 'global/my_account' %>
+      </modal>
+      <modal-wrapper></modal-wrapper>
+      <%= yield %>
     </div>
 
     <%= render 'global/footer' %>

@@ -3,7 +3,8 @@
 //--------------------------------------------------
 .nav {
   &--primary {
-    padding: rem-calc(12 0);
+    padding-top: rem-calc(12);
+    padding-bottom: rem-calc(12);
 
     .nav__link {
       color: $blue-light;

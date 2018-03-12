@@ -71,7 +71,7 @@
   }
 
   &--padded {
-    padding: rem-calc(11 24 11 16);
+    padding: rem-calc(11 25);
   }  
 }
 
@@ -91,20 +91,13 @@
     background-color: $beige-dark;
   }
 
-  &--blue {
-    @extend %button;
-    @extend %button--blue;
-    @extend %button--rounded;
-    @extend %button--padded;
-  }
-
   &--blue-shadow {
     @extend %button;
     @extend %button--blue;
     @extend %button--rounded;
+    @extend %button--padded;
     box-shadow: $grey 0 2px 12px 0;
     margin: rem-calc(20 0);
-    padding: rem-calc(11 25);
   }
 
   &--white {
@@ -178,7 +171,10 @@
   }
 
   &--results {
-    @extend .button--blue;
+    @extend %button;
+    @extend %button--blue;
+    @extend %button--rounded;
+    @extend %button--padded;
     margin-left: rem-calc(20);
     padding: rem-calc(8 24 8 16);
 

@@ -52,9 +52,23 @@ a {
   @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
 }
 
-
 .site-width { 
   @include breakpoint($medium){ width: $site-width; }
+}
+
+.gutters {
+  padding-left: $gutter-small;
+  padding-right: $gutter-small;
+
+  @include breakpoint($medium) {
+    padding-left: $gutter-medium;
+    padding-right: $gutter-medium;
+  }
+
+  @include breakpoint($large) {
+    padding-left: $gutter-large;
+    padding-right: $gutter-large;
+  }
 }
 
 .container {
