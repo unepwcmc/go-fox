@@ -42,7 +42,6 @@
       },
 
       nextStep (currentIndex) {
-        console.log('nextStep', currentIndex)
         let nextIndex = currentIndex + 1
 
         this.children.forEach(child => {
