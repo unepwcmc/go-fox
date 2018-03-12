@@ -1,32 +1,30 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <h1>Classifications</h1>
+<h1>Classifications</h1>
 
-  <table>
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Results description</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classifications.each do |classification| %>
       <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Results description</th>
-        <th colspan="2"></th>
+        <td><%= classification.name %></td>
+        <td><%= classification.description %></td>
+        <td><%= classification.results_description %></td>
+        <td><%= link_to 'Show', classification %></td>
+        <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @classifications.each do |classification| %>
-        <tr>
-          <td><%= classification.name %></td>
-          <td><%= classification.description %></td>
-          <td><%= classification.results_description %></td>
-          <td><%= link_to 'Show', classification %></td>
-          <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<br>
 
-  <br>
-
-  <%= link_to 'New Classification', new_classification_path %>
-</div>
+<%= link_to 'New Classification', new_classification_path %>

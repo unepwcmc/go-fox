@@ -1,60 +1,58 @@
-<div class="container">
-  <h1>Surveys</h1>
+<h1>Surveys</h1>
 
-  <div class="flex">
-    <div class="flex-4-fiths">
-      <div class="box--grey-light">
-        <%= link_to new_survey_path, title: 'Create new survey', class: 'button--new-survey flex-v-center' do %>
-          <i class="material-icons">add</i>Create new survey
+<div class="flex">
+  <div class="flex-4-fiths">
+    <div class="box--grey-light">
+      <%= link_to new_survey_path, title: 'Create new survey', class: 'button--new-survey flex-v-center' do %>
+        <i class="material-icons">add</i>Create new survey
+      <% end %>
+
+      <ul class="table ul-unstyled">
+        <li class="table__header flex">
+          <p class="table__heading table__heading-created">Created surveys</p>
+          <p class="table__heading table__heading-results">Results</p>
+          <p class="table__heading table__heading-published">Published</p>
+          <% if current_user.admin? %>
+            <p class="table__heading table__heading-user">User</p>
+          <% end %>
+        </li>
+
+        <% @surveys.each do |survey| %>
+          <li class="table__row flex flex-v-center">
+            <p class="table__heading-created"><%= survey.name %></p>
+            <p class="table__heading-results">Results</p>
+            <p class="table__heading-published"><%= survey.published %></p>
+            <% if current_user.admin? %>
+              <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
+            <% end %>
+            <p class="table__buttons flex flex-v-center">
+              <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
+                <i class="material-icons">mode_edit</i>Edit
+              <% end %>
+
+              <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
+              
+              <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+                 Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+              <% end %>
+            </p>
+          </li>
         <% end %>
 
-        <ul class="table ul-unstyled">
-          <li class="table__header flex">
-            <p class="table__heading table__heading-created">Created surveys</p>
-            <p class="table__heading table__heading-results">Results</p>
-            <p class="table__heading table__heading-published">Published</p>
-            <% if current_user.admin? %>
-              <p class="table__heading table__heading-user">User</p>
-            <% end %>
-          </li>
-
-          <% @surveys.each do |survey| %>
-            <li class="table__row flex flex-v-center">
-              <p class="table__heading-created"><%= survey.name %></p>
-              <p class="table__heading-results">Results</p>
-              <p class="table__heading-published"><%= survey.published %></p>
-              <% if current_user.admin? %>
-                <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
-              <% end %>
-              <p class="table__buttons flex flex-v-center">
-                <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
-                  <i class="material-icons">mode_edit</i>Edit
-                <% end %>
-
-                <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
-                
-                <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
-                   Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
-                <% end %>
-              </p>
-            </li>
-          <% end %>
-
-        </ul>
-      </div>
+      </ul>
     </div>
+  </div>
 
-    <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
-      <div class="box__header--beige box-padding flex flex-v-center">
-        <i class='material-icons'>person</i>
-        <p class="no-margin">
-          <span class="bold inline-block">Account</span> <span class="italic inline-block"><%= current_user.username %></span>
-        </p>
-      </div>
-      <div class="box-padding">
-        <modal-trigger>View/Edit details</modal-trigger>
-      </div>
+  <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
+    <div class="box__header--beige box-padding flex flex-v-center">
+      <i class='material-icons'>person</i>
+      <p class="no-margin">
+        <span class="bold inline-block">Account</span> <span class="italic inline-block"><%= current_user.username %></span>
+      </p>
+    </div>
+    <div class="box-padding">
+      <modal-trigger>View/Edit details</modal-trigger>
     </div>
   </div>
 </div>

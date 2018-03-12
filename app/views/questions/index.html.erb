@@ -1,28 +1,26 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <h1>Questions</h1>
+<h1>Questions</h1>
 
-  <table>
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
       <tr>
-        <th>Text</th>
-        <th colspan="2"></th>
+        <td><%= question.text %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td><%= question.text %></td>
-          <td><%= link_to 'Show', question %></td>
-          <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<br>
 
-  <br>
-
-  <%= link_to 'New Question', new_question_path %>
-</div>
+<%= link_to 'New Question', new_question_path %>
