@@ -12,35 +12,9 @@
 
   display: inline-flex;
 
-  &--blue {
-    background-color: $primary;
-    color: $white;
-
-    &:hover { background-color: $blue-dark; }
-  }
-
-  &--blue-light {
-    background-color: $blue-light;
-    color: white;
-
-    &:hover { background-color: $primary; }
-  }
-
-  &--green {
-    background-color: $green;
-  }
-
-  &--oblong { 
-    border: solid 1px $primary;
-    border-radius: rem-calc(12); 
-    font-weight: bold;
-    padding: rem-calc(14 20);
-  }
-
-  &--rounded {
-    border-radius: rem-calc(40);
-  }
-
+//---------------
+// colours
+//---------------
   &--beige {
     @extend %button;
     @extend %button--rounded;
@@ -62,6 +36,43 @@
       margin-right: rem-calc(4);
     }
   }
+
+  &--blue {
+    background-color: $primary;
+    color: $white;
+    font-weight: bold; 
+
+    &:hover { background-color: $blue-dark; }
+  }
+
+  &--blue-light {
+    background-color: $blue-light;
+    color: white;
+
+    &:hover { background-color: $primary; }
+  }
+
+  &--green {
+    background-color: $green;
+  }
+
+//---------------
+// shape
+//---------------
+  &--oblong { 
+    border: solid 1px $primary;
+    border-radius: rem-calc(12); 
+    font-weight: bold;
+    padding: rem-calc(14 20);
+  }
+
+  &--rounded {
+    border-radius: rem-calc(40);
+  }
+
+  &--padded {
+    padding: rem-calc(11 24 11 16);
+  }  
 }
 
 
@@ -69,6 +80,10 @@
 // button classes
 //--------------------------------------------------
 .button {
+
+//---------------
+// colours
+//---------------
   &--beige { @extend %button--beige; }
 
   &--beige-dark { 
@@ -76,6 +91,25 @@
     background-color: $beige-dark;
   }
 
+  &--blue {
+    @extend %button;
+    @extend %button--blue;
+    @extend %button--rounded;
+    @extend %button--padded;
+  }
+
+  &--white {
+    @extend %button;
+    @extend %button--rounded;
+    @extend %button--padded;
+    background-color: rgba($white, 0.4);
+    border: solid $white 1px;
+    color: $white;
+  }
+
+//---------------
+// specific
+//---------------
   &--plain {
     @extend %button;
     padding: 0;
@@ -135,11 +169,7 @@
   }
 
   &--results {
-    @extend %button;
-    @extend %button--rounded;
-    background-color: $blue;
-    color: $white;
-    font-weight: bold;
+    @extend .button--blue;
     margin-left: rem-calc(20);
     padding: rem-calc(8 24 8 16);
 

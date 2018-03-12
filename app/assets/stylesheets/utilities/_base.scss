@@ -39,19 +39,32 @@ a {
 //--------------------------------------------------
 // site structure
 //--------------------------------------------------
-.site-width { 
-  @include breakpoint($medium){ width: $site-width; }
-}
-
-.container {
-  @extend .site-width;
+%container {
   margin: 0 auto;
   padding: rem-calc(0 $gutter-small);
 
   @include breakpoint($medium){ padding: rem-calc(0 $gutter-medium); }
   @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
+}
 
-  &--small { width: rem-calc(380); }
+
+.site-width { 
+  @include breakpoint($medium){ width: $site-width; }
+}
+
+.container {
+  @extend %container;
+  @extend .site-width;
+  
+  &--small { 
+    @extend %container;
+    width: rem-calc(380); 
+  }
+
+  &--public { 
+    @extend %container;
+    @include breakpoint($medium){ width: rem-calc(940); }
+  }
 }
 
 .content-padding {
