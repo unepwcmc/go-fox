@@ -1,20 +1,29 @@
 //--------------------------------------------------
-// public
+// hero
 //--------------------------------------------------
-.hero-wrapper {
-  //background: $grey image-url('') center no-repeat;
-  background-color: $grey;
-  background-size: cover;
-  color: $white;
-
-  height: rem-calc(400);
-}
-
 .hero {
 
-  &__tagline {
-    @include breakpoint($medium) {
-      padding: rem-calc(0 148);
+//--------------------------------------------------
+// public
+//--------------------------------------------------
+  &--public {
+    //background: $grey image-url('') center no-repeat;
+    background-color: $grey;
+    background-size: cover;
+    color: $white;
+
+    height: rem-calc(400);
+  
+    .hero {
+
+      &__tagline {
+        @include breakpoint($medium) { padding: rem-calc(0 148); }
+      }
+
+      &__button { 
+        margin-right: rem-calc(10);
+        margin-left: rem-calc(10);
+      }
     }
   }
 }
