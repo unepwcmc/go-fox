@@ -17,11 +17,19 @@ h1 {
 }
 
 h2 {
-  color: $beige-xdark;
-  font-size: rem-calc(16);
-  letter-spacing: rem-calc(2);
-  text-align: center;
-  text-transform: uppercase;
+  .base--admin & {
+    color: $beige-xdark;
+    font-size: rem-calc(16);
+    letter-spacing: rem-calc(2);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .base--public & {
+    color: $grey-dark;
+    font-size: rem-calc(40);
+    margin: rem-calc(0 0 50 0);
+  }
 }
 
 h3 {
