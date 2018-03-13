@@ -28,4 +28,21 @@
       &:hover { color: $blue-dark; }
     }
   }
+
+  &--footer {
+    width: rem-calc(320);
+
+    .nav {
+      &__li {
+        flex: 0 1 50%;
+        margin: rem-calc(4 0);
+      }
+
+        &__a {
+          text-decoration: none;
+
+          &:hover { color: $white; }
+        }
+    }
+  }
 }
