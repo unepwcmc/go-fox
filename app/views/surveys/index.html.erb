@@ -19,7 +19,7 @@
 
         <% @surveys.each do |survey| %>
           <li class="table__row flex flex-v-center">
-            <p class="table__heading-created"><%= survey.name %></p>
+            <p class="table__heading-created"><%= link_to survey.name, survey_path(survey) %></p>
             <p class="table__heading-results">Results</p>
             <p class="table__heading-published"><%= survey.published %></p>
             <% if current_user.admin? %>
@@ -32,7 +32,7 @@
               <% end %>
 
               <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
-              
+
               <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
                  Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
               <% end %>

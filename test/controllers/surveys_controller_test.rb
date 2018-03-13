@@ -13,16 +13,17 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-  test "admin can see all surveys" do
-    create(:survey, user: @user)
+  test "admin see other surveys with the :user params" do
+    survey = create(:survey, user: @user)
     create(:survey, user: @admin)
 
     sign_in @admin
-    get surveys_url
-    assert_equal 2, @controller.instance_variable_get("@surveys").count
+    get surveys_url(user: @user.id)
+    assert_equal 1, @controller.instance_variable_get("@surveys").count
+    assert_equal survey, @controller.instance_variable_get("@surveys").first
   end
 
-  test "non admin only sees their own surveys" do
+  test "user only sees their own surveys" do
     create(:survey, user: @user)
     create(:survey, user: @admin)
 
