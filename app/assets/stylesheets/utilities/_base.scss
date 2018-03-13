@@ -31,6 +31,7 @@ h4 {
 }
 
 p {
+  line-height: $body-line-height;
   margin: rem-calc(0 0 14 0);
 }
 
@@ -83,6 +84,11 @@ a {
   &--public { 
     @extend %container;
     @include breakpoint($medium){ width: rem-calc(940); }
+
+    &-small {
+      @extend %container;
+      @include breakpoint($medium){ width: rem-calc(760); }
+    }
   }
 }
 

@@ -1,0 +1,28 @@
+//--------------------------------------------------
+// cta
+//--------------------------------------------------
+.cta {
+
+//--------------------------------------------------
+// public
+//--------------------------------------------------
+  &--next-steps {
+    background-color: $grey-light;
+    //background: $grey-light image-url() center no-repeat;
+    background-size: cover;
+    color: $blue-dark;
+    text-align: center;
+    height: rem-calc(450);
+
+    h3 {
+      font-size: rem-calc(48);
+      margin: rem-calc(0 0 32 0); 
+    }
+
+    .cta {
+      &__content {
+
+      }
+    }
+  }
+}
