@@ -1,17 +1,17 @@
 <template>
-  <div class="accordion-item" :class="{ 'accordion-item--open' : isActive, 'accordion-item--close' : isClosed }">
-
+  <div class="accordion-item">
     <a class="accordion-item__title flex flex-h-between" @click="toggleAccordionContent()">
       <span>{{ title }}</span>
       <i class="material-icons">{{ arrow }}</i>
     </a>
-
-    <div class="accordion-item__content-wrapper">
-      <div class="accordion-item__content">
-        <slot></slot>
+    
+    <transition name="accordion-toggle">
+      <div v-show="isActive" class="accordion-item__content-wrapper">
+        <div class="accordion-item__content">
+          <slot></slot>
+        </div>
       </div>
-    </div>
-
+    </transition>
   </div>  
 </template>
 
@@ -32,8 +32,7 @@
 
     data () {
       return {
-        isActive: this.open,
-        isClosed: false
+        isActive: this.open
       }
     },
 
@@ -62,6 +61,14 @@
     to { max-height: 0; }
   }
 
+  .accordion-toggle-enter-active {
+    animation: open .5s forwards ease-in;
+  }
+
+  .accordion-toggle-leave-active {
+    animation: close .5s forwards ease-out;
+  }
+
   .accordion-item {
     &__title {
       cursor: pointer;
@@ -70,15 +77,6 @@
     &__content-wrapper {
       overflow: hidden;
       height: auto;
-      max-height: 0;
-
-      .accordion-item--open & {
-        animation: open .5s forwards ease-in;
-      }
-
-      .accordion-item--close & {
-        animation: close .5s forwards ease-out;
-      }
     }
   }
 </style>
