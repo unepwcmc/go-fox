@@ -5,4 +5,10 @@ class StaticPagesController < ApplicationController
 
   def index
   end
+
+  def about_project
+  end
+
+  def about_debate
+  end
 end
