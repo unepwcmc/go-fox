@@ -1,12 +1,36 @@
 //--------------------------------------------------
+// topbar - shared styles
+//--------------------------------------------------
+%topbar {
+  height: rem-calc(100);
+}
+
+//--------------------------------------------------
 // topbar
 //--------------------------------------------------
 .topbar {
-  background-color: $secondary;
-  height: rem-calc(102);
-  padding: 0 $gutter-large;
 
-  &__logo {
-    width: rem-calc(113); height: rem-calc(51);
+//--------------------------------------------------
+// topbar - admin
+//--------------------------------------------------
+  &--admin {
+    @extend %topbar;
+    background-color: $secondary;
+
+    .topbar__logo {
+      width: rem-calc(113); height: rem-calc(51);
+    }
+  }
+
+//--------------------------------------------------
+// topbar - public
+//--------------------------------------------------
+  &--public {
+    @extend %topbar;
+
+    .topbar__content {
+      border-bottom: solid $grey 1px;
+      height: 100%;
+    }
   }
 }

@@ -23,6 +23,7 @@ $beige: #E8E5D9;
 $beige-dark: #B1AEA3;
 $beige-xdark: #676660;
 
+$blue-xlight: #97B3C8;
 $blue-light: #59A8D1;
 $blue: #2486B8;
 $blue-dark: #1E678D;
@@ -35,8 +36,6 @@ $purple-light: #E9EDF0;
 $primary: $blue;
 $secondary: $purple-light;
 
-// $accent: $blue;
-
 //--------------------------------------------------
 // fonts
 //--------------------------------------------------
@@ -44,6 +43,8 @@ $font-quattro: 'Quattrocento Sans', sans-serif;
 
 $body-font: $font-quattro;
 $body-font-color: $black;
+
+$body-line-height: 1.4;
 
 //--------------------------------------------------
 // dimensions
@@ -64,4 +65,4 @@ $large: $site-width;
 //--------------------------------------------------
 $gutter-small: rem-calc(11); 
 $gutter-medium: rem-calc(16);
-$gutter-large: rem-calc(20);
+$gutter-large: rem-calc(24);

@@ -1,1 +1,29 @@
-<h1>GO FOX</h1>
+<%= render 'global_public/nav_primary' %>
+
+<header class="hero--public flex flex-v-center">
+  <div class="hero__content container--public center">
+    <h1>Inform debates on the future of conservation</h1>
+    <p class="hero__tagline">Explore the views of conservationists on a range of issues, see how you compare in the movement globally and contribute your views to shape future debates on conservation</p>
+
+    <div>
+      <%= link_to 'About', '', class: 'button--white hero__button' %>
+      <%= link_to 'Take the survey', '', class: 'button--blue-shadow hero__button' %>
+    </div>
+  </div>
+</header>
+
+<div>
+
+  <% homepageContent.each do |content| %>
+    <div class="block--public container--public-small">
+      <%#= image_tag content[:icon], alt: 'Icon' %>
+
+      <h2><%= content[:title] %></h2>
+      <p><%= content[:description] %></p>
+
+      <%= link_to 'Find out more', content[:url], title: "Find out more about #{content[:title]}", class: 'button--blue-shadow' %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'global_public/cta' %>

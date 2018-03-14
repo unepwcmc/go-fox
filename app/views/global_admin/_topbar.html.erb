@@ -1,9 +1,9 @@
-<div class="topbar flex flex-v-center flex-h-between">
+<div class="topbar--admin gutters flex flex-v-center flex-h-between">
   <%= link_to '/', title: 'gofox' do %>
-    <%= image_tag 'logos/logo.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
+    <%= image_tag 'logos/logo-gofox.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
   <% end %>
 
-  <ul class="nav--primary ul-inline">
+  <ul class="nav--secondary ul-inline">
     <% if user_signed_in? %>
       <% if current_user.admin? %>
         <li><%= link_to "Questions", questions_path %></li>

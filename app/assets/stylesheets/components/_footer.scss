@@ -1,9 +1,42 @@
 //--------------------------------------------------
+// footer - shared styles
+//--------------------------------------------------
+%footer {
+  @extend .gutters;
+  background-color: $blue-xdark;
+}
+
+//--------------------------------------------------
 // footer
 //--------------------------------------------------
 .footer {
-  background-color: $blue-xdark;
-  color: $white;
-  padding: 0 $gutter-large;
-  width: auto; height: rem-calc(66);
+  
+
+//--------------------------------------------------
+// footer - admin
+//--------------------------------------------------
+  &--admin {
+    @extend %footer;
+    color: $white;
+    width: auto; height: rem-calc(66);
+  }
+
+//--------------------------------------------------
+// footer - public
+//--------------------------------------------------
+  &--public {
+    @extend %footer;
+    color: $blue-xlight;
+
+    .footer {
+      &__content {
+        height: rem-calc(130);
+      }
+
+        &__copyright {
+          border-top: solid $blue-xlight 1px;
+          padding: rem-calc(11 0);
+        }
+    }
+  }
 }

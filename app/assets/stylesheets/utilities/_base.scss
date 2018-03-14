@@ -17,11 +17,19 @@ h1 {
 }
 
 h2 {
-  color: $beige-xdark;
-  font-size: rem-calc(16);
-  letter-spacing: rem-calc(2);
-  text-align: center;
-  text-transform: uppercase;
+  .base--admin & {
+    color: $beige-xdark;
+    font-size: rem-calc(16);
+    letter-spacing: rem-calc(2);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .base--public & {
+    color: $grey-dark;
+    font-size: rem-calc(40);
+    margin: rem-calc(0 0 50 0);
+  }
 }
 
 h3 {
@@ -31,6 +39,7 @@ h4 {
 }
 
 p {
+  line-height: $body-line-height;
   margin: rem-calc(0 0 14 0);
 }
 
@@ -44,19 +53,51 @@ a {
 //--------------------------------------------------
 // site structure
 //--------------------------------------------------
-.site-width { 
-  @include breakpoint($medium){ width: $site-width; }
-}
-
-.container {
-  @extend .site-width;
+%container {
   margin: 0 auto;
   padding: rem-calc(0 $gutter-small);
 
   @include breakpoint($medium){ padding: rem-calc(0 $gutter-medium); }
   @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
+}
 
-  &--small { width: $content-small; }
+.site-width { 
+  @include breakpoint($medium){ width: $site-width; }
+}
+
+.gutters {
+  padding-left: $gutter-small;
+  padding-right: $gutter-small;
+
+  @include breakpoint($medium) {
+    padding-left: $gutter-medium;
+    padding-right: $gutter-medium;
+  }
+
+  @include breakpoint($large) {
+    padding-left: $gutter-large;
+    padding-right: $gutter-large;
+  }
+}
+
+.container {
+  @extend %container;
+  @extend .site-width;
+  
+  &--small { 
+    @extend %container;
+    width: rem-calc(380); 
+  }
+
+  &--public { 
+    @extend %container;
+    @include breakpoint($medium){ width: rem-calc(940); }
+
+    &-small {
+      @extend %container;
+      @include breakpoint($medium){ width: rem-calc(760); }
+    }
+  }
 }
 
 .content-padding {

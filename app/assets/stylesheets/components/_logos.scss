@@ -1,0 +1,29 @@
+//--------------------------------------------------
+// logos - reusable styles
+//--------------------------------------------------
+%logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+%foc {
+  width: rem-calc(166); height: rem-calc(56);
+}
+
+//--------------------------------------------------
+// logos
+//--------------------------------------------------
+.logo {
+
+  &--foc {
+    @extend %logo;
+    @extend %foc;
+    background-image: image-url('logos/logo-foc.svg');
+  }
+
+  &--foc-white {
+    @extend %logo;
+    @extend %foc;
+    background-image: image-url('logos/logo-foc-white.svg');
+  }
+}
