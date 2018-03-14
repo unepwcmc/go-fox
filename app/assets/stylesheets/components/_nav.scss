@@ -29,6 +29,27 @@
     }
   }
 
+  &--side {
+    background-color: $purple-light;
+    flex-shrink: 0;
+
+    .material-icons { color: $grey; }
+
+    .nav {
+      &__ul {
+        padding: rem-calc(16);
+      }
+
+        &__li {
+          border-bottom: solid $grey 1px;
+          padding: rem-calc(0 0 0 10);
+          width: rem-calc(190); height: rem-calc(40);
+
+          &:hover { background-color: $grey-light; }
+        }
+    }
+  }
+
   &--footer {
     width: rem-calc(320);
 

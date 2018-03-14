@@ -1,4 +1,13 @@
 //--------------------------------------------------
+// hero - resusable styles
+//--------------------------------------------------
+%public {
+  background-color: $grey;
+  background-size: cover;
+  color: $white;
+}
+
+//--------------------------------------------------
 // hero
 //--------------------------------------------------
 .hero {
@@ -7,11 +16,8 @@
 // public
 //--------------------------------------------------
   &--public {
+    @extend %public;
     //background: $grey image-url('') center no-repeat;
-    background-color: $grey;
-    background-size: cover;
-    color: $white;
-
     height: rem-calc(400);
   
     .hero {
@@ -25,5 +31,11 @@
         margin-left: rem-calc(10);
       }
     }
+  }
+
+  &--public-small {
+    @extend %public;
+    //background: $grey image-url('') center no-repeat;
+    height: rem-calc(120);
   }
 }

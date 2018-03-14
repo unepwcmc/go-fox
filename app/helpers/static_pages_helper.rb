@@ -15,4 +15,29 @@ module StaticPagesHelper
       }
     ]
   end
+
+  def aboutProjectSideMenu
+    [
+      {
+        link: 'How does it work',
+        title: '',
+        content: ''
+      },
+      {
+        link: 'About us',
+        title: '',
+        content: ''
+      },
+      {
+        link: 'Contact',
+        title: '',
+        content: ''
+      },
+      {
+        link: 'FAQs',
+        title: '',
+        content: ''
+      }
+    ]
+  end
 end
