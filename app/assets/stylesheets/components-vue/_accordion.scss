@@ -1,0 +1,21 @@
+//--------------------------------------------------
+// accordion
+//--------------------------------------------------
+.accordion {
+
+//--------------------------------------------------
+// public
+//--------------------------------------------------
+  &--public {
+    .accordion-item {
+      &:first-child .accordion-item__title { border: none; }
+
+      &__title {
+        border-top: solid $grey 1px;
+        color: $grey-dark;
+        padding: rem-calc(14 0);
+        width: 100%;
+      }
+    }
+  }
+}

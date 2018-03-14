@@ -1,6 +1,8 @@
 import Vue from 'vue/dist/vue.esm'
 
 import store from './store/store.js'
+import Accordion from './components/accordion/Accordion.vue'
+import AccordionItem from './components/accordion/AccordionItem.vue'
 import Carousel from './components/carousel/Carousel.vue'
 import Slide from './components/carousel/Slide.vue'
 import Modal from './components/modal/Modal.vue'
@@ -16,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#v-app',
     store,
-    components: { Carousel, Slide, Modal, ModalTrigger, ModalWrapper, Popup }
+    components: { Accordion, AccordionItem, Carousel, Slide, Modal, ModalTrigger, ModalWrapper, Popup }
   })
 })

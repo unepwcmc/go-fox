@@ -1,0 +1,7 @@
+<accordion class="accordion--public">
+  <% accordion.each_with_index do |item, index| %>
+    <accordion-item id="<%= index %>" title='<%= item[:title] %>'>
+      <%= item[:content].html_safe %>
+    </accordion-item>
+  <% end %>
+</accordion>
