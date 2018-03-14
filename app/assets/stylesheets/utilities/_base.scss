@@ -13,7 +13,9 @@ body {
 }
 
 h1 {
-  font-size: rem-calc(40);
+  .base--admin & { font-size: rem-calc(40); }
+
+  .base--public & { font-size: rem-calc(48); }
 }
 
 h2 {
@@ -91,7 +93,7 @@ a {
 
   &--public { 
     @extend %container;
-    @include breakpoint($medium){ width: rem-calc(940); }
+    @include breakpoint($medium){ width: rem-calc(960); }
 
     &-small {
       @extend %container;
@@ -101,7 +103,12 @@ a {
 }
 
 .content-padding {
-  padding: rem-calc(20 0 50 0);
+  padding-top: rem-calc(20 0 50 0);
 
   &--large { padding: rem-calc(60 0 150 0); }
+  
+  &--public {
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(40);
+  }
 }

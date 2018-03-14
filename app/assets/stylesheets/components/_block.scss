@@ -10,4 +10,26 @@
     padding: rem-calc(80 0 120 0);
     text-align: center;
   }
+
+  &--about {
+    padding: rem-calc(24 0 28 0);
+
+    h2 {
+      border-bottom: solid $grey 1px;
+      color: $blue-dark;
+      font-size: rem-calc(30);
+      margin-bottom: rem-calc(22);
+      padding-bottom: rem-calc(8);
+    }
+
+    h3 {
+      font-size: rem-calc(20);
+      margin-bottom: rem-calc(10);
+    }
+
+    h4 {
+      font-size: rem-calc(16);
+      margin-bottom: rem-calc(6);
+    }
+  }
 }

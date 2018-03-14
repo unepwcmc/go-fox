@@ -7,7 +7,8 @@
 </header>
 
 <div class="container--public flex">
-  <div class="nav--side flex-vs-stretch flex-1-fith">
+
+  <div class="nav--side flex-vs-stretch flex-1-fith content-padding--public">
     <ul class="nav__ul ul-unstyled">
       <% aboutProjectSideMenu.each do |item| %>
         <li class="nav__li flex flex-v-center flex-h-between">
@@ -17,10 +18,16 @@
       <% end %>
     </ul>
   </div>
-  <div class="flex-4-fiths">
-    <h2>Lorem ipsum</h2>
-    <p>The purpose of th is project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <div class="flex-4-fiths gutters content-padding--public">
+    <% aboutProjectSideMenu.each do |item| %>
+      <div class="block--about">
+        <h2><%= item[:title] %></h2>
+        <div><%= item[:content].html_safe %></div>
+      </div>
+    <% end %>
   </div>
+
 </div>
 
 <%= render 'global_public/cta' %>
