@@ -13,6 +13,13 @@
         </div>
       <% end %>
 
+      <% if current_user.admin? %>
+        <div class="field">
+          <%= form.label :locked %>
+          <%= form.check_box :locked, id: :survey_locked %>
+        </div>
+      <% end %>
+
       <% I18n.available_locales.each do |locale| %>
         <h1><%= locale %></h1>
         <%= form.globalize_fields_for locale do |ff| %>
@@ -45,7 +52,7 @@
             <label for="">Is this a follow up to a previous survey you have run? If so, what was the ID of the survey?</label>
             Input
           </div>
-          
+
           <div class="field">
             <label for="">How many people do you plan to send the survey to?</label>
             Select
