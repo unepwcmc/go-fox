@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  uuid       :string           not null
+#  locked     :boolean          default(FALSE)
 #
 # Indexes
 #
