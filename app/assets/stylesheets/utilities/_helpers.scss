@@ -72,6 +72,8 @@
     color: $beige-xdark;
   }
 
+  &-border { border: solid $grey 1px; }
+
   &-margin-left { margin-left: rem-calc(36); }
 
   &-padding { padding: rem-calc(22 20); }
