@@ -30,7 +30,9 @@
         line-height: 1;
         text-decoration: none;
 
-        &:hover { color: $blue; }
+        &:hover { color: $blue-dark; }
+
+        &.nav--active { color: $blue-dark; }
       }
     }
   }
