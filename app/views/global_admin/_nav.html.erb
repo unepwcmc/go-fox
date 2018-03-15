@@ -1,9 +1,9 @@
-<ul class="nav--secondary ul-inline gutters">
-  <% if user_signed_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
+  <ul class="nav--secondary ul-inline gutters">
     <li class="nav__li"><%= link_to "Surveys", surveys_path, title: 'Surveys', class: 'nav__a' %></li>
     <li class="nav__li"><%= link_to "Questions", questions_path, title: 'Questions', class: 'nav__a' %></li>
     <li class="nav__li"><%= link_to "Demographic questions", demographic_questions_path, title: 'Demographic questions', class: 'nav__a' %></li>
     <li class="nav__li"><%= link_to "Classifications", classifications_path, title: 'Classifications', class: 'nav__a' %></li>
     <li class="nav__li"><%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' %></li>
-  <% end %>
-</ul>
+  </ul>
+<% end %>
