@@ -5,6 +5,10 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :results, :destroy]
   before_action :require_ownership, only: [:show, :destroy]
 
+  def index
+    @responses = @survey.responses
+  end
+
   def new
     @response = Response.new
     @questions = @survey.questions

@@ -33,7 +33,7 @@
 
               <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
 
-              <%= link_to 'TODO', title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+              <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
                  Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
               <% end %>
             </p>
