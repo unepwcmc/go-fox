@@ -83,6 +83,10 @@ a {
   }
 }
 
+%container--medium { 
+  @include breakpoint($medium){ width: rem-calc(960); }
+}
+
 .site-width { 
   @include breakpoint($medium){ width: $site-width; }
 }
@@ -105,15 +109,20 @@ a {
 .container {
   @extend %container;
   @extend .site-width;
-  
+
   &--small { 
     @extend %container;
     width: rem-calc(380); 
   }
 
+  &--medium {
+    @extend %container;
+    @extend %container--medium;
+  }
+
   &--public { 
     @extend %container;
-    @include breakpoint($medium){ width: rem-calc(960); }
+    @extend %container--medium;
 
     &-small {
       @extend %container;

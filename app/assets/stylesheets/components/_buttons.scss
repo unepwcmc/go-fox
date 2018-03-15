@@ -197,4 +197,8 @@
     @extend %button--rounded;
     @extend %button--padded;
   }
+
+  &--delete {
+    &:hover { color: $grey-dark; }
+  }
 }
