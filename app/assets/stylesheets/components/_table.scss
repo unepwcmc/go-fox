@@ -1,8 +1,11 @@
 //--------------------------------------------------
+// table - reusable styles
+//--------------------------------------------------
+%table { margin: rem-calc(26 0 0 0); }
+//--------------------------------------------------
 // table
 //--------------------------------------------------
 .table {
-  margin: rem-calc(26 0 0 0);
 
   &__header {
     padding-left: rem-calc(21);
@@ -23,14 +26,34 @@
     &__heading {
       font-weight: bold;
 
-      &-created { width: rem-calc(200); }
-      &-results { width: rem-calc(100); }
-      &-published { width: rem-calc(100); }
-      &-user { width: rem-calc(100); }
+      
     }
 
     &__buttons {
       justify-self: flex-end;
       margin-left: auto;
     }
+
+  &--surveys {
+    @extend %table;
+
+    .table__heading {
+      &-1 { width: rem-calc(180); }
+      &-2 { width: rem-calc(100); }
+      &-3 { width: rem-calc(100); }
+      &-4 { width: rem-calc(100); }
+    }
+  }
+
+  &--users {
+    @extend %table;
+
+    .table__heading {
+      &-1 { width: rem-calc(120); }
+      &-2 { width: rem-calc(180); }
+      &-3 { width: rem-calc(200); }
+      &-4 { width: rem-calc(140); }
+      &-5 { width: rem-calc(100); }
+    }
+  }
 }
