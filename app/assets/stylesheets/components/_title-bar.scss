@@ -1,0 +1,21 @@
+//--------------------------------------------------
+// title bar
+//--------------------------------------------------
+.title-bar {
+  background-color: $grey-light;
+  border-bottom: solid $grey 1px;
+  height: rem-calc(66);
+
+  h1 { 
+    @extend %small-uppcase-title; 
+    font-size: rem-calc(16);
+  }
+
+  &--hidden { // hack to center and right align child components
+    @include breakpoint($medium){
+      content: '';
+      flex: 1;
+      visibility: hidden;
+    }
+  }
+}

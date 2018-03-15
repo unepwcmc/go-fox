@@ -112,6 +112,12 @@
 //---------------
 // specific
 //---------------
+  &--back {
+    text-decoration: none;
+
+    &:hover { color: $grey-dark; }
+  }
+
   &--plain {
     @extend %button;
     padding: 0;

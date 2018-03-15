@@ -1,21 +1,30 @@
-<h2>Responses for this survey</h2>
+<div class="title-bar flex flex-v-center gutters">
+  <%= link_to '#TODO', title: 'Back to the dashboard', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
+    <i class="material-icons">arrow_back</i><span>Dashboard</span>
+  <% end %>
 
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Created at</th>
-    <th colspan="3"></th>
-  </thead>
-  <tbody>
-    <% @responses.each do |response| %>
-      <tr>
-        <td><%= response.id %></td>
-        <td><%= response.created_at.to_formatted_s(:short) %></td>
-        <td><%= link_to "Show results page", results_survey_response_path(@survey, response) %></td>
-        <td><%= link_to "Show full response", survey_response_path(@survey, response) %></td>
-        <td><%= link_to 'Destroy', survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h1 class="h1--small-uppercase"><%= @survey.name %> results</h1>
 
+  <div class="title-bar--hidden"></div>
+</div>
+
+<div class="container">
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </thead>
+    <tbody>
+      <% @responses.each do |response| %>
+        <tr>
+          <td><%= response.id %></td>
+          <td><%= response.created_at.to_formatted_s(:short) %></td>
+          <td><%= link_to "Show results page", results_survey_response_path(@survey, response) %></td>
+          <td><%= link_to "Show full response", survey_response_path(@survey, response) %></td>
+          <td><%= link_to 'Destroy', survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

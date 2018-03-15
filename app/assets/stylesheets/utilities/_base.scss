@@ -1,4 +1,15 @@
 //--------------------------------------------------
+// html elements - reusable styles
+//--------------------------------------------------
+%small-uppcase-title {
+  color: $grey-dark;
+  font-size: rem-calc(16);
+  letter-spacing: rem-calc(2);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+//--------------------------------------------------
 // html elements
 //--------------------------------------------------
 * { 
@@ -16,15 +27,16 @@ h1 {
   .base--admin & { font-size: rem-calc(40); }
 
   .base--public & { font-size: rem-calc(48); }
+
+  &--small-uppercase { 
+    @extend %small-uppcase-title;
+  }
 }
 
 h2 {
-  .base--admin & {
+  .base--admin & { 
+    @extend %small-uppcase-title; 
     color: $beige-xdark;
-    font-size: rem-calc(16);
-    letter-spacing: rem-calc(2);
-    text-align: center;
-    text-transform: uppercase;
   }
 
   .base--public & {
