@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def current_class?(test_path)
+    request.fullpath == test_path ? ' nav--active' : ''
+  end
 end

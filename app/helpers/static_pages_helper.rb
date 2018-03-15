@@ -36,6 +36,7 @@ module StaticPagesHelper
       {
         link: 'FAQs',
         title: 'FAQs',
+        content: 'Several people have been in touch with questions about various aspects of the Future of Conservation project. Rather than write to everyone individually, we have prepared the following answers to some frequently asked questions. If you still have a question that is not answered below, please do get in touch!',
         accordion: [
           {
             title: 'The wording of some of the questions is problematic, making it difficult to know how to answer?',
@@ -78,7 +79,7 @@ module StaticPagesHelper
       {
         link: 'Link 4',
         title: 'Link 4',
-        content: ''
+        content: '<p>The purpose of th is project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p><p>The purpose of th is project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>'
       }
     ]
   end
