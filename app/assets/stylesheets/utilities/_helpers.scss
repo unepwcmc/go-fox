@@ -52,32 +52,3 @@
 // margin & padding
 //--------------------------------------------------
 .no-margin { margin: 0; }
-
-//--------------------------------------------------
-// boxes
-//--------------------------------------------------
-.box {
-  &--grey-light {
-    background-color: $grey-light;
-    padding: rem-calc(18 34);
-    margin-bottom: rem-calc(28);
-  }
-
-  &--grey {
-    background-color: $grey;
-    padding: rem-calc(18 34);
-  }
-
-  &--beige-light { 
-    background-color: $beige-light; 
-    color: $beige-xdark;
-  }
-
-  &-border { border: solid $grey 1px; }
-
-  &-margin-left { margin-left: rem-calc(36); }
-
-  &-padding { padding: rem-calc(22 20); }
-
-  &__header--beige { background-color: $beige; }
-}
