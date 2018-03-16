@@ -1,13 +1,19 @@
-<p>
-  <strong>ip address:</strong>
-  <%= @response.ip_address %>
-</p>
+<div class="title-bar flex flex-h-center flex-v-center gutters">
+  <h1 class="h1--small-uppercase">Full response</h1>
+</div>
 
-<strong>language:</strong>
-<%= @response.language %>
-</p>
+<div class="container--medium content-padding">
+  <p>
+    <strong>ip address:</strong>
+    <%= @response.ip_address %>
+  </p>
 
-<% @response.answers.each do |answer| %>
-  <h3><%= answer.question.text %></h3>
-  <%= format_answer(answer) %>
-<% end %>
+  <strong>language:</strong>
+  <%= @response.language %>
+  </p>
+
+  <% @response.answers.each do |answer| %>
+    <h3><%= answer.question.text %></h3>
+    <%= format_answer(answer) %>
+  <% end %>
+</div>
