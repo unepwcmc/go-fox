@@ -1,4 +1,15 @@
 //--------------------------------------------------
+// html elements - reusable styles
+//--------------------------------------------------
+%small-uppcase-title {
+  color: $grey-dark;
+  font-size: rem-calc(16);
+  letter-spacing: rem-calc(2);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+//--------------------------------------------------
 // html elements
 //--------------------------------------------------
 * { 
@@ -16,15 +27,16 @@ h1 {
   .base--admin & { font-size: rem-calc(40); }
 
   .base--public & { font-size: rem-calc(48); }
+
+  &--small-uppercase { 
+    @extend %small-uppcase-title;
+  }
 }
 
 h2 {
-  .base--admin & {
+  .base--admin & { 
+    @extend %small-uppcase-title; 
     color: $beige-xdark;
-    font-size: rem-calc(16);
-    letter-spacing: rem-calc(2);
-    text-align: center;
-    text-transform: uppercase;
   }
 
   .base--public & {
@@ -57,10 +69,22 @@ a {
 //--------------------------------------------------
 %container {
   margin: 0 auto;
-  padding: rem-calc(0 $gutter-small);
+  padding-right: rem-calc($gutter-small);
+  padding-left: rem-calc($gutter-small);
 
-  @include breakpoint($medium){ padding: rem-calc(0 $gutter-medium); }
-  @include breakpoint($large){ padding: rem-calc(0 $gutter-large); }
+  @include breakpoint($medium){ 
+    padding-right: rem-calc($gutter-medium);
+    padding-left: rem-calc($gutter-medium);
+  }
+
+  @include breakpoint($large){ 
+    padding-right: rem-calc($gutter-large);
+    padding-left: rem-calc($gutter-large);
+  }
+}
+
+%container--medium { 
+  @include breakpoint($medium){ width: rem-calc(960); }
 }
 
 .site-width { 
@@ -85,15 +109,20 @@ a {
 .container {
   @extend %container;
   @extend .site-width;
-  
+
   &--small { 
     @extend %container;
     width: rem-calc(380); 
   }
 
+  &--medium {
+    @extend %container;
+    @extend %container--medium;
+  }
+
   &--public { 
     @extend %container;
-    @include breakpoint($medium){ width: rem-calc(960); }
+    @extend %container--medium;
 
     &-small {
       @extend %container;
@@ -103,7 +132,8 @@ a {
 }
 
 .content-padding {
-  padding-top: rem-calc(20 0 50 0);
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(50);
 
   &--large { padding: rem-calc(60 0 150 0); }
   

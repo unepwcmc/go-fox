@@ -112,6 +112,12 @@
 //---------------
 // specific
 //---------------
+  &--back {
+    text-decoration: none;
+
+    &:hover { color: $grey-dark; }
+  }
+
   &--plain {
     @extend %button;
     padding: 0;
@@ -183,5 +189,16 @@
 
   &--icon-chevron {
     .material-icons { font-size: rem-calc(28); } 
+  }
+
+  &--download {
+    @extend %button;
+    @extend %button--blue;
+    @extend %button--rounded;
+    @extend %button--padded;
+  }
+
+  &--delete {
+    &:hover { color: $grey-dark; }
   }
 }

@@ -21,16 +21,17 @@
     <div class="container">
       <% if notice %><p class="notice"><%= notice %></p><% end %>
       <% if alert %><p class="alert"><%= alert %></p><% end %>
+    </div>
       
-      <div id="v-app">
+    <div id="v-app">
 
-        <modal>
-          <h2>Account details</h2>
-          <%= render 'global_admin/my_account' %>
-        </modal>
-        <modal-wrapper></modal-wrapper>
-        <%= yield %>
-      </div>
+      <modal>
+        <h2>Account details</h2>
+        <%= render 'global_admin/my_account' %>
+      </modal>
+      <modal-wrapper></modal-wrapper>
+
+      <%= yield %>
     </div>
 
     <%= render 'global_admin/footer' %>
