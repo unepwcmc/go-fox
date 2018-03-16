@@ -116,6 +116,11 @@
     text-decoration: none;
 
     &:hover { color: $grey-dark; }
+
+    .material-icons { 
+      font-size: rem-calc(22);
+      margin-right: rem-calc(3); 
+    }
   }
 
   &--plain {
