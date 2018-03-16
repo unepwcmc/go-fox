@@ -1,20 +1,57 @@
-<h1>Your results</h1>
-<p>
-  <strong>x_score:</strong>
-  <%= @response.x_score %>
-</p>
+<div class="title-bar flex flex-v-center gutters">
+  <%= link_to survey_responses_path(@survey), title: 'Back to the list of survey responses', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
+    <i class="material-icons">arrow_back</i><span>Responses list</span>
+  <% end %>
 
-<p>
-  <strong>y_score:</strong>
-  <%= @response.y_score %>
-</p>
+  <h1 class="h1--small-uppercase">Results <span class="normal">ID<%= @response.id %></span></h1>
 
-<p>
-  <strong>z_score:</strong>
-  <%= @response.z_score %>
-</p>
+  <div class="title-bar--hidden"></div>
+</div>
 
-<p>
-  <strong>classification:</strong>
-  <%= @response.classification.name %>
-</p>
+<div class="container--medium content-padding">
+
+  <div class="box--grey-light flex">
+    <div class="flex-2-thirds">
+      <p>
+        <strong>x_score:</strong>
+        <%= @response.x_score %>
+      </p>
+
+      <p>
+        <strong>y_score:</strong>
+        <%= @response.y_score %>
+      </p>
+
+      <p>
+        <strong>z_score:</strong>
+        <%= @response.z_score %>
+      </p>
+
+      <p>
+        <strong>classification:</strong>
+        <%= @response.classification.name %>
+      </p>
+    </div>
+
+    <div class="flex-1-third">
+      <h2>Filter results by</h2>
+      <div>
+        Filters go here
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex">
+    <div class="flex-2-thirds">
+      <div class="block--results">
+        <h2><%= t('results.title1') %></h2>
+        <div><%= t('results.content1') %></div>
+      </div>
+
+      <div class="block--results">
+        <h2><%= t('results.title2') %></h2>
+        <div><%= t('results.content2') %></div>
+      </div>
+    </div>
+  </div>
+</div>
