@@ -204,6 +204,8 @@
   }
 
   &--delete {
+    text-decoration: none;
+    
     &:hover { color: $grey-dark; }
   }
 }

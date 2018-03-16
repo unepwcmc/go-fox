@@ -40,7 +40,7 @@
         <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
         
         <p class="table__buttons flex flex-v-center">
-          <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete' do %>
+          <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
             <i class="material-icons">delete</i>
           <% end %>
           
