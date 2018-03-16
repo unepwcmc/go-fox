@@ -34,15 +34,17 @@ h1 {
 }
 
 h2 {
-  .base--admin & { 
-    @extend %small-uppcase-title; 
-    color: $beige-xdark;
-  }
+  font-size: rem-calc(24);
 
   .base--public & {
     color: $grey-dark;
     font-size: rem-calc(40);
     margin: rem-calc(0 0 50 0);
+  }
+
+  &--small-uppercase {
+    @extend %small-uppcase-title; 
+    color: $beige-xdark;
   }
 }
 
