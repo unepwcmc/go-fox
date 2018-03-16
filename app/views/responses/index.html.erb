@@ -3,7 +3,7 @@
     <i class="material-icons">arrow_back</i><span>Dashboard</span>
   <% end %>
 
-  <h1 class="h1--small-uppercase"><%= @survey.name %> results</h1>
+  <h1 class="h1--small-uppercase"><%= @survey.name %> responses</h1>
 
   <div class="title-bar--hidden"></div>
 </div>
@@ -40,16 +40,16 @@
         <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
         
         <p class="table__buttons flex flex-v-center">
-          <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete' do %>
+          <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
             <i class="material-icons">delete</i>
           <% end %>
           
           <%= link_to results_survey_response_path(@survey, response), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
-            Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+            Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>
 
           <%= link_to survey_response_path(@survey, response), title: 'Show full response', class: 'button--results flex flex-v-center' do %>
-            Response<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+            Full response<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>
         </p>
       </li>

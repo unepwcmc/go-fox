@@ -29,7 +29,6 @@
                 <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
               <% end %>
               <p class="table__buttons flex flex-v-center">
-                <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
                   <i class="material-icons">mode_edit</i>Edit
                 <% end %>
@@ -37,7 +36,7 @@
                 <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
 
                 <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
-                   Results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+                   Responses<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
                 <% end %>
               </p>
             </li>
