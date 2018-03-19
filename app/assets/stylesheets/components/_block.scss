@@ -32,4 +32,14 @@
       margin-bottom: rem-calc(6);
     }
   }
+
+  &--results {
+    padding: rem-calc(14 0 18 0);
+
+    h2 {
+      color: $body-font-color;
+      font-size: rem-calc(24);
+      margin: rem-calc(0 0 6 0);
+    }
+  }
 }

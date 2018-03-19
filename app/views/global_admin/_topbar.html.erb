@@ -1,20 +1,14 @@
 <div class="topbar--admin gutters flex flex-v-center flex-h-between">
-  <%= link_to '/', title: 'gofox' do %>
+  <%= link_to root_path, title: 'gofox' do %>
     <%= image_tag 'logos/logo-gofox.svg', alt: 'gofox logo', width: '113px', height: '51px' %>
   <% end %>
 
-  <ul class="nav--secondary ul-inline">
+  <div>
     <% if user_signed_in? %>
-      <% if current_user.admin? %>
-        <li><%= link_to "Questions", questions_path %></li>
-        <li><%= link_to "Demographic questions", demographic_questions_path %></li>
-        <li><%= link_to "Classifications", classifications_path %></li>
-        <li><%= link_to "Users", admin_users_path %></li>
-      <% end %>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'button--log-in' %>
     <% else %>
-      <li><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %></li>
-      <li><%= link_to 'Sign up', new_user_registration_path, title: 'Sign up', class: 'button--sign-up' %></li>
+      <%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %>
+      <%= link_to 'Sign up', new_user_registration_path, title: 'Sign up', class: 'button--sign-up' %>
     <% end %>
-  </ul>
+  </div>
 </div>

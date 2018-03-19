@@ -1,0 +1,22 @@
+<h1>All responses</h1>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Created at</th>
+    <th colspan="4"></th>
+  </thead>
+  <tbody>
+    <% @responses.each do |response| %>
+      <tr>
+        <td><%= response.id %></td>
+        <td><%= response.created_at.to_formatted_s(:short) %></td>
+        <td><%= link_to "Show survey page", survey_path(response.survey) %></td>
+        <td><%= link_to "Show results page", results_survey_response_path(response.survey, response) %></td>
+        <td><%= link_to "Show full response", survey_response_path(response.survey, response) %></td>
+        <td><%= link_to 'Destroy', survey_response_path(response.survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

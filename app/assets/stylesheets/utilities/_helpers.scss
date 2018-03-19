@@ -18,7 +18,11 @@
 // font
 //--------------------------------------------------
 .bold { font-weight: bold; }
+.normal { font-weight: normal; }
 .italic { font-style: italic; }
+
+.text-14 { font-size: rem-calc(14); }
+.text-40 { font-size: rem-calc(40); }
 
 //--------------------------------------------------
 // lists
@@ -48,25 +52,3 @@
 // margin & padding
 //--------------------------------------------------
 .no-margin { margin: 0; }
-
-//--------------------------------------------------
-// boxes
-//--------------------------------------------------
-.box {
-  &--grey-light {
-    background-color: $grey-light;
-    padding: rem-calc(18 34);
-    margin-bottom: rem-calc(28);
-  }
-
-  &--beige-light { 
-    background-color: $beige-light; 
-    color: $beige-xdark;
-  }
-
-  &-margin-left { margin-left: rem-calc(36); }
-
-  &-padding { padding: rem-calc(22 20); }
-
-  &__header--beige { background-color: $beige; }
-}

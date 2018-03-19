@@ -1,3 +1,8 @@
-<h1>New response</h1>
+<h1><%= @survey.name %></h1>
 
-<%= render 'form', response: @response, questions: @questions %>
+<div class="container--public content-padding">
+
+  <div>Progress bar</div>
+
+  <%= render 'form', response: @response, questions: @questions %>
+</div>

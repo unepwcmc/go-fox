@@ -2,11 +2,12 @@
 // table - reusable styles
 //--------------------------------------------------
 %table { margin: rem-calc(26 0 0 0); }
+
 //--------------------------------------------------
 // table
 //--------------------------------------------------
-.table {
 
+.table {
   &__header {
     padding-left: rem-calc(21);
   }
@@ -54,6 +55,15 @@
       &-3 { width: rem-calc(200); }
       &-4 { width: rem-calc(140); }
       &-5 { width: rem-calc(100); }
+  }
+
+  &--results {
+    @extend %table;
+
+    .table__heading {
+      &-1 { width: rem-calc(80); }
+      &-2 { width: rem-calc(120); }
+      &-3 { width: rem-calc(120); }
     }
   }
 }

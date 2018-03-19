@@ -1,0 +1,59 @@
+<div class="title-bar flex flex-v-center gutters">
+  <%= link_to root_path, title: 'Back to the dashboard', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
+    <i class="material-icons">arrow_back</i><span>Dashboard</span>
+  <% end %>
+
+  <h1 class="h1--small-uppercase"><%= @survey.name %> responses</h1>
+
+  <div class="title-bar--hidden"></div>
+</div>
+
+<div class="container--medium content-padding">
+
+  <div class="flex box--grey-light">
+    <div class="flex flex-1-half flex-column flex-v-center">
+      <p class="text-14"><%= @survey.user.organisation_name %></p>
+
+      <p class="text-40"><span class="bold"><%= @responses.count %></span> Result<% unless @responses.count == 1 %>s<% end %></p>
+
+      <%= link_to '#TODO', title: "Download the results for #{@survey.name}", class: 'button--download flex flex-v-center' do %>
+        CSV<i class="material-icons">file_download</i>  
+      <% end %> 
+    </div>
+
+    <div class="flex flex-1-half box--grey">
+      IMAGE?
+    </div>
+  </div>
+
+  <ul class="table--results ul-unstyled">
+    <li class="table__header flex">
+      <p class="table__heading table__heading-1">ID</p>
+      <p class="table__heading table__heading-2">Score</p>
+      <p class="table__heading table__heading-3">Created on</p>
+    </li>
+
+    <% @responses.each do |response| %>
+      <li class="table__row flex flex-v-center">
+        <p class="table__heading-1"><%= response.id %></p>
+        <p class="table__heading-2">#TODO</p>
+        <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
+        
+        <p class="table__buttons flex flex-v-center">
+          <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
+            <i class="material-icons">delete</i>
+          <% end %>
+          
+          <%= link_to results_survey_response_path(@survey, response), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+            Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+          <% end %>
+
+          <%= link_to survey_response_path(@survey, response), title: 'Show full response', class: 'button--results flex flex-v-center' do %>
+            Full response<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+          <% end %>
+        </p>
+      </li>
+    <% end %>
+
+  </ul>
+</div>

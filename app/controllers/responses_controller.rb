@@ -4,6 +4,11 @@ class ResponsesController < ApplicationController
   before_action :require_survey_published, only: [:new]
   before_action :set_response, only: [:show, :results, :destroy]
   before_action :require_ownership, only: [:show, :destroy]
+  before_action :require_survey_unlocked, only: [:new]
+
+  def index
+    @responses = @survey.responses
+  end
 
   def new
     @response = Response.new
@@ -48,6 +53,11 @@ class ResponsesController < ApplicationController
     def require_survey_published
       return if @survey.published?
       redirect_to root_path, notice: "You cannot submit a response for an unpublished survey"
+    end
+
+    def require_survey_unlocked
+      return unless @survey.locked?
+      redirect_to root_path, notice: "This survey has been locked by an administrator and cannot be answered at this time. Please try again later."
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

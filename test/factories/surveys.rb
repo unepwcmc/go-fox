@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  uuid       :string           not null
+#  locked     :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -25,5 +26,6 @@ FactoryBot.define do
     published true
     association :user, factory: :user
     uuid nil
+    locked false
   end
 end
