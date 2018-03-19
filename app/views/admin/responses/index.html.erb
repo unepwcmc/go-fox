@@ -24,7 +24,7 @@
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
         <p class="table__heading-2">#TODO</p>
-        <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
+        <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
         <p class="table__heading-4"><%= response.survey.user.organisation_name %></p>
         
         <p class="table__buttons flex flex-v-center">
