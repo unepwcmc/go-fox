@@ -19,7 +19,7 @@
     margin-bottom: rem-calc(9);
     padding: rem-calc(21);
 
-    &:hover { box-shadow: $beige 0 0 4px 3px}
+    &:hover { box-shadow: $beige 0 0 4px 3px; }
 
     p { margin-bottom: 0; }
   }
@@ -55,6 +55,7 @@
       &-3 { width: rem-calc(200); }
       &-4 { width: rem-calc(140); }
       &-5 { width: rem-calc(100); }
+    }
   }
 
   &--results {
