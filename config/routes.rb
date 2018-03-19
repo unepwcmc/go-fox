@@ -15,11 +15,15 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, controller: "users", except: [:new, :create]
     resources :responses, only: [:index]
+
+    namespace :responses do
+      get :export
+    end
   end
 
   resources :surveys, param: :uuid do
     member do
-      post :export
+      get :export
     end
 
     resources :responses, param: :uuid do
