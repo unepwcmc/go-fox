@@ -5,7 +5,7 @@
 <div class="container--medium content-padding">
 
   <div class="flex flex-column flex-h-center flex-v-center box--grey-light">
-    <p class="text-40"><span class="bold"><%= @responses.count %></span> Total result<% unless @responses.count == 1 %>s<% end %></p>
+    <p class="text-40"><span class="bold"><%= pluralize(@responses.count, "result") %></p>
 
     <%= link_to '#TODO', title: "Download all the results", class: 'button--download flex flex-v-center' do %>
       CSV<i class="material-icons">file_download</i>  
