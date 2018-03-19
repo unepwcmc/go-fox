@@ -1,22 +1,46 @@
-<h1>All responses</h1>
+<div class="title-bar flex flex-h-center flex-v-center gutters">
+  <h1 class="h1--small-uppercase">All survey responses</h1>
+</div>
 
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Created at</th>
-    <th colspan="4"></th>
-  </thead>
-  <tbody>
-    <% @responses.each do |response| %>
-      <tr>
-        <td><%= response.id %></td>
-        <td><%= response.created_at.to_formatted_s(:short) %></td>
-        <td><%= link_to "Show survey page", survey_path(response.survey) %></td>
-        <td><%= link_to "Show results page", results_survey_response_path(response.survey, response) %></td>
-        <td><%= link_to "Show full response", survey_response_path(response.survey, response) %></td>
-        <td><%= link_to 'Destroy', survey_response_path(response.survey, response), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container--medium content-padding">
+
+  <div class="flex flex-column flex-h-center flex-v-center box--grey-light">
+    <p class="text-40"><span class="bold"><%= @responses.count %></span> Total result<% unless @responses.count == 1 %>s<% end %></p>
+
+    <%= link_to '#TODO', title: "Download all the results", class: 'button--download flex flex-v-center' do %>
+      CSV<i class="material-icons">file_download</i>  
     <% end %>
-  </tbody>
-</table>
+  </div>
 
+  <ul class="table--results ul-unstyled">
+    <li class="table__header flex">
+      <p class="table__heading table__heading-1">ID</p>
+      <p class="table__heading table__heading-2">Score</p>
+      <p class="table__heading table__heading-3">Created on</p>
+      <p class="table__heading table__heading-4">Organisation</p>
+    </li>
+
+    <% @responses.each do |response| %>
+      <li class="table__row flex flex-v-center">
+        <p class="table__heading-1"><%= response.id %></p>
+        <p class="table__heading-2">#TODO</p>
+        <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
+        <p class="table__heading-4"><%= response.survey.user.organisation_name %></p>
+        
+        <p class="table__buttons flex flex-v-center">
+          <%= link_to survey_response_path(response.survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
+            <i class="material-icons">delete</i>
+          <% end %>
+          
+          <%= link_to results_survey_response_path(response.survey, response), title: 'View survey results', class: 'button--large-chevrons flex flex-v-center' do %>
+            Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+          <% end %>
+
+          <%= link_to survey_response_path(response.survey, response), title: 'Show full response', class: 'button--large-chevrons flex flex-v-center' do %>
+            Full response<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+          <% end %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

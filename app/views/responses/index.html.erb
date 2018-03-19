@@ -44,11 +44,11 @@
             <i class="material-icons">delete</i>
           <% end %>
           
-          <%= link_to results_survey_response_path(@survey, response), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+          <%= link_to results_survey_response_path(@survey, response), title: 'View survey results', class: 'button--large-chevrons flex flex-v-center' do %>
             Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>
 
-          <%= link_to survey_response_path(@survey, response), title: 'Show full response', class: 'button--results flex flex-v-center' do %>
+          <%= link_to survey_response_path(@survey, response), title: 'Show full response', class: 'button--large-chevrons flex flex-v-center' do %>
             Full response<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>
         </p>
