@@ -1,0 +1,9 @@
+<div class="box__header--beige box-padding flex flex-v-center">
+  <i class='material-icons'>person</i>
+  <p class="no-margin">
+    <span class="bold inline-block">Account</span> <span class="italic inline-block"><%= current_user.username %></span>
+  </p>
+</div>
+<div class="box-padding">
+  <%= link_to 'View/Edit details', edit_user_registration_path(@current_user), title: 'View/Edit account details', class: 'button--beige-dark' %>
+</div>

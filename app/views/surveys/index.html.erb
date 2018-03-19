@@ -12,21 +12,21 @@
 
         <ul class="table--surveys ul-unstyled">
           <li class="table__header flex">
-            <p class="table__heading table__heading-created">Created surveys</p>
-            <p class="table__heading table__heading-results">Results</p>
-            <p class="table__heading table__heading-published">Published</p>
+            <p class="table__heading table__heading-1">Created surveys</p>
+            <p class="table__heading table__heading-2">Results</p>
+            <p class="table__heading table__heading-3">Published</p>
             <% if current_user.admin? %>
-              <p class="table__heading table__heading-user">User</p>
+              <p class="table__heading table__heading-4">User</p>
             <% end %>
           </li>
 
           <% @surveys.each do |survey| %>
             <li class="table__row flex flex-v-center">
-              <p class="table__heading-created"><%= link_to survey.name, survey_path(survey) %></p>
-              <p class="table__heading-results">Results</p>
-              <p class="table__heading-published"><%= survey.published %></p>
+              <p class="table__heading-1"><%= link_to survey.name, survey_path(survey) %></p>
+              <p class="table__heading-2">Results</p>
+              <p class="table__heading-3"><%= survey.published %></p>
               <% if current_user.admin? %>
-                <p class="table__heading-user"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
+                <p class="table__heading-4"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
               <% end %>
               <p class="table__buttons flex flex-v-center">
                 <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
@@ -35,7 +35,7 @@
 
                 <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
 
-                <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+                <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--large-chevrons' do %>
                    Responses<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
                 <% end %>
               </p>
@@ -47,15 +47,7 @@
     </div>
 
     <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
-      <div class="box__header--beige box-padding flex flex-v-center">
-        <i class='material-icons'>person</i>
-        <p class="no-margin">
-          <span class="bold inline-block">Account</span> <span class="italic inline-block"><%= current_user.username %></span>
-        </p>
-      </div>
-      <div class="box-padding">
-        <%= link_to 'View/Edit details', edit_user_registration_path(@current_user), title: 'View/Edit account details', class: 'button--beige-dark' %>
-      </div>
+      <%= render 'global_admin/cta_edit_account' %>
     </div>
   </div>
 </div>
