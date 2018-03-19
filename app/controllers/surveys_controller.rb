@@ -73,12 +73,11 @@ class SurveysController < ApplicationController
 
 
   def export
-    to_email  = params[:to_email]
     from_date = params[:from_date]
     to_date   = params[:to_date]
 
-    CsvExporterJob.perform_later(to_email, @survey, from_date, to_date)
-    redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
+    CsvExporterJob.perform_later(current_user.email, @survey, from_date, to_date)
+    redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{current_user.email} when it is ready to download"
   end
 
   private

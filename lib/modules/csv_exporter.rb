@@ -5,7 +5,7 @@ module CsvExporter
   @@default_na = "n/a"
   @@questions  = Question.all + DemographicQuestion.all
 
-  def self.export(survey, from_date, to_date)
+  def self.export(survey=nil, from_date=nil, to_date=nil)
     filepath  = self.create_filepath
     responses = self.find_responses(survey, from_date, to_date)
 
@@ -23,8 +23,7 @@ module CsvExporter
     filepath
   end
 
-
-  def self.find_responses(survey, from_date, to_date)
+  def self.find_responses(survey=nil, from_date=nil, to_date=nil)
     conditions              = {}
     from_date               = from_date.present? ? from_date.to_datetime.beginning_of_day : Response.first.created_at
     to_date                 = to_date.present?   ? to_date.to_datetime.end_of_day         : DateTime.now

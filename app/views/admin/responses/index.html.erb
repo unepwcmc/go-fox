@@ -7,8 +7,8 @@
   <div class="flex flex-column flex-h-center flex-v-center box--grey-light">
     <p class="text-40"><span class="bold"><%= pluralize(@responses.count, "result") %></p>
 
-    <%= link_to '#TODO', title: "Download all the results", class: 'button--download flex flex-v-center' do %>
-      CSV<i class="material-icons">file_download</i>  
+    <%= link_to admin_responses_export_path, title: "Download all the results", class: 'button--download flex flex-v-center' do %>
+      CSV<i class="material-icons">file_download</i>
     <% end %>
   </div>
 
