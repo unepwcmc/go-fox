@@ -5,10 +5,10 @@
 <div class="container--medium content-padding">
 
   <div class="flex flex-column flex-h-center flex-v-center box--grey-light">
-    <p class="text-40"><span class="bold"><%= @responses.count %></span> Total result<% unless @responses.count == 1 %>s<% end %></p>
+    <p class="text-40"><span class="bold"><%= pluralize(@responses.count, "result") %></p>
 
     <%= link_to admin_responses_export_path, title: "Download all the results", class: 'button--download flex flex-v-center' do %>
-      CSV<i class="material-icons">file_download</i>  
+      CSV<i class="material-icons">file_download</i>
     <% end %>
   </div>
 
@@ -24,7 +24,7 @@
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
         <p class="table__heading-2">#TODO</p>
-        <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
+        <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
         <p class="table__heading-4"><%= response.survey.user.organisation_name %></p>
         
         <p class="table__buttons flex flex-v-center">
