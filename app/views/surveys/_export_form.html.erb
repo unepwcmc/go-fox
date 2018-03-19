@@ -1,9 +1,4 @@
-<%= form_tag export_survey_path(survey) do |form| %>
-  <div>
-    <%= label_tag :to_email %>
-    <%= text_field_tag :to_email, nil, required: true %>
-  </div>
-
+<%= form_tag export_survey_path(survey), method: :get do |form| %>
   <div>
     <%= label_tag :from_date %>
     <%= date_field_tag :from_date, Date.new(2018, 1, 1) %>

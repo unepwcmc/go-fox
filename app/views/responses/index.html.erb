@@ -16,9 +16,9 @@
 
       <p class="text-40"><span class="bold"><%= @responses.count %></span> Result<% unless @responses.count == 1 %>s<% end %></p>
 
-      <%= link_to '#TODO', title: "Download the results for #{@survey.name}", class: 'button--download flex flex-v-center' do %>
-        CSV<i class="material-icons">file_download</i>  
-      <% end %> 
+      <%= link_to export_survey_path(@survey), title: "Download the results for #{@survey.name}", class: 'button--download flex flex-v-center' do %>
+        CSV<i class="material-icons">file_download</i>
+      <% end %>
     </div>
 
     <div class="flex flex-1-half box--grey">
@@ -38,7 +38,7 @@
         <p class="table__heading-1"><%= response.id %></p>
         <p class="table__heading-2">#TODO</p>
         <p class="table__heading-3"><%= response.created_at.to_date.strftime("%d/%m/%y") %></p>
-        
+
         <p class="table__buttons flex flex-v-center">
           <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
             <i class="material-icons">delete</i>
