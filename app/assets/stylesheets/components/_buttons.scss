@@ -72,7 +72,15 @@
 
   &--padded {
     padding: rem-calc(11 25);
-  }  
+  }
+
+//---------------
+// size
+//---------------
+  &--large {
+    margin-left: rem-calc(20);
+    padding: rem-calc(8 24 8 16);
+  }
 }
 
 
@@ -161,6 +169,8 @@
   }
 
   &--edit {
+    @extend .flex;
+    @extend .flex-v-center;
     @extend %button--beige;
   }
 
@@ -181,13 +191,14 @@
     &:hover { @extend %button--green; }
   }
 
-  &--results {
+  &--large-chevrons {
+    @extend .flex;
+    @extend .flex-v-center;
     @extend %button;
     @extend %button--blue;
     @extend %button--rounded;
     @extend %button--padded;
-    margin-left: rem-calc(20);
-    padding: rem-calc(8 24 8 16);
+    @extend %button--large;
 
     .material-icons { margin-right: rem-calc(-18); }
   }
@@ -204,6 +215,7 @@
   }
 
   &--delete {
+    margin-right: rem-calc(10);
     text-decoration: none;
     
     &:hover { color: $grey-dark; }

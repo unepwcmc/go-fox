@@ -1,36 +1,48 @@
-<h1>Admin Users</h1>
+<div class="title-bar flex flex-h-center flex-v-center gutters">
+  <h1 class="h1--small-uppercase">Manage users</h1>
+</div>
 
-<div class="box--grey-light">
-  <ul class="table--users ul-unstyled">
-    <li class="table__header flex">
-      <p class="table__heading table__heading-1">Username</p>
-      <p class="table__heading table__heading-2">Organisation Name</p>
-      <p class="table__heading table__heading-3">Email</p>
-      <p class="table__heading table__heading-4">No of Surveys</p>
-      <p class="table__heading table__heading-5">Admin</p>
-    </li>
+<div class="container content-padding">
+  <div class="flex">
+    <div class="flex-4-fiths">
 
-    <% @users.each do |user| %>
-      <li class="table__row flex flex-v-center">
-        <p class="table__heading-1"><%= user.username %></p>
-        <p class="table__heading-2"><%= user.organisation_name %></p>
-        <p class="table__heading-3"><%= user.email %></p>
-        <p class="table__heading-4"><%= user.surveys.count %></p>
-        <p class="table__heading-5"><%= user.admin? %></p>
-        
-        <p class="table__buttons flex flex-v-center">
-          <%= link_to surveys_path(user: user.id), title: 'Surveys', class: 'button--edit' do %>
-            Surveys<i class="material-icons">chevron_right</i>
+      <div class="box--grey-light">
+        <ul class="table--users ul-unstyled">
+          <li class="table__header flex">
+            <span class="table__heading-0"></span>
+            <p class="table__heading table__heading-1">Username</p>
+            <p class="table__heading table__heading-2">Organisation</p>
+            <p class="table__heading table__heading-3">Email</p>
+          </li>
+
+          <% @users.each do |user| %>
+            <li class="table__row flex flex-v-center">
+              <i class="table__heading-0 material-icons table__icon">person</i>
+              <p class="table__heading-1"><%= user.username %></p>
+              <p class="table__heading-2"><%= user.organisation_name %></p>
+              <p class="table__heading-3"><%= user.email %></p>
+              
+              <p class="table__buttons flex flex-v-center">
+                <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure you want to permanently delete this user?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
+                  <i class="material-icons">delete</i>
+                <% end %>
+
+                <%= link_to edit_admin_user_path(user), title: 'Edit', class: 'button--edit' do %>
+                  <i class="material-icons">mode_edit</i>Edit
+                <% end %>
+
+                <%= link_to surveys_path(user: user.id), title: 'Surveys', class: 'button--large-chevrons' do %>
+                  View dashboard<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+                <% end %>
+              </p>
+            </li>
           <% end %>
-          
-          <%= link_to edit_admin_user_path(user), title: 'Edit', class: 'button--edit' do %>
-            <i class="material-icons">mode_edit</i>Edit
-          <% end %>
 
-          <%= link_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure you want to permanently delete this user?' } %>
-        </p>
-      </li>
-    <% end %>
+        </ul>
+      </div>
+    </div>
 
-  </ul>
+    <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
+      <%= render 'global_admin/cta_edit_account' %>
+    </div>
 </div>

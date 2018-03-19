@@ -35,7 +35,7 @@
 
                 <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
 
-                <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--results flex flex-v-center' do %>
+                <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--large-chevrons' do %>
                    Responses<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
                 <% end %>
               </p>
@@ -47,15 +47,7 @@
     </div>
 
     <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
-      <div class="box__header--beige box-padding flex flex-v-center">
-        <i class='material-icons'>person</i>
-        <p class="no-margin">
-          <span class="bold inline-block">Account</span> <span class="italic inline-block"><%= current_user.username %></span>
-        </p>
-      </div>
-      <div class="box-padding">
-        <%= link_to 'View/Edit details', edit_user_registration_path(@current_user), title: 'View/Edit account details', class: 'button--beige-dark' %>
-      </div>
+      <%= render 'global_admin/cta_edit_account' %>
     </div>
   </div>
 </div>

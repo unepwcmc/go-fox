@@ -26,14 +26,14 @@
 
     &__heading {
       font-weight: bold;
-
-      
     }
 
     &__buttons {
       justify-self: flex-end;
       margin-left: auto;
     }
+
+    &__icon { color: $grey; }
 
   &--surveys {
     @extend %table;
@@ -50,11 +50,10 @@
     @extend %table;
 
     .table__heading {
-      &-1 { width: rem-calc(120); }
+      &-0 { width: rem-calc(50); }
+      &-1 { width: rem-calc(150); }
       &-2 { width: rem-calc(180); }
       &-3 { width: rem-calc(200); }
-      &-4 { width: rem-calc(140); }
-      &-5 { width: rem-calc(100); }
     }
   }
 
