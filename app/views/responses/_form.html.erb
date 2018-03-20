@@ -14,8 +14,8 @@
   <%= form.fields_for :answers do |answer_form| %>  
   
     <% if answer_form.object.question.class.name == "Question" %>
-
-      <div class="question">
+      
+      <page-item class="question" :index="<%= answer_form.index %>">
         <div class="question__title box--grey-light">
           <h3><%= answer_form.object.question.text %></h3>
         </div>
@@ -32,7 +32,7 @@
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
         <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
-      </div>
+      </page-item>
 
     <% else answer_form.object.question.class.name == "DemographicQuestion" %>
       <%= react_component "DemographicQuestion", {
@@ -47,6 +47,9 @@
       } %>
     <% end %>
   <% end %>
+
+  <pagination-button>Previous</pagination-button>
+  <pagination-button>Next</pagination-button>
 
   <div class="actions">
     <%= form.submit %>
