@@ -50,9 +50,7 @@
     </page-item>
   <% end %>
 
-  <page-item class="actions" type="submit">
-    <button class="button--large-chevrons">
-      Get results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
-    </button>
+  <page-item class="actions flex flex-h-center" type="submit">
+    <%= form.submit({ value: 'Get results', class: 'button--clue-shadow'}) %>
   </page-item>
 <% end %>
