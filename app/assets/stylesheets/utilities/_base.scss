@@ -50,6 +50,12 @@ h2 {
 
 h3 {
   margin-top: 0;
+
+  .question & {
+    color: $grey-dark;
+    font-size: rem-calc(24);
+    margin: 0;
+  }
 }
 
 h4 {
