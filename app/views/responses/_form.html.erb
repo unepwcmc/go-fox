@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= form.fields_for :answers do |answer_form| %>  
+  <%= form.fields_for :answers do |answer_form| %>
   
     <% if answer_form.object.question.class.name == "Question" %>
       
@@ -48,8 +48,8 @@
     <% end %>
   <% end %>
 
-  <pagination-button>Previous</pagination-button>
-  <pagination-button>Next</pagination-button>
+  <pagination-button type="previous" :total="<%= @questions.count %>">Previous</pagination-button>
+  <pagination-button type="next">Next</pagination-button>
 
   <div class="actions">
     <%= form.submit %>
