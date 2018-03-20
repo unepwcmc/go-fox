@@ -178,19 +178,6 @@ textarea {
   padding-bottom: rem-calc(60);
 
   &__title {
-    margin-top: rem-calc(38);
     padding: rem-calc(26 26);
-
-    position: relative;
   }
-
-    &__number {
-      color: $grey;
-      margin: 0;
-      padding: rem-calc(8 26);
-
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-    }
 }
