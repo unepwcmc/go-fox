@@ -9,13 +9,13 @@
     name: 'pagination-button',
 
     props: {
-      'type': { required: true },
-      'total': { type: Number }
+      type: { required: true },
+      total: { type: Number }
     },
 
     data () {
       return {
-        'itemsPerPage': 10
+        itemsPerPage: 10
       }
     },
 

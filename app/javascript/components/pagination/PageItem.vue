@@ -9,8 +9,8 @@
     name: 'page-item',
 
     props: {
-      'index': { type: Number },
-      'type': { type: String }
+      index: { type: Number },
+      type: { type: String }
     },
 
     computed: {
