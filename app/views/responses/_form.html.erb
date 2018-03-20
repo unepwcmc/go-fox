@@ -12,10 +12,11 @@
   <% end %>
 
   <%= form.fields_for :answers do |answer_form| %>
-  
-    <% if answer_form.object.question.class.name == "Question" %>
+    
+    <page-item class="question" :index="<%= answer_form.index %>">
+
+      <% if answer_form.object.question.class.name == "Question" %>
       
-      <page-item class="question" :index="<%= answer_form.index %>">
         <div class="question__title box--grey-light">
           <h3><%= answer_form.object.question.text %></h3>
         </div>
@@ -32,9 +33,9 @@
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
         <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
-      </page-item>
 
     <% else answer_form.object.question.class.name == "DemographicQuestion" %>
+      Another question
       <%= react_component "DemographicQuestion", {
         question: answer_form.object.question,
         questionType: answer_form.object.question.question_type,
@@ -45,11 +46,9 @@
         options: answer_form.object.question.options,
         field: "raw"
       } %>
-    <% end %>
+      <% end %>
+    </page-item>
   <% end %>
-
-  <pagination-button type="previous" :total="<%= @questions.count %>">Previous</pagination-button>
-  <pagination-button type="next">Next</pagination-button>
 
   <div class="actions">
     <%= form.submit %>

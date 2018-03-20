@@ -2,7 +2,10 @@
 
 <div class="container--public content-padding">
 
-  <div>Progress bar</div>
+  <progress-bar></progress-bar>
 
   <%= render 'form', response: @response, questions: @questions %>
+
+  <pagination-button type="previous" :total="<%= @questions.count %>">Previous</pagination-button>
+  <pagination-button type="next">Next</pagination-button>
 </div>

@@ -24,6 +24,7 @@
 
       if (this.total != undefined && typeof this.total == 'number') {
         this.$store.commit('pagination/updateTotalPageItems', this.total)
+        this.$store.commit('pagination/updateTotalPages', this.total/this.itemsPerPage)
       }
         
     },
