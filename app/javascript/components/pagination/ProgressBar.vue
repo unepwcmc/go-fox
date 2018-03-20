@@ -15,7 +15,7 @@
       },
 
       totalPages () {
-        return Math.ceil(this.$store.state.pagination.totalPages)
+        return this.$store.state.pagination.totalPages
       },
 
       classes () {

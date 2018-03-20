@@ -24,7 +24,7 @@
 
       if (this.total != undefined && typeof this.total == 'number') {
         this.$store.commit('pagination/updateTotalPageItems', this.total)
-        this.$store.commit('pagination/updateTotalPages', this.total/this.itemsPerPage)
+        this.$store.commit('pagination/updateTotalPages', Math.ceil(this.total/this.itemsPerPage))
       }
         
     },
@@ -44,14 +44,10 @@
         let page = this.$store.state.pagination.page
         let totalItems = this.$store.state.pagination.totalPageItems
 
-        console.log(totalItems)
-
         if (this.type === 'previous' && page > 1) {
           page = page - 1
 
         } else if (this.type === 'next' && page < totalItems/this.itemsPerPage) {
-          console.log(page)
-          console.log(totalItems/this.itemsPerPage)
           page = page + 1
         }
 
