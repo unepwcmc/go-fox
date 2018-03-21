@@ -5,12 +5,18 @@
 </template>
 
 <script>
+  import { eventHub } from '../../admin.js'
+
   export default {
     name: 'page-item',
 
     props: {
       index: { type: Number },
       type: { type: String }
+    },
+
+    created () {
+      eventHub.$on('validate', this.validate)
     },
 
     computed: {
@@ -25,6 +31,15 @@
         }
 
         return isActive
+      }
+    },
+
+    methods: {
+      validate () {
+        if (this.isActive) {
+          console.log('validate item')
+          console.log(this.$slots)
+        }
       }
     }
   }  

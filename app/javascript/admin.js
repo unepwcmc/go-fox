@@ -9,6 +9,7 @@ import PageItem from './components/pagination/PageItem.vue'
 import PaginationButton from './components/pagination/PaginationButton.vue'
 import ProgressBar from './components/pagination/ProgressBar.vue'
 import Popup from './components/popup/Popup.vue'
+import RadioButtons from './components/form_fields/RadioButtons.vue'
 
 // create event hub and export so that it can be imported into .vue files
 export const eventHub = new Vue()
@@ -18,6 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#v-app',
     store,
-    components: { Accordion, AccordionItem, Carousel, Slide, Popup, PageItem, PaginationButton, ProgressBar }
+    components: { Accordion, AccordionItem, Carousel, Slide, Popup, PageItem, PaginationButton, ProgressBar, RadioButtons }
   })
 })

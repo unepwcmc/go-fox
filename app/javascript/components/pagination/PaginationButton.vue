@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import { eventHub } from '../../admin.js'
+
   export default {
     name: 'pagination-button',
 
@@ -51,11 +53,14 @@
           page = page + 1
         }
 
+        if(this.type === 'next'){
+          console.log('next button selected - validate!')
+          eventHub.$emit('validate')
+        } else {
+          this.$store.commit('pagination/updatePage', page)
 
-
-        this.$store.commit('pagination/updatePage', page)
-
-        this.updateActiveIndicies()
+          this.updateActiveIndicies()
+        }
       },
 
       updateActiveIndicies () {
