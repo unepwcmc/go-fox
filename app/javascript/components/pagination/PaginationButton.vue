@@ -55,8 +55,9 @@
 
         if (this.type === 'next'){
           this.$store.commit('pagination/resetErrors')
-          eventHub.$emit('validateIfActive')
-          console.log(this.$store.state.pagination.errors)
+          
+          // eventHub.$emit('validateIfActive')
+          
           if (this.$store.state.pagination.errors == 0) { this.newPage(page) }
 
         } else {
