@@ -5,7 +5,7 @@ export const mixinValidate = {
     return {
       errors: false,
       input: null,
-      checkedInput: []
+      inputMultiple: []
     }
   },
 
@@ -19,26 +19,20 @@ export const mixinValidate = {
     },
 
     validateRequired () {
-      console.log('input', this.input)
-
-      if(this.input){
-        this.errors = false
-      } else {
-        this.errors = true
-        this.$store.commit('pagination/updateErrors')
-      }
+      this.input ? this.passedValidation() : this.failedValidation()
     },
 
-    validateRequiredChecked () {
-      console.log('input', this.checkedInput)
+    validateRequiredMultiple () {
+      this.inputMultiple.length > 0 ? this.passedValidation() : this.failedValidation()
+    },
 
-      if(this.checkedInput.length > 0){
-        this.errors = false
-        
-      } else {
-        this.errors = true
-        this.$store.commit('pagination/updateErrors')
-      }
+    passedValidation () {
+      this.errors = false
+    },
+
+    failedValidation () {
+      this.errors = true
+      this.$store.commit('pagination/updateErrors')
     }
   }
 }

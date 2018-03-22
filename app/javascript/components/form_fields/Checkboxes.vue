@@ -3,7 +3,7 @@
     <p class="form__validation-message" v-show="errors">Please select an option below</p>
 
     <p v-for="option in options">
-      <input :name="name + '[]'" :value="option.text" :id="id(option.text)" v-model="checkedInput" type="checkbox">
+      <input :name="name + '[]'" :value="option.text" :id="id(option.text)" v-model="inputMultiple" type="checkbox">
       <label :for="id(option.text)" class="">{{ option.text }}</label>
     </p>
   </div>
@@ -30,7 +30,7 @@
       },
 
       validateField () {
-        // this.validateRequiredChecked()
+        this.validateRequiredMultiple()
       }
     }
   }
