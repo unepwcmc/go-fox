@@ -41,6 +41,7 @@
             <checkboxes
               :validate="props.validate"
               name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :index="<%= answer_form.index %>"
               :options="<%= answer_form.object.question.options.to_json %>">
             </checkboxes>
 

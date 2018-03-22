@@ -60,7 +60,7 @@
       },
 
       validateField () {
-        this.validateRequired()
+        // this.validateRequired()
       }
     }
   }
