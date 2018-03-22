@@ -1,6 +1,10 @@
+// libraries
 import Vue from 'vue/dist/vue.esm'
 
+// store
 import store from './store/store.js'
+
+// vue components
 import Accordion from './components/accordion/Accordion.vue'
 import AccordionItem from './components/accordion/AccordionItem.vue'
 import Carousel from './components/carousel/Carousel.vue'
@@ -9,7 +13,6 @@ import PageItem from './components/pagination/PageItem.vue'
 import PaginationButton from './components/pagination/PaginationButton.vue'
 import ProgressBar from './components/pagination/ProgressBar.vue'
 import Popup from './components/popup/Popup.vue'
-
 import Checkboxes from './components/form_fields/Checkboxes.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
