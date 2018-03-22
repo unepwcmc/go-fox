@@ -18,7 +18,9 @@ export const mixinValidate = {
     },
 
     validateRequired () {
-      if(this.input ){
+      console.log('input', this.input)
+
+      if(this.input){
         this.errors = false
         
       } else {

@@ -15,6 +15,7 @@
     mixins: [ mixinValidate ],
 
     props: {
+      validate: { required: true },
       name: { required: true }
     },
 
