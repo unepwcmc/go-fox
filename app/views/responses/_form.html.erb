@@ -44,15 +44,10 @@
 
         <% elsif answer_form.object.question.question_type == 'Checkbox' %>
 
-          <%= answer_form.object.question.options.inspect %>
-
           <checkboxes
             :validate="props.validate"
             name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            options="<%= answer_form.object.question.options.to_ary %>">
-
-
-          >
+            :options="<%= answer_form.object.question.options.to_json %>">
           </checkboxes>
 
         <% else answer_form.object.question.class.name == "DemographicQuestion" %>
