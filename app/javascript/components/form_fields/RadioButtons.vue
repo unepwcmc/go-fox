@@ -2,15 +2,20 @@
   <div>
     <p class="form__validation-message" v-show="errors">Please select an option below</p>
 
-    <p class="flex" :class="{ 'form__validation-border': errors }">
+    <p v-if="showSmiles" class="flex" :class="{ 'form__validation-border': errors }">
       <input type="hidden" :name="name" :value="name">
 
       <span v-for="option in options" class="radio-button">
 
         <input required type="radio" v-model="selectedOption" :value="option" :name="name" :id="id(option)" class="radio-button__input">
-        <label :for="id(option)" :class="labelClass(option, '-')" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
+        <label :for="id(option)" :class="labelClass(option)" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
         <i class="radio-button__tick"></i>
       </span>
+    </p>
+
+    <p v-else v-for="option in options">
+      <input required type="radio" v-model="selectedOption" :value="option.text" :name="name" :id="id(option.text)">
+      <label :for="id(option.text)" :class="labelClass(option.text)">{{ option.text }}</label>
     </p>
   </div>
 </template>
@@ -24,39 +29,36 @@
     props: {
       validate: { required: true },
       options: { required: true },
-      attribute: { required: true },
-      model: { required: true },
-      index: { required: true }
+      name: { required: true },
+      index: { required: true },
+      scale: { type: Boolean }
     },
 
     data () {
       return {
         errors: false,
-        selectedOption: null
+        selectedOption: null,
+        showSmiles: false
       }
     },
 
     created () {
       eventHub.$on('validateIfActive', this.validateField)
-    },
 
-    computed: {
-      name () {
-        return this.model + '[' + this.attribute + '][' + this.index + '][raw]'
-      }
+      if (this.scale) { this.showSmiles = this.scale }
     },
 
     methods: {
-      labelClass (string, separator) {
-        return 'radio-button__label-' + this.text(string, separator)
+      friendly (string) {
+        return string.toLowerCase().replace(' ', '-')
+      },
+
+      labelClass (string) {
+        return 'radio-button__label-' + this.friendly(string)
       },
 
       id (string) {
-        return 'response_answers_attributes_' + this.index + '_raw_' + this.text(string, '_')
-      },
-
-      text (string, separator) {
-        return string.toLowerCase().replace(' ', separator)
+        return this.friendly(string) + this.index
       },
 
       validateField () {

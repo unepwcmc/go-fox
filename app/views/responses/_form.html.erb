@@ -25,10 +25,10 @@
 
           <radio-buttons 
             :validate="props.validate"
-            :options="<%= scale_options_for_answers %>"
+            name="response[answers_attributes][<%= answer_form.index %>][raw]"
             :index="<%= answer_form.index %>"
-            model="response"
-            attribute="answers_attributes">
+            :options="<%= scale_options_for_answers %>"
+            :scale="true">
           </radio-buttons>
 
         <% elsif answer_form.object.question.question_type == 'Free Text' %>
@@ -38,9 +38,14 @@
             name="response[answers_attributes][<%= answer_form.index %>][raw]">
           </text-input>
 
-        <% elsif answer_form.object.question.question_type == 'Radio Button' %>
+        <% elsif answer_form.object.question.question_type == 'Radio button' %>
 
-          Radio buttons here
+          <radio-buttons
+            :validate="props.validate"
+            name="response[answers_attributes][<%= answer_form.index %>][raw]"
+            :index="<%= answer_form.index %>"
+            :options="<%= answer_form.object.question.options.to_json %>">
+          </radio-buttons>
 
         <% elsif answer_form.object.question.question_type == 'Checkbox' %>
 
@@ -49,6 +54,10 @@
             name="response[answers_attributes][<%= answer_form.index %>][raw]"
             :options="<%= answer_form.object.question.options.to_json %>">
           </checkboxes>
+
+        <% elsif answer_form.object.question.question_type == 'Select box' %>
+
+        <% elsif answer_form.object.question.question_type == 'Multiple Select Box' %>          
 
         <% else answer_form.object.question.class.name == "DemographicQuestion" %>
           
