@@ -4,6 +4,9 @@
       <%= link_to "Surveys", surveys_path, title: 'Surveys', class: 'nav__a' + current_class?(surveys_path) %>
     </li>
     <li class="nav__li">
+      <%= link_to "All responses", admin_responses_path, title: 'All responses', class: 'nav__a' + current_class?(admin_responses_path) %>
+    </li>
+    <li class="nav__li">
       <%= link_to "Questions", questions_path, title: 'Questions', class: 'nav__a' + current_class?(questions_path) %>
     </li>
     <li class="nav__li">
