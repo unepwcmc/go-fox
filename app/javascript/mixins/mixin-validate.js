@@ -23,11 +23,9 @@ export const mixinValidate = {
 
       if(this.input){
         this.errors = false
-        
       } else {
         this.errors = true
         this.$store.commit('pagination/updateErrors')
-
       }
     },
 
@@ -40,7 +38,6 @@ export const mixinValidate = {
       } else {
         this.errors = true
         this.$store.commit('pagination/updateErrors')
-
       }
     }
   }

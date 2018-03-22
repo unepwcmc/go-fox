@@ -30,7 +30,7 @@
       },
 
       validateField () {
-        this.validateRequiredChecked()
+        // this.validateRequiredChecked()
       }
     }
   }
