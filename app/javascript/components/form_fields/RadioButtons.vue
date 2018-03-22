@@ -7,26 +7,28 @@
 
       <span v-for="option in options" class="radio-button">
 
-        <input required type="radio" v-model="selectedOption" :value="option" :name="name" :id="id(option)" class="radio-button__input">
+        <input required type="radio" v-model="input" :value="option" :name="name" :id="id(option)" class="radio-button__input">
         <label :for="id(option)" :class="labelClass(option)" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
         <i class="radio-button__tick"></i>
       </span>
     </p>
 
     <p v-else v-for="option in options">
-      <input required type="radio" v-model="selectedOption" :value="option.text" :name="name" :id="id(option.text)">
+      <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)">
       <label :for="id(option.text)" :class="labelClass(option.text)">{{ option.text }}</label>
     </p>
   </div>
 </template>
 
 <script>
-  import { eventHub } from '../../admin.js'
+  import { mixinValidate } from '../../mixins/mixin-validate.js'
 
   export default {
     name: 'radio-buttons',
 
-    props: {
+    mixins: [ mixinValidate ],
+
+    props: { 
       validate: { required: true },
       options: { required: true },
       name: { required: true },
@@ -36,15 +38,11 @@
 
     data () {
       return {
-        errors: false,
-        selectedOption: null,
         showSmiles: false
       }
     },
 
     created () {
-      eventHub.$on('validateIfActive', this.validateField)
-
       if (this.scale) { this.showSmiles = this.scale }
     },
 
@@ -62,14 +60,7 @@
       },
 
       validateField () {
-        if(this.validate){
-          if(this.selectedOption ){
-            this.errors = false
-          } else {
-            this.errors = true
-            this.$store.commit('pagination/updateErrors')
-          }
-        }
+        this.validateRequired()
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div @click="test">
+  <div>
     <p class="form__validation-message" v-show="errors">Please select an option below</p>
 
     <input :name="name" type="text" v-model="input">
@@ -18,15 +18,10 @@
       name: { required: true }
     },
 
-    data () {
-      return {
-        input: null,
-        errors: false
-      }
-    },
-
     methods: {
-      test() { this.validateRequired() }
+      validateField () {
+        this.validateRequired()
+      }
     }
   }
 </script>
