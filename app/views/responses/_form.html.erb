@@ -13,23 +13,26 @@
 
   <%= form.fields_for :answers do |answer_form| %>
     
-    <page-item class="question" :index="<%= answer_form.index %>">
+    <page-item :index="<%= answer_form.index %>" class="question">
 
       <% if answer_form.object.question.class.name == "Question" %>
 
-        <div class="question__title box--grey-light">
-          <h3><%= answer_form.object.question.text %></h3>
-        </div>
+        <template slot="formField" slot-scope="props">
+          <div class="question__title box--grey-light">
+            <h3><%= answer_form.object.question.text %></h3>
+          </div>
 
-        <radio-buttons 
-          :options="<%= scale_options_for_answers %>"
-          :index="<%= answer_form.index %>"
-          model="response"
-          attribute="answers_attributes">
-        </radio-buttons>
+          <radio-buttons 
+            :validate="props.validate"
+            :options="<%= scale_options_for_answers %>"
+            :index="<%= answer_form.index %>"
+            model="response"
+            attribute="answers_attributes">
+          </radio-buttons>
 
-        <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
-        <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
+          <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
+          <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
+        </template>
 
       <% else answer_form.object.question.class.name == "DemographicQuestion" %>
         Another question

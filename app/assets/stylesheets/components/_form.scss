@@ -171,6 +171,20 @@ textarea {
   }
 }
 
+.form {
+  &__validation {
+    &-message {
+      color: $red;
+      font-size: rem-calc(20);
+      font-weight: bold;
+    }
+  
+    &-border {
+      border: solid 2px $red;
+    }
+  }
+}
+
 //--------------------------------------------------
 // questions
 //--------------------------------------------------

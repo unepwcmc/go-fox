@@ -53,14 +53,21 @@
           page = page + 1
         }
 
-        if(this.type === 'next'){
-          console.log('next button selected - validate!')
-          eventHub.$emit('validate')
-        } else {
-          this.$store.commit('pagination/updatePage', page)
+        if (this.type === 'next'){
+          this.$store.commit('pagination/resetErrors')
+          eventHub.$emit('validateIfActive')
+          console.log(this.$store.state.pagination.errors)
+          if (this.$store.state.pagination.errors == 0) { this.newPage(page) }
 
-          this.updateActiveIndicies()
+        } else {
+          this.newPage(page)  
         }
+      },
+
+      newPage (page) {
+        this.$store.commit('pagination/updatePage', page)
+
+        this.updateActiveIndicies()
       },
 
       updateActiveIndicies () {

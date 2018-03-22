@@ -6,7 +6,8 @@ export const storePagination = {
     startIndex: 0,
     endIndex: 0,
     totalPageItems: 0,
-    totalPages: 0
+    totalPages: 0,
+    errors: 0
   },
 
   mutations: {
@@ -28,6 +29,14 @@ export const storePagination = {
 
     updateTotalPages (state, totalPages) {
       this.state.pagination.totalPages = totalPages
+    },
+
+    resetErrors () {
+      this.state.pagination.errors = 0
+    },
+
+    updateErrors () {
+      this.state.pagination.errors = this.state.pagination.errors + 1
     }
   }
 }

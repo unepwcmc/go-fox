@@ -1,6 +1,6 @@
 <template>
   <div v-show="isActive">
-    <slot></slot>
+    <slot name="formField" :validate="isActive"></slot>
   </div>
 </template>
 
@@ -15,10 +15,6 @@
       type: { type: String }
     },
 
-    created () {
-      eventHub.$on('validate', this.validate)
-    },
-
     computed: {
       isActive () {
         let isActive
@@ -31,15 +27,6 @@
         }
 
         return isActive
-      }
-    },
-
-    methods: {
-      validate () {
-        if (this.isActive) {
-          console.log('validate item')
-          console.log(this.$slots)
-        }
       }
     }
   }  
