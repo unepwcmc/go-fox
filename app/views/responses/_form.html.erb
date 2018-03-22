@@ -1,4 +1,4 @@
-<%= form_with(model: [:survey, response], local: true, class: 'stacy') do |form| %>
+<%= form_with(model: [:survey, response], local: true, id: 'form-survey') do |form| %>
   
   <%= form.fields_for :answers do |answer_form| %>
     
@@ -70,10 +70,6 @@
     </page-item>
   <% end %>
 
-  <page-item class="actions flex flex-h-center" type="submit">
-    <template slot="formField">
-      <%= form.submit({ value: 'Get results', class: 'button--blue-shadow'}) %>
-    </template>
-  </page-item>
+  <submit id="form-survey"></submit>
 
 <% end %>

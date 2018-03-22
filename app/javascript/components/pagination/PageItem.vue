@@ -17,16 +17,7 @@
 
     computed: {
       isActive () {
-        let isActive
-
-        if(this.type && this.type === 'submit') {
-          isActive = this.$store.state.pagination.totalPages == this.$store.state.pagination.page
-
-        } else {
-          isActive = this.$store.state.pagination.startIndex <= this.index && this.$store.state.pagination.endIndex > this.index
-        }
-
-        return isActive
+        return this.$store.state.pagination.startIndex <= this.index && this.$store.state.pagination.endIndex > this.index
       }
     }
   }  

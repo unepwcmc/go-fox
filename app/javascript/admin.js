@@ -18,6 +18,7 @@ import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
 import MultiSelectBox from './components/form_fields/MultiSelectBox.vue'
+import Submit from './components/form_fields/Submit.vue'
 
 // create event hub and export so that it can be imported into .vue files
 export const eventHub = new Vue()
@@ -27,6 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#v-app',
     store,
-    components: { Accordion, AccordionItem, Carousel, Slide, Popup, PageItem, PaginationButton, ProgressBar, Checkboxes, RadioButtons, TextInput, SelectBox, MultiSelectBox }
+    components: { 
+      Accordion, 
+      AccordionItem, 
+      Carousel,
+      Slide, 
+      Popup, 
+      PageItem, 
+      PaginationButton, 
+      ProgressBar, 
+      Checkboxes, 
+      RadioButtons, 
+      TextInput, 
+      SelectBox, 
+      MultiSelectBox, 
+      Submit 
+    }
   })
 })
