@@ -38,6 +38,23 @@
             name="response[answers_attributes][<%= answer_form.index %>][raw]">
           </text-input>
 
+        <% elsif answer_form.object.question.question_type == 'Radio Button' %>
+
+          Radio buttons here
+
+        <% elsif answer_form.object.question.question_type == 'Checkbox' %>
+
+          <%= answer_form.object.question.options.inspect %>
+
+          <checkboxes
+            :validate="props.validate"
+            name="response[answers_attributes][<%= answer_form.index %>][raw]"
+            options="<%= answer_form.object.question.options.to_ary %>">
+
+
+          >
+          </checkboxes>
+
         <% else answer_form.object.question.class.name == "DemographicQuestion" %>
           
           <%= answer_form.object.question.question_type %>
@@ -49,7 +66,7 @@
             model: "response",
             attribute: "answers_attributes",
             index: answer_form.index,
-            options: answer_form.object.question,
+            options: answer_form.object.question.options,
             field: "raw"
           } %>
         <% end %>
