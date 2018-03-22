@@ -1,16 +1,5 @@
 <%= form_with(model: [:survey, response], local: true, class: 'stacy') do |form| %>
-  <% if response.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
-
-      <ul>
-      <% response.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  
   <%= form.fields_for :answers do |answer_form| %>
     
     <page-item :index="<%= answer_form.index %>" class="question">
@@ -20,70 +9,59 @@
           <h3><%= answer_form.object.question.text %></h3>
         </div>
 
-        <%# if answer_form.object.question.class.name == "Question" %>
-        <% if answer_form.object.question.question_type == "Scale" %>
+        <% puts case  answer_form.object.question.question_type %>
+          <% when 'Scale' %>
+  
+            <radio-buttons 
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :index="<%= answer_form.index %>"
+              :options="<%= scale_options_for_answers %>"
+              :scale="true">
+            </radio-buttons>
 
-          <radio-buttons 
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            :index="<%= answer_form.index %>"
-            :options="<%= scale_options_for_answers %>"
-            :scale="true">
-          </radio-buttons>
+          <% when 'Free Text' %>
 
-        <% elsif answer_form.object.question.question_type == 'Free Text' %>
+            <text-input 
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]">
+            </text-input>
 
-          <text-input 
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]">
-          </text-input>
+          <% when 'Radio button' %>
 
-        <% elsif answer_form.object.question.question_type == 'Radio button' %>
+            <radio-buttons
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :index="<%= answer_form.index %>"
+              :options="<%= answer_form.object.question.options.to_json %>">
+            </radio-buttons>
 
-          <radio-buttons
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            :index="<%= answer_form.index %>"
-            :options="<%= answer_form.object.question.options.to_json %>">
-          </radio-buttons>
+          <% when 'Checkbox' %>
 
-        <% elsif answer_form.object.question.question_type == 'Checkbox' %>
+            <checkboxes
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :options="<%= answer_form.object.question.options.to_json %>">
+            </checkboxes>
 
-          <checkboxes
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            :options="<%= answer_form.object.question.options.to_json %>">
-          </checkboxes>
+          <% when 'Select box' %>
 
-        <% elsif answer_form.object.question.question_type == 'Select box' %>
+            <select-box
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :options="<%= answer_form.object.question.options.to_json %>">
+            </select-box>
 
-          <select-box
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            :options="<%= answer_form.object.question.options.to_json %>">
-          </select-box>
+          <% when 'Multiple Select Box' %>
 
-        <% elsif answer_form.object.question.question_type == 'Multiple Select Box' %>
+            <multi-select-box
+              :validate="props.validate"
+              name="response[answers_attributes][<%= answer_form.index %>][raw]"
+              :options="<%= answer_form.object.question.options.to_json %>">
+            </multi-select-box>
 
-          <multi-select-box
-            :validate="props.validate"
-            name="response[answers_attributes][<%= answer_form.index %>][raw]"
-            :options="<%= answer_form.object.question.options.to_json %>">
-          </multi-select-box>
-
-        <% else answer_form.object.question.class.name == "DemographicQuestion" %>
-          
-          <%= react_component "DemographicQuestion", {
-            question: answer_form.object.question,
-            questionType: answer_form.object.question.question_type,
-            questionClass: answer_form.object.question.class.name,
-            model: "response",
-            attribute: "answers_attributes",
-            index: answer_form.index,
-            options: answer_form.object.question.options,
-            field: "raw"
-          } %>
-        <% end %>
+          <% else %>
+          <% end %>
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
         <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
@@ -93,7 +71,8 @@
 
   <page-item class="actions flex flex-h-center" type="submit">
     <template slot="formField">
-      <%= form.submit({ value: 'Get results', class: 'button--clue-shadow'}) %>
+      <%= form.submit({ value: 'Get results', class: 'button--blue-shadow'}) %>
     </template>
   </page-item>
+
 <% end %>

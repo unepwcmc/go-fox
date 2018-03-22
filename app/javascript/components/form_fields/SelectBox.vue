@@ -1,7 +1,7 @@
 <template>
   <div>
     <select :name="name">
-      <option value=""></option>
+      <option value="">Choose a country</option>
       <option v-for="option in options" :value="option.text">{{ option.text }}</option>
     </select>
   </div>
