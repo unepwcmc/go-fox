@@ -24,6 +24,8 @@
       <%= render partial: 'global_admin/page_title', locals: { title: content_for(:title) } %>
     <% end %>
 
+    <%= render 'global_admin/flash_message' %>
+
     <div id="v-app">
       <%= yield %>
     </div>
