@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select an option below</p>
+    <p class="form__validation-message" v-show="errors">Please select enter an answer below</p>
 
     <input :name="name" type="text" v-model="input">
   </div>

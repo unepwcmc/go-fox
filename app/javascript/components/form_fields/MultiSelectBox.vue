@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select an option below</p>
+    <p class="form__validation-message" v-show="errors">Please select at least one option below</p>
 
     <select :name="name + '[]'" multiple="multiple" v-model="inputMultiple">
       <option v-for="option in options" :value="option.text">{{ option.text }}</option>
