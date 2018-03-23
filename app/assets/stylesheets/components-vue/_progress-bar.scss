@@ -4,7 +4,71 @@
 .progress-bar {
   color: $grey-dark;
   margin-bottom: rem-calc(58);
-  text-align: center;
+
+  &__tooltip {
+    background-color: $pink-light;
+    border: solid 1px $pink;
+    border-radius: rem-calc(4);
+    color: $pink-dark;
+    font-size: rem-calc(14);
+    font-weight: bold;
+    margin-bottom: rem-calc(18);
+    padding: rem-calc(7 18 7 70);
+    
+    align-self: flex-start;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      box-shadow: lighten($pink-dark, 40%) 2px 2px 0px -1px;
+      background-color: $pink-light;
+      content: '';
+      width: rem-calc(18); height: rem-calc(18);
+
+      position: absolute;
+      bottom: rem-calc(-7);
+      left: rem-calc(34);
+
+      transform: rotateZ(45deg);
+    }
+
+    &-2:before { left: rem-calc(203); }
+
+    &-3 {
+      align-self: center;
+
+      &:before { left: rem-calc(156); }
+    }
+
+    &-4 {
+      align-self: center;
+
+      &:before { left: rem-calc(325); }
+    }
+
+    &-5 {
+      align-self: flex-end;
+
+      &:before { left: rem-calc(278); }
+    }
+
+    &-6 {
+      align-self: flex-end;
+
+      &:before { left: rem-calc(447); }
+    }
+
+    &-icon {
+      background: image_url('icons/icon-tooltip.svg') no-repeat center;
+      background-size: cover;
+      width: rem-calc(52); height: rem-calc(47);
+
+      display: block;
+      position: absolute;
+      top: rem-calc(-9);
+      left: rem-calc(5);
+    }
+  }
 
   &__icon {
     background-size: cover;
