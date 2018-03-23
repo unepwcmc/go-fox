@@ -3,6 +3,7 @@
 //--------------------------------------------------
 .progress-bar {
   color: $grey-dark;
+  margin-top: rem-calc(16);
   margin-bottom: rem-calc(58);
 
   &__tooltip {
@@ -13,7 +14,7 @@
     font-size: rem-calc(14);
     font-weight: bold;
     margin-bottom: rem-calc(18);
-    padding: rem-calc(7 18 7 70);
+    padding: rem-calc(9 18 9 70);
     
     align-self: flex-start;
     display: inline-block;
@@ -27,35 +28,35 @@
 
       position: absolute;
       bottom: rem-calc(-7);
-      left: rem-calc(34);
+      left: rem-calc(30);
 
       transform: rotateZ(45deg);
     }
 
-    &-2:before { left: rem-calc(203); }
+    &-2:before { left: rem-calc(197); }
 
     &-3 {
       align-self: center;
 
-      &:before { left: rem-calc(156); }
+      &:before { left: rem-calc(106); }
     }
 
     &-4 {
       align-self: center;
 
-      &:before { left: rem-calc(325); }
+      &:before { left: rem-calc(273); }
     }
 
     &-5 {
       align-self: flex-end;
 
-      &:before { left: rem-calc(278); }
+      &:before { left: rem-calc(181); }
     }
 
     &-6 {
       align-self: flex-end;
 
-      &:before { left: rem-calc(447); }
+      &:before { left: rem-calc(348); }
     }
 
     &-icon {
@@ -65,7 +66,7 @@
 
       display: block;
       position: absolute;
-      top: rem-calc(-9);
+      top: rem-calc(-11);
       left: rem-calc(5);
     }
   }
@@ -73,7 +74,7 @@
   &__icon {
     background-size: cover;
     margin-bottom: rem-calc(16);
-    width: rem-calc(928); height: rem-calc(36);
+    width: rem-calc(912); height: rem-calc(36);
 
     display: block;
 

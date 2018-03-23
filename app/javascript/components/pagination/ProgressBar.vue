@@ -2,7 +2,7 @@
   <div class="progress-bar flex flex-column flex-v-center">
     <div class="progress-bar__tooltip" :class="'progress-bar__tooltip-' + page">
       <i class="progress-bar__tooltip-icon"></i>
-      <span>You are {{ totalPages - page }} pages away from finding where you sit in the movement</span>
+      <span>You are {{ remainingPages }} away from finding out your results</span>
     </div>
     
     <span class="progress-bar__icon" :class="'progress-bar__icon-' + page"></span>
@@ -23,6 +23,13 @@
 
       totalPages () {
         return this.$store.state.pagination.totalPages
+      },
+
+      remainingPages () {
+        const remaining = this.totalPages - this.page
+        const string = remaining == 1 ? 'page' : 'pages'
+
+        return `${remaining} ${string}`
       }
     }
   }  
