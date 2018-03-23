@@ -60,6 +60,8 @@
           
           if (this.$store.state.pagination.errors == 0) { this.newPage(page) }
 
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+
         } else {
           this.newPage(page)  
         }
@@ -69,6 +71,8 @@
         this.$store.commit('pagination/updatePage', page)
 
         this.updateActiveIndicies()
+
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       },
 
       updateActiveIndicies () {
