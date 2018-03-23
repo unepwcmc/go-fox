@@ -12,7 +12,7 @@
   import { mixinValidate } from '../../mixins/mixin-validate.js'
 
   export default {
-    name: 'multi-select-box',
+    name: 'multiple-select-box',
 
     mixins: [ mixinValidate ],
 

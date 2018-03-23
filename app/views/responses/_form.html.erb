@@ -10,61 +10,8 @@
         <div class="question__title box--grey-light">
           <h3><%= answer_form.object.question.text %></h3>
         </div>
-
-        <% puts case  answer_form.object.question.question_type %>
-          <% when 'Scale' %>
-  
-            <radio-buttons 
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]"
-              :index="<%= answer_form.index %>"
-              :options="<%= scale_options_for_answers %>"
-              :scale="true">
-            </radio-buttons>
-
-          <% when 'Free Text' %>
-
-            <text-input 
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]">
-            </text-input>
-
-          <% when 'Radio button' %>
-
-            <radio-buttons
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]"
-              :index="<%= answer_form.index %>"
-              :options="<%= answer_form.object.question.options.to_json %>">
-            </radio-buttons>
-
-          <% when 'Checkbox' %>
-
-            <checkboxes
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]"
-              :index="<%= answer_form.index %>"
-              :options="<%= answer_form.object.question.options.to_json %>">
-            </checkboxes>
-
-          <% when 'Select box' %>
-
-            <select-box
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]"
-              :options="<%= answer_form.object.question.options.to_json %>">
-            </select-box>
-
-          <% when 'Multiple Select Box' %>
-
-            <multi-select-box
-              :validate="props.validate"
-              name="response[answers_attributes][<%= answer_form.index %>][raw]"
-              :options="<%= answer_form.object.question.options.to_json %>">
-            </multi-select-box>
-
-          <% else %>
-          <% end %>
+        
+        <%= get_form_field answer_form %>
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
         <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
