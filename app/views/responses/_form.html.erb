@@ -11,7 +11,7 @@
           <h3><%= answer_form.object.question.text %></h3>
         </div>
         
-        <%= getFormField answer_form %>
+        <%= get_form_field answer_form %>
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
         <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>

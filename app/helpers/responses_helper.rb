@@ -3,7 +3,7 @@ module ResponsesHelper
     ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
   end
 
-  def getFormField answer_form
+  def get_form_field answer_form
     fieldType = answer_form.object.question.question_type.downcase.gsub(' ', '-')
     scale = false
 
