@@ -17,7 +17,7 @@ import Checkboxes from './components/form_fields/Checkboxes.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
-import MultiSelectBox from './components/form_fields/MultiSelectBox.vue'
+import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
 import Submit from './components/form_fields/Submit.vue'
 import ValidationMessage from './components/form_fields/ValidationMessage.vue'
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       RadioButtons, 
       TextInput, 
       SelectBox, 
-      MultiSelectBox, 
+      MultipleSelectBox, 
       Submit,
       ValidationMessage 
     }
