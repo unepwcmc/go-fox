@@ -13,18 +13,18 @@
 </header>
 
 <div>
-  <% (1..2).each do |i| %>
-    <% block = "homepage.block#{i}" %>
-
+  
+  <%= t('homepage').each do |block| %>
     <div class="block--public container--public-small">
-      <%#= image_tag t("#{block}.icon"), alt: 'Icon' %>
+      <%#= image_tag block[:icon], alt: 'Icon' %>
       
-      <h2><%= t("#{block}.title") %></h2>
-      <p><%= t("#{block}.description") %></p>
+      <h2><%= block[:title] %></h2>
+      <p><%= block[:description] %></p>
 
-      <%= link_to 'Find out more', t("#{block}.url"), title: "Find out more about", class: 'button--blue-shadow' %>
+      <%= link_to 'Find out more', block[:url], title: "Find out more about #{block[:title]}", class: 'button--blue-shadow' %>
     </div>
   <% end %>
+  
 </div>
 
 <%= render 'global_public/cta' %>
