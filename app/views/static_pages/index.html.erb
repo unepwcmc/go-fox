@@ -14,9 +14,9 @@
 
 <div>
   
-  <%= t('homepage').each do |block| %>
+  <% t('homepage').each do |block| %>
     <div class="block--public container--public-small">
-      <%#= image_tag block[:icon], alt: 'Icon' %>
+      <%= image_tag block[:icon], alt: 'Icon', class: "block__icon-#{block[:class]}" %>
       
       <h2><%= block[:title] %></h2>
       <p><%= block[:description] %></p>
