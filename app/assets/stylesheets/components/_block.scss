@@ -1,14 +1,34 @@
 //--------------------------------------------------
+// block - reusable styles
+//--------------------------------------------------
+%public-icon { margin-bottom: rem-calc(80); }
+
+//--------------------------------------------------
 // block
 //--------------------------------------------------
 .block {
-
 //--------------------------------------------------
 // public
 //--------------------------------------------------
   &--public {
     padding: rem-calc(80 0 120 0);
     text-align: center;
+
+    h2 { margin-bottom: rem-calc(36); }
+
+    .block {
+      &__icon {
+        &-foc { 
+          @extend %public-icon;
+          width: rem-calc(145); height: rem-calc(145); 
+        }
+
+        &-gofox { 
+          @extend %public-icon;
+          width: rem-calc(227); height: rem-calc(100); 
+        }
+      }
+    }
   }
 
   &--about {
