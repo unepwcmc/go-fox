@@ -10,9 +10,10 @@
 // admin
 //--------------------------------------------------
   &--secondary {
-    background-color: $purple-light;
     margin: 0;
     padding-bottom: rem-calc(16);
+
+    .base--admin & { background-color: $purple-light; }
 
     .nav {
       &__li {

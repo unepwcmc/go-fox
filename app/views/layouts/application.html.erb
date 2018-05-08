@@ -16,14 +16,16 @@
   </head>
 
   <body class="base--admin">
+
     <%= render 'global_admin/topbar' %>
     <%= render 'global_admin/nav' %>
 
-    <div class="container">
-      <% if notice %><p class="notice"><%= notice %></p><% end %>
-      <% if alert %><p class="alert"><%= alert %></p><% end %>
-    </div>
-      
+    <% if content_for?(:title) %>
+      <%= render partial: 'global_admin/page_title', locals: { title: content_for(:title) } %>
+    <% end %>
+
+    <%= render 'global_admin/flash_message' %>
+
     <div id="v-app">
       <%= yield %>
     </div>

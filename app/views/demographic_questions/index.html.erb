@@ -1,26 +1,19 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>
+  Demographic Questions
+<% end %>
 
-<h1>Demographic Questions</h1>
+<div class="container content-padding">
+  <table>
+    <tbody>
+      <% @demographic_questions.each do |demographic_question| %>
+        <tr>
+          <td><%= demographic_question.text %></td>
+          <td><%= link_to 'Show', demographic_question %></td>
+          <td><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @demographic_questions.each do |demographic_question| %>
-      <tr>
-        <td><%= demographic_question.text %></td>
-        <td><%= link_to 'Show', demographic_question %></td>
-        <td><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Demographic Question', new_demographic_question_path %>
+  <%= link_to 'New Demographic Question', new_demographic_question_path, class: 'button--blue-shadow' %>
+</div>
