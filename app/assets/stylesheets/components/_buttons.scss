@@ -220,4 +220,9 @@
     
     &:hover { color: $grey-dark; }
   }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
