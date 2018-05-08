@@ -1,26 +1,21 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>
+  Questions
+<% end %>
 
-<h1>Questions</h1>
+<div class="container content-padding">
+  <table>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.text %></td>
+          <td><%= link_to 'Show', question %></td>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+  <br>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.text %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+  <%= link_to 'New Question', new_question_path, class: 'button--blue-shadow' %>
+</div>

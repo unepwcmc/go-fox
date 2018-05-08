@@ -19,6 +19,8 @@ class ResponsesController < ApplicationController
         answer.answerable = question
       end
     end
+
+    render layout: 'public'
   end
 
   def create

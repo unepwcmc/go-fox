@@ -1,0 +1,29 @@
+//--------------------------------------------------
+// flash messages - resuable styles
+//--------------------------------------------------
+%flash-message {
+  border: solid 1px $red;
+  border-radius: rem-calc(4);
+  font-size: rem-calc(14);
+  margin: rem-calc(14 0 0 0);
+  padding: rem-calc(10 14);
+
+  display: inline-block;
+}
+
+//--------------------------------------------------
+// flash messages
+//--------------------------------------------------
+.flash-message {
+  &--notice {
+    @extend %flash-message;
+    background-color: $green-light;
+    border-color: $green;
+  }
+
+  &--alert {
+    @extend %flash-message;
+    background-color: $red-light;
+    border-color: $red;
+  }
+}
