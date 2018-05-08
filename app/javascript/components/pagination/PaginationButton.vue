@@ -17,7 +17,7 @@
 
     data () {
       return {
-        itemsPerPage: 10
+        itemsPerPage: 100
       }
     },
 

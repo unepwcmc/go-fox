@@ -12,11 +12,13 @@
         <i class="radio-button__tick"></i>
       </span>
     </p>
-
-    <p v-else v-for="option in options">
-      <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)">
-      <label :for="id(option.text)" :class="labelClass(option.text)">{{ option.text }}</label>
-    </p>
+    
+    <div v-else class="flex flex-wrap">
+      <p v-for="option in options" class="radio-button flex flex-1-half">
+        <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)" class="radio-button__input">
+        <label :for="id(option.text)" :class="labelClass(option.text)" class="radio-button__label">{{ option.text }}</label>
+      </p>
+    </div>
   </div>
 </template>
 
