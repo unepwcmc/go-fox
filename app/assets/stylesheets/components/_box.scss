@@ -13,6 +13,10 @@
     padding: rem-calc(18 34);
   }
 
+  &--grey-transparent {
+    background-color: rgba($grey-light, 0.45)
+  }
+
   &--beige-light { 
     background-color: $beige-light; 
     color: $beige-xdark;

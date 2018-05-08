@@ -1,29 +1,51 @@
-<div class="content-padding--large flex flex-h-center">
-  <div class="container--small">
-    <h1>Log in</h1>
+<div class="page--login">
+  <div class="content-padding--large flex flex-h-center container--medium">
+    <div class="flex-1-half gutter--right">
+      <div class="box--grey-transparent box-border box-padding">
+        <h1 class="center">Log in</h1>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions center">
+            <%= f.submit "Log in" %>
+            <%= render "devise/shared/forgot-password" %>
+          </div>
+        <% end %>
       </div>
+    </div>
 
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+    <div class="flex-1-half gutter--left">
+      <h2 class="center">Create, configure and publish your own Future of Conservation survey</h2>
+      
+      <tabs>
+        <% t('login').each do |item| %>
+          <tab title="<%= item[:title] %>">
+            <%= image_tag item[:icon], alt: 'Icon', class: 'tab__icon' %>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
-
-      <div class="actions center">
-        <%= f.submit "Log in" %>
-        <%= render "devise/shared/forgot-password" %>
-      </div>
-    <% end %>
+            <p><%= item[:description] %></p>
+          </tab>
+        <% end %>
+      </tabs>
+      
+      <p class="center">
+        <%= link_to 'Sign up', new_user_registration_path, class: 'button--outline-blue m-center' %>
+      </p>
+    </div>
   </div>
 </div>
