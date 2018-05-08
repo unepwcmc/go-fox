@@ -4,25 +4,25 @@ module ResponsesHelper
   end
 
   def get_form_field answer_form
-    fieldType = answer_form.object.question.question_type.downcase.gsub(' ', '-')
+    field_type = answer_form.object.question.question_type.downcase.gsub(' ', '-')
     scale = false
 
-    case fieldType
+    case field_type
       when 'scale'
-        fieldType = 'radio-buttons'
+        field_type = 'radio-buttons'
         options = scale_options_for_answers.to_json
         scale = true
   
       when 'free-text'
-        fieldType = 'text-input'
+        field_type = 'text-input'
         options = ''.to_json
 
       when 'radio-button'
-        fieldType = 'radio-buttons'
+        field_type = 'radio-buttons'
         options = answer_form.object.question.options.to_json
 
       when 'checkbox'
-        fieldType = 'checkboxes'
+        field_type = 'checkboxes'
         options = answer_form.object.question.options.to_json
 
       when 'select-box'
@@ -40,6 +40,6 @@ module ResponsesHelper
       ':scale': scale
     }
 
-    content_tag(fieldType, '', attributes)
+    content_tag(field_type, '', attributes)
   end
 end
