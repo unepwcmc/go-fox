@@ -2,10 +2,10 @@
   <div>
     <p class="form__validation-message" v-show="errors">Please select an option below</p>
 
-    <p v-if="showSmiles" class="flex" :class="{ 'form__validation-border': errors }">
+    <p v-if="scale" class="flex" :class="{ 'form__validation-border': errors }">
       <input type="hidden" :name="name" :value="name">
 
-      <span v-for="option in options" class="radio-button">
+      <span v-for="option in options" class="radio-button--scale">
 
         <input required type="radio" v-model="input" :value="option" :name="name" :id="id(option)" class="radio-button__input">
         <label :for="id(option)" :class="labelClass(option)" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
@@ -36,16 +36,6 @@
       name: { required: true },
       index: { required: true },
       scale: { type: Boolean }
-    },
-
-    data () {
-      return {
-        showSmiles: false
-      }
-    },
-
-    created () {
-      if (this.scale) { this.showSmiles = this.scale }
     },
 
     methods: {

@@ -50,104 +50,76 @@ textarea {
   width: 100%; height: rem-calc(170);
 }
 
-// .radio-button {
-//   flex: 1;
+.radio-button--scale {
+  flex: 1;
 
-//   position: relative;
+  position: relative;
 
-//   &:hover { background-color: $purple-light; }
+  &:hover { background-color: $purple-light; }
 
-//   &:nth-child(2){ 
-//     .radio-button__label { border-left: solid $grey-light 1px; }
-//   }
+  &:nth-child(2){ 
+    .radio-button__label { border-left: solid $grey-light 1px; }
+  }
+  
+  .radio-button {
+    &__input {
+      position: absolute;
+      visibility: hidden; 
+    }
 
-//   &:nth-child(3){ 
-//     .radio-button__icon { background: image_url('icons/icon-radio.svg') center no-repeat; }
-//   }
+    &__label {
+      border-top: solid $grey-light 1px;
+      border-right: solid $grey-light 1px;
+      border-bottom: solid $grey-light 1px;
+      cursor: pointer;
+      font-size: rem-calc(12);
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%; height: rem-calc(100);
 
-//   &:nth-child(4) { 
-//     .radio-button__icon { background: image_url('icons/icon-radio.svg') center no-repeat; }
-//   }
+      position: relative;
 
-//   &__input {
-//     position: absolute;
-//     visibility: hidden; 
-//   }
+      &:after {
+        background: repeating-linear-gradient(
+          45deg,
+          $blue-light,
+          $blue-light 5px,
+          $blue 5px,
+          $blue 6px
+        );
+        opacity: 0.7;
 
-//   &__icon {
-//     background-size: cover;
-//     width: rem-calc(50); height: rem-calc(50);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
 
-//     display: block;
-//   }
+    &__tick {
+      background: image_url('icons/icon-tick.svg') no-repeat;
+      background-size: cover;
+      width: rem-calc(58); height: rem-calc(44);
+      
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
 
-//   &__label {
-//     border-top: solid $grey-light 1px;
-//     border-right: solid $grey-light 1px;
-//     border-bottom: solid $grey-light 1px;
-//     cursor: pointer;
-//     font-size: rem-calc(12);
-//     margin: 0;
-//     text-align: center;
-//     text-transform: uppercase;
-//     width: 100%; height: rem-calc(200);
+      transform: translate(-50%, -50%);
+    }
+  }
 
-//     position: relative;
-    
-//     &:before {
-//       background-size: cover;
-//       content: '';
-//       margin: 0 auto rem-calc(30) auto;
-//       width: rem-calc(50); height: rem-calc(50);
-//     }
+  input[type=radio]:checked ~ .radio-button__label:after {
+    content: '';
+  }
 
-//     &-strongly-disagree:before  { background-image: image_url('icons/icon-strongly-disagree.svg'); }
-//     &-disagree:before           { background-image: image_url('icons/icon-disagree.svg'); }
-//     &-slightly-disagree:before  { background-image: image_url('icons/icon-slightly-disagree.svg'); }
-//     &-neutral:before            { background-image: image_url('icons/icon-neutral.svg'); }
-//     &-slightly-agree:before     { background-image: image_url('icons/icon-slightly-agree.svg'); }
-//     &-agree:before              { background-image: image_url('icons/icon-agree.svg'); }
-//     &-strongly-agree:before     { background-image: image_url('icons/icon-strongly-agree.svg'); }
-
-//     &:after {
-//       background: repeating-linear-gradient(
-//         45deg,
-//         $blue-light,
-//         $blue-light 5px,
-//         $blue 5px,
-//         $blue 6px
-//       );
-//       opacity: 0.7;
-
-//       position: absolute;
-//       top: 0;
-//       right: 0;
-//       bottom: 0;
-//       left: 0;
-//     }
-//   }
-
-//   &__tick {
-//     background: image_url('icons/icon-tick.svg') no-repeat;
-//     background-size: cover;
-//     width: rem-calc(68); height: rem-calc(52);
-    
-//     display: none;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-
-//     transform: translate(-50%, -50%);
-//   }
-
-//   input[type=radio]:checked ~ .radio-button__label:after {
-//     content: '';
-//   }
-
-//   input[type=radio]:checked ~ .radio-button__tick {
-//     display: block;
-//   }
-// }
+  input[type=radio]:checked ~ .radio-button__tick {
+    display: block;
+  }
+}
 
 .radio-button {
   border-right: solid $grey-light 1px;
