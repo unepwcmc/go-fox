@@ -27,6 +27,44 @@ label {
 }
 
 //--------------------------------------------------
+// inputs - reusable styles
+//--------------------------------------------------
+%label {
+  color: $blue-light;
+  cursor: pointer;
+  font-size: rem-calc(12);
+  margin: rem-calc(0 0 0 7);
+
+  @include breakpoint($medium) { font-size: rem-calc(14); }
+}
+
+%input-option {
+  border: solid $grey-light 1px;
+  cursor: pointer;
+  margin: 0 0 rem-calc(9) 0;
+  padding: rem-calc(10 12);
+
+  @include breakpoint($medium) {
+    margin: 0;
+    padding: rem-calc(38);
+  }
+
+  &:hover { background-color: $purple-light; }
+
+  &:nth-child(n+3) { 
+    @include breakpoint($medium) { border-top: none; }
+  }
+
+  &:nth-child(even) { 
+    @include breakpoint($medium) { border-left: none; }
+  }
+
+  &:last-child { 
+    @include breakpoint($medium) { border-right: solid $grey-light 1px; }
+  }  
+}
+
+//--------------------------------------------------
 // inputs
 //--------------------------------------------------
 input[type='submit'] {
@@ -53,12 +91,6 @@ textarea {
 //--------------------------------------------------
 // vue radio button
 //--------------------------------------------------
-.radio-button--scale-wrapper {
-  display: block;
-
-  @include breakpoint($medium) { display: flex; }
-}
-
 .radio-button--scale {
   flex: 1;
 
@@ -139,66 +171,19 @@ textarea {
   }
 }
 
-.radio-button-wrapper {
-  display: block;
-
-  @include breakpoint($medium) { display: flex; }
-}
-
 .radio-button {
-  border: solid $grey-light 1px;
-  cursor: pointer;
-  margin: 0 0 rem-calc(9) 0;
-  padding: rem-calc(10 12);
+  @extend %input-option;
 
-  @include breakpoint($medium) {
-    margin: 0;
-    padding: rem-calc(38);
-  }
-
-  &:hover { background-color: $purple-light; }
-
-  &:nth-child(1),
-  &:nth-child(2) { 
-    @include breakpoint($medium) { border-bottom: none; }
-  }
-
-  &:nth-child(odd) { 
-    @include breakpoint($medium) { border-right: none; }
-  }
-
-  &__label {
-    color: $blue-light;
-    cursor: pointer;
-    font-size: rem-calc(12);
-    margin: rem-calc(0 0 0 7);
-
-    @include breakpoint($medium) { font-size: rem-calc(14); }
-  }
+  &__label { @extend %label; }
 }
 
 //--------------------------------------------------
 // vue checkbox
 //--------------------------------------------------
 .checkbox {
-  border-right: solid $grey-light 1px;
-  border-bottom: solid $grey-light 1px;
-  cursor: pointer;
-  margin: 0;
-  padding: rem-calc(38);
+  @extend %input-option;
 
-  &:hover { background-color: $purple-light; }
-
-  &:nth-child(1),
-  &:nth-child(2) { border-top: solid $grey-light 1px; }
-  &:nth-child(odd) { border-left: solid $grey-light 1px; }
-
-  &__label {
-    color: $blue-light;
-    cursor: pointer;
-    font-size: rem-calc(14);
-    margin: rem-calc(0 0 0 7); 
-  }
+  &__label { @extend %label; }
 }
 
 //--------------------------------------------------
