@@ -167,6 +167,7 @@ textarea {
 
   &__label {
     color: $blue-light;
+    cursor: pointer;
     font-size: rem-calc(14);
     margin: rem-calc(0 0 0 7);
   }

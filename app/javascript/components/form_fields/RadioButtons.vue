@@ -14,7 +14,7 @@
     </p>
     
     <div v-else class="flex flex-wrap">
-      <p v-for="option in options" class="radio-button flex flex-1-half">
+      <p v-for="option in options" class="radio-button flex flex-1-half" @click="toggleRadio(option.text)">
         <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)" class="radio-button__input">
         <label :for="id(option.text)" :class="labelClass(option.text)" class="radio-button__label">{{ option.text }}</label>
       </p>
@@ -63,6 +63,10 @@
 
       validateField () {
         this.validateRequired()
+      },
+
+      toggleRadio (text) {
+        this.input = text
       }
     }
   }
