@@ -13,8 +13,8 @@
       </div>
     </div>
     
-    <div v-else class="flex flex-wrap">
-      <p v-for="option in options" class="radio-button flex flex-1-half" @click="toggleRadio(option.text)">
+    <div v-else class="radio-button-wrapper flex-wrap">
+      <p v-for="option in options" class="radio-button flex flex-1-half flex-v-center" @click="toggleRadio(option.text)">
         <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)">
         <label :for="id(option.text)" :class="labelClass(option.text)" class="radio-button__label">{{ option.text }}</label>
       </p>

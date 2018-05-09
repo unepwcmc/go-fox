@@ -139,24 +139,41 @@ textarea {
   }
 }
 
+.radio-button-wrapper {
+  display: block;
+
+  @include breakpoint($medium) { display: flex; }
+}
+
 .radio-button {
-  border-right: solid $grey-light 1px;
-  border-bottom: solid $grey-light 1px;
+  border: solid $grey-light 1px;
   cursor: pointer;
-  margin: 0;
-  padding: rem-calc(38);
+  margin: 0 0 rem-calc(9) 0;
+  padding: rem-calc(10 12);
+
+  @include breakpoint($medium) {
+    margin: 0;
+    padding: rem-calc(38);
+  }
 
   &:hover { background-color: $purple-light; }
 
   &:nth-child(1),
-  &:nth-child(2) { border-top: solid $grey-light 1px; }
-  &:nth-child(odd) { border-left: solid $grey-light 1px; }
+  &:nth-child(2) { 
+    @include breakpoint($medium) { border-bottom: none; }
+  }
+
+  &:nth-child(odd) { 
+    @include breakpoint($medium) { border-right: none; }
+  }
 
   &__label {
     color: $blue-light;
     cursor: pointer;
-    font-size: rem-calc(14);
+    font-size: rem-calc(12);
     margin: rem-calc(0 0 0 7);
+
+    @include breakpoint($medium) { font-size: rem-calc(14); }
   }
 }
 
@@ -224,9 +241,17 @@ textarea {
 // questions
 //--------------------------------------------------
 .question {
-  padding-bottom: rem-calc(60);
+  padding-bottom: rem-calc(30);
+
+  @include breakpoint($medium) { padding-bottom: rem-calc(60); }
 
   &__title {
-    padding: rem-calc(26 26);
+    margin-bottom: rem-calc(10);
+    padding: rem-calc(17);
+
+    @include breakpoint($medium) { 
+      margin-bottom: rem-calc(28);
+      padding: rem-calc(26); 
+    }
   }
 }
