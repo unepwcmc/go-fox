@@ -53,6 +53,12 @@ textarea {
 //--------------------------------------------------
 // vue radio button
 //--------------------------------------------------
+.radio-button--scale-wrapper {
+  display: block;
+
+  @include breakpoint($medium) { display: flex; }
+}
+
 .radio-button--scale {
   flex: 1;
 
@@ -76,12 +82,17 @@ textarea {
       border-bottom: solid $grey-light 1px;
       cursor: pointer;
       font-size: rem-calc(12);
-      margin: 0;
+      margin: 0 0 rem-calc(9) 0;
       text-align: center;
       text-transform: uppercase;
-      width: 100%; height: rem-calc(100);
+      width: 100%; height: rem-calc(40);
 
       position: relative;
+
+      @include breakpoint($medium) { 
+        height: rem-calc(100); 
+        margin: 0;
+      }
 
       &:after {
         background: repeating-linear-gradient(
@@ -104,7 +115,7 @@ textarea {
     &__tick {
       background: image_url('icons/icon-tick.svg') no-repeat;
       background-size: cover;
-      width: rem-calc(58); height: rem-calc(44);
+      width: rem-calc(27); height: rem-calc(21);
       
       display: none;
       position: absolute;
@@ -112,6 +123,10 @@ textarea {
       left: 50%;
 
       transform: translate(-50%, -50%);
+
+      @include breakpoint($medium) { 
+        width: rem-calc(58); height: rem-calc(44);
+      }
     }
   }
 
@@ -160,7 +175,7 @@ textarea {
   &:nth-child(1),
   &:nth-child(2) { border-top: solid $grey-light 1px; }
   &:nth-child(odd) { border-left: solid $grey-light 1px; }
-  
+
   &__label {
     color: $blue-light;
     cursor: pointer;

@@ -85,4 +85,10 @@
     &-5 { background-image: image_url('icons/progress-bar-5.svg'); }
     &-6 { background-image: image_url('icons/progress-bar-6.svg'); }
   }
+
+  &__page-numbers {
+    font-size: rem-calc(12);
+
+    @include breakpoint($medium) { font-size: rem-calc(16); }
+  }
 }
