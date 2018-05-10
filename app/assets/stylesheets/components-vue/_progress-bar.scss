@@ -74,16 +74,60 @@
   &__icon {
     background-size: cover;
     margin-bottom: rem-calc(16);
-    width: rem-calc(912); height: rem-calc(36);
+    width: rem-calc(300); height: rem-calc(19);
+
+    @include breakpoint($medium) { width: rem-calc(912); height: rem-calc(36); }
 
     display: block;
 
-    &-1 { background-image: image_url('icons/progress-bar-1.svg'); }
-    &-2 { background-image: image_url('icons/progress-bar-2.svg'); }
-    &-3 { background-image: image_url('icons/progress-bar-3.svg'); }
-    &-4 { background-image: image_url('icons/progress-bar-4.svg'); }
-    &-5 { background-image: image_url('icons/progress-bar-5.svg'); }
-    &-6 { background-image: image_url('icons/progress-bar-6.svg'); }
+    &-1 { 
+      background-image: image_url('icons/progress-bar-1-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-1.svg'); 
+      }
+    }
+
+    &-2 { 
+      background-image: image_url('icons/progress-bar-2-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-2.svg'); 
+      }
+    }
+
+    &-3 { 
+      background-image: image_url('icons/progress-bar-3-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-3.svg'); 
+      }
+    }
+
+    &-4 { 
+      background-image: image_url('icons/progress-bar-4-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-4.svg'); 
+      }
+    }
+
+    &-5 { 
+      background-image: image_url('icons/progress-bar-5-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-5.svg'); 
+      }
+    }
+
+    &-6 { 
+      background-image: image_url('icons/progress-bar-6-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-6.svg'); 
+      }
+    }
+
   }
 
   &__page-numbers {
