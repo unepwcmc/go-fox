@@ -7,6 +7,7 @@
   @include breakpoint($medium) { padding-bottom: rem-calc(60); }
 
   &__title {
+    background-color: $grey-light;
     margin-bottom: rem-calc(10);
     padding: rem-calc(17);
 
