@@ -5,6 +5,19 @@
   background-color: $grey;
   background-size: cover;
   color: $white;
+
+  position: relative;
+
+  &:before {
+    background-color: rgba($grey-dark, 0.4);
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 %hero-content {
@@ -22,11 +35,11 @@
 //--------------------------------------------------
   &--public {
     @extend %public;
-    //background: $grey image-url('') center no-repeat;
-    background-image: asset-url('survey.jpg');
+    background: $grey asset-url('survey.jpg') center no-repeat;
     height: rem-calc(400);
   
     .hero {
+      &__content { @extend %hero-content; }
 
       &__tagline {
         @include breakpoint($medium) { padding: rem-calc(0 148); }
@@ -45,22 +58,9 @@
     background-size: cover;
     padding: rem-calc(30 0);
 
-    position: relative;
-
     @include breakpoint($medium) {
       padding: 0;
       height: rem-calc(150);  
-    }
-    
-    &:before {
-      background-color: rgba($grey-dark, 0.4);
-      content: '';
-
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
     }
     
     .hero {
