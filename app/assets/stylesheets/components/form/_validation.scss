@@ -1,0 +1,35 @@
+//--------------------------------------------------
+// validation
+//--------------------------------------------------
+.error_explanation {
+  color: $red;
+  font-size: rem-calc(18);
+  font-weight: bold;
+}
+
+.field_with_errors {
+  label {
+    color: $red;
+  }
+
+  input[type='email'],
+  input[type='password'],
+  input[type='text'] {
+    border: solid $red 2px;
+    background-color: $red-light;
+  }
+}
+
+.form {
+  &__validation {
+    &-message {
+      color: $red;
+      font-size: rem-calc(20);
+      font-weight: bold;
+    }
+  
+    &-border {
+      border: solid 2px $red;
+    }
+  }
+}

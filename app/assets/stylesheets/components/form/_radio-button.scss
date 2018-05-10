@@ -1,0 +1,88 @@
+//--------------------------------------------------
+// vue radio button
+//--------------------------------------------------
+.radio-button--scale {
+  flex: 1;
+
+  position: relative;
+
+  &:hover { background-color: $purple-light; }
+
+  &:nth-child(2){ 
+    .radio-button__label { border-left: solid $grey-light 1px; }
+  }
+  
+  .radio-button {
+    &__input {
+      position: absolute;
+      visibility: hidden; 
+    }
+
+    &__label {
+      border-top: solid $grey-light 1px;
+      border-right: solid $grey-light 1px;
+      border-bottom: solid $grey-light 1px;
+      cursor: pointer;
+      font-size: rem-calc(12);
+      margin: 0 0 rem-calc(9) 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%; height: rem-calc(40);
+
+      position: relative;
+
+      @include breakpoint($medium) { 
+        height: rem-calc(100); 
+        margin: 0;
+      }
+
+      &:after {
+        background: repeating-linear-gradient(
+          45deg,
+          $blue-light,
+          $blue-light 5px,
+          $blue 5px,
+          $blue 6px
+        );
+        opacity: 0.7;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &__tick {
+      background: image_url('icons/icon-tick.svg') no-repeat;
+      background-size: cover;
+      width: rem-calc(27); height: rem-calc(21);
+      
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      @include breakpoint($medium) { 
+        width: rem-calc(58); height: rem-calc(44);
+      }
+    }
+  }
+
+  input[type=radio]:checked ~ .radio-button__label:after {
+    content: '';
+  }
+
+  input[type=radio]:checked ~ .radio-button__tick {
+    display: block;
+  }
+}
+
+.radio-button {
+  @extend %input-option;
+
+  &__label { @extend %label; }
+}

@@ -1,0 +1,16 @@
+//--------------------------------------------------
+// multiple select
+//--------------------------------------------------
+select.multiple-select {
+  padding: rem-calc(4 0);
+
+  .multiple-select {
+    &__option {
+      padding: rem-calc(8 15);
+
+      &:hover {
+        background-color: $grey-light;
+      }
+    }
+  }
+}
