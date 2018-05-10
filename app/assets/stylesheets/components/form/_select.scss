@@ -1,0 +1,40 @@
+//--------------------------------------------------
+// select resusable styles
+//--------------------------------------------------
+%select {
+  padding: rem-calc(4 0);
+}
+
+%option {
+  padding: rem-calc(8 15);
+
+  &:hover {
+    background-color: $grey-light;
+  } 
+}
+
+//--------------------------------------------------
+// select
+//--------------------------------------------------
+select.select {
+  @extend %select;
+  
+  .select {
+    &__option {
+      @extend %option;
+    }
+  }
+}
+
+//--------------------------------------------------
+// multiple select
+//--------------------------------------------------
+select.multiple-select {
+  @extend %select;
+
+  .multiple-select {
+    &__option {
+      @extend %option;
+    }
+  }
+}
