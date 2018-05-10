@@ -18,6 +18,8 @@ import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
 import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
+import NavBurger from './components/nav/NavBurger.vue'
+import NavLink from './components/nav/NavLink.vue'
 import Submit from './components/form_fields/Submit.vue'
 import Tabs from './components/tabs/Tabs.vue'
 import Tab from './components/tabs/Tab.vue'
@@ -45,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       TextInput, 
       SelectBox, 
       MultipleSelectBox, 
+      NavBurger,
+      NavLink,
       Submit,
       Tabs,
       Tab,

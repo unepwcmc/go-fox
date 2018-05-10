@@ -41,21 +41,6 @@
 //--------------------------------------------------
 // public
 //--------------------------------------------------
-  &--primary {
-    padding-top: rem-calc(12);
-    padding-bottom: rem-calc(12);
-
-    .nav__link {
-      color: $blue-light;
-      margin-right: rem-calc(16);
-      text-decoration: none;
-
-      &:hover { color: $blue-dark; }
-    }
-
-    .nav--active { color: $blue-dark; }
-  }
-
   &--side {
     background-color: $purple-light;
     flex-shrink: 0;
