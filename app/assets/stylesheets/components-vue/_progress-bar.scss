@@ -15,10 +15,16 @@
     font-weight: bold;
     margin-bottom: rem-calc(18);
     padding: rem-calc(9 18 9 70);
+    align-self: center;
+    width: rem-calc(300);
     
-    align-self: flex-start;
     display: inline-block;
     position: relative;
+
+    @include breakpoint ($medium) {
+      align-self: flex-start;
+      width: auto;
+    }
 
     &:before {
       box-shadow: lighten($pink-dark, 40%) 2px 2px 0px -1px;
@@ -28,35 +34,53 @@
 
       position: absolute;
       bottom: rem-calc(-7);
-      left: rem-calc(30);
+      left: rem-calc(20);
 
       transform: rotateZ(45deg);
+
+      @include breakpoint ($medium) { left: rem-calc(30); }
     }
 
-    &-2:before { left: rem-calc(197); }
+    &-2:before { 
+      left: rem-calc(68); 
+
+      @include breakpoint ($medium) { left: rem-calc(197); }
+    }
 
     &-3 {
-      align-self: center;
-
-      &:before { left: rem-calc(106); }
+      &:before { 
+        left: rem-calc(117);
+        
+        @include breakpoint ($medium) { left: rem-calc(106); }
+      }
     }
 
     &-4 {
-      align-self: center;
+      &:before { 
+        left: rem-calc(165);
 
-      &:before { left: rem-calc(273); }
+        @include breakpoint ($medium) { left: rem-calc(273); }
+      }
     }
 
     &-5 {
-      align-self: flex-end;
+      @include breakpoint ($medium) { align-self: flex-end; }
 
-      &:before { left: rem-calc(181); }
+      &:before { 
+        left: rem-calc(214);
+
+        @include breakpoint ($medium) { left: rem-calc(181); } 
+      }
     }
 
     &-6 {
-      align-self: flex-end;
+      @include breakpoint ($medium) { align-self: flex-end; }
 
-      &:before { left: rem-calc(348); }
+      &:before { 
+        left: rem-calc(263);
+
+        @include breakpoint ($medium) { left: rem-calc(348); }
+      }
     }
 
     &-icon {
