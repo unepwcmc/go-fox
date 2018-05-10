@@ -7,10 +7,15 @@
   color: $white;
 }
 
+%hero-content {
+  z-index: 1;
+}
+
 //--------------------------------------------------
 // hero
 //--------------------------------------------------
 .hero {
+
 
 //--------------------------------------------------
 // public
@@ -18,6 +23,7 @@
   &--public {
     @extend %public;
     //background: $grey image-url('') center no-repeat;
+    background-image: asset-url('survey.jpg');
     height: rem-calc(400);
   
     .hero {
@@ -35,7 +41,30 @@
 
   &--public-small {
     @extend %public;
-    //background: $grey image-url('') center no-repeat;
-    height: rem-calc(150);
+    background: $grey asset-url('survey.jpg') center no-repeat;
+    background-size: cover;
+    padding: rem-calc(30 0);
+
+    position: relative;
+
+    @include breakpoint($medium) {
+      padding: 0;
+      height: rem-calc(150);  
+    }
+    
+    &:before {
+      background-color: rgba($grey-dark, 0.4);
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .hero {
+      &__content { @extend %hero-content; }
+    }
   }
 }
