@@ -35,7 +35,7 @@
 //--------------------------------------------------
   &--public {
     @extend %public;
-    background: $grey asset-url('survey.jpg') center no-repeat;
+    background: $grey asset-url('public.jpg') center no-repeat;
     height: rem-calc(400);
   
     .hero {
