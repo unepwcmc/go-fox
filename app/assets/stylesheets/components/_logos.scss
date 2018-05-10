@@ -7,7 +7,9 @@
 }
 
 %foc {
-  width: rem-calc(166); height: rem-calc(56);
+  width: rem-calc(135); height: rem-calc(45);
+
+  @include breakpoint($medium) { width: rem-calc(166); height: rem-calc(56); }
 }
 
 //--------------------------------------------------

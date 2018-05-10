@@ -11,7 +11,7 @@
     background-size: cover;
     color: $blue-dark;
     text-align: center;
-    height: rem-calc(350);
+    height: rem-calc( 350);
 
     @include breakpoint($medium) { height: rem-calc(450); }
 

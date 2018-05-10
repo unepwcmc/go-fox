@@ -30,12 +30,33 @@
 
     .footer {
       &__content {
-        height: rem-calc(130);
+        flex-wrap: wrap;
+        
+        padding: rem-calc(24 0);
+
+        @include breakpoint($medium) { 
+          flex-wrap: nowrap;
+          height: rem-calc(130);
+          padding: 0;
+        }
       }
 
         &__copyright {
           border-top: solid $blue-xlight 1px;
+          font-size: rem-calc(14);
           padding: rem-calc(11 0);
+
+          @include breakpoint($medium) { font-size: rem-calc(16); }
+        }
+
+        &__login {
+          @extend .flex;
+          @extend .flex-column;
+          @extend .flex-1-half;
+          @extend .flex-v-start;
+          font-size: rem-calc(14);
+
+          @include breakpoint($medium) { display: none; }
         }
     }
   }

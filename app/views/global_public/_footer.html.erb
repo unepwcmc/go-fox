@@ -10,6 +10,16 @@
       </ul>
 
       <%= link_to '', root_path, title: 'Future of Conservation', class: 'logo--foc-white' %>
+
+      <div class="footer__login">
+        <span>(Log in for GoFox)</span>
+        
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'button--log-in' %>
+        <% else %>
+          <%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'button--log-in' %>
+        <% end %>
+      </div>
     </div>
 
     <p class="footer__copyright no-margin">&copy; Copyright <%= Date.today.year %> GoFox</p>

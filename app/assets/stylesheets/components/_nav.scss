@@ -78,7 +78,18 @@
   }
 
   &--footer {
-    width: rem-calc(320);
+    border-top: solid $grey 1px;
+    border-bottom: solid $grey 1px;
+    margin-bottom: rem-calc(24);
+    padding: rem-calc(18 0);
+    width: 100%;
+
+    @include breakpoint ($medium) { 
+      border: none;
+      margin: 0;
+      padding: 0;
+      width: rem-calc(320);
+    }
 
     .nav {
       &__li {
