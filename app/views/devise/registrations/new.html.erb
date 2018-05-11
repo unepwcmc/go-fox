@@ -29,8 +29,12 @@
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
         </slide>
-        
+
         <slide :last="true">
+          <div class="field">
+            <%= f.collection_radio_buttons :use_type, User.use_types, :second, :first %>
+          </div>
+
           <div class="field">
             <%= f.label :organisation_name %><br />
             <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
