@@ -30,6 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  login:
+    -
+      title: 'Create a survey'
+      icon: 'icons/icon-survey.svg'
+      description: 'Create a survey Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque'
+    -
+      title: 'View results'
+      icon: 'icons/icon-results.svg'
+      description: 'view the results of Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque'
+    -
+      title: 'Analyse data'
+      icon: 'icons/icon-analyse.svg'
+      description: 'Analyse the data visualisations of individual candidates Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque'
   homepage:
     -
       title: 'What is the purpose of the project'

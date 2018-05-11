@@ -1,0 +1,37 @@
+//--------------------------------------------------
+// tabs
+//--------------------------------------------------
+.tabs {
+  margin-top: rem-calc(50);
+
+  &__triggers {
+    border-bottom: solid rem-calc(1) $grey;
+    padding-bottom: rem-calc(6);
+  }
+}
+
+//--------------------------------------------------
+// tab
+//--------------------------------------------------
+.tab {
+  color: $blue-dark;
+
+  &__trigger {
+    border: solid rem-calc(1) transparent;
+    border-radius: rem-calc(6);
+    color: $blue-dark;
+    padding: rem-calc(6 14);
+
+    &.tab--active {
+      border-color: $blue-dark;
+      font-weight: bold;
+    }
+  }
+
+  &__icon {
+    margin: rem-calc(50) auto rem-calc(40);
+    width: rem-calc(100);
+
+    display: block;
+  }
+}

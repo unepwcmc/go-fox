@@ -19,6 +19,8 @@ import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
 import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
 import Submit from './components/form_fields/Submit.vue'
+import Tabs from './components/tabs/Tabs.vue'
+import Tab from './components/tabs/Tab.vue'
 import ValidationMessage from './components/form_fields/ValidationMessage.vue'
 
 // create event hub and export so that it can be imported into .vue files
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
       SelectBox, 
       MultipleSelectBox, 
       Submit,
+      Tabs,
+      Tab,
       ValidationMessage 
     }
   })

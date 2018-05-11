@@ -100,19 +100,25 @@ a {
   @include breakpoint($medium){ width: $site-width; }
 }
 
+.gutter {
+  &--left {
+    padding-left: $gutter-small;
+
+    @include breakpoint($medium) { padding-left: $gutter-medium; }
+    @include breakpoint($large) { padding-left: $gutter-large; }
+  }
+
+  &--right {
+    padding-right: $gutter-small;
+
+    @include breakpoint($medium) { padding-right: $gutter-medium; }
+    @include breakpoint($large) { padding-right: $gutter-large; }
+  }
+}
+
 .gutters {
-  padding-left: $gutter-small;
-  padding-right: $gutter-small;
-
-  @include breakpoint($medium) {
-    padding-left: $gutter-medium;
-    padding-right: $gutter-medium;
-  }
-
-  @include breakpoint($large) {
-    padding-left: $gutter-large;
-    padding-right: $gutter-large;
-  }
+  @extend .gutter--left;
+  @extend .gutter--right;
 }
 
 .container {

@@ -13,6 +13,13 @@
   display: inline-flex;
 
 //---------------
+// borders
+//---------------
+  &--border-blue {
+    border: solid rem-calc(1) $blue;
+  }
+
+//---------------
 // colours
 //---------------
   &--beige {
@@ -116,7 +123,19 @@
     border: solid $white 1px;
     color: $white;
   }
+  
+  &--outline-blue {
+    @extend %button;
+    @extend %button--border-blue;
+    @extend %button--rounded;
+    @extend %button--padded;
+    color: $blue;
 
+    &:hover {
+      border-color: $blue-dark;
+      color: $blue-dark;
+    }
+  }
 //---------------
 // specific
 //---------------
