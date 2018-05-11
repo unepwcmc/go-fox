@@ -164,6 +164,14 @@
       border-color: $blue-dark;
       color: $blue-dark;
     }
+
+    .footer--public & { 
+      border-color: white;
+      color: white;
+      margin-top: rem-calc(4);
+      padding-top: rem-calc(4); 
+      padding-bottom: rem-calc(4);
+    }
   }
 
   &--sign-up {

@@ -42,8 +42,13 @@ h2 {
 
   .base--public & {
     color: $grey-dark;
-    font-size: rem-calc(40);
-    margin: rem-calc(0 0 50 0);
+    font-size: rem-calc(24);
+    margin: rem-calc(0 0 20 0);
+
+    @include breakpoint($medium) { 
+      font-size: rem-calc(40);
+      margin: rem-calc(0 0 50 0);
+    }
   }
 
   &--small-uppercase {
@@ -60,9 +65,7 @@ h3 {
     font-size: rem-calc(16);
     margin: 0;
 
-    @include breakpoint($medium) { 
-      font-size: rem-calc(24); 
-    }
+    @include breakpoint($medium) { font-size: rem-calc(24); }
   }
 }
 
@@ -149,6 +152,8 @@ a {
 
     &-small {
       @extend %container;
+      
+      @include breakpoint($small){ width: 60% }
       @include breakpoint($medium){ width: rem-calc(760); }
     }
   }

@@ -7,21 +7,21 @@
 // public
 //--------------------------------------------------
   &--next-steps {
-    background-color: $grey-light;
-    //background: $grey-light image-url() center no-repeat;
+    background: $grey-light image-url('next-steps.jpg') center no-repeat;
     background-size: cover;
     color: $blue-dark;
     text-align: center;
-    height: rem-calc(450);
+    height: rem-calc( 350);
+
+    @include breakpoint($medium) { height: rem-calc(450); }
 
     h3 {
-      font-size: rem-calc(48);
-      margin: rem-calc(0 0 32 0); 
-    }
+      font-size: rem-calc(24);
+      margin: rem-calc(0 0 14 0); 
 
-    .cta {
-      &__content {
-
+      @include breakpoint($medium) { 
+        font-size: rem-calc(48); 
+        margin: rem-calc(0 0 32 0); 
       }
     }
   }
