@@ -61,11 +61,14 @@ $site-width: rem-calc(1332);
 
 $content-small: rem-calc(380);
 
+$topbar-small: rem-calc(78);
+$topbar-large: rem-calc(100);
+
 //--------------------------------------------------
 // breakpoints
 //--------------------------------------------------
-$small: rem-calc(720);
-$medium: rem-calc(960);
+$small: 720px;
+$medium: 960px;
 $large: $site-width;
 
 //--------------------------------------------------

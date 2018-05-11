@@ -2,7 +2,9 @@
 // topbar - shared styles
 //--------------------------------------------------
 %topbar {
-  height: rem-calc(100);
+  height: $topbar-small;
+
+  @include breakpoint($medium) { height: $topbar-large; }
 }
 
 //--------------------------------------------------

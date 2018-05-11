@@ -14,4 +14,8 @@ module ApplicationHelper
   def current_class?(test_path)
     request.fullpath == test_path ? ' nav--active' : ''
   end
+
+  def is_current_page?(test_path)
+    request.fullpath == test_path
+  end
 end

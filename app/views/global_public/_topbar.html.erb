@@ -2,7 +2,7 @@
   <div class="topbar__content flex flex-v-center flex-h-between">
     <%= link_to '', root_path, title: 'gofox', class: 'logo--foc' %>
 
-    <ul class="nav--secondary ul-inline">
+    <ul class="nav--secondary ul-inline breakpoint-medium-up">
       <% if user_signed_in? %>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'button--log-in' %></li>
       <% else %>

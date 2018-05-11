@@ -1,0 +1,100 @@
+//--------------------------------------------------
+// nav
+//--------------------------------------------------
+.nav {
+
+//--------------------------------------------------
+// burger
+//--------------------------------------------------
+  &--burger {
+    position: absolute;
+    top: rem-calc(20);
+    right: $gutter-small;
+
+    @include breakpoint($medium) {
+      position: static;
+      top: 0;
+      right: 0;
+    }
+
+    .nav {
+      &__burger {
+        @include breakpoint($medium) { display: none; }
+
+        &-icon {
+          color: $blue-dark;
+          font-size: rem-calc(36);
+        }
+      }
+
+      &__pane {
+        @extend .flex-m-t-stack;
+        background-color: rgba($white, 0.97);
+        margin-top: $topbar-small;
+        padding: rem-calc(10 0);
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+
+        @include breakpoint($medium) { 
+          background-color: transparent;
+          margin: 0;
+          padding-top: rem-calc(12);
+          padding-bottom: rem-calc(12);
+
+          position: static;
+        }
+      }
+        &__link {
+
+        }
+
+          &__a {
+            @extend .gutters;
+            color: $blue-dark;
+            font-size: rem-calc(26);
+            font-weight: bold;
+            padding-top: rem-calc(10);
+            padding-bottom: rem-calc(10);
+            text-decoration: none;
+            width: 100%;
+
+            @include breakpoint($medium) {
+              color: $blue-light;
+              font-size: rem-calc(16);
+              font-weight: none;
+              padding: 0;
+              margin-right: rem-calc(16);
+              width: auto;
+            }
+
+            &:hover { 
+              background-color: rgba($blue-xlight, 0.2);
+
+              @include breakpoint($medium) {
+                background-color: transparent;
+                color: $blue-dark;
+              }
+            }
+
+            &.nav--active { 
+              background-color: rgba($blue-xlight, 0.3);
+
+              color: $blue-dark; 
+
+              @include breakpoint($medium) { background-color: transparent; }
+            }
+          }
+
+            &__icon {
+              color: $grey;
+
+              @include breakpoint($medium) { display: none; }
+            }
+    }
+  }
+}
