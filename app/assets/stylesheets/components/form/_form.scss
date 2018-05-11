@@ -1,0 +1,102 @@
+//--------------------------------------------------
+// form
+//--------------------------------------------------
+.form {
+  &__note {
+    margin-bottom: rem-calc(3);
+
+    display: block;
+  }
+
+  &__instruction {
+    margin-top: rem-calc(3);
+    text-align: right;
+
+    display: block;
+  }
+}
+
+//--------------------------------------------------
+// labels
+//--------------------------------------------------
+label {
+  font-weight: bold;
+  margin: rem-calc(20 0 3 0);
+
+  display: inline-block;
+}
+
+//--------------------------------------------------
+// inputs - reusable styles
+//--------------------------------------------------
+%label {
+  color: $blue-light;
+  cursor: pointer;
+  font-size: rem-calc(12);
+  margin: rem-calc(0 0 0 7);
+
+  @include breakpoint($medium) { font-size: rem-calc(14); }
+}
+
+%input-option {
+  border: solid $grey-light 1px;
+  cursor: pointer;
+  margin: 0 0 rem-calc(9) 0;
+  padding: rem-calc(10 12);
+
+  @include breakpoint($medium) {
+    margin: 0;
+    padding: rem-calc(38);
+  }
+
+  &:hover { background-color: $purple-light; }
+
+  &:nth-child(n+3) { 
+    @include breakpoint($medium) { border-top: none; }
+  }
+
+  &:nth-child(even) { 
+    @include breakpoint($medium) { border-left: none; }
+  }
+
+  &:last-child { 
+    @include breakpoint($medium) { border-right: solid $grey-light 1px; }
+  }  
+}
+
+//--------------------------------------------------
+// inputs
+//--------------------------------------------------
+input[type='submit'] {
+  @extend .button--blue-shadow;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'],
+select {
+  border: solid 1px $grey;
+  border-radius: rem-calc(8);
+  font-size: rem-calc(14);
+  margin-top: rem-calc(6);
+  padding: rem-calc(15);
+  width: 100%;
+  max-width: rem-calc(400);
+
+  @include breakpoint($medium) { font-size: rem-calc(16); }
+}
+
+textarea {
+  border: solid 1px $grey;
+  border-radius: rem-calc(8);
+  width: 100%; height: rem-calc(170);
+}
+
+//--------------------------------------------------
+// imports
+//--------------------------------------------------
+@import './checkbox.scss';
+@import './radio-button.scss';
+@import './select.scss';
+@import './questions.scss';
+@import './validation.scss';

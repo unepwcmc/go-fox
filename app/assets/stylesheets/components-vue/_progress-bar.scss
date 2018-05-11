@@ -15,10 +15,16 @@
     font-weight: bold;
     margin-bottom: rem-calc(18);
     padding: rem-calc(9 18 9 70);
+    align-self: center;
+    width: rem-calc(300);
     
-    align-self: flex-start;
     display: inline-block;
     position: relative;
+
+    @include breakpoint ($medium) {
+      align-self: flex-start;
+      width: auto;
+    }
 
     &:before {
       box-shadow: lighten($pink-dark, 40%) 2px 2px 0px -1px;
@@ -28,35 +34,53 @@
 
       position: absolute;
       bottom: rem-calc(-7);
-      left: rem-calc(30);
+      left: rem-calc(20);
 
       transform: rotateZ(45deg);
+
+      @include breakpoint ($medium) { left: rem-calc(30); }
     }
 
-    &-2:before { left: rem-calc(197); }
+    &-2:before { 
+      left: rem-calc(68); 
+
+      @include breakpoint ($medium) { left: rem-calc(197); }
+    }
 
     &-3 {
-      align-self: center;
-
-      &:before { left: rem-calc(106); }
+      &:before { 
+        left: rem-calc(117);
+        
+        @include breakpoint ($medium) { left: rem-calc(106); }
+      }
     }
 
     &-4 {
-      align-self: center;
+      &:before { 
+        left: rem-calc(165);
 
-      &:before { left: rem-calc(273); }
+        @include breakpoint ($medium) { left: rem-calc(273); }
+      }
     }
 
     &-5 {
-      align-self: flex-end;
+      @include breakpoint ($medium) { align-self: flex-end; }
 
-      &:before { left: rem-calc(181); }
+      &:before { 
+        left: rem-calc(214);
+
+        @include breakpoint ($medium) { left: rem-calc(181); } 
+      }
     }
 
     &-6 {
-      align-self: flex-end;
+      @include breakpoint ($medium) { align-self: flex-end; }
 
-      &:before { left: rem-calc(348); }
+      &:before { 
+        left: rem-calc(263);
+
+        @include breakpoint ($medium) { left: rem-calc(348); }
+      }
     }
 
     &-icon {
@@ -74,15 +98,65 @@
   &__icon {
     background-size: cover;
     margin-bottom: rem-calc(16);
-    width: rem-calc(912); height: rem-calc(36);
+    width: rem-calc(300); height: rem-calc(19);
+
+    @include breakpoint($medium) { width: rem-calc(912); height: rem-calc(36); }
 
     display: block;
 
-    &-1 { background-image: image_url('icons/progress-bar-1.svg'); }
-    &-2 { background-image: image_url('icons/progress-bar-2.svg'); }
-    &-3 { background-image: image_url('icons/progress-bar-3.svg'); }
-    &-4 { background-image: image_url('icons/progress-bar-4.svg'); }
-    &-5 { background-image: image_url('icons/progress-bar-5.svg'); }
-    &-6 { background-image: image_url('icons/progress-bar-6.svg'); }
+    &-1 { 
+      background-image: image_url('icons/progress-bar-1-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-1.svg'); 
+      }
+    }
+
+    &-2 { 
+      background-image: image_url('icons/progress-bar-2-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-2.svg'); 
+      }
+    }
+
+    &-3 { 
+      background-image: image_url('icons/progress-bar-3-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-3.svg'); 
+      }
+    }
+
+    &-4 { 
+      background-image: image_url('icons/progress-bar-4-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-4.svg'); 
+      }
+    }
+
+    &-5 { 
+      background-image: image_url('icons/progress-bar-5-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-5.svg'); 
+      }
+    }
+
+    &-6 { 
+      background-image: image_url('icons/progress-bar-6-mobile.svg');
+
+      @include breakpoint($medium) { 
+        background-image: image_url('icons/progress-bar-6.svg'); 
+      }
+    }
+
+  }
+
+  &__page-numbers {
+    font-size: rem-calc(12);
+
+    @include breakpoint($medium) { font-size: rem-calc(16); }
   }
 }

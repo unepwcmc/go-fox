@@ -77,3 +77,9 @@
   @extend .flex-h-center;
   @extend .flex-v-center;
 }
+
+.flex-m-t-stack {
+  @include breakpoint($medium) { 
+    display: flex;
+  }
+}

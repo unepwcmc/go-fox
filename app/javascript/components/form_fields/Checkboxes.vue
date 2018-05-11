@@ -1,11 +1,22 @@
 <template>
   <div>
     <p class="form__validation-message" v-show="errors">Please select at least one option below</p>
+    
+    <div class="flex-m-t-stack flex-wrap">
+      <p v-for="option in options" class="checkbox flex flex-1-half flex-v-center" @click.self="toggleCheckbox(option.text)">
 
-    <p v-for="option in options">
-      <input :name="name + '[]'" :value="option.text" :id="id(option.text)" v-model="inputMultiple" type="checkbox">
-      <label :for="id(option.text)" class="">{{ option.text }}</label>
-    </p>
+        <input 
+          :name="name + '[]'" 
+          :value="option.text" 
+          :id="id(option.text)" 
+          v-model="inputMultiple" 
+          type="checkbox" 
+          :ref="option.text"
+          @click>
+
+        <label :for="id(option.text)" class="checkbox__label">{{ option.text }}</label>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -31,6 +42,10 @@
 
       validateField () {
         this.validateRequiredMultiple()
+      },
+
+      toggleCheckbox (option) {
+        this.$refs[option][0].click()
       }
     }
   }

@@ -5,7 +5,9 @@
   &--grey-light {
     background-color: $grey-light;
     padding: rem-calc(18 34);
-    margin-bottom: rem-calc(28);
+    margin-bottom: rem-calc(10);
+
+    @include breakpoint($medium) { margin-bottom: rem-calc(28); }
   }
 
   &--grey {

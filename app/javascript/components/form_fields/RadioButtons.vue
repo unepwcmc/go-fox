@@ -2,21 +2,23 @@
   <div>
     <p class="form__validation-message" v-show="errors">Please select an option below</p>
 
-    <p v-if="showSmiles" class="flex" :class="{ 'form__validation-border': errors }">
+    <div v-if="scale" class="flex-m-t-stack" :class="{ 'form__validation-border': errors }">
       <input type="hidden" :name="name" :value="name">
 
-      <span v-for="option in options" class="radio-button">
+      <div v-for="option in options" class="radio-button--scale">
 
         <input required type="radio" v-model="input" :value="option" :name="name" :id="id(option)" class="radio-button__input">
         <label :for="id(option)" :class="labelClass(option)" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
         <i class="radio-button__tick"></i>
-      </span>
-    </p>
-
-    <p v-else v-for="option in options">
-      <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)">
-      <label :for="id(option.text)" :class="labelClass(option.text)">{{ option.text }}</label>
-    </p>
+      </div>
+    </div>
+    
+    <div v-else class="flex-m-t-stack flex-wrap">
+      <p v-for="option in options" class="radio-button flex flex-1-half flex-v-center" @click="toggleRadio(option.text)">
+        <input required type="radio" v-model="input" :value="option.text" :name="name" :id="id(option.text)">
+        <label :for="id(option.text)" :class="labelClass(option.text)" class="radio-button__label">{{ option.text }}</label>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -36,16 +38,6 @@
       scale: { type: Boolean }
     },
 
-    data () {
-      return {
-        showSmiles: false
-      }
-    },
-
-    created () {
-      if (this.scale) { this.showSmiles = this.scale }
-    },
-
     methods: {
       friendly (string) {
         return string.toLowerCase().replace(' ', '-')
@@ -61,6 +53,10 @@
 
       validateField () {
         this.validateRequired()
+      },
+
+      toggleRadio (text) {
+        this.input = text
       }
     }
   }

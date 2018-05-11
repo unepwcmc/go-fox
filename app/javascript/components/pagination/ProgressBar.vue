@@ -6,7 +6,7 @@
     </div>
     
     <span class="progress-bar__icon" :class="'progress-bar__icon-' + page"></span>
-    <p>
+    <p class="progress-bar__page-numbers">
       <span class="bold">Page {{ page }}</span> <span class="italic">of</span> <span class="bold">{{ totalPages }}</span>
     </p>
   </div>
