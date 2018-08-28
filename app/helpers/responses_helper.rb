@@ -1,6 +1,6 @@
 module ResponsesHelper
   def scale_options_for_answers
-    ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"]
+    ["Strongly Disagree", "Disagree", "Slightly Disagree", "Neutral", "Slightly Agree", "Agree", "Strongly Agree"]
   end
 
   def get_form_field answer_form
@@ -12,7 +12,7 @@ module ResponsesHelper
         field_type = 'radio-buttons'
         options = scale_options_for_answers.to_json
         scale = true
-  
+
       when 'free-text'
         field_type = 'text-input'
         options = ''.to_json
