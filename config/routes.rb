@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
 
   namespace :admin do
+    root to: "dashboard#index"
     resources :users, controller: "users", except: [:new, :create]
     resources :responses, only: [:index]
 
