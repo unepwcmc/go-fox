@@ -188,7 +188,7 @@ demographic_questions = [
   {
     text: "What is your age?",
     question_type: "Free Text",
-    required: true
+    required: false
   },
   {
     text: "Select your gender?",
@@ -222,18 +222,18 @@ demographic_questions = [
     text: "What is your country of nationality?",
     options: countries,
     question_type: "Select box",
-    required: true
+    required: false
   },
   {
     text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
     options: countries,
     question_type: "Multiple Select Box",
-    required: true
+    required: false
   },
   {
     text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
     question_type: "Free Text",
-    required: true
+    required: false
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
@@ -325,12 +325,12 @@ demographic_questions = [
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",
     question_type: "Free Text",
-    required: true
+    required: false
   },
   {
     text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason.",
     question_type: "Free Text",
-    required: true
+    required: false
   },
   {
     text: "Have you taken this survey before?",
