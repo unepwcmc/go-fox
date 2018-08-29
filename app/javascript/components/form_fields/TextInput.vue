@@ -17,16 +17,18 @@
     props: {
       name: { required: true },
       validate: {
-        type: Array,
+        type: Boolean,
+        required: true
+      },
+      validation_rules: {
+        type: Object,
         required: true
       }
     },
 
     methods: {
       validateField () {
-        console.log("testing")
-        if (this.validate.indexOf('required')) { this.validateRequired() }
-        if (this.validate.indexOf('integer')) { this.validateInteger() }
+        if (this.validation_rules['required']) { this.validateRequired() }
       }
     }
   }
