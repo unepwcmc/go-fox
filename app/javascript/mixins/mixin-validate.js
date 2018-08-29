@@ -22,6 +22,10 @@ export const mixinValidate = {
       this.input ? this.passedValidation() : this.failedValidation()
     },
 
+    validateInteger () {
+      //js to validate integer
+    },
+
     validateRequiredMultiple () {
       this.inputMultiple.length > 0 ? this.passedValidation() : this.failedValidation()
     },

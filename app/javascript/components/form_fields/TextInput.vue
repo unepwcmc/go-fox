@@ -15,14 +15,20 @@
     mixins: [ mixinValidate ],
 
     props: {
-      validate: { required: true },
       name: { required: true }
+      validate: {
+        type: Array,
+        required: true
+      }
     },
 
     methods: {
       validateField () {
-        this.validateRequired()
+        this.validate.indexOf('required') { this.validateRequired() }
+        this.validate.indexOf('integer') { this.validateInteger() }        
       }
     }
   }
 </script>
+
+

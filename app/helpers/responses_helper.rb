@@ -34,6 +34,7 @@ module ResponsesHelper
 
     attributes = {
       ':validate': 'props.validate',
+      ':validation-rules': [ 'required', 'integer' ].to_json
       'name': "response[answers_attributes][#{answer_form.index}][raw]",
       ':index': answer_form.index,
       ':options': options,
