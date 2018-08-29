@@ -9,13 +9,13 @@
 <script>
   import { mixinValidate } from '../../mixins/mixin-validate.js'
 
-  export default { 
+  export default {
     name: 'text-input',
 
     mixins: [ mixinValidate ],
 
     props: {
-      name: { required: true }
+      name: { required: true },
       validate: {
         type: Array,
         required: true
@@ -24,11 +24,10 @@
 
     methods: {
       validateField () {
-        this.validate.indexOf('required') { this.validateRequired() }
-        this.validate.indexOf('integer') { this.validateInteger() }        
+        console.log("testing")
+        if (this.validate.indexOf('required')) { this.validateRequired() }
+        if (this.validate.indexOf('integer')) { this.validateInteger() }
       }
     }
   }
 </script>
-
-
