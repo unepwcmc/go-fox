@@ -5,7 +5,8 @@
 <div class="container content-padding">
   <div class="flex">
     <div class="flex-4-fiths">
-    <%= render partial: 'global_admin/page_title', locals: { title: "#{@total_results} Total Results" } %>
+      <%= render partial: 'global_admin/total_results', locals: { total_results: @total_results} %>
+
       <div class="box--grey-light">
 
         <ul class="table--users ul-unstyled">
