@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   get 'static_pages/index'
   get 'about-the-project', to: 'static_pages#about_project'
   get 'about-the-debate', to: 'static_pages#about_debate'
+  get 'support', to: 'static_pages#support'
+  get 'legal', to: 'static_pages#legal'
+  get 'about-go-fox', to: 'static_pages#about_go_fox'
 
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(ENV["ADMIN_USERNAME"])) &&

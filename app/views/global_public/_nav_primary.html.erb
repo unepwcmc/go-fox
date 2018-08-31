@@ -1,19 +1,37 @@
 <nav-burger class="gutters">
-  <nav-link 
-    href="TODO" 
-    text="Take the Survey" 
+  <nav-link
+    href="TODO"
+    text="Take the Survey"
     :current-page="<%= is_current_page?('TODO') %>">
   </nav-link>
 
-  <nav-link 
-    href="<%= about_the_project_path %>" 
-    text="About the Project" 
+  <nav-link
+    href="<%= about_the_project_path %>"
+    text="About the Project"
     :current-page="<%= is_current_page?(about_the_project_path) %>">
   </nav-link>
 
-  <nav-link 
-    href="<%= about_the_debate_path %>" 
-    text="About the Debate" 
+  <nav-link
+    href="<%= about_the_debate_path %>"
+    text="About the Debate"
     :current-page="<%= is_current_page?(about_the_debate_path) %>">
   </nav-link>
-</nav-burger> 
+
+  <nav-link
+    href="<%= about_go_fox_path %>"
+    text="About Go-Fox"
+    :current-page="<%= is_current_page?(about_go_fox_path) %>">
+  </nav-link>
+
+  <nav-link
+    href="<%= support_path %>"
+    text="Support"
+    :current-page="<%= is_current_page?(support_path) %>">
+  </nav-link>
+
+  <nav-link
+    href="<%= legal_path %>"
+    text="Legal"
+    :current-page="<%= is_current_page?(legal_path) %>">
+  </nav-link>
+</nav-burger>

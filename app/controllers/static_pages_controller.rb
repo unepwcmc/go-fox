@@ -11,4 +11,13 @@ class StaticPagesController < ApplicationController
 
   def about_debate
   end
+
+  def support
+  end
+
+  def legal
+  end
+
+  def about_go_fox
+  end
 end
