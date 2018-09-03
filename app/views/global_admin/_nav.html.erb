@@ -19,7 +19,13 @@
       <%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' + current_class?(admin_users_path) %>
     </li>
     <li class="nav__li">
-      <%= link_to "Support", support_path, title: 'Support', class: 'nav__a' + current_class?(support_path) %>
+      <%= link_to "Support", admin_support_path, title: 'Support', class: 'nav__a' + current_class?(admin_support_path) %>
+    </li>
+    <li class="nav__li">
+      <%= link_to "About Go-Fox", admin_about_go_fox_path, title: 'About Go-Fox', class: 'nav__a' + current_class?(admin_about_go_fox_path) %>
+    </li>
+    <li class="nav__li">
+      <%= link_to "Legal", admin_legal_path, title: 'Legal', class: 'nav__a' + current_class?(admin_legal_path) %>
     </li>
   </ul>
 <% end %>

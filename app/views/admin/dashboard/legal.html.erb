@@ -1,0 +1,27 @@
+<% content_for :title do %>
+  Legal
+<% end %>
+
+<div class="container content-padding">
+  <div class="flex">
+    <div class="flex-4-fiths">
+      <div class="box--grey-light">
+        <div class="flex-4-fiths gutters content-padding--public">
+          <% t('about_project').each do |item| %>
+            <div class="block--about">
+              <h2><%= item[:title] %></h2>
+
+              <% if item[:content] %>
+                <div><%= item[:content].html_safe %></div>
+              <% end %>
+
+              <% if item[:accordion] %>
+                <%= render partial: 'global_public/accordion', locals: { accordion: item[:accordion] } %>
+              <% end %>
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
