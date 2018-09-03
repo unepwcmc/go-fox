@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  skip_before_action :authenticate_user!, except: [:support]
+  skip_before_action :authenticate_user!
 
   layout 'public'
 
@@ -12,12 +12,9 @@ class StaticPagesController < ApplicationController
   def about_debate
   end
 
-  def support
+  def about_go_fox
   end
 
   def legal
-  end
-
-  def about_go_fox
   end
 end
