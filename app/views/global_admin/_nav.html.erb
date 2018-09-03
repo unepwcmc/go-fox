@@ -18,5 +18,8 @@
     <li class="nav__li">
       <%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' + current_class?(admin_users_path) %>
     </li>
+    <li class="nav__li">
+      <%= link_to "Support", support_path, title: 'Support', class: 'nav__a' + current_class?(support_path) %>
+    </li>
   </ul>
 <% end %>
