@@ -42,7 +42,7 @@ class ResponsesController < ApplicationController
         end
       end
     else
-      redirect_to new_survey_response_path(@survey), error: 'Invalid survey submission.'
+      redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.'
     end
   end
 
