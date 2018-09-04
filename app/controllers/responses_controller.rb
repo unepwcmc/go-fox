@@ -24,19 +24,25 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    @response            = Response.new(response_params)
-    @response.survey     = @survey
-    @response.ip_address = request.remote_ip
-    @response.language   = params[:locale]
+    answer_params = validate_responses(response_params)
 
-    respond_to do |format|
-      if @response.save
-        format.html { redirect_to root_path, notice: 'Response was successfully created.' }
-        format.json { render :show, status: :created, location: @response }
-      else
-        format.html { render :new }
-        format.json { render json: @response.errors, status: :unprocessable_entity }
+    if answer_params.present?
+      @response            = Response.new(answer_params)
+      @response.survey     = @survey
+      @response.ip_address = request.remote_ip
+      @response.language   = params[:locale]
+
+      respond_to do |format|
+        if @response.save && answer_params.present?
+          format.html { redirect_to root_path, notice: 'Response was successfully created.' }
+          format.json { render :show, status: :created, location: @response }
+        else
+          format.html { render :new }
+          format.json { render json: @response.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to new_survey_response_path(@survey), error: 'Invalid survey submission.'
     end
   end
 
@@ -66,6 +72,21 @@ class ResponsesController < ApplicationController
     def response_params
       # Raw can be passed as either a string or an array in case of multiple answer questions like checkboxes
       params.require(:response).permit(answers_attributes: [{raw: []}, :raw, :answerable_type, :answerable_id])
+    end
+
+    def validate_responses(params)
+      answers = provided_answer_ids = params["answers_attributes"].values
+
+      required_questions = Question.pluck(:id)
+      required_demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json).pluck(:id)
+
+      answers.each do |answer|
+        required_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "Question")
+        required_demographic_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "DemographicQuestion")
+      end
+
+      return params if (required_questions.empty? && required_demographic_questions.empty?)
+      nil
     end
 
     def set_response
