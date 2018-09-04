@@ -5,4 +5,13 @@ class Admin::DashboardController < ApplicationController
     @users = User.all
     @total_results = Survey.count
   end
+
+  def support
+  end
+
+  def about_go_fox
+  end
+
+  def legal
+  end
 end
