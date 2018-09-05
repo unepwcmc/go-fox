@@ -20,4 +20,8 @@ class DemographicQuestion < ApplicationRecord
   translates :text
 
   accepts_nested_attributes_for :translations
+
+  def self.required
+    where(validation: {required: true}.to_json).pluck(:id)
+  end
 end

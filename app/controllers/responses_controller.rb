@@ -25,24 +25,21 @@ class ResponsesController < ApplicationController
 
   def create
     answer_params = validate_responses(response_params)
+    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' unless answer_params.present?
 
-    if answer_params.present?
-      @response            = Response.new(answer_params)
-      @response.survey     = @survey
-      @response.ip_address = request.remote_ip
-      @response.language   = params[:locale]
+    @response            = Response.new(answer_params)
+    @response.survey     = @survey
+    @response.ip_address = request.remote_ip
+    @response.language   = params[:locale]
 
-      respond_to do |format|
-        if @response.save && answer_params.present?
-          format.html { redirect_to root_path, notice: 'Response was successfully created.' }
-          format.json { render :show, status: :created, location: @response }
-        else
-          format.html { render :new }
-          format.json { render json: @response.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @response.save
+        format.html { redirect_to root_path, notice: 'Response was successfully created.' }
+        format.json { render :show, status: :created, location: @response }
+      else
+        format.html { render :new }
+        format.json { render json: @response.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.'
     end
   end
 
@@ -77,8 +74,8 @@ class ResponsesController < ApplicationController
     def validate_responses(params)
       answers = params["answers_attributes"].values
 
-      required_questions = Question.pluck(:id)
-      required_demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json).pluck(:id)
+      required_questions = Question.required
+      required_demographic_questions = DemographicQuestion.required
 
       answers.each do |answer|
         required_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "Question")
