@@ -75,7 +75,7 @@ class ResponsesController < ApplicationController
     end
 
     def validate_responses(params)
-      answers = provided_answer_ids = params["answers_attributes"].values
+      answers = params["answers_attributes"].values
 
       required_questions = Question.pluck(:id)
       required_demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json).pluck(:id)
