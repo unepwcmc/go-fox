@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  uuid       :string           not null
 #  locked     :boolean          default(FALSE)
+#  master     :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -45,5 +46,9 @@ class Survey < ApplicationRecord
     demographic_questions     = DemographicQuestion.all.reject {|question| excluded_demographic_ids.include?(question.id) }
 
     Question.order("RANDOM()") + demographic_questions + customised_questions
+  end
+
+  def self.master_survey
+    where(master: true).first
   end
 end
