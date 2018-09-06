@@ -28,5 +28,6 @@ FactoryBot.define do
     association :user, factory: :user
     uuid nil
     locked false
+    master true
   end
 end
