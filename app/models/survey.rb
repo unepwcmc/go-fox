@@ -49,6 +49,6 @@ class Survey < ApplicationRecord
   end
 
   def self.master_survey
-    where(master: true).first
+    find_by_master(true)
   end
 end
