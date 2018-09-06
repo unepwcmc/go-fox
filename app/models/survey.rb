@@ -33,9 +33,7 @@ class Survey < ApplicationRecord
   accepts_nested_attributes_for :translations
   accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
-  validate :only_one_master_survey
-  scope :master,
-    -> { where(master: true) }
+  validates_uniqueness_of :master, if: :master
 
   def to_param
     uuid
@@ -54,19 +52,5 @@ class Survey < ApplicationRecord
 
   def self.master_survey
     find_by_master(true)
-  end
-
-  protected
-
-  def only_one_master_survey
-    return unless master?
-
-    matches = Survey.master
-    if persisted?
-      matches = matches.where('id != ?', id)
-    end
-    if matches.exists?
-      errors.add(:master, "Can only have one master survey")
-    end
   end
 end
