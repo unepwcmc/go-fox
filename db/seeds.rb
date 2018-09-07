@@ -319,7 +319,11 @@ demographic_questions = [
     text: "Have you taken this survey before?",
     options: ["Yes", "No"],
     question_type: "Radio button"
-  }
+  },
+  {
+    text: "If there are any issues which you think are relevant to debates about the future of conservation, which were not included in this survey, please briefly outline them below. We intend to incorporate new statements into the survey in the future, so your suggestions are very welcome.",
+    question_type: "Free Text"
+  },
 ]
 
 demographic_questions.each do |demographic_question|
