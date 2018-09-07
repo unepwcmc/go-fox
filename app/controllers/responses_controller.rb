@@ -31,7 +31,7 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
-        format.html { redirect_to root_path, notice: 'Response was successfully created.' }
+        format.html { redirect_to results_survey_response_path(@survey, @response), notice: 'Response was successfully created.' }
         format.json { render :show, status: :created, location: @response }
       else
         format.html { render :new }
