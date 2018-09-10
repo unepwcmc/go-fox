@@ -6,14 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.where(email: "test@test.com").first_or_create do |u|
-  u.admin                 = true
-  u.organisation_name     = "UNEP WCMC"
-  u.username              = "Informatics"
-  u.password              = "test1234"
-  u.password_confirmation = "test1234"
+secrets = Rails.application.secrets
 
-  puts "Admin created! \nU: test@test.com\nP: test1234"
+u = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
+  u.admin                 = true
+  u.organisation_name     = secrets.admin[:admin_organisation]
+  u.username              = secrets.admin[:admin_username]
+  u.password              = secrets.admin[:admin_password]
+  u.password_confirmation = secrets.admin[:admin_password]
+
+  puts "Admin created! \nU: #{secrets.admin[:admin_email]}\nP: #{secrets.admin[:admin_password]}"
 end
 
 questions = [
