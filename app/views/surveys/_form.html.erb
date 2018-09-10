@@ -18,10 +18,6 @@
           <%= form.label :locked %>
           <%= form.check_box :locked, id: :survey_locked %>
         </div>
-        <div class="field">
-          <%= form.label :master %>
-          <%= form.check_box :master, id: :survey_master %>
-        </div>
       <% end %>
 
       <% I18n.available_locales.each do |locale| %>

@@ -22,6 +22,7 @@ survey = Survey.where(master: true).first_or_create do |s|
   s.published = true
   s.locked    = false
   s.user_id   = user.id
+  s.name      = "Master survey"
 
   puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
