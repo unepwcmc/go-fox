@@ -8,7 +8,7 @@
 
 secrets = Rails.application.secrets
 
-u = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
+user = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
   u.admin                 = true
   u.organisation_name     = secrets.admin[:admin_organisation]
   u.username              = secrets.admin[:admin_username]
@@ -16,6 +16,14 @@ u = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
   u.password_confirmation = secrets.admin[:admin_password]
 
   puts "Admin created! \nU: #{secrets.admin[:admin_email]}\nP: #{secrets.admin[:admin_password]}"
+end
+
+survey = Survey.where(master: true).first_or_create do |s|
+  s.published = true
+  s.locked    = false
+  s.user_id   = user.id
+
+  puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
 
 questions = [
