@@ -25,9 +25,9 @@ class ResponsesController < ApplicationController
 
   def create
     answer_params = validate_responses(response_params)
-    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' unless answer_params.present?
+    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' unless answer_params[:status == :success]
 
-    @response            = Response.new(answer_params)
+    @response            = Response.new(answer_params[:response])
     @response.survey     = @survey
     @response.ip_address = request.remote_ip
     @response.language   = params[:locale]
@@ -72,6 +72,7 @@ class ResponsesController < ApplicationController
     end
 
     def validate_responses(params)
+      status = :success
       answers = params["answers_attributes"].values
 
       required_questions = Question.required
@@ -82,8 +83,11 @@ class ResponsesController < ApplicationController
         required_demographic_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "DemographicQuestion")
       end
 
-      return params if (required_questions.empty? && required_demographic_questions.empty?)
-      nil
+      status = :failure unless (required_questions.empty? && required_demographic_questions.empty?)
+      {
+        status: status,
+        response: params
+      }
     end
 
     def set_response
