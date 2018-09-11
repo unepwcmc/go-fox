@@ -94,6 +94,26 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "default survey should load master survey for user" do
+    @survey = create(:survey, user: @user, published: true, master: true)
+    sign_in @user
+    get new_survey_response_path(Survey.master_survey)
+    assert_response :success
+  end
+
+  test "default survey should load master survey for admin" do
+    @survey = create(:survey, user: @user, published: true, master: true)
+    sign_in @admin
+    get new_survey_response_path(Survey.master_survey)
+    assert_response :success
+  end
+
+  test "default survey should load master survey for anonymous user" do
+    @survey = create(:survey, user: @user, published: true, master: true)
+    get new_survey_response_path(Survey.master_survey)
+    assert_response :success
+  end
+
   test "should get edit" do
     @survey = create(:survey, user: @user)
 

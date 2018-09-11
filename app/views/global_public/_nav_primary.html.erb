@@ -1,8 +1,8 @@
 <nav-burger class="gutters">
   <nav-link
-    href="TODO"
+    href="<%= new_survey_response_path(Survey.master_survey) %>"
     text="Take the Survey"
-    :current-page="<%= is_current_page?('TODO') %>">
+    :current-page="<%= is_current_page?(new_survey_response_path(Survey.master_survey)) %>">
   </nav-link>
 
   <nav-link

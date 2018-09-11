@@ -6,14 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.where(email: "test@test.com").first_or_create do |u|
-  u.admin                 = true
-  u.organisation_name     = "UNEP WCMC"
-  u.username              = "Informatics"
-  u.password              = "test1234"
-  u.password_confirmation = "test1234"
+secrets = Rails.application.secrets
 
-  puts "Admin created! \nU: test@test.com\nP: test1234"
+user = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
+  u.admin                 = true
+  u.organisation_name     = secrets.admin[:admin_organisation]
+  u.username              = secrets.admin[:admin_username]
+  u.password              = secrets.admin[:admin_password]
+  u.password_confirmation = secrets.admin[:admin_password]
+
+  puts "Admin created! \nU: #{secrets.admin[:admin_email]}\nP: #{secrets.admin[:admin_password]}"
+end
+
+survey = Survey.where(master: true).first_or_create do |s|
+  s.published = true
+  s.locked    = false
+  s.user_id   = user.id
+  s.name      = "Master survey"
+
+  puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
 
 questions = [
@@ -319,7 +330,11 @@ demographic_questions = [
     text: "Have you taken this survey before?",
     options: ["Yes", "No"],
     question_type: "Radio button"
-  }
+  },
+  {
+    text: "If there are any issues which you think are relevant to debates about the future of conservation, which were not included in this survey, please briefly outline them below. We intend to incorporate new statements into the survey in the future, so your suggestions are very welcome.",
+    question_type: "Free Text"
+  },
 ]
 
 demographic_questions.each do |demographic_question|
