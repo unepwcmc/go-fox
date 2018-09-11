@@ -28,6 +28,7 @@ class Devise::SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "non logged in user root path should return success" do
+    @survey = create(:survey, user: @user, published: true, master: true)
     get root_path(locale: :en)
     assert_response :success
   end
