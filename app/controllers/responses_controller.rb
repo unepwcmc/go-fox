@@ -25,7 +25,7 @@ class ResponsesController < ApplicationController
 
   def create
     answer_params = validate_responses(response_params)
-    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' unless answer_params[:status == :success]
+    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' && return unless answer_params[:status == :success]
 
     @response            = Response.new(answer_params[:response])
     @response.survey     = @survey
