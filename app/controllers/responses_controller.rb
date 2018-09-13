@@ -25,7 +25,7 @@ class ResponsesController < ApplicationController
 
   def create
     answer_params = validate_responses(response_params)
-    redirect_to new_survey_response_path(@survey), alert: 'Invalid survey submission.' && return unless answer_params[:status == :success]
+    redirect_to(new_survey_response_path(@survey), alert: 'Invalid survey submission.') && return if answer_params[:status == :failure]
 
     @response            = Response.new(answer_params[:response])
     @response.survey     = @survey
@@ -72,18 +72,18 @@ class ResponsesController < ApplicationController
     end
 
     def validate_responses(params)
-      status = :success
+      status = :failure
       answers = params["answers_attributes"].values
 
-      required_questions = Question.required
-      required_demographic_questions = DemographicQuestion.required
+      required_questions = @survey.questions.pluck(:id) rescue []
+      required_demographic_questions = @survey.demographic_questions&.where(required: true).pluck(:id) rescue []
 
       answers.each do |answer|
         required_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "Question")
         required_demographic_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "DemographicQuestion")
       end
 
-      status = :failure unless (required_questions.empty? && required_demographic_questions.empty?)
+      status = :success if (required_questions.empty? && required_demographic_questions.empty?)
       {
         status: status,
         response: params

@@ -4,6 +4,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
+    DatabaseCleaner.strategy = :truncation, {:only => %w[questions]}
     @user     = create(:user)
     @admin    = create(:admin)
     @survey   = create(:survey, user: @user)
@@ -80,12 +81,14 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "post to create action saves a response" do
-    answer  = build(:answer)
-    answer2 = build(:answer)
-    res     = build(:response)
+    survey2 = create(:survey, user: @user)
+    res     = build(:response, survey: survey2)
+    DatabaseCleaner.clean
+    answer  = build(:answer, response: res)
+    answer2 = build(:answer, response: res)
 
     assert_difference('Response.count', 1) do
-      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id,
+      post survey_responses_path(survey2), params: { response: {survey_id: survey2.id,
                                            answers_attributes: {
                                              0 => {
                                                raw: answer.raw,
@@ -99,7 +102,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
                                              }
                                              }}}
     end
-
     assert_redirected_to root_path(locale: :en)
   end
 end
