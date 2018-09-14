@@ -1,0 +1,10 @@
+<div class="title-bar flex flex-h-center flex-v-center gutters">
+  <h1 class="h1--small-uppercase">
+    <%= "#{total_results} Total Results" %>
+    <p>
+      <%= link_to admin_responses_path, title: 'Surveys', class: 'button--large-chevrons' do %>
+        View all results<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+      <% end %>
+    </p>
+  </h1>
+</div>

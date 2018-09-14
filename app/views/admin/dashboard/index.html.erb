@@ -1,0 +1,44 @@
+<% content_for :title do %>
+  Admin dashboard
+<% end %>
+
+<div class="container content-padding">
+  <div class="flex">
+    <div class="flex-4-fiths">
+      <%= render partial: 'global_admin/total_results', locals: { total_results: @total_results} %>
+
+      <div class="box--grey-light">
+
+        <ul class="table--users ul-unstyled">
+          <li class="table__header flex">
+            <span class="table__heading-0"></span>
+            <p class="table__heading table__heading-1">Accounts created</p>
+            <p class="table__heading table__heading-2">Organisation</p>
+            <p class="table__heading table__heading-3">Username</p>
+            <p class="table__heading table__heading-4">Number of Surveys</p>
+          </li>
+
+          <% @users.each do |user| %>
+            <li class="table__row flex flex-v-center">
+              <i class="table__heading-0 material-icons table__icon">person</i>
+              <p class="table__heading-1"><%= user.username %></p>
+              <p class="table__heading-2"><%= user.organisation_name %></p>
+              <p class="table__heading-3"><%= user.username %></p>
+              <p class="table__heading-4"><%= user.surveys.count %></p>
+
+              <p class="table__buttons flex flex-v-center">
+                <%= link_to surveys_path(user: user.id), title: 'Surveys', class: 'button--large-chevrons' do %>
+                  View Account<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+                <% end %>
+              </p>
+            </li>
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex-1-fith flex-vs-start box--beige-light box-margin-left">
+      <%= render 'global_admin/cta_edit_account' %>
+    </div>
+</div>

@@ -7,24 +7,24 @@
 
     <div>
       <%= link_to 'About', '', class: 'button--white hero__button' %>
-      <%= link_to 'Take the survey', '', class: 'button--blue-shadow hero__button' %>
+      <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
     </div>
   </div>
 </header>
 
 <div class="gutters">
-  
+
   <% t('homepage').each do |block| %>
     <div class="block--public container--public-small">
       <%= image_tag block[:icon], alt: 'Icon', class: "block__icon-#{block[:class]}" %>
-      
+
       <h2><%= block[:title] %></h2>
       <p><%= block[:description] %></p>
 
       <%= link_to 'Find out more', block[:url], title: "Find out more about #{block[:title]}", class: 'button--blue-shadow' %>
     </div>
   <% end %>
-  
+
 </div>
 
 <%= render 'global_public/cta' %>
