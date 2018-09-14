@@ -351,7 +351,8 @@ demographic_questions = [
   },
   {
     text: "If there are any issues which you think are relevant to debates about the future of conservation, which were not included in this survey, please briefly outline them below. We intend to incorporate new statements into the survey in the future, so your suggestions are very welcome.",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
 ]
 
