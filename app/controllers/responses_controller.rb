@@ -75,15 +75,19 @@ class ResponsesController < ApplicationController
       status = :failure
       answers = params["answers_attributes"].values
 
-      required_questions = @survey.questions.pluck(:id) rescue []
-      required_demographic_questions = @survey.demographic_questions&.where(required: true).pluck(:id) rescue []
+      required_questions = Question.order("RANDOM()").pluck(:id) rescue []
+      customised_questions = @survey.customised_questions.pluck(:id) rescue []
+      excluded_demographic_ids = customised_questions.pluck(:demographic_question_id)
+      demographic_questions = DemographicQuestion.where(required: true)
+      required_demographic_questions = demographic_questions.reject { |id| excluded_demographic_ids.include?(id) } rescue []
 
       answers.each do |answer|
         required_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "Question")
         required_demographic_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "DemographicQuestion")
+        customised_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "CustomisedQuestion")
       end
 
-      status = :success if (required_questions.empty? && required_demographic_questions.empty?)
+      status = :success if (required_questions.empty? && customised_questions.empty? && required_demographic_questions.empty?)
       {
         status: status,
         response: params
