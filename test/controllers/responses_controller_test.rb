@@ -4,6 +4,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
+    DatabaseCleaner.strategy = :truncation, {:only => %w[questions]}
     @user     = create(:user)
     @admin    = create(:admin)
     @survey   = create(:survey, user: @user)
@@ -80,17 +81,27 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "post to create action saves a response" do
-    answer = build(:answer)
-    res = build(:response)
+    survey2 = create(:survey, user: @user)
+    res     = build(:response, survey: survey2)
+    DatabaseCleaner.clean
+    answer  = build(:answer, response: res)
+    answer2 = build(:answer, response: res)
 
     assert_difference('Response.count', 1) do
-      post survey_responses_path(@survey), params: { response: {survey_id: res.survey_id,
-                                           answers_attributes: [{raw: answer.raw,
-                                                                 answerable_type: answer.answerable_type,
-                                                                 answerable_id: answer.answerable_id
-                                                                 }]}}
+      post survey_responses_path(survey2), params: { response: {survey_id: survey2.id,
+                                           answers_attributes: {
+                                             0 => {
+                                               raw: answer.raw,
+                                               answerable_type: answer.answerable_type,
+                                               answerable_id: answer.answerable_id
+                                             },
+                                             1 => {
+                                               raw: answer2.raw,
+                                               answerable_type: answer2.answerable_type,
+                                               answerable_id: answer2.answerable_id
+                                             }
+                                             }}}
     end
-
     assert_redirected_to root_path(locale: :en)
   end
 end

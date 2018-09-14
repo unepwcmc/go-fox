@@ -198,12 +198,14 @@ countries = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Sa
 demographic_questions = [
   {
     text: "What is your age?",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Select your gender?",
     options: ["Male", "Female", "Other", "Prefer not to say"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "At what level is your highest completed educational qualification?",
@@ -213,7 +215,8 @@ demographic_questions = [
               "Masters degree/postgraduate qualification",
               "Doctorate",
               "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Which of the following best describes your educational specialism?",
@@ -223,21 +226,25 @@ demographic_questions = [
               "Humanities (e.g. literature, history, philosophy, languages)",
               "Interdisciplinary (a combination of at least two of natural science, social science and humanities)",
               "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "What is your country of nationality?",
     options: countries,
-    question_type: "Select box"
+    question_type: "Select box",
+    required: false
   },
   {
     text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
     options: countries,
-    question_type: "Multiple Select Box"
+    question_type: "Multiple Select Box",
+    required: false
   },
   {
     text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
@@ -247,12 +254,14 @@ demographic_questions = [
               "Government",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Do you have any substantial professional experience in a field other than conservation during your career?",
     options: ["Yes", "No", "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "In which of the following sectors have you done non-conservation work in your career?",
@@ -262,7 +271,8 @@ demographic_questions = [
               "Government",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Which of the following categories best describes your current professional engagement in conservation?",
@@ -272,7 +282,8 @@ demographic_questions = [
              "Mostly a practitioner",
              "Exclusively a practitioner",
              "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Which of the following categories best describes the seniority of your current role within conservation?",
@@ -282,7 +293,8 @@ demographic_questions = [
               "Fairly senior position",
               "Very senior position",
               "I am not currently working in conservation"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "In which of the following contexts have you done significant amounts of professional conservation work?",
@@ -293,7 +305,8 @@ demographic_questions = [
               "Unmodified or very little modified ecosystem (e.g. wilderness areas)",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, mitigation or species banking, certification)?",
@@ -301,7 +314,8 @@ demographic_questions = [
               "Yes, as a practitioner",
               "Yes, both as a researcher and as a practitioner",
               "No"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
@@ -316,20 +330,24 @@ demographic_questions = [
               "Professional experience during adulthood",
               "None of the above",
               "Not applicable"],
-     question_type: "Checkbox"
+     question_type: "Checkbox",
+     required: true
   },
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason.",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Have you taken this survey before?",
     options: ["Yes", "No"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "If there are any issues which you think are relevant to debates about the future of conservation, which were not included in this survey, please briefly outline them below. We intend to incorporate new statements into the survey in the future, so your suggestions are very welcome.",
@@ -340,6 +358,9 @@ demographic_questions = [
 demographic_questions.each do |demographic_question|
   question  = DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |dq|
                 dq.question_type = demographic_question[:question_type]
+                dq.validation = {
+                  required: demographic_question[:required]
+                }.to_json
                 puts "+ Adding demographic question..."
                 puts demographic_question[:text]
               end

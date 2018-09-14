@@ -17,15 +17,22 @@
     mixins: [ mixinValidate ],
 
     props: {
-      validate: { required: true },
       name: { required: true },
       options: { required: true },
+      validate: {
+        type: Boolean,
+        required: true
+      },
+      validation_rules: {
+        type: Object,
+        required: true
+      }
     },
 
     methods: {
       validateField () {
-        this.validateRequiredMultiple()
+        if (this.validation_rules['required']) { this.validateRequiredMultiple() }
       }
     }
-  }  
+  }
 </script>

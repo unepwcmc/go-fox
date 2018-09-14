@@ -19,4 +19,8 @@ class Question < ApplicationRecord
   def question_type
     "Scale"
   end
+
+  def self.required
+    pluck(:id)
+  end
 end
