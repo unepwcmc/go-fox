@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#index"
-    get :support, path: '/admin/support', to: 'dashboard#support'
-    get :about_go_fox, path: '/admin/about_go_fox', to: 'dashboard#about_go_fox'
-    get :legal, path: '/admin/legal', to: 'dashboard#legal'
+    get :support, path: 'support', to: 'dashboard#support'
+    get :about_go_fox, path: 'about_go_fox', to: 'dashboard#about_go_fox'
+    get :legal, path: 'legal', to: 'dashboard#legal'
     resources :users, controller: "users", except: [:new, :create]
     resources :responses, only: [:index]
 
