@@ -29,7 +29,7 @@
     <div id="v-app">
       <%= yield %>
     </div>
-    <% if current_user %>
+    <% if current_user&.admin? %>
       <%= render 'global_admin/footer' %>
     <% else %>
       <%= render 'global_public/footer' %>
