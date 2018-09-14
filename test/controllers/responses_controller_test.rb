@@ -102,6 +102,6 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
                                              }
                                              }}}
     end
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to results_survey_response_path(survey_uuid: survey2, uuid: Response.last.uuid, locale: :en)
   end
 end
