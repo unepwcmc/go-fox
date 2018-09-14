@@ -3,7 +3,7 @@
   <head>
     <title>GoFox</title>
     <%= csrf_meta_tags %>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %>
@@ -11,7 +11,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'application-vue' %>
-    
+
     <%= render 'global/favicon' %>
   </head>
 
@@ -29,7 +29,10 @@
     <div id="v-app">
       <%= yield %>
     </div>
-
-    <%= render 'global_admin/footer' %>
+    <% if current_user %>
+      <%= render 'global_admin/footer' %>
+    <% else %>
+      <%= render 'global_public/footer' %>
+    <% end %>
   </body>
 </html>
