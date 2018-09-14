@@ -24,7 +24,10 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    @response            = Response.new(response_params)
+    answer_params = validate_survey_responses(survey_response_params)
+    redirect_to(new_survey_response_path(@survey), alert: 'Invalid survey submission.') && return if answer_params[:status == :failure]
+
+    @response            = Response.new(answer_params[:response])
     @response.survey     = @survey
     @response.ip_address = request.remote_ip
     @response.language   = params[:locale]
@@ -63,9 +66,32 @@ class ResponsesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def response_params
+    def survey_response_params
       # Raw can be passed as either a string or an array in case of multiple answer questions like checkboxes
       params.require(:response).permit(answers_attributes: [{raw: []}, :raw, :answerable_type, :answerable_id])
+    end
+
+    def validate_survey_responses(params)
+      status = :failure
+      answers = params["answers_attributes"].values
+
+      required_questions = Question.order("RANDOM()").pluck(:id) rescue []
+      customised_questions = @survey.customised_questions.pluck(:id) rescue []
+      excluded_demographic_ids = customised_questions.pluck(:demographic_question_id) rescue []
+      demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json) rescue []
+      required_demographic_questions = demographic_questions.reject { |id| excluded_demographic_ids.include?(id) } rescue []
+
+      answers.each do |answer|
+        required_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "Question")
+        required_demographic_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "DemographicQuestion")
+        customised_questions.delete(answer["answerable_id"].to_i) if (answer["answerable_type"] == "CustomisedQuestion")
+      end
+
+      status = :success if (required_questions.empty? && customised_questions.empty? && required_demographic_questions.empty?)
+      {
+        status: status,
+        response: params
+      }
     end
 
     def set_response

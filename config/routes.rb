@@ -6,14 +6,12 @@ Rails.application.routes.draw do
   resources :questions, except: [:destroy]
   devise_for :users
 
-  authenticated :user do
-    root 'surveys#index', as: :authenticated_root
-  end
-
-  root to: "static_pages#index"
+  root :to => 'static_pages#index', :constraints => lambda { |request| request.env['warden'].user == nil}
+  root :to => 'surveys#index', :constraints => lambda { |request| request.env['warden'].user&.admin == false }
+  root :to => 'admin/dashboard#index', :constraints => lambda { |request| request.env['warden'].user&.admin == true }
 
   namespace :admin do
-    root to: "dashboard#index"
+    root to: 'dashboard#index'
     get :support, path: '/admin/support', to: 'dashboard#support'
     get :about_go_fox, path: '/admin/about_go_fox', to: 'dashboard#about_go_fox'
     get :legal, path: '/admin/legal', to: 'dashboard#legal'

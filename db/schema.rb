@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510085927) do
+ActiveRecord::Schema.define(version: 20180905140940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20180510085927) do
     t.string "uuid", null: false
     t.text "description"
     t.boolean "locked", default: false
+    t.boolean "master", default: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
     t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
