@@ -24,7 +24,7 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    answer_params = validate_responses(response_params)
+    answer_params = validate_survey_responses(survey_response_params)
     redirect_to(new_survey_response_path(@survey), alert: 'Invalid survey submission.') && return if answer_params[:status == :failure]
 
     @response            = Response.new(answer_params[:response])
@@ -66,12 +66,12 @@ class ResponsesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def response_params
+    def survey_response_params
       # Raw can be passed as either a string or an array in case of multiple answer questions like checkboxes
       params.require(:response).permit(answers_attributes: [{raw: []}, :raw, :answerable_type, :answerable_id])
     end
 
-    def validate_responses(params)
+    def validate_survey_responses(params)
       status = :failure
       answers = params["answers_attributes"].values
 
