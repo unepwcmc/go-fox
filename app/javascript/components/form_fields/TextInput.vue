@@ -9,19 +9,26 @@
 <script>
   import { mixinValidate } from '../../mixins/mixin-validate.js'
 
-  export default { 
+  export default {
     name: 'text-input',
 
     mixins: [ mixinValidate ],
 
     props: {
-      validate: { required: true },
-      name: { required: true }
+      name: { required: true },
+      validate: {
+        type: Boolean,
+        required: true
+      },
+      validation_rules: {
+        type: Object,
+        required: true
+      }
     },
 
     methods: {
       validateField () {
-        this.validateRequired()
+        if (this.validation_rules['required']) { this.validateRequired() }
       }
     }
   }

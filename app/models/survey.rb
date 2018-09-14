@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  uuid       :string           not null
 #  locked     :boolean          default(FALSE)
+#  master     :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -32,6 +33,8 @@ class Survey < ApplicationRecord
   accepts_nested_attributes_for :translations
   accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
+  validates_uniqueness_of :master, if: :master
+
   def to_param
     uuid
   end
@@ -45,5 +48,9 @@ class Survey < ApplicationRecord
     demographic_questions     = DemographicQuestion.all.reject {|question| excluded_demographic_ids.include?(question.id) }
 
     Question.order("RANDOM()") + demographic_questions + customised_questions
+  end
+
+  def self.master_survey
+    find_by_master(true)
   end
 end

@@ -32,8 +32,14 @@ module ResponsesHelper
         options = answer_form.object.question.options.to_json
     end
 
+    question_type_demographic = answer_form.object.question.kind_of? DemographicQuestion
+    validation = question_type_demographic ? answer_form.object.question.validation : {
+      required: true
+    }.to_json
+
     attributes = {
       ':validate': 'props.validate',
+      ':validation_rules': validation,
       'name': "response[answers_attributes][#{answer_form.index}][raw]",
       ':index': answer_form.index,
       ':options': options,
