@@ -77,8 +77,8 @@ class ResponsesController < ApplicationController
 
       required_questions = Question.order("RANDOM()").pluck(:id) rescue []
       customised_questions = @survey.customised_questions.pluck(:id) rescue []
-      excluded_demographic_ids = customised_questions.pluck(:demographic_question_id)
-      demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json)
+      excluded_demographic_ids = customised_questions.pluck(:demographic_question_id) rescue []
+      demographic_questions = DemographicQuestion.where(validation: {required: true}.to_json) rescue []
       required_demographic_questions = demographic_questions.reject { |id| excluded_demographic_ids.include?(id) } rescue []
 
       answers.each do |answer|
