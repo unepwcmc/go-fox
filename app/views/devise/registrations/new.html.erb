@@ -46,7 +46,11 @@
             <%= f.label "(Specify)" %><br />
             <%= f.text_field :org_type_other, autofocus: true %>
           </div>
-          <p>Geographical location</p>
+          <div class="field">
+            <%= f.label "Geographical location" %><br />
+            <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
+          </div>
+
           <div class="field">
             <p>Please select</p>
             <%= f.collection_radio_buttons :use_type, User.use_types, :first, :first %>

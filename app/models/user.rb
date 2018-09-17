@@ -21,6 +21,7 @@
 #  use_type               :integer          default("organisational")
 #  org_type               :integer          default("university")
 #  org_type_other         :string           default("")
+#  country                :string           default("")
 #
 # Indexes
 #
