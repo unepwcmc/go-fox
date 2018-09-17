@@ -19,6 +19,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  use_type               :integer          default("organisational")
+#  org_type               :integer          default("university")
+#  org_type_other         :string           default("")
 #
 # Indexes
 #
@@ -35,4 +37,6 @@ class User < ApplicationRecord
   has_many :surveys
 
   enum use_type: [:organisational, :educational]
+  enum org_type: [:school, :university, :consultancy, :government, :intergovernmental,
+                  :college, :ngo, :private_sector, :inter_organisation_collaboration, :other]
 end

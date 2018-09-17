@@ -36,16 +36,25 @@
             with which you will use the tool. We will ask you for details of those users when you
             create a survey.</p>
           <div class="field">
-            <%= f.collection_radio_buttons :use_type, User.use_types, :first, :first %>
-          </div>
-
-          <div class="field">
-            <%= f.label :organisation_name %><br />
+            <%= f.label "Name of Organisation/Group" %><br />
             <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
           </div>
-
+          <div class="field">
+            <%= f.collection_radio_buttons :org_type, User.org_types, :first, :first %>
+          </div>
+          <div class="field">
+            <%= f.label "(Specify)" %><br />
+            <%= f.text_field :org_type_other, autofocus: true %>
+          </div>
+          <p>Geographical location</p>
+          <div class="field">
+            <p>Please select</p>
+            <%= f.collection_radio_buttons :use_type, User.use_types, :first, :first %>
+          </div>
+          <p>Is your organisation part of a wider network or structure?</p>
+          <p>Please give details</p>
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "Create Account" %>
           </div>
         </slide>
       </carousel>

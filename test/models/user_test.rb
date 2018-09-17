@@ -19,6 +19,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  use_type               :integer          default("organisational")
+#  org_type               :integer          default("university")
+#  org_type_other         :string           default("")
 #
 # Indexes
 #
