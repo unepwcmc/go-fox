@@ -19,10 +19,13 @@
             <li class="table__row flex flex-v-center">
               <i class="table__heading-0 material-icons table__icon">person</i>
               <p class="table__heading-1">
+                <% if user.admin? %>
+                (A)
+                <% end %>
                 <% if user.use_type == "organisational" %>
-                (o)
+                (O)
                 <% elsif user.use_type == "educational" %>
-                (e)
+                (E)
                 <% end %>
                 <%= user.username %>
               </p>
