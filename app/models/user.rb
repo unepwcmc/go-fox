@@ -22,6 +22,8 @@
 #  org_type               :integer          default("university")
 #  org_type_other         :string           default("")
 #  country                :string           default("")
+#  wider_network          :boolean          default(TRUE)
+#  wider_network_details  :string           default("")
 #
 # Indexes
 #
@@ -37,7 +39,8 @@ class User < ApplicationRecord
 
   has_many :surveys
 
-  enum use_type: [:organisational, :educational]
-  enum org_type: [:school, :university, :consultancy, :government, :intergovernmental,
-                  :college, :ngo, :private_sector, :inter_organisation_collaboration, :other]
+  enum use_type:           [:organisational, :educational]
+  enum org_type:           [:school, :university, :consultancy, :government, :intergovernmental,
+                            :college, :ngo, :private_sector, :inter_organisation_collaboration, :other]
+  enum wider_network_type: [:no, :yes]
 end

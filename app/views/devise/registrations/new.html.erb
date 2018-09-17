@@ -40,6 +40,7 @@
             <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
           </div>
           <div class="field">
+            <%= f.label "Type of Organisation/Group" %><br />
             <%= f.collection_radio_buttons :org_type, User.org_types, :first, :first %>
           </div>
           <div class="field">
@@ -50,13 +51,16 @@
             <%= f.label "Geographical location" %><br />
             <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
           </div>
-
           <div class="field">
-            <p>Please select</p>
+            <%= f.label "Please select" %><br />
             <%= f.collection_radio_buttons :use_type, User.use_types, :first, :first %>
           </div>
-          <p>Is your organisation part of a wider network or structure?</p>
-          <p>Please give details</p>
+          <div class="field">
+            <%= f.label "Is your organisation part of a wider network or structure?" %><br />
+            <%= f.collection_radio_buttons :wider_network, User.wider_network_types, :first, :first %>
+            <p>Please give details</p>
+            <%= f.text_area :wider_network_details %>
+          </div>
           <div class="actions">
             <%= f.submit "Create Account" %>
           </div>

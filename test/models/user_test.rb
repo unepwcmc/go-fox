@@ -22,6 +22,8 @@
 #  org_type               :integer          default("university")
 #  org_type_other         :string           default("")
 #  country                :string           default("")
+#  wider_network          :boolean          default(TRUE)
+#  wider_network_details  :string           default("")
 #
 # Indexes
 #
