@@ -16,6 +16,5 @@ FactoryBot.define do
     password "test1234"
     password_confirmation "test1234"
     admin true
-    org_type "ngo"
   end
 end
