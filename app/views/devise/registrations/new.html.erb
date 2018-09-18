@@ -41,7 +41,7 @@
           </div>
           <div class="field">
             <%= f.label "Type of Organisation/Group" %><br />
-            <%= f.collection_radio_buttons :org_type, User.org_types, :first, :first %>
+            <%= f.collection_radio_buttons :org_type, User.org_types, :last, :first %>
           </div>
           <div class="field">
             <%= f.label "(Specify)" %><br />
