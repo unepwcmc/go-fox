@@ -3,6 +3,7 @@
 <% end %>
 
 <div class="container content-padding">
+  <%= render partial: "export_form", locals: { survey: @survey } %>
   <div class="flex">
     <div class="flex-4-fiths">
 
@@ -21,7 +22,7 @@
               <p class="table__heading-1"><%= user.username %></p>
               <p class="table__heading-2"><%= user.organisation_name %></p>
               <p class="table__heading-3"><%= user.email %></p>
-              
+
               <p class="table__buttons flex flex-v-center">
                 <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure you want to permanently delete this user?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
                   <i class="material-icons">delete</i>

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     get :support, path: 'support', to: 'dashboard#support'
     get :about_go_fox, path: 'about_go_fox', to: 'dashboard#about_go_fox'
     get :legal, path: 'legal', to: 'dashboard#legal'
-    resources :users, controller: "users", except: [:new, :create]
+    resources :users, controller: "users", except: [:new, :create] do
+      get :export
+    end
     resources :responses, only: [:index]
 
     namespace :responses do
