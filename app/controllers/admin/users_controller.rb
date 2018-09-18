@@ -31,11 +31,6 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_users_url, notice: "User was deleted successfully"
   end
 
-  def export
-    CsvUserExporterJob.perform_later(current_user.email)
-    redirect_to admin_users_url, notice: "Your CSV is being generated, we will send an email to #{current_user.email} when it is ready to download"
-  end
-
   private
     def set_user
       @user = User.find(params[:id])
