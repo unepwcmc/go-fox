@@ -6,6 +6,7 @@ FactoryBot.define do
     password "test1234"
     password_confirmation "test1234"
     admin false
+    org_type "ngo"
   end
 
   factory :admin, class: User do
@@ -15,5 +16,6 @@ FactoryBot.define do
     password "test1234"
     password_confirmation "test1234"
     admin true
+    org_type "ngo"
   end
 end

@@ -180,10 +180,10 @@ ActiveRecord::Schema.define(version: 20180917142009) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "use_type", default: 0
-    t.integer "org_type", default: 1
+    t.string "org_type", default: "", null: false
     t.string "org_type_other", default: ""
     t.string "country", default: ""
-    t.boolean "wider_network", default: true
+    t.boolean "wider_network", default: false, null: false
     t.string "wider_network_details", default: ""
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

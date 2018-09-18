@@ -19,10 +19,10 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  use_type               :integer          default("organisational")
-#  org_type               :integer          default("university")
+#  org_type               :string           default(""), not null
 #  org_type_other         :string           default("")
 #  country                :string           default("")
-#  wider_network          :boolean          default(TRUE)
+#  wider_network          :boolean          default(FALSE), not null
 #  wider_network_details  :string           default("")
 #
 # Indexes
@@ -37,10 +37,26 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :organisation_name, presence: true
+  ORG_TYPES = { school: 'School', university: 'University', consultancy: 'Consultancy',
+                government: 'Government', intergovernmental: 'Intergovernmental',
+                college: 'College', ngo: 'NGO', private_sector: 'Private sector',
+                inter_organisation_collaboration: 'Inter-organisation collaboration'}
+  validates :org_type, inclusion: { in: ORG_TYPES.keys.map(&:to_s) }, unless: :admin
+
   has_many :surveys
 
   enum use_type:           [:organisational, :educational]
-  enum org_type:           [:school, :university, :consultancy, :government, :intergovernmental,
-                            :college, :ngo, :private_sector, :inter_organisation_collaboration, :other]
   enum wider_network_type: [:no, :yes]
+
+
+  def self.org_types
+    ORG_TYPES.map {|k,v| [v,k]}
+  end
+
+  ORG_TYPES.keys.each do |type|
+    define_method("is_#{type}?") { self.org_type == type.to_s }
+    scope type, -> { where(org_type: type) }
+    self.const_set(type.upcase, type)
+  end
 end
