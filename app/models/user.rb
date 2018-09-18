@@ -41,7 +41,8 @@ class User < ApplicationRecord
   ORG_TYPES = { school: 'School', university: 'University', consultancy: 'Consultancy',
                 government: 'Government', intergovernmental: 'Intergovernmental',
                 college: 'College', ngo: 'NGO', private_sector: 'Private sector',
-                inter_organisation_collaboration: 'Inter-organisation collaboration'}
+                inter_organisation_collaboration: 'Inter-organisation collaboration',
+                other: 'Other (specify)' }
   validates :org_type, inclusion: { in: ORG_TYPES.keys.map(&:to_s) }, unless: :admin
 
   has_many :surveys
