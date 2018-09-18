@@ -44,7 +44,7 @@ class User < ApplicationRecord
                 inter_organisation_collaboration: 'Inter-organisation collaboration',
                 other: 'Other (specify)' }
   validates :org_type, inclusion: { in: ORG_TYPES.keys.map(&:to_s) }, unless: :admin
-  validates :wider_network, presence: true, unless: :admin
+  validates :wider_network, inclusion: { in: [ true, false ] }, unless: :admin
 
   has_many :surveys
 
