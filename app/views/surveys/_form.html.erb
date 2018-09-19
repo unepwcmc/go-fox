@@ -20,6 +20,16 @@
         </div>
       <% end %>
 
+      <% if current_user.admin? %>
+        <%= render partial: 'organisational_fields' %>
+      <% else %>
+        <% if current_user.use_type == "organisational" %>
+          <%= render partial: 'organisational_fields' %>
+        <% elsif current_user.use_type == "educational" %>
+          <%= render partial: 'educational_fields' %>
+        <% end %>
+      <% end %>
+
       <% I18n.available_locales.each do |locale| %>
         <h1><%= locale %></h1>
         <%= form.globalize_fields_for locale do |ff| %>
