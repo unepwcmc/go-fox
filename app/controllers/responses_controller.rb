@@ -60,7 +60,7 @@ class ResponsesController < ApplicationController
     def resolve_layout
       case action_name
       when "results"
-        "results"
+        "public"
       else
         "application"
       end
