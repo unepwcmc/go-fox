@@ -1,8 +1,9 @@
 <div class="title-bar flex flex-v-center gutters">
-  <%= link_to survey_responses_path(@survey), title: 'Back to the list of survey responses', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
-    <i class="material-icons">arrow_back</i><span>Responses list</span>
+  <% if current_user %>
+    <%= link_to survey_responses_path(@survey), title: 'Back to the list of survey responses', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
+      <i class="material-icons">arrow_back</i><span>Responses list</span>
+    <% end %>
   <% end %>
-
   <h1 class="h1--small-uppercase">Results <span class="normal">ID<%= @response.id %></span></h1>
 
   <div class="title-bar--hidden"></div>
@@ -40,7 +41,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="flex">
     <div class="flex-2-thirds">
       <div class="block--results">
