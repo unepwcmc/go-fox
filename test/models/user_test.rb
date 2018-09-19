@@ -19,6 +19,11 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  use_type               :integer          default("organisational")
+#  org_type               :string           default(""), not null
+#  org_type_other         :string           default("")
+#  country                :string           default("")
+#  wider_network          :boolean          default(FALSE), not null
+#  wider_network_details  :string           default("")
 #
 # Indexes
 #
