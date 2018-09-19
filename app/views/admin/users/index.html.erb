@@ -18,10 +18,21 @@
           <% @users.each do |user| %>
             <li class="table__row flex flex-v-center">
               <i class="table__heading-0 material-icons table__icon">person</i>
-              <p class="table__heading-1"><%= user.username %></p>
+              <p class="table__heading-1">
+                <% if user.admin? %>
+                  (A)
+                <% else %>
+                  <% if user.use_type == "organisational" %>
+                    (O)
+                  <% elsif user.use_type == "educational" %>
+                    (E)
+                  <% end %>
+                <% end %>
+                <%= user.username %>
+              </p>
               <p class="table__heading-2"><%= user.organisation_name %></p>
               <p class="table__heading-3"><%= user.email %></p>
-              
+
               <p class="table__buttons flex flex-v-center">
                 <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure you want to permanently delete this user?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
                   <i class="material-icons">delete</i>
