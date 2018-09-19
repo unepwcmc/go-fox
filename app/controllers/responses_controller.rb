@@ -5,6 +5,7 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :results, :destroy]
   before_action :require_ownership, only: [:show, :destroy]
   before_action :require_survey_unlocked, only: [:new]
+  layout :resolve_layout
 
   def index
     @responses = @survey.responses
@@ -55,6 +56,16 @@ class ResponsesController < ApplicationController
   end
 
   private
+
+    def resolve_layout
+      case action_name
+      when "results"
+        "results"
+      else
+        "application"
+      end
+    end
+
     def require_survey_published
       return if @survey.published?
       redirect_to root_path, notice: "You cannot submit a response for an unpublished survey"
