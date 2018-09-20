@@ -93,10 +93,16 @@ questions = [
     text: "Conservation will only be a durable success if it has broad public support",
   },
   {
-    text: "Conservation should work with, not against, capitalism",
+    axis_name: F3,
+    equation_id: 14,
+    text: "Conservation should work with not against capitalism",
+    weight: 0.226
   },
   {
+    axis_name: F3,
+    equation_id: 15,
     text: "Working with corporations is not just pragmatic; they can be a positive force for conservation",
+    weight: 0.250
   },
   {
     axis_name: F2,
@@ -129,7 +135,10 @@ questions = [
     weight: 0.119
   },
   {
+    axis_name: F3,
+    equation_id: 22,
     text: "Economic arguments for conservation are risky because they can lead to unintended negative conservation outcomes",
+    weight: -0.083
   },
   {
     text: "Having multiple rationales for conservation weakens the conservation movement",
@@ -162,7 +171,10 @@ questions = [
     text: "Maintaining biological diversity should be a goal of conservation",
   },
   {
+    axis_name: F3,
+    equation_id: 28,
     text: "Conservation will only be a durable success if it has the support of corporations",
+    weight: 0.126
   },
   {
     axis_name: F1,
@@ -177,7 +189,10 @@ questions = [
     weight: 0.232
   },
   {
+    axis_name: F3,
+    equation_id: 31,
     text: "The best way for conservation to contribute to human wellbeing is by promoting economic growth",
+    weight: 0.096
   },
   {
     axis_name: F1,
