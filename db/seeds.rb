@@ -27,10 +27,6 @@ survey = Survey.where(master: true).first_or_create do |s|
   puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
 
-F1 = "People-centred conservation"
-F2 = "Scientific protectionism"
-F3 = "Conservation through capitalism"
-
 questions = [
   {
     text: "Humans are separate from nature, not part of it",
@@ -206,11 +202,10 @@ questions = [
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
     # for development only generate random x,y,z weights
-    if Rails.env == 'development'
-      q.x_weight = rand(-1.0...1.0)
-      q.y_weight = rand(-1.0...1.0)
-      q.z_weight = rand(-1.0...1.0)
-    end
+    q.axis_name = question[:axis_name]
+    q.equation_id = question[:equation_id]
+    q.weight = question[:weight]
+
     puts "Created question with the text: #{question[:text]}..."
   end
 end

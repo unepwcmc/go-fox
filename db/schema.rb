@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180920125747) do
+ActiveRecord::Schema.define(version: 20180920143450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,8 +118,9 @@ ActiveRecord::Schema.define(version: 20180920125747) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "weight", default: 0.0
-    t.string "axis_name", default: ""
+    t.float "weight"
+    t.string "axis_name"
+    t.integer "equation_id"
   end
 
   create_table "responses", force: :cascade do |t|

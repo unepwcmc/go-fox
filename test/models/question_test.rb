@@ -2,11 +2,12 @@
 #
 # Table name: questions
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  weight     :float            default(0.0)
-#  axis_name  :string           default("")
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  weight      :float
+#  axis_name   :string
+#  equation_id :integer
 #
 
 require 'test_helper'
