@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180920143450) do
+ActiveRecord::Schema.define(version: 20180920144651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,9 +130,9 @@ ActiveRecord::Schema.define(version: 20180920143450) do
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "x_score"
-    t.float "y_score"
-    t.float "z_score"
+    t.float "f1_score"
+    t.float "f2_score"
+    t.float "f3_score"
     t.bigint "classification_id"
     t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"

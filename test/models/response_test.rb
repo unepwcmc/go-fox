@@ -9,9 +9,9 @@
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  x_score           :float
-#  y_score           :float
-#  z_score           :float
+#  f1_score          :float
+#  f2_score          :float
+#  f3_score          :float
 #  classification_id :integer
 #
 # Indexes
@@ -44,9 +44,9 @@ class ResponseTest < ActiveSupport::TestCase
 
   test "creating a response assigns a classification" do
     response = FactoryBot.create(:response)
-    assert_not_nil response.x_score
-    assert_not_nil response.y_score
-    assert_not_nil response.z_score
+    assert_not_nil response.f1_score
+    assert_not_nil response.f2_score
+    assert_not_nil response.f3_score
     assert_not_nil response.classification_id
   end
 end
