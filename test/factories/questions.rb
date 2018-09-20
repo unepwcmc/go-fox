@@ -3,12 +3,8 @@
 # Table name: questions
 #
 #  id         :integer          not null, primary key
-#  text       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  x_weight   :float
-#  y_weight   :float
-#  z_weight   :float
 #
 
 FactoryBot.define do
