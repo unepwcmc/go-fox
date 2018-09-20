@@ -42,7 +42,10 @@ questions = [
     text: "Conservation will only succeed if it provides benefits for people",
   },
   {
+    axis_name: F2,
+    equation_id: 3,
     text: "Conserving nature for nature's sake should be a goal of conservation",
+    weight: 0.076
   },
   {
     axis_name: F1,
@@ -54,7 +57,10 @@ questions = [
     text: "To achieve conservation goals, the environmental impact of the world's rich must be reduced",
   },
   {
+    axis_name: F2,
+    equation_id: 6,
     text: "Conservation actions should primarily be informed by evidence from biological science",
+    weight: 0.260
   },
   {
     text: "It is acceptable for people to be displaced to make space for protected areas",
@@ -63,13 +69,19 @@ questions = [
     text: "Pristine nature, untouched by human influences, does not exist",
   },
   {
+    axis_name: F2,
+    equation_id: 9,
     text: "Strict protected areas are required to achieve most conservation goals",
+    weight: 0.071
   },
   {
     text: "Nature often recovers from even severe perturbations",
   },
   {
+    axis_name: F2,
+    equation_id: 10,
     text: "Conservation goals should be based on science",
+    weight: 0.276
   },
   {
     text: "Protecting nature for its own sake does not work",
@@ -87,7 +99,10 @@ questions = [
     text: "Working with corporations is not just pragmatic; they can be a positive force for conservation",
   },
   {
-    text: "To achieve conservation goals, human population growth must be reduced",
+    axis_name: F2,
+    equation_id: 16,
+    text: "To achieve conservation goals human population growth must be reduced",
+    weight: 0.079
   },
   {
     text: "Human affection for nature grows in line with income",
@@ -108,7 +123,10 @@ questions = [
     weight: 0.082
   },
   {
+    axis_name: F2,
+    equation_id: 21,
     text: "Maintaining ecosystem processes should be a goal of conservation",
+    weight: 0.119
   },
   {
     text: "Economic arguments for conservation are risky because they can lead to unintended negative conservation outcomes",
@@ -168,6 +186,7 @@ questions = [
     weight: 0.082
   }
 ]
+
 
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
