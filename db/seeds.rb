@@ -45,7 +45,10 @@ questions = [
     text: "Conserving nature for nature's sake should be a goal of conservation",
   },
   {
+    axis_name: F1,
+    equation_id: 4,
     text: "Conservation must benefit poor people because to do so is an ethical imperative",
+    weight: 0.162
   },
   {
     text: "To achieve conservation goals, the environmental impact of the world's rich must be reduced",
@@ -90,13 +93,19 @@ questions = [
     text: "Human affection for nature grows in line with income",
   },
   {
+    axis_name: F1,
+    equation_id: 18,
     text: "Advancing the wellbeing of all people should be a goal of conservation",
+    weight: 0.123
   },
   {
     text: "Conservation should seek to reduce the emotional separation of people from nature",
   },
   {
+    axis_name: F1,
+    equation_id: 20,
     text: "Conservation goals should be based on ethical values",
+    weight: 0.082
   },
   {
     text: "Maintaining ecosystem processes should be a goal of conservation",
@@ -117,7 +126,10 @@ questions = [
     text: "Conservation communications are more effective when they use negative 'doom and gloom' messages rather than positive messages",
   },
   {
+    axis_name: F1,
+    equation_id: 24,
     text: "Giving a voice to those affected by conservation actions improves conservation outcomes",
+    weight: 0.157
   },
   {
     text: "To achieve its goals, conservation should seek to reform global trade",
@@ -135,19 +147,25 @@ questions = [
     text: "Conservation will only be a durable success if it has the support of corporations",
   },
   {
+    axis_name: F1,
+    equation_id: 29,
     text: "Conservation should seek to do no harm to poor people",
+    weight: 0.142
   },
   {
-    equation_id: 30
+    axis_name: F1,
+    equation_id: 30,
     text: "Giving a voice to those affected by conservation action is an ethical imperative",
-    axis_name: F1
     weight: 0.232
   },
   {
     text: "The best way for conservation to contribute to human wellbeing is by promoting economic growth",
   },
   {
-    text: "When communities manage their own resources, their efforts are more effective than top-down approaches",
+    axis_name: F1,
+    equation_id: 32,
+    text: "When communities manage their own resources their efforts are more effective than top-down approaches",
+    weight: 0.082
   }
 ]
 
