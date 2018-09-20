@@ -27,6 +27,10 @@ survey = Survey.where(master: true).first_or_create do |s|
   puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
 
+F1 = "People-centred conservation"
+F2 = "Scientific protectionism"
+F3 = "Conservation through capitalism"
+
 questions = [
   {
     text: "Humans are separate from nature, not part of it",
@@ -134,7 +138,10 @@ questions = [
     text: "Conservation should seek to do no harm to poor people",
   },
   {
+    equation_id: 30
     text: "Giving a voice to those affected by conservation action is an ethical imperative",
+    axis_name: F1
+    weight: 0.232
   },
   {
     text: "The best way for conservation to contribute to human wellbeing is by promoting economic growth",

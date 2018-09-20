@@ -5,14 +5,13 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  weight     :float
+#  weight     :float            default(0.0)
+#  axis_name  :string           default("")
 #
 
 FactoryBot.define do
   factory :question do
     text "An example question"
-    x_weight 0.1234
-    y_weight -1.0
-    z_weight 0.333
+    weight 0.1234
   end
 end
