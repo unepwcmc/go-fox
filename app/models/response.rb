@@ -59,19 +59,22 @@ class Response < ApplicationRecord
   # Approx F1 = -1.487 + (0.162 x q4) + (0.123 x q18) + (0.082 x q20) + (0.157 x q24) +
   # (0.142 x q29) + (0.232 x q30) + (0.082 x q32)
   def calculate_f1
-    -1.487 + calculate_weighted_question_summation([4, 18, 20, 24, 29, 30, 32])
+    equation_ids = Question.where(axis_name: F1).pluck(:equation_id)
+    -1.487 + calculate_weighted_question_summation(equation_ids)
   end
 
   # Approx F2 = -1.413 + (0.076 x q3) + (0.260 x q6) + (0.071 x q9) + (0.276 x q10) +
   # (0.079 x q16) + (0.119 x q21)
   def calculate_f2
-    -1.413 + calculate_weighted_question_summation([3, 6, 9, 10, 16, 21])
+    equation_ids = Question.where(axis_name: F2).pluck(:equation_id)
+    -1.413 + calculate_weighted_question_summation(equation_ids)
   end
 
   # Approx F3 = -0.360 + (0.226 x q14) + (0.250 x q15) + (-0.083 x q22) + (0.126 x q28) +
   # (0.096 x q31)
   def calculate_f3
-    -0.360 + calculate_weighted_question_summation([14, 15, 22, 28, 31])
+    equation_ids = Question.where(axis_name: F3).pluck(:equation_id)
+    -0.360 + calculate_weighted_question_summation(equation_ids)
   end
 
   def response_value(response_answer)
