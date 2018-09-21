@@ -14,7 +14,5 @@ FactoryBot.define do
   factory :question do
     text "An example question"
     weight 0.1234
-    axis_name F1
-    equation_id 30
   end
 end
