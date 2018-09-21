@@ -95,24 +95,21 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "default survey should load master survey for user" do
-    #@survey = create(:survey, user: @user, published: true, master: true)
-    # We seeded a master survey already
+    @survey = create(:survey, user: @user, published: true, master: true)
     sign_in @user
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
 
   test "default survey should load master survey for admin" do
-    #@survey = create(:survey, user: @user, published: true, master: true)
-    # We have already seeded a master survey from database seeds
+    @survey = create(:survey, user: @user, published: true, master: true)
     sign_in @admin
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
 
   test "default survey should load master survey for anonymous user" do
-    #@survey = create(:survey, user: @user, published: true, master: true)
-    # We have already seeded a master survey from database seeds
+    @survey = create(:survey, user: @user, published: true, master: true)
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
