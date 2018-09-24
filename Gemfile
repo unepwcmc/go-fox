@@ -50,7 +50,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "factory_bot_rails", "~> 4.0"
   gem 'database_cleaner'
-  gem 'capistrano-sidekiq' 
 end
 
 group :development do
@@ -68,6 +67,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.1.1', require: false
   gem 'rails-erd', require: false
   gem "letter_opener", '~> 1.6.0'
+  gem 'capistrano-sidekiq'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
