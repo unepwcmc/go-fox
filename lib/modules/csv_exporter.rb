@@ -14,7 +14,9 @@ module CsvExporter
 
       responses.each do |batch|
         batch.each do |response|
-          csv << self.format_response_row(response)
+          row = []
+          row << self.format_response_row(response) << self.format_scores(response)
+          csv << row.flatten
         end
       end
 
@@ -37,6 +39,12 @@ module CsvExporter
     @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
   end
 
+  def self.format_scores(response, default=@@default_na)
+    row = []
+    row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
+    row
+  end
+
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
@@ -44,6 +52,11 @@ module CsvExporter
   end
 
   def self.headers
-    @@questions.pluck(:text).map {|text| text.delete(",")}
+    results = []
+    question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
+    score_headers    = ["F1", "F2", "F3"]
+
+    results << question_headers << score_headers
+    results.flatten
   end
 end

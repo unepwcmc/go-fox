@@ -54,18 +54,4 @@ class Answer < ApplicationRecord
       0.0
     end
   end
-
-  def score
-    # Only return a score for scale answers using the Question class
-    return nil if self.answerable_type != "Question"
-
-    question  = self.question
-    value     = self.value
-
-    {
-      x: value * question.x_weight,
-      y: value * question.y_weight,
-      z: value * question.z_weight,
-    }
-  end
 end

@@ -9,9 +9,9 @@
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  x_score           :float
-#  y_score           :float
-#  z_score           :float
+#  f1_score          :float
+#  f2_score          :float
+#  f3_score          :float
 #  classification_id :integer
 #
 # Indexes
@@ -49,48 +49,84 @@ class Response < ApplicationRecord
     self.answers.find_by(answerable: question)
   end
 
-  def total_scores
-    scores = self.answers.where(answerable_type: "Question").map(&:score)
-
-    x_total = scores.sum {|score| score[:x]}
-    y_total = scores.sum {|score| score[:y]}
-    z_total = scores.sum {|score| score[:z]}
-
-    {x: x_total, y: y_total, z: z_total}
-  end
-
-  def scaled_scores
-    total_number_of_questions = Question.count.to_f
-    total_scores              = self.total_scores
-
-    {
-      x: total_scores[:x] / total_number_of_questions,
-      y: total_scores[:y] / total_number_of_questions,
-      z: total_scores[:z] / total_number_of_questions
-    }
-  end
-
   def assign_classification
-    self.x_score        = scaled_scores[:x]
-    self.y_score        = scaled_scores[:y]
-    self.z_score        = scaled_scores[:z]
-    self.classification = choose_classification_quadrant
+    self.f1_score        = calculate_f1
+    self.f2_score        = calculate_f2
+    self.f3_score        = calculate_f3
+    self.classification  = choose_classification_quadrant
+  end
+
+  # Approx F1 = -1.487 + (0.162 x q4) + (0.123 x q18) + (0.082 x q20) + (0.157 x q24) +
+  # (0.142 x q29) + (0.232 x q30) + (0.082 x q32)
+  def calculate_f1
+    equation_ids = Question.where(axis_name: F1).pluck(:equation_id)
+    -1.487 + calculate_weighted_question_summation(equation_ids)
+  end
+
+  # Approx F2 = -1.413 + (0.076 x q3) + (0.260 x q6) + (0.071 x q9) + (0.276 x q10) +
+  # (0.079 x q16) + (0.119 x q21)
+  def calculate_f2
+    equation_ids = Question.where(axis_name: F2).pluck(:equation_id)
+    -1.413 + calculate_weighted_question_summation(equation_ids)
+  end
+
+  # Approx F3 = -0.360 + (0.226 x q14) + (0.250 x q15) + (-0.083 x q22) + (0.126 x q28) +
+  # (0.096 x q31)
+  def calculate_f3
+    equation_ids = Question.where(axis_name: F3).pluck(:equation_id)
+    -0.360 + calculate_weighted_question_summation(equation_ids)
+  end
+
+  def response_value(response_answer)
+    case response_answer
+    when "Strongly Disagree"
+      -2
+    when "Disagree"
+      -1
+    when "Slightly Disagree"
+      -0.5
+    when "Neutral"
+      0
+    when "Slightly Agree"
+      0.5
+    when "Agree"
+      1
+    when "Strongly Agree"
+      2
+    else
+      0
+    end
+  end
+
+  def calculate_weighted_question_summation(equation_ids)
+    sum = 0
+
+    equation_ids.each do |equation_id|
+      question = Question.find_by(equation_id: equation_id)
+      answer_value = answers.select { |a| a.answerable_id == question.id }.first.raw
+      sum += (question.weight * response_value(answer_value)) rescue nil
+    end
+
+    sum
   end
 
   def choose_classification_quadrant
-    x = self.x_score
-    y = self.y_score
+    f1 = self.f1_score
+    f2 = self.f2_score
+    f3 = self.f2_score
 
-    if x.between?(-1, 0) && y.between?(-1, 0)
-      Classification.find_by(name: "Critical Social Science")
-    elsif x.between?(0, 1) && y.between?(-1, 0)
-      Classification.find_by(name: "Traditional Conservation")
-    elsif x.between?(-1, 0) && y.between?(0, 1)
-      Classification.find_by(name: "New Conservation")
-    elsif x.between?(0, 1) && y.between?(0, 1)
-      Classification.find_by(name: "Market Biocentrism")
-    else
-      Classification.find_by(name: "Undecided")
-    end
+    # TODO: Create new classification
+    # if x.between?(-1, 0) && y.between?(-1, 0)
+    #   Classification.find_by(name: "Critical Social Science")
+    # elsif x.between?(0, 1) && y.between?(-1, 0)
+    #   Classification.find_by(name: "Traditional Conservation")
+    # elsif x.between?(-1, 0) && y.between?(0, 1)
+    #   Classification.find_by(name: "New Conservation")
+    # elsif x.between?(0, 1) && y.between?(0, 1)
+    #   Classification.find_by(name: "Market Biocentrism")
+    # else
+    #   Classification.find_by(name: "Undecided")
+    # end
+    Classification.find_by(name: "Critical Social Science")
   end
 end

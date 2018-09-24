@@ -1,5 +1,5 @@
 class Admin::DashboardController < ApplicationController
-  before_action :require_admin, only: [:index]
+  before_action :require_admin, only: [:index, :export]
 
   def index
     @users = User.all

@@ -9,9 +9,9 @@
 #  uuid              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  x_score           :float
-#  y_score           :float
-#  z_score           :float
+#  f1_score          :float
+#  f2_score          :float
+#  f3_score          :float
 #  classification_id :integer
 #
 # Indexes
