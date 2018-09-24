@@ -50,6 +50,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "factory_bot_rails", "~> 4.0"
   gem 'database_cleaner'
+  gem 'capistrano-sidekiq' 
 end
 
 group :development do
