@@ -23,7 +23,7 @@
     <% @responses.each do |response| %>
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
-        <p class="table__heading-2"><%= response.f1_score %>, <%= response.f2_score %>, <%= response.f3_score %></p>
+        <p class="table__heading-2">F1: <%= response.f1_score %>, F2: <%= response.f2_score %>, F3: <%= response.f3_score %></p>
         <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
         <p class="table__heading-4"><%= response.survey.user.organisation_name %></p>
 
