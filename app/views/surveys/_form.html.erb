@@ -20,16 +20,6 @@
         </div>
       <% end %>
 
-      <% if current_user.admin? %>
-        <%= render partial: 'organisational_fields' %>
-      <% else %>
-        <% if current_user.use_type == "organisational" %>
-          <%= render partial: 'organisational_fields' %>
-        <% elsif current_user.use_type == "educational" %>
-          <%= render partial: 'educational_fields' %>
-        <% end %>
-      <% end %>
-
       <% I18n.available_locales.each do |locale| %>
         <h1><%= locale %></h1>
         <%= form.globalize_fields_for locale do |ff| %>
@@ -42,43 +32,16 @@
             <%= ff.label :description %>
             <%= ff.text_area :description, id: :survey_description %>
           </div>
+        <% end %>
+      <% end %>
 
-          <div class="field">
-            <label for="">Survey logo <span class="italic">(Optional)</span></label>
-            File upload
-          </div>
-
-          <div class="field">
-            <label for="">Select default survey language</label>
-            Select
-          </div>
-
-          <div class="field">
-            <label for="">Intended respondents of survey?</label>
-            Select
-          </div>
-
-          <div class="field">
-            <label for="">Is this a follow up to a previous survey you have run? If so, what was the ID of the survey?</label>
-            Input
-          </div>
-
-          <div class="field">
-            <label for="">How many people do you plan to send the survey to?</label>
-            Select
-          </div>
-
-          <div class="field">
-            <label for="">Are you planning a face to face session with your respondents to discuss results?</label>
-            Radio buttons
-            - Yes
-            - No
-          </div>
-
-          <div class="field">
-            <label for="">What are your reasons for using the GO-FOX tool?</label>
-            Select
-          </div>
+      <% if current_user.admin? %>
+        <%= render partial: 'organisational_fields' %>
+      <% else %>
+        <% if current_user.use_type == "organisational" %>
+          <%= render partial: 'organisational_fields' %>
+        <% elsif current_user.use_type == "educational" %>
+          <%= render partial: 'educational_fields' %>
         <% end %>
       <% end %>
 
