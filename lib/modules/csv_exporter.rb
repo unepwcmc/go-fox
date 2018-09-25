@@ -6,18 +6,25 @@ module CsvExporter
   @@questions  = Question.all + DemographicQuestion.all
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
-    filepath  = self.create_filepath
-    responses = self.find_responses(survey, from_date, to_date)
+    begin
+      filepath  = self.create_filepath
+      responses = self.find_responses(survey, from_date, to_date)
 
-    CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
-      csv << self.headers
+      CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
+        csv << self.headers
 
-      responses.each do |batch|
-        batch.each do |response|
-          csv << self.format_response_row(response)
+        responses.each do |batch|
+          batch.each do |response|
+            row = []
+            row << self.format_response_row(response) << self.format_scores(response)
+            csv << row.flatten
+          end
         end
+
       end
 
+    rescue Exception => e
+      Appsignal.send_error(e)
     end
 
     filepath
@@ -37,6 +44,12 @@ module CsvExporter
     @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
   end
 
+  def self.format_scores(response, default=@@default_na)
+    row = []
+    row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
+    row
+  end
+
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
@@ -44,6 +57,11 @@ module CsvExporter
   end
 
   def self.headers
-    @@questions.pluck(:text).map {|text| text.delete(",")}
+    results = []
+    question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
+    score_headers    = ["F1", "F2", "F3"]
+
+    results << question_headers << score_headers
+    results.flatten
   end
 end

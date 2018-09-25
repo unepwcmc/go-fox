@@ -38,16 +38,25 @@ questions = [
     text: "Conservation will only succeed if it provides benefits for people",
   },
   {
+    axis_name: F2,
+    equation_id: 3,
     text: "Conserving nature for nature's sake should be a goal of conservation",
+    weight: 0.076
   },
   {
+    axis_name: F1,
+    equation_id: 4,
     text: "Conservation must benefit poor people because to do so is an ethical imperative",
+    weight: 0.162
   },
   {
     text: "To achieve conservation goals, the environmental impact of the world's rich must be reduced",
   },
   {
+    axis_name: F2,
+    equation_id: 6,
     text: "Conservation actions should primarily be informed by evidence from biological science",
+    weight: 0.260
   },
   {
     text: "It is acceptable for people to be displaced to make space for protected areas",
@@ -56,13 +65,19 @@ questions = [
     text: "Pristine nature, untouched by human influences, does not exist",
   },
   {
+    axis_name: F2,
+    equation_id: 9,
     text: "Strict protected areas are required to achieve most conservation goals",
+    weight: 0.071
   },
   {
     text: "Nature often recovers from even severe perturbations",
   },
   {
+    axis_name: F2,
+    equation_id: 10,
     text: "Conservation goals should be based on science",
+    weight: 0.276
   },
   {
     text: "Protecting nature for its own sake does not work",
@@ -74,31 +89,52 @@ questions = [
     text: "Conservation will only be a durable success if it has broad public support",
   },
   {
-    text: "Conservation should work with, not against, capitalism",
+    axis_name: F3,
+    equation_id: 14,
+    text: "Conservation should work with not against capitalism",
+    weight: 0.226
   },
   {
+    axis_name: F3,
+    equation_id: 15,
     text: "Working with corporations is not just pragmatic; they can be a positive force for conservation",
+    weight: 0.250
   },
   {
-    text: "To achieve conservation goals, human population growth must be reduced",
+    axis_name: F2,
+    equation_id: 16,
+    text: "To achieve conservation goals human population growth must be reduced",
+    weight: 0.079
   },
   {
     text: "Human affection for nature grows in line with income",
   },
   {
+    axis_name: F1,
+    equation_id: 18,
     text: "Advancing the wellbeing of all people should be a goal of conservation",
+    weight: 0.123
   },
   {
     text: "Conservation should seek to reduce the emotional separation of people from nature",
   },
   {
+    axis_name: F1,
+    equation_id: 20,
     text: "Conservation goals should be based on ethical values",
+    weight: 0.082
   },
   {
+    axis_name: F2,
+    equation_id: 21,
     text: "Maintaining ecosystem processes should be a goal of conservation",
+    weight: 0.119
   },
   {
+    axis_name: F3,
+    equation_id: 22,
     text: "Economic arguments for conservation are risky because they can lead to unintended negative conservation outcomes",
+    weight: -0.083
   },
   {
     text: "Having multiple rationales for conservation weakens the conservation movement",
@@ -113,7 +149,10 @@ questions = [
     text: "Conservation communications are more effective when they use negative 'doom and gloom' messages rather than positive messages",
   },
   {
+    axis_name: F1,
+    equation_id: 24,
     text: "Giving a voice to those affected by conservation actions improves conservation outcomes",
+    weight: 0.157
   },
   {
     text: "To achieve its goals, conservation should seek to reform global trade",
@@ -128,30 +167,45 @@ questions = [
     text: "Maintaining biological diversity should be a goal of conservation",
   },
   {
+    axis_name: F3,
+    equation_id: 28,
     text: "Conservation will only be a durable success if it has the support of corporations",
+    weight: 0.126
   },
   {
+    axis_name: F1,
+    equation_id: 29,
     text: "Conservation should seek to do no harm to poor people",
+    weight: 0.142
   },
   {
+    axis_name: F1,
+    equation_id: 30,
     text: "Giving a voice to those affected by conservation action is an ethical imperative",
+    weight: 0.232
   },
   {
+    axis_name: F3,
+    equation_id: 31,
     text: "The best way for conservation to contribute to human wellbeing is by promoting economic growth",
+    weight: 0.096
   },
   {
-    text: "When communities manage their own resources, their efforts are more effective than top-down approaches",
+    axis_name: F1,
+    equation_id: 32,
+    text: "When communities manage their own resources their efforts are more effective than top-down approaches",
+    weight: 0.082
   }
 ]
+
 
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
     # for development only generate random x,y,z weights
-    if Rails.env == 'development'
-      q.x_weight = rand(-1.0...1.0)
-      q.y_weight = rand(-1.0...1.0)
-      q.z_weight = rand(-1.0...1.0)
-    end
+    q.axis_name = question[:axis_name]
+    q.equation_id = question[:equation_id]
+    q.weight = question[:weight]
+
     puts "Created question with the text: #{question[:text]}..."
   end
 end
