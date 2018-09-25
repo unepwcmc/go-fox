@@ -6,20 +6,25 @@ module CsvExporter
   @@questions  = Question.all + DemographicQuestion.all
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
-    filepath  = self.create_filepath
-    responses = self.find_responses(survey, from_date, to_date)
+    begin
+      filepath  = self.create_filepath
+      responses = self.find_responses(survey, from_date, to_date)
 
-    CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
-      csv << self.headers
+      CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
+        csv << self.headers
 
-      responses.each do |batch|
-        batch.each do |response|
-          row = []
-          row << self.format_response_row(response) << self.format_scores(response)
-          csv << row.flatten
+        responses.each do |batch|
+          batch.each do |response|
+            row = []
+            row << self.format_response_row(response) << self.format_scores(response)
+            csv << row.flatten
+          end
         end
+
       end
 
+    rescue Exception => e
+      Appsignal.send_error(e)
     end
 
     filepath
