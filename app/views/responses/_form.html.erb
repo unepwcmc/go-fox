@@ -1,16 +1,26 @@
 <%= form_with(model: [:survey, response], local: true, id: 'form-survey') do |form| %>
 
   <validation-message message="Please complete the questions highlighted below to continue."></validation-message>
-  
+
   <%= form.fields_for :answers do |answer_form| %>
-    
+
     <page-item :index="<%= answer_form.index %>" class="question">
 
       <template slot="formField" slot-scope="props">
         <div class="question__title">
-          <h3><%= answer_form.object.question.text %></h3>
+          <h3>
+            <% question = answer_form.object.question %>
+            <%= question.text %>
+            <% if question.is_a?(Question) %>
+              *
+            <% elsif question.is_a?(DemographicQuestion) %>
+              <% if question.validation == {required: true}.to_json %>
+                *
+              <% end %>
+            <% end %>
+          </h3>
         </div>
-        
+
         <%= get_form_field answer_form %>
 
         <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
