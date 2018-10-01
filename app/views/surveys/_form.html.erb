@@ -49,9 +49,9 @@
         <%= render partial: 'organisational_fields' %>
       <% else %>
         <% if current_user.use_type == "organisational" %>
-          <%= render partial: 'organisational_fields' %>
+          <%= render partial: 'organisational_fields', locals: { form: form } %>
         <% elsif current_user.use_type == "educational" %>
-          <%= render partial: 'educational_fields' %>
+          <%= render partial: 'educational_fields', locals: { form: form } %>
         <% end %>
       <% end %>
 
