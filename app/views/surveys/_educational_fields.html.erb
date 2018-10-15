@@ -26,7 +26,7 @@
     <label for="">
       Default language
     </label>
-    (Radio buttons; English, French, Spanish)
+    <%= form.collection_radio_buttons '[settings][default_language]', radio_button_data("default_language"), :first, :last %>
     <p>
       Lorem ipsum.
     </p>
