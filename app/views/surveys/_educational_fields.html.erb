@@ -14,7 +14,7 @@ In this section we ask questions about the specific group or class to which you 
   <label for="">
     Previous survey ID.
   </label>
-  <%= form.text_field :survey_previous_id, id: :survey_previous_id %>
+  <%= form.text_field '[settings][survey_previous_id]' %>
   <p>
     Lorem ipsum.
   </p>
@@ -34,7 +34,7 @@ In this section we ask questions about the specific group or class to which you 
   <label for="">
     Participants' organisation name
   </label>
-  <%= form.text_field :participant_org_name, id: :participant_org_name %>
+  <%= form.text_field '[settings][participant_org_name]' %>
   <p>
     What is the name of the group/organisation to which the survey participants belong?
   </p>
@@ -64,7 +64,7 @@ In this section we ask questions about the specific group or class to which you 
   <label for="">
     Name of Course/module:
   </label>
-  <%= form.text_field :participant_org_name, id: :participant_org_name %>
+  <%= form.text_field '[settings][participant_org_name]' %>
   <p>
     Lorem ipsum
   </p>
@@ -74,7 +74,7 @@ In this section we ask questions about the specific group or class to which you 
   <label for="">
     Course website/url
   </label>
-  <%= form.text_field :course_url, id: :course_url %>
+  <%= form.text_field '[settings][course_url]' %>
   <p>
     Lorem ipsum
   </p>
@@ -105,7 +105,7 @@ In this section we ask questions about the specific group or class to which you 
     Session date
   </label>
   (Date selection)
-  <%= form.date_select :date, start_year: Date.current.year %>
+  <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
 </div>
 
 <div class="field">
@@ -119,5 +119,5 @@ In this section we ask questions about the specific group or class to which you 
   <label for="">
     What do you hope to achieve from using GO-FOX with this class?
   </label>
-  <%= form.text_area :hope_to_achieve, id: :hope_to_achieve %>
+  <%= form.text_area '[settings][hope_to_achieve]' %>
 </div>
