@@ -1,123 +1,174 @@
-In this section we ask questions about the specific group or class to which you will be sending the survey.
-
-<div class="field">
-  <label for="">
-    Survey title
-  </label>
-  <%= form.text_field :name, id: :survey_name %>
+<% if survey.id.nil? %>
   <p>
-    Lorem ipsum.
+    In this section we ask questions about the specific group or class to which you will be sending the survey.
   </p>
-</div>
+  <div class="field">
+    <label for="">
+      Survey title
+    </label>
+    <%= form.text_field :name, id: :survey_name %>
+    <p>
+      Lorem ipsum.
+    </p>
+  </div>
 
-<div class="field">
-  <label for="">
-    Previous survey ID.
-  </label>
-  <%= form.text_field '[settings][survey_previous_id]' %>
+  <div class="field">
+    <label for="">
+      Previous survey ID.
+    </label>
+    <%= form.text_field '[settings][survey_previous_id]' %>
+    <p>
+      Lorem ipsum.
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Default language
+    </label>
+    (Radio buttons; English, French, Spanish)
+    <p>
+      Lorem ipsum.
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Participants' organisation name
+    </label>
+    <%= form.text_field '[settings][participant_org_name]' %>
+    <p>
+      What is the name of the group/organisation to which the survey participants belong?
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Participants' level of study
+    </label>
+    (Radio buttons)
+    <p>
+      What is the level of study of your survey group or class?
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Participants' specialism
+    </label>
+    (Radio buttons)
+    <p>
+      Lorem ipsum.
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Name of Course/module:
+    </label>
+    <%= form.text_field '[settings][participant_org_name]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Course website/url
+    </label>
+    <%= form.text_field '[settings][course_url]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Size of group
+    </label>
+    (Text field and don't know option)
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Follow up session?
+    </label>
+    (Radio buttons: yes/no)
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Session date
+    </label>
+    (Date selection)
+    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Anonymity.
+    </label>
+    (Radio buttons: yes/no)
+  </div>
+
+  <div class="field">
+    <label for="">
+      What do you hope to achieve from using GO-FOX with this class?
+    </label>
+    <%= form.text_area '[settings][hope_to_achieve]' %>
+  </div>
+<% else %>
   <p>
-    Lorem ipsum.
+    Previous survey ID: <%= survey.settings["survey_previous_id"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Default language
-  </label>
-  (Radio buttons; English, French, Spanish)
   <p>
-    Lorem ipsum.
+    Default language: <%= survey.settings["default_language"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Participants' organisation name
-  </label>
-  <%= form.text_field '[settings][participant_org_name]' %>
   <p>
-    What is the name of the group/organisation to which the survey participants belong?
+    Participants' organisation name: <%= survey.settings["participant_org_name"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Participants' level of study
-  </label>
-  (Radio buttons)
   <p>
-    What is the level of study of your survey group or class?
+    Participants' level of study: <%= survey.settings["participant_level_of_study"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Participants' specialism
-  </label>
-  (Radio buttons)
   <p>
-    Lorem ipsum.
+    Participants' specialism: <%= survey.settings["participant_specialism"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Name of Course/module:
-  </label>
-  <%= form.text_field '[settings][participant_org_name]' %>
   <p>
-    Lorem ipsum
+    Name of Course/module: <%= survey.settings["name_of_course"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Course website/url
-  </label>
-  <%= form.text_field '[settings][course_url]' %>
   <p>
-    Lorem ipsum
+    Course website/url: <%= survey.settings["course_url"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Size of group
-  </label>
-  (Text field and don't know option)
   <p>
-    Lorem ipsum
+    Size of group: <%= survey.settings["size_of_group"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Follow up session?
-  </label>
-  (Radio buttons: yes/no)
   <p>
-    Lorem ipsum
+    Follow up session?: <%= survey.settings["follow_up_session"] %>
   </p>
-</div>
 
-<div class="field">
-  <label for="">
-    Session date
-  </label>
-  (Date selection)
-  <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
-</div>
+  <p>
+    Session date: <%= survey.settings["session_date"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    Anonymity.
-  </label>
-  (Radio buttons: yes/no)
-</div>
+  <p>
+    Anonymity: <%= survey.settings["anonymity"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    What do you hope to achieve from using GO-FOX with this class?
-  </label>
-  <%= form.text_area '[settings][hope_to_achieve]' %>
-</div>
+  <p>
+    What do you hope to achieve from using GO-FOX with this class?: <%= survey.settings["hope_to_achieve"] %>
+  </p>
+<% end %>
