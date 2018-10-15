@@ -161,7 +161,7 @@
   </p>
 
   <p>
-    Session date: <%= survey.settings["session_date"] %>
+    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
   </p>
 
   <p>
