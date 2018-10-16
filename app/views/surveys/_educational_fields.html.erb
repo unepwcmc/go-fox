@@ -16,50 +16,51 @@
     <label for="">
       Previous survey ID.
     </label>
-    <%= form.text_field '[settings][survey_previous_id]' %>
     <p>
       Lorem ipsum.
     </p>
+    <%= form.text_field '[settings][survey_previous_id]' %>
   </div>
 
   <div class="field">
     <label for="">
       Default language
     </label>
-    <%= form.collection_radio_buttons '[settings][default_language]', radio_button_data("default_language"), :first, :last %>
     <p>
       Lorem ipsum.
     </p>
+    <%= form.collection_radio_buttons '[settings][default_language]', surveys_data("default_language"), :first, :last %>
   </div>
 
   <div class="field">
     <label for="">
       Participants' organisation name
     </label>
-    <%= form.text_field '[settings][participant_org_name]' %>
     <p>
       What is the name of the group/organisation to which the survey participants belong?
     </p>
+    <%= form.text_field '[settings][participant_org_name]' %>
   </div>
 
   <div class="field">
     <label for="">
       Participants' level of study
     </label>
-    (Radio buttons)
     <p>
       What is the level of study of your survey group or class?
     </p>
+    <%= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
+
   </div>
 
   <div class="field">
     <label for="">
       Participants' specialism
     </label>
-    (Radio buttons)
     <p>
       Lorem ipsum.
     </p>
+    <%= form.collection_radio_buttons '[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last %>
   </div>
 
   <div class="field">
@@ -100,6 +101,7 @@
     <p>
       Lorem ipsum
     </p>
+    <%= form.collection_radio_buttons '[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last %>
   </div>
 
   <div class="field">
