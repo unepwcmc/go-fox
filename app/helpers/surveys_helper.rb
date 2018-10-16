@@ -9,6 +9,8 @@ module SurveysHelper
       participant_specialism
     when "follow_up_session"
       follow_up_session
+    when "anonymity"
+      anonymity
     else []
     end
   end
@@ -45,6 +47,13 @@ module SurveysHelper
   end
 
   def follow_up_session
+    {
+      yes: "Yes",
+      no: "No"
+    }
+  end
+
+  def anonymity
     {
       yes: "Yes",
       no: "No"

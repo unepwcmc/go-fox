@@ -6,10 +6,10 @@
     <label for="">
       Survey title
     </label>
-    <%= form.text_field :name, id: :survey_name %>
     <p>
       Lorem ipsum.
     </p>
+    <%= form.text_field :name, id: :survey_name %>
   </div>
 
   <div class="field">
@@ -116,7 +116,7 @@
     <label for="">
       Anonymity.
     </label>
-    (Radio buttons: yes/no)
+    <%= form.collection_radio_buttons '[settings][anonymity]', surveys_data("anonymity"), :first, :last %>
   </div>
 
   <div class="field">
