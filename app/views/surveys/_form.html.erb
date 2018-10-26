@@ -54,7 +54,7 @@
       </div>
 
       <% if current_user.admin? %>
-        <%= render partial: 'organisational_fields' %>
+        <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
       <% else %>
         <% if current_user.use_type == "organisational" %>
           <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
