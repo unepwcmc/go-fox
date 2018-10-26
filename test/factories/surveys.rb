@@ -22,6 +22,14 @@
 #  fk_rails_...  (user_id => users.id)
 #
 
+survey_settings = {
+  course_url: "No",
+  hope_to_achieve: "Cool!",
+  default_language: "fr",
+  survey_previous_id: "12345667",
+  participant_org_name: "Yes"
+}.to_json
+
 FactoryBot.define do
   factory :survey do
     name "Survey name"
@@ -30,5 +38,6 @@ FactoryBot.define do
     uuid nil
     locked false
     master false
+    settings survey_settings
   end
 end
