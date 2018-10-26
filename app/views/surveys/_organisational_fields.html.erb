@@ -1,177 +1,165 @@
-In this section we ask questions about the specific group to which you will be sending the survey.
+<% if survey.id.nil? %>
+  <div class="field">
+    <label for="">
+      Previous survey ID.
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.text_field '[settings][survey_previous_id]' %>
+  </div>
 
+  <div class="field">
+    <label for="">
+      Default language
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.collection_radio_buttons '[settings][default_language]', surveys_data("default_language"), :first, :last %>
+  </div>
 
-<div class="field">
-  <label for="">
-    What would you like to call your survey?
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Participants' organisation name
+    </label>
+    <p>
+      What is the name of the group/organisation to which the survey participants belong?
+    </p>
+    <%= form.text_field '[settings][participant_org_name]' %>
+  </div>
 
-<div class="field">
-  <label for="">
-    If this is a follow up to a previous GO-FOX survey, please enter the original survey ID:
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Participants' level of study
+    </label>
+    <p>
+      What is the level of study of your survey group or class?
+    </p>
+    <%= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
 
-<div class="field">
-  <label for="">
-    What is the language of your survey?
-  </label>
-  Field
-</div>
+  </div>
 
-<div class="field">
-  <label for="">
-    Please upload a logo for your survey:
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Participants' specialism
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.collection_radio_buttons '[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last %>
+  </div>
 
-<div class="field">
-  <label for="">
-    What is the name of the group/organisation to which the survey participants belong?
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Name of Course/module:
+    </label>
+    <%= form.text_field '[settings][participant_org_name]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
 
-<div class="field">
-  <label for="">
-    Which of the following best describes the group/organisation to which the survey participants belong?
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Course website/url
+    </label>
+    <%= form.text_field '[settings][course_url]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
 
-<div class="field">
-  <label for="">
-    Where is the group/organisation to which the survey participants belong located?
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Size of group
+    </label>
+    <%= form.text_field '[settings][size_of_group]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
 
-<div class="field">
-  <label for="">
-    Is the group/organisation to which survey participants belong part of a wider network or structure?
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Follow up session?
+    </label>
+    (Radio buttons: yes/no)
+    <p>
+      Lorem ipsum
+    </p>
+    <%= form.collection_radio_buttons '[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last %>
+  </div>
 
-<div class="field">
-  <label for="">
-    Please give details:
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      Session date
+    </label>
+    (Date selection)
+    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
 
-<div class="field">
-  <label for="">
-    To help us understand the group/organisation to which survey participants belong, please provide the URL for their website if there is one:
-  </label>
-  Field
-</div>
+<!---
+  <div class="field">
+    <label for="">
+      Anonymity.
+    </label>
+    <%= form.collection_radio_buttons '[settings][anonymity]', surveys_data("anonymity"), :first, :last %>
+  </div>
+  --->
 
-<div class="field">
-  <label for="">
-    TO BE UPDATED: What kind of conservation activities is the group/organisation to which survey participants belong involved in? Tick all that apply:
-  </label>
-  Field
-</div>
+  <div class="field">
+    <label for="">
+      What do you hope to achieve from using GO-FOX with this class?
+    </label>
+    <%= form.text_area '[settings][hope_to_achieve]' %>
+  </div>
+<% else %>
+  <p>
+    Previous survey ID: <%= survey.settings["survey_previous_id"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    When was the group/organisation to which participants belong first established?
-  </label>
-  Field
-</div>
+  <p>
+    Default language: <%= survey.settings["default_language"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    For the group/organisation to which survey participants belong, please tick all the following sources of funding that apply:
-  </label>
-  Field
-</div>
+  <p>
+    Participants' organisation name: <%= survey.settings["participant_org_name"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    Which of the following best describes the geographical scope of the group/organisation to which survey participants belong?
-  </label>
-  Field
-</div>
+  <p>
+    Participants' level of study: <%= survey.settings["participant_level_of_study"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    How many people are there in the group/organisation in total?
-  </label>
-  Field
-</div>
+  <p>
+    Participants' specialism: <%= survey.settings["participant_specialism"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    How many people are there in the group/organisation who will be receiving the survey?
-  </label>
-  Field
-</div>
+  <p>
+    Name of Course/module: <%= survey.settings["name_of_course"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    If the survey is being targeted at a subgroup of the organisation, can you please describe the group?
-  </label>
-  Field
-</div>
+  <p>
+    Course website/url: <%= survey.settings["course_url"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    If the survey is being targeted at a subgroup of the organisation, can you please explain why this group has been selected to participate?
-  </label>
-  Field
-</div>
+  <p>
+    Size of group: <%= survey.settings["size_of_group"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    Are you planning a session with your respondents to discuss the results?
-  </label>
-  Field
-</div>
+  <p>
+    Follow up session?: <%= survey.settings["follow_up_session"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    If yes, what is the date of your session?
-  </label>
-  Field
-</div>
+  <p>
+    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
+  </p>
 
-<div class="field">
-  <label for="">
-    Do you want respondents to your survey to be anonymous? If no, respondents' names will be visible in outputs intended to be shared with the group. Respondents will be made aware of this and reminded of their right to refuse to participate. You should think carefully about whether anonymity is appropriate, and may wish to consult your group in advance on their preferences around this.
-  </label>
-  Field
-</div>
+  <p>
+    Anonymity: <%= survey.settings["anonymity"] %>
+  </p>
 
-<div class="field">
-  <label for="">
-    If you wish to, you can view results broken into subgroups. To do so, please add subgroup names below so that they can be added to the survey. Respondents will be able to choose only one, so they should be mutually exclusive.
-  </label>
-  Field
-</div>
-
-<div class="field">
-  <label for="">
-    What subgroup are you in?
-  </label>
-  Field
-</div>
-
-<div class="field">
-  <label for="">
-    Please enter subgroup answer options here
-  </label>
-  Field
-</div>
-
-<div class="field">
-  <label for="">
-    What do you hope to achieve from using Go Fox with this group/organisation?
-  </label>
-  Field
-</div>
+  <p>
+    What do you hope to achieve from using GO-FOX with this class?: <%= survey.settings["hope_to_achieve"] %>
+  </p>
+<% end %>
