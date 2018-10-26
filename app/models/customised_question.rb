@@ -23,14 +23,14 @@ class CustomisedQuestion < ApplicationRecord
   has_many :answers, as: :answerable
   has_many :options, as: :optionable
 
-  belongs_to :demographic_question
+  #belongs_to :demographic_question
   belongs_to :survey
 
   translates :text
   accepts_nested_attributes_for :translations
   accepts_nested_attributes_for :options, allow_destroy: true
 
-  def question_type
-    self.demographic_question.question_type
-  end
+  # def question_type
+  #   self.demographic_question.question_type
+  # end
 end
