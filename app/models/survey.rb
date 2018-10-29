@@ -45,8 +45,8 @@ class Survey < ApplicationRecord
     # taking into account customised questions,
     # and excluding and demographic questions that they may override.
     customised_questions      = self.customised_questions
-    excluded_demographic_ids  = customised_questions.pluck(:demographic_question_id)
-    demographic_questions     = DemographicQuestion.all.reject {|question| excluded_demographic_ids.include?(question.id) }
+    #excluded_demographic_ids  = customised_questions.pluck(:demographic_question_id)
+    demographic_questions     = DemographicQuestion.all#.reject {|question| excluded_demographic_ids.include?(question.id) }
 
     Question.order("RANDOM()") + demographic_questions + customised_questions
   end
