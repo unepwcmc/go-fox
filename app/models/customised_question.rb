@@ -27,7 +27,8 @@ class CustomisedQuestion < ApplicationRecord
   accepts_nested_attributes_for :translations
   accepts_nested_attributes_for :options, allow_destroy: true
 
-  # def question_type
-  #   self.demographic_question.question_type
-  # end
+  def question_type
+    #self.demographic_question.question_type
+    "Radio button"
+  end
 end
