@@ -31,30 +31,30 @@
 
   <div class="field">
     <label for="">
-      Participants' level of study
+      1. Type of organisation.
     </label>
     <p>
-      What is the level of study of your survey group or class?
+      Lorem ipsum
     </p>
-    <%= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
+    <%#= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
 
   </div>
 
   <div class="field">
     <label for="">
-      Participants' specialism
+      2. Location of organisation.
     </label>
     <p>
       Lorem ipsum.
     </p>
-    <%= form.collection_radio_buttons '[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last %>
+    <%#= form.collection_radio_buttons '[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last %>
   </div>
 
   <div class="field">
     <label for="">
-      Name of Course/module:
+      3. Is organisation part of a wider network of organisations?
     </label>
-    <%= form.text_field '[settings][participant_org_name]' %>
+    <%#= form.text_field '[settings][participant_org_name]' %>
     <p>
       Lorem ipsum
     </p>
@@ -62,7 +62,25 @@
 
   <div class="field">
     <label for="">
-      Course website/url
+      4. What kind of conservation activities does the organisation do?
+    </label>
+    <%#= form.text_field '[settings][course_url]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      5. Date established
+    </label>
+    (Date selection)
+    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Organisation website/url
     </label>
     <%= form.text_field '[settings][course_url]' %>
     <p>
@@ -72,12 +90,44 @@
 
   <div class="field">
     <label for="">
-      Size of group
+      Size of organisation
     </label>
     <%= form.text_field '[settings][size_of_group]' %>
     <p>
       Lorem ipsum
     </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      6. Size of group participating in survey
+    </label>
+    Lorem ipsum
+    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      7. If a sub-group, please explain why
+    </label>
+    Lorem ipsum
+    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      8. Organisation funding sources
+    </label>
+    Lorem ipsum
+    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      9. Geographical scope
+    </label>
+    Lorem ipsum
+    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
   </div>
 
   <div class="field">
@@ -91,13 +141,7 @@
     <%= form.collection_radio_buttons '[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last %>
   </div>
 
-  <div class="field">
-    <label for="">
-      Session date
-    </label>
-    (Date selection)
-    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
-  </div>
+
 
 <!---
   <div class="field">
@@ -110,7 +154,15 @@
 
   <div class="field">
     <label for="">
-      What do you hope to achieve from using GO-FOX with this class?
+      Session date
+    </label>
+    (Date selection)
+    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      What do you hope to achieve from using GO-FOX with this group?
     </label>
     <%= form.text_area '[settings][hope_to_achieve]' %>
   </div>
