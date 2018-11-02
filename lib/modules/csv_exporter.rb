@@ -37,17 +37,29 @@ module CsvExporter
     conditions[:created_at] = from_date..to_date
     conditions[:survey]     = survey if survey.present?
 
-    Response.where(conditions).find_in_batches(batch_size: @@batch_size)
+    begin
+      Response.where(conditions).find_in_batches(batch_size: @@batch_size)
+    rescue Exception => e
+      Appsignal.send_error(e)
+    end
   end
 
   def self.format_response_row(response, default=@@default_na)
-    @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
+    begin
+      @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
+    rescue Exception => e
+      Appsignal.send_error(e)
+    end
   end
 
   def self.format_scores(response, default=@@default_na)
     row = []
-    row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
-    row
+    begin
+      row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
+      row
+    rescue Exception => e
+      Appsignal.send_error(e)
+    end
   end
 
   def self.create_filepath
@@ -59,9 +71,10 @@ module CsvExporter
   def self.headers
     results = []
     question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
+    customised_question_headers = []
     score_headers    = ["F1", "F2", "F3"]
 
-    results << question_headers << score_headers
+    results << question_headers << customised_question_headers << score_headers
     results.flatten
   end
 end
