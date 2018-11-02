@@ -7,6 +7,7 @@ module CsvExporter
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
     begin
+      @@customised_questions = CustomisedQuestion.where(survey_id: survey.id)
       filepath  = self.create_filepath
       responses = self.find_responses(survey, from_date, to_date)
 
@@ -16,7 +17,7 @@ module CsvExporter
         responses.each do |batch|
           batch.each do |response|
             row = []
-            row << self.format_response_row(response) << self.format_scores(response)
+            row << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
             csv << row.flatten
           end
         end
@@ -62,6 +63,14 @@ module CsvExporter
     end
   end
 
+  def self.format_customised_questions(response, default=@@default_na)
+    begin
+      @@customised_questions.map {|question| response.answer_for(question)&.raw_formatted || default}
+    rescue Exception => e
+      Appsignal.send_error(e)
+    end
+  end
+
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
@@ -69,12 +78,18 @@ module CsvExporter
   end
 
   def self.headers
-    results = []
-    question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
-    customised_question_headers = []
-    score_headers    = ["F1", "F2", "F3"]
+    begin
+      results = []
+      question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
+      customised_question_ids = @@customised_questions.pluck(:id)
+      customised_question_text = CustomisedQuestion::Translation.where(id: customised_question_ids).pluck(:text)
+      customised_question_headers = customised_question_text.each_with_index.map {|cqt, i| ["Customised Question #{i+1}: #{cqt}"]}.flatten
+      score_headers = ["F1", "F2", "F3"]
 
-    results << question_headers << customised_question_headers << score_headers
-    results.flatten
+      results << question_headers << customised_question_headers << score_headers
+      results.flatten
+    rescue Exception => e
+      Appsignal.send_error(e)
+    end
   end
 end
