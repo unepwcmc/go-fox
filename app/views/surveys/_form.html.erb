@@ -66,12 +66,12 @@
       <h4>Customised Questions</h4>
       <hr>
 
-      <div class="field">
+      <div class="customised_questions">
         <%= form.fields_for :customised_questions do |customised_questions_form| %>
           <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
         <% end %>
 
-        <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "button"} %>
+        <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "add-customised_question"} %>
       </div>
 
 
