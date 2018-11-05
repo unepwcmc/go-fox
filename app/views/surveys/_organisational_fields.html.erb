@@ -65,7 +65,7 @@
     <label for="">
       4. What kind of conservation activities does the organisation do?
     </label>
-    <%#= form.text_field '[settings][course_url]' %>
+    <%= form.collection_check_boxes '[settings][kind_of_conservation_activities]', surveys_data("kind_of_conservation_activities"), :first, :last %>
     <p>
       Lorem ipsum
     </p>
@@ -76,7 +76,7 @@
       5. Date established
     </label>
     (Date selection)
-    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
   </div>
 
   <div class="field">
@@ -104,7 +104,7 @@
       6. Size of group participating in survey
     </label>
     Lorem ipsum
-    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <%= form.text_field '[settings][size_of_group]' %>
   </div>
 
   <div class="field">
@@ -112,23 +112,27 @@
       7. If a sub-group, please explain why
     </label>
     Lorem ipsum
-    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <%= form.text_area '[settings][sub_group_explanation]' %>
   </div>
 
   <div class="field">
     <label for="">
       8. Organisation funding sources
     </label>
-    Lorem ipsum
-    <%= form.collection_radio_buttons '[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last %>
+    <p>
+      Lorem ipsum
+    </p>
+    <%= form.collection_check_boxes '[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last %>
   </div>
 
   <div class="field">
     <label for="">
       9. Geographical scope
     </label>
-    Lorem ipsum
-    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <p>
+      Lorem ipsum
+    </p>
+    <%= form.collection_radio_buttons '[settings][geographical_scope]', surveys_data("geographical_scope"), :first, :last %>
   </div>
 
   <div class="field">

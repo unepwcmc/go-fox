@@ -19,6 +19,10 @@ module SurveysHelper
       organisation_funding_sources
     when "wider_network"
       wider_network
+    when "kind_of_conservation_activities"
+      kind_of_conservation_activities
+    when "geographical_scope"
+      geographical_scope
     else []
     end
   end
@@ -104,6 +108,30 @@ module SurveysHelper
     {
       yes: "Yes",
       no: "No"
+    }
+  end
+
+  def kind_of_conservation_activities
+    {
+      research: "Research",
+      policy_advocacy: "Policy advocacy",
+      site_management: "Site management",
+      education_capacity_development: "Education/capacity development",
+      communications_and_media: "Communications & media",
+      corporate_partnerships: "Corporate partnerships",
+      ex_situ_conservation: "Ex-situ conservation",
+      market_based_conservation: "Market-based conservation",
+      community_based_conservation: "Community-based conservation",
+      law_enforcement: "Law enforcement"
+    }
+  end
+
+  def geographical_scope
+    {
+      local: "Local",
+      regional: "Regional (within one country)",
+      national: "National",
+      international: "International"
     }
   end
 
