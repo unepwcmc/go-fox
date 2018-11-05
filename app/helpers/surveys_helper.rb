@@ -11,6 +11,8 @@ module SurveysHelper
       follow_up_session
     when "anonymity"
       anonymity
+    when "location_of_organisation"
+      location_of_organisation
     else []
     end
   end
@@ -59,4 +61,9 @@ module SurveysHelper
       no: "No"
     }
   end
+
+  def location_of_organisation
+    COUNTRIES
+  end
+
 end
