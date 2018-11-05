@@ -36,8 +36,8 @@
     <p>
       Lorem ipsum
     </p>
-    <%#= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
-
+    <%= form.collection_radio_buttons '[settings][type_of_organisation]', surveys_data("type_of_organisation"), :first, :last %>
+    <%= form.text_field '[settings][org_type_other]' %>
   </div>
 
   <div class="field">
@@ -54,10 +54,11 @@
     <label for="">
       3. Is organisation part of a wider network of organisations?
     </label>
-    <%#= form.text_field '[settings][participant_org_name]' %>
     <p>
       Lorem ipsum
     </p>
+    <%= form.collection_radio_buttons '[settings][wider_network]', surveys_data("wider_network"), :first, :last %>
+    <%= form.text_area '[settings][wider_network_details]' %>
   </div>
 
   <div class="field">
@@ -119,7 +120,7 @@
       8. Organisation funding sources
     </label>
     Lorem ipsum
-    <%#= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <%= form.collection_radio_buttons '[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last %>
   </div>
 
   <div class="field">
