@@ -27,11 +27,11 @@ conservation_activities = [
 ]
 
 survey_settings = {
-  course_url: "No",
-  hope_to_achieve: "Cool!",
+  course_url: "https://www.unep-wcmc.org",
+  hope_to_achieve: "Awesome things!",
   default_language: "fr",
   survey_previous_id: "12345667",
-  participant_org_name: "Yes",
+  participant_org_name: "UNEP-WCMC",
   kind_of_conservation_activities: conservation_activities
 }.to_json
 
