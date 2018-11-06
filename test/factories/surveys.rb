@@ -21,13 +21,18 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+conservation_activities = [
+  "research",
+  "policy_advocacy"
+]
 
 survey_settings = {
   course_url: "No",
   hope_to_achieve: "Cool!",
   default_language: "fr",
   survey_previous_id: "12345667",
-  participant_org_name: "Yes"
+  participant_org_name: "Yes",
+  kind_of_conservation_activities: conservation_activities
 }.to_json
 
 FactoryBot.define do
