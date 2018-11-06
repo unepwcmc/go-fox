@@ -33,7 +33,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can edit anyones survey" do
-        skip("skipping this test for now due to an issue with rails: https://github.com/rails/rails/issues/27788")
+    skip("skipping this test for now due to an issue with rails: https://github.com/rails/rails/issues/27788")
     @survey = create(:survey, user: @user)
 
     sign_in @admin
