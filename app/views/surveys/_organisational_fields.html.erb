@@ -76,7 +76,7 @@
       5. Date established
     </label>
     (Date selection)
-    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+    <%= form.date_select '[settings][date_established]', start_year: 1900, end_year: Date.current.year %>
   </div>
 
   <div class="field">
@@ -123,6 +123,7 @@
       Lorem ipsum
     </p>
     <%= form.collection_check_boxes '[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last %>
+    <%= form.text_area '[settings][organisation_funding_sources_other]' %>
   </div>
 
   <div class="field">
