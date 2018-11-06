@@ -73,7 +73,7 @@ module SurveysHelper
   end
 
   def location_of_organisation
-    COUNTRIES
+    (["More than one country"] << COUNTRIES).flatten
   end
 
   def type_of_organisation
