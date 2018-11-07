@@ -1,31 +1,28 @@
+<ul class="nav--secondary ul-inline gutters">
 <% if user_signed_in? && current_user.admin? %>
-  <ul class="nav--secondary ul-inline gutters">
-    <li class="nav__li">
-      <%= link_to "Surveys", surveys_path, title: 'Surveys', class: 'nav__a' + current_class?(surveys_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "All responses", admin_responses_path, title: 'All responses', class: 'nav__a' + current_class?(admin_responses_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Questions", questions_path, title: 'Questions', class: 'nav__a' + current_class?(questions_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Demographic questions", demographic_questions_path, title: 'Demographic questions', class: 'nav__a' + current_class?(demographic_questions_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Classifications", classifications_path, title: 'Classifications', class: 'nav__a' + current_class?(classifications_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' + current_class?(admin_users_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Support", admin_support_path, title: 'Support', class: 'nav__a' + current_class?(admin_support_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "About Go-Fox", admin_about_go_fox_path, title: 'About Go-Fox', class: 'nav__a' + current_class?(admin_about_go_fox_path) %>
-    </li>
-    <li class="nav__li">
-      <%= link_to "Legal", admin_legal_path, title: 'Legal', class: 'nav__a' + current_class?(admin_legal_path) %>
-    </li>
-  </ul>
+  <li class="nav__li">
+    <%= link_to "Surveys", surveys_path, title: 'Surveys', class: 'nav__a' + current_class?(surveys_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "All responses", admin_responses_path, title: 'All responses', class: 'nav__a' + current_class?(admin_responses_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "Questions", questions_path, title: 'Questions', class: 'nav__a' + current_class?(questions_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "Demographic questions", demographic_questions_path, title: 'Demographic questions', class: 'nav__a' + current_class?(demographic_questions_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "Classifications", classifications_path, title: 'Classifications', class: 'nav__a' + current_class?(classifications_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' + current_class?(admin_users_path) %>
+  </li>
 <% end %>
+  <li class="nav__li">
+    <%= link_to "Support", admin_support_path, title: 'Support', class: 'nav__a' + current_class?(admin_support_path) %>
+  </li>
+  <li class="nav__li">
+    <%= link_to "About Go-Fox", admin_about_go_fox_path, title: 'About Go-Fox', class: 'nav__a' + current_class?(admin_about_go_fox_path) %>
+  </li>
+</ul>
