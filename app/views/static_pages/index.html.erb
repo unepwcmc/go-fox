@@ -12,6 +12,14 @@
 </header>
 
 <div class="gutters">
+    <div class="block--public container--public-small">
+      <%= image_tag 'logos/logo-foc-circle.svg', alt: 'Icon', class: "block__icon-foc" %>
+
+      <h2>The Future of Conservation Survey</h2>
+      <p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals. This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey. We hope that you enjoy the survey and encourage you to share your experience by asking others to take part! Your responses will be kept anonymous, stored securely and will only be used for this project. See full details of ethics and data security.</p>
+
+      <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
+    </div>
 
   <% t('homepage').each do |block| %>
     <div class="block--public container--public-small">
