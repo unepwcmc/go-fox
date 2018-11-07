@@ -80,6 +80,20 @@ en:
         -
           title: 'The wording of some of the questions is problematic?'
           content: '<p>It is important to note that as the survey was intended to discover how conservationists responded to the points made in the New Conservation debate in the literature, many of the statements are direct quotes from published articles in that debate.</p>'
+
+  about_go_fox:
+    -
+      link: 'Background'
+      title: 'Background'
+      content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).<p>The survey results generated internally within a group or organisation are made available to the GO-FOX user, to facilitate a discussion about the results within the group. Examples of how GO-FOX may be used include, but are not limited to:</p><ul>
+      <li>Conservation NGOs wishing to generate discussion amongst their members around current debates in conservation, for example as part of a strategic planning process.</li>
+      <li>Teachers in conservation courses who wish to use the tool  for an interactive learning session to stimulate a series of discussions around controversial topics in conservation.</li>
+      </ul>
+      <p>To run GO-FOX for your group or organisation, <a href="/users/sign_in">create a GO-FOX account.</a></p>
+      <p>You can also find out more about how GO-FOX works in the GO-FOX support page (link), and about the overall Future of Conservation/GO-FOX projects by watching the video below.</p>
+      <p>*Embed SD1 video*</p>
+      <p>What groups have said about their GO-FOX experience:</p>'
+
   about_debate:
     -
       link: 'Link 1'
