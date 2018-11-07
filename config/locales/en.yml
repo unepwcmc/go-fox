@@ -45,14 +45,15 @@ en:
       description: 'Analyse the data visualisations of individual candidates Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque'
   homepage:
     -
-      title: 'What is the purpose of the project'
-      description: 'The purpose of this project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions.'
+      title: 'The Future of Conservation Survey'
+      description: 'There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals. This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey. We hope that you enjoy the survey and encourage you to share your experience by asking others to take part! Your responses will be kept anonymous, stored securely and will only be used for this project. See full details of ethics and data security.
+'
       url: '/'
       icon: 'logos/logo-foc-circle.svg'
       class: 'foc'
     -
-      title: 'See how you sit in the movement with easily digestible graphical data visualisations'
-      description: 'The purpose of this project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions.'
+      title: 'Group and Organisation Future of Conservation Survey (GO-FOX)'
+      description: 'In response to demand, we have now launched a version of the survey which allows defined groups of conservationists (such as colleagues or a degree class) to compare their views. This can be used, for instance, to facilitate strategic planning within organisations, or to support teaching on contemporary conservation debates. Visit our GO-FOX site for more details.'
       url: '/'
       icon: 'logos/logo-gofox.svg'
       class: 'gofox'
