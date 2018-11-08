@@ -1,8 +1,8 @@
 module SurveysHelper
 
   def surveys_data(type)
-    @data = YAML.load(File.open("#{Rails.root}/lib/data/content/surveys-form.yml", 'r'))
     return [] if type.nil?
+    @data = YAML.load(File.open("#{Rails.root}/lib/data/content/surveys-form.yml", 'r'))
     return location_of_organisation if type == "location_of_organisation"
     @data[type]
   end
