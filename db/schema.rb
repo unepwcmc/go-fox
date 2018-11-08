@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180920144651) do
+ActiveRecord::Schema.define(version: 20181026141856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,10 @@ ActiveRecord::Schema.define(version: 20180920144651) do
   end
 
   create_table "customised_questions", force: :cascade do |t|
-    t.bigint "demographic_question_id"
     t.bigint "survey_id"
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["demographic_question_id"], name: "index_customised_questions_on_demographic_question_id"
     t.index ["survey_id"], name: "index_customised_questions_on_survey_id"
   end
 
@@ -159,6 +157,7 @@ ActiveRecord::Schema.define(version: 20180920144651) do
     t.text "description"
     t.boolean "locked", default: false
     t.boolean "master", default: false
+    t.jsonb "settings", default: {}
     t.index ["user_id"], name: "index_surveys_on_user_id"
     t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
@@ -190,7 +189,6 @@ ActiveRecord::Schema.define(version: 20180920144651) do
   end
 
   add_foreign_key "answers", "responses"
-  add_foreign_key "customised_questions", "demographic_questions"
   add_foreign_key "customised_questions", "surveys"
   add_foreign_key "responses", "surveys"
   add_foreign_key "surveys", "users"

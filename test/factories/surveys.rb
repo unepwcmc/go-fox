@@ -10,6 +10,7 @@
 #  uuid       :string           not null
 #  locked     :boolean          default(FALSE)
 #  master     :boolean          default(FALSE)
+#  settings   :jsonb
 #
 # Indexes
 #
@@ -20,6 +21,19 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
+conservation_activities = [
+  "research",
+  "policy_advocacy"
+]
+
+survey_settings = {
+  course_url: "https://www.unep-wcmc.org",
+  hope_to_achieve: "Awesome things!",
+  default_language: "fr",
+  survey_previous_id: "12345667",
+  participant_org_name: "UNEP-WCMC",
+  kind_of_conservation_activities: conservation_activities
+}.to_json
 
 FactoryBot.define do
   factory :survey do
@@ -29,5 +43,6 @@ FactoryBot.define do
     uuid nil
     locked false
     master false
+    settings survey_settings
   end
 end

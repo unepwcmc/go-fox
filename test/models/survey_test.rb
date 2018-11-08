@@ -10,6 +10,7 @@
 #  uuid       :string           not null
 #  locked     :boolean          default(FALSE)
 #  master     :boolean          default(FALSE)
+#  settings   :jsonb
 #
 # Indexes
 #
