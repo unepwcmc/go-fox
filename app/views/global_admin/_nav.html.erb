@@ -12,9 +12,11 @@
   <li class="nav__li">
     <%= link_to "Demographic questions", demographic_questions_path, title: 'Demographic questions', class: 'nav__a' + current_class?(demographic_questions_path) %>
   </li>
+  <!--
   <li class="nav__li">
     <%= link_to "Classifications", classifications_path, title: 'Classifications', class: 'nav__a' + current_class?(classifications_path) %>
   </li>
+  -->
   <li class="nav__li">
     <%= link_to "Manage users", admin_users_path, title: 'Manage users', class: 'nav__a' + current_class?(admin_users_path) %>
   </li>
