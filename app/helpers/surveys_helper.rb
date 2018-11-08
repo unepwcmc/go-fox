@@ -1,30 +1,6 @@
 module SurveysHelper
   def surveys_data(type)
-    case type
-    when "default_language"
-      default_language
-    when "participant_level_of_study"
-      participant_level_of_study
-    when "participant_specialism"
-      participant_specialism
-    when "follow_up_session"
-      follow_up_session
-    when "anonymity"
-      anonymity
-    when "location_of_organisation"
-      location_of_organisation
-    when "type_of_organisation"
-      type_of_organisation
-    when "organisation_funding_sources"
-      organisation_funding_sources
-    when "wider_network"
-      wider_network
-    when "kind_of_conservation_activities"
-      kind_of_conservation_activities
-    when "geographical_scope"
-      geographical_scope
-    else []
-    end
+    type.present? ? send(type) : []
   end
 
   private
