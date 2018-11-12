@@ -4,22 +4,20 @@ module CsvExporter
   @@batch_size = 250
   @@default_na = "n/a"
   @@questions  = Question.all + DemographicQuestion.all
-  @@survey_id  = nil
+  @@responses  = nil
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
     begin
-      @@customised_questions = CustomisedQuestion.where(survey_id: survey.id)
-      @@survey = survey
       filepath  = self.create_filepath
-      responses = self.find_responses(survey, from_date, to_date)
+      @@responses = self.find_responses(survey, from_date, to_date)
 
       CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
         csv << self.headers
 
-        responses.each do |batch|
+        @@responses.each do |batch|
           batch.each do |response|
             row = []
-            row << @@survey.id << self.format_response_row(response) << self.format_customised_questions(response) << self.format_customised_questions_options(response) << self.format_scores(response)
+            row << response.survey_id << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
             csv << row.flatten
           end
         end
@@ -67,20 +65,7 @@ module CsvExporter
 
   def self.format_customised_questions(response, default=@@default_na)
     begin
-      @@customised_questions.map {|question| response.answer_for(question)&.raw_formatted || default}
-    rescue Exception => e
-      Appsignal.send_error(e)
-    end
-  end
-
-  def self.format_customised_questions_options(response, default=@@default_na)
-    begin
-      options = []
-      @@customised_questions.each do |cq|
-        options_ids = cq.options.pluck(:id)
-        options << Option::Translation.where(id: options_ids).pluck(:text).join(",")
-      end
-      options
+      ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
     rescue Exception => e
       Appsignal.send_error(e)
     end
@@ -97,19 +82,11 @@ module CsvExporter
       results = []
       survey_id_header = "Survey ID"
       question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
-      if @@customised_questions.present?
-        customised_question_ids = @@customised_questions.pluck(:id)
-        customised_question_text = CustomisedQuestion::Translation.where(id: customised_question_ids).pluck(:text)
-        customised_question_headers_text = customised_question_text.each_with_index.map {|cqt, i| ["Customised Question #{i+1}: #{cqt} answer:"]}.flatten
-        customised_question_headers_options = @@customised_questions.each_with_index.map {|cq, i| ["Customised Question #{i+1}: #{cq.text} options:"]}.flatten
-      end
       score_headers = ["F1", "F2", "F3"]
+      customised_question_headers = ["Customised Question 1: Title", "Customised Question 1: Options", "Customised Question 1: Answer",
+                                     "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer"]
 
-      if @@customised_questions.present?
-        results << survey_id_header << question_headers << customised_question_headers_text << customised_question_headers_options << score_headers
-      else
-        results << survey_id_header << question_headers << score_headers
-      end
+      results << survey_id_header << question_headers << customised_question_headers << score_headers
       results.flatten
     rescue Exception => e
       Appsignal.send_error(e)
