@@ -76,7 +76,7 @@ module CsvExporter
         options = []
         options_ids = cq.options.pluck(:id)
         options << Option::Translation.where(id: options_ids).pluck(:text).join(",")
-        answer = "n/a"
+        answer = response.answer_for(cq)&.raw_formatted || default
         customised_question_row << text << options << answer
       end
 
