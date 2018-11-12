@@ -65,11 +65,6 @@ module CsvExporter
 
   def self.format_customised_questions(response, default=@@default_na)
     begin
-
-      # for a response... find the survey
-      # from the survey get the customised questions if nil return n/a
-      # for each customised question get the text, options and answer.
-
       survey = Survey.find(response.survey_id)
       customised_questions = CustomisedQuestion.where(survey_id: survey.id)
       return ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a"] if customised_questions.empty?
@@ -77,8 +72,8 @@ module CsvExporter
       customised_question_row = []
 
       customised_questions.each do |cq|
-        puts cq.inspect
         text = CustomisedQuestion::Translation.where(id: cq.id).pluck(:text)
+        options = []
         options_ids = cq.options.pluck(:id)
         options << Option::Translation.where(id: options_ids).pluck(:text).join(",")
         answer = "n/a"
