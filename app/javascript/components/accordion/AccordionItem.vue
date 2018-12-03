@@ -52,12 +52,12 @@
 
 <style lang="scss">
   @keyframes open {
-    from { max-height: 0; },
+    from { max-height: 0; }
     to { max-height: 500px; }
   }
 
   @keyframes close {
-    from { max-height: 500px; },
+    from { max-height: 500px; }
     to { max-height: 0; }
   }
 
