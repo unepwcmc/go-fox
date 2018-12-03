@@ -9,6 +9,17 @@ class ResponsesController < ApplicationController
 
   def index
     @responses = @survey.responses
+
+    @results_chart_data = [
+      {
+        current_user: false,
+        dataset: [-2.4, -2.9, 2.6]
+      }, 
+      {
+        current_user: false,
+        dataset: [-3, 0 , 3]
+      }
+    ].to_json
   end
 
   def new
