@@ -51,15 +51,15 @@
 </script>
 
 <style lang="scss">
-  @keyframes open {
-    from { max-height: 0; },
-    to { max-height: 500px; }
-  }
+  // @keyframes open {
+  //   from { max-height: 0; },
+  //   to { max-height: 500px; }
+  // }
 
-  @keyframes close {
-    from { max-height: 500px; },
-    to { max-height: 0; }
-  }
+  // @keyframes close {
+  //   from { max-height: 500px; },
+  //   to { max-height: 0; }
+  // }
 
   .accordion-toggle-enter-active {
     animation: open .5s forwards ease-in;
