@@ -4,7 +4,7 @@
       <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="#dedede" stroke-width="2"></rect>
 
       <g v-for="axis, index in axes"> 
-        <text x="100" :y="config.offsetTop + 3 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
+        <text :x="options.axisStart - 35" :y="config.offsetTop + 3 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
         <text :x="options.axisStart - 10" :y="config.offsetTop + 3 + index*100" text-anchor="end" font-size="12">-3</text>
         <line  :x1="options.axisStart" :y1="config.offsetTop + index*100" :x2="options.axisEnd" :y2="config.offsetTop + index*100" stroke="#466882"/>
         <text :x="options.axisEnd + 10" :y="config.offsetTop + 3 + index*100" font-size="12">3</text>
@@ -20,10 +20,6 @@
         <circle v-if="line.current_user" v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="8" :fill="config.colours.currentUser"></circle>          
         <circle v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="4" :fill="config.colours.default"></circle>
       </g>
-
-      <!-- <rect x="70" y="380" width="460" height="46" fill="#F5F5F1" /> -->
-
-      <!-- <text v-for="axis, index in axes" :x="70 + index*150" y="403">{{ axis.title }}</text> -->
     </svg>
   </div>
 </template>
@@ -43,9 +39,9 @@
       return {
         options: {
           svgWidth: 600,
-          svgHeight: 340,
-          axisStart: 135,
-          axisEnd: 530
+          svgHeight: 330,
+          axisStart: 160,
+          axisEnd: 510
         },
         config: {
           offsetTop: 0,
