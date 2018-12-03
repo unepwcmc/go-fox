@@ -1,13 +1,13 @@
 <template>
   <div class="chart--results">
-    <svg width="100%" height="100%" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+    <svg width="100%" height="100%" :viewBox="`0 0 ${options.svgWidth} ${options.svgHeight}`" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
       <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="#dedede" stroke-width="2"></rect>
 
       <g v-for="axis, index in axes"> 
-        <text x="100" :y="123 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis.title }}</text>
-        <text x="110" :y="123 + index*100" font-size="12">-3</text>
-        <line  x1="125" :y1="120 + index*100" x2="500" :y2="120 + index*100" stroke="#466882"/>
-        <text x="510" :y="123 + index*100" font-size="12">3</text>
+        <text x="100" :y="config.offsetTop + 3 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
+        <text :x="options.axisStart - 10" :y="config.offsetTop + 3 + index*100" text-anchor="end" font-size="12">-3</text>
+        <line  :x1="options.axisStart" :y1="config.offsetTop + index*100" :x2="options.axisEnd" :y2="config.offsetTop + index*100" stroke="#466882"/>
+        <text :x="options.axisEnd + 10" :y="config.offsetTop + 3 + index*100" font-size="12">3</text>
       </g>
       
       <g v-for="line, index in data">
@@ -17,8 +17,8 @@
           :stroke="getColour(line.current_user)" 
           :stroke-width="getWidth(line.current_user)" />
         
-        <circle v-if="line.current_user" v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + 125" :cy="120 + index*100" r="8" :fill="colours.currentUser"></circle>          
-        <circle v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + 125" :cy="120 + index*100" r="4" :fill="colours.default"></circle>
+        <circle v-if="line.current_user" v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="8" :fill="config.colours.currentUser"></circle>          
+        <circle v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="4" :fill="config.colours.default"></circle>
       </g>
 
       <!-- <rect x="70" y="380" width="460" height="46" fill="#F5F5F1" /> -->
@@ -41,50 +41,52 @@
 
     data () {
       return {
-        colours: {
-          default: '#59A8D0',
-          currentUser: '#466882'
+        options: {
+          svgWidth: 600,
+          svgHeight: 340,
+          axisStart: 135,
+          axisEnd: 530
+        },
+        config: {
+          offsetTop: 0,
+          colours: {
+            default: '#59A8D0',
+            currentUser: '#466882'
+          },
         },
         domain: [-3, 3],
-        range: [0, 375],
-        axes: [
-          {
-            label: 'a',
-            title: 'Capitalism'
-          },
-          {
-            label: 'b',
-            title: 'People'
-          },
-          {
-            label: 'c',
-            title: 'Nature'
-          }
-        ]
+        range: [0],
+        axes: ['Capitalism', 'People', 'Nature']
       }
+    },
+
+    created () {
+      this.range.push(this.options.axisEnd - this.options.axisStart)
+      this.config.offsetTop = (this.options.svgHeight - 200) / 2
     },
 
     methods: {
       getPath (dataset) {
-        const a = this.getXValue(dataset[0]) + 125,
-          b = this.getXValue(dataset[1]) + 125,
-          c = this.getXValue(dataset[2]) + 125
+        const x1 = this.getXValue(dataset[0]) + this.options.axisStart,
+          x2 = this.getXValue(dataset[1]) + this.options.axisStart,
+          x3 = this.getXValue(dataset[2]) + this.options.axisStart,
+          y1 = this.config.offsetTop,
+          y2 = this.config.offsetTop + 100,
+          y3 = this.config.offsetTop + 200
 
-        return `M ${a} 120 L ${b} 220 L ${c} 320`
+        return `M ${x1} ${y1} L ${x2} ${y2} L ${x3} ${y3}`
       },
 
       getXValue (x) {
-        console.log(x)
         const range = this.range[1] - this.range[0],
           domain = this.domain[1] - this.domain[0],
           xPosition = x - this.domain[0]
 
-        console.log(((range*xPosition)/domain) + this.range[0])
         return ((range*xPosition)/domain) + this.range[0]
       },
 
       getColour (currentUser) {
-        return currentUser ? this.colours.currentUser : this.colours.default
+        return currentUser ? this.config.colours.currentUser : this.config.colours.default
       },
 
       getWidth (currentUser) {
