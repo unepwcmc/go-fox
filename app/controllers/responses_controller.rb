@@ -45,9 +45,20 @@ class ResponsesController < ApplicationController
   end
 
   def show
+    
   end
 
   def results
+    @results_chart_data = [
+      {
+        current_user: true,
+        dataset: [@response.f1_score, @response.f2_score, @response.f3_score]
+      }, 
+      {
+        current_user: false,
+        dataset: [-3, 0 , 3]
+      }
+    ].to_json
   end
 
   def destroy
