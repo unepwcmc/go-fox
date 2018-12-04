@@ -50,7 +50,7 @@
             currentUser: '#466882'
           },
         },
-        domain: [-3, 3],
+        domain: [-4, 4],
         range: [0],
         axes: ['Capitalism', 'People', 'Nature']
       }
