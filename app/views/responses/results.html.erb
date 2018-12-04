@@ -13,28 +13,13 @@
 
   <div class="box--grey-light flex">
     <div class="flex-2-thirds">
-      <p>
-        <strong>F1:</strong>
-        <%= @response.f1_score %>
-      </p>
-
-      <p>
-        <strong>F2:</strong>
-        <%= @response.f2_score %>
-      </p>
-
-      <p>
-        <strong>F3:</strong>
-        <%= @response.f3_score %>
-      </p>
+      <chart-results :data="<%= @results_chart_data %>"></chart-results>
 
       <p>
         <strong>classification:</strong>
         <%= @response.classification.name %>
          (To Be Determined)
       </p>
-
-      <chart-results :data="<%= @results_chart_data %> "></chart-results>
     </div>
 
     <div class="flex-1-third">
