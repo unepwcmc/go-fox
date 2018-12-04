@@ -5,9 +5,9 @@
 
       <g v-for="axis, index in axes"> 
         <text :x="options.axisStart - 35" :y="config.offsetTop + 3 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
-        <text :x="options.axisStart - 10" :y="config.offsetTop + 3 + index*100" text-anchor="end" font-size="12">-3</text>
+        <text :x="options.axisStart - 10" :y="config.offsetTop + 3 + index*100" text-anchor="end" font-size="12">{{ domain[0] }}</text>
         <line  :x1="options.axisStart" :y1="config.offsetTop + index*100" :x2="options.axisEnd" :y2="config.offsetTop + index*100" stroke="#466882"/>
-        <text :x="options.axisEnd + 10" :y="config.offsetTop + 3 + index*100" font-size="12">3</text>
+        <text :x="options.axisEnd + 10" :y="config.offsetTop + 3 + index*100" font-size="12">{{ domain[1] }}</text>
       </g>
       
       <g v-for="line, index in data">
