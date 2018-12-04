@@ -70,8 +70,7 @@ class ResponsesController < ApplicationController
     end
 
     @results_chart_data << @results_chart_data_current_user << @results_chart_data_all_users
-    @results_chart_data.flatten
-    puts @results_chart_data.to_json
+    @results_chart_data = @results_chart_data.flatten.to_json
   end
 
   def destroy
