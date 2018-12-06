@@ -115,6 +115,14 @@
     margin: rem-calc(20 0);
   }
 
+  &--blue-light {
+    @extend %button;
+    @extend %button--blue-light;
+    @extend %button--rounded;
+    @extend %button--padded;
+    margin: rem-calc(20 0);
+  }
+
   &--white {
     @extend %button;
     @extend %button--rounded;

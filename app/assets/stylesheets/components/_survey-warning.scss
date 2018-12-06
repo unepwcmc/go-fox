@@ -1,0 +1,30 @@
+.survey-warning {
+  &__content {
+    color: $beige-xdark;
+    padding: rem-calc(50) $gutter-large 0 $gutter-large;
+  }
+
+    &__title {
+      text-align: center;
+      @include breakpoint($small) { width: rem-calc(600); }
+    }
+
+    &__container--scroll {
+      overflow-y: scroll;
+      height: rem-calc(260);
+    }
+
+      &__description {
+        font-size: rem-calc(16);
+
+        @include breakpoint($medium) {
+          font-size: rem-calc(20);
+
+          @include breakpoint($medium) {
+            padding-left: rem-calc(90);
+            padding-right: rem-calc(90);
+          }
+        }
+      }
+}
+
