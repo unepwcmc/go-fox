@@ -1,0 +1,6 @@
+<%= form.label title %><br/>
+<div class="rb-collection flex flex-wrap">
+  <%= form.collection_radio_buttons(*rb_config) do |b| %>
+    <span class="rb-collection__option flex"><%= b.radio_button + b.label %></span>
+  <% end %>
+</div>

@@ -47,6 +47,8 @@
         this.children.forEach(child => {
           child.show = child.index === nextIndex
         })
+
+        this.currentStep++
       }
     }
   }

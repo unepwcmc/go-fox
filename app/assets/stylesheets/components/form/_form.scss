@@ -76,11 +76,11 @@ input[type='password'],
 input[type='text'],
 select {
   border: solid 1px $grey;
-  border-radius: rem-calc(8);
+  border-radius: rem-calc(5);
   font-size: rem-calc(14);
   margin-top: rem-calc(6);
-  padding: rem-calc(15);
-  width: 100%;
+  padding: rem-calc(15 8);
+  width: 100%; height: rem-calc(50);
   max-width: rem-calc(400);
 
   @include breakpoint($medium) { font-size: rem-calc(16); }
