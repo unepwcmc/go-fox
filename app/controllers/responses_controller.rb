@@ -14,6 +14,7 @@ class ResponsesController < ApplicationController
   def new
     @response = Response.new
     @questions = @survey.questions
+    @question_section_counts = question_section_counts(@questions)
 
     @questions.each do |question|
       @response.answers.build do |answer|
@@ -117,5 +118,12 @@ class ResponsesController < ApplicationController
       unless (current_user == @response.survey.user) || (current_user.admin?)
         redirect_to root_path, notice: "You are not the owner of that survey or an admin"
       end
+    end
+
+    def question_section_counts(questions)
+      base_count = 0
+      questions.each {|q| base_count += 1 if q.is_a?(Question)}
+      
+      [base_count, questions.count - base_count]
     end
 end
