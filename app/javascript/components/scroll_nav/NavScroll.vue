@@ -1,12 +1,12 @@
 <template>
-  <div class="nav--side">
+  <div id="scroll-nav" class="nav--side">
 
     <div @click="toggleDropdown" class="nav__dropdown-toggle gutters flex flex-v-center flex-h-between">
       <span>Sections on this page</span>
       <i class='material-icons nav__icon'>{{ dropIcon }}</i>
     </div>
 
-    <ul v-show="showItems" class="ul-unstyled nav__ul">
+    <ul id="nav-list" v-show="showItems" class="ul-unstyled nav__ul">
       <li 
         v-for="item in navArray" 
         :id="getLinkId(item)" 
@@ -23,7 +23,7 @@
 
 <script>
   import { mixinResponsive } from '../../mixins/mixin-responsive.js'
-  import { nameToId } from '../../helpers/application-helpers.js'
+  import { nameToId, addStickyStyling, removeStickyStyling } from '../../helpers/application-helpers.js'
   import { eventHub } from '../../admin.js'
   import ScrollMagic from 'scrollmagic'
 
@@ -59,6 +59,7 @@
       // set the initial window width
       this.windowWidth = window.innerWidth
       this.dropdownToggleHeight = document.getElementsByClassName('nav__dropdown-toggle')[0].offsetHeight
+      addStickyStyling(this.stickyId, 0, this.initialOffset)
 
       // recalculate scene heights when the window is resized
       eventHub.$on('window-resized', this.windowResized)
@@ -79,6 +80,14 @@
       },
       triggerOffset () {
         return this.isSmall() ? 100 : 0
+      },
+      stickyId () {
+        return this.isSmall() ? 'scroll-nav' : 'nav-list'
+      },
+      initialOffset () {
+        if(this.isSmall()) { return 196 }
+
+        return this.isLarge() ? 322 : 226
       }
     },
 
@@ -129,7 +138,7 @@
       },
 
       updateScrollMagicDurations () {
-        // update the scene durations (year div heights)
+        // update the scene durations (section div heights)
         this.scrollMagicScenes.forEach(scene => {
           let section = document.getElementById(this.getSectionId(scene.id))
           let height = 0
@@ -143,7 +152,7 @@
 
       windowResized () {
         // when the window width is resized the heights of the sticky bars and
-        // years will change so update js accordingly
+        // sections will change so update js accordingly
         const newWidth = window.innerWidth
 
         if(newWidth > this.windowWidth || newWidth < this.windowWidth) {
@@ -151,6 +160,17 @@
 
           this.windowWidth = newWidth
         }
+      }
+    },
+
+    watch: {
+      stickyId (newId, oldId) {
+        removeStickyStyling(oldId)
+        addStickyStyling(newId, 0, this.initialOffset)
+      },
+      initialOffset (offset) {
+        removeStickyStyling(this.stickyId)
+        addStickyStyling(this.stickyId, 0, offset)
       }
     }
   }
