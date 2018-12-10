@@ -47,10 +47,12 @@
                 rb_config: [:org_type, User.org_types, :last, :first]
               } %>
           </div>
-          <div class="field">
-            <%= f.label "(Specify)" %>
-            <%= f.text_field :org_type_other, autofocus: true %>
-          </div>
+          <disabler input-value="other" input-group-name="user[org_type]">
+            <div class="field">
+              <%= f.label "(Specify)" %>
+              <%= f.text_field :org_type_other, autofocus: true %>
+            </div>
+          </disabler>
           <div class="field">
             <%= f.label "Geographical location" %>
             <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
