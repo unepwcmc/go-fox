@@ -1,23 +1,33 @@
 <template>
-  <ul class="v-scroll-nav scroll-nav ul-unstyled ul-inline">
+  <div class="nav--side">
 
-    <li v-for="item in navArray" class="scroll-nav__item">
-      <a 
-        :id="'link-' + item" 
-        :title="'See events in ' + item" 
-        class="scroll-nav__link"
+    <div @click="toggleDropdown" class="nav__dropdown-toggle gutters flex flex-v-center flex-h-between">
+      <span>Sections on this page</span>
+      <i class='material-icons nav__icon'>{{ dropIcon }}</i>
+    </div>
+
+    <ul v-show="showItems" class="ul-unstyled nav__ul">
+      <li 
+        v-for="item in navArray" 
+        :id="getLinkId(item)" 
+        class="scroll-nav__item nav__li flex flex-v-center flex-h-between"
         @click.prevent="scroll(item)">
-          {{ item }}
-      </a>
-    </li>
-  </ul>
+        <a 
+          :title="'See events in ' + item" 
+          class="nav__link">{{ item }}</a>
+        <i class="material-icons nav__icon">chevron_right</i>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
   import { mixinResponsive } from '../../mixins/mixin-responsive.js'
-  import { eventHub } from '../../home.js'
+  import { nameToId } from '../../helpers/application-helpers.js'
+  import { eventHub } from '../../admin.js'
+  import ScrollMagic from 'scrollmagic'
 
-  export default {
+  export default { 
     name: 'scroll-nav',
 
     mixins: [ mixinResponsive ],
@@ -31,55 +41,64 @@
 
     data () {
       return {
-        navClass: '.v-scroll-nav',
-        navY: 0,
-        triggerOffset: 0,
-        windowWidth: 0
+        isActive: false,
+        windowWidth: 0,
+        dropdownToggleHeight: 0
       }
+    },
+
+    created () {
+      window.addEventListener('click', e => {
+        if (this.isActive && !this.$el.contains(e.target)) {
+          this.isActive = false
+        }   
+      })
     },
 
     mounted () {
       // set the initial window width
       this.windowWidth = window.innerWidth
+      this.dropdownToggleHeight = document.getElementsByClassName('nav__dropdown-toggle')[0].offsetHeight
 
       // recalculate scene heights when the window is resized
       eventHub.$on('window-resized', this.windowResized)
 
-      // set the offset value that triggers the active scroll link
-      this.setTriggerOffset()
-
       // initiate scroll magin handlers
       this.scrollMagicHandlers()
-
-      // set the start position of the timeline to the current event
-      eventHub.$on('getCurrentEvent', this.currentEvent)
-      
-      // update scene durations
-      eventHub.$once('pageLoadSceneDurations', this.updateScrollMagicDurations)
-      eventHub.$on('updateSceneDurations', this.updateScrollMagicDurations)
 
       // monitor window resizing
       window.onresize = this.windowResized
     },
 
+    computed: {
+      showItems () {
+        return !this.isSmall() || this.isActive
+      },
+      dropIcon () {
+        return this.showItems ? 'expand_less' : 'expand_more'
+      },
+      triggerOffset () {
+        return this.isSmall() ? 100 : 0
+      }
+    },
+
     methods: {
-      currentEvent () {
-        const event = document.getElementById('v-current-event')
-        
-        if(event) {
-          const location = window.pageYOffset + event.getBoundingClientRect().top - this.triggerOffset - 10
+      getLinkId (item) {
+        return nameToId(`link-${item}`)
+      },
 
-          this.$store.commit('filters/updateCurrentEvent', location)
+      getSectionId (item) {
+        return nameToId(`section-${item}`)
+      },
 
-          eventHub.$emit('backToTop')
-        }
+      toggleDropdown () {
+        this.isActive = !this.isActive
       },
 
       // scroll down to the section of the page which corresponds to the
       // link that has been clicked
-      scroll (year) {
-        const offset = document.getElementById('year-' + year).offsetTop
-        
+      scroll (item) {
+        const offset = document.getElementById(this.getSectionId(item)).offsetTop
         window.scrollTo({ top: offset - this.triggerOffset, behavior: 'smooth' })
       },
 
@@ -93,17 +112,14 @@
         // add scene for each item in the nav
         this.navArray.forEach(link => {
           let scene = {}
-          const id = 'year-' + link
-
-        
           scene.id = link
 
           scene.scene = new ScrollMagic.Scene({ 
-            triggerElement: '#' + id, 
-            triggerHook: 'onLeave' 
+            triggerElement: '#' + this.getSectionId(link), 
+            triggerHook: 'onLeave'
           })
           .offset(-this.triggerOffset)
-          .setClassToggle('#link-' + link, 'scroll-nav__link--active')
+          .setClassToggle('#' + this.getLinkId(link), 'scroll-nav__link--active')
           .addTo(navScrollMagic)
 
           scrollMagicScenes.push(scene)
@@ -112,15 +128,10 @@
         this.scrollMagicScenes = scrollMagicScenes
       },
 
-      setTriggerOffset () {
-        // this offset accounts for the sticky bars at the top of the window
-        this.triggerOffset = document.getElementById('v-header').clientHeight
-      },
-
       updateScrollMagicDurations () {
         // update the scene durations (year div heights)
         this.scrollMagicScenes.forEach(scene => {
-          let section = document.getElementById('year-' + scene.id)
+          let section = document.getElementById(this.getSectionId(scene.id))
           let height = 0
 
 
@@ -136,17 +147,10 @@
         const newWidth = window.innerWidth
 
         if(newWidth > this.windowWidth || newWidth < this.windowWidth) {
-          this.setTriggerOffset()
           this.updateScrollMagicDurations()
-          this.currentEvent()
-          eventHub.$emit('getScrollY')
 
           this.windowWidth = newWidth
         }
-      },
-
-      openModal () {
-        eventHub.$emit('openModal')
       }
     }
   }

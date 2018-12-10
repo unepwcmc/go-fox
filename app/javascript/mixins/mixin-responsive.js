@@ -19,6 +19,10 @@ export const mixinResponsive = {
       this.width = window.innerWidth
     },
 
+    isSmall () {
+      return this.width <= this.breakpoints.small
+    },
+
     isLarge () {
       return this.width > this.breakpoints.medium
     }
