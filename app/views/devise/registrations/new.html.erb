@@ -40,9 +40,10 @@
             <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
           </div>
           <div class="field">
-            <%= render partial: 'form_elements/collection_radio_buttons',
+            <%= render partial: 'form_elements/collection_buttons',
               locals: {
                 form: f,
+                type: "radio",
                 title: "Type of Organisation/Group",
                 rb_config: [:org_type, User.org_types, :last, :first]
               } %>
@@ -58,17 +59,19 @@
             <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
           </div>
           <div class="field">
-            <%= render partial: 'form_elements/collection_radio_buttons',
+            <%= render partial: 'form_elements/collection_buttons',
               locals: {
                 form: f,
+                type: "radio",
                 title: "Please select",
                 rb_config: [:use_type, User.use_types, :first, :first]
               } %>
           </div>
           <div class="field">
-            <%= render partial: 'form_elements/collection_radio_buttons',
+            <%= render partial: 'form_elements/collection_buttons',
               locals: { 
                 form: f,
+                type: "radio",
                 title: "Is your organisation part of a wider network or structure?",
                 rb_config: [:wider_network, User.wider_network_types, :first, :first] 
               } %>

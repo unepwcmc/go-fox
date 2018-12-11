@@ -88,12 +88,14 @@
 }
 
 //--------------------------------------------------
-// radio button collection
+// button collection
 //--------------------------------------------------
-.rb-collection {
+.b-collection {
+  margin: rem-calc(10 0);
+
   &__option {
     width: 50%;
-    padding: rem-calc(6 20 6 0);
+    padding: rem-calc(5 20 5 0);
 
     label {
       margin: rem-calc(0 0 0 10);
