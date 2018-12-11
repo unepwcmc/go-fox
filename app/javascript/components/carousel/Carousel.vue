@@ -2,7 +2,7 @@
   <div class="carousel">
     <h1>{{ title }}</h1><span class="carousel__steps">Step {{ currentStep }} of {{ totalSteps }}</span>
 
-    <div class="slides">
+    <div v-cloak class="slides">
       <slot></slot>
     </div>
   </div>
@@ -32,6 +32,9 @@
     mounted () {
       this.totalSteps = this.children.length
       this.addIndices()
+      this.$el
+        .querySelector("#user_email")
+        .addEventListener("invalid", event => {this.changeStep(1)})
     },
 
     methods: {
@@ -41,14 +44,19 @@
         })
       },
 
-      nextStep (currentIndex) {
-        let nextIndex = currentIndex + 1
-
+      updateChildVisibility () {
         this.children.forEach(child => {
-          child.show = child.index === nextIndex
+          child.show = child.index + 1 === this.currentStep
         })
+      },
 
-        this.currentStep++
+      changeStep (index) {
+        this.currentStep = index
+        this.updateChildVisibility()
+      },
+
+      nextStep () {
+        this.changeStep(this.currentStep + 1)
       }
     }
   }
