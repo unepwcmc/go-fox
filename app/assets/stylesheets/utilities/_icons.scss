@@ -1,0 +1,51 @@
+$social-icon-margin: rem-calc(12);
+$icon-width: rem-calc(60);
+
+.icon {
+  &--social {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: $social-icon-margin;
+    width: $icon-width; height: $icon-width;
+
+    display: block;
+
+    &:first-child {margin-left: 0}
+    &:last-child {margin-right: 0}
+
+    &:hover { opacity: .75; }
+  }
+
+  &--facebook {
+    background-color: blue;
+    content: '';
+  }
+
+  &--twitter {
+    background-color: lightblue;
+    content: '';
+  }
+
+  &--mail {
+    background: grey;
+    content: '';
+  }
+}
+
+.icons {
+  &--social {
+    width: 100%;
+
+    display: inline-block;
+
+    @include breakpoint($small) {
+      width: auto;
+    }
+  }
+  
+  &__header {
+    border-bottom: solid rem-calc(1) $grey;
+    color: $grey;
+  }
+}

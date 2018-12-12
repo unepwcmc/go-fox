@@ -18,4 +18,18 @@ module ApplicationHelper
   def is_current_page?(test_path)
     request.fullpath == test_path
   end
+
+  def social_urls
+    {
+      facebook: 'https://www.facebook.com',
+      twitter: 'https://www.twitter.com'
+    }
+  end
+
+  def create_social_link(site)
+    title = url_encode("Follow Go Fox on #{site}")
+    href = social_urls[site.downcase.to_sym]
+
+    link_to '', href, title: title, class: "icon--social icon--#{site.downcase}", target: '_blank'
+  end
 end
