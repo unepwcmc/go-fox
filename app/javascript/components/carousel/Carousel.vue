@@ -32,9 +32,7 @@
     mounted () {
       this.totalSteps = this.children.length
       this.addIndices()
-      this.$el
-        .querySelector("#user_email")
-        .addEventListener("invalid", event => {this.changeStep(1)})
+      this.addInvalidEmailEventHandler()
     },
 
     methods: {
@@ -57,6 +55,12 @@
 
       nextStep () {
         this.changeStep(this.currentStep + 1)
+      },
+
+      addInvalidEmailEventHandler () {
+        this.$el
+        .querySelector("#user_email")
+        .addEventListener("invalid", event => {this.changeStep(1)})
       }
     }
   }
