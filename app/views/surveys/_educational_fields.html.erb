@@ -14,6 +14,7 @@
       locals: {
         form: f,
         type: "radio",
+        class: "inline",
         title: "Default language",
         rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last]
       } %>
@@ -45,6 +46,7 @@
       locals: {
         form: f,
         type: "radio",
+        option_class: "two-col",
         title: "Participants' specialism",
         description: "What is the level of study of your survey group or class?"
         rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
@@ -86,6 +88,7 @@
       locals: {
         form: f,
         type: "radio",
+        option_class: "inline",
         title: "Follow up session?",
         description: "What is the level of study of your survey group or class?"
         rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]

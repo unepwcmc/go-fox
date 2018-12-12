@@ -18,4 +18,8 @@ module ApplicationHelper
   def is_current_page?(test_path)
     request.fullpath == test_path
   end
+
+  def b_collection_option_class(option_class)
+    return "b-collection__option--#{option_class}"
+  end
 end

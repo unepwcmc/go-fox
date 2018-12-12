@@ -44,6 +44,7 @@
               locals: {
                 form: f,
                 type: "radio",
+                option_class: "two-col",
                 title: "Type of Organisation/Group",
                 rb_config: [:org_type, User.org_types, :last, :first]
               } %>
@@ -63,6 +64,7 @@
               locals: {
                 form: f,
                 type: "radio",
+                option_class: "inline",
                 title: "Please select",
                 rb_config: [:use_type, User.use_types, :first, :first]
               } %>
@@ -72,6 +74,7 @@
               locals: { 
                 form: f,
                 type: "radio",
+                option_class: "inline",
                 title: "Is your organisation part of a wider network or structure?",
                 rb_config: [:wider_network, User.wider_network_types, :first, :first] 
               } %>

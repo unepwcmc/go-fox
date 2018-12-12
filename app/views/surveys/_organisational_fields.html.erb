@@ -14,6 +14,7 @@
       locals: {
         form: form,
         type: "radio",
+        option_class: "inline",
         title: "Default language",
         rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last] 
       } %>
@@ -55,6 +56,7 @@
         locals: { 
         form: form,
         type: "radio",
+        option_class: "inline",
         title: "3. Is organisation part of a wider network of organisations?",
         rb_config: ['[settings][wider_network]', surveys_data("wider_network"), :first, :last] 
       } %>
@@ -66,6 +68,7 @@
         locals: { 
         form: form,
         type: 'check_box',
+        option_class: 'one-col',
         title: "4. What kind of conservation activities does the organisation do?",
         rb_config: ['[settings][kind_of_conservation_activities]', surveys_data("kind_of_conservation_activities"), :first, :last]
       } %>
@@ -121,6 +124,7 @@
       form: form,
       type: 'check_box',
       title: "8. Organisation funding sources",
+      option_class: 'one-col',
       rb_config: ['[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last]
     } %>
     <%= form.text_area '[settings][organisation_funding_sources_other]' %>
@@ -131,6 +135,7 @@
       locals: { 
       form: form,
       type: "radio",
+      option_class: "two-col",
       title: "9. Geographical scope",
       rb_config: ['[settings][geographical_scope]', surveys_data("geographical_scope"), :first, :last]
     } %>
@@ -141,6 +146,7 @@
       locals: { 
       form: form,
       type: "radio",
+      option_class: "inline",
       title: "Follow up session?",
       rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
     } %>
