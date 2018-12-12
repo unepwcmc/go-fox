@@ -13,6 +13,7 @@
     text-align: center;
     height: rem-calc( 350);
 
+    @include breakpoint($small) { position: relative; }
     @include breakpoint($medium) { height: rem-calc(450); }
 
     h3 {
