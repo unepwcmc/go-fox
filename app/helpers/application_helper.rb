@@ -15,8 +15,8 @@ module ApplicationHelper
     request.fullpath
   end
 
-  def encoded_current_url
-    url_encode(request.base_url + current_page)
+  def encoded_base_url
+    url_encode(request.base_url)
   end
 
   def current_class?(test_path)
@@ -29,7 +29,7 @@ module ApplicationHelper
 
   def create_social_facebook_link
     title = url_encode('Share your results on Facebook')
-    url = encoded_current_url
+    url = encoded_base_url
     href = 'https://facebook.com/sharer/sharer.php?u=' + url
 
     link_to '', href, title: title, class: 'icon--social icon--facebook', target: '_blank'
@@ -37,8 +37,8 @@ module ApplicationHelper
 
   def create_social_twitter_link
     title = url_encode('Share your results on Twitter')
-    text = url_encode('Some tweet text')
-    url = encoded_current_url
+    text = url_encode('What kind of conservationist are you? Take the Future of Conservation survey to find out #FutureOfConservation')
+    url = encoded_base_url
     href = 'https://twitter.com/intent/tweet/?text=' + text + '&url=' + url
     
     link_to '', href, title: title, class: 'icon--social icon--twitter', target: '_blank'
@@ -46,9 +46,9 @@ module ApplicationHelper
 
   def create_social_email_link
     title = url_encode('Share your results via Email')
-    url = encoded_current_url
-    subject = url_encode('a subject')
-    body = 'site_description' + url_encode("\n\n") + url
+    url = encoded_base_url
+    subject = url_encode('What kind of conservationist are you? Take the Future of Conservation survey to find out #FutureOfConservation')
+    body = url_encode("\n\n") + url
     href = 'mailto:?subject=' + subject + '&body=' + body
 
     link_to '', href, title: title, class: 'icon--social icon--mail', target: '_self'
