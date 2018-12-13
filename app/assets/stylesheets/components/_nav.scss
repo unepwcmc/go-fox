@@ -53,6 +53,7 @@
       @include content-padding--public;
       @include gutters('left', 'margin');
 
+      margin-bottom: rem-calc(100);
       width: rem-calc(250);
       align-self: stretch;
 

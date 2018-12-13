@@ -84,6 +84,11 @@
 //---------------
 // size
 //---------------
+  &--small {
+    font-size: rem-calc(14);
+    padding: rem-calc(10);
+  }
+
   &--large {
     margin-left: rem-calc(20);
     padding: rem-calc(8 24 8 16);
@@ -178,6 +183,13 @@
     @extend %button;
     @extend %button--blue-light;
     @extend %button--oblong;
+  }
+
+  &--survey-image {
+    @extend %button;
+    @extend %button--blue-light;
+    @extend %button--rounded;
+    @extend %button--small;
   }
 
   &--new-survey {

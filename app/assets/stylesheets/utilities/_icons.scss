@@ -1,4 +1,4 @@
-$social-icon-margin: rem-calc(12);
+$social-icon-margin: rem-calc(10);
 $icon-width: rem-calc(60);
 
 .icon {
@@ -7,6 +7,7 @@ $icon-width: rem-calc(60);
     background-size: 100%;
     background-repeat: no-repeat;
     margin: $social-icon-margin;
+    margin-bottom: 0;
     width: $icon-width; height: $icon-width;
 
     display: block;
@@ -24,13 +25,9 @@ $icon-width: rem-calc(60);
 
 .icons {
   &--social {
-    width: 100%;
-
     display: inline-block;
-
-    @include breakpoint($small) { width: auto; }
   }
-  
+
   &__header {
     border-bottom: solid rem-calc(1) $grey;
     color: $grey;
