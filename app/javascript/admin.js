@@ -17,6 +17,7 @@ import Checkboxes from './components/form_fields/Checkboxes.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
+import SimpleModal from './components/modals/SimpleModal.vue'
 import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
 import NavBurger from './components/nav/NavBurger.vue'
 import NavLink from './components/nav/NavLink.vue'
@@ -34,25 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#v-app',
     store,
     components: { 
-      Accordion, 
-      AccordionItem, 
+      Accordion,
+      AccordionItem,
       Carousel,
-      Slide, 
-      Popup, 
-      PageItem, 
-      PaginationButton, 
-      ProgressBar, 
-      Checkboxes, 
-      RadioButtons, 
-      TextInput, 
-      SelectBox, 
-      MultipleSelectBox, 
+      Slide,
+      Popup,
+      PageItem,
+      PaginationButton,
+      ProgressBar,
+      Checkboxes,
+      RadioButtons,
+      TextInput,
+      SelectBox,
+      SimpleModal,
+      MultipleSelectBox,
       NavBurger,
       NavLink,
       Submit,
       Tabs,
       Tab,
-      ValidationMessage 
+      ValidationMessage
     }
   })
 })
