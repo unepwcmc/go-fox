@@ -13,13 +13,19 @@
       &:first-child .accordion-item__title { border: none; }
 
       &__title {
+        @extend .flex-v-center;
+
         border-top: solid $grey 1px;
         color: $grey-dark;
         padding: rem-calc(14 0);
         width: 100%;
       }
 
-        .material-icons { color: $blue; }
+        .material-icons {
+          color: $blue;
+          font-size: rem-calc(30);
+          margin-left: rem-calc(50);
+        }
     }
   }
 }

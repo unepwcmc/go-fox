@@ -43,22 +43,74 @@
 //--------------------------------------------------
   &--side {
     background-color: $purple-light;
+    width: 100%;
+    
+    // position: sticky;
+    // top: 0;
     flex-shrink: 0;
+
+    @include breakpoint($small) {
+      @include content-padding--public;
+      @include gutters('left', 'margin');
+
+      margin-bottom: rem-calc(100);
+      width: rem-calc(250);
+      align-self: stretch;
+
+      // position: static;
+    }
 
     .material-icons { color: $grey; }
 
     .nav {
+      &__dropdown-toggle {
+        border-bottom: solid $grey 1px;
+        cursor: pointer;
+        color: $blue-dark;
+        font-weight: bold;
+        padding-top: rem-calc(20);
+        padding-bottom: rem-calc(20);
+
+        position: relative;
+
+        @include breakpoint($small) { display: none; }
+      }
+
       &__ul {
-        padding: rem-calc(16);
+        background-color: $purple-light;
+        padding: rem-calc(0 16);
+        width: 100%;
+
+        @include breakpoint($small) {
+          padding: rem-calc(16);
+          width: rem-calc(250);
+
+          // position: sticky;
+          // top: rem-calc(30);
+        }
+
       }
 
         &__li {
           border-bottom: solid $grey 1px;
           padding: rem-calc(0 0 0 10);
-          width: rem-calc(190); height: rem-calc(40);
+          width: 100%; height: rem-calc(40);
 
-          &:hover { background-color: $grey-light; }
+          &:last-child {
+            border-width: 0;
+
+            @include breakpoint($small) {border-width: 1px}
+          }
+
+          &:hover {
+            background-color: $grey-light;
+            cursor: pointer;
+          }
         }
+
+          &__link {
+            color: $blue-xdark;
+          }
     }
   }
 

@@ -1,0 +1,30 @@
+<%= render 'global_public/nav_primary' %>
+
+<%= render partial: 'global_public/header', locals: { title: title } %>
+<div class="container--about">
+
+  <nav-scroll :nav-array="<%= page_sections(page) %>"></nav-scroll>
+
+  <div class="container--public">
+    <div class="gutters content-padding--public">
+
+      <% t(page).each_with_index do |item, index| %>
+
+        <div id="<%= section_id(item) %>" class="block--about">
+          <h2><%= item[:title] %></h2>
+
+          <% if item[:content] %>
+            <div><%= item[:content].html_safe %></div>
+          <% end %>
+
+          <% if item[:accordion] %>
+            <%= render partial: 'global_public/accordion', locals: { accordion: item[:accordion] } %>
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+<%= render 'global_public/cta' %>

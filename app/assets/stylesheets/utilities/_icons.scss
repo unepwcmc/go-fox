@@ -1,0 +1,36 @@
+$social-icon-margin: rem-calc(10);
+$icon-width: rem-calc(60);
+
+.icon {
+  &--social {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: $social-icon-margin;
+    margin-bottom: 0;
+    width: $icon-width; height: $icon-width;
+
+    display: block;
+
+    &:first-child {margin-left: 0}
+    &:last-child {margin-right: 0}
+
+    &:hover { opacity: .75; }
+
+  }
+  
+  &--facebook { content: image-url('icons/social/icon-facebook.svg'); }
+  &--mail { content: image-url('icons/social/icon-mail.svg'); }
+  &--twitter { content: image-url('icons/social/icon-twitter.svg'); }
+}
+
+.icons {
+  &--social {
+    display: inline-block;
+  }
+
+  &__header {
+    border-bottom: solid rem-calc(1) $grey;
+    color: $grey;
+  }
+}
