@@ -53,4 +53,8 @@ module ApplicationHelper
 
     link_to '', href, title: title, class: 'icon--social icon--mail', target: '_self'
   end
+
+  def b_collection_option_class(option_class)
+    return "b-collection__option--#{option_class}"
+  end
 end

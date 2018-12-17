@@ -14,9 +14,11 @@ import PaginationButton from './components/pagination/PaginationButton.vue'
 import ProgressBar from './components/pagination/ProgressBar.vue'
 import Popup from './components/popup/Popup.vue'
 import Checkboxes from './components/form_fields/Checkboxes.vue'
+import Disabler from './components/form_fields/Disabler.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
+import SimpleModal from './components/modals/SimpleModal.vue'
 import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
 import NavBurger from './components/nav/NavBurger.vue'
 import NavLink from './components/nav/NavLink.vue'
@@ -35,18 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#v-app',
     store,
     components: { 
-      Accordion, 
-      AccordionItem, 
+      Accordion,
+      AccordionItem,
       Carousel,
       Slide, 
       Popup, 
       PageItem, 
       PaginationButton, 
       ProgressBar, 
-      Checkboxes, 
+      Checkboxes,
+      Disabler,
       RadioButtons, 
       TextInput, 
-      SelectBox, 
+      SelectBox,
+      SimpleModal,
       MultipleSelectBox, 
       NavBurger,
       NavLink,
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Submit,
       Tabs,
       Tab,
-      ValidationMessage 
+      ValidationMessage
     }
   })
 })
