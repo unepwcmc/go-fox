@@ -1,0 +1,35 @@
+.modal {
+  background-color: $white;
+  box-shadow: lighten($grey-dark, 30%) 0 2px 5px 1px;
+  width: 95%; 
+
+  @include breakpoint($small) { width: rem-calc(600); }
+  @include breakpoint($medium) { width: rem-calc(800); }
+  @include breakpoint($large) { width: rem-calc(1000); }
+
+  z-index: 1;
+
+  &__footer {
+    border-top: solid rem-calc(1) $grey;
+
+    position: relative;
+
+    &::before {
+      background-color: rgba($white, 0.6);
+      content: '';
+      width: 100%; height: rem-calc(18);
+
+      position: absolute;
+      top:0;
+
+      transform: translateY(-100%);
+    }
+  }
+
+  &__button {
+    font-size: rem-calc(20);
+    font-weight: bold;
+    margin: rem-calc(50) 0;
+    padding: rem-calc(20) 20%;
+  }
+}
