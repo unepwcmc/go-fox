@@ -14,6 +14,7 @@ import PaginationButton from './components/pagination/PaginationButton.vue'
 import ProgressBar from './components/pagination/ProgressBar.vue'
 import Popup from './components/popup/Popup.vue'
 import Checkboxes from './components/form_fields/Checkboxes.vue'
+import Disabler from './components/form_fields/Disabler.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
@@ -39,17 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
       Accordion,
       AccordionItem,
       Carousel,
-      Slide,
-      Popup,
-      PageItem,
-      PaginationButton,
-      ProgressBar,
+      Slide, 
+      Popup, 
+      PageItem, 
+      PaginationButton, 
+      ProgressBar, 
       Checkboxes,
-      RadioButtons,
-      TextInput,
+      Disabler,
+      RadioButtons, 
+      TextInput, 
       SelectBox,
       SimpleModal,
-      MultipleSelectBox,
+      MultipleSelectBox, 
       NavBurger,
       NavLink,
       NavScroll,

@@ -46,6 +46,7 @@
         isActive: false,
         windowWidth: 0,
         triggerHeight: 0
+
       }
     },
 
@@ -61,6 +62,7 @@
       // set the initial window width
       this.windowWidth = window.innerWidth
       addStickyStyling(this.stickyId, 0, this.initialOffset)
+      this.setTriggerHeight()
 
       // recalculate scene heights when the window is resized
       eventHub.$on('window-resized', this.windowResized)
