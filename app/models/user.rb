@@ -49,7 +49,7 @@ class User < ApplicationRecord
   has_many :surveys
 
   enum use_type:           [:organisational, :educational]
-  enum wider_network_type: [:no, :yes]
+  enum wider_network_type: [:yes, :no]
 
 
   def self.org_types
