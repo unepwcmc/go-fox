@@ -1,6 +1,12 @@
 //--------------------------------------------------
 // progress bar
 //--------------------------------------------------
+$marker-left-initial-small: rem-calc(18);
+$marker-left-initial-medium: rem-calc(37);
+$marker-right-final-medium: rem-calc(35);
+$marker-separation-small: rem-calc(49);
+$marker-separation-medium: rem-calc(167);
+
 .progress-bar {
   color: $grey-dark;
   margin-top: rem-calc(16);
@@ -34,54 +40,39 @@
 
       position: absolute;
       bottom: rem-calc(-7);
-      left: rem-calc(20);
+      left: 0;
 
-      transform: rotateZ(45deg);
+      transform: translateX($marker-left-initial-small) rotateZ(45deg);
 
-      @include breakpoint ($medium) { left: rem-calc(30); }
+      @include breakpoint ($medium) { transform: translateX($marker-left-initial-medium) rotateZ(45deg); }
     }
+    
+      @for $i from 2 through 4 {
+        &-#{$i} {
+          &::before {
+            left: ($i - 1) * $marker-separation-small; 
 
-    &-2:before { 
-      left: rem-calc(68); 
-
-      @include breakpoint ($medium) { left: rem-calc(197); }
-    }
-
-    &-3 {
-      &:before { 
-        left: rem-calc(117);
-        
-        @include breakpoint ($medium) { left: rem-calc(106); }
+            @include breakpoint ($medium) { left: ($i - 1) * $marker-separation-medium; }
+          }
+        }
       }
-    }
 
-    &-4 {
-      &:before { 
-        left: rem-calc(165);
+      @for $i from 5 through 6 {
+        &-#{$i} {
+          @include breakpoint ($medium) { align-self: flex-end; }
 
-        @include breakpoint ($medium) { left: rem-calc(273); }
+          &::before {
+            left: ($i - 1) * $marker-separation-small; 
+
+            @include breakpoint ($medium) { 
+              left: auto;
+              right: (6 - $i) * $marker-separation-medium; 
+
+              transform: translateX(-$marker-right-final-medium) rotateZ(45deg);
+            }
+          }
+        }
       }
-    }
-
-    &-5 {
-      @include breakpoint ($medium) { align-self: flex-end; }
-
-      &:before { 
-        left: rem-calc(214);
-
-        @include breakpoint ($medium) { left: rem-calc(181); } 
-      }
-    }
-
-    &-6 {
-      @include breakpoint ($medium) { align-self: flex-end; }
-
-      &:before { 
-        left: rem-calc(263);
-
-        @include breakpoint ($medium) { left: rem-calc(348); }
-      }
-    }
 
     &-icon {
       background: image_url('icons/icon-tooltip.svg') no-repeat center;
@@ -98,60 +89,21 @@
   &__icon {
     background-size: cover;
     margin-bottom: rem-calc(16);
-    width: rem-calc(300); height: rem-calc(19);
+    width: rem-calc(305); height: rem-calc(19);
 
     @include breakpoint($medium) { width: rem-calc(912); height: rem-calc(36); }
 
     display: block;
 
-    &-1 { 
-      background-image: image_url('icons/progress-bar-1-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-1.svg'); 
+    @for $i from 1 through 6 {
+      &-#{$i} {
+        background-image: image_url('icons/progress-bar-#{$i}-mobile.svg');
+  
+        @include breakpoint($medium) { 
+          background-image: image_url('icons/progress-bar-#{$i}.svg'); 
+        }
       }
     }
-
-    &-2 { 
-      background-image: image_url('icons/progress-bar-2-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-2.svg'); 
-      }
-    }
-
-    &-3 { 
-      background-image: image_url('icons/progress-bar-3-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-3.svg'); 
-      }
-    }
-
-    &-4 { 
-      background-image: image_url('icons/progress-bar-4-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-4.svg'); 
-      }
-    }
-
-    &-5 { 
-      background-image: image_url('icons/progress-bar-5-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-5.svg'); 
-      }
-    }
-
-    &-6 { 
-      background-image: image_url('icons/progress-bar-6-mobile.svg');
-
-      @include breakpoint($medium) { 
-        background-image: image_url('icons/progress-bar-6.svg'); 
-      }
-    }
-
   }
 
   &__page-numbers {
