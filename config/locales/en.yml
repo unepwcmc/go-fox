@@ -50,6 +50,9 @@ en:
       url: '/'
       icon: 'logos/logo-gofox.svg'
       class: 'gofox'
+  survey_warning: 
+      title: 'Welcome to the Future of Conservation survey'
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna ex, feugiat in lobortis non, pharetra et elit. Sed vel felis tortor. Suspendisse quis volutpat neque. Donec finibus ligula ac leo tincidunt, eget porta lorem lobortis. Aliquam rutrum lorem leo, quis eleifend ex commodo congue. Phasellus volutpat tellus elit, nec eleifend tortor pulvinar ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Etiam consectetur malesuada mollis. Cras sodales iaculis sapien quis mollis. Aenean eu hendrerit risus. Etiam ultricies tortor nec tortor egestas luctus. In vulputate quam hendrerit auctor imperdiet. Donec tempus sodales orci vitae bibendum. In volutpat mauris nec lectus tristique semper. Duis eu semper ante.'
   about_project:
     -
       link: 'Background'
