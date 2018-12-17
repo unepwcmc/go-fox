@@ -42,8 +42,7 @@
     data () {
       return {
         isActive: false,
-        windowWidth: 0,
-        dropdownToggleHeight: 0
+        windowWidth: 0
       }
     },
 
@@ -58,7 +57,6 @@
     mounted () {
       // set the initial window width
       this.windowWidth = window.innerWidth
-      this.dropdownToggleHeight = document.getElementsByClassName('nav__dropdown-toggle')[0].offsetHeight
       addStickyStyling(this.stickyId, 0, this.initialOffset)
 
       // recalculate scene heights when the window is resized
