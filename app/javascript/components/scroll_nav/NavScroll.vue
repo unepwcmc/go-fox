@@ -2,7 +2,7 @@
 <div class="nav__wrapper">
   <div id="scroll-nav" class="nav--side">
 
-    <div id='scroll-nav-toggle' @click="toggleDropdown" class="nav__dropdown-toggle gutters flex flex-v-center flex-h-between">
+    <div id='scroll-nav-toggle' @click="toggleDropdown" class="nav__dropdown-toggle flex flex-v-center flex-h-between">
       <span>Sections on this page</span>
       <i class='material-icons nav__icon'>{{ dropIcon }}</i>
     </div>

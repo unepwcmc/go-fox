@@ -73,8 +73,7 @@
             cursor: pointer;
             color: $blue-dark;
             font-weight: bold;
-            padding-top: rem-calc(20);
-            padding-bottom: rem-calc(20);
+            padding: rem-calc(20) $gutter-small * 2;
     
             @include breakpoint($small) { display: none; }
           }
