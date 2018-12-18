@@ -18,16 +18,15 @@ export const addStickyStyling = (elementId, stickyOffset=0, initialOffsetTop=0) 
   $(document).scroll(() => {
     const scrollDistance = $(document).scrollTop()
 
-
     if(scrollDistance >= initialOffsetTop - stickyOffset)  {
-        stickyElement.css({
-             position: 'fixed',
-             'top' : stickyOffset
-        })
+      stickyElement.css({
+        position: 'fixed',
+        top: stickyOffset
+      })
     } else {
         stickyElement.css('position', 'relative')
     }
-});
+  });
 }
 
 export const removeStickyStyling = elementId => {

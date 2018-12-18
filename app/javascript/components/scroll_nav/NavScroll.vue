@@ -1,7 +1,8 @@
 <template>
+<div class="nav__wrapper">
   <div id="scroll-nav" class="nav--side">
 
-    <div @click="toggleDropdown" class="nav__dropdown-toggle gutters flex flex-v-center flex-h-between">
+    <div id='scroll-nav-toggle' @click="toggleDropdown" class="nav__dropdown-toggle flex flex-v-center flex-h-between">
       <span>Sections on this page</span>
       <i class='material-icons nav__icon'>{{ dropIcon }}</i>
     </div>
@@ -19,6 +20,7 @@
       </li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>
@@ -43,7 +45,8 @@
       return {
         isActive: false,
         windowWidth: 0,
-        dropdownToggleHeight: 0
+        triggerHeight: 0
+
       }
     },
 
@@ -58,8 +61,8 @@
     mounted () {
       // set the initial window width
       this.windowWidth = window.innerWidth
-      this.dropdownToggleHeight = document.getElementsByClassName('nav__dropdown-toggle')[0].offsetHeight
       addStickyStyling(this.stickyId, 0, this.initialOffset)
+      this.setTriggerHeight()
 
       // recalculate scene heights when the window is resized
       eventHub.$on('window-resized', this.windowResized)
@@ -79,7 +82,7 @@
         return this.showItems ? 'expand_less' : 'expand_more'
       },
       triggerOffset () {
-        return this.isSmall() ? 100 : 0
+        return this.isSmall() ? this.triggerHeight : 0
       },
       stickyId () {
         return this.isSmall() ? 'scroll-nav' : 'nav-list'
@@ -104,9 +107,15 @@
         this.isActive = !this.isActive
       },
 
+      setTriggerHeight () {
+        this.triggerHeight = this.isSmall() ? $('#scroll-nav-toggle').innerHeight() : 0
+      },
+
       // scroll down to the section of the page which corresponds to the
       // link that has been clicked
       scroll (item) {
+        if (this.isSmall()) { this.toggleDropdown() }
+
         const offset = document.getElementById(this.getSectionId(item)).offsetTop
         window.scrollTo({ top: offset - this.triggerOffset, behavior: 'smooth' })
       },
@@ -167,10 +176,13 @@
       stickyId (newId, oldId) {
         removeStickyStyling(oldId)
         addStickyStyling(newId, 0, this.initialOffset)
+        $(document).scroll()
+        this.setTriggerHeight()
       },
       initialOffset (offset) {
         removeStickyStyling(this.stickyId)
         addStickyStyling(this.stickyId, 0, offset)
+        $(document).scroll()
       }
     }
   }
