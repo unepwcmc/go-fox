@@ -1,7 +1,7 @@
 //--------------------------------------------------
 // progress bar
 //--------------------------------------------------
-$marker-left-initial-small: rem-calc(18);
+$marker-left-initial-small: rem-calc(20);
 $marker-left-initial-medium: rem-calc(31);
 $marker-right-final-medium: rem-calc(27);
 $marker-separation-small: rem-calc(49);
@@ -9,8 +9,9 @@ $marker-separation-medium: rem-calc(167);
 
 .progress-bar {
   color: $grey-dark;
-  margin-top: rem-calc(16);
-  margin-bottom: rem-calc(58);
+  margin: rem-calc(16) auto rem-calc(58);
+  width: rem-calc(305);
+  @include breakpoint($medium) { width: rem-calc(912); }
 
   &__tooltip {
     background-color: $pink-light;
@@ -22,7 +23,7 @@ $marker-separation-medium: rem-calc(167);
     margin-bottom: rem-calc(18);
     padding: rem-calc(9 18 9 70);
     align-self: center;
-    width: rem-calc(300);
+    width: 100%;
     
     display: inline-block;
     position: relative;
@@ -89,9 +90,9 @@ $marker-separation-medium: rem-calc(167);
   &__icon {
     background-size: cover;
     margin-bottom: rem-calc(16);
-    width: rem-calc(305); height: rem-calc(19);
+    width: 100%; height: rem-calc(19);
 
-    @include breakpoint($medium) { width: rem-calc(912); height: rem-calc(36); }
+    @include breakpoint($medium) { height: rem-calc(36); }
 
     display: block;
 
