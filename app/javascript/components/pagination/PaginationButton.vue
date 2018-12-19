@@ -12,30 +12,22 @@
 
     props: {
       type: { required: true },
-      total: { type: Number }
-    },
-
-    data () {
-      return {
-        itemsPerPage: 100
-      }
+      sectionTotals: { type: Array },
     },
 
     created () {
-      this.updateActiveIndicies()
-
-      if (this.total != undefined && typeof this.total == 'number') {
-        this.$store.commit('pagination/updateTotalPageItems', this.total)
-        this.$store.commit('pagination/updateTotalPages', Math.ceil(this.total/this.itemsPerPage))
+      if (this.sectionTotals != undefined && typeof this.sectionTotals[0] == 'number') {
+        this.$store.dispatch('pagination/updateSectionItemTotals', this.sectionTotals)
       }
         
     },
 
     computed: {
       isActive () {
-        let page = this.$store.state.pagination.page
-        let totalItems = this.$store.state.pagination.totalPageItems
-        return (this.type === 'previous' && page > 1) || (this.type === 'next' && page < totalItems/this.itemsPerPage)
+        const page = this.$store.state.pagination.page
+        const totalPages = this.$store.state.pagination.totalPages
+
+        return (this.type === 'previous' && page > 1) || (this.type === 'next' && page < totalPages)
       }
     },
 
@@ -44,12 +36,12 @@
         if (!this.isActive) return false
 
         let page = this.$store.state.pagination.page
-        let totalItems = this.$store.state.pagination.totalPageItems
+        const totalPages = this.$store.state.pagination.totalPages
 
         if (this.type === 'previous' && page > 1) {
           page = page - 1
 
-        } else if (this.type === 'next' && page < totalItems/this.itemsPerPage) {
+        } else if (this.type === 'next' && page < totalPages) {
           page = page + 1
         }
 
@@ -69,20 +61,7 @@
 
       newPage (page) {
         this.$store.commit('pagination/updatePage', page)
-
-        this.updateActiveIndicies()
-
         window.scrollTo({ top: 0, behavior: 'smooth' })
-      },
-
-      updateActiveIndicies () {
-        let page = this.$store.state.pagination.page
-
-        const startIndex = ((page - 1) * this.itemsPerPage)
-        const endIndex = startIndex + this.itemsPerPage
-
-        this.$store.commit('pagination/updateStartIndex', startIndex)
-        this.$store.commit('pagination/updateEndIndex', endIndex)
       }
     }
   }

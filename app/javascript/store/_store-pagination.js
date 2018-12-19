@@ -1,3 +1,5 @@
+import { getPageIndices } from "../helpers/pagination-helpers";
+
 export const storePagination = {
   namespaced: true,
 
@@ -5,9 +7,21 @@ export const storePagination = {
     page: 1,
     startIndex: 0,
     endIndex: 0,
-    totalPageItems: 0,
+    sectionItemTotals: [],
+    itemsPerPage: 10,
     totalPages: 0,
+    pageIndices: [],
     errors: 0
+  },
+
+  actions: {
+    updateSectionItemTotals ({ commit }, sectionItemTotals ) {
+      const pageIndices = getPageIndices(sectionItemTotals, this.state.pagination.itemsPerPage)
+
+      commit('updateSectionItemTotals', sectionItemTotals)
+      commit('updateTotalPages', pageIndices.length)
+      commit('updatePageIndices', pageIndices)
+    }
   },
 
   mutations: {
@@ -23,12 +37,20 @@ export const storePagination = {
       this.state.pagination.endIndex = endIndex
     },
 
-    updateTotalPageItems (state, totalPageItems) {
-      this.state.pagination.totalPageItems = totalPageItems
+    updateSectionItemTotals (state, sectionItemTotals) {
+      this.state.pagination.sectionItemTotals = sectionItemTotals
+    },
+
+    updateItemsPerPage (state, itemsPerPage) {
+      this.state.pagination.itemsPerPage = itemsPerPage
     },
 
     updateTotalPages (state, totalPages) {
       this.state.pagination.totalPages = totalPages
+    },
+
+    updatePageIndices (state, pageIndices) {
+      this.state.pagination.pageIndices = pageIndices
     },
 
     resetErrors () {

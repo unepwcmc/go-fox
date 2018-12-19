@@ -8,7 +8,9 @@
   <%= render 'form', response: @response, questions: @questions %>
 
   <div class="flex flex-h-between">
-    <pagination-button type="previous" :total="<%= @questions.count %>">Previous</pagination-button>
+    <pagination-button 
+      type="previous"
+      :section-totals="<%= @question_section_counts %>">Previous</pagination-button>
     <pagination-button type="next" class="button--large-chevrons">
       Next<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
     </pagination-button>
