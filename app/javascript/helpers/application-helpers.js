@@ -6,7 +6,7 @@ const initializeCustomFormEventHandling = () => {
   $(document).ready(() => {
     $(window).keydown(event => {
       const ENTER_KEY_CODE = 13
-      const isFormWithPreventedEnter = event => $(event.target.form).data('enterPreventDefault')
+      const isFormWithPreventedEnter = event => $(event.target.form).data('preventDefaultEnter')
 
       if(event.keyCode == ENTER_KEY_CODE && isFormWithPreventedEnter(event)) {
         event.preventDefault()
@@ -29,7 +29,7 @@ export const addStickyStyling = (elementId, stickyOffset=0, initialOffsetTop=0) 
   //     100
   //   )
   // }
-  
+
   $(document).scroll(() => {
     const scrollDistance = $(document).scrollTop()
 
