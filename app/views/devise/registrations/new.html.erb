@@ -1,7 +1,7 @@
 <div class="content-padding--large flex flex-h-center">
   <div class="container--small">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {enter_prevent_default: true}) do |f| %>
       <carousel title="Sign up">
         <slide :first="true">
           <%= devise_error_messages! %>
