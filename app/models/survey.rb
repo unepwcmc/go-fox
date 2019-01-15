@@ -37,6 +37,8 @@ class Survey < ApplicationRecord
   accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
   validates_uniqueness_of :master, if: :master
+  validates :customised_questions_max_length, inclusion: { in: [0, 1, 2] }
+  validates :customised_questions_options_max_length, inclusion: { in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }
 
   def to_param
     uuid
@@ -55,5 +57,16 @@ class Survey < ApplicationRecord
 
   def self.master_survey
     find_by_master(true)
+  end
+
+  def customised_questions_max_length
+    customised_questions.length
+  end
+
+  def customised_questions_options_max_length
+    options_lengths = customised_questions.map do |cq|
+      cq.options.length
+    end
+    options_lengths.sort.last
   end
 end
