@@ -27,9 +27,12 @@ import Submit from './components/form_fields/Submit.vue'
 import Tabs from './components/tabs/Tabs.vue'
 import Tab from './components/tabs/Tab.vue'
 import ValidationMessage from './components/form_fields/ValidationMessage.vue'
+import { initializeEventHandling } from './helpers/application-helpers.js';
 
 // create event hub and export so that it can be imported into .vue files
 export const eventHub = new Vue()
+
+initializeEventHandling()
 
 // create vue instance and attach to the DOM
 document.addEventListener('DOMContentLoaded', () => {
