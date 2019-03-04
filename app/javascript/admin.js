@@ -8,6 +8,7 @@ import store from './store/store.js'
 import Accordion from './components/accordion/Accordion.vue'
 import AccordionItem from './components/accordion/AccordionItem.vue'
 import Carousel from './components/carousel/Carousel.vue'
+import ChartResults from './components/chart/ChartResults.vue'
 import Slide from './components/carousel/Slide.vue'
 import PageItem from './components/pagination/PageItem.vue'
 import PaginationButton from './components/pagination/PaginationButton.vue'
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Accordion,
       AccordionItem,
       Carousel,
+      ChartResults,
       Slide, 
       Popup, 
       PageItem, 
