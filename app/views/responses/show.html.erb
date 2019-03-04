@@ -12,8 +12,12 @@
   <%= @response.language %>
   </p>
 
-  <% @response.answers.each do |answer| %>
-    <h3><%= answer.question.text %></h3>
-    <%= format_answer(answer) %>
-  <% end %>
+  <ul class="ul-unstyled">
+    <% @response.answers.each do |answer| %>
+      <li class="full-response__question-wrapper">
+        <h3 class="full-response__question-header"><%= answer.question.text %></h3>
+        <p><%= format_answer(answer) %></p>
+      <li>
+    <% end %>
+  </ul>
 </div>
