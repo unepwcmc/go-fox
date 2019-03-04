@@ -29,7 +29,7 @@ export default {
     } else {
       const watchedInputs = document.querySelectorAll(`input[name="${this.inputGroupName}"]`)
 
-      watchedInputs.forEach(input => {
+      Array.prototype.forEach.call(watchedInputs, input => {
         if(input.value === this.inputValue) {this.isDisabled = !input.checked}
         
         input.onchange = e => {
