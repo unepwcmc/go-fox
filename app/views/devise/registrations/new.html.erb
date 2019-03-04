@@ -1,92 +1,90 @@
-<div class="content-padding--large flex flex-h-center">
-  <div class="container--small">
+<div class="content-padding--large container--small">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {prevent_default_enter: true}) do |f| %>
-      <carousel title="Sign up">
-        <slide :first="true">
-          <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {prevent_default_enter: true}) do |f| %>
+    <carousel title="Sign up">
+      <slide :first="true">
+        <%= devise_error_messages! %>
 
-          <div class="field">
-            <%= f.label :username %>
-            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-          </div>
+        <div class="field">
+          <%= f.label :username %>
+          <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+        </div>
 
-          <div class="field">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-          <div class="field">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-          <div class="field">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>
-        </slide>
+        <div class="field">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </slide>
 
-        <slide :last="true">
-          <p>In this section we ask questions about the group/organisation that you,
-            the survey administrator, belong to. This may be different from groups/organisations
-            with which you will use the tool. We will ask you for details of those users when you
-            create a survey.</p>
+      <slide :last="true">
+        <p>In this section we ask questions about the group/organisation that you,
+          the survey administrator, belong to. This may be different from groups/organisations
+          with which you will use the tool. We will ask you for details of those users when you
+          create a survey.</p>
+        <div class="field">
+          <%= f.label "Name of Organisation/Group" %>
+          <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
+        </div>
+        <div class="field">
+          <%= render partial: 'form_elements/collection_buttons',
+            locals: {
+              form: f,
+              type: "radio",
+              option_class: "two-col",
+              title: "Type of Organisation/Group",
+              rb_config: [:org_type, User.org_types, :last, :first]
+            } %>
+        </div>
+        <disabler input-value="other" input-group-name="user[org_type]">
           <div class="field">
-            <%= f.label "Name of Organisation/Group" %>
-            <%= f.text_field :organisation_name, autofocus: true, autocomplete: "organisation_name" %>
+            <%= f.label "(Specify)" %>
+            <%= f.text_field :org_type_other, autofocus: true %>
           </div>
-          <div class="field">
-            <%= render partial: 'form_elements/collection_buttons',
-              locals: {
-                form: f,
-                type: "radio",
-                option_class: "two-col",
-                title: "Type of Organisation/Group",
-                rb_config: [:org_type, User.org_types, :last, :first]
-              } %>
-          </div>
-          <disabler input-value="other" input-group-name="user[org_type]">
-            <div class="field">
-              <%= f.label "(Specify)" %>
-              <%= f.text_field :org_type_other, autofocus: true %>
-            </div>
-          </disabler>
-          <div class="field">
-            <%= f.label "Geographical location" %>
-            <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
-          </div>
-          <div class="field">
-            <%= render partial: 'form_elements/collection_buttons',
-              locals: {
-                form: f,
-                type: "radio",
-                option_class: "inline",
-                title: "Please select",
-                rb_config: [:use_type, User.use_types, :first, :first]
-              } %>
-          </div>
-          <div class="field">
-            <%= render partial: 'form_elements/collection_buttons',
-              locals: { 
-                form: f,
-                type: "radio",
-                option_class: "inline",
-                title: "Is your organisation part of a wider network or structure?",
-                rb_config: [:wider_network, User.wider_network_types, :first, :first] 
-              } %>
-            <p>Please give details</p>
-            <%= f.text_area :wider_network_details %>
-          </div>
-          <div class="actions">
-            <%= f.submit "Create Account" %>
-          </div>
-        </slide>
-      </carousel>
-    <% end %>
+        </disabler>
+        <div class="field">
+          <%= f.label "Geographical location" %>
+          <%= f.select :country, (["More than one country"] << COUNTRIES).flatten, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= render partial: 'form_elements/collection_buttons',
+            locals: {
+              form: f,
+              type: "radio",
+              option_class: "inline",
+              title: "Please select",
+              rb_config: [:use_type, User.use_types, :first, :first]
+            } %>
+        </div>
+        <div class="field">
+          <%= render partial: 'form_elements/collection_buttons',
+            locals: { 
+              form: f,
+              type: "radio",
+              option_class: "inline",
+              title: "Is your organisation part of a wider network or structure?",
+              rb_config: [:wider_network, User.wider_network_types, :first, :first] 
+            } %>
+          <p>Please give details</p>
+          <%= f.text_area :wider_network_details %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Create Account" %>
+        </div>
+      </slide>
+    </carousel>
+  <% end %>
 
-  </div>
 </div>

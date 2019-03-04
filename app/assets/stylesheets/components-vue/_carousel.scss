@@ -56,21 +56,19 @@
 // slide
 //--------------------------------------------------
     &__slide {
-      opacity: 0;
       overflow: hidden;
-      width: 100%; height: 0;
+      width: 100%;
 
-      &--first { 
-        opacity: 1; 
-        height: 100%;
-      }
-
-      &--hide { 
-        animation: fadeOutSlide .3s 1 normal forwards ease-out, hideSlide .001s 1 normal forwards linear .3s;
+      &--hide {
+        opacity: 0;
+        max-height: 0;
+        transition: opacity 0.3s ease-out, max-height 0s linear 0.3s;
       }
 
       &--show {
-        animation: showSlide .001s 1 normal forwards linear .3s, fadeInSlide .2s 1 normal forwards ease-in .301s;
+        opacity: 1;
+        max-height: 100rem;
+        transition: opacity 0.4s ease-in 0.3s, max-height 0s linear 0.3s;
       }
     }
 }
