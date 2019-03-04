@@ -1,91 +1,87 @@
-<div class="flex flex-h-center">
-  <div class="container--small">
-    <%= form_with(model: survey, local: true) do |form| %>
-      <% if survey.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+<%= form_with(model: survey, local: true) do |form| %>
+  <% if survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
 
-          <ul>
-          <% survey.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+      <ul>
+      <% survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-      <% if current_user.admin? %>
-        <div class="field">
-          <%= form.label :locked %>
-          <%= form.check_box :locked, id: :survey_locked %>
-        </div>
-      <% end %>
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= form.label :locked %>
+      <%= form.check_box :locked, id: :survey_locked %>
+    </div>
+  <% end %>
 
-      <!---<% I18n.available_locales.each do |locale| %>
-        <h1><%= locale %></h1>
-        <%= form.globalize_fields_for locale do |ff| %>
-          <div class="field">
-            <%= ff.label :name %>
-            <%= ff.text_field :name, id: :survey_name %>
-          </div>
-
-          <div class="field">
-            <%= ff.label :description %>
-            <%= ff.text_area :description, id: :survey_description %>
-          </div>
-        <% end %>
-      <% end %>--->
-
-      <p>
-        In this section we ask questions about the specific group or class to which you will be sending the survey.
-      </p>
+  <!---<% I18n.available_locales.each do |locale| %>
+    <h1><%= locale %></h1>
+    <%= form.globalize_fields_for locale do |ff| %>
       <div class="field">
-        <label for="">
-          Survey title
-        </label>
-        <p>
-          Lorem ipsum.
-        </p>
-        <%= form.text_field :name, id: :survey_name %>
+        <%= ff.label :name %>
+        <%= ff.text_field :name, id: :survey_name %>
       </div>
 
       <div class="field">
-        <%= form.label :description %>
-        <%= form.text_area :description, id: :survey_description %>
-      </div>
-
-      <% if current_user.admin? %>
-        <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
-      <% else %>
-        <% if current_user.use_type == "organisational" %>
-          <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
-        <% elsif current_user.use_type == "educational" %>
-          <%= render partial: 'educational_fields', locals: { survey: survey, form: form } %>
-        <% end %>
-      <% end %>
-
-      <h4>Customised Questions</h4>
-      <p>
-        A maximum of two customised questions can be added and up to ten options per customised question.
-      </p>
-      <hr>
-
-      <div class="customised_questions">
-        <%= form.fields_for :customised_questions do |customised_questions_form| %>
-          <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
-        <% end %>
-
-        <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "add-customised_question"} %>
-      </div>
-
-
-      <div class="field">
-        <%= form.label :published %>
-        <%= form.check_box :published, id: :survey_published %>
-      </div>
-
-      <div class="actions">
-        <%= form.submit %>
+        <%= ff.label :description %>
+        <%= ff.text_area :description, id: :survey_description %>
       </div>
     <% end %>
+  <% end %>--->
+
+  <p>
+    In this section we ask questions about the specific group or class to which you will be sending the survey.
+  </p>
+  <div class="field">
+    <label for="">
+      Survey title
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.text_field :name, id: :survey_name %>
   </div>
-</div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :survey_description %>
+  </div>
+
+  <% if current_user.admin? %>
+    <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
+  <% else %>
+    <% if current_user.use_type == "organisational" %>
+      <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
+    <% elsif current_user.use_type == "educational" %>
+      <%= render partial: 'educational_fields', locals: { survey: survey, form: form } %>
+    <% end %>
+  <% end %>
+
+  <h4>Customised Questions</h4>
+  <p>
+    A maximum of two customised questions can be added and up to ten options per customised question.
+  </p>
+  <hr>
+
+  <div class="customised_questions">
+    <%= form.fields_for :customised_questions do |customised_questions_form| %>
+      <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
+    <% end %>
+
+    <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "add-customised_question"} %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :published %>
+    <%= form.check_box :published, id: :survey_published %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

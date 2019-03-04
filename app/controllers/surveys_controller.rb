@@ -106,7 +106,7 @@ class SurveysController < ApplicationController
     end
 
     def require_unlocked
-      return if current_user.admin?
+      return if current_user.present? && current_user.admin?
 
       if @survey.locked?
         redirect_to root_path, notice: "This survey has been locked by an admin, please contact the administrator to resolve this"
