@@ -15,19 +15,25 @@ import PaginationButton from './components/pagination/PaginationButton.vue'
 import ProgressBar from './components/pagination/ProgressBar.vue'
 import Popup from './components/popup/Popup.vue'
 import Checkboxes from './components/form_fields/Checkboxes.vue'
+import Disabler from './components/form_fields/Disabler.vue'
 import RadioButtons from './components/form_fields/RadioButtons.vue'
 import TextInput from './components/form_fields/TextInput.vue'
 import SelectBox from './components/form_fields/SelectBox.vue'
+import SimpleModal from './components/modals/SimpleModal.vue'
 import MultipleSelectBox from './components/form_fields/MultipleSelectBox.vue'
 import NavBurger from './components/nav/NavBurger.vue'
 import NavLink from './components/nav/NavLink.vue'
+import NavScroll from './components/scroll_nav/NavScroll.vue'
 import Submit from './components/form_fields/Submit.vue'
 import Tabs from './components/tabs/Tabs.vue'
 import Tab from './components/tabs/Tab.vue'
 import ValidationMessage from './components/form_fields/ValidationMessage.vue'
+import { initializeEventHandling } from './helpers/application-helpers.js';
 
 // create event hub and export so that it can be imported into .vue files
 export const eventHub = new Vue()
+
+initializeEventHandling()
 
 // create vue instance and attach to the DOM
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#v-app',
     store,
     components: { 
-      Accordion, 
-      AccordionItem, 
+      Accordion,
+      AccordionItem,
       Carousel,
       ChartResults,
       Slide, 
@@ -44,17 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
       PageItem, 
       PaginationButton, 
       ProgressBar, 
-      Checkboxes, 
+      Checkboxes,
+      Disabler,
       RadioButtons, 
       TextInput, 
-      SelectBox, 
+      SelectBox,
+      SimpleModal,
       MultipleSelectBox, 
       NavBurger,
       NavLink,
+      NavScroll,
       Submit,
       Tabs,
       Tab,
-      ValidationMessage 
+      ValidationMessage
     }
   })
 })

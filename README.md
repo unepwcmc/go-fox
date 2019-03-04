@@ -13,6 +13,7 @@
 - `rails db:create db:migrate db:seed`
 - `yarn install`
 - `brew install redis`
+- `brew install graphviz`
 
 You'll need to open a separate tab for each of these to run in...
 

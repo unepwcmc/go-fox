@@ -58,7 +58,7 @@
     &__slide {
       opacity: 0;
       overflow: hidden;
-      width: $content-small; height: 0;
+      width: 100%; height: 0;
 
       &--first { 
         opacity: 1; 

@@ -10,13 +10,14 @@
   </div>
 
   <div class="field">
-    <label for="">
-      Default language
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.collection_radio_buttons '[settings][default_language]', surveys_data("default_language"), :first, :last %>
+    <%= render partial: 'form_elements/collection_buttons',
+      locals: {
+        form: f,
+        type: "radio",
+        class: "inline",
+        title: "Default language",
+        rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last]
+      } %>
   </div>
 
   <div class="field">
@@ -30,24 +31,26 @@
   </div>
 
   <div class="field">
-    <label for="">
-      Participants' level of study
-    </label>
-    <p>
-      What is the level of study of your survey group or class?
-    </p>
-    <%= form.collection_radio_buttons '[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last %>
-
+    <%= render partial: 'form_elements/collection_buttons',
+    locals: {
+      form: f,
+      type: "radio",
+      title: "Participants' level of study",
+      description: "What is the level of study of your survey group or class?"
+      rb_config: ['[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last]
+    } %>
   </div>
 
   <div class="field">
-    <label for="">
-      Participants' specialism
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.collection_radio_buttons '[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last %>
+    <%= render partial: 'form_elements/collection_buttons',
+      locals: {
+        form: f,
+        type: "radio",
+        option_class: "two-col",
+        title: "Participants' specialism",
+        description: "What is the level of study of your survey group or class?"
+        rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
+      } %>
   </div>
 
   <div class="field">
@@ -81,14 +84,15 @@
   </div>
 
   <div class="field">
-    <label for="">
-      Follow up session?
-    </label>
-    (Radio buttons: yes/no)
-    <p>
-      Lorem ipsum
-    </p>
-    <%= form.collection_radio_buttons '[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last %>
+    <%= render partial: 'form_elements/collection_buttons',
+      locals: {
+        form: f,
+        type: "radio",
+        option_class: "inline",
+        title: "Follow up session?",
+        description: "What is the level of study of your survey group or class?"
+        rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
+      } %>
   </div>
 
   <div class="field">

@@ -17,7 +17,11 @@
 
     computed: {
       isActive () {
-        return this.$store.state.pagination.startIndex <= this.index && this.$store.state.pagination.endIndex > this.index
+        const pageIndex = this.$store.state.pagination.page - 1
+        const pageItemIndices = this.$store.state.pagination.pageIndices[pageIndex]
+
+        if (!pageItemIndices) { return false }
+        return pageItemIndices.start <= this.index && pageItemIndices.end >= this.index
       }
     }
   }  

@@ -28,6 +28,8 @@
     @extend %footer;
     color: $blue-xlight;
 
+    position: relative;
+
     .footer {
       &__content {
         flex-wrap: wrap;

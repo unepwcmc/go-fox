@@ -2,13 +2,13 @@
 // media queries
 //--------------------------------------------------
 @mixin breakpoint($breakpoint) {
-  @media screen and (min-width: $breakpoint + 1) {
+  @media screen and (min-width: rem_calc($breakpoint + 1px)) {
     @content;
   } 
 }
 
 @mixin breakpoint-down($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: rem_calc($breakpoint)) {
     @content;
   } 
 }
