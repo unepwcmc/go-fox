@@ -84,6 +84,10 @@ select {
   max-width: rem-calc(400);
 
   @include breakpoint($medium) { font-size: rem-calc(16); }
+
+  &.multiple-select {
+    height: rem-calc(150);
+  }
 }
 
 textarea {
