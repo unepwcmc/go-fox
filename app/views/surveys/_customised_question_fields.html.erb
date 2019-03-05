@@ -1,4 +1,4 @@
-<div class="nested-fields">
+<div class="customised-question nested-fields">
   <!---
   <div class="field">
     <p>
@@ -15,12 +15,12 @@
   </div>
 
   <%= link_to_remove_association "Remove Custom Question", f, {class: "button"} %>
-  <%= link_to_add_association 'Add Option', f, :options, {'data-association-insertion-method' => 'append'} %>
+  <%= link_to_add_association 'Add Option', f, :options, {'data-association-insertion-method' => 'append', class: 'add-customised-question-option'} %>
 
   <div class="field">
     <%= f.fields_for :options do |options_form| %>
       <%= render partial: 'surveys/option_fields', locals: {f: options_form} %>
     <% end %>
   </div>
+  <hr>
 </div>
-<hr>
