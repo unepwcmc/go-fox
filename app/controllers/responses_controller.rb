@@ -9,13 +9,6 @@ class ResponsesController < ApplicationController
 
   def index
     @responses = @survey.responses
-
-    @results_chart_data = @responses.map do |response|
-      {
-        current_user: false,
-        dataset: [response.f1_score, response.f2_score, response.f3_score],
-      }
-    end.to_json
   end
 
   def new
@@ -53,25 +46,9 @@ class ResponsesController < ApplicationController
   end
 
   def show
-
   end
 
   def results
-    @results_chart_data = []
-    @results_chart_data_current_user = {
-        current_user: true,
-        dataset: [@response.f1_score, @response.f2_score, @response.f3_score]
-      }
-
-    @results_chart_data_all_users = Response.where(survey_id: @survey.id).where.not(uuid: @response.uuid).map do |response|
-      {
-        current_user: false,
-        dataset: [response.f1_score, response.f2_score, response.f3_score]
-      }
-    end
-
-    @results_chart_data << @results_chart_data_current_user << @results_chart_data_all_users
-    @results_chart_data = @results_chart_data.flatten.to_json
   end
 
   def destroy
