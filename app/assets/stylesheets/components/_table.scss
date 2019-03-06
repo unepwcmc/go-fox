@@ -35,6 +35,10 @@
 
     &__icon { color: $grey; }
 
+    &__cell--padding-small {
+      padding: rem-calc(5);
+    }
+
   &--surveys {
     @extend %table;
 
