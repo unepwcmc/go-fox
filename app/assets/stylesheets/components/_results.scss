@@ -1,0 +1,7 @@
+.results {
+  &__filters {
+    @extend .box-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
