@@ -1,8 +1,7 @@
 class SurveysController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :export]
   before_action :set_customisable_questions, only: [:new, :edit, :show, :update]
-  before_action :require_ownership, only: [:edit, :update, :destroy]
+  before_action :require_ownership, only: [:edit, :update, :destroy, :show]
   before_action :require_unlocked, only: [:show, :edit, :update, :destroy, :export]
 
   # GET /surveys
