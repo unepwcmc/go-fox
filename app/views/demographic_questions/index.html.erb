@@ -7,13 +7,13 @@
     <tbody>
       <% @demographic_questions.each do |demographic_question| %>
         <tr>
-          <td><%= demographic_question.text %></td>
-          <td><%= link_to 'Show', demographic_question %></td>
-          <td><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
+          <td class="table__cell--padding-small"><%= demographic_question.text %></td>
+          <td class="table__cell--padding-small"><%= link_to 'Show', demographic_question %></td>
+          <td class="table__cell--padding-small"><%= link_to 'Edit', edit_demographic_question_path(demographic_question) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <%= link_to 'New Demographic Question', new_demographic_question_path, class: 'button--blue-shadow' %>
+  <%#= link_to 'New Demographic Question', new_demographic_question_path, class: 'button--blue-shadow' %>
 </div>

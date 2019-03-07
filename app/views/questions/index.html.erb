@@ -7,9 +7,9 @@
     <tbody>
       <% @questions.each do |question| %>
         <tr>
-          <td><%= question.text %></td>
-          <td><%= link_to 'Show', question %></td>
-          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td class="table__cell--padding-small"><%= question.text %></td>
+          <td class="table__cell--padding-small"><%= link_to 'Show', question %></td>
+          <td class="table__cell--padding-small"><%= link_to 'Edit', edit_question_path(question) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -17,5 +17,5 @@
 
   <br>
 
-  <%= link_to 'New Question', new_question_path, class: 'button--blue-shadow' %>
+  <%#= link_to 'New Question', new_question_path, class: 'button--blue-shadow' %>
 </div>
