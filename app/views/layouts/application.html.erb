@@ -34,5 +34,9 @@
     <% else %>
       <%= render 'global_public/footer' %>
     <% end %>
+
+    <% if Rails.env == 'production' %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
   </body>
 </html>
