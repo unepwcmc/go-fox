@@ -4,12 +4,10 @@
       <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="#dedede" stroke-width="2"></rect>
 
       <g v-for="axis, index in axes" :transform="`translate(0,${config.offsetTop + index*100 + axisLabelShift})`"> 
-        <text :x="options.axisStart - 55" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
-        <text :x="options.axisStart - 25" text-anchor="end" font-size="12">(less)</text>
-        <text :x="options.axisStart - 10" text-anchor="end" font-size="12">{{ domain[0] }}</text>
+        <text :x="options.axisStart - 50" y="1" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
+        <text :x="options.axisStart - 10" text-anchor="end" font-size="12">Less</text>
         <line  :x1="options.axisStart" :y1="-axisLabelShift" :x2="options.axisEnd" :y2="-axisLabelShift" stroke="#466882"/>
-        <text :x="options.axisEnd + 10" font-size="12">{{ domain[1] }}</text>
-        <text :x="options.axisEnd + 20" font-size="12">(more)</text>
+        <text :x="options.axisEnd + 10" font-size="12">More</text>
       </g>
       
       <g v-for="line, index in data">
@@ -55,7 +53,7 @@
         domain: [-4, 4],
         range: [0],
         axes: ['A', 'B', 'C'],
-        axisLabelShift: 4
+        axisLabelShift: 3
       }
     },
 
