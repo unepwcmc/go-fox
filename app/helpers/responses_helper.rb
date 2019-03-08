@@ -48,4 +48,8 @@ module ResponsesHelper
 
     content_tag(field_type, '', attributes)
   end
+
+  def response_score response
+    "F1: #{response.f1_score}, F2: #{response.f2_score}, F3: #{response.f3_score}"
+  end
 end

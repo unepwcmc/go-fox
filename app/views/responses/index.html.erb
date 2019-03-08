@@ -34,7 +34,7 @@
     <% @responses.each do |response| %>
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
-        <p class="table__heading-2">#TODO</p>
+        <p class="table__heading-2"><%= response_score(response) %></p>
         <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
         <p class="table__buttons flex flex-v-center">
           <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
