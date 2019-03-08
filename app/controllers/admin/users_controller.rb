@@ -27,8 +27,12 @@ class Admin::UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to admin_users_url, notice: "User was deleted successfully"
+    if @user.surveys.present?
+      redirect_to admin_users_url, alert: "User has surveys present and cannot be deleted"
+    else
+      @user.destroy
+      redirect_to admin_users_url, notice: "User was deleted successfully"
+    end
   end
 
   private
