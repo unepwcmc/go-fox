@@ -18,14 +18,40 @@ user = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
   puts "Admin created! \nU: #{secrets.admin[:admin_email]}\nP: #{secrets.admin[:admin_password]}"
 end
 
+settings = {
+  course_url: "http://www.unep-wcmc.org",
+  session_date: {"(1i)"=>"2019", "(2i)"=>"3", "(3i)"=>"8"},
+  size_of_group: 10,
+  wider_network: "false",
+  org_type_other: "",
+  hope_to_achieve: "",
+  date_established: {"(1i)": "2019", "(2i)": "3", "(3i)": "8"},
+  default_language: "en",
+  follow_up_session: "false",
+  geographical_scope: "international",
+  survey_previous_id: "",
+  participant_org_name: "",
+  size_of_organisation: "100",
+  type_of_organisation: "university",
+  sub_group_explanation: "",
+  wider_network_details: "",
+  location_of_organisation: "United Kingdom",
+  organisation_funding_sources: ["research_grants"],
+  kind_of_conservation_activities: ["research"],
+  organisation_funding_sources_other: ""
+}
+
 survey = Survey.where(master: true).first_or_create do |s|
   s.published = true
   s.locked    = false
   s.user_id   = user.id
   s.name      = "The Future of Conservation survey"
+  s.settings  = settings
 
   puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
 end
+
+survey.update_attributes(settings: settings)
 
 questions = [
   {
