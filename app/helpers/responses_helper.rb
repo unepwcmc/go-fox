@@ -48,4 +48,15 @@ module ResponsesHelper
 
     content_tag(field_type, '', attributes)
   end
+
+  def response_score response
+    score = ""
+
+    (1..3).each do |n|
+      score += "F#{n}: #{number_with_precision(response.send("f#{n}_score"), precision: 2)}"
+      score += '<br>' if n < 3
+    end
+
+    score.html_safe
+  end
 end
