@@ -11,24 +11,19 @@
 
 <div class="container--medium content-padding">
 
-  <div class="box--grey-light">
+  <div class="box--grey-light box-padding--even">
     <chart-results :data="<%= @results_chart_data %>"></chart-results>
   </div>
 
-  <div class="flex">
+  <div class="results__content flex">
     <div class="flex-2-thirds">
       <div class="block--results">
         <h2><%= t('results.title1') %></h2>
         <div><%= t('results.content1') %></div>
       </div>
-
-      <div class="block--results">
-        <h2><%= t('results.title2') %></h2>
-        <div><%= t('results.content2') %></div>
-      </div>
     </div>
 
-    <div class="flex-1-third box-margin-left">
+    <div class="results__content--right flex-1-third">
       <div class="box--beige-light box-padding box-spacing box-margin-bottom">
         <h3>Contact</h3>
         <p class="text-14">For more information about The Future of Conservation project please email:</p>
