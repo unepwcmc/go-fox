@@ -50,6 +50,13 @@ module ResponsesHelper
   end
 
   def response_score response
-    "F1: #{response.f1_score}, F2: #{response.f2_score}, F3: #{response.f3_score}"
+    score = ""
+
+    (1..3).each do |n|
+      score += "F#{n}: #{number_with_precision(response.send("f#{n}_score"), precision: 2)}"
+      score += '<br>' if n < 3
+    end
+
+    score.html_safe
   end
 end
