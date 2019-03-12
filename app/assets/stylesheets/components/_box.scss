@@ -12,7 +12,6 @@
 
   &--grey {
     background-color: $grey;
-    padding: rem-calc(18 34);
   }
 
   &--grey-transparent {
@@ -28,11 +27,21 @@
 
   &-border { border: solid $grey 1px; }
 
-  &-margin-left { margin-left: rem-calc(36); }
+  &-margin-left { margin-left: $box-margin-left; }
 
   &-margin-bottom { margin-bottom: rem-calc(20); }
 
-  &-padding { padding: rem-calc(22 20); }
+  &-padding { 
+    padding: rem-calc(22 20);
+
+    &--even {
+      padding: rem-calc(18);
+    
+      @include breakpoint($small) {
+        padding: rem-calc(30);
+      }
+    }
+  }
 
   &__header--beige { background-color: $beige; }
 }

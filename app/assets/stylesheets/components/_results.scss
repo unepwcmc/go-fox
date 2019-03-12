@@ -1,7 +1,15 @@
 .results {
-  &__filters {
-    @extend .box-padding;
-    padding-top: 0;
-    padding-bottom: 0;
+  &__content {
+    flex-direction: column;
+
+    @include breakpoint($small) {
+      flex-direction: row;
+    }
+
+    &--right {
+      @include breakpoint($small) {
+        margin-left: $box-margin-left;
+      }
+    }
   }
 }

@@ -6,7 +6,33 @@
 //--------------------------------------------------
 // results chart
 //--------------------------------------------------
-  &--results {
-    width: 600px; height: 330px;
+  &__container {
+    margin-bottom: rem-calc(20);
+    width: 100%; height: 0;
+
+    position: relative;
   }
+
+    &__svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__legend {
+      margin-left: rem-calc(16);
+
+      @include breakpoint($small) {
+        margin-left: rem-calc(50);
+      }
+    }
+
+      &__legend-key {
+        margin-bottom: rem-calc(6);
+        font-size: rem-calc(12);
+
+        @include breakpoint($small) {
+          font-size: rem-calc(16);
+        }
+      }
 }

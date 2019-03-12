@@ -1,32 +1,41 @@
 <template>
-  <div class="chart--results">
-    <svg width="100%" height="100%" :viewBox="`0 0 ${options.svgWidth} ${options.svgHeight}`" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-      <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="#dedede" stroke-width="2"></rect>
+  <div class="chart">
+    <div class="chart__container" :style="`padding-bottom:${containerPaddingBottom}`">
+      <svg class="chart__svg" :viewBox="`0 0 ${options.svgWidth} ${options.svgHeight}`" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+        <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="#dedede" stroke-width="2"></rect>
 
-      <g v-for="axis, index in axes"> 
-        <text :x="options.axisStart - 35" :y="config.offsetTop + 3 + index*100" text-anchor="end" fill="#466882" font-weight="bold">{{ axis }}</text>
-        <text :x="options.axisStart - 10" :y="config.offsetTop + 3 + index*100" text-anchor="end" font-size="12">{{ domain[0] }}</text>
-        <line  :x1="options.axisStart" :y1="config.offsetTop + index*100" :x2="options.axisEnd" :y2="config.offsetTop + index*100" stroke="#466882"/>
-        <text :x="options.axisEnd + 10" :y="config.offsetTop + 3 + index*100" font-size="12">{{ domain[1] }}</text>
-      </g>
-      
-      <g v-for="line, index in data">
-        <path
-          :d="getPath(line.dataset)" 
-          fill="none" 
-          :stroke="getColour(line.current_user)" 
-          :stroke-width="getWidth(line.current_user)" />
+        <g v-for="axis, index in axes" :transform="`translate(0,${config.offsetTop + index*100 + axisLabelShift})`"> 
+          <text :x="options.axisStart - 55" y="1" text-anchor="end" fill="#466882" font-weight="bold" :font-size="unscaledFontSizeMedium">{{ axis.graphLabel }}</text>
+          <text :x="options.axisStart - 10" text-anchor="end" :font-size="unscaledFontSizeSmall">Less</text>
+          <line  :x1="options.axisStart" :y1="-axisLabelShift" :x2="options.axisEnd" :y2="-axisLabelShift" stroke="#466882"/>
+          <text :x="options.axisEnd + 10" :font-size="unscaledFontSizeSmall">More</text>
+        </g>
         
-        <circle v-if="line.current_user" v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="8" :fill="config.colours.currentUser"></circle>          
-        <circle v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="4" :fill="config.colours.default"></circle>
-      </g>
-    </svg>
+        <g v-for="line, index in data">
+          <path
+            :d="getPath(line.dataset)"
+            fill="none" 
+            :stroke="getColour(line.current_user)" 
+            :stroke-width="getWidth(line.current_user)" />
+          
+          <circle v-if="line.current_user" v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="8" :fill="config.colours.currentUser"></circle>          
+          <circle v-for="datapoint, index in line.dataset" :cx="getXValue(datapoint) + options.axisStart" :cy="config.offsetTop + index*100" r="4" :fill="config.colours.default"></circle>
+        </g>
+      </svg>
+    </div>
+    <div class="chart__legend">
+      <div v-for="axis in axes" class="chart__legend-key">{{ `${axis.graphLabel}) ${axis.legendLabel}`}}</div>
+    </div>
   </div>
 </template>
 
 <script>
+  import {mixinResponsive} from '../../mixins/mixin-responsive'
+
   export default {
     name: 'chart-results',
+
+    mixins: [mixinResponsive],
 
     props: {
       data: {
@@ -40,8 +49,8 @@
         options: {
           svgWidth: 600,
           svgHeight: 330,
-          axisStart: 160,
-          axisEnd: 510
+          axisStart: 80,
+          axisEnd: 530
         },
         config: {
           offsetTop: 0,
@@ -52,13 +61,32 @@
         },
         domain: [-4, 4],
         range: [0],
-        axes: ['Capitalism', 'People', 'Nature']
+        axes: [
+          { graphLabel: 'A', legendLabel: 'Less/more people-centred' },
+          { graphLabel: 'B', legendLabel: 'Less/more in favour of science-led ecocentrism' },
+          { graphLabel: 'C', legendLabel: 'Less/more in favour of conservation through capitalism' }
+        ],
+        axisLabelShift: 4
       }
     },
 
     created () {
       this.range.push(this.options.axisEnd - this.options.axisStart)
       this.config.offsetTop = (this.options.svgHeight - 200) / 2
+    },
+
+    computed: {
+      containerPaddingBottom () {
+        return this.options.svgHeight/this.options.svgWidth * 100 + '%'
+      },
+
+      unscaledFontSizeSmall () {
+        return this.isSmall() ? 18 : 12
+      },
+
+      unscaledFontSizeMedium () {
+        return this.isSmall() ? 24 : 16
+      }
     },
 
     methods: {
