@@ -1,5 +1,5 @@
 <%= render partial: 'global_public/header', locals: { title: @survey.name } %>
-<%= render 'global/survey_warning' %>
+<%= render partial: 'global/survey_warning', locals: { master: @survey.master } %>
 
 <div class="container--public content-padding">
 
