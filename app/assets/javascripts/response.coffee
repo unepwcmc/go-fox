@@ -1,6 +1,6 @@
 $(document).ready ->
   toggleQuestionAddLink = (questions) ->
-    if questions.length >= 2
+    if questions.length >= 3
       $('.add-customised-question').hide()
     else
       $('.add-customised-question').show()
