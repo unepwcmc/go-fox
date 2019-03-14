@@ -96,10 +96,10 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_equal 2, Survey.last.customised_questions.count
   end
   
-  test "can't create survey with more than two custom questions" do
+  test "can't create survey with more than three custom questions" do
     sign_in @user
     assert_difference('Survey.count', 0) do
-      post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id, customised_questions_attributes: [ {text: "A question?"}, {text: "another question"}, {text: "were either of those actually questions?"} ] } }
+      post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id, customised_questions_attributes: [ {text: "A question?"}, {text: "another question"}, {text: "third question"}, {text: "were either of those actually questions?"} ] } }
       assert_response :success # not sure why failed validation returns 200 !?
     end
   end
