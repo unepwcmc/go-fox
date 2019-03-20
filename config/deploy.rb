@@ -4,7 +4,7 @@ lock "3.8.2"
 
 
 set :nvm_type, :user # or :system, depends on your nvm setup
-set :nvm_node, 'v9.0.0'
+set :nvm_node, 'v10.15.1'
 set :nvm_map_bins, %w{node npm yarn}
 
 
