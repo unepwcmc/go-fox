@@ -3,7 +3,7 @@
     <div class="logo--foc survey-warning__logo"></div>
     <h1 class="survey-warning__title"> <%= t('survey_warning.title') %> </h1>
     <div class="survey-warning__container--scroll custom-scroll">
-      <p class="survey-warning__description"><%= survey_warning_description(master) %></p>
+      <p class="survey-warning__description"><%= survey_warning_description(master).html_safe %></p>
     </div>
   </div>
 </simple-modal>
