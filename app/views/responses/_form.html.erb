@@ -11,13 +11,7 @@
           <h3>
             <% question = answer_form.object.question %>
             <%= question.text %>
-            <% if question.is_a?(Question) %>
-              *
-            <% elsif question.is_a?(DemographicQuestion) %>
-              <% if question.validation == {required: true}.to_json %>
-                *
-              <% end %>
-            <% end %>
+            <% if is_mandatory(question) %>*<% end %>
           </h3>
         </div>
 

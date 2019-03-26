@@ -49,6 +49,12 @@ module ResponsesHelper
     content_tag(field_type, '', attributes)
   end
 
+  def is_mandatory question
+    question.is_a?(Question) ||
+      question.is_a?(CustomisedQuestion) ||
+      question.is_a?(DemographicQuestion) && question.validation == {required: true}.to_json
+  end
+
   def response_score response
     score = ""
 
