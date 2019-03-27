@@ -50,9 +50,11 @@ module ResponsesHelper
   end
 
   def is_mandatory question
-    question.is_a?(Question) ||
+    ( 
+      question.is_a?(Question) ||
       question.is_a?(CustomisedQuestion) ||
-      question.is_a?(DemographicQuestion) && question.validation == {required: true}.to_json
+      question.is_a?(DemographicQuestion) && question.is_required
+    )
   end
 
   def response_score response
