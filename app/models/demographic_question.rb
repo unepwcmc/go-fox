@@ -25,4 +25,8 @@ class DemographicQuestion < ApplicationRecord
   def self.required
     where(validation: {required: true}.to_json).pluck(:id)
   end
+
+  def is_required
+    self.validation == {required: true}.to_json
+  end
 end

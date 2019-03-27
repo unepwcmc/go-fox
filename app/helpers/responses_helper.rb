@@ -49,6 +49,14 @@ module ResponsesHelper
     content_tag(field_type, '', attributes)
   end
 
+  def is_mandatory question
+    ( 
+      question.is_a?(Question) ||
+      question.is_a?(CustomisedQuestion) ||
+      question.is_a?(DemographicQuestion) && question.is_required
+    )
+  end
+
   def response_score response
     score = ""
 
