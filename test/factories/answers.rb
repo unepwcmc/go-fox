@@ -24,6 +24,6 @@ FactoryBot.define do
   factory :answer do
     association :answerable, factory: :question
     response nil
-    raw "Neutral"
+    raw "Neither Agree nor Disagree"
   end
 end
