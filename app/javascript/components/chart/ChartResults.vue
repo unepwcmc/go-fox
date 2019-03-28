@@ -62,9 +62,9 @@
         domain: [-4, 4],
         range: [0],
         axes: [
-          { graphLabel: 'A', legendLabel: 'Less/more people-centred' },
-          { graphLabel: 'B', legendLabel: 'Less/more in favour of science-led ecocentrism' },
-          { graphLabel: 'C', legendLabel: 'Less/more in favour of conservation through capitalism' }
+          { graphLabel: 'A', legendLabel: 'People-centred conservation' },
+          { graphLabel: 'B', legendLabel: 'Science-led ecocentrism' },
+          { graphLabel: 'C', legendLabel: 'Conservation through capitalism' }
         ],
         axisLabelShift: 4
       }
