@@ -11,14 +11,14 @@
 
     &__container--scroll {
       overflow-y: scroll;
-      height: rem-calc(260);
+      max-height: rem-calc(300);
     }
 
       &__description {
-        font-size: rem-calc(16);
+        font-size: rem-calc(14);
 
         @include breakpoint($medium) {
-          font-size: rem-calc(20);
+          font-size: rem-calc(16);
 
           @include breakpoint($medium) {
             padding-left: rem-calc(90);

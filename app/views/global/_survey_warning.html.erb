@@ -1,9 +1,5 @@
-<simple-modal button-text="Accept">
-  <div class="survey-warning__content flex flex-column flex-v-center">
-    <div class="logo--foc survey-warning__logo"></div>
-    <h1 class="survey-warning__title"> <%= t('survey_warning.title') %> </h1>
-    <div class="survey-warning__container--scroll custom-scroll">
-      <p class="survey-warning__description"><%= survey_warning_description(master).html_safe %></p>
-    </div>
-  </div>
+<simple-modal 
+  title="<%= t('survey_warning.title') %>" 
+  description="<%= survey_warning_description(master).html_safe %>" 
+  button-text="Accept">
 </simple-modal>
