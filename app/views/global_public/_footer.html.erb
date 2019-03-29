@@ -6,11 +6,7 @@
         <li class="nav__li"><%= link_to 'Home', root_path, title: 'Future of Conservation', class: 'nav__a' %></li>
         <li class="nav__li"><%= link_to 'About the Debate', about_the_debate_path, title: 'About the Debate', class: 'nav__a' %></li>
         <li class="nav__li"><%= link_to 'About the Project', about_the_project_path, title: 'About the Project', class: 'nav__a' %></li>
-<%
-=begin%>
- <li class="nav__li"><%= link_to 'Legal', legal_path, title: 'Legal', class: 'nav__a' %></li> 
-<%
-=end%>
+        <!--li class="nav__li"><%#= link_to 'Legal', legal_path, title: 'Legal', class: 'nav__a' %></li--> 
         <% unless user_signed_in? %>
           <li class="nav__li"><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'nav__a' %></li>
         <% end %>
