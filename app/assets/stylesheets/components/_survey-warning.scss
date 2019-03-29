@@ -11,6 +11,7 @@
 
     &__container--scroll {
       overflow-y: scroll;
+      width: 100%;
       max-height: rem-calc(300);
     }
 
