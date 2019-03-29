@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
     get :support, path: 'support', to: 'dashboard#support'
     get :about_go_fox, path: 'about_go_fox', to: 'dashboard#about_go_fox'
-    get :legal, path: 'legal', to: 'dashboard#legal'
+    # get :legal, path: 'legal', to: 'dashboard#legal'
     get :export, path: 'export', to: 'dashboard#export'
     resources :users, controller: "users", except: [:new, :create]
     resources :responses, only: [:index]
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'about-the-project', to: 'static_pages#about_project'
   get 'about-the-debate', to: 'static_pages#about_debate'
   get 'support', to: 'static_pages#support'
-  get 'legal', to: 'static_pages#legal'
+  # get 'legal', to: 'static_pages#legal'
   get 'about-go-fox', to: 'static_pages#about_go_fox'
 
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
