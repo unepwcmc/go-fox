@@ -130,14 +130,13 @@ en:
     -
       link: 'Background'
       title: 'Background'
-      content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).<p>The survey results generated internally within a group or organisation are made available to the GO-FOX user, to facilitate a discussion about the results within the group. Examples of how GO-FOX may be used include, but are not limited to:</p><ul>
-      <li>Conservation NGOs wishing to generate discussion amongst their members around current debates in conservation, for example as part of a strategic planning process.</li>
-      <li>Teachers in conservation courses who wish to use the tool  for an interactive learning session to stimulate a series of discussions around controversial topics in conservation.</li>
+      content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).</p>
+      <p>The GO-FOX tool allows the user to create their own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents they are working with. Analysed survey results from this group are then made available to the GO-FOX user, who can then use them for the benefit of the group. Examples of how GO-FOX may be used include, but are not limited to:</p>
+      <ul>
+      <li>Conservation NGOs wishing to generate discussion amongst their staff or members about their individual conservation viewpoints and how these relate to the work of the organisation. This could be done as part of a strategic planning process</li>
+      <li>Teachers in conservation courses who wish to use the tool to support learning about diverse perspectives in conservation and self-reflection of students on their own views</li>
       </ul>
-      <p>To run GO-FOX for your group or organisation, <a href="/users/sign_in">create a GO-FOX account.</a></p>
-      <p>You can also find out more about how GO-FOX works in the GO-FOX support page (link), and about the overall Future of Conservation/GO-FOX projects by watching the video below.</p>
-      <p>*Embed SD1 video*</p>
-      <p>What groups have said about their GO-FOX experience:</p>'
+      <p>We will be launching the GO-FOX tool soon. Full details will be available on this page after the launch.</p>'
 
   about_debate:
     -
@@ -178,5 +177,5 @@ en:
       <p>Other instances of market ecocentrism include strategies in which market tools, such as ecotourism and ‘willingness to pay’ approaches are used to generate revenue to fund the creation and maintenance of protected areas.</p>
       <p>Key references: ADD REFERENCES</p>'
   results:
-    title1: "How to interpret you results"
-    content1: '<p>The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).</p><p>A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.</p><p>You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.</p><p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate">About the Debate</a> page.</p>'
+    title: "How to interpret you results"
+    content: '<p>The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).</p><p>A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.</p><p>You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.</p><p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate">About the Debate</a> page.</p>'
