@@ -80,7 +80,7 @@ class Response < ApplicationRecord
       -1
     when "Slightly Disagree"
       -0.5
-    when "Neutral"
+    when "Neither Agree nor Disagree"
       0
     when "Slightly Agree"
       0.5

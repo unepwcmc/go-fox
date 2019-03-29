@@ -10,8 +10,7 @@
   z-index: 1;
 
   &__footer {
-    border-top: solid rem-calc(1) $grey;
-
+    height: rem-calc(50);
     position: relative;
 
     &::before {
@@ -29,7 +28,9 @@
   &__button {
     font-size: rem-calc(20);
     font-weight: bold;
-    margin: rem-calc(50) 0;
+    margin: rem-calc(25) auto;
     padding: rem-calc(20) 20%;
+
+    display: block;
   }
 }
