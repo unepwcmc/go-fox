@@ -74,7 +74,8 @@ input[type='submit'] {
 input[type='email'],
 input[type='password'],
 input[type='text'],
-select {
+select,
+.v-select__toggle {
   border: solid 1px $grey;
   border-radius: rem-calc(5);
   font-size: rem-calc(14);
@@ -87,6 +88,15 @@ select {
 
   &.multiple-select {
     height: rem-calc(150);
+  }
+}
+
+.v-select {
+  width: 100%;
+  max-width: rem-calc(400);
+
+  &__dropdown {
+    border: solid 1px $grey;
   }
 }
 
