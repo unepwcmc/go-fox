@@ -32,6 +32,8 @@ import { initializeEventHandling } from './helpers/application-helpers.js';
 
 // create event hub and export so that it can be imported into .vue files
 export const eventHub = new Vue()
+import { arrayFindPolyfill } from './helpers/custom-polyfills'
+arrayFindPolyfill()
 
 initializeEventHandling()
 

@@ -1,0 +1,115 @@
+$default-select-bg-color: rgb(248, 248, 248);
+
+.v-select {
+  position: relative;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &__toggle {
+    @extend .flex;
+    @extend .flex-v-center;
+    @extend .flex-h-between;
+
+    background-color: $default-select-bg-color;
+    cursor: pointer;
+    width: 100%;
+
+    &--active {
+      .drop-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__dropdown-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__dropdown {
+    background-color: $default-select-bg-color;
+    border-radius: 0;
+    box-shadow: lighten($grey-dark, 40%) 0 1px 2px 1px;
+    width: 90%; height: 90%;
+
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    z-index: 100;
+
+    @include breakpoint($small) {
+      border-radius: rem-calc(5);
+      height: rem-calc(250);
+
+      position: absolute;
+      top: 110%;
+      left: 0;
+    }
+
+    .page-overlay {
+      z-index: -1;
+
+      @include breakpoint($small) {
+        display: none;
+      }
+    }
+  }
+
+    &__dropdown-footer {
+      flex-shrink: 0;
+      height: rem-calc(55);
+
+      @include breakpoint($small) {
+        display: none;
+      }
+    }
+
+      &__dropdown-close {
+        @extend .button--blue-light;
+        font-size: rem-calc(18);
+        margin: auto;
+
+        display: block;
+      }
+
+    &__options {
+      overflow-y: scroll;
+      height: 100%;
+    }
+
+      &__option {
+        padding: rem-calc(12);
+        border-bottom: solid rem-calc(1) $grey;
+
+        @include breakpoint($small) {
+          border-bottom: none;
+          padding: rem-calc(5 10)
+        }
+      }
+
+        &__option-label {
+          font-weight: 300;
+          font-size: rem-calc(18);
+          line-height: rem-calc(18);
+          margin-left: rem-calc(7);
+
+          @include breakpoint($small) {
+            font-size: rem-calc(16);
+            line-height: rem-calc(16);
+          }
+        }
+
+        &__default-checkbox {
+          margin: rem-calc(2);
+        }
+
+  &__radio--active {
+    font-weight: bolder;
+  }
+  &__checkbox--active {
+    font-weight: bolder;
+  }
+}
