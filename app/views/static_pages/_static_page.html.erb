@@ -19,7 +19,7 @@
 
           <% if item[:image] %>
             <figure>
-              <%= image_tag image_url(item[:image]), alt: item[:image_alt], class: 'static-page__figure' %>
+              <%= image_tag item[:image], alt: item[:image_alt], class: 'static-page__figure' %>
               <figcaption><%= item[:caption] %></figcaption>
             </figure>
           <% end %>
