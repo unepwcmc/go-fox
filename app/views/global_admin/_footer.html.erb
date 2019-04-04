@@ -8,7 +8,7 @@
         <!--li class="nav__li"><%#= link_to 'Legal', admin_legal_path, title: 'Legal', class: 'nav__a' %></li-->
       </ul>
 
-      <%= link_to '', root_path, title: 'Future of Conservation', class: 'logo--foc-white' %>
+      <%= render 'global/footer_logos'%>
     </div>
 
     <p class="footer__copyright no-margin">&copy; Copyright <%= Date.today.year %> GoFox</p>
