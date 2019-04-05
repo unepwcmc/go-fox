@@ -84,6 +84,15 @@ a {
   &:hover { text-decoration: none; }
 }
 
+figure {
+  margin: 0;
+  @include breakpoint($medium) { padding: rem-calc(20 40) }
+}
+
+figcaption {
+  font-size: rem-calc(14);
+}
+
 //--------------------------------------------------
 // site structure
 //--------------------------------------------------

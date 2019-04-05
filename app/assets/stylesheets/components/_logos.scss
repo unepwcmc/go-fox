@@ -4,6 +4,13 @@
 %logo {
   background-repeat: no-repeat;
   background-size: contain;
+  margin: rem-calc(10 0);
+
+  display: block;
+
+  &:not(:last-child) {
+    margin-right: rem-calc(10);
+  }
 }
 
 %foc {
@@ -16,6 +23,17 @@
 // logos
 //--------------------------------------------------
 .logo {
+  &--cci {
+    @extend %logo;
+    background-image: image-url('logos/logo-cci.svg');
+    width: rem-calc(240); height: rem-calc(16);
+  }
+
+  &--esrc {
+    @extend %logo;
+    background-image:  image-url('logos/logo-esrc.svg');
+    width: rem-calc(54); height: rem-calc(45);
+  }
 
   &--foc {
     @extend %logo;

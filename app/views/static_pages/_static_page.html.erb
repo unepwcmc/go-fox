@@ -5,7 +5,7 @@
 
   <nav-scroll :nav-array="<%= page_sections(page) %>"></nav-scroll>
 
-  <div class="container--public">
+  <div class="container--public static-page">
     <div class="gutters content-padding--public">
 
       <% t(page).each_with_index do |item, index| %>
@@ -15,6 +15,13 @@
 
           <% if item[:content] %>
             <div><%= item[:content].html_safe %></div>
+          <% end %>
+
+          <% if item[:image] %>
+            <figure>
+              <%= image_tag item[:image], alt: item[:image_alt], class: 'static-page__figure' %>
+              <figcaption><%= item[:caption] %></figcaption>
+            </figure>
           <% end %>
 
           <% if item[:accordion] %>
@@ -28,4 +35,3 @@
   </div>
 
 </div>
-<%= render 'global_public/cta' %>

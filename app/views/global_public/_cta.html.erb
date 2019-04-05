@@ -1,7 +1,7 @@
 <div class="cta--next-steps flex flex-v-center">
   <div class="container--public-small">
-    <h3>Research and publications</h3>
-    <p>Data from the Future of Conservation survey have been used to identify the values held by conservationists, and how these relate to their backgrounds (such as nationality, educational background, or experience of different ecosystems). We continue to carry out new analyses using data collected through this website, and aim to continue disseminating our findings amongst the conservation community.</p>
+    <h3><%= t('research_and_publication.title') %></h3>
+    <p><%= t('research_and_publication.description') %></p>
     <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), title: 'Take the survey', class: 'button--blue-shadow' %>
   </div>
 </div>

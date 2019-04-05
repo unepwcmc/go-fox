@@ -11,8 +11,8 @@
           <li class="nav__li"><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'nav__a' %></li>
         <% end %>
       </ul>
-
-      <%= link_to '', root_path, title: 'Future of Conservation', class: 'logo--foc-white' %>
+      
+      <%= render 'global/footer_logos'%>
     </div>
 
     <p class="footer__copyright no-margin">&copy; Copyright <%= Date.today.year %> GoFox</p>
