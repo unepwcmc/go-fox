@@ -4,7 +4,13 @@
       <i class="material-icons">arrow_back</i><span>Responses list</span>
     <% end %>
   <% end %>
-  <h1 class="h1--small-uppercase">Results <span class="normal">ID<%= @response.id %></span></h1>
+  <h1 class="h1--small-uppercase">
+    <% if current_user %>
+      Results <span class="normal">ID<%= @response.id %></span>
+    <% else %>
+      Your Results
+    <% end %>
+  </h1>
 
   <div class="title-bar--hidden"></div>
 </div>
