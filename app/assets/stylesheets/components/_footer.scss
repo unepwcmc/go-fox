@@ -1,68 +1,63 @@
 //--------------------------------------------------
-// footer - shared styles
-//--------------------------------------------------
-%footer {
-  @extend .gutters;
-  background-color: $blue-xdark;
-}
-
-//--------------------------------------------------
 // footer
 //--------------------------------------------------
 .footer {
-  
-  &__funder-logos {
-    margin-right: auto;
+  &__content {
+    flex-wrap: wrap;
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(30);
+    
+    @include breakpoint($medium) { 
+      flex-wrap: nowrap;
+      margin: 0 auto;
+    }
   }
 
-//--------------------------------------------------
-// footer - admin
-//--------------------------------------------------
-  &--admin {
-    @extend %footer;
-    color: $white;
-    width: auto; height: rem-calc(66);
+    &__copyright {
+      font-size: rem-calc(14);
+      margin: rem-calc(10 0);
+      @include breakpoint($medium) { font-size: rem-calc(16); }
+    }
+
+    &__login {
+      @extend .flex;
+      @extend .flex-column;
+      @extend .flex-1-half;
+      @extend .flex-v-start;
+      font-size: rem-calc(14);
+
+      @include breakpoint($medium) { display: none; }
+    }
+
+  &--secondary {
+    background: $white;
+    color: $blue-xdark;
+    border-top: solid $blue-xlight 1px;
+
+    .footer__content {
+      padding-top: rem-calc(10);
+      padding-bottom: rem-calc(10);
+
+      flex-direction: column;
+
+      @include breakpoint($small) {
+        flex-direction: row;
+      }
+    }
   }
 
-//--------------------------------------------------
-// footer - public
-//--------------------------------------------------
-  &--public {
-    @extend %footer;
+    &__funder-logos {
+      flex-direction: column;
+      
+      @include breakpoint($small) {
+        flex-direction: row;
+      }
+    }
+
+  &--primary {
+    background-color: $blue-xdark;
     color: $blue-xlight;
 
     position: relative;
-
-    .footer {
-      &__content {
-        flex-wrap: wrap;
-        
-        padding: rem-calc(24 0);
-
-        @include breakpoint($medium) { 
-          flex-wrap: nowrap;
-          height: rem-calc(130);
-          padding: 0;
-        }
-      }
-
-        &__copyright {
-          border-top: solid $blue-xlight 1px;
-          font-size: rem-calc(14);
-          padding: rem-calc(11 0);
-
-          @include breakpoint($medium) { font-size: rem-calc(16); }
-        }
-
-        &__login {
-          @extend .flex;
-          @extend .flex-column;
-          @extend .flex-1-half;
-          @extend .flex-v-start;
-          font-size: rem-calc(14);
-
-          @include breakpoint($medium) { display: none; }
-        }
-    }
   }
 }

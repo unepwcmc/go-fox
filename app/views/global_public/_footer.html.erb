@@ -1,7 +1,6 @@
-<footer class="footer--public flex flex-v-center">
-  <div class="container--public">
-
-    <div class="footer__content flex flex-v-center flex-h-between">
+<footer>
+  <div class="footer--primary">
+    <div class="container--public footer__content flex flex-v-center flex-h-between">
       <ul class="nav--footer ul-unstyled flex flex-wrap">
         <li class="nav__li"><%= link_to 'Home', root_path, title: 'Future of Conservation', class: 'nav__a' %></li>
         <li class="nav__li"><%= link_to 'About the Debate', about_the_debate_path, title: 'About the Debate', class: 'nav__a' %></li>
@@ -11,11 +10,14 @@
           <li class="nav__li"><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'nav__a' %></li>
         <% end %>
       </ul>
-      
-      <%= render 'global/footer_logos'%>
+      <%= link_to '', root_path, title: 'Future of Conservation', class: 'logo--foc-white' %>
     </div>
-
-    <p class="footer__copyright no-margin">&copy; Copyright <%= Date.today.year %> GoFox</p>
-
   </div>
+
+  <div class="footer--secondary">
+    <div class="container--public footer__content flex flex-v-center flex-h-between">
+      <p class="footer__copyright no-margin">&copy; Copyright <%= Date.today.year %></p>
+      <%= render 'global/funder_logos'%>
+    </div>
+  <div>
 </footer>

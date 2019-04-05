@@ -4,12 +4,11 @@
 %logo {
   background-repeat: no-repeat;
   background-size: contain;
-  margin: rem-calc(10 0);
 
   display: block;
 
   &:not(:last-child) {
-    margin-right: rem-calc(10);
+    margin-right: rem-calc(20);
   }
 }
 
@@ -27,12 +26,14 @@
     @extend %logo;
     background-image: image-url('logos/logo-cci.svg');
     width: rem-calc(245); height: rem-calc(16);
+    margin: rem-calc(10 0);
   }
 
   &--esrc {
     @extend %logo;
     background-image:  image-url('logos/logo-esrc.svg');
-    width: rem-calc(54); height: rem-calc(45);
+    width: rem-calc(72); height: rem-calc(60);
+    margin: rem-calc(10 0);
   }
 
   &--foc {
