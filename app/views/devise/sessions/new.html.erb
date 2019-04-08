@@ -38,7 +38,7 @@
           <tab title="<%= item[:title] %>">
             <%= image_tag item[:icon], alt: 'Icon', class: 'tab__icon' %>
 
-            <p><%= item[:description] %></p>
+            <p><%= item[:description].html_safe %></p>
           </tab>
         <% end %>
       </tabs>

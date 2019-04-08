@@ -4,19 +4,24 @@
 %logo {
   background-repeat: no-repeat;
   background-size: contain;
-  margin: rem-calc(10 0);
 
   display: block;
 
   &:not(:last-child) {
-    margin-right: rem-calc(10);
+    margin-right: rem-calc(20);
+  }
+
+  &--about {
+    background-position: center;
+    width: rem-calc(150);
+    margin: rem-calc(10 20);
   }
 }
 
 %foc {
-  width: rem-calc(135); height: rem-calc(45);
+  width: rem-calc(135); height: rem-calc(44);
 
-  @include breakpoint($medium) { width: rem-calc(166); height: rem-calc(56); }
+  @include breakpoint($medium) { width: rem-calc(166); height: rem-calc(53); }
 }
 
 //--------------------------------------------------
@@ -26,13 +31,43 @@
   &--cci {
     @extend %logo;
     background-image: image-url('logos/logo-cci.svg');
-    width: rem-calc(240); height: rem-calc(16);
+    width: rem-calc(245); height: rem-calc(16);
+    margin: rem-calc(10 0);
   }
 
   &--esrc {
     @extend %logo;
     background-image:  image-url('logos/logo-esrc.svg');
-    width: rem-calc(54); height: rem-calc(45);
+    width: rem-calc(72); height: rem-calc(60);
+    margin: rem-calc(10 0);
+  }
+
+  &--uoc {
+    @extend %logo;
+    @extend %logo--about;
+    background-image: image-url('logos/logo-uoc.svg');
+    height: rem-calc(43);
+  }
+
+  &--uoe {
+    @extend %logo;
+    @extend %logo--about;
+    background-image: image-url('logos/logo-uoe.svg');
+    height: rem-calc(35);
+  }
+
+  &--uol {
+    @extend %logo;
+    @extend %logo--about;
+    background-image: image-url('logos/logo-uol.svg');
+    height:rem-calc(42);
+  }
+
+  &--unepwcmc {
+    @extend %logo;
+    @extend %logo--about;
+    background-image: url('https://s3.amazonaws.com/wcmc.logo/UNEP_WCMC_logo.svg');
+    height: rem-calc(34);
   }
 
   &--foc {

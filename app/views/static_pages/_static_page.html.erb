@@ -7,6 +7,7 @@
 
   <div class="container--public static-page">
     <div class="gutters content-padding--public">
+    
 
       <% t(page).each_with_index do |item, index| %>
 
@@ -28,6 +29,9 @@
             <%= render partial: 'global_public/accordion', locals: { accordion: item[:accordion] } %>
           <% end %>
 
+          <% if item[:title] == 'About us' %>
+            <%= render 'global/researcher_logo_banner' %>
+          <% end %>
         </div>
       <% end %>
 
