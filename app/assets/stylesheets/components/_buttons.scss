@@ -13,6 +13,13 @@
   display: inline-flex;
 
 //---------------
+// borders
+//---------------
+  &--border-blue {
+    border: solid rem-calc(1) $blue;
+  }
+
+//---------------
 // colours
 //---------------
   &--beige {
@@ -77,6 +84,11 @@
 //---------------
 // size
 //---------------
+  &--small {
+    font-size: rem-calc(14);
+    padding: rem-calc(10);
+  }
+
   &--large {
     margin-left: rem-calc(20);
     padding: rem-calc(8 24 8 16);
@@ -108,6 +120,14 @@
     margin: rem-calc(20 0);
   }
 
+  &--blue-light {
+    @extend %button;
+    @extend %button--blue-light;
+    @extend %button--rounded;
+    @extend %button--padded;
+    margin: rem-calc(20 0);
+  }
+
   &--white {
     @extend %button;
     @extend %button--rounded;
@@ -116,7 +136,19 @@
     border: solid $white 1px;
     color: $white;
   }
+  
+  &--outline-blue {
+    @extend %button;
+    @extend %button--border-blue;
+    @extend %button--rounded;
+    @extend %button--padded;
+    color: $blue;
 
+    &:hover {
+      border-color: $blue-dark;
+      color: $blue-dark;
+    }
+  }
 //---------------
 // specific
 //---------------
@@ -145,12 +177,27 @@
       border-color: $blue-dark;
       color: $blue-dark;
     }
+
+    .footer--public & { 
+      border-color: white;
+      color: white;
+      margin-top: rem-calc(4);
+      padding-top: rem-calc(4); 
+      padding-bottom: rem-calc(4);
+    }
   }
 
   &--sign-up {
     @extend %button;
     @extend %button--blue-light;
     @extend %button--oblong;
+  }
+
+  &--survey-image {
+    @extend %button;
+    @extend %button--blue-light;
+    @extend %button--rounded;
+    @extend %button--small;
   }
 
   &--new-survey {
@@ -219,5 +266,10 @@
     text-decoration: none;
     
     &:hover { color: $grey-dark; }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }

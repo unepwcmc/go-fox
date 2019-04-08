@@ -2,13 +2,17 @@
 #
 # Table name: surveys
 #
-#  id         :integer          not null, primary key
-#  published  :boolean
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  uuid       :string           not null
-#  locked     :boolean          default(FALSE)
+#  id          :integer          not null, primary key
+#  name        :string
+#  published   :boolean
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  uuid        :string           not null
+#  description :text
+#  locked      :boolean          default(FALSE)
+#  master      :boolean          default(FALSE)
+#  settings    :jsonb
 #
 # Indexes
 #
@@ -32,6 +36,12 @@ class Survey < ApplicationRecord
   accepts_nested_attributes_for :translations
   accepts_nested_attributes_for :customised_questions, allow_destroy: true
 
+  validates_uniqueness_of :master, if: :master
+  validates :customised_questions_max_length, inclusion: { in: [nil, 0, 1, 2, 3],
+                                                           message: "Only up to 3 customised questions are allowed." }
+  validates :customised_questions_options_max_length, inclusion: { in: [nil, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                                                                   message: "Only up to 10 customised question options are allowed." }
+
   def to_param
     uuid
   end
@@ -41,9 +51,25 @@ class Survey < ApplicationRecord
     # taking into account customised questions,
     # and excluding and demographic questions that they may override.
     customised_questions      = self.customised_questions
-    excluded_demographic_ids  = customised_questions.pluck(:demographic_question_id)
-    demographic_questions     = DemographicQuestion.all.reject {|question| excluded_demographic_ids.include?(question.id) }
+    #excluded_demographic_ids  = customised_questions.pluck(:demographic_question_id)
+    demographic_questions     = DemographicQuestion.all#.reject {|question| excluded_demographic_ids.include?(question.id) }
 
     Question.order("RANDOM()") + demographic_questions + customised_questions
+  end
+
+  def self.master_survey
+    find_by_master(true)
+  end
+
+  def customised_questions_max_length
+    customised_questions.length
+  end
+
+  def customised_questions_options_max_length
+    return nil if customised_questions.nil?
+    options_lengths = customised_questions.map do |cq|
+      cq.options.length
+    end
+    options_lengths.sort.last
   end
 end

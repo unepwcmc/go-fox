@@ -3,20 +3,21 @@
   <head>
     <title>The Future of Conservation</title>
     <%= csrf_meta_tags %>
-    
+    <meta content='width=device-width,initial-scale=1.0' name='viewport'>
+
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application-vue' %>
 
     <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'application-vue' %>
-    
+
     <%= render 'global/favicon' %>
   </head>
 
   <body class="base--public">
     <%= render 'global_public/topbar' %>
+    <%= render 'global_admin/flash_message' %>
 
     <div id="v-app">
       <%= yield %>

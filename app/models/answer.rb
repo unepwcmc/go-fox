@@ -44,26 +44,14 @@ class Answer < ApplicationRecord
 
   def value
     case self.raw
-    when "Strongly Disagree"  then -1.0
-    when "Disagree"           then -0.5
-    when "Agree"              then 0.5
-    when "Strongly Agree"     then 1.0
+    when "Strongly Disagree"  then -3
+    when "Disagree"           then -2
+    when "Slightly Disagree"  then -1
+    when "Slightly Agree"     then 1
+    when "Agree"              then 2
+    when "Strongly Agree"     then 3
     else
       0.0
     end
-  end
-
-  def score
-    # Only return a score for scale answers using the Question class
-    return nil if self.answerable_type != "Question"
-
-    question  = self.question
-    value     = self.value
-
-    {
-      x: value * question.x_weight,
-      y: value * question.y_weight,
-      z: value * question.z_weight,
-    }
   end
 end

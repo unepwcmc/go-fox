@@ -3,31 +3,40 @@
   <head>
     <title>GoFox</title>
     <%= csrf_meta_tags %>
-    
+    <meta content='width=device-width,initial-scale=1.0' name='viewport'>
+
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application-vue' %>
 
     <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'application-vue' %>
-    
+
     <%= render 'global/favicon' %>
   </head>
 
   <body class="base--admin">
+
     <%= render 'global_admin/topbar' %>
     <%= render 'global_admin/nav' %>
 
-    <div class="container">
-      <% if notice %><p class="notice"><%= notice %></p><% end %>
-      <% if alert %><p class="alert"><%= alert %></p><% end %>
-    </div>
-      
+    <% if content_for?(:title) %>
+      <%= render partial: 'global_admin/page_title', locals: { title: content_for(:title) } %>
+    <% end %>
+
+    <%= render 'global_admin/flash_message' %>
+
     <div id="v-app">
       <%= yield %>
     </div>
+    <% if current_user %>
+      <%= render 'global_admin/footer' %>
+    <% else %>
+      <%= render 'global_public/footer' %>
+    <% end %>
 
-    <%= render 'global_admin/footer' %>
+    <% if Rails.env == 'production' %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
   </body>
 </html>

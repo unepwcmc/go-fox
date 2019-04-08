@@ -21,9 +21,7 @@
       <% end %>
     </div>
 
-    <div class="flex flex-1-half box--grey">
-      IMAGE?
-    </div>
+    <chart-results :data="<%= @results_chart_data %> "></chart-results>
   </div>
 
   <ul class="table--results ul-unstyled">
@@ -36,12 +34,13 @@
     <% @responses.each do |response| %>
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
-        <p class="table__heading-2">#TODO</p>
+        <p class="table__heading-2"><%= response_score(response) %></p>
         <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
         <p class="table__buttons flex flex-v-center">
           <%= link_to survey_response_path(@survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
             <i class="material-icons">delete</i>
           <% end %>
+          
           <%= link_to results_survey_response_path(@survey, response), title: 'View survey results', class: 'button--large-chevrons flex flex-v-center' do %>
             Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>

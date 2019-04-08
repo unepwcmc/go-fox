@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container--small content-padding">
+  <p id="notice"><%= notice %></p>
 
-<% I18n.available_locales.each do |locale| %>
-  <h1><%= locale %></h1>
-  <% I18n.locale = locale %>
-  <p>
-    <strong>Text:</strong>
-    <%= @question.text %>
-  </p>
-<% end %>
+  <% I18n.available_locales.each do |locale| %>
+    <h1><%= locale %></h1>
+    <% Globalize.with_locale(locale) do %>
+      <p>
+        <strong>Text:</strong>
+        <%= @question.text %>
+      </p>
+    <% end %>
+  <% end %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Back', questions_path %>
+</div>

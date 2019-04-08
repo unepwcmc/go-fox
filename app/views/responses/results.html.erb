@@ -1,65 +1,41 @@
 <div class="title-bar flex flex-v-center gutters">
-  <%= link_to survey_responses_path(@survey), title: 'Back to the list of survey responses', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
-    <i class="material-icons">arrow_back</i><span>Responses list</span>
+  <% if current_user %>
+    <%= link_to survey_responses_path(@survey), title: 'Back to the list of survey responses', class: 'button--back flex flex-v-center flex-1 flex-h-start' do %>
+      <i class="material-icons">arrow_back</i><span>Responses list</span>
+    <% end %>
   <% end %>
-
-  <h1 class="h1--small-uppercase">Results <span class="normal">ID<%= @response.id %></span></h1>
+  <h1 class="h1--small-uppercase">
+    <% if current_user %>
+      Results <span class="normal">ID<%= @response.id %></span>
+    <% else %>
+      Your Results
+    <% end %>
+  </h1>
 
   <div class="title-bar--hidden"></div>
 </div>
 
 <div class="container--medium content-padding">
 
-  <div class="box--grey-light flex">
-    <div class="flex-2-thirds">
-      <p>
-        <strong>x_score:</strong>
-        <%= @response.x_score %>
-      </p>
-
-      <p>
-        <strong>y_score:</strong>
-        <%= @response.y_score %>
-      </p>
-
-      <p>
-        <strong>z_score:</strong>
-        <%= @response.z_score %>
-      </p>
-
-      <p>
-        <strong>classification:</strong>
-        <%= @response.classification.name %>
-      </p>
-    </div>
-
-    <div class="flex-1-third">
-      <h2>Filter results by</h2>
-      <div>
-        Filters go here
-      </div>
-    </div>
+  <div class="box--grey-light box-padding--even">
+    <chart-results :data="<%= @results_chart_data %>"></chart-results>
   </div>
-  
-  <div class="flex">
+
+  <div class="results__content flex">
     <div class="flex-2-thirds">
       <div class="block--results">
-        <h2><%= t('results.title1') %></h2>
-        <div><%= t('results.content1') %></div>
-      </div>
-
-      <div class="block--results">
-        <h2><%= t('results.title2') %></h2>
-        <div><%= t('results.content2') %></div>
+        <h2><%= t('results.title') %></h2>
+        <div><%= t('results.content').html_safe %></div>
       </div>
     </div>
 
-    <div class="flex-1-third">
-      <div class="box--beige-light box-padding box-spacing box-margin-left">
+    <div class="results__content--right flex-1-third">
+      <div class="box--beige-light box-padding box-spacing box-margin-bottom">
         <h3>Contact</h3>
         <p class="text-14">For more information about The Future of Conservation project please email:</p>
         <p class="text-14"><a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a></p>
       </div>
+      <%= render 'global_public/sharing_icons' %>
     </div>
   </div>
 </div>

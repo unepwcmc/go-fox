@@ -1,6 +1,6 @@
-<div class="title-bar flex flex-h-center flex-v-center gutters">
-  <h1 class="h1--small-uppercase">All survey responses</h1>
-</div>
+<% content_for :title do %>
+  All survey responses
+<% end %>
 
 <div class="container--medium content-padding">
 
@@ -17,21 +17,21 @@
       <p class="table__heading table__heading-1">ID</p>
       <p class="table__heading table__heading-2">Score</p>
       <p class="table__heading table__heading-3">Created on</p>
-      <p class="table__heading table__heading-4">Organisation</p>
+      <p class="table__heading table__heading-4">Survey title</p>
     </li>
 
     <% @responses.each do |response| %>
       <li class="table__row flex flex-v-center">
         <p class="table__heading-1"><%= response.id %></p>
-        <p class="table__heading-2">#TODO</p>
+        <p class="table__heading-2"><%= response_score(response) %></p>
         <p class="table__heading-3"><%= response.created_at.strftime("%d/%m/%y") %></p>
-        <p class="table__heading-4"><%= response.survey.user.organisation_name %></p>
-        
+        <p class="table__heading-4"><%= response.survey.name %></p>
+
         <p class="table__buttons flex flex-v-center">
           <%= link_to survey_response_path(response.survey, response), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete result', class: 'button--delete flex flex-v-center' do %>
             <i class="material-icons">delete</i>
           <% end %>
-          
+
           <%= link_to results_survey_response_path(response.survey, response), title: 'View survey results', class: 'button--large-chevrons flex flex-v-center' do %>
             Result<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
           <% end %>

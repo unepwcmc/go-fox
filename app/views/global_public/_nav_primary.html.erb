@@ -1,7 +1,25 @@
-<nav class="nav--primary gutters">
-  <ul class="ul-unstyled ul-inline">
-    <li><%= link_to 'Take the Survey', '#TODO', class: "nav__link" %></li>
-    <li><%= link_to 'About the Project', about_the_project_path, class: "nav__link" + current_class?(about_the_project_path) %></li>
-    <li><%= link_to 'About the Debate', about_the_debate_path, class: "nav__link" + current_class?(about_the_debate_path) %></li>
-  </ul>
-</nav>
+<nav-burger class="gutters">
+  <nav-link
+    href="<%= new_survey_response_path(Survey.master_survey) %>"
+    text="Take the Survey"
+    :current-page="<%= is_current_page?(new_survey_response_path(Survey.master_survey)) %>">
+  </nav-link>
+
+  <nav-link
+    href="<%= about_the_project_path %>"
+    text="About the Project"
+    :current-page="<%= is_current_page?(about_the_project_path) %>">
+  </nav-link>
+
+  <nav-link
+    href="<%= about_the_debate_path %>"
+    text="About the Debate"
+    :current-page="<%= is_current_page?(about_the_debate_path) %>">
+  </nav-link>
+
+  <nav-link
+    href="<%= about_go_fox_path %>"
+    text="About Go-Fox"
+    :current-page="<%= is_current_page?(about_go_fox_path) %>">
+  </nav-link>
+</nav-burger>

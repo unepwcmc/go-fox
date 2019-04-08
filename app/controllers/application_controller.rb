@@ -16,7 +16,9 @@ class ApplicationController < ActionController::Base
       :admin
     ]
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: keys)
+    devise_parameter_sanitizer.permit(:sign_up, keys: keys +
+                                     [:use_type, :org_type, :org_type_other,
+                                      :country, :wider_network, :wider_network_details])
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
   end
 

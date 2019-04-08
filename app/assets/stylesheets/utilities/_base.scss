@@ -26,7 +26,11 @@ body {
 h1 {
   .base--admin & { font-size: rem-calc(40); }
 
-  .base--public & { font-size: rem-calc(48); }
+  .base--public & { 
+    font-size: rem-calc(24); 
+
+    @include breakpoint($medium) { font-size: rem-calc(48); }
+  }
 
   &--small-uppercase { 
     @extend %small-uppcase-title;
@@ -38,8 +42,13 @@ h2 {
 
   .base--public & {
     color: $grey-dark;
-    font-size: rem-calc(40);
-    margin: rem-calc(0 0 50 0);
+    font-size: rem-calc(24);
+    margin: rem-calc(0 0 20 0);
+
+    @include breakpoint($medium) { 
+      font-size: rem-calc(40);
+      margin: rem-calc(0 0 50 0);
+    }
   }
 
   &--small-uppercase {
@@ -50,6 +59,14 @@ h2 {
 
 h3 {
   margin-top: 0;
+
+  .question & {
+    color: $grey-dark;
+    font-size: rem-calc(16);
+    margin: 0;
+
+    @include breakpoint($medium) { font-size: rem-calc(24); }
+  }
 }
 
 h4 {
@@ -65,6 +82,15 @@ a {
   font-weight: bold;
 
   &:hover { text-decoration: none; }
+}
+
+figure {
+  margin: 0;
+  @include breakpoint($medium) { padding: rem-calc(20 40) }
+}
+
+figcaption {
+  font-size: rem-calc(14);
 }
 
 //--------------------------------------------------
@@ -94,19 +120,29 @@ a {
   @include breakpoint($medium){ width: $site-width; }
 }
 
+@mixin gutters($side:'both', $type:'padding') {
+  $sides: if($side == 'both', ('left', 'right'),  ($side));
+
+  @each $s in $sides {
+    #{$type}-#{$s}: $gutter-small;
+
+    @include breakpoint($medium) { #{$type}-#{$s}: $gutter-medium; }
+    @include breakpoint($large) { #{$type}-#{$s}: $gutter-large; }
+  }
+}
+
+.gutter {
+  &--left {
+    @include gutters('left');
+  }
+
+  &--right {
+    @include gutters('right');
+  }
+}
+
 .gutters {
-  padding-left: $gutter-small;
-  padding-right: $gutter-small;
-
-  @include breakpoint($medium) {
-    padding-left: $gutter-medium;
-    padding-right: $gutter-medium;
-  }
-
-  @include breakpoint($large) {
-    padding-left: $gutter-large;
-    padding-right: $gutter-large;
-  }
+  @include gutters;
 }
 
 .container {
@@ -129,8 +165,14 @@ a {
 
     &-small {
       @extend %container;
+      
+      @include breakpoint($small){ width: 60% }
       @include breakpoint($medium){ width: rem-calc(760); }
     }
+  }
+
+  &--about {
+    @include breakpoint($small) { display: flex; }
   }
 }
 
@@ -143,5 +185,37 @@ a {
   &--public {
     padding-top: rem-calc(30);
     padding-bottom: rem-calc(40);
+  }
+}
+
+@mixin content-padding--public {
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(40);
+}
+
+//--------------------------------------------------
+// scrollbar
+//--------------------------------------------------
+//not supported by IE, Edge or Firefox
+
+.custom-scroll {
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: none;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba($purple-light, 0.5); 
+    border-radius: 10px;
+    border: rem-calc(2) solid rgba($blue-xlight, 0.5);
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($purple-light, 1);
+    border-color:rgba($blue-xlight, 1);
+  
   }
 }

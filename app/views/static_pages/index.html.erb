@@ -3,27 +3,35 @@
 <header class="hero--public flex flex-v-center">
   <div class="hero__content container--public center">
     <h1>Inform debates on the future of conservation</h1>
-    <p class="hero__tagline">Explore the views of conservationists on a range of issues, see how you compare in the movement globally and contribute your views to shape future debates on conservation</p>
+    <p class="hero__tagline">Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.</p>
 
     <div>
-      <%= link_to 'About', '', class: 'button--white hero__button' %>
-      <%= link_to 'Take the survey', '', class: 'button--blue-shadow hero__button' %>
+      <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
     </div>
   </div>
 </header>
 
-<div>
+<div class="gutters">
+  <div class="block--public container--public-small">
+    <%= image_tag 'logos/logo-foc-circle.svg', alt: 'Future of Conservation logo', class: "block__icon-foc" %>
 
-  <% homepageContent.each do |content| %>
+    <h2><%= t('homepage.intro.title') %></h2>
+    <%= t('homepage.intro.content').html_safe %>
+
+    <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
+
+    <p><%= t('homepage.intro.ethics_statement').html_safe %></p>
+  </div>
+
+  <% t('homepage.blocks').each do |block| %>
     <div class="block--public container--public-small">
-      <%#= image_tag content[:icon], alt: 'Icon' %>
+      <% if block[:image] %>
+        <%= image_tag block[:image], alt: block[:image_alt], class: "block__icon-#{block[:image_class]}" %>
+      <% end %>
 
-      <h2><%= content[:title] %></h2>
-      <p><%= content[:description] %></p>
-
-      <%= link_to 'Find out more', content[:url], title: "Find out more about #{content[:title]}", class: 'button--blue-shadow' %>
+      <h2><%= block[:title] %></h2>
+      <p><%= block[:description].html_safe %></p>
     </div>
   <% end %>
-</div>
 
-<%= render 'global_public/cta' %>
+</div>

@@ -41,6 +41,7 @@ gem 'webpacker', '~> 3.2.2'
 gem 'react-rails', '~> 2.4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'appsignal'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "factory_bot_rails", "~> 4.0"
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -67,6 +69,7 @@ group :development do
   gem 'capistrano-sidekiq'
   gem 'rails-erd', require: false
   gem "letter_opener", '~> 1.6.0'
+  gem 'capistrano-sidekiq'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

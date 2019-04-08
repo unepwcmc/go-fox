@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313143111) do
+ActiveRecord::Schema.define(version: 20181026141856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,10 @@ ActiveRecord::Schema.define(version: 20180313143111) do
   end
 
   create_table "customised_questions", force: :cascade do |t|
-    t.bigint "demographic_question_id"
     t.bigint "survey_id"
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["demographic_question_id"], name: "index_customised_questions_on_demographic_question_id"
     t.index ["survey_id"], name: "index_customised_questions_on_survey_id"
   end
 
@@ -118,9 +116,9 @@ ActiveRecord::Schema.define(version: 20180313143111) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "x_weight"
-    t.float "y_weight"
-    t.float "z_weight"
+    t.float "weight"
+    t.string "axis_name"
+    t.integer "equation_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -130,9 +128,9 @@ ActiveRecord::Schema.define(version: 20180313143111) do
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "x_score"
-    t.float "y_score"
-    t.float "z_score"
+    t.float "f1_score"
+    t.float "f2_score"
+    t.float "f3_score"
     t.bigint "classification_id"
     t.index ["classification_id"], name: "index_responses_on_classification_id"
     t.index ["survey_id"], name: "index_responses_on_survey_id"
@@ -158,6 +156,8 @@ ActiveRecord::Schema.define(version: 20180313143111) do
     t.string "uuid", null: false
     t.text "description"
     t.boolean "locked", default: false
+    t.boolean "master", default: false
+    t.jsonb "settings", default: {}
     t.index ["user_id"], name: "index_surveys_on_user_id"
     t.index ["uuid"], name: "index_surveys_on_uuid", unique: true
   end
@@ -178,12 +178,17 @@ ActiveRecord::Schema.define(version: 20180313143111) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "use_type", default: 0
+    t.string "org_type", default: "", null: false
+    t.string "org_type_other", default: ""
+    t.string "country", default: ""
+    t.boolean "wider_network", default: false, null: false
+    t.string "wider_network_details", default: ""
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "answers", "responses"
-  add_foreign_key "customised_questions", "demographic_questions"
   add_foreign_key "customised_questions", "surveys"
   add_foreign_key "responses", "surveys"
   add_foreign_key "surveys", "users"

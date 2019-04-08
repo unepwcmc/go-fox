@@ -59,6 +59,8 @@ GEM
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
+    appsignal (2.7.1)
+      rack
     arel (8.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -108,6 +110,7 @@ GEM
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
     crass (1.0.3)
+    database_cleaner (1.7.0)
     devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -279,6 +282,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml
   annotate (~> 2.7.2)
+  appsignal
   byebug
   capistrano (~> 3.8.2)
   capistrano-bundler (~> 1.1)
@@ -289,6 +293,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   cocoon (~> 1.2.11)
   coffee-rails (~> 4.2)
+  database_cleaner
   devise (~> 4.4)
   dotenv-rails (~> 2.2, >= 2.2.1)
   factory_bot_rails (~> 4.0)

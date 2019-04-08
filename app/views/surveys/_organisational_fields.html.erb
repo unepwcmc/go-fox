@@ -1,0 +1,273 @@
+<% if survey.id.nil? %>
+  <div class="field">
+    <label for="">
+      Previous survey ID.
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.text_field '[settings][survey_previous_id]' %>
+  </div>
+
+  <div class="field">
+    <%= render partial: 'form_elements/collection_buttons',
+      locals: {
+        form: form,
+        type: "radio",
+        option_class: "inline",
+        title: "Default language",
+        rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last] 
+      } %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Participants' organisation name
+    </label>
+    <p>
+      What is the name of the group/organisation to which the survey participants belong?
+    </p>
+    <%= form.text_field '[settings][participant_org_name]' %>
+  </div>
+
+  <div class="field">
+    <%= render partial: 'form_elements/collection_buttons',
+    locals: { 
+      form: form,
+      type: "radio",
+      title: "1. Type of organisation.",
+      rb_config: ['[settings][type_of_organisation]', surveys_data("type_of_organisation"), :first, :last] 
+    } %>
+    <%= form.text_field '[settings][org_type_other]' %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      2. Location of organisation.
+    </label>
+    <p>
+      Lorem ipsum.
+    </p>
+    <%= form.select '[settings][location_of_organisation]', surveys_data("location_of_organisation") %>
+  </div>
+
+  <div class="field">
+    <%= render partial: 'form_elements/collection_buttons',
+        locals: { 
+        form: form,
+        type: "radio",
+        option_class: "inline",
+        title: "3. Is organisation part of a wider network of organisations?",
+        rb_config: ['[settings][wider_network]', surveys_data("wider_network"), :first, :last] 
+      } %>
+    <%= form.text_area '[settings][wider_network_details]' %>
+  </div>
+
+  <div class="field">
+    <%= render partial: 'form_elements/collection_buttons',
+        locals: { 
+        form: form,
+        type: 'check_box',
+        option_class: 'one-col',
+        title: "4. What kind of conservation activities does the organisation do?",
+        rb_config: ['[settings][kind_of_conservation_activities]', surveys_data("kind_of_conservation_activities"), :first, :last]
+      } %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      5. Date established
+    </label>
+    (Date selection)
+    <%= form.date_select '[settings][date_established]', start_year: 1900, end_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Organisation website/url
+    </label>
+    <%= form.text_field '[settings][course_url]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      Size of organisation
+    </label>
+    <%= form.text_field '[settings][size_of_organisation]' %>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+
+  <div class="field">
+    <label for="">
+      6. Size of group participating in survey
+    </label>
+    Lorem ipsum
+    <%= form.text_field '[settings][size_of_group]' %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      7. If a sub-group, please explain why
+    </label>
+    Lorem ipsum
+    <%= form.text_area '[settings][sub_group_explanation]' %>
+  </div>
+
+  <div class="field">
+  <%= render partial: 'form_elements/collection_buttons',
+      locals: { 
+      form: form,
+      type: 'check_box',
+      title: "8. Organisation funding sources",
+      option_class: 'one-col',
+      rb_config: ['[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last]
+    } %>
+    <%= form.text_area '[settings][organisation_funding_sources_other]' %>
+  </div>
+
+  <div class="field">
+    <%= render partial: 'form_elements/collection_buttons',
+      locals: { 
+      form: form,
+      type: "radio",
+      option_class: "two-col",
+      title: "9. Geographical scope",
+      rb_config: ['[settings][geographical_scope]', surveys_data("geographical_scope"), :first, :last]
+    } %>
+  </div>
+
+  <div class="field">
+  <%= render partial: 'form_elements/collection_buttons',
+      locals: { 
+      form: form,
+      type: "radio",
+      option_class: "inline",
+      title: "Follow up session?",
+      rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
+    } %>
+  </div>
+
+
+
+<!---
+  <div class="field">
+    <label for="">
+      Anonymity.
+    </label>
+    <%= form.collection_radio_buttons '[settings][anonymity]', surveys_data("anonymity"), :first, :last %>
+  </div>
+  --->
+
+  <div class="field">
+    <label for="">
+      Session date
+    </label>
+    (Date selection)
+    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
+  </div>
+
+  <div class="field">
+    <label for="">
+      What do you hope to achieve from using GO-FOX with this group?
+    </label>
+    <%= form.text_area '[settings][hope_to_achieve]' %>
+  </div>
+<% else %>
+  <p>
+    Previous survey ID: <%= survey.settings["survey_previous_id"] %>
+  </p>
+
+  <p>
+    Default language: <%= survey.settings["default_language"] %>
+  </p>
+
+  <p>
+    Participants' organisation name: <%= survey.settings["participant_org_name"] %>
+  </p>
+
+  <p>
+    Type of organisation: <%= survey.settings["type_of_organisation"] %>
+  </p>
+
+  <% if survey.settings["type_of_organisation"] == "other" %>
+    <p>
+      Details for other organisation: <%= survey.settings["org_type_other"] %>
+    </p>
+  <% end %>
+
+  <p>
+    Location of organisation: <%= survey.settings["location_of_organisation"] %>
+  </p>
+
+  <p>
+    Is organisation part of a wider network of organisations?: <%= survey.settings["wider_network"] %>
+  </p>
+
+  <p>
+    Wider network of organisations details: <%= survey.settings["wider_network_details"] %>
+  </p>
+
+  <p>
+    What kind of conservation activities does the organisation do?:
+    <ul>
+    <% kinds = survey.settings["kind_of_conservation_activities"].map{|k| surveys_data("kind_of_conservation_activities")[k.to_sym]}.compact! %>
+    <% kinds.each do |kind| %>
+      <li>
+        <%= kind %>
+      </li>
+    <% end %>
+    </ul>
+  </p>
+
+  <p>
+    Date established: <%= survey.settings["date_established"].map{|k,v| v}.join("-").to_date %>
+  </p>
+
+  <p>
+    Course website/url: <%= survey.settings["course_url"] %>
+  </p>
+
+  <p>
+    Size of organisation: <%= survey.settings["size_of_organisation"] %>
+  </p>
+
+  <p>
+    Sub group explanation: <%= survey.settings["sub_group_explanation"] %>
+  </p>
+
+  <p>
+    Organisation funding sources:
+    <% sources = survey.settings["organisation_funding_sources"].map{|k| surveys_data("organisation_funding_sources")[k.to_sym]}.compact! %>
+    <ul>
+    <% sources.each do |source| %>
+      <li>
+        <%= source %>
+      </li>
+    <% end %>
+    </ul>
+  </p>
+  <p>
+    Organisation funding sources other: <%= survey.settings["organisation_funding_sources_other"] %>
+  </p>
+
+  <p>
+    Geographical scope: <%= survey.settings["geographical_scope"] %>
+  </p>
+
+  <p>
+    Follow up session?: <%= survey.settings["follow_up_session"] %>
+  </p>
+
+  <p>
+    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
+  </p>
+
+  <p>
+    What do you hope to achieve from using GO-FOX with this class?: <%= survey.settings["hope_to_achieve"] %>
+  </p>
+<% end %>

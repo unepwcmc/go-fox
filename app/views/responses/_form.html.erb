@@ -1,37 +1,28 @@
-<%= form_with(model: [:survey, response], local: true) do |form| %>
-  <% if response.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+<%= form_with(model: [:survey, response], local: true, id: 'form-survey') do |form| %>
 
-      <ul>
-      <% response.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <validation-message message="Please complete the questions highlighted below to continue."></validation-message>
 
   <%= form.fields_for :answers do |answer_form| %>
-    <% if answer_form.object.question.class.name == "Question" %>
-      <h3><%= answer_form.object.question.text %></h3>
-      <p><%= answer_form.collection_radio_buttons :raw, scale_options_for_answers, :to_s, :to_s, { checked: answer_form.object.raw, required: true } %></p>
-      <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
-      <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
-    <% else answer_form.object.question.class.name == "DemographicQuestion" %>
-      <%= react_component "DemographicQuestion", {
-        question: answer_form.object.question,
-        questionType: answer_form.object.question.question_type,
-        questionClass: answer_form.object.question.class.name,
-        model: "response",
-        attribute: "answers_attributes",
-        index: answer_form.index,
-        options: answer_form.object.question.options,
-        field: "raw"
-      } %>
-    <% end %>
+
+    <page-item :index="<%= answer_form.index %>" class="question">
+
+      <template slot="formField" slot-scope="props">
+        <div class="question__title">
+          <h3>
+            <% question = answer_form.object.question %>
+            <%= question.text %>
+            <% if is_mandatory(question) %>*<% end %>
+          </h3>
+        </div>
+
+        <%= get_form_field answer_form %>
+
+        <%= answer_form.hidden_field :answerable_type, value: answer_form.object.question.class.name %>
+        <%= answer_form.hidden_field :answerable_id, value: answer_form.object.question.id %>
+      </template>
+    </page-item>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <submit id="form-survey"></submit>
+
 <% end %>

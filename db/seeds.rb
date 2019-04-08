@@ -6,15 +6,52 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.where(email: "test@test.com").first_or_create do |u|
-  u.admin                 = true
-  u.organisation_name     = "UNEP WCMC"
-  u.username              = "Informatics"
-  u.password              = "test1234"
-  u.password_confirmation = "test1234"
+secrets = Rails.application.secrets
 
-  puts "Admin created! \nU: test@test.com\nP: test1234"
+user = User.where(email: secrets.admin[:admin_email]).first_or_create do |u|
+  u.admin                 = true
+  u.organisation_name     = secrets.admin[:admin_organisation]
+  u.username              = secrets.admin[:admin_username]
+  u.password              = secrets.admin[:admin_password]
+  u.password_confirmation = secrets.admin[:admin_password]
+
+  puts "Admin created! \nU: #{secrets.admin[:admin_email]}\nP: #{secrets.admin[:admin_password]}"
 end
+
+settings = {
+  course_url: "http://www.unep-wcmc.org",
+  session_date: {"(1i)"=>"2019", "(2i)"=>"3", "(3i)"=>"8"},
+  size_of_group: 10,
+  wider_network: "false",
+  org_type_other: "",
+  hope_to_achieve: "",
+  date_established: {"(1i)": "2019", "(2i)": "3", "(3i)": "8"},
+  default_language: "en",
+  follow_up_session: "false",
+  geographical_scope: "international",
+  survey_previous_id: "",
+  participant_org_name: "",
+  size_of_organisation: "100",
+  type_of_organisation: "university",
+  sub_group_explanation: "",
+  wider_network_details: "",
+  location_of_organisation: "United Kingdom",
+  organisation_funding_sources: ["research_grants"],
+  kind_of_conservation_activities: ["research"],
+  organisation_funding_sources_other: ""
+}
+
+survey = Survey.where(master: true).first_or_create do |s|
+  s.published = true
+  s.locked    = false
+  s.user_id   = user.id
+  s.name      = "The Future of Conservation survey"
+  s.settings  = settings
+
+  puts "Created master survey for admin user: #{secrets.admin[:admin_email]}!"
+end
+
+survey.update_attributes(settings: settings)
 
 questions = [
   {
@@ -27,16 +64,25 @@ questions = [
     text: "Conservation will only succeed if it provides benefits for people",
   },
   {
+    axis_name: F2,
+    equation_id: 3,
     text: "Conserving nature for nature's sake should be a goal of conservation",
+    weight: 0.076
   },
   {
+    axis_name: F1,
+    equation_id: 4,
     text: "Conservation must benefit poor people because to do so is an ethical imperative",
+    weight: 0.162
   },
   {
     text: "To achieve conservation goals, the environmental impact of the world's rich must be reduced",
   },
   {
+    axis_name: F2,
+    equation_id: 6,
     text: "Conservation actions should primarily be informed by evidence from biological science",
+    weight: 0.260
   },
   {
     text: "It is acceptable for people to be displaced to make space for protected areas",
@@ -45,13 +91,19 @@ questions = [
     text: "Pristine nature, untouched by human influences, does not exist",
   },
   {
+    axis_name: F2,
+    equation_id: 9,
     text: "Strict protected areas are required to achieve most conservation goals",
+    weight: 0.071
   },
   {
     text: "Nature often recovers from even severe perturbations",
   },
   {
+    axis_name: F2,
+    equation_id: 10,
     text: "Conservation goals should be based on science",
+    weight: 0.276
   },
   {
     text: "Protecting nature for its own sake does not work",
@@ -63,31 +115,52 @@ questions = [
     text: "Conservation will only be a durable success if it has broad public support",
   },
   {
-    text: "Conservation should work with, not against, capitalism",
+    axis_name: F3,
+    equation_id: 14,
+    text: "Conservation should work with not against capitalism",
+    weight: 0.226
   },
   {
+    axis_name: F3,
+    equation_id: 15,
     text: "Working with corporations is not just pragmatic; they can be a positive force for conservation",
+    weight: 0.250
   },
   {
-    text: "To achieve conservation goals, human population growth must be reduced",
+    axis_name: F2,
+    equation_id: 16,
+    text: "To achieve conservation goals human population growth must be reduced",
+    weight: 0.079
   },
   {
     text: "Human affection for nature grows in line with income",
   },
   {
+    axis_name: F1,
+    equation_id: 18,
     text: "Advancing the wellbeing of all people should be a goal of conservation",
+    weight: 0.123
   },
   {
     text: "Conservation should seek to reduce the emotional separation of people from nature",
   },
   {
+    axis_name: F1,
+    equation_id: 20,
     text: "Conservation goals should be based on ethical values",
+    weight: 0.082
   },
   {
+    axis_name: F2,
+    equation_id: 21,
     text: "Maintaining ecosystem processes should be a goal of conservation",
+    weight: 0.119
   },
   {
+    axis_name: F3,
+    equation_id: 22,
     text: "Economic arguments for conservation are risky because they can lead to unintended negative conservation outcomes",
+    weight: -0.083
   },
   {
     text: "Having multiple rationales for conservation weakens the conservation movement",
@@ -102,7 +175,10 @@ questions = [
     text: "Conservation communications are more effective when they use negative 'doom and gloom' messages rather than positive messages",
   },
   {
+    axis_name: F1,
+    equation_id: 24,
     text: "Giving a voice to those affected by conservation actions improves conservation outcomes",
+    weight: 0.157
   },
   {
     text: "To achieve its goals, conservation should seek to reform global trade",
@@ -117,30 +193,45 @@ questions = [
     text: "Maintaining biological diversity should be a goal of conservation",
   },
   {
+    axis_name: F3,
+    equation_id: 28,
     text: "Conservation will only be a durable success if it has the support of corporations",
+    weight: 0.126
   },
   {
+    axis_name: F1,
+    equation_id: 29,
     text: "Conservation should seek to do no harm to poor people",
+    weight: 0.142
   },
   {
+    axis_name: F1,
+    equation_id: 30,
     text: "Giving a voice to those affected by conservation action is an ethical imperative",
+    weight: 0.232
   },
   {
+    axis_name: F3,
+    equation_id: 31,
     text: "The best way for conservation to contribute to human wellbeing is by promoting economic growth",
+    weight: 0.096
   },
   {
-    text: "When communities manage their own resources, their efforts are more effective than top-down approaches",
+    axis_name: F1,
+    equation_id: 32,
+    text: "When communities manage their own resources their efforts are more effective than top-down approaches",
+    weight: 0.082
   }
 ]
+
 
 questions.each do |question|
   Question.where(text: question[:text]).first_or_create do |q|
     # for development only generate random x,y,z weights
-    if Rails.env == 'development'
-      q.x_weight = rand(-1.0...1.0)
-      q.y_weight = rand(-1.0...1.0)
-      q.z_weight = rand(-1.0...1.0)
-    end
+    q.axis_name = question[:axis_name]
+    q.equation_id = question[:equation_id]
+    q.weight = question[:weight]
+
     puts "Created question with the text: #{question[:text]}..."
   end
 end
@@ -187,12 +278,14 @@ countries = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Sa
 demographic_questions = [
   {
     text: "What is your age?",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Select your gender?",
     options: ["Male", "Female", "Other", "Prefer not to say"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "At what level is your highest completed educational qualification?",
@@ -202,7 +295,8 @@ demographic_questions = [
               "Masters degree/postgraduate qualification",
               "Doctorate",
               "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Which of the following best describes your educational specialism?",
@@ -212,21 +306,25 @@ demographic_questions = [
               "Humanities (e.g. literature, history, philosophy, languages)",
               "Interdisciplinary (a combination of at least two of natural science, social science and humanities)",
               "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "What is your country of nationality?",
     options: countries,
-    question_type: "Select box"
+    question_type: "Select box",
+    required: false
   },
   {
     text: "Where have you done most of your work as a conservationist? Please select up to three countries.",
     options: countries,
-    question_type: "Multiple Select Box"
+    question_type: "Multiple Select Box",
+    required: false
   },
   {
     text: "If more than three, please tell us how many countries you have worked in as a conservationist in total.",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "In which of the following sectors have you done conservation work in your career?",
@@ -236,12 +334,14 @@ demographic_questions = [
               "Government",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Do you have any substantial professional experience in a field other than conservation during your career?",
     options: ["Yes", "No", "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "In which of the following sectors have you done non-conservation work in your career?",
@@ -251,7 +351,8 @@ demographic_questions = [
               "Government",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Which of the following categories best describes your current professional engagement in conservation?",
@@ -261,7 +362,8 @@ demographic_questions = [
              "Mostly a practitioner",
              "Exclusively a practitioner",
              "Not applicable"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Which of the following categories best describes the seniority of your current role within conservation?",
@@ -271,7 +373,8 @@ demographic_questions = [
               "Fairly senior position",
               "Very senior position",
               "I am not currently working in conservation"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "In which of the following contexts have you done significant amounts of professional conservation work?",
@@ -282,7 +385,8 @@ demographic_questions = [
               "Unmodified or very little modified ecosystem (e.g. wilderness areas)",
               "Other",
               "Not applicable"],
-    question_type: "Checkbox"
+    question_type: "Checkbox",
+    required: true
   },
   {
     text: "Do you have any experiences of working as a researcher or as a practitioner on market based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, mitigation or species banking, certification)?",
@@ -290,7 +394,8 @@ demographic_questions = [
               "Yes, as a practitioner",
               "Yes, both as a researcher and as a practitioner",
               "No"],
-    question_type: "Radio button"
+    question_type: "Radio button",
+    required: true
   },
   {
     text: "Please choose up to four of the following items that you believe have been most important in shaping your conservation values",
@@ -305,26 +410,38 @@ demographic_questions = [
               "Professional experience during adulthood",
               "None of the above",
               "Not applicable"],
-     question_type: "Checkbox"
+     question_type: "Checkbox",
+     required: true
   },
   {
     text: "Please feel free to tell us about anything else that you think was important in shaping your values",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason.",
-    question_type: "Free Text"
+    question_type: "Free Text",
+    required: false
   },
   {
     text: "Have you taken this survey before?",
     options: ["Yes", "No"],
-    question_type: "Radio button"
-  }
+    question_type: "Radio button",
+    required: true
+  },
+  {
+    text: "If there are any issues which you think are relevant to debates about the future of conservation, which were not included in this survey, please briefly outline them below. We intend to incorporate new statements into the survey in the future, so your suggestions are very welcome.",
+    question_type: "Free Text",
+    required: false
+  },
 ]
 
 demographic_questions.each do |demographic_question|
   question  = DemographicQuestion.find_or_create_by(text: demographic_question[:text]) do |dq|
                 dq.question_type = demographic_question[:question_type]
+                dq.validation = {
+                  required: demographic_question[:required]
+                }.to_json
                 puts "+ Adding demographic question..."
                 puts demographic_question[:text]
               end

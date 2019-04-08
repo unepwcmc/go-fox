@@ -23,7 +23,9 @@ class DeviseTest < ActionDispatch::IntegrationTest
           organisation_name: user.organisation_name,
           email: user.email,
           password: user.password,
-          password_confirmation: user.password
+          password_confirmation: user.password,
+          org_type: user.org_type,
+          wider_network: user.wider_network
         }
       }
     end

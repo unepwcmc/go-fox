@@ -1,6 +1,6 @@
-<div class="title-bar flex flex-h-center flex-v-center gutters">
-  <h1 class="h1--small-uppercase">Surveys dashboard</h1>
-</div>
+<% content_for :title do %>
+  Surveys dashboard
+<% end %>
 
 <div class="container content-padding">
   <div class="flex">
@@ -33,7 +33,7 @@
                   <i class="material-icons">mode_edit</i>Edit
                 <% end %>
 
-                <popup icon="share" title="Share" url="<%= survey_url(survey) %>"></popup>
+                <popup icon="share" title="Share" url="<%= new_survey_response_url(survey) %>"></popup>
 
                 <%= link_to survey_responses_path(survey), title: 'View survey results', class: 'button--large-chevrons' do %>
                    Responses<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>

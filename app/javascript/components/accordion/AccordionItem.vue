@@ -1,7 +1,7 @@
 <template>
   <div class="accordion-item">
     <a class="accordion-item__title flex flex-h-between" @click="toggleAccordionContent()">
-      <span>{{ title }}</span>
+      <p>{{ title }}</p>
       <i class="material-icons">{{ arrow }}</i>
     </a>
     
@@ -52,21 +52,21 @@
 
 <style lang="scss">
   @keyframes open {
-    from { max-height: 0; },
+    from { max-height: 0; }
     to { max-height: 500px; }
   }
 
   @keyframes close {
-    from { max-height: 500px; },
+    from { max-height: 500px; }
     to { max-height: 0; }
   }
 
   .accordion-toggle-enter-active {
-    animation: open .5s forwards ease-in;
+    animation: open .4s forwards ease-in;
   }
 
   .accordion-toggle-leave-active {
-    animation: close .5s forwards ease-out;
+    animation: close .4s forwards ease-out;
   }
 
   .accordion-item {

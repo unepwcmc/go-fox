@@ -29,7 +29,12 @@ $blue: #2486B8;
 $blue-dark: #1E678D;
 $blue-xdark: #466882;
 
+$green-light: lighten(#3ec14f, 30%);
 $green: #3ec14f;
+
+$pink-light: #F2EBEB;
+$pink: #DFD7D7;
+$pink-dark: #87627A;
 
 $purple-light: #E9EDF0;
 
@@ -52,15 +57,19 @@ $body-line-height: 1.4;
 //--------------------------------------------------
 // dimensions
 //--------------------------------------------------
-$site-width: rem-calc(1332);
+$site-width: 1332;
 
 $content-small: rem-calc(380);
+
+$topbar-small: rem-calc(78);
+$topbar-large: rem-calc(100);
 
 //--------------------------------------------------
 // breakpoints
 //--------------------------------------------------
-$small: rem-calc(720);
-$medium: rem-calc(960);
+//must be in px!
+$small: 720;
+$medium: 960;
 $large: $site-width;
 
 //--------------------------------------------------
@@ -69,3 +78,5 @@ $large: $site-width;
 $gutter-small: rem-calc(11); 
 $gutter-medium: rem-calc(16);
 $gutter-large: rem-calc(24);
+
+$box-margin-left: rem-calc(36);

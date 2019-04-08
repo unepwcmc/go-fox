@@ -1,0 +1,15 @@
+.results {
+  &__content {
+    flex-direction: column;
+
+    @include breakpoint($small) {
+      flex-direction: row;
+    }
+
+    &--right {
+      @include breakpoint($small) {
+        margin-left: $box-margin-left;
+      }
+    }
+  }
+}
