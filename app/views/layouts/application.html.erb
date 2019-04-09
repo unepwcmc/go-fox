@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if Rails.env == 'production' %>
+      <%= render 'shared/google_analytics' %>
+    <% end %>
+    
     <title>GoFox</title>
     <%= csrf_meta_tags %>
     <meta content='width=device-width,initial-scale=1.0' name='viewport'>
@@ -33,10 +37,6 @@
       <%= render 'global_admin/footer' %>
     <% else %>
       <%= render 'global_public/footer' %>
-    <% end %>
-
-    <% if Rails.env == 'production' %>
-      <%= render 'shared/google_analytics' %>
     <% end %>
   </body>
 </html>
