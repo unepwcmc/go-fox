@@ -67,8 +67,9 @@ module CsvExporter
     begin
       survey = Survey.find(response.survey_id)
       customised_questions = CustomisedQuestion.where(survey_id: survey.id)
-      return ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a"] if customised_questions.empty?
-
+      #byebug
+      return customised_question_responses(customised_questions.length) if customised_questions.empty?
+   
       customised_question_row = []
 
       customised_questions.each do |cq|
@@ -80,19 +81,21 @@ module CsvExporter
         customised_question_row << text << options << answer
       end
 
-    if customised_question_row.length == 6
-      customised_question_row << ["n/a", "n/a", "n/a"]
-    end
+      customised_question_row << customised_question_responses(customised_questions.length)
+      byebug
 
-    if customised_question_row.length == 3
-      customised_question_row << ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
-    end
-
-    customised_question_row
+      customised_question_row
 
     rescue Exception => e
       Appsignal.send_error(e)
     end
+  end
+
+  def self.customised_question_responses(response_length)
+    row = []
+    #byebug
+    (9 - response_length).times { row << 'n/a' }
+    row
   end
 
   def self.create_filepath
