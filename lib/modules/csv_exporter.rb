@@ -67,7 +67,7 @@ module CsvExporter
     begin
       survey = Survey.find(response.survey_id)
       customised_questions = CustomisedQuestion.where(survey_id: survey.id)
-      return ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a"] if customised_questions.empty?
+      return ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a"] if customised_questions.empty?
 
       customised_question_row = []
 
@@ -80,8 +80,12 @@ module CsvExporter
         customised_question_row << text << options << answer
       end
 
-    if customised_question_row.length == 3
+    if customised_question_row.length == 6
       customised_question_row << ["n/a", "n/a", "n/a"]
+    end
+
+    if customised_question_row.length == 3
+      customised_question_row << ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
     end
 
     customised_question_row
@@ -104,7 +108,8 @@ module CsvExporter
       question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
       score_headers = ["F1", "F2", "F3"]
       customised_question_headers = ["Customised Question 1: Title", "Customised Question 1: Options", "Customised Question 1: Answer",
-                                     "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer"]
+                                     "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer",
+                                     "Customised Question 3: Title", "Customised Question 3: Options", "Customised Question 3: Answer"]
 
       results << survey_id_header << question_headers << customised_question_headers << score_headers
       results.flatten
