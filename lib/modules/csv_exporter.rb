@@ -67,8 +67,7 @@ module CsvExporter
     begin
       survey = Survey.find(response.survey_id)
       customised_questions = CustomisedQuestion.where(survey_id: survey.id)
-      #byebug
-      return customised_question_responses_na(customised_questions.length) if customised_questions.empty?
+      return customised_question_responses_na(0) if customised_questions.empty?
    
       customised_question_row = []
 
@@ -81,9 +80,7 @@ module CsvExporter
         customised_question_row << text << options << answer
       end
 
-      customised_question_row << customised_question_responses_na(customised_questions.length)
-      #byebug
-
+      customised_question_row << customised_question_responses_na(customised_question_row.length)
       customised_question_row
 
     rescue Exception => e
@@ -93,7 +90,6 @@ module CsvExporter
 
   def self.customised_question_responses_na(response_length)
     row = []
-    #byebug
     (9 - response_length).times { row << 'n/a' }
     row
   end
