@@ -66,6 +66,7 @@ group :development do
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-passenger', '~> 0.1.1', require: false
+  gem 'capistrano-sidekiq'
   gem 'rails-erd', require: false
   gem "letter_opener", '~> 1.6.0'
   gem 'capistrano-sidekiq'

@@ -1,3 +1,19 @@
+set :stage, :production
+set :branch, "master"
+
+
+server "web-supported-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
+
+set :application, "go-fox"
+set :server_name, "go-fox.web-supported-production.linode.unep-wcmc.org"
+set :sudo_user, "wcmc"
+set :app_port, "80"
+
+
+
+
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
