@@ -24,7 +24,7 @@ module CsvExporter
 
       end
 
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
 
@@ -40,7 +40,7 @@ module CsvExporter
 
     begin
       Response.where(conditions).find_in_batches(batch_size: @@batch_size)
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -48,7 +48,7 @@ module CsvExporter
   def self.format_response_row(response, default=@@default_na)
     begin
       @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -58,7 +58,7 @@ module CsvExporter
     begin
       row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
       row
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -83,7 +83,7 @@ module CsvExporter
       customised_question_row << customised_question_responses_na(customised_question_row.length)
       customised_question_row
 
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -97,7 +97,7 @@ module CsvExporter
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
-    folder.join("csv_export_#{DateTime.now.to_i}.csv")
+    folder.join("csv_export_#{DateTime.now.to_s}.csv")
   end
 
   def self.headers
@@ -112,7 +112,7 @@ module CsvExporter
 
       results << survey_id_header << question_headers << customised_question_headers << score_headers
       results.flatten
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end

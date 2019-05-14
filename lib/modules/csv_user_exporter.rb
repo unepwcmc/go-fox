@@ -36,6 +36,6 @@ module CsvUserExporter
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
-    folder.join("csv_user_export_#{DateTime.now.to_i}.csv")
+    folder.join("csv_user_export_#{DateTime.now.to_s}.csv")
   end
 end
