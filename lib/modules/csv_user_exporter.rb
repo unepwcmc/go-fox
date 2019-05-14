@@ -1,4 +1,5 @@
 require 'csv'
+require 'securerandom'
 
 module CsvUserExporter
   @@batch_size  = 250
@@ -36,6 +37,6 @@ module CsvUserExporter
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
-    folder.join("csv_user_export_#{DateTime.now.to_s}.csv")
+    folder.join("csv_user_export_#{DateTime.now.to_s}_#{SecureRandom.urlsafe_base64(5)}.csv")
   end
 end

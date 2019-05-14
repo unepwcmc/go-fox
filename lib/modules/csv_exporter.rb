@@ -1,4 +1,5 @@
 require 'csv'
+require 'securerandom'
 
 module CsvExporter
   @@batch_size = 250
@@ -17,7 +18,7 @@ module CsvExporter
         @@responses.each do |batch|
           batch.each do |response|
             row = []
-            row << response.survey_id << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
+            row << response.survey_id << response.created_at << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
             csv << row.flatten
           end
         end
@@ -97,20 +98,21 @@ module CsvExporter
   def self.create_filepath
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
-    folder.join("csv_export_#{DateTime.now.to_s}.csv")
+    folder.join("csv_export_#{DateTime.now.to_s}_#{SecureRandom.urlsafe_base64(5)}.csv")
   end
 
   def self.headers
     begin
       results = []
       survey_id_header = "Survey ID"
+      created_at_header = "Created at"
       question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
       score_headers = ["F1", "F2", "F3"]
       customised_question_headers = ["Customised Question 1: Title", "Customised Question 1: Options", "Customised Question 1: Answer",
                                      "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer",
                                      "Customised Question 3: Title", "Customised Question 3: Options", "Customised Question 3: Answer"]
 
-      results << survey_id_header << question_headers << customised_question_headers << score_headers
+      results << survey_id_header << created_at_header << question_headers << customised_question_headers << score_headers
       results.flatten
     rescue => e
       Appsignal.send_error(e)
