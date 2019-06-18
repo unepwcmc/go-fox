@@ -2,6 +2,8 @@ require 'csv'
 require 'securerandom'
 
 module CsvExporter
+  extend CsvHelpers
+
   @@batch_size = 250
   @@default_na = "n/a"
   @@questions  = Question.all + DemographicQuestion.all
@@ -9,7 +11,7 @@ module CsvExporter
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
     begin
-      filepath  = self.create_filepath
+      filepath  = self.create_filepath("csv_export")
       @@responses = self.find_responses(survey, from_date, to_date)
 
       CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
@@ -93,12 +95,6 @@ module CsvExporter
     row = []
     (9 - response_length).times { row << 'n/a' }
     row
-  end
-
-  def self.create_filepath
-    folder = Rails.root.join("public", "csv_exports")
-    FileUtils.mkdir_p(folder)
-    folder.join("csv_export_#{DateTime.now.to_s}_#{SecureRandom.urlsafe_base64(5)}.csv")
   end
 
   def self.headers
