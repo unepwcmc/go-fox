@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     get :support, path: 'support', to: 'dashboard#support'
-    get :about_go_fox, path: 'about_go_fox', to: 'dashboard#about_go_fox'
+    get :resources, path: 'resources', to: 'dashboard#resources'
     # get :legal, path: 'legal', to: 'dashboard#legal'
     get :export, path: 'export', to: 'dashboard#export'
     resources :users, controller: "users", except: [:new, :create]
