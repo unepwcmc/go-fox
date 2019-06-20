@@ -34,15 +34,15 @@ en:
     -
       title: 'Create a survey'
       icon: 'icons/icon-survey.svg'
-      description: 'We will be launching the GO-FOX tool soon. Full details will be available on the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX</a> page after the launch. If you wish to register your interest in advance, please write to <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a>'
+      description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
     -
       title: 'View results'
       icon: 'icons/icon-results.svg'
-      description: 'We will be launching the GO-FOX tool soon. Full details will be available on the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX</a> page after the launch. If you wish to register your interest in advance, please write to <a title="Send email to Future of Conservation" href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a>'
+      description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
     -
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
-      description: 'We will be launching the GO-FOX tool soon. Full details will be available on the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX</a> page after the launch. If you wish to register your interest in advance, please write to <a href="mailto:futureofconservation@gmail.com" title="Send email to Future of Conservation">futureofconservation@gmail.com</a>'
+      description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
   homepage:
     intro:
       title: 'The Future of Conservation Survey'
