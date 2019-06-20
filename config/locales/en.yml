@@ -104,6 +104,48 @@ en:
       teaching context.
       </p>"
 
+  support:
+    -
+      link: 'The initial sign up process'
+      title: 'The initial sign up process'
+      content: '
+      <p>
+      This page provides detailed information on how to use the GO-FOX tool. We hope you find it useful and everything makes sense. If you experience any problems, please feel free to contact us 
+      at <a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a>
+      <br/><br/>
+      [Insert tutorial video here - does it need associated text?]
+      <br/><br/>
+      Text to follow. This should be quite easy
+      </p>
+      '
+    -
+      link: 'Creating a new survey'
+      title: 'Creating a new survey'
+      content: '
+      <p>
+      Text to follow. This will be about setting up a new survey each time. 
+      Might also need to cover what to do if you want to do a teaching use case one time and an organisational 
+      use case the other.
+      </p>
+      '
+    -
+      link: 'Analysing your results'
+      title: 'Analysing your results'
+      content: '
+      <p>
+      Text to follow. This will be about how to operate the shiny app from the CSV file.
+      </p>
+      '
+    -
+      link: 'Interpreting your results'
+      title: 'Interpreting your results'
+      content: '
+      <p>
+      Text to follow. This will be about how to interpret the various different outputs of the shiny app. 
+      We need to have those all in hand before writing this.
+      </p>
+      '
+
   about_go_fox:
     -
       link: 'Background'
