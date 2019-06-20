@@ -20,7 +20,7 @@ module CsvExporter
         @@responses.each do |batch|
           batch.each do |response|
             row = []
-            row << response.survey_id << response.created_at << response.language << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
+            row << response.survey_id << response.created_at << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response) << response.language
             csv << row.flatten
           end
         end
@@ -109,7 +109,7 @@ module CsvExporter
                                      "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer",
                                      "Customised Question 3: Title", "Customised Question 3: Options", "Customised Question 3: Answer"]
 
-      results << survey_id_header << created_at_header << language_header << question_headers << customised_question_headers << score_headers
+      results << survey_id_header << created_at_header << question_headers << customised_question_headers << score_headers << language_header
       results.flatten
     rescue => e
       Appsignal.send_error(e)
