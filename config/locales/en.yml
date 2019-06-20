@@ -53,7 +53,7 @@ en:
     blocks:
       -
         title: 'Group and Organisation Future of Conservation Survey (GO-FOX)'
-        description: 'In response to demand, we have now launched a tool which allows you to create your own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents you are working with. Analysed survey results from this group are then made available to you, to use for the benefit of the group.  This can be used, for instance, to facilitate strategic planning within organisations, or to support teaching on contemporary conservation debates. Visit the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX</a> page for more details.'
+        description: 'In response to demand, we have now launched a tool which allows you to create your own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents you are working with. Analysed survey results from this group are then made available to you, to use for the benefit of the group.  This can be used, for instance, to facilitate strategic planning within organisations, or to support teaching on contemporary conservation debates. Visit the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX page</a> for more details, or <a href="/users/sign_up?locale=en" title="Register now">register now</a> and start creating surveys!'
         image: 'logos/logo-gofox.svg'
         image_alt: 'GO-FOX logo'
         image_class: 'gofox'
