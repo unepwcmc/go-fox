@@ -1,6 +1,9 @@
 require 'csv'
+require 'securerandom'
 
 module CsvExporter
+  extend CsvHelpers
+
   @@batch_size = 250
   @@default_na = "n/a"
   @@questions  = Question.all + DemographicQuestion.all
@@ -8,7 +11,7 @@ module CsvExporter
 
   def self.export(survey=nil, from_date=nil, to_date=nil)
     begin
-      filepath  = self.create_filepath
+      filepath  = self.create_filepath("csv_export")
       @@responses = self.find_responses(survey, from_date, to_date)
 
       CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
@@ -17,14 +20,14 @@ module CsvExporter
         @@responses.each do |batch|
           batch.each do |response|
             row = []
-            row << response.survey_id << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response)
+            row << response.survey_id << response.created_at << self.format_response_row(response) << self.format_customised_questions(response) << self.format_scores(response) << response.language
             csv << row.flatten
           end
         end
 
       end
 
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
 
@@ -40,7 +43,7 @@ module CsvExporter
 
     begin
       Response.where(conditions).find_in_batches(batch_size: @@batch_size)
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -48,7 +51,7 @@ module CsvExporter
   def self.format_response_row(response, default=@@default_na)
     begin
       @@questions.map {|question| response.answer_for(question)&.raw_formatted || default}
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -58,7 +61,7 @@ module CsvExporter
     begin
       row << (response.f1_score || default) << (response.f2_score || default) << (response.f3_score || default)
       row
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -83,7 +86,7 @@ module CsvExporter
       customised_question_row << customised_question_responses_na(customised_question_row.length)
       customised_question_row
 
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
@@ -94,25 +97,21 @@ module CsvExporter
     row
   end
 
-  def self.create_filepath
-    folder = Rails.root.join("public", "csv_exports")
-    FileUtils.mkdir_p(folder)
-    folder.join("csv_export_#{DateTime.now.to_i}.csv")
-  end
-
   def self.headers
     begin
       results = []
       survey_id_header = "Survey ID"
+      created_at_header = "Created at"
+      language_header = "Language"
       question_headers = @@questions.pluck(:text).map {|text| text.delete(",")}
       score_headers = ["F1", "F2", "F3"]
       customised_question_headers = ["Customised Question 1: Title", "Customised Question 1: Options", "Customised Question 1: Answer",
                                      "Customised Question 2: Title", "Customised Question 2: Options", "Customised Question 2: Answer",
                                      "Customised Question 3: Title", "Customised Question 3: Options", "Customised Question 3: Answer"]
 
-      results << survey_id_header << question_headers << customised_question_headers << score_headers
+      results << survey_id_header << created_at_header << question_headers << customised_question_headers << score_headers << language_header
       results.flatten
-    rescue Exception => e
+    rescue => e
       Appsignal.send_error(e)
     end
   end
