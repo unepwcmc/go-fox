@@ -98,6 +98,7 @@
     </p>
   </div>
 
+  <!---
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
       locals: {
@@ -109,6 +110,7 @@
         rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
       } %>
   </div>
+  --->
 
   <div class="field">
     <label for="">
@@ -173,11 +175,11 @@
   <p>
     Size of group: <%= survey.settings["size_of_group"] %>
   </p>
-
+  <!---
   <p>
     Follow up session?: <%= survey.settings["follow_up_session"] %>
   </p>
-
+  --->
   <p>
     Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
   </p>
