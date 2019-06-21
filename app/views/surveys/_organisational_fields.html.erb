@@ -84,6 +84,7 @@
         title: "4. What kind of conservation activities does the organisation do?",
         rb_config: ['[settings][kind_of_conservation_activities]', surveys_data("kind_of_conservation_activities"), :first, :last]
       } %>
+    <%= form.text_area '[settings][kind_of_conservation_activities_other]' %>
   </div>
 
   <div class="field">
@@ -241,6 +242,10 @@
       </li>
     <% end %>
     </ul>
+  </p>
+
+  <p>
+   What kind of conservation activities does the organisation do (other)?: <%= survey.settings["kind_of_conservation_activities_other"] %>
   </p>
 
   <p>

@@ -63,6 +63,8 @@ kind_of_conservation_activities:
   market_based_conservation: "Market-based conservation"
   community_based_conservation: "Community-based conservation"
   law_enforcement: "Law enforcement"
+  no_conservation_activities: "No conservation activities"
+  other: "Other"
 
 geographical_scope:
   local: "Local"
