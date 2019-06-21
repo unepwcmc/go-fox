@@ -7,10 +7,6 @@
 
   display: block;
 
-  &:not(:last-child) {
-    margin-right: rem-calc(20);
-  }
-
   &--about {
     background-position: center;
     width: rem-calc(150);
@@ -28,6 +24,12 @@
 // logos
 //--------------------------------------------------
 .logo {
+  &--margin {
+    &:not(:last-child) {
+      margin-right: rem-calc(20);
+    }
+  }
+  
   &--cci {
     @extend %logo;
     background-image: image-url('logos/logo-cci.svg');
@@ -68,6 +70,12 @@
     @extend %logo--about;
     background-image: url('https://s3.amazonaws.com/wcmc.logo/UNEP_WCMC_logo.svg');
     height: rem-calc(34);
+  }
+
+  &--gofox {
+    @extend %logo;
+    background-image: image-url('logos/logo-gofox.svg');
+    width: 113px; height: 51px;
   }
 
   &--foc {

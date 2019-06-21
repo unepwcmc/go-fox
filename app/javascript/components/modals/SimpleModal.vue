@@ -2,7 +2,7 @@
   <div class="page-overlay" v-show="isActive">>
     <div class="modal item-center item-center--fixed">
       <div class="survey-warning__content flex flex-column flex-v-center">
-        <div class="logo--foc survey-warning__logo"></div>
+        <div :class="['survey-warning__logo', logoClass]"></div>
         <h1 class="survey-warning__title">{{title}}</h1>
         <div class="survey-warning__container--scroll custom-scroll">
           <p class="survey-warning__description" v-html="description"></p>
@@ -22,7 +22,8 @@ export default {
       default: 'Close'
     },
     title: String,
-    description: String
+    description: String,
+    logoClass: String
   },
 
   data () {
