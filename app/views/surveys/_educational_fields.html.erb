@@ -1,27 +1,4 @@
 <% if survey.id.nil? %>
-  <div class="field">
-    <label for="">
-      If you wish to compare results with a previous survey you have conducted, please enter the Survey ID for the previous survey here.
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.text_field '[settings][survey_previous_id]' %>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Please choose the language in which your respondents will take the survey. Please note that the GO-FOX interface is only available in English at present.
-    </label>
-    <%= render partial: 'form_elements/collection_buttons',
-      locals: {
-        form: form,
-        type: "radio",
-        class: "inline",
-        title: "Default language",
-        rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last]
-      } %>
-  </div>
 
   <div class="field">
     <label for="">
@@ -112,14 +89,6 @@
   </div>
   --->
 
-  <div class="field">
-    <label for="">
-      Session date
-    </label>
-    (Date selection)
-    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
-  </div>
-
 <!---
   <div class="field">
     <label for="">
@@ -129,12 +98,6 @@
   </div>
   --->
 
-  <div class="field">
-    <label for="">
-      What do you hope to achieve from using GO-FOX with this class?
-    </label>
-    <%= form.text_area '[settings][hope_to_achieve]' %>
-  </div>
 <% else %>
   <p>
     Previous survey ID: <%= survey.settings["survey_previous_id"] %>

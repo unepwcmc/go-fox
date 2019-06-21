@@ -1,27 +1,6 @@
 <% if survey.id.nil? %>
   <div class="field">
     <label for="">
-      Previous survey ID.
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.text_field '[settings][survey_previous_id]' %>
-  </div>
-
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
-      locals: {
-        form: form,
-        type: "radio",
-        option_class: "inline",
-        title: "Default language",
-        rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last] 
-      } %>
-  </div>
-
-  <div class="field">
-    <label for="">
       Participants' organisation name
     </label>
     <p>
@@ -177,21 +156,6 @@
     <%= form.collection_radio_buttons '[settings][anonymity]', surveys_data("anonymity"), :first, :last %>
   </div>
   --->
-
-  <div class="field">
-    <label for="">
-      Session date
-    </label>
-    (Date selection)
-    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
-  </div>
-
-  <div class="field">
-    <label for="">
-      What do you hope to achieve from using GO-FOX with this group?
-    </label>
-    <%= form.text_area '[settings][hope_to_achieve]' %>
-  </div>
 <% else %>
   <p>
     Previous survey ID: <%= survey.settings["survey_previous_id"] %>

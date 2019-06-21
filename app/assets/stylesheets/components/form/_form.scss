@@ -19,11 +19,15 @@
 //--------------------------------------------------
 // labels
 //--------------------------------------------------
-label {
+label, legend {
   font-weight: bold;
   margin: rem-calc(20 0 3 0);
 
   display: inline-block;
+}
+
+fieldset {
+  margin-top: rem-calc(20);
 }
 
 //--------------------------------------------------

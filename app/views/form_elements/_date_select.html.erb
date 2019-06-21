@@ -1,0 +1,9 @@
+<div class="field">
+  <label for="<%= id %>">
+    <%= label %>
+  </label>
+  <% if local_assigns[:description] %>
+    <p> <%= description %> </p>
+  <% end %>
+  <%= form.date_select name, start_year: Date.current.year %>
+</div>

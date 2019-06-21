@@ -36,34 +36,86 @@
   <p>
     In this section we ask questions about the specific group or class to which you will be sending the survey.
   </p>
-  <div class="field">
-    <label for="">
-      Survey title
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.text_field :name, id: :survey_name %>
-  </div>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'title',
+      name: :name,
+      label: 'Survey title',
+      description: 'Please enter a title for this survey within your GO-FOX account (e.g. Conservation course: class of 2019)'
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'previous_id',
+      name: '[settings][survey_previous_id]',
+      label: 'Previous survey ID',
+      description: 'If you wish to compare results with a previous survey you have conducted, please enter the Survey ID for the previous survey here.'
+    }
+  %>
+
+  <%= render partial: 'form_elements/collection_buttons',
+    locals: {
+      form: form,
+      type: "radio",
+      class: "inline",
+      title: "Default language",
+      rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last],
+      description: 'Please choose the language in which your respondents will take the survey. Please note that the GO-FOX interface is only available in English at present.'
+    } %>
 
   <!---<div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :survey_description %>
   </div>--->
 
-  <% if current_user.admin? %>
+  <% if current_user.admin? || current_user.use_type == "organisational" %>
     <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
-  <% else %>
-    <% if current_user.use_type == "organisational" %>
-      <%= render partial: 'organisational_fields', locals: { survey: survey, form: form } %>
-    <% elsif current_user.use_type == "educational" %>
-      <%= render partial: 'educational_fields', locals: { survey: survey, form: form } %>
-    <% end %>
+  <% elsif current_user.use_type == "educational" %>
+    <%= render partial: 'educational_fields', locals: { survey: survey, form: form } %>
   <% end %>
+
+  <%= render partial: 'form_elements/date_select', 
+    locals: {
+      form: form,
+      id: 'session_date',
+      name: '[settings][session_date]',
+      label: 'Session date',
+      description: 'Please give the expected date of the session within which you plan to use the survey results (if known)'
+    }
+  %>
+
+  <% example = current_user.use_type == "educational" ? 
+    '(e.g. as part of a strategic planning process)' : '(e.g. as a training session at Conference X)'
+  %>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'other_details',
+      name: '[settings][other_details]',#TODO: backend
+      label: 'Any other details',
+      description: 'Please provide any further details about the context within which you plan to use GO-FOX ' + example
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_area', 
+    locals: {
+      form: form,
+      id: 'hope_to_achieve',
+      name: '[settings][hope_to_achieve]',
+      label: 'What do you hope to achieve from using GO-FOX with this class?'
+    }
+  %>
 
   <h4>Customised Questions</h4>
   <p>
-    A maximum of three customised questions can be added and up to ten options per customised question.
+    You can add up to three customised questions to the survey that your respondents will see. This allows you to compare the answers of different subgroups of interest to you (e.g. the team or office they belong to within your organisation). Each question you create needs to be in a multiple choice format with a maximum of ten options. Each respondent can only select one option.
+  </p>
+  <p>
+    These questions will be in addition to the standard demographic questions in the Future of Conservation Survey (e.g. gender, educational specialism, age, etc. Check the full survey at <a href="http://www.futureconservation.org" target="_blank" title="Visit the Future of Conservation website">www.futureconservation.org</a> to see these questions).
   </p>
   <hr>
 
