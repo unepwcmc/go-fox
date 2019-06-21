@@ -7,7 +7,7 @@ participant_level_of_study:
   undergraduate: "Undergraduate degree"
   postgraduate: "Postgraduate degree"
   vocational: "Vocational qualification"
-  training: "Training course"
+  training: "Independent training course"
   other: "Other (please specify):"
 
 participant_specialism:

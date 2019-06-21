@@ -39,10 +39,12 @@
       form: form,
       type: "radio",
       title: "Participants' level of study",
-      description: "What is the level of study of your survey group or class?",
+      description: "Please select the most appropriate answer for the level of study at which you plan to use the survey",
       rb_config: ['[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last]
     } %>
+    <%= form.text_field '[settings][participant_level_of_study_other]' %>
   </div>
+
 
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
@@ -136,6 +138,10 @@
 
   <p>
     Participants' level of study: <%= survey.settings["participant_level_of_study"] %>
+  </p>
+
+  <p>
+    Participants' level of study (other): <%= survey.settings["participant_level_of_study_other"] %>
   </p>
 
   <p>
