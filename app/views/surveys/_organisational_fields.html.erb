@@ -51,6 +51,7 @@
     <%= form.select '[settings][location_of_organisation]', surveys_data("location_of_organisation") %>
   </div>
 
+  <!---
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
         locals: { 
@@ -62,6 +63,7 @@
       } %>
     <%= form.text_area '[settings][wider_network_details]' %>
   </div>
+  -->
 
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
@@ -205,6 +207,7 @@
     Location of organisation: <%= survey.settings["location_of_organisation"] %>
   </p>
 
+  <!---
   <p>
     Is organisation part of a wider network of organisations?: <%= survey.settings["wider_network"] %>
   </p>
@@ -212,6 +215,7 @@
   <p>
     Wider network of organisations details: <%= survey.settings["wider_network_details"] %>
   </p>
+  -->
 
   <p>
     What kind of conservation activities does the organisation do?:
