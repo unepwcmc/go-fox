@@ -31,6 +31,16 @@
   </div>
 
   <div class="field">
+    <label for="">
+      Name of group/organisation of respondents to your survey
+    </label>
+    <p>
+      Only answer this question if the group/organisation of participants is different from the one running the session (e.g. if you are running the session with staff of a different organisation)
+    </p>
+    <%= form.text_area '[settings][name_of_group_organisation_of_participants]' %>
+  </div>
+
+  <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
     locals: { 
       form: form,
@@ -191,6 +201,10 @@
 
   <p>
     Participants' organisation name: <%= survey.settings["participant_org_name"] %>
+  </p>
+
+  <p>
+    Name of group/organisation of respondents to your survey: <%= survey.settings["name_of_group_organisation_of_participants"] %>
   </p>
 
   <p>
