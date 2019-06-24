@@ -26,6 +26,10 @@ label, legend {
   display: inline-block;
 }
 
+legend {
+  padding: 0;
+}
+
 fieldset {
   margin-top: rem-calc(20);
 }

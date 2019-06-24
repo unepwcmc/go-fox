@@ -5,5 +5,10 @@
   <% if local_assigns[:description] %>
     <p> <%= description %> </p>
   <% end %>
-  <%= form.date_select name, start_year: Date.current.year %>
+  <%= form.date_select name,
+    start_year: start_year, 
+    end_year: local_assigns[:end_year] ? end_year : start_year + 5, 
+    discard_day: local_assigns[:discard_day] ? discard_day : false, 
+    discard_month: local_assigns[:discard_month] ? discard_month : false 
+  %>
 </div>

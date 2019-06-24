@@ -1,3 +1,14 @@
+<%
+  #TODO: extract this somewhere sensible
+  context_example = '(e.g. as part of a strategic planning process)'
+  title_example = '(e.g. Staff values survey: 2019)'
+
+  if current_user.use_type == "educational"
+    context_example = '(e.g. as a training session at Conference X)'
+    title_example = '(e.g. Conservation course: class of 2019)'
+  end
+%>
+
 <%= form_with(model: survey, local: true) do |form| %>
   <% if survey.errors.any? %>
     <div id="error_explanation">
@@ -43,7 +54,7 @@
       id: 'title',
       name: :name,
       label: 'Survey title',
-      description: 'Please enter a title for this survey within your GO-FOX account (e.g. Conservation course: class of 2019)'
+      description: 'Please enter a title for this survey within your GO-FOX account ' + title_example
     }
   %>
 
@@ -62,7 +73,7 @@
       form: form,
       type: "radio",
       class: "inline",
-      title: "Default language",
+      label: "Default language",
       rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last],
       description: 'Please choose the language in which your respondents will take the survey. Please note that the GO-FOX interface is only available in English at present.'
     } %>
@@ -84,20 +95,18 @@
       id: 'session_date',
       name: '[settings][session_date]',
       label: 'Session date',
-      description: 'Please give the expected date of the session within which you plan to use the survey results (if known)'
+      description: 'Please give the expected date of the session within which you plan to use the survey results (if known)',
+      start_year: Date.current.year
     }
   %>
 
-  <% example = current_user.use_type == "educational" ? 
-    '(e.g. as part of a strategic planning process)' : '(e.g. as a training session at Conference X)'
-  %>
   <%= render partial: 'form_elements/text_field', 
     locals: {
       form: form,
       id: 'other_details',
-      name: '[settings][other_details]',#TODO: backend
+      name: '[settings][other_details]',
       label: 'Any other details',
-      description: 'Please provide any further details about the context within which you plan to use GO-FOX ' + example
+      description: 'Please provide any further details about the context within which you plan to use GO-FOX ' + context_example
     }
   %>
 

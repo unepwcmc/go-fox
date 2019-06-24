@@ -1,79 +1,73 @@
 <% if survey.id.nil? %>
 
-  <div class="field">
-    <label for="">
-      Participants' organisation name
-    </label>
-    <p>
-      What is the name of the group/organisation to which the survey participants belong?
-    </p>
-    <%= form.text_field '[settings][participant_org_name]' %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'name_of_course',
+      name: '[settings][name_of_course]',
+      label: 'Name of course/module',
+      description: 'If relevant please give the name of the broader course/module within which you plan to use the survey (e.g. Conservation Social Science 101):'
+    }
+  %>
 
-  <div class="field">
-    <label for="">
-      Name of group/organisation of participants in the session
-    </label>
-    <p>
-      Only answer this question if the group/organisation or participants is different from the one running the session (e.g. if you are running the session with staff of a particular organisation)
-    </p>
-    <%= form.text_area '[settings][name_of_group_organisation_of_participants]' %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'course_url',
+      name: '[settings][course_url]',
+      label: 'Course website/URL (if available):'
+    }
+  %>
 
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
+  <%= render partial: 'form_elements/collection_buttons',
     locals: {
       form: form,
       type: "radio",
-      title: "Participants' level of study",
-      description: "Please select the most appropriate answer for the level of study at which you plan to use the survey",
+      option_class: "two-col",
+      label: 'Disciplinary specialism of the course/module:',
+      rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
+    } 
+  %>
+
+  <%= render partial: 'form_elements/collection_buttons',
+    locals: {
+      form: form,
+      type: "radio",
+      label: "Please select the most appropriate answer for the level of study at which you plan to use the survey:",
       rb_config: ['[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last]
-    } %>
-    <%= form.text_field '[settings][participant_level_of_study_other]' %>
-  </div>
+    } 
+  %>
+  <%= form.text_field '[settings][participant_level_of_study_other]' %>
 
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'participant_org_name',
+      name: '[settings][participant_org_name]',
+      label: 'Name of group/organisation running the session in which you will use the survey:',
+      description: 'e.g. the University of X OR Collaborative Project Y'
+    }
+  %>
 
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
-      locals: {
-        form: form,
-        type: "radio",
-        option_class: "two-col",
-        title: "Participants' specialism",
-        description: "Lorem ipsum",
-        rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
-      } %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'name_of_group_organisation_of_participants',
+      name: '[settings][name_of_group_organisation_of_participants]',
+      label: 'Name of group/organisation of participants in the session:',
+      description: 'Only answer this question if the group/organiastion or participants is different from the one running the session (e.g. if you are running the session with staff of a particular organisation)'
+    }
+  %>
 
-  <div class="field">
-    <label for="">
-      Name of Course/module:
-    </label>
-    <%= form.text_field '[settings][participant_org_name]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Course website/url
-    </label>
-    <%= form.text_field '[settings][course_url]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Size of group
-    </label>
-    <%= form.text_field '[settings][size_of_group]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'size_of_group',
+      name: '[settings][size_of_group]',
+      label: 'Size of group:',
+      description: 'Please specify as accurately as possible the size of the group to whom you plan to send the survey'
+    }
+  %>
 
   <!---
   <div class="field">
@@ -82,7 +76,7 @@
         form: form,
         type: "radio",
         option_class: "inline",
-        title: "Follow up session?",
+        label: "Follow up session?",
         description: "Lorem ipsum",
         rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
       } %>
@@ -124,7 +118,7 @@
   </p>
 
   <p>
-    Participants' specialism: <%= survey.settings["participant_specialism"] %>
+    Disciplinary specialism of the course/module: <%= survey.settings["participant_specialism"] %>
   </p>
 
   <p>

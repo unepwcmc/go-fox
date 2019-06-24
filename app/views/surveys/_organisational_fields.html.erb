@@ -1,44 +1,56 @@
 <% if survey.id.nil? %>
-  <div class="field">
-    <label for="">
-      Participants' organisation name
-    </label>
-    <p>
-      What is the name of the group/organisation to which the survey participants belong?
-    </p>
-    <%= form.text_field '[settings][participant_org_name]' %>
-  </div>
 
-  <div class="field">
-    <label for="">
-      Name of group/organisation of respondents to your survey
-    </label>
-    <p>
-      Only answer this question if the group/organisation of participants is different from the one running the session (e.g. if you are running the session with staff of a different organisation)
-    </p>
-    <%= form.text_area '[settings][name_of_group_organisation_of_participants]' %>
-  </div>
-
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
-    locals: { 
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
       form: form,
-      type: "radio",
-      title: "1. Type of organisation.",
-      rb_config: ['[settings][type_of_organisation]', surveys_data("type_of_organisation"), :first, :last] 
-    } %>
-    <%= form.text_field '[settings][org_type_other]' %>
-  </div>
+      id: 'participant_org_name',
+      name: '[settings][participant_org_name]',
+      label: 'Name of group/organisation running the session in which you will use the survey:',
+      description: 'e.g. NGO X OR Collaborative Project Y'
+    }
+  %>
 
-  <div class="field">
-    <label for="">
-      2. Location of organisation.
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.select '[settings][location_of_organisation]', surveys_data("location_of_organisation") %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'name_of_group_organisation_of_participants',
+      name: '[settings][name_of_group_organisation_of_participants]',
+      label: 'Name of group/organisation of respondents to your survey:',
+      description: 'Only answer this question if the group/organisation of participants is different from the one running the session (e.g. if you are running the session with staff of a different organisation)'
+    }
+  %>
+
+  <br><hr>
+  <p>For the remaining questions, please answer for the group/organisation of respondents who will be taking your survey.</p>
+  
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'course_url',
+      name: '[settings][course_url]',
+      label: 'Group/Organisation website/URL (if available):'
+    }
+  %>
+
+  <%= render partial: 'form_elements/collection_buttons',
+  locals: { 
+    form: form,
+    type: "radio",
+    label: "Type of group/organisation of respondents to your survey",
+    description: 'Please select the answer that best describes the group/organisation of respondents to your survey',
+    rb_config: ['[settings][type_of_organisation]', surveys_data("type_of_organisation"), :first, :last] 
+  } %>
+  <%= form.text_field '[settings][org_type_other]' %>
+
+  <%= render partial: 'form_elements/select_field', 
+    locals: {
+      form: form,
+      id: 'location_of_organisation',
+      name: '[settings][location_of_organisation]',
+      label: 'Please select the main location of the group/organisation:',
+      data: surveys_data("location_of_organisation")
+    }
+  %>
 
   <!---
   <div class="field">
@@ -47,7 +59,7 @@
         form: form,
         type: "radio",
         option_class: "inline",
-        title: "3. Is organisation part of a wider network of organisations?",
+        label: "3. Is organisation part of a wider network of organisations?",
         rb_config: ['[settings][wider_network]', surveys_data("wider_network"), :first, :last] 
       } %>
     <%= form.text_area '[settings][wider_network_details]' %>
@@ -60,68 +72,56 @@
         form: form,
         type: 'check_box',
         option_class: 'one-col',
-        title: "4. What kind of conservation activities does the organisation do?",
+        label: "What kind of conservation activities does the group/organisation do?",
+        description: 'Please select all options that apply:',
         rb_config: ['[settings][kind_of_conservation_activities]', surveys_data("kind_of_conservation_activities"), :first, :last]
       } %>
     <%= form.text_area '[settings][kind_of_conservation_activities_other]' %>
   </div>
 
-  <div class="field">
-    <label for="">
-      5. What year was the group/organisation established? (if known)
-    </label>
-    (Date selection)
-    <%= form.date_select '[settings][date_established]', start_year: 1900, end_year: Date.current.year,
-        discard_day: true, discard_month: true %>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Organisation website/url
-    </label>
-    <%= form.text_field '[settings][course_url]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Size of organisation
-    </label>
-    <%= form.text_field '[settings][size_of_organisation]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
-
-  <div class="field">
-    <label for="">
-      6. Size of group participating in survey
-    </label>
-    Lorem ipsum
-    <%= form.text_field '[settings][size_of_group]' %>
-  </div>
-
-  <div class="field">
-    <label for="">
-      7. If a sub-group, please explain why
-    </label>
-    Lorem ipsum
-    <%= form.text_area '[settings][sub_group_explanation]' %>
-  </div>
-
-  <div class="field">
-  <%= render partial: 'form_elements/collection_buttons',
-      locals: { 
+  <%= render partial: 'form_elements/date_select', 
+    locals: {
       form: form,
-      type: 'check_box',
-      title: "8. Organisation funding sources",
-      option_class: 'one-col',
-      rb_config: ['[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last]
-    } %>
-    <%= form.text_area '[settings][organisation_funding_sources_other]' %>
-  </div>
+      id: 'date_established',
+      name: '[settings][date_established]',
+      label: 'What year was the group/organisation established? (if known)',
+      description: 'Please give the expected date of the session within which you plan to use the survey results (if known)',
+      start_year: 1900,
+      end_year: Date.current.year,
+      discard_day: true,
+      discard_month: true
+    }
+  %>
+
+  <%= render partial: 'form_elements/collection_buttons',
+    locals: { 
+    form: form,
+    type: 'check_box',
+    label: "Group/organisation funding sources:",
+    option_class: 'one-col',
+    rb_config: ['[settings][organisation_funding_sources]', surveys_data("organisation_funding_sources"), :first, :last]
+  } %>
+  <%= form.text_area '[settings][organisation_funding_sources_other]' %>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'size_of_organisation',
+      name: '[settings][size_of_organisation]',
+      label: 'Size of organisation:',
+      description: 'How many people belong to the overall group/organisation?'
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'size_of_group',
+      name: '[settings][size_of_group]',
+      label: 'Size of group:',
+      description: 'Please specify as accurately as possible the size of the group to whom you plan to send the survey'
+    }
+  %>
 
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
@@ -129,7 +129,8 @@
       form: form,
       type: "checkbox",
       option_class: "two-col",
-      title: "Geographical scope of the group/organisation (please select all that apply)",
+      label: "Geographical scope of the group/organisation:",
+      description: 'Please select all that apply',
       rb_config: ['[settings][geographical_scope]', surveys_data("geographical_scope"), :first, :last]
     } %>
   </div>
@@ -141,7 +142,7 @@
       form: form,
       type: "radio",
       option_class: "inline",
-      title: "Follow up session?",
+      label: "Follow up session?",
       rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
     } %>
   </div>
