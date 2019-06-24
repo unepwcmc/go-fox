@@ -16,13 +16,6 @@
     </div>
   <% end %>
 
-  <% if current_user.admin? %>
-    <div class="field">
-      <%= form.label :locked %>
-      <%= form.check_box :locked, id: :survey_locked %>
-    </div>
-  <% end %>
-
   <!---<% I18n.available_locales.each do |locale| %>
     <h1><%= locale %></h1>
     <%= form.globalize_fields_for locale do |ff| %>
@@ -74,7 +67,13 @@
     <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "add-customised-question"} %>
   </div>
 
-
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= form.label :locked %>
+      <%= form.check_box :locked, id: :survey_locked %>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= form.label :published %>
     <%= form.check_box :published, id: :survey_published %>
