@@ -186,6 +186,7 @@ en:
       at <a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a>
       </p>
       '
+    -
       link: 'The initial sign up process'
       title: 'The initial sign up process'
       content: '
@@ -199,8 +200,8 @@ en:
       content: '
       <p>
       Each time you wish to use GO-FOX with a new group, you will need to create a new survey. To do this, navigate to the “Surveys” page, and then click the “Create new survey” button. You will then see a series of questions that help us to understand how you plan to use the survey for your particular group or organisation. Here you should answer for the specific people who will be taking the survey, rather than answering for your own organisation or group. For example, when signing up, you may have answered for the NGO or University you work for, whereas when creating a survey, you might be describing a specific group of students, or those participating in a workshop. 
-      <br/>
-      <br/>
+      </p>
+      <p>
       You are able to create up to three bespoke questions to help you to explore differences between sub-groups among your respondents. Each question has to be multiple choice, and respondents will only be able to select one answer. Good examples would be questions like “how many years have you worked for X”, where the answers are in pre-defined categories, or “which regional programme do you work for”. You can create a new question by clicking on “Add custom question”. You then write your full question text into the “Customised question title” box. This is what your respondent will see in the main survey. To create an answer category click on “Add question”, then writing the answer option into the “Option text” box. Repeat this process for up to 10 options per question. 
       </p>
       '
@@ -210,11 +211,11 @@ en:
       content: '
       <p>
       When you are ready to analyse the results of your group, you can download the full data file by clicking on the “CSV” button on the “Surveys” page. Save this file wherever you choose, and then click on the “GO-FOX analysis site” button on the same page. This will open the GO-FOX analysis website in a new tab. The site will open on the “Upload your data” page. Click the “Browse” button and then choose your data file from its saved location. You are then ready to explore your results by navigating through the various tabs on the left hand side of the page.
-      <br/>
-      <br/>
+      </p>
       [Insert tutorial video here]
       <br/>
       <br/>
+      <p>
       The tutorial video above shows how to download, analyse and interpret your results.
       </p>
       '
@@ -224,29 +225,29 @@ en:
       content: '
       <p>
       Once you have successfully uploaded your data to the analysis site, you can begin to explore your results! 
-      <br/>            
-      <br/>
+      </p>            
+      <p>
       The “Visualise your responses” tab will show the distribution of answers to all the survey questions. The % figure on the left is the total proportion of respondents who disagreed with the statement (across all three levels of disagreement), the middle % is those who neither agreed nor disagreed, and the % figure on the right is the total proportion of your respondents who agreed with the statement.
-      <br/>
-      <br/>
+      </p>
+      <p>
       The “Summarise agreement” tab helps you to identify areas of agreement and disagreement between your respondents and the approximately 10,000 people who have taken the Future of Conservation Survey around the world. The red dot for each question shows the mean response in the global survey, whereas the black dot shows the mean response from your group, +/- the standard error. If the black dot is above the red dot then your group tended to agree with the statement more than the global sample, and vice versa.
-      <br/>
-      <br/>
-      The “Visualise your scores (3D)” tab allows you to explore the scores of your respondents on the three dimensions of conservation thinking identified in the Future of Conservation Survey research. See <a href="https://thinkinglikeahuman.com/2019/04/09/the-global-conservation-movement-is-diverse-but-not-divided/" title="our published research">our published research</a> for full explanations of these dimensions. You can toggle on and off the scores for your respondents on each dimension, and the lines linking them together. Each line connects the scores on each dimension of one respondent, allowing you to get a sense of their overall position on the future of conservation. Further information about how to interpret results across all three dimensions can be found on the <a href="/about-the-debate?locale=en" title="About the debate">About the debate</a> page. The “show neutral points?” button turns on and off the small circles on each dimension in the figure. These represent the score that a respondent would get if they answered “neither agree nor disagree” to every question. This helps you to interpret respondent scores on each dimension, because in some cases respondents can get a low score on a dimension despite agreeing with the ideas it contains. This is because they do so less strongly than the average respondent.
-      <br/>
-      <br/>
+      </p>
+      <p>
+      The “Visualise your scores (3D)” tab allows you to explore the scores of your respondents on the three dimensions of conservation thinking identified in the Future of Conservation Survey research. See <a href="https://thinkinglikeahuman.com/2019/04/09/the-global-conservation-movement-is-diverse-but-not-divided/" target="_blank" title="Our published research">our published research</a> for full explanations of these dimensions. You can toggle on and off the scores for your respondents on each dimension, and the lines linking them together. Each line connects the scores on each dimension of one respondent, allowing you to get a sense of their overall position on the future of conservation. Further information about how to interpret results across all three dimensions can be found on the <a href="/about-the-debate?locale=en" title="About the debate">About the debate</a> page. The “show neutral points?” button turns on and off the small circles on each dimension in the figure. These represent the score that a respondent would get if they answered “neither agree nor disagree” to every question. This helps you to interpret respondent scores on each dimension, because in some cases respondents can get a low score on a dimension despite agreeing with the ideas it contains. This is because they do so less strongly than the average respondent.
+      </p>
+      <p>
       The right hand side of the “Visualise your scores (3D)” tab allows you to explore differences between your respondents according to any bespoke questions you created in your survey. In the “Group by custom question?” box you can choose which question to explore. In the “Choose group to be highlighted” box you can then pick particular answer categories to highlight. This allows you to look for any clear differences between your respondents according to which category they are in.
-      <br/>
-      <br/>
+      </p>
+      <p>
       The “Visualise your scores (2D)” tab allows you to do very similar analysis to that described above, but choosing two of the three dimensions at a time. The dotted line in the figure represents the ‘neutral’ score of a respondent who answered “neither agree nor disagree” to every question. Again you can look at differences between groups identified by your bespoke questions using the “Group by custom question?” box. 
-      <br/>
-      <br/>
+      </p>
+      <p>
       The “Descriptive statistics” tab gives you text analysis that helps you to understand the compare your respondents to those of the global Future of Conservation Survey, and the five statements with the most agreement, disagreement, consensus, and polarisation respectively. The latter represent the five statements about which your respondents had the most divergent responses, which can be particularly useful to think about. 
-      <br/>
-      <br/>
+      </p>
+      <p>
       Finally, you can download the key figures from your analysis by clicking on the “Download summaries” tab. If you want any images that include the analysis of your bespoke questions, you will need to right click on the desired image and save it directly to your computer. 
-      <br/>
-      <br/>
+      </p>
+      <p>
       The tutorial video above also goes through all these steps of analysis. 
       </p>
       '
@@ -344,4 +345,14 @@ en:
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
   results:
     title: "How to interpret your results"
-    content: '<p>The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).</p><p>A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.</p><p>You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.</p><p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate" title="Visit the About the Debate page">About the Debate</a> page.</p>'
+    content: '<p>
+    The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).
+    </p>
+    <p>
+    A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.
+    </p>
+    <p>
+    You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.
+    </p>
+    <p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate" title="Visit the About the Debate page">About the Debate</a> page.
+    </p>'
