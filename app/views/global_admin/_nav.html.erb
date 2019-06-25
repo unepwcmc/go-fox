@@ -22,10 +22,10 @@
   </li>
 <% end %>
   <li class="nav__li">
-    <%= link_to "Dashboard", root_path, title: 'Support', class: 'nav__a' + current_class?(admin_support_path) %>
+    <%= link_to "Dashboard", root_path, title: 'Dashboard', class: 'nav__a' + current_class?(admin_support_path) %>
   </li>
   <li class="nav__li">
-    <%= link_to "Support", admin_support_path, title: 'Dashboard', class: 'nav__a' + current_class?(admin_support_path) %>
+    <%= link_to "Support", admin_support_path, title: 'Support', class: 'nav__a' + current_class?(admin_support_path) %>
   </li>
   <li class="nav__li">
     <%= link_to "Resources", admin_resources_path, title: 'Resources', class: 'nav__a' + current_class?(admin_resources_path) %>
