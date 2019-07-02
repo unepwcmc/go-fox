@@ -2,6 +2,7 @@
   context_example = '(e.g. as a training session at Conference X)'
 %>
 
+<!---
 <% if survey.id.nil? %>
   <%= render partial: 'form_elements/text_field', 
     locals: {
@@ -12,6 +13,7 @@
       description: 'If you wish to compare results with a previous survey you have conducted, please enter the Survey ID for the previous survey here.'
     }
   %>
+  --->
 
   <%= render partial: 'form_elements/collection_buttons',
     locals: {
