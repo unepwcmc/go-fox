@@ -17,7 +17,7 @@
   <% end %>
 
   <!---
-<% I18n.available_locales.each do |locale| %>
+  <% I18n.available_locales.each do |locale| %>
     <h1><%= locale %></h1>
     <%= form.globalize_fields_for locale do |ff| %>
       <div class="field">
@@ -31,7 +31,7 @@
       </div>
     <% end %>
   <% end %>
---->
+  --->
   <p>
     Please tell us about the specific context in which you plan to use this survey by answering the following questions.
   </p>
@@ -71,8 +71,8 @@
 
   <% if current_user.admin? %>
     <div class="field">
-      <%= form.label :Survey Closed? %>
-      <%= form.check_box :Survey Closed?, id: :survey_locked %>
+      <%= form.label :locked, 'Survey closed?' %>
+      <%= form.check_box :locked, id: :survey_locked %>
     </div>
   <% end %>
   
