@@ -168,12 +168,6 @@
     padding: 0;
   }
 
-  &--plus {
-  }
-
-  &--minus {
-  }
-
   &--log-in {
     @extend %button;
     @extend %button--oblong;
