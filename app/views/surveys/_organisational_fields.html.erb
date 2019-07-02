@@ -3,6 +3,7 @@
 %>
 
 <% if survey.id.nil? %>
+  <!---
   <%= render partial: 'form_elements/text_field', 
     locals: {
       form: form,
@@ -12,6 +13,7 @@
       description: 'If you wish to compare results with a previous survey you have conducted, please enter the Survey ID for the previous survey here.'
     }
   %>
+  --->
 
   <%= render partial: 'form_elements/collection_buttons',
     locals: {
@@ -59,7 +61,7 @@
     form: form,
     type: "radio",
     label: "Type of group/organisation of respondents to your survey",
-    description: 'Please select the answer that best describes the group/organisation of respondents to your survey',
+    description: 'Which of the following best describes the group/organisation of respondents to your survey?',
     rb_config: ['[settings][type_of_organisation]', surveys_data("type_of_organisation"), :first, :last] 
   } %>
   <%= form.text_field '[settings][org_type_other]' %>
