@@ -66,7 +66,10 @@
       <%= render partial: 'surveys/customised_question_fields', locals: { f: customised_questions_form } %>
     <% end %>
 
-    <%= link_to_add_association 'Add Custom Question', form, :customised_questions, {class: "add-customised-question"} %>
+    <%= link_to_add_association form, :customised_questions, {class: "add-customised-question button button--beige button--plus"} do %>
+        <i class="material-icons">add</i>
+        Add Custom Question
+    <% end %>
   </div>
 
   <% if current_user.admin? %>

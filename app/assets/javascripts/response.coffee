@@ -1,5 +1,10 @@
 $(document).ready ->
   toggleQuestionAddLink = (questions) ->
+    $("a.add-customised-question-option")
+      .data('association-insertion-node', (link) ->
+        return link.parent().find('#options-container')
+      )
+
     if questions.length >= 3
       $('.add-customised-question').hide()
     else
