@@ -144,22 +144,22 @@ en:
       link: 'Background'
       title: 'Background'
       content: '
-      <p>On this page you can find resources that support the implementation of your GO-FOX projects. 
-      We hope that you will find these useful, and we welcome your feedback on them (to 
+      <p>On this page you can find resources that support the implementation of your GO-FOX projects.
+      We hope that you will find these useful, and we welcome your feedback on them (to
       <a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a>).
-      If you are looking for information on how to use the website and interpret the results provided, please go to the 
-      <a href="/support?locale=en" title="support">support</a> page.<br/><br/>
+      If you are looking for information on how to use the website and interpret the results provided, please go to the
+      <a href="/admin/support?locale=en" title="support">support</a> page.<br/><br/>
       [Long GO-FOX background video to go here]
       <br/><br/>
-      In this video, the core Future of Conservation Survey team introduce the research that lies behind GO-FOX, 
-      and how GO-FOX came about. You might want to watch this video to make sure that you fully understand the 
-      research so that you are well placed to describe it to a group with whom you are working. You might alternatively 
-      consider sharing the video with the group directly, so that your students or participants can get better understand 
+      In this video, the core Future of Conservation Survey team introduce the research that lies behind GO-FOX,
+      and how GO-FOX came about. You might want to watch this video to make sure that you fully understand the
+      research so that you are well placed to describe it to a group with whom you are working. You might alternatively
+      consider sharing the video with the group directly, so that your students or participants can get better understand
       the project before you share their own results with them.
       <br/><br/>
       [Clickable download for powerpoint file]
       <br/><br/>
-      This slide-deck covers similar material to the video above. You are welcome to use it as it is, or to edit it 
+      This slide-deck covers similar material to the video above. You are welcome to use it as it is, or to edit it
       for your purposes. Please ensure that you acknowledge the source when doing so.
       </p>'
     -
@@ -170,9 +170,9 @@ en:
       [Clickable download for materials to be provided by Sara Calcada]
       <br/>
       <br/>
-      GO-FOX can be used in a facilitated workshop setting, either before or after the group have taken the online 
-      survey. Click the link above to download a full facilitation guide designed for two specific scenarios – 
-      “team building” and “organisational values and mission”. These activities can also work well in a student 
+      GO-FOX can be used in a facilitated workshop setting, either before or after the group have taken the online
+      survey. Click the link above to download a full facilitation guide designed for two specific scenarios –
+      “team building” and “organisational values and mission”. These activities can also work well in a student
       teaching context.
       </p>"
 
@@ -182,7 +182,7 @@ en:
       title: 'Background'
       content: '
       <p>
-      This page provides detailed information on how to use the GO-FOX tool. We hope you find it useful and everything makes sense. If you experience any problems, please feel free to contact us 
+      This page provides detailed information on how to use the GO-FOX tool. We hope you find it useful and everything makes sense. If you experience any problems, please feel free to contact us
       at <a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a>
       </p>
       '
@@ -199,10 +199,10 @@ en:
       title: 'Creating a new survey'
       content: '
       <p>
-      Each time you wish to use GO-FOX with a new group, you will need to create a new survey. To do this, navigate to the “Surveys” page, and then click the “Create new survey” button. You will then see a series of questions that help us to understand how you plan to use the survey for your particular group or organisation. Here you should answer for the specific people who will be taking the survey, rather than answering for your own organisation or group. For example, when signing up, you may have answered for the NGO or University you work for, whereas when creating a survey, you might be describing a specific group of students, or those participating in a workshop. 
+      Each time you wish to use GO-FOX with a new group, you will need to create a new survey. To do this, navigate to the “Surveys” page, and then click the “Create new survey” button. You will then see a series of questions that help us to understand how you plan to use the survey for your particular group or organisation. Here you should answer for the specific people who will be taking the survey, rather than answering for your own organisation or group. For example, when signing up, you may have answered for the NGO or University you work for, whereas when creating a survey, you might be describing a specific group of students, or those participating in a workshop.
       </p>
       <p>
-      You are able to create up to three bespoke questions to help you to explore differences between sub-groups among your respondents. Each question has to be multiple choice, and respondents will only be able to select one answer. Good examples would be questions like “how many years have you worked for X”, where the answers are in pre-defined categories, or “which regional programme do you work for”. You can create a new question by clicking on “Add custom question”. You then write your full question text into the “Customised question title” box. This is what your respondent will see in the main survey. To create an answer category click on “Add question”, then writing the answer option into the “Option text” box. Repeat this process for up to 10 options per question. 
+      You are able to create up to three bespoke questions to help you to explore differences between sub-groups among your respondents. Each question has to be multiple choice, and respondents will only be able to select one answer. Good examples would be questions like “how many years have you worked for X”, where the answers are in pre-defined categories, or “which regional programme do you work for”. You can create a new question by clicking on “Add custom question”. You then write your full question text into the “Customised question title” box. This is what your respondent will see in the main survey. To create an answer category click on “Add question”, then writing the answer option into the “Option text” box. Repeat this process for up to 10 options per question.
       </p>
       '
     -
@@ -224,8 +224,8 @@ en:
       title: 'Interpreting your results'
       content: '
       <p>
-      Once you have successfully uploaded your data to the analysis site, you can begin to explore your results! 
-      </p>            
+      Once you have successfully uploaded your data to the analysis site, you can begin to explore your results!
+      </p>
       <p>
       The “Visualise your responses” tab will show the distribution of answers to all the survey questions. The % figure on the left is the total proportion of respondents who disagreed with the statement (across all three levels of disagreement), the middle % is those who neither agreed nor disagreed, and the % figure on the right is the total proportion of your respondents who agreed with the statement.
       </p>
@@ -239,16 +239,16 @@ en:
       The right hand side of the “Visualise your scores (3D)” tab allows you to explore differences between your respondents according to any bespoke questions you created in your survey. In the “Group by custom question?” box you can choose which question to explore. In the “Choose group to be highlighted” box you can then pick particular answer categories to highlight. This allows you to look for any clear differences between your respondents according to which category they are in.
       </p>
       <p>
-      The “Visualise your scores (2D)” tab allows you to do very similar analysis to that described above, but choosing two of the three dimensions at a time. The dotted line in the figure represents the ‘neutral’ score of a respondent who answered “neither agree nor disagree” to every question. Again you can look at differences between groups identified by your bespoke questions using the “Group by custom question?” box. 
+      The “Visualise your scores (2D)” tab allows you to do very similar analysis to that described above, but choosing two of the three dimensions at a time. The dotted line in the figure represents the ‘neutral’ score of a respondent who answered “neither agree nor disagree” to every question. Again you can look at differences between groups identified by your bespoke questions using the “Group by custom question?” box.
       </p>
       <p>
-      The “Descriptive statistics” tab gives you text analysis that helps you to understand the compare your respondents to those of the global Future of Conservation Survey, and the five statements with the most agreement, disagreement, consensus, and polarisation respectively. The latter represent the five statements about which your respondents had the most divergent responses, which can be particularly useful to think about. 
+      The “Descriptive statistics” tab gives you text analysis that helps you to understand the compare your respondents to those of the global Future of Conservation Survey, and the five statements with the most agreement, disagreement, consensus, and polarisation respectively. The latter represent the five statements about which your respondents had the most divergent responses, which can be particularly useful to think about.
       </p>
       <p>
-      Finally, you can download the key figures from your analysis by clicking on the “Download summaries” tab. If you want any images that include the analysis of your bespoke questions, you will need to right click on the desired image and save it directly to your computer. 
+      Finally, you can download the key figures from your analysis by clicking on the “Download summaries” tab. If you want any images that include the analysis of your bespoke questions, you will need to right click on the desired image and save it directly to your computer.
       </p>
       <p>
-      The tutorial video above also goes through all these steps of analysis. 
+      The tutorial video above also goes through all these steps of analysis.
       </p>
       '
 
@@ -271,7 +271,7 @@ en:
       link: 'About the debate'
       title: 'About the Future of Conservation debate'
       content: '<p>Although discussions about the aims and methods of conservation probably date back as far as conservation itself, the ‘new conservation’ debate as such was sparked by Kareiva and Marvier’s 2012 article entitled <a href="https://academic.oup.com/bioscience/article/62/11/962/263056" title="Visit the ‘What is conservation science’ paper" target="_blank">‘What is conservation science?’</a>.</p>
-      <p>Two prominent positions emerged in this debate, that of Kareiva and Marvier, which they called ‘new conservation’, and a strongly opposed viewpoint that we label ‘traditional conservation’. Our research emerged from our concern that these two positions did not adequately describe the range of views held by conservationists around the world.</p> 
+      <p>Two prominent positions emerged in this debate, that of Kareiva and Marvier, which they called ‘new conservation’, and a strongly opposed viewpoint that we label ‘traditional conservation’. Our research emerged from our concern that these two positions did not adequately describe the range of views held by conservationists around the world.</p>
       <p>The new and traditional conservation positions can be clearly distinguished by their views on the role of ‘people-centred conservation’ (relating to the role that people should play in conservation), ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).</p>
       <p>This page describes these positions, as well as <a href="https://doi.org/10.1111/cobi.12811" title="Visit the paper ‘Understanding conservationists’ perspectives on the new‐conservation debate’" target="_blank">two others that have been previously identified in the literature</a> about the ‘new conservation’ debate. Using diagrams, it also shows how these positions relate to the three axes identified by <a href="https://www.nature.com/articles/s41893-019-0267-5" title="Visit our paper in Nature Sustainability" target="_blank">our research</a>. However, our work suggests that many conservationists do not belong to any of these four positions; or they hold different combinations of the views expressed in the literature. We include descriptions of these four positions here for information, but support efforts to move beyond characterising conservationists into separate ‘camps’.</p>'
     -
