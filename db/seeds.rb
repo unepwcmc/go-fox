@@ -25,6 +25,7 @@ settings = {
   wider_network: "false",
   org_type_other: "",
   hope_to_achieve: "",
+  other_details: "",
   date_established: {"(1i)": "2019", "(2i)": "3", "(3i)": "8"},
   default_language: "en",
   follow_up_session: "false",

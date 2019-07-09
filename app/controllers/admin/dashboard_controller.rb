@@ -9,7 +9,7 @@ class Admin::DashboardController < ApplicationController
   def support
   end
 
-  def about_go_fox
+  def resources
   end
 
   def legal

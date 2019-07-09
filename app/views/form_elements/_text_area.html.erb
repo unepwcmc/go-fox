@@ -1,0 +1,9 @@
+<div class="field">
+  <label for="<%= id %>">
+    <%= label %>
+  </label>
+  <% if local_assigns[:description] %>
+    <p> <%= description %> </p>
+  <% end %>
+  <%= form.text_area name, id: id %>
+</div>

@@ -19,11 +19,19 @@
 //--------------------------------------------------
 // labels
 //--------------------------------------------------
-label {
+label, legend {
   font-weight: bold;
   margin: rem-calc(20 0 3 0);
 
   display: inline-block;
+}
+
+legend {
+  padding: 0;
+}
+
+fieldset {
+  margin-top: rem-calc(20);
 }
 
 //--------------------------------------------------
@@ -114,3 +122,4 @@ textarea {
 @import './select.scss';
 @import './questions.scss';
 @import './validation.scss';
+@import './cocoon-association-form.scss';

@@ -29,9 +29,11 @@
                 <p class="table__heading-4"><%= survey.user.username %> (<%= survey.user.organisation_name %>)</p>
               <% end %>
               <p class="table__buttons flex flex-v-center">
+              <% if survey.id != Survey.find_by_master(true).id %>
                 <%= link_to edit_survey_path(survey), title: 'Edit survey', class: 'button--edit' do %>
                   <i class="material-icons">mode_edit</i>Edit
                 <% end %>
+              <% end %>
 
                 <popup icon="share" title="Share" url="<%= new_survey_response_url(survey) %>"></popup>
 

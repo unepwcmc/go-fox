@@ -46,4 +46,15 @@ FactoryBot.define do
     master false
     settings survey_settings
   end
+
+  factory :master_survey, class: Survey do
+    name "Master survey"
+    published true
+    association :user, factory: :user
+    uuid nil
+    locked false
+    master true
+    settings survey_settings
+  end
+
 end

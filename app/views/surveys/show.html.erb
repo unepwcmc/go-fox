@@ -22,10 +22,12 @@
   </p>
 
   <%= link_to "Take the survey", new_survey_response_path(@survey), class: 'button' %>
-  <%= link_to 'Edit', edit_survey_path(@survey), class: 'button' %>
-  <%= link_to 'Back', surveys_path, class: 'button' %>
-  <%= render partial: "surveys/export_form", locals: { survey: @survey } %>
-
+  <% if @survey.id != Survey.find_by_master(true).id %>
+    <%= link_to 'Edit', edit_survey_path(@survey), class: 'button' %>
+  <% end %>
+  <p>
+    <popup icon="share" title="Share" url="<%= new_survey_response_url(@survey) %>"></popup>
+  </p>
   <hr>
 
   <%= render partial: "surveys/customised_questions_table", locals: { survey: @survey } %>
