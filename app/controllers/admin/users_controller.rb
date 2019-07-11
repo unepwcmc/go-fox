@@ -10,6 +10,7 @@ class Admin::UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @displayed_attributes = @user.attributes.keys.select{|k| k != 'encrypted_password'}
   end
 
   # GET /users/2/edit
