@@ -149,7 +149,7 @@ en:
       <a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a>).
       If you are looking for information on how to use the website and interpret the results provided, please go to the
       <a href="/admin/support?locale=en" title="support">support</a> page.<br/><br/>
-      [Long GO-FOX background video to go here]
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/3o0fQqQNPvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <br/><br/>
       In this video, the core Future of Conservation Survey team introduce the research that lies behind GO-FOX,
       and how GO-FOX came about. You might want to watch this video to make sure that you fully understand the
@@ -157,7 +157,8 @@ en:
       consider sharing the video with the group directly, so that your students or participants can get better understand
       the project before you share their own results with them.
       <br/><br/>
-      [Clickable download for powerpoint file]
+      <a href="/public/GOFOX_lecture_slides.pptx" title="Download slide-deck">Download Slide-deck</a>
+
       <br/><br/>
       This slide-deck covers similar material to the video above. You are welcome to use it as it is, or to edit it
       for your purposes. Please ensure that you acknowledge the source when doing so.
@@ -165,16 +166,16 @@ en:
     -
       link: 'Ideas for GO-FOX group activities'
       title: 'Ideas for GO-FOX group activities'
-      content: "<p>
-
-      [Clickable download for materials to be provided by Sara Calcada]
+      content: '<p>
+      <a href="/public/GOFOX_facilitation_slides.pptx" title="Download Facilitation Slide-deck">Download Facilitation Slide-deck</a>
+      <a href="/public/GOFOX_facilitation_guide.pdf" title="Download Facilitation Guide">Download Facilitation Guide</a>
       <br/>
       <br/>
       GO-FOX can be used in a facilitated workshop setting, either before or after the group have taken the online
       survey. Click the link above to download a full facilitation guide designed for two specific scenarios –
       “team building” and “organisational values and mission”. These activities can also work well in a student
       teaching context.
-      </p>"
+      </p>'
 
   support:
     -
@@ -212,7 +213,7 @@ en:
       <p>
       When you are ready to analyse the results of your group, you can download the full data file by clicking on the “CSV” button on the “Surveys” page. Save this file wherever you choose, and then click on the “GO-FOX analysis site” button on the same page. This will open the GO-FOX analysis website in a new tab. The site will open on the “Upload your data” page. Click the “Browse” button and then choose your data file from its saved location. You are then ready to explore your results by navigating through the various tabs on the left hand side of the page.
       </p>
-      [Insert tutorial video here]
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Cscfkl2ra_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <br/>
       <br/>
       <p>
@@ -257,7 +258,7 @@ en:
       link: 'Background'
       title: 'Background'
       content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).</p>
-      <p>[VIDEO PLACEHOLDER]</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bZdwQAG-xl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p>The GO-FOX tool allows the user to create their own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents they are working with. Analysed survey results from this group are then made available to the GO-FOX user, who can then use them for the benefit of the group. Examples of how GO-FOX may be used include, but are not limited to:</p>
       <ul>
       <li>Conservation NGOs wishing to generate discussion amongst their staff or members about their individual conservation viewpoints and how these relate to the work of the organisation. This could be done as part of a strategic planning process</li>
