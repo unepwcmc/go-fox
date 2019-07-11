@@ -57,4 +57,12 @@ module ApplicationHelper
   def b_collection_option_class(option_class)
     return "b-collection__option--#{option_class}"
   end
+
+  def to_date (date)
+    begin
+      date.to_date
+    rescue => e
+      'No date given'
+    end
+  end
 end

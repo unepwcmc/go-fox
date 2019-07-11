@@ -268,7 +268,7 @@
   </p>
 
   <p>
-    Date established: <%= survey.settings["date_established"].map{|k,v| v}.join("-").to_date %>
+    Date established: <%= to_date(survey.settings["date_established"].map{|k,v| v}.join("-")) %>
   </p>
 
   <p>
@@ -320,7 +320,7 @@
   --->
 
   <p>
-    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
+    Session date: <%= to_date(survey.settings["session_date"].map{|k,v| v}.join("-")) %>
   </p>
 
   <p>
