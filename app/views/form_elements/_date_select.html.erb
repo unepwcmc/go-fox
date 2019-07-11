@@ -6,6 +6,7 @@
     <p> <%= description %> </p>
   <% end %>
   <%= form.date_select name,
+    include_blank: true,
     start_year: start_year, 
     end_year: local_assigns[:end_year] ? end_year : start_year + 5, 
     discard_day: local_assigns[:discard_day] ? discard_day : false, 

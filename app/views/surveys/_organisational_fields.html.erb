@@ -254,7 +254,7 @@
   <p>
     What kind of conservation activities does the organisation do?:
     <ul>
-    <% kinds = survey.settings["kind_of_conservation_activities"].map{|k| surveys_data("kind_of_conservation_activities")[k.to_sym]}.compact! %>
+    <% kinds = survey.settings["kind_of_conservation_activities"].map{|k| surveys_data("kind_of_conservation_activities")[k]}.compact! %>
     <% kinds.each do |kind| %>
       <li>
         <%= kind %>
@@ -268,7 +268,7 @@
   </p>
 
   <p>
-    Date established: <%= survey.settings["date_established"].map{|k,v| v}.join("-").to_date %>
+    Date established: <%= to_date(survey.settings["date_established"].map{|k,v| v}.join("-")) %>
   </p>
 
   <p>
@@ -285,7 +285,7 @@
 
   <p>
     Organisation funding sources:
-    <% sources = survey.settings["organisation_funding_sources"].map{|k| surveys_data("organisation_funding_sources")[k.to_sym]}.compact! %>
+    <% sources = survey.settings["organisation_funding_sources"].map{|k| surveys_data("organisation_funding_sources")[k]}.compact! %>
     <ul>
     <% sources.each do |source| %>
       <li>
@@ -320,7 +320,7 @@
   --->
 
   <p>
-    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
+    Session date: <%= to_date(survey.settings["session_date"].map{|k,v| v}.join("-")) %>
   </p>
 
   <p>

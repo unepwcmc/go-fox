@@ -6,6 +6,7 @@ module DeviseHelper
     <div class="error_explanation">
       <p class="error_explanation">Some required information is missing or incomplete.</p>
       <p>Please review your entries and try again.</p>
+      <p>If you are you trying to create an additional account please use an alternative email address.</p>
     </div>
     HTML
 

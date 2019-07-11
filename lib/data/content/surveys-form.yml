@@ -64,6 +64,7 @@ kind_of_conservation_activities:
   community_based_conservation: "Community-based conservation"
   law_enforcement: "Law enforcement"
   no_conservation_activities: "No conservation activities"
+  consultancy: "Consultancy"
   other: "Other"
 
 geographical_scope:

@@ -1,1 +1,5 @@
-<%= @user.inspect %>
+<% @displayed_attributes.each do |key| %>
+  <ul>
+    <li class="ul-unstyled"><strong><%= key %>: </strong><%= @user[key] %></li>
+  </ul>
+<% end %>
