@@ -1,107 +1,141 @@
+<%
+  context_example = '(e.g. as a training session at Conference X)'
+%>
+
 <% if survey.id.nil? %>
-  <div class="field">
-    <label for="">
-      Previous survey ID.
-    </label>
-    <p>
-      Lorem ipsum.
-    </p>
-    <%= form.text_field '[settings][survey_previous_id]' %>
-  </div>
+  <!---
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'previous_id',
+      name: '[settings][survey_previous_id]',
+      label: 'Previous survey ID',
+      description: 'If you wish to compare results with a previous survey you have conducted, please enter the Survey ID for the previous survey here.'
+    }
+  %>
+  --->
 
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
-      locals: {
-        form: form,
-        type: "radio",
-        class: "inline",
-        title: "Default language",
-        rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last]
-      } %>
-  </div>
-
-  <div class="field">
-    <label for="">
-      Participants' organisation name
-    </label>
-    <p>
-      What is the name of the group/organisation to which the survey participants belong?
-    </p>
-    <%= form.text_field '[settings][participant_org_name]' %>
-  </div>
-
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
+  <%= render partial: 'form_elements/collection_buttons',
     locals: {
       form: form,
       type: "radio",
-      title: "Participants' level of study",
-      description: "What is the level of study of your survey group or class?",
-      rb_config: ['[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last]
+      class: "inline",
+      label: "Default language",
+      rb_config: ['[settings][default_language]', surveys_data("default_language"), :first, :last],
+      description: 'Please choose the language in which your respondents will take the survey. Please note that the GO-FOX interface is only available in English at present.'
     } %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'name_of_course',
+      name: '[settings][name_of_course]',
+      label: 'Name of course/module',
+      description: 'If relevant please give the name of the broader course/module within which you plan to use the survey (e.g. Conservation Social Science 101):'
+    }
+  %>
 
-  <div class="field">
-    <%= render partial: 'form_elements/collection_buttons',
-      locals: {
-        form: form,
-        type: "radio",
-        option_class: "two-col",
-        title: "Participants' specialism",
-        description: "Lorem ipsum",
-        rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
-      } %>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'course_url',
+      name: '[settings][course_url]',
+      label: 'Course website/URL (if available):'
+    }
+  %>
 
-  <div class="field">
-    <label for="">
-      Name of Course/module:
-    </label>
-    <%= form.text_field '[settings][participant_org_name]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
+  <%= render partial: 'form_elements/collection_buttons',
+    locals: {
+      form: form,
+      type: "radio",
+      option_class: "two-col",
+      label: 'Disciplinary specialism of the course/module:',
+      rb_config: ['[settings][participant_specialism]', surveys_data("participant_specialism"), :first, :last]
+    } 
+  %>
 
-  <div class="field">
-    <label for="">
-      Course website/url
-    </label>
-    <%= form.text_field '[settings][course_url]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
+  <%= render partial: 'form_elements/collection_buttons',
+    locals: {
+      form: form,
+      type: "radio",
+      label: "Please select the most appropriate answer for the level of study at which you plan to use the survey:",
+      rb_config: ['[settings][participant_level_of_study]', surveys_data("participant_level_of_study"), :first, :last]
+    } 
+  %>
+  <%= form.text_field '[settings][participant_level_of_study_other]' %>
 
-  <div class="field">
-    <label for="">
-      Size of group
-    </label>
-    <%= form.text_field '[settings][size_of_group]' %>
-    <p>
-      Lorem ipsum
-    </p>
-  </div>
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'participant_org_name',
+      name: '[settings][participant_org_name]',
+      label: 'Name of group/organisation running the session in which you will use the survey:',
+      description: 'e.g. the University of X OR Collaborative Project Y'
+    }
+  %>
 
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'name_of_group_organisation_of_participants',
+      name: '[settings][name_of_group_organisation_of_participants]',
+      label: 'Name of group/organisation of participants in the session:',
+      description: 'Only answer this question if the group/organiastion or participants is different from the one running the session (e.g. if you are running the session with staff of a particular organisation)'
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'size_of_group',
+      name: '[settings][size_of_group]',
+      label: 'Size of group:',
+      description: 'Please specify as accurately as possible the size of the group to whom you plan to send the survey'
+    }
+  %>
+
+  <%= render partial: 'form_elements/date_select', 
+    locals: {
+      form: form,
+      id: 'session_date',
+      name: '[settings][session_date]',
+      label: 'Session date',
+      description: 'Please give the expected date of the session within which you plan to use the survey results (if known)',
+      start_year: Date.current.year
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_field', 
+    locals: {
+      form: form,
+      id: 'other_details',
+      name: '[settings][other_details]',
+      label: 'Any other details',
+      description: 'Please provide any further details about the context within which you plan to use GO-FOX ' + context_example
+    }
+  %>
+
+  <%= render partial: 'form_elements/text_area', 
+    locals: {
+      form: form,
+      id: 'hope_to_achieve',
+      name: '[settings][hope_to_achieve]',
+      label: 'What do you hope to achieve from using GO-FOX with this class?'
+    }
+  %>
+
+  <!---
   <div class="field">
     <%= render partial: 'form_elements/collection_buttons',
       locals: {
         form: form,
         type: "radio",
         option_class: "inline",
-        title: "Follow up session?",
+        label: "Follow up session?",
         description: "Lorem ipsum",
         rb_config: ['[settings][follow_up_session]', surveys_data("follow_up_session"), :first, :last]
       } %>
   </div>
-
-  <div class="field">
-    <label for="">
-      Session date
-    </label>
-    (Date selection)
-    <%= form.date_select '[settings][session_date]', start_year: Date.current.year %>
-  </div>
+  --->
 
 <!---
   <div class="field">
@@ -112,13 +146,9 @@
   </div>
   --->
 
-  <div class="field">
-    <label for="">
-      What do you hope to achieve from using GO-FOX with this class?
-    </label>
-    <%= form.text_area '[settings][hope_to_achieve]' %>
-  </div>
 <% else %>
+  <br><hr>
+
   <p>
     Previous survey ID: <%= survey.settings["survey_previous_id"] %>
   </p>
@@ -132,11 +162,19 @@
   </p>
 
   <p>
+    Name of group/organisation of participants in the session: <%= survey.settings["name_of_group_organisation_of_participants"] %>
+  </p>
+
+  <p>
     Participants' level of study: <%= survey.settings["participant_level_of_study"] %>
   </p>
 
   <p>
-    Participants' specialism: <%= survey.settings["participant_specialism"] %>
+    Participants' level of study (other): <%= survey.settings["participant_level_of_study_other"] %>
+  </p>
+
+  <p>
+    Disciplinary specialism of the course/module: <%= survey.settings["participant_specialism"] %>
   </p>
 
   <p>
@@ -150,13 +188,13 @@
   <p>
     Size of group: <%= survey.settings["size_of_group"] %>
   </p>
-
+  <!---
   <p>
     Follow up session?: <%= survey.settings["follow_up_session"] %>
   </p>
-
+  --->
   <p>
-    Session date: <%= survey.settings["session_date"].map{|k,v| v}.join("-").to_date %>
+    Session date: <%= to_date(survey.settings["session_date"].map{|k,v| v}.join("-")) %>
   </p>
 
   <p>

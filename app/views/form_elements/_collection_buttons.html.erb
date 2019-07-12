@@ -1,18 +1,22 @@
-<%= form.label :title, title %>
-<% if local_assigns[:description] %>
-  <p> <%= description %> </p>
-<% end %>
-<div class="b-collection flex flex-wrap">
-  <% if type == 'radio' %>
-    <%= form.collection_radio_buttons(*rb_config) do |b| %>
-      <span class="b-collection__option <%= b_collection_option_class(option_class ||= '') %> flex">
-      <%= b.radio_button + b.label %></span>
+<div class="field">
+  <fieldset>
+    <legend><%= label %></legend>
+    <% if local_assigns[:description] %>
+      <p> <%= description %> </p>
     <% end %>
-  <% else %>
-    <%= form.collection_check_boxes(*rb_config) do |b| %>
-      <span 
-        class="b-collection__option <%= b_collection_option_class(option_class ||= '') %> flex">
-        <%= b.check_box + b.label %></span>
-    <% end %>
-  <% end %>
+    <div class="b-collection flex flex-wrap">
+      <% if type == 'radio' %>
+        <%= form.collection_radio_buttons(*rb_config) do |b| %>
+          <span class="b-collection__option <%= b_collection_option_class(option_class ||= '') %> flex">
+          <%= b.radio_button + b.label %></span>
+        <% end %>
+      <% else %>
+        <%= form.collection_check_boxes(*rb_config) do |b| %>
+          <span 
+            class="b-collection__option <%= b_collection_option_class(option_class ||= '') %> flex">
+            <%= b.check_box + b.label %></span>
+        <% end %>
+      <% end %>
+    </div>
+  </fieldset>
 </div>

@@ -7,7 +7,7 @@ participant_level_of_study:
   undergraduate: "Undergraduate degree"
   postgraduate: "Postgraduate degree"
   vocational: "Vocational qualification"
-  training: "Training course"
+  training: "Independent training course"
   other: "Other (please specify):"
 
 participant_specialism:
@@ -63,6 +63,9 @@ kind_of_conservation_activities:
   market_based_conservation: "Market-based conservation"
   community_based_conservation: "Community-based conservation"
   law_enforcement: "Law enforcement"
+  no_conservation_activities: "No conservation activities"
+  consultancy: "Consultancy"
+  other: "Other"
 
 geographical_scope:
   local: "Local"

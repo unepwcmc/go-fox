@@ -14,13 +14,26 @@
     </p>
   </div>
 
-  <%= link_to_remove_association "Remove Custom Question", f, {class: "button"} %>
-  <%= link_to_add_association 'Add Option', f, :options, {'data-association-insertion-method' => 'append', class: 'add-customised-question-option'} %>
+    <%= link_to_remove_association f, {class: "button button--beige button--minus button"} do %>
+    <i class="material-icons">remove</i>
+    Remove Custom Question
+  <% end %>
 
   <div class="field">
     <%= f.fields_for :options do |options_form| %>
       <%= render partial: 'surveys/option_fields', locals: {f: options_form} %>
     <% end %>
   </div>
+
+  <div id="options-container" />
+
+  <%= link_to_add_association f, :options, {
+      'data-association-insertion-method': 'append',
+      class: 'add-customised-question-option button button--beige button--plus'
+    } do
+  %>
+    <i class="material-icons">add</i>
+    Add Option
+  <% end %>
   <hr>
 </div>

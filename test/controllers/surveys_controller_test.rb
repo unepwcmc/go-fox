@@ -6,6 +6,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user  = create(:user)
     @admin = create(:admin)
+    @master_survey = create(:master_survey)
   end
 
   test "cannot access surveys index page when not logged in" do
@@ -132,21 +133,18 @@ options_attributes: [ {text: "0"}, {text: "1"} , {text: "3"}, {text: "3"}, {text
   end
 
   test "default survey should load master survey for user" do
-    @survey = create(:survey, user: @user, published: true, master: true)
     sign_in @user
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
 
   test "default survey should load master survey for admin" do
-    @survey = create(:survey, user: @user, published: true, master: true)
     sign_in @admin
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
 
   test "default survey should load master survey for anonymous user" do
-    @survey = create(:survey, user: @user, published: true, master: true)
     get new_survey_response_path(Survey.master_survey)
     assert_response :success
   end
