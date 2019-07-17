@@ -18,7 +18,7 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   test "user should not be able to get index" do
     sign_in @user
     get questions_url
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path
   end
 
   test "admin should get new" do
@@ -33,7 +33,7 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
       post questions_url, params: { question: { text: @question.text } }
     end
 
-    assert_redirected_to question_url(Question.last, locale: :en)
+    assert_redirected_to question_url(Question.last)
   end
 
   test "admin should show question" do
@@ -51,6 +51,6 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   test "admin should update question" do
     sign_in @admin
     patch question_url(@question), params: { question: { text: @question.text } }
-    assert_redirected_to question_url(@question, locale: :en)
+    assert_redirected_to question_url(@question)
   end
 end

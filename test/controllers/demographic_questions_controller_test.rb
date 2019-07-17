@@ -18,7 +18,7 @@ class DemographicQuestionsControllerTest < ActionDispatch::IntegrationTest
   test "user should not be able to get index" do
     sign_in @user
     get demographic_questions_url
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path
   end
 
   test "admin should get new" do
@@ -38,7 +38,7 @@ class DemographicQuestionsControllerTest < ActionDispatch::IntegrationTest
         }
     end
 
-    assert_redirected_to demographic_question_url(DemographicQuestion.last, locale: :en)
+    assert_redirected_to demographic_question_url(DemographicQuestion.last)
   end
 
   test "admin should show demographic_question" do
@@ -56,6 +56,6 @@ class DemographicQuestionsControllerTest < ActionDispatch::IntegrationTest
   test "admin should update demographic_question" do
     sign_in @admin
     patch demographic_question_url(@demographic_question), params: { demographic_question: { text: @demographic_question.text } }
-    assert_redirected_to demographic_question_url(@demographic_question, locale: :en)
+    assert_redirected_to demographic_question_url(@demographic_question)
   end
 end
