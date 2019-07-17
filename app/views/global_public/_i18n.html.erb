@@ -1,0 +1,5 @@
+<ul class="float-right">
+  <li><%= link_to_unless I18n.locale == :en , "English", set_language_english_path %></li>
+  <li><%= link_to_unless I18n.locale == :es, "Espanol", set_language_spanish_path %></li>
+  <li><%= link_to_unless I18n.locale == :fr, "Français", set_language_french_path %></li>
+</ul>
