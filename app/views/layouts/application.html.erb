@@ -20,23 +20,24 @@
   </head>
 
   <body class="base--admin">
-
-    <%= render 'global_admin/topbar' %>
-    <%= render 'global_admin/nav' %>
-
-    <% if content_for?(:title) %>
-      <%= render partial: 'global_admin/page_title', locals: { title: content_for(:title) } %>
-    <% end %>
-
-    <%= render 'global_admin/flash_message' %>
-
     <div id="v-app">
+
+      <%= render 'global_admin/topbar' %>
+      <%= render 'global_admin/nav' %>
+
+      <% if content_for?(:title) %>
+        <%= render partial: 'global_admin/page_title', locals: { title: content_for(:title) } %>
+      <% end %>
+
+      <%= render 'global_admin/flash_message' %>
+
       <%= yield %>
+      
+      <% if current_user %>
+        <%= render 'global_admin/footer' %>
+      <% else %>
+        <%= render 'global_public/footer' %>
+      <% end %>
     </div>
-    <% if current_user %>
-      <%= render 'global_admin/footer' %>
-    <% else %>
-      <%= render 'global_public/footer' %>
-    <% end %>
   </body>
 </html>

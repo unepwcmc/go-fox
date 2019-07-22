@@ -1,0 +1,16 @@
+.drop-arrow {
+  transform: rotate(0deg);
+
+  &--end {
+    margin-left: auto;
+  }
+}
+
+.arrow-svg {
+  content: '';
+  background-image: image-url('icons/drop-arrow.svg');
+  background-repeat: no-repeat;
+  width: rem-calc(17); height: rem-calc(8);
+
+  display: inline-block;
+}

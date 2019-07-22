@@ -15,6 +15,14 @@ module ApplicationHelper
     request.fullpath
   end
 
+  def available_languages
+    {
+      en: 'English',
+      es: 'Español',
+      fr: 'Français'
+    }
+  end
+
   def encoded_base_url
     url_encode(request.base_url)
   end
