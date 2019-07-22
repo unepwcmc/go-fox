@@ -44,6 +44,13 @@
     margin: rem-calc(10 0);
   }
 
+  &--ffi {
+    @extend %logo;
+    @extend %logo--about;
+    background-image:  image-url('logos/logo-ffi.png');
+    height: rem-calc(55);
+  }
+
   &--uoc {
     @extend %logo;
     @extend %logo--about;
