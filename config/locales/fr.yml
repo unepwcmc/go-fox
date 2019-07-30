@@ -30,6 +30,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  buttons:
+    accept: Accept
+    get_results: Get results
+    next: Next
+    previous: Previous
+    take_survey: Take the Survey
+
+  nav:
+    about_project: About the Project
+    about_debate: About the Debate
+    about_gofox: About GO-FOX
+    log_in: Log in
+    home: Home
+
+  pagination:
+    of: "Of"
+    page: Page
+    tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
+  
+  validation:
+    complete_questions: Please complete the questions highlighted below to continue.
+    select_option: Please select an option below.
+    select_at_least_one: Please select at least one option below.
+  
+  social:
+    header: Share the survey
+
   login:
     -
       title: 'Create a survey'
@@ -344,6 +371,17 @@ fr:
       <p><em>Market ecocentrism:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
   results:
+    header: Your results
+    chart:
+      less: Less
+      more: More
+      dimensions:
+        people: People-centred conservation
+        science: Science-led ecocentrism
+        capitalism: Conservation through capitalism
+    contact:
+      title: Contact
+      email_message: 'For more information about The Future of Conservation project please email:'
     title: "How to interpret your results"
     content: '<p>
     The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).
