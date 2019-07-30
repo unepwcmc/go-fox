@@ -4,7 +4,7 @@ export const storePagination = {
   namespaced: true,
 
   state: {
-    page: 5,
+    page: 1,
     startIndex: 0,
     endIndex: 0,
     sectionItemTotals: [],
