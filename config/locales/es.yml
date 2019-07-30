@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-es:
+es: #new start
   buttons:
     accept: Accept
     get_results: Get results
@@ -55,7 +55,7 @@ es:
     select_at_least_one: Please select at least one option below.
   
   social:
-    header: Share the survey
+    header: Share the survey #new end
 
   login:
     -
@@ -369,7 +369,7 @@ es:
 
       <p><em>Ecocentrismo y mercados:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
-  results:
+  results: #new start
     header: Your results
     chart:
       less: Less
@@ -380,7 +380,7 @@ es:
         capitalism: Conservation through capitalism
     contact:
       title: Contact
-      email_message: 'For more information about The Future of Conservation project please email:'
+      email_message: 'For more information about The Future of Conservation project please email:' #new end
     title: "Cómo interpretar sus resultados"
     content: '<p>
     El gráfico representa sus puntos de vista (los puntos y líneas gruesos) sobre tres ejes. Dichos ejes representan las tres principales dimensiones del debate del futuro de la conservación que identificamos a partir de las respuestas de 9.264 conservacionistas provenientes de 149 países. Las tres dimensiones son: ‘conservación centrada en las personas’ (sobre el papel que las personas deben tener en la conservación), ‘ecocentrismo científico’ (sobre el papel de la ciencia en la protección de las especies y ecosistemas), y ‘conservación a través del capitalismo’ (el papel de las corporaciones y las herramientas de mercado en la conservación).
