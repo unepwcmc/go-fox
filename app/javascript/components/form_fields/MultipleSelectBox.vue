@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select at least one option below</p>
+    <p class="form__validation-message" v-show="errors">{{ validationMessage }}</p>
 
     <v-multiselect :config="selectConfig" :options="selectOptions" :max-count="3"></v-multiselect>
   </div>
@@ -26,6 +26,10 @@
       },
       validation_rules: {
         type: Object,
+        required: true
+      },
+      validationMessage: {
+        type: String,
         required: true
       }
     },

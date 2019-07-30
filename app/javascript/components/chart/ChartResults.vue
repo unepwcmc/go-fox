@@ -6,9 +6,9 @@
 
         <g v-for="axis, index in axes" :transform="`translate(0,${config.offsetTop + index*100 + axisLabelShift})`"> 
           <text :x="options.axisStart - 55" y="1" text-anchor="end" fill="#466882" font-weight="bold" :font-size="unscaledFontSizeMedium">{{ axis.graphLabel }}</text>
-          <text :x="options.axisStart - 10" text-anchor="end" :font-size="unscaledFontSizeSmall">Less</text>
+          <text :x="options.axisStart - 10" text-anchor="end" :font-size="unscaledFontSizeSmall">{{ translations.less }}</text>
           <line  :x1="options.axisStart" :y1="-axisLabelShift" :x2="options.axisEnd" :y2="-axisLabelShift" stroke="#466882"/>
-          <text :x="options.axisEnd + 10" :font-size="unscaledFontSizeSmall">More</text>
+          <text :x="options.axisEnd + 10" :font-size="unscaledFontSizeSmall">{{ translations.more }}</text>
         </g>
         
         <g v-for="line, index in data">
@@ -41,6 +41,10 @@
       data: {
         type: Array,
         required: true
+      },
+      translations: {
+        type: Object,
+        required: true
       }
     },
 
@@ -62,9 +66,9 @@
         domain: [-4, 4],
         range: [0],
         axes: [
-          { graphLabel: 'A', legendLabel: 'People-centred conservation' },
-          { graphLabel: 'B', legendLabel: 'Science-led ecocentrism' },
-          { graphLabel: 'C', legendLabel: 'Conservation through capitalism' }
+          { graphLabel: 'A', legendLabel: this.translations.dimensions.people },
+          { graphLabel: 'B', legendLabel: this.translations.dimensions.science },
+          { graphLabel: 'C', legendLabel: this.translations.dimensions.capitalism }
         ],
         axisLabelShift: 4
       }

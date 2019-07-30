@@ -2,6 +2,6 @@
   <div class="container--public-small">
     <h3><%= t('research_and_publication.title') %></h3>
     <p><%= t('research_and_publication.description') %></p>
-    <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), title: 'Take the survey', class: 'button--blue-shadow' %>
+    <%= link_to t('buttons.take_survey'), new_survey_response_path(Survey.master_survey), title: t('buttons.take_survey'), class: 'button--blue-shadow' %>
   </div>
 </div>

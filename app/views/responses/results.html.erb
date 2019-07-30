@@ -8,7 +8,7 @@
     <% if current_user %>
       Results <span class="normal">ID<%= @response.id %></span>
     <% else %>
-      Your Results
+      <%= t('results.header') %>
     <% end %>
   </h1>
 
@@ -18,7 +18,7 @@
 <div class="container--medium content-padding">
 
   <div class="box--grey-light box-padding--even">
-    <chart-results :data="<%= @results_chart_data %>"></chart-results>
+    <chart-results :translations="<%= t('results.chart').to_json %>" :data="<%= @results_chart_data %>"></chart-results>
   </div>
 
   <div class="results__content flex">
@@ -31,8 +31,8 @@
 
     <div class="results__content--right flex-1-third">
       <div class="box--beige-light box-padding box-spacing box-margin-bottom">
-        <h3>Contact</h3>
-        <p class="text-14">For more information about The Future of Conservation project please email:</p>
+        <h3><%= t('results.contact.title') %></h3>
+        <p class="text-14"><%= t('results.contact.email_message') %></p>
         <p class="text-14"><a href="mailto:futureofconservation@gmail.com" title="Email The Future of Conservation">futureofconservation@gmail.com</a></p>
       </div>
       <%= render 'global_public/sharing_icons' %>

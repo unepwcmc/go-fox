@@ -6,7 +6,7 @@
     <p class="hero__tagline">Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.</p>
 
     <div>
-      <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
+      <%= link_to t('buttons.take_survey'), new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
     </div>
   </div>
 </header>
@@ -18,7 +18,7 @@
     <h2><%= t('homepage.intro.title') %></h2>
     <%= t('homepage.intro.content').html_safe %>
 
-    <%= link_to 'Take the survey', new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
+    <%= link_to t('buttons.take_survey'), new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
 
     <p><%= t('homepage.intro.ethics_statement').html_safe %></p>
   </div>

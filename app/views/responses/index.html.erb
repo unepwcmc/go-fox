@@ -21,7 +21,7 @@
       <% end %>
     </div>
 
-    <chart-results :data="<%= @results_chart_data %> "></chart-results>
+    <chart-results :translations="<%= t('results.chart').to_json %>" :data="<%= @results_chart_data %> "></chart-results>
   </div>
 
   <p>

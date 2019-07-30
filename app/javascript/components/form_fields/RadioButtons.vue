@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select an option below</p>
+    <p class="form__validation-message" v-show="errors">{{ validationMessage }}</p>
 
     <div v-if="scale" class="flex-m-t-stack" :class="{ 'form__validation-border': errors }">
       <input type="hidden" :name="name" :value="name">
@@ -35,7 +35,8 @@
       options: { required: true },
       name: { required: true },
       index: { required: true },
-      scale: { type: Boolean }
+      scale: { type: Boolean },
+      validationMessage: { type: String }
     },
 
     methods: {

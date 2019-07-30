@@ -10,6 +10,7 @@ module ResponsesHelper
     case field_type
       when 'scale'
         field_type = 'radio-buttons'
+        validation_message = I18n.t('validation.select_option')
         options = scale_options_for_answers.to_json
         scale = true
 
@@ -19,16 +20,20 @@ module ResponsesHelper
 
       when 'radio-button'
         field_type = 'radio-buttons'
+        validation_message = I18n.t('validation.select_option')
         options = answer_form.object.question.options.to_json
 
       when 'checkbox'
         field_type = 'checkboxes'
+        validation_message = I18n.t('validation.select_at_least_one')
         options = answer_form.object.question.options.to_json
 
       when 'select-box'
+        validation_message = I18n.t('validation.select_option')
         options = answer_form.object.question.options.to_json
 
       when 'multiple-select-box'
+        validation_message = I18n.t('validation.select_at_least_one')
         options = answer_form.object.question.options.to_json
     end
 
@@ -46,7 +51,12 @@ module ResponsesHelper
       ':scale': scale
     }
 
-    content_tag(field_type, '', attributes)
+    attributes['validation-message'] = validation_message if validation_message
+    
+    if field_type == 'radio-buttons'
+      puts attributes
+    end
+    content_tag(field_type, '', attributes) 
   end
 
   def is_mandatory question

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select at least one option below</p>
+    <p class="form__validation-message" v-show="errors">{{ validationMessage }}</p>
     
     <div class="flex-m-t-stack flex-wrap">
       <p v-for="option in options" class="checkbox flex flex-1-half flex-v-center" @click.self="toggleCheckbox(option.text)">
@@ -32,7 +32,8 @@
       validate: { required: true },
       name: { required: true },
       index: { required: true },
-      options: { required: true }
+      options: { required: true },
+      validationMessage: { required: true }
     },
 
     methods: {

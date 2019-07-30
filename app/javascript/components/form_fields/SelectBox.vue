@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="form__validation-message" v-show="errors">Please select an option below</p>
+    <p class="form__validation-message" v-show="errors">{{ validationMessage }}</p>
 
     <select :name="name" v-model="input" class="select">
       <option selected disabled>Choose a country</option>
@@ -26,6 +26,10 @@
       },
       validation_rules: {
         type: Object,
+        required: true
+      },
+      validationMessage: { 
+        type: String,
         required: true
       }
     },

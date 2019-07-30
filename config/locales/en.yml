@@ -30,6 +30,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  buttons:
+    accept: Accept
+    get_results: Get results
+    next: Next
+    previous: Previous
+    take_survey: Take the Survey
+
+  nav:
+    about_project: About the Project
+    about_debate: About the Debate
+    about_gofox: About GO-FOX
+    log_in: Log in
+    home: Home
+
+  pagination:
+    of: "Of"
+    page: Page
+    tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
+  
+  validation:
+    complete_questions: Please complete the questions highlighted below to continue.
+    select_option: Please select an option below.
+    select_at_least_one: Please select at least one option below.
+  
+  social:
+    header: Share the survey
+
   login:
     -
       title: 'Create a survey'
@@ -43,6 +70,7 @@ en:
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
+  
   homepage:
     intro:
       title: 'The Future of Conservation Survey'
@@ -62,10 +90,12 @@ en:
       -
         title: 'Research and publications'
         description: "Data from the Future of Conservation survey have been used to identify the values held by conservationists, and how these relate to their backgrounds (such as nationality, educational background, or experience of different ecosystems). The <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>first paper from this research</a> has been published in Nature Sustainability. The <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>Authors' Accepted Manuscript</a> is also available open access We continue to carry out new analyses using data collected through this website, and aim to continue disseminating our findings amongst the conservation community."
+  
   survey_warning:
       title: 'Welcome to the Future of Conservation survey'
       description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
       master_description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre, and used solely for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.'
+  
   sign_up_warning:
       title: 'Welcome to GO-FOX'
       description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
@@ -344,7 +374,19 @@ en:
 
       <p><em>Market ecocentrism:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
+  
   results:
+    header: Your results
+    chart:
+      less: Less
+      more: More
+      dimensions:
+        people: People-centred conservation
+        science: Science-led ecocentrism
+        capitalism: Conservation through capitalism
+    contact:
+      title: Contact
+      email_message: 'For more information about The Future of Conservation project please email:'
     title: "How to interpret your results"
     content: '<p>
     The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).
