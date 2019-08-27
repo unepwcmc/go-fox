@@ -6,7 +6,7 @@ before_install:
 cache:
   yarn: true
 language: ruby
-bundler_args: --without development
+bundler_args: --without development production staging
 rvm:
 - 2.5.0
 addons:
