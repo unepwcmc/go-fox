@@ -14,6 +14,7 @@ before_script:
 - psql -c 'create database travis_ci_test' -U postgres
 - cp config/database.yml.travis config/database.yml
 - cp config/secrets.yml.travis config/secrets.yml
+- gem install bundler
 - yarn install
 - RAILS_ENV=test bundle exec rake db:migrate
 notifications:
