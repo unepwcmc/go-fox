@@ -41,17 +41,4 @@ class Answer < ApplicationRecord
       self.raw
     end
   end
-
-  def value
-    case self.raw
-    when "Strongly Disagree"  then -3
-    when "Disagree"           then -2
-    when "Slightly Disagree"  then -1
-    when "Slightly Agree"     then 1
-    when "Agree"              then 2
-    when "Strongly Agree"     then 3
-    else
-      0.0
-    end
-  end
 end
