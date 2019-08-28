@@ -1,3 +1,9 @@
+# v0.1.2
+
+**Fix resources**
+
+* Fix for the pdf and powerpoint files on the resources page.
+
 # v0.1.1
 
 **Fix csv export**
