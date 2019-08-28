@@ -1,6 +1,6 @@
 module ResponsesHelper
   def scale_options_for_answers
-    ["Strongly Disagree", "Disagree", "Slightly Disagree", "Neither Agree nor Disagree", "Slightly Agree", "Agree", "Strongly Agree"]
+    ["strongly_disagree", "disagree", "slightly_disagree", "neither_agree_nor_disagree", "slightly_agree", "agree", "strongly_agree"]
   end
 
   def get_form_field answer_form
