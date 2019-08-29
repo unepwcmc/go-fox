@@ -7,8 +7,8 @@
 
       <div v-for="option in options" class="radio-button--scale">
 
-        <input required type="radio" v-model="input" :value="option" :name="name" :id="id(option)" class="radio-button__input">
-        <label :for="id(option)" :class="labelClass(option)" class="radio-button__label flex flex-column flex-h-center">{{ option }}</label>
+        <input required type="radio" v-model="input" :value="option.name" :name="name" :id="id(option.name)" class="radio-button__input">
+        <label :for="id(option.name)" :class="labelClass(option.text)" class="radio-button__label flex flex-column flex-h-center">{{ option.text }}</label>
         <i class="radio-button__tick"></i>
       </div>
     </div>
