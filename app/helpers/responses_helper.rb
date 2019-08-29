@@ -3,6 +3,15 @@ module ResponsesHelper
     ["strongly_disagree", "disagree", "slightly_disagree", "neither_agree_nor_disagree", "slightly_agree", "agree", "strongly_agree"]
   end
 
+  def scale_options_for_answers_to_json
+    scale_options_for_answers.each do |scale_option|
+      {
+        name: scale_option
+        text: I18n.t("questions.answers.#{scale_option}")
+      }
+    end
+  end
+
   def get_form_field answer_form
     field_type = answer_form.object.question.question_type.downcase.gsub(' ', '-')
     scale = false
@@ -11,7 +20,7 @@ module ResponsesHelper
       when 'scale'
         field_type = 'radio-buttons'
         validation_message = I18n.t('validation.select_option')
-        options = scale_options_for_answers.to_json
+        options = scale_options_for_answers_to_json
         scale = true
 
       when 'free-text'

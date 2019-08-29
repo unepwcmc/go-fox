@@ -30,6 +30,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  questions:
+    answers:
+      strongly_disagree: 'Strongly Disagree'
+      disagree: 'Disagree'
+      slightly_disagree: 'Slightly Disagree'
+      neither_agree_nor_disagree: 'Neither Agree nor Disagree'
+      slightly_agree: 'Slightly Agree'
+      agree: 'Agree'
+      strongly_agree: 'Strongly Agree'
+  demographic_questions:
+    answers:
+      age:
+        text: 'What is your age?'
+      gender:
+        text: 'Select your gender?'
+        male: 'Male'
+        female: 'Female'
+        other: 'Other'
+        prefer_not_to_say: 'Prefer not to say'
+
   buttons:
     accept: Accept
     get_results: Get results
@@ -70,7 +90,7 @@ en:
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
-  
+
   homepage:
     intro:
       title: 'The Future of Conservation Survey'
