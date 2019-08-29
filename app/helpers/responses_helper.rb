@@ -6,7 +6,7 @@ module ResponsesHelper
   def scale_options_for_answers_to_json
     scale_options_for_answers.each do |scale_option|
       {
-        name: scale_option
+        name: scale_option,
         text: I18n.t("questions.answers.#{scale_option}")
       }
     end
