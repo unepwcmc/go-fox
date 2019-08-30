@@ -7,17 +7,17 @@ module ResponsesHelper
     options.map do |option|
       {
         name: option,
-        text: I18n.t("questions_options.#{option}", default: 'default')
+        text: I18n.t("questions_options")[:"#{option}"] || 'default'
       }
     end.to_json
   end
 
   def options_for_answers options
     if options.is_a?(ActiveRecord::Associations::CollectionProxy) && options.first.has_attribute?(:text)
-      options = options.reload.pluck(:text) 
+      options = options.reload.pluck(:text)
     end
 
-    return options.to_json if !options.kind_of?(Array)
+    return options.to_json unless options.is_a?(Array)
 
     map_answers(options)
   end
@@ -71,12 +71,12 @@ module ResponsesHelper
     }
 
     attributes['validation-message'] = validation_message if validation_message
-    
-    content_tag(field_type, '', attributes) 
+
+    content_tag(field_type, '', attributes)
   end
 
   def is_mandatory question
-    ( 
+    (
       question.is_a?(Question) ||
       question.is_a?(CustomisedQuestion) ||
       question.is_a?(DemographicQuestion) && question.is_required
