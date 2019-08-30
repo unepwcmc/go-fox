@@ -30,6 +30,61 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  questions_options:
+    'Strongly Disagree': 'Strongly Disagree'
+    'Disagree': 'Disagree'
+    'Slightly Disagree': 'Slightly Disagree'
+    'Neither Agree nor Disagree': 'Neither Agree nor Disagree'
+    'Slightly Agree': 'Slightly Agree'
+    'Agree': 'Agree'
+    'Strongly Agree': 'Strongly Agree'
+    'Male': 'Male'
+    'Female': 'Female'
+    'Other': 'Other'
+    'Prefer not to say': 'Prefer not to say'
+    "School level": "School level"
+    "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
+    "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
+    "Masters degree/postgraduate qualification": "Masters degree/postgraduate qualification"
+    "Doctorate": "Doctorate"
+    'Biological sciences (e.g. zoology, plant sciences)': 'Biological sciences (e.g. zoology, plant sciences)'
+    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Non-biological natural sciences (e.g. chemistry, maths, engineering)"
+    "Social sciences (e.g. economics, human geography, political science)": "Social sciences (e.g. economics, human geography, political science)"
+    "Humanities (e.g. literature, history, philosophy, languages)": "Humanities (e.g. literature, history, philosophy, languages)"
+    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinary (a combination of at least two of natural science, social science and humanities)"
+    "Not applicable": "Not applicable"
+    "Academia/educational institution": "Academia/educational institution"
+    "Not for profit/non governmental organisation": "Not for profit/non governmental organisation"
+    "Private sector": "Private sector"
+    "Government": "Government"
+    "Yes": "Yes"
+    "No": "No"
+    "Exclusively a researcher": "Exclusively a researcher"
+    "Mostly a researcher": "Mostly a researcher"
+    "Both a researcher and practitioner": "Both a researcher and practitioner"
+    "Mostly a practitioner": "Mostly a practitioner"
+    "Exclusively a practitioner": "Exclusively a practitioner"
+    "Very junior position": "Very junior position"
+    "Fairly junior position": "Fairly junior position"
+    "Neither senior nor junior position": "Neither senior nor junior position"
+    "Fairly senior position": "Fairly senior position"
+    "Very senior position": "Very senior position"
+    "I am not currently working in conservation": "I am not currently working in conservation"
+    "Very heavily modified ecosystems (e.g. urban areas)": "Very heavily modified ecosystems (e.g. urban areas)"
+    "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)": "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)"
+    "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)": "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)"
+    "Largely unmodified ecosystems (e.g. sustainable use area)": "Largely unmodified ecosystems (e.g. sustainable use area)"
+    "Unmodified or very little modified ecosystem (e.g. wilderness areas)": "Unmodified or very little modified ecosystem (e.g. wilderness areas)"
+    "Yes, as a researcher": "Yes, as a researcher"
+    "Yes, as a practitioner": "Yes, as a practitioner"
+    "Yes, both as a researcher and as a practitioner": "Yes, both as a researcher and as a practitioner"
+    "Values of family and friends during childhood": "Values of family and friends during childhood"
+    "Outdoor play/recreation during childhood": "Outdoor play/recreation during childhood"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood"
+    "Formal education experience (e.g. field trip, classroom session) during childhood": "Formal education experience (e.g. field trip, classroom session) during childhood"
+    "Professional experience during adulthood": "Professional experience during adulthood"
+    "None of the above": "None of the above"
+
   buttons:
     accept: Accept
     get_results: Get results
@@ -48,12 +103,12 @@ fr:
     of: "Of"
     page: Page
     tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
-  
+
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
     select_option: Please select an option below.
     select_at_least_one: Please select at least one option below.
-  
+
   social:
     header: Share the survey
 
