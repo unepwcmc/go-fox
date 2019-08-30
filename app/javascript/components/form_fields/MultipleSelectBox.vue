@@ -43,9 +43,11 @@
       },
 
       selectOptions () {
+        console.log(this.options)
         return this.options.map(option => ({
-          name: option.text,
-          id: this.makeIdSafe(option.text)
+          name: option.name,
+          text: option.text,
+          id: this.makeIdSafe(option.name)
         }))
       }
     },

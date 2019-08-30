@@ -4,7 +4,7 @@
 
     <select :name="name" v-model="input" class="select">
       <option selected disabled>Choose a country</option>
-      <option v-for="option in options" :value="option.text" class="select__option">{{ option.text }}</option>
+      <option v-for="option in options" :value="option.name" class="select__option">{{ option.text }}</option>
     </select>
   </div>
 </template>

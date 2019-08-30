@@ -50,7 +50,8 @@
           
           eventHub.$emit('validateIfActive')
           
-          if (this.$store.state.pagination.errors == 0) { this.newPage(page) }
+          // if (this.$store.state.pagination.errors == 0) { this.newPage(page) }
+          this.newPage(page)
 
           window.scrollTo({ top: 0, behavior: 'smooth' })
 

@@ -41,7 +41,7 @@
               :value="option.name"
               :disabled="isOptionDisabled(option)"
               v-model="selectedInternal">
-            <span class="v-select__option-label">{{ option.name }}</span>
+            <span class="v-select__option-label">{{ option.text }}</span>
           </label>
         </li>
 

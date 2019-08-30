@@ -1,15 +1,26 @@
 module ResponsesHelper
-  def scale_options_for_answers
-    ["strongly_disagree", "disagree", "slightly_disagree", "neither_agree_nor_disagree", "slightly_agree", "agree", "strongly_agree"]
+  def scale_options
+    ["Strongly Disagree", "Disagree", "Slightly Disagree", "Neither Agree nor Disagree", "Slightly Agree", "Agree", "Strongly Agree"]
   end
 
-  def scale_options_for_answers_hashes
-    scale_options_for_answers.map do |scale_option|
+  def map_answers options
+    options.map do |option|
       {
-        name: scale_option,
-        text: I18n.t("questions.answers.#{scale_option}")
+        name: option,
+        text: I18n.t("questions_options.#{option}", default: option)
       }
+    end.to_json
+  end
+
+  def options_for_answers options
+    if options.is_a?(ActiveRecord::Associations::CollectionProxy) && options.first.has_attribute?(:text)
+      byebug
+      options = options.pluck(:text) 
     end
+
+    return options.to_json if !options.kind_of?(Array)
+
+    map_answers(options)
   end
 
   def get_form_field answer_form
@@ -20,30 +31,30 @@ module ResponsesHelper
       when 'scale'
         field_type = 'radio-buttons'
         validation_message = I18n.t('validation.select_option')
-        options = scale_options_for_answers_hashes.to_json
+        options = scale_options
         scale = true
 
       when 'free-text'
         field_type = 'text-input'
-        options = ''.to_json
+        options = ''
 
       when 'radio-button'
         field_type = 'radio-buttons'
         validation_message = I18n.t('validation.select_option')
-        options = answer_form.object.question.options.to_json
+        options = answer_form.object.question.options
 
       when 'checkbox'
         field_type = 'checkboxes'
         validation_message = I18n.t('validation.select_at_least_one')
-        options = answer_form.object.question.options.to_json
+        options = answer_form.object.question.options
 
       when 'select-box'
         validation_message = I18n.t('validation.select_option')
-        options = answer_form.object.question.options.to_json
+        options = answer_form.object.question.options
 
       when 'multiple-select-box'
         validation_message = I18n.t('validation.select_at_least_one')
-        options = answer_form.object.question.options.to_json
+        options = answer_form.object.question.options
     end
 
     question_type_demographic = answer_form.object.question.kind_of? DemographicQuestion
@@ -56,15 +67,12 @@ module ResponsesHelper
       ':validation_rules': validation,
       'name': "response[answers_attributes][#{answer_form.index}][raw]",
       ':index': answer_form.index,
-      ':options': options,
+      ':options': options_for_answers(options),
       ':scale': scale
     }
 
     attributes['validation-message'] = validation_message if validation_message
     
-    if field_type == 'radio-buttons'
-      puts attributes
-    end
     content_tag(field_type, '', attributes) 
   end
 
