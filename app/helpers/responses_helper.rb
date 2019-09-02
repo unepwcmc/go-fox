@@ -7,14 +7,16 @@ module ResponsesHelper
     options.map do |option|
       {
         name: option,
-        text: I18n.t("questions_options")[:"#{option}"] || 'default'
+        text: I18n.t("questions_options")[:"#{option}"] || option
       }
     end.to_json
   end
 
   def options_for_answers options
     if options.is_a?(ActiveRecord::Associations::CollectionProxy) && options.first.has_attribute?(:text)
-      options = options.reload.pluck(:text)
+      options_array = []
+      Globalize.with_locale(:en) { options_array = options.reload.pluck(:text) }
+      options = options_array
     end
 
     return options.to_json unless options.is_a?(Array)
