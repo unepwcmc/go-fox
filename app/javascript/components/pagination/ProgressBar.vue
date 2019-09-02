@@ -40,9 +40,9 @@
 
       remainingPages () {
         const remaining = this.totalPages - this.page
-        const string = remaining == 1 ? 'page' : 'pages'
+        const string = remaining == 1 ? this.translations.page : this.translations.pages
 
-        return `${remaining} ${string}`
+        return `${remaining} ${string.toLowerCase()}`
       }
     }
   }

@@ -106,7 +106,8 @@ en:
   pagination:
     of: "Of"
     page: Page
-    tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
+    pages: Pages
+    tooltip: "You are ${count} away from finding out your results. Required questions are marked with *."
 
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
