@@ -31,17 +31,17 @@
 
 es: #new start
   questions_options:
-    'Strongly Disagree': 'Strongly Disagree'
-    'Disagree': 'Disagree'
-    'Slightly Disagree': 'Slightly Disagree'
-    'Neither Agree nor Disagree': 'Neither Agree nor Disagree'
-    'Slightly Agree': 'Slightly Agree'
-    'Agree': 'Agree'
-    'Strongly Agree': 'Strongly Agree'
-    'Male': 'Male'
-    'Female': 'Female'
-    'Other': 'Other'
-    'Prefer not to say': 'Prefer not to say'
+    'Strongly Disagree': 'ES: Strongly Disagree'
+    'Disagree': 'ES: Disagree'
+    'Slightly Disagree': 'ES: Slightly Disagree'
+    'Neither Agree nor Disagree': 'ES: Neither Agree nor Disagree'
+    'Slightly Agree': 'ES: Slightly Agree'
+    'Agree': 'ES: Agree'
+    'Strongly Agree': 'ES: Strongly Agree'
+    'Male': 'ES - Male'
+    'Female': 'ES - Female'
+    'Other': 'ES - Other'
+    'Prefer not to say': 'ES - Prefer not to say'
     "School level": "School level"
     "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
     "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
