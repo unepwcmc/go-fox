@@ -74,19 +74,19 @@ class Response < ApplicationRecord
 
   def response_value(response_answer)
     case response_answer
-    when "strongly_disagree"
+    when "Strongly Disagree"
       -2
-    when "disagree"
+    when "Disagree"
       -1
-    when "slightly_disagree"
+    when "Slightly Disagree"
       -0.5
-    when "neither_agree_nor_disagree"
+    when "Neither Agree nor Disagree"
       0
-    when "slightly_agree"
+    when "Slightly Agree"
       0.5
-    when "agree"
+    when "Agree"
       1
-    when "strongly_agree"
+    when "Strongly Agree"
       2
     else
       0
