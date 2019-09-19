@@ -31,83 +31,82 @@
 
 es: #new start
   questions_options:
-    'Strongly Disagree': 'ES: Strongly Disagree'
-    'Disagree': 'ES: Disagree'
-    'Slightly Disagree': 'ES: Slightly Disagree'
-    'Neither Agree nor Disagree': 'ES: Neither Agree nor Disagree'
-    'Slightly Agree': 'ES: Slightly Agree'
-    'Agree': 'ES: Agree'
-    'Strongly Agree': 'ES: Strongly Agree'
-    'Male': 'ES - Male'
-    'Female': 'ES - Female'
-    'Other': 'ES - Other'
-    'Prefer not to say': 'ES - Prefer not to say'
-    "School level": "School level"
-    "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
-    "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
-    "Masters degree/postgraduate qualification": "Masters degree/postgraduate qualification"
-    "Doctorate": "Doctorate"
-    'Biological sciences (e.g. zoology, plant sciences)': 'Biological sciences (e.g. zoology, plant sciences)'
-    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Non-biological natural sciences (e.g. chemistry, maths, engineering)"
-    "Social sciences (e.g. economics, human geography, political science)": "Social sciences (e.g. economics, human geography, political science)"
-    "Humanities (e.g. literature, history, philosophy, languages)": "Humanities (e.g. literature, history, philosophy, languages)"
-    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinary (a combination of at least two of natural science, social science and humanities)"
-    "Not applicable": "Not applicable"
-    "Academia/educational institution": "Academia/educational institution"
-    "Not for profit/non governmental organisation": "Not for profit/non governmental organisation"
-    "Private sector": "Private sector"
-    "Government": "Government"
-    "Yes": "Yes"
+    'Strongly Disagree': 'Muy en desacuerdo'
+    'Disagree': 'En desacuerdo'
+    'Slightly Disagree': 'Ligeramente en desacuerdo'
+    'Neither Agree nor Disagree': 'Ni de acuerdo ni en desacuerdo'
+    'Slightly Agree': 'Ligeramente de acuerdo'
+    'Agree': 'De acuerdo'
+    'Strongly Agree': 'Muy de acuerdo'
+    'Male': 'Hombre'
+    'Female': 'Mujer'
+    'Other': 'Otro'
+    'Prefer not to say': 'Prefiero no indicarlo'
+    "School level": "Colegio/instituto"
+    "Post-high school, but at an institution other than a university": "Post-colegial, pero en una institución no-universitaria"
+    "Undergraduate/bachelors university degree": "Grado universitario"
+    "Masters degree/postgraduate qualification": "Maestría/posgrado universitario"
+    "Doctorate": "Doctorado"
+    'Biological sciences (e.g. zoology, plant sciences)': 'Ciencias biológicas (Ej. biología, ecología, zoología)'
+    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Ciencias no-biológicas (Ej. química, matemáticas, ingeniería)"
+    "Social sciences (e.g. economics, human geography, political science)": "Ciencias sociales (Ej. económicas, geografía humana, ciencias políticas)"
+    "Humanities (e.g. literature, history, philosophy, languages)": "Humanidades (Ej. literatura, historia, filosofía, lenguas) "
+    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinario (combinando al menos dos de ciencias naturales, ciencias sociales y humanidades)"
+    "Not applicable": "No se aplica"
+    "Academia/educational institution": "Académico/institución educativa"
+    "Not for profit/non governmental organisation": "Organización sin ánimo lucrativo/organización no gubernamental"
+    "Private sector": "Sector privado"
+    "Government": "Funcionario"
+    "Yes": "Sí"
     "No": "No"
-    "Exclusively a researcher": "Exclusively a researcher"
-    "Mostly a researcher": "Mostly a researcher"
-    "Both a researcher and practitioner": "Both a researcher and practitioner"
-    "Mostly a practitioner": "Mostly a practitioner"
-    "Exclusively a practitioner": "Exclusively a practitioner"
-    "Very junior position": "Very junior position"
-    "Fairly junior position": "Fairly junior position"
-    "Neither senior nor junior position": "Neither senior nor junior position"
-    "Fairly senior position": "Fairly senior position"
-    "Very senior position": "Very senior position"
-    "I am not currently working in conservation": "I am not currently working in conservation"
-    "Very heavily modified ecosystems (e.g. urban areas)": "Very heavily modified ecosystems (e.g. urban areas)"
-    "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)": "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)"
-    "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)": "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)"
-    "Largely unmodified ecosystems (e.g. sustainable use area)": "Largely unmodified ecosystems (e.g. sustainable use area)"
-    "Unmodified or very little modified ecosystem (e.g. wilderness areas)": "Unmodified or very little modified ecosystem (e.g. wilderness areas)"
-    "Yes, as a researcher": "Yes, as a researcher"
-    "Yes, as a practitioner": "Yes, as a practitioner"
-    "Yes, both as a researcher and as a practitioner": "Yes, both as a researcher and as a practitioner"
-    "Values of family and friends during childhood": "Values of family and friends during childhood"
-    "Values of family and friends during adulthood": "Values of family and friends during adulthood"
-    "Outdoor play/recreation during childhood": "Outdoor play/recreation during childhood"
-    "Outdoor play/recreation during adulthood": "Outdoor play/recreation during adulthood"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood"
-    "Formal education experience (e.g. field trip, classroom session) during childhood": "Formal education experience (e.g. field trip, classroom session) during childhood"
-    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Formal education experience (e.g. field trip, classroom session) during adulthood"
-    "Professional experience during adulthood": "Professional experience during adulthood"
-    "None of the above": "None of the above"
+    "Exclusively a researcher": "Exclusivamente (o casi exclusivamente) investigación"
+    "Mostly a researcher": "Principalmente investigación"
+    "Both a researcher and practitioner": "Investigación y práctica a partes más o menos iguales"
+    "Mostly a practitioner": "Principalmente práctica"
+    "Exclusively a practitioner": "Exclusivamente (o casi exclusivamente) práctica"
+    "Very junior position": "Muy “junior” (baja autoridad)"
+    "Fairly junior position": "Relativamente “junior” (autoridad media-baja)"
+    "Neither senior nor junior position": "Intermedio"
+    "Fairly senior position": "Relativamente “senior” (autoridad media-alta)"
+    "Very senior position": "Muy “senior” (alta autoridad)"
+    "I am not currently working in conservation": "Actualmente no trabajo en la conservación"
+    "Very heavily modified ecosystems (e.g. urban areas)": "Ecosistemas altamente modificados (ej. Zonas urbanas)"
+    "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)": "Ecosistemas bastante modificados (ej. Agricultura intensiva, piscicultura intensiva)"
+    "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)": "Ecosistemas algo modificados (ej. Agricultura extensiva, piscicultura extensiva)"
+    "Largely unmodified ecosystems (e.g. sustainable use area)": "Ecosistemas poco modificados (ej. Áreas de uso sostenible)"
+    "Unmodified or very little modified ecosystem (e.g. wilderness areas)": "Ecosistemas no modificados (o prácticamente no modificados) (ej. Áreas salvajes)"
+    "Yes, as a researcher": "Sí, en la investigación"
+    "Yes, as a practitioner": "Sí, en la práctica"
+    "Yes, both as a researcher and as a practitioner": "Sí, tanto en la investigación como en la práctica"
+    "Values of family and friends during childhood": "Los valores de la familia y amigos en la infancia"
+    "Values of family and friends during adulthood": "Los valores de la familia y amigos en la madurez"
+    "Outdoor play/recreation during childhood": "Juegos o recreo al aire libre en la infancia"
+    "Outdoor play/recreation during adulthood": "Juegos o recreo al aire libre en la madurez"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Actividades en el interior (ej. lectura/documentales/videojuegos) en la infancia"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Actividades en el interior (ej. lectura/documentales/videojuegos) en la madurez"
+    "Formal education experience (e.g. field trip, classroom session) during childhood": "Educación oficial (ej. excursiones, clases) en la infancia"
+    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Educación oficial (ej. excursiones, clases) en la madurez"
+    "Professional experience during adulthood": "Experiencia profesional en la madurez"
+    "None of the above": "Ninguna de éstas"
 
   buttons:
-    accept: Accept
-    get_results: Get results
-    next: Next
-    previous: Previous
-    take_survey: Take the Survey
+    accept: Aceptar
+    get_results: Enviar
+    next: Siguiente
+    previous: Anterior
+    take_survey: Participe en la encuesta
 
   nav:
-    about_project: About the Project
-    about_debate: About the Debate
-    about_gofox: About GO-FOX
+    about_project: Sobre el proyecto
+    about_debate: Sobre el debate
+    about_gofox: Sobre GO-FOX
     log_in: Log in
-    home: Home
+    home: Inicio
 
   pagination:
     of: "Of"
     page: Page
-    pages: Pages
-    tooltip: "You are ${count} away from finding out your results. Required questions are marked with *."
+    tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
 
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
@@ -115,7 +114,7 @@ es: #new start
     select_at_least_one: Please select at least one option below.
 
   social:
-    header: Share the survey #new end
+    header: Comparta esta encuesta #new end
 
   login:
     -
@@ -155,13 +154,13 @@ es: #new start
       master_description: 'Este proyecto ha sido aprobado por el Comité de Ética de Investigación de la Universidad de Leeds.<br><br>Sus respuestas contribuirán al proyecto de investigación de la Encuesta del Futuro de la Conservación. Todos los datos recolectados serán almacenados de manera segura por UN Environment World Conservation Monitoring Centre, y serán usados exclusivamente para la investigación académica. Cabe la posibilidad de que se comparta con otros investigadores una versión completamente anónima de los datos, excluyendo toda información personal que pudiese conllevar la identificación de las personas encuestadas.<br><br>Sus respuestas individuales no serán identificables ni en esta página ni en nuestras publicaciones. Si elige proporcionar su dirección de correo electrónico, esta no será compartida con personas ajenas al proyecto, y tan sólo será utilizada para mandarle resúmenes de los resultados e invitarle a participar en futuras encuestas.'
   sign_up_warning:
       title: 'Welcome to GO-FOX'
-      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
+      description: 'Este proyecto ha sido aprobado por el Comité de Ética de Investigación de la Universidad de Leeds.<br><br>Sus respuestas contribuirán al proyecto de investigación de la Encuesta del Futuro de la Conservación. Todos los datos recolectados serán almacenados de manera segura por UN Environment World Conservation Monitoring Centre, y serán usados exclusivamente para la investigación académica. Cabe la posibilidad de que se comparta con otros investigadores una versión completamente anónima de los datos, excluyendo toda información personal que pudiese conllevar a la identificación de las personas encuestadas.<br><br>Sus respuestas individuales no serán identificables ni en esta página ni en nuestras publicaciones. Si elige proporcionar su dirección de correo electrónico, ésta no será compartida con personas ajenas al proyecto, y tan sólo será utilizada para mandarle resúmenes de los resultados e invitarle a participar en futuras encuestas.<br><br>Si usted ha recibido un link a la Encuesta de parte de un compañero, profesor o colaborador como usuario de la Encuesta del Futuro de la Conservación para Grupos y Organizaciones (GO-FOX), sus respuestas estarán a disposición de dicho usuario. La herramienta GO-FOX ha sido diseñada para promover la enseñanza y el desarrollo estratégico de las organizaciones conservacionistas, y por tanto no nos responsabilizamos por el uso que dicho usuario pueda darle a sus respuestas. Es posible que el usuario GO-FOX pueda identificarle a partir de sus respuestas. Si esto le resulta incómodo, por favor, no participe la encuesta.'
 
   about_project:
     -
       link: 'Sobre el proyecto del Futuro de la Conservación'
       title: 'Sobre el proyecto del Futuro de la Conservación'
-      content: '<p>El propósito de este proyecto es recoger conocimiento sobre los puntos de vista de los conservacionistas con respecto a varios temas clave, con el objetivo de informar (promover) debates sobre el futuro de la conservación. Recientemente, dichos debates han estado dominados por unos pocos individuos de prestigio, cuyos puntos de vista tienden a formar polos opuestos. En esta encuesta, exploramos la diversidad de puntos de vista que existen en la comunidad de conservacionistas a escala global, y cómo estos varían según ciertas características demográficas como la edad, género, nacionalidad y especialidad profesional.</p>
+      content: '<p>El propósito de este proyecto es recoger conocimiento sobre los puntos de vista de los conservacionistas con respecto a varios temas clave, con el objetivo de informar debates sobre el futuro de la conservación. Recientemente, dichos debates han estado dominados por unos pocos individuos de prestigio, cuyos puntos de vista tienden a formar polos opuestos. En esta encuesta, exploramos la diversidad de puntos de vista que existen en la comunidad de conservacionistas a escala global, y cómo estos varían según ciertas características demográficas como la edad, género, nacionalidad y especialidad profesional.</p>
       <p>El Proyecto del la Encuesta del Futuro de la Conservación ha sido financiado por la Cambridge Conservation Initiative Collaborative Fund, la cual recibe ayuda de la Arcadia Fund, y por el Economic and Social Research Council (ESRC) Impact Acceleration Account en la Universidad de Edimburgo. Les estamos muy agradecidos a estos donantes.</p>'
     -
       link: '¿Cómo funciona?'
@@ -170,7 +169,7 @@ es: #new start
       <p>Hemos publicado, seguimos trabajando para publicar, diversos artículos sobre los puntos de vista de los conservacionistas. Dentro de lo posible, incluiremos dichas publicaciones en esta página web.</p>"
     -
       link: 'Sobre el equipo'
-      title: 'About us'
+      title: 'Sobre el equipo'
       content: "<p>Los siguientes miembros han creado la página web y proyectos de investigación:
       <ul>
       <li><a href='http://www.geog.cam.ac.uk/people/sandbrook/' title='Visit the profile of Chris Sandbrook'>Chris Sandbrook (University of Cambridge)</a></li>
@@ -195,11 +194,11 @@ es: #new start
     -
       link: 'Preguntas frecuentes'
       title: 'Preguntas frecuentes'
-      content: 'Hemos recibido correos de diversas personas respecto al proyecto del Futuro de la Conservación. Para evitar tener que repetir respuestas de manera individual, hemos preparado una serie de respuestas a preguntas frecuentes. Si tus dudas no se resuelven por las respuestas que encontrarás a continuación, ¡no dudes en ponerte en contacto!'
+      content: 'Hemos recibido correos de diversas personas respecto al proyecto del Futuro de la Conservación. Para evitar tener que repetir respuestas de manera individual, hemos preparado una serie de respuestas a preguntas frecuentes. Si sus dudas no se resuelven por las respuestas que encontrará a continuación, ¡no dude en ponerse en contacto!'
       accordion:
         -
-          title: 'Q: What happened to the two-dimension results and figure that I saw last time I took this survey?'
-          content: '<p>A: The original two dimensions for the Future of Conservation Survey were created by the project team based on their expert understanding of recent conservation debates. However, now that over 10,000 people have taken the survey, we have generated new dimensions that are based on patterns in the way respondents have answered the questions. The best solution to this analysis has three dimensions rather than two, which is why the site has changed. We recognise that this change makes the results somewhat more complex to understand and interpret, but feel it is important to present results that are accurate rather than convenient!</p>'
+          title: 'P: ¿Por qué los resultados de la encuesta se presentan ahora sobre tres ejes, en lugar de los dos ejes originales?'
+          content: '<p>R: Los dos ejes originales fueron generados por los miembros del proyecto, basándose en sus conocimientos acerca de los recientes debates sobre la conservación. En cambio, los nuevos ejes fueron generados a partir de las primeras 10,000 respuestas a la Encuesta. El análisis estadístico de los datos demostró que los distintos puntos de vista de los conservacionistas varían sobre tres ejes en lugar de dos. Si bien es cierto que la interpretación de los resultados sobre dos ejes resultaba algo más fácil de digerir, entendemos que la prioridad debe de ser el presentar dichos resultados de manera precisa y que refleje la realidad empírica de los datos.</p>'
         -
           title: 'P: Para algunas de vuestras preguntas mi respuesta depende del contexto: en algunas situaciones estoy de acuerdo y en otras no, pero esto no puede expresarse mediante las opciones proporcionadas.'
           content: '<p>R: Ésta es una preocupación razonable, pero esperamos y asumimos que en dichas situaciones los participantes elegirán el punto medio (‘neutro’), o cerca del punto medio si entienden que de promedio se sienten ligeramente a favor o en contra de la proposición. Mientras esto ocurra, la encuesta funcionará bien, ya que otras personas tendrán puntos de vista claramente a favor o en contra de la misma pregunta, y elegirán ‘muy a favor’ o ‘muy en contra’. En este sentido la encuesta es eficaz a la hora de distinguir a aquellos que tienen puntos de vista mixtos de aquellos que tienen opiniones claramente independientes del contexto al que se apliquen.</p>'
@@ -214,16 +213,16 @@ es: #new start
           content: '<p>R: Pusimos la encuesta a prueba de manera larga y rigurosa, pero como todas las encuestas, aceptamos que no todas las preguntas son perfectas y que a algunas no les gustarán a parte de los encuestados. Cabe destacar que ya que la encuesta pretende revelar las diversas opiniones de los conservacionistas sobre el debate de la Nueva Conservación, muchas de las proposiciones son citas extraídas directamente de artículos publicados sobre el debate. </p>'
         -
           title: 'P: Esto es un proyecto académico, no hará ninguna diferencia en el mundo real.'
-          content: '<p>R: Deseamos que esta encuesta sea más que un mero proyecto académico, y tenemos planeado que sea una etapa en un proceso más grande. Estamos muy contentos de que ya haya estimulado tantos debates, y pensamos que esto es muy valioso para la comunidad de conservacionistas. Como próxima etapa, tenemos pensado desarrollar una versión de la página web que pueda utilizarse específicamente para grupos definidos, por ejemplo compañeros en una organización o grupos de estudiantes, y también desarrollar material adicional que ayude a considerar las implicaciones de sus resultados. Ya hemos recibido correos de diversas organizaciones expresando su interés por una colaboración de este tipo: si tú también estás interesado, escríbenos al <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a>.</p>'
+          content: '<p>R: Deseamos que esta encuesta sea más que un mero proyecto académico, y tenemos planeado que sea una etapa en un proceso más grande. Estamos muy contentos de que ya haya estimulado tantos debates, y pensamos que esto es muy valioso para la comunidad de conservacionistas. Por petición de varias organizaciones y profesores, hemos desarrollado GO-FOX, una versión de la página web que pueda utilizarse específicamente para grupos definidos, por ejemplo compañeros en una organización o grupos de estudiantes, y también desarrollar material adicional que ayude a considerar las implicaciones de sus resultados. Hasta la fecha, las organizaciones y profesores que han utilizado GO-FOX se han mostrado muy positivos acerca de los beneficios generados por la herramienta, a la hora de estimular debates internos sobre la conservación, e informar los planes estratégicos de las ONG. Si estuviese interesado en participar, no dude en ponerse en contacto:<a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a>.</p>'
         -
-          title: 'Q: Can this survey be run for just my group / organisation?'
-          content: '<p>A: Several groups have already approached us asking for a closed survey for only their group, and we have responded to the demand by creating <a href="/about-go-fox" title="Visit the About Go-FOX page" title="About Go-Fox">GO-FOX</a>, a separate version of the survey which can be run internally within a group or organisation.</p>'
+          title: 'P: ¿Puede utilizarse la encuesta de manera exclusiva para mi grupo u organización?'
+          content: '<p>R: Varios grupos han expresado su interés en la posibilidad de usar la encuesta de manera cerrada dentro de dicho grupo. Por tanto, hemos creado <a href="/about-go-fox" title="Visit the About Go-FOX page" title="About Go-Fox">GO-FOX</a>, una versión alternativa de la encuesta que puede utilizarse de manera interna por un grupo u organización.</p>'
         -
-          title: 'Q: Why these questions? By limiting the questions to the issues already covered in the New Conservation debate, aren’t you reproducing its limitations?'
-          content: '<p>A: This is a fair point. Our research began as an investigation into how members of the wider conservation community felt about the issues raised in the new conservation debate, and that is what we have continued with this survey. These debates are broad enough to cover many key issues in conservation. But we do recognise that there are other important issues that matter for the future of conservation that have not featured in the New Conservation debate, which is why we have now included an open-ended question at the end of the survey which allows respondents to contribute new topics which they feel are pertinent to the future of conservation. We plan to consider these suggestions to produce new statements, to be then incorporated into the survey.</p>'
+          title: 'P: ¿Por qué habéis elegido estas preguntas en concreto? Al limitar las preguntas al debate de la Nueva Conservación, estáis reproduciendo las limitaciones de dicho debate.'
+          content: '<p>R: En cierta medida, esto es verdad. Nuestras investigaciones comenzaron por explorar las diversas opiniones de los conservacionistas sobre los temas tratados en el debate de la Nueva Conservación, y hemos mantenido ese objetivo en esta encuesta. Este debate es suficientemente amplio y ya cubre muchos de los temas fundamentales en la conservación. Aun así, apreciamos que hay otros aspectos de la conservación que merecen ser debatidos, y que no reciben suficiente atención en el debate de la Nueva Conservación (y por tanto tampoco en nuestra encuesta). Nos mantenemos abiertos a la posibilidad de incorporar nuevas preguntas en próximas versiones de este proyecto.</p>'
         -
-          title: 'Q: The questions are leading questions, and this is poor research design.'
-          content: '<p>A: Please note that the survey is based on statements, rather than questions, and therefore cannot be considered leading. The statements are phrased as Likert items and are sometimes deliberately provocative such that they elicit responses with a spectrum of agreement. This is conventional in social science.</p>'
+          title: 'P: Las preguntas están sesgadas, y el diseño de la investigación es problemático.'
+          content: '<p>R: La encuesta está basada en proposiciones en lugar de preguntas, y por tanto no pueden estar sesgadas, ya que se le pregunta al encuestado hasta qué punto está de acuerdo con dichas proposiciones. El uso de escalas Likert, tal y como empleamos nosotros, es típico en las ciencias sociales.</p>'
 
   resources:
     -
@@ -343,7 +342,7 @@ es: #new start
       link: 'Fondo'
       title: 'Fondo'
       content: '<p>El estreno de la Encuesta del Futuro de la Conservación en 2017 dio lugar a que diversos conservacionistas se pusieran en contacto con nosotros para preguntar si sería posible usar la Encuesta de manera interna dentro de sus organizaciones o aulas universitarias. De ahí surgió la motivación para crear la Encuesta del Futuro de la Conservación para Grupos y Organizaciones (GO-FOX, por las siglas en inglés).</p>
-      <p>[VIDEO PLACEHOLDER]</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bZdwQAG-xI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p>La herramienta GO-FOX permite a los usuarios crear una versión personalizada de la Encuesta, y distribuirla de manera interna dentro de su grupo, clase u organización. El análisis de los resultados de los encuestados se le envía directamente a dicho usuario, de manera que éste pueda utilizarlos para el beneficio de su grupo. Como ejemplos no excluyentes de posibles usos de GO-FOX, se encuentran:</p>
       <ul>
       <li>Las ONGs que deseen suscitar debates internos entre sus empleados y/o miembros acerca de sus valores conservacionistas, y la relación de éstos con los de la organización en general. Esto podría hacerse como parte del proceso de generación de planes estratégicos y de desarrollo.</li>
@@ -429,7 +428,7 @@ es: #new start
 
       <p><em>Ecocentrismo y mercados:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
-  results: #new start
+  results:
     header: Your results
     chart:
       less: Less
@@ -440,7 +439,7 @@ es: #new start
         capitalism: Conservation through capitalism
     contact:
       title: Contact
-      email_message: 'For more information about The Future of Conservation project please email:' #new end
+      email_message: 'For more information about The Future of Conservation project please email:'
     title: "Cómo interpretar sus resultados"
     content: '<p>
     El gráfico representa sus puntos de vista (los puntos y líneas gruesos) sobre tres ejes. Dichos ejes representan las tres principales dimensiones del debate del futuro de la conservación que identificamos a partir de las respuestas de 9.264 conservacionistas provenientes de 149 países. Las tres dimensiones son: ‘conservación centrada en las personas’ (sobre el papel que las personas deben tener en la conservación), ‘ecocentrismo científico’ (sobre el papel de la ciencia en la protección de las especies y ecosistemas), y ‘conservación a través del capitalismo’ (el papel de las corporaciones y las herramientas de mercado en la conservación).
