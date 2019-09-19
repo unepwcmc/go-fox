@@ -107,13 +107,14 @@ fr:
   pagination:
     of: "sur"
     page: Page
+    pages: Pages
     tooltip: "Vous êtes à ${count} pages d’obtenir vos résultats. Les déclarations marquées d’un astérisque (*) sont obligatoires."
-  
+
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
     select_option: Please select an option below.
     select_at_least_one: Please select at least one option below.
-  
+
   social:
     header: Share the survey
 
@@ -130,6 +131,7 @@ fr:
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
+      
   homepage:
     intro:
       title: 'le Future avec la Conservation frances'
@@ -443,7 +445,7 @@ fr:
       title: Contact
       email_message: 'For more information about The Future of Conservation project please email:'
     title: "Comment interpréter ses résultats"
-    content: '<p> 
+    content: '<p>
     Le graphique ci-dessus présente un récapitulatif de vos opinions (les points et lignes en gras) sur trois axes. Ces axes représentent trois dimensions clés du débat sur la conservation provenant de l’analyse statistique des résultats des premiers 9264 participants à l’enquête Futur de la Conservation. Ces dimensions sont : A. « La conservation centrée sur les individus » (se rapportant au rôle que les individus devraient jouer pour la conservation), B. « L’écocentrisme scientifique » (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes), et C. « La conservation par le capitalisme » (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation).     </p>
     <p>
     Un score se situant vers la gauche du graphique indique une opinion moins en faveur de la dimension en question, alors qu’un score vers la droite du graphique indique une opinion plus en faveur de cette dimension.

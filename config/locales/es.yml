@@ -106,6 +106,7 @@ es: #new start
   pagination:
     of: "Of"
     page: Page
+    pages: Pages
     tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
 
   validation:
@@ -129,6 +130,7 @@ es: #new start
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
+      
   homepage:
     intro:
       title: 'El Futuro de la Conservación'
