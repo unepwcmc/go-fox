@@ -31,30 +31,31 @@
 
 fr:
   questions_options:
-    'Strongly Disagree': 'Strongly Disagree'
-    'Disagree': 'Disagree'
-    'Slightly Disagree': 'Slightly Disagree'
-    'Neither Agree nor Disagree': 'Neither Agree nor Disagree'
-    'Slightly Agree': 'Slightly Agree'
-    'Agree': 'Agree'
-    'Strongly Agree': 'Strongly Agree'
-    'Male': 'Male'
-    'Female': 'Female'
-    'Other': 'Other'
-    'Prefer not to say': 'Prefer not to say'
-    "School level": "School level"
-    "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
-    "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
-    "Masters degree/postgraduate qualification": "Masters degree/postgraduate qualification"
-    "Doctorate": "Doctorate"
-    'Biological sciences (e.g. zoology, plant sciences)': 'Biological sciences (e.g. zoology, plant sciences)'
-    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Non-biological natural sciences (e.g. chemistry, maths, engineering)"
-    "Social sciences (e.g. economics, human geography, political science)": "Social sciences (e.g. economics, human geography, political science)"
-    "Humanities (e.g. literature, history, philosophy, languages)": "Humanities (e.g. literature, history, philosophy, languages)"
-    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinary (a combination of at least two of natural science, social science and humanities)"
-    "Not applicable": "Not applicable"
-    "Academia/educational institution": "Academia/educational institution"
-    "Not for profit/non governmental organisation": "Not for profit/non governmental organisation"
+    'Strongly Disagree': 'Tout à fait en désaccord'
+    'Disagree': 'En désaccord'
+    'Slightly Disagree': 'Plutôt en désaccord'
+    'Neither Agree nor Disagree': 'Neutre'
+    'Slightly Agree': 'Plutôt d’accord'
+    'Agree': 'D’accord'
+    'Strongly Agree': 'Tout à fait d’accord'
+    'Male': 'Homme'
+    'Female': 'Femme'
+    'Other': 'Autre'
+    'Prefer not to say': 'Ne souhaite pas répondre'
+    "School level": "Enseignement secondaire"
+    "Post-high school, but at an institution other than a university": "Enseignement supérieur non-universitaire"
+    "Undergraduate/bachelors university degree": "Licence"
+    "Masters degree/postgraduate qualification": "Master"
+    "Doctorate": "Doctorat"
+    'Biological sciences (e.g. zoology, plant sciences)': 'Biologie (par ex.: zoologie, botanique)'
+    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Sciences naturelles non-biologiques (par ex.: chimie, mathématiques, ingénierie) "
+    "Social sciences (e.g. economics, human geography, political science)": "Sciences sociales (par ex.: économie, géographie humaine, sciences politiques)"
+    "Humanities (e.g. literature, history, philosophy, languages)": "Sciences humaines (par ex.: littérature, histoire, philosophie, langues)"
+    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinaire (toute combinaison d’au moins deux de ces composantes: sciences naturelles, sciences sociales, sciences humaines)"
+    "Not applicable": "Non applicable"
+    "Academia/educational institution": "Académique/Etablissement d’éducation"
+    "Not for profit/non governmental organisation": "Organisation à but non lucratif/Organisation non-gouvernementale
+"
     "Private sector": "Private sector"
     "Government": "Government"
     "Yes": "Yes"
@@ -90,30 +91,29 @@ fr:
     "None of the above": "None of the above"
 
   buttons:
-    accept: Accept
+    accept: J’accepte
     get_results: Get results
     next: Next
     previous: Previous
-    take_survey: Take the Survey
+    take_survey: Participez à l’enquête
 
   nav:
     about_project: About the Project
     about_debate: About the Debate
     about_gofox: About GO-FOX
     log_in: Log in
-    home: Home
+    home: Page d'accueil
 
   pagination:
-    of: "Of"
+    of: "sur"
     page: Page
-    pages: Pages
-    tooltip: "You are ${count} away from finding out your results. Required questions are marked with *."
-
+    tooltip: "Vous êtes à ${count} pages d’obtenir vos résultats. Les déclarations marquées d’un astérisque (*) sont obligatoires."
+  
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
     select_option: Please select an option below.
     select_at_least_one: Please select at least one option below.
-
+  
   social:
     header: Share the survey
 
@@ -344,7 +344,7 @@ fr:
       link: 'Background'
       title: 'Background'
       content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).</p>
-      <p>[VIDEO PLACEHOLDER]</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bZdwQAG-xI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p>The GO-FOX tool allows the user to create their own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents they are working with. Analysed survey results from this group are then made available to the GO-FOX user, who can then use them for the benefit of the group. Examples of how GO-FOX may be used include, but are not limited to:</p>
       <ul>
       <li>Conservation NGOs wishing to generate discussion amongst their staff or members about their individual conservation viewpoints and how these relate to the work of the organisation. This could be done as part of a strategic planning process</li>
@@ -442,15 +442,14 @@ fr:
     contact:
       title: Contact
       email_message: 'For more information about The Future of Conservation project please email:'
-    title: "How to interpret your results"
-    content: '<p>
-    The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).
+    title: "Comment interpréter ses résultats"
+    content: '<p> 
+    Le graphique ci-dessus présente un récapitulatif de vos opinions (les points et lignes en gras) sur trois axes. Ces axes représentent trois dimensions clés du débat sur la conservation provenant de l’analyse statistique des résultats des premiers 9264 participants à l’enquête Futur de la Conservation. Ces dimensions sont : A. « La conservation centrée sur les individus » (se rapportant au rôle que les individus devraient jouer pour la conservation), B. « L’écocentrisme scientifique » (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes), et C. « La conservation par le capitalisme » (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation).     </p>
+    <p>
+    Un score se situant vers la gauche du graphique indique une opinion moins en faveur de la dimension en question, alors qu’un score vers la droite du graphique indique une opinion plus en faveur de cette dimension.
     </p>
     <p>
-    A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.
+    Vous pouvez comparer vos points de vue avec ceux d’autres individus ayant récemment participé à l’enquête, dont les réponses sont représentées par des points et des lignes plus fines.
     </p>
-    <p>
-    You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.
-    </p>
-    <p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate" title="Visit the About the Debate page">About the Debate</a> page.
+    <p>Vous pouvez en apprendre plus sur ces dimensions et comment elles se positionnent par rapport à des positions existantes dans la littérature en visitant la page <a href="/about-the-debate" title="À propos du débat">À propos du débat</a>.
     </p>'
