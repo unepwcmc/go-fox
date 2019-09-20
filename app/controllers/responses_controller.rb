@@ -31,7 +31,7 @@ class ResponsesController < ApplicationController
 
     render layout: 'public'
 
-    session[:locale] = @survey.settings["default_language"].to_sym
+    session[:locale] = @survey.settings["default_language"].to_sym || :en
     set_locale
   end
 
