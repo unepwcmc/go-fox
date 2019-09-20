@@ -30,6 +30,9 @@ class ResponsesController < ApplicationController
     end
 
     render layout: 'public'
+
+    session[:locale] = @survey.settings["default_language"].to_sym
+    set_locale
   end
 
   def create
