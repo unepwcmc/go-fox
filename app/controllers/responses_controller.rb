@@ -19,8 +19,10 @@ class ResponsesController < ApplicationController
   end
 
   def new
+    # set the locale based upon the default_langauge of the survey
     I18n.locale = @survey.settings["default_language"].to_sym || I18n.default_locale
     session[:locale] = I18n.locale
+
     @response = Response.new
     @questions = @survey.questions
     @question_section_counts = question_section_counts(@questions)
