@@ -104,15 +104,15 @@ es: #new start
     home: Inicio
 
   pagination:
-    of: "Of"
-    page: Page
-    pages: Pages
-    tooltip: "You are ${count} pages away from finding out your results. Required questions are marked with *."
+    of: "De"
+    page: Página
+    pages: Páginas
+    tooltip: "Faltan ${count} para obtener sus resultados. Las preguntas obligatorias están marcadas con *."
 
   validation:
-    complete_questions: Please complete the questions highlighted below to continue.
-    select_option: Please select an option below.
-    select_at_least_one: Please select at least one option below.
+    complete_questions: Complete las preguntas indicadas a continuación.
+    select_option: Seleccione una de las siguientes opciones.
+    select_at_least_one: Seleccione al menos una de las siguientes opciones.
 
   social:
     header: Comparta esta encuesta #new end
@@ -130,8 +130,10 @@ es: #new start
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
-      
   homepage:
+    hero:
+      title: Contribuya al debate sobre el futuro de la conservación
+      tagline: Exprese su punto de vista sobre varios aspectos de la conservación y compare sus resultados con los de otros conservacionistas.
     intro:
       title: 'El Futuro de la Conservación'
       content: '<p>Hace tiempo que vienen produciéndose animados debates sobre el camino que debe seguir la conservación de la biodiversidad. Sin embargo, estos debates han estado dominados por unos pocos individuos de prestigio.</p>
@@ -431,17 +433,17 @@ es: #new start
       <p><em>Ecocentrismo y mercados:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
   results:
-    header: Your results
+    header: Sus resultados
     chart:
-      less: Less
-      more: More
+      less: Bajo
+      more: Alto
       dimensions:
-        people: People-centred conservation
-        science: Science-led ecocentrism
-        capitalism: Conservation through capitalism
+        people: Conservación centrada en las personas
+        science: Ecocentrismo científico
+        capitalism: Conservación a través del capitalismo
     contact:
-      title: Contact
-      email_message: 'For more information about The Future of Conservation project please email:'
+      title: Contacto
+      email_message: 'Si tiene alguna duda o quiere obtener más información sobre el proyecto del Futuro de la Conservación, no dude en escribirnos:'
     title: "Cómo interpretar sus resultados"
     content: '<p>
     El gráfico representa sus puntos de vista (los puntos y líneas gruesos) sobre tres ejes. Dichos ejes representan las tres principales dimensiones del debate del futuro de la conservación que identificamos a partir de las respuestas de 9.264 conservacionistas provenientes de 149 países. Las tres dimensiones son: ‘conservación centrada en las personas’ (sobre el papel que las personas deben tener en la conservación), ‘ecocentrismo científico’ (sobre el papel de la ciencia en la protección de las especies y ecosistemas), y ‘conservación a través del capitalismo’ (el papel de las corporaciones y las herramientas de mercado en la conservación).

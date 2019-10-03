@@ -2,8 +2,8 @@
 
 <header class="hero--public flex flex-v-center">
   <div class="hero__content container--public center">
-    <h1>Inform debates on the future of conservation</h1>
-    <p class="hero__tagline">Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.</p>
+    <h1><%= t('homepage.hero.title') %></h1>
+    <p class="hero__tagline"><%= t('homepage.hero.tagline') %></p>
 
     <div>
       <%= link_to t('buttons.take_survey'), new_survey_response_path(Survey.master_survey), class: 'button--blue-shadow hero__button' %>
