@@ -130,6 +130,9 @@ es: #new start
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
   homepage:
+    hero:
+      title: Inform debates on the future of conservation
+      tagline: Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.
     intro:
       title: 'El Futuro de la Conservación'
       content: '<p>Hace tiempo que vienen produciéndose animados debates sobre el camino que debe seguir la conservación de la biodiversidad. Sin embargo, estos debates han estado dominados por unos pocos individuos de prestigio.</p>
