@@ -101,18 +101,19 @@ fr:
     about_debate: À propos du débat
     about_gofox:  À propos de Go-Fox-FOX
     log_in: S’identifier
-    home: Accueil 
+    home: Accueil
 
   pagination:
     of: "sur"
     page: Page
-    tooltip: "Vous êtes à ${count} pages d’obtenir vos résultats. Les déclarations marquées d’un astérisque (*) sont obligatoires."
-  
+    pages: Pages
+    tooltip: "Vous êtes à ${count} d’obtenir vos résultats. Les déclarations marquées d’un astérisque (*) sont obligatoires."
+
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
     select_option: Please select an option below.
     select_at_least_one: Please select at least one option below.
-  
+
   social:
     header: Partagez le sondage
 
@@ -131,8 +132,8 @@ fr:
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
   homepage:
     hero:
-      title: Inform debates on the future of conservation
-      tagline: Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.
+      title: Participez aux débats sur le futur de la conservation
+      tagline: Donnez vos opinions sur divers enjeux liés à la conservation, comparez vos opinions à celles des autres et donnez votre avis afin de façonner les débats futurs.
     intro:
       title: 'le Future avec la Conservation frances'
       content: '<p>Bien que des débats concernant les directions futures de la conservation de la biodiversité aient eu lieu depuis longtemps, ceux-ci ont eu tendance à être dominés par quelques personnalités importantes. </p>
@@ -437,14 +438,14 @@ fr:
       less: Moins
       more: Plus
       dimensions:
-        people: « La conservation centrée sur les individus » 
-        science: « L’écocentrisme scientifique » 
+        people: « La conservation centrée sur les individus »
+        science: « L’écocentrisme scientifique »
         capitalism:  « La conservation par le capitalisme »
     contact:
       title: Nous contacter
       email_message: 'Pour plus d’informations sur le projet « Futur de la Conservation », veuillez écrire à '
     title: "Comment interpréter ses résultats"
-    content: '<p> 
+    content: '<p>
     Le graphique ci-dessus présente un récapitulatif de vos opinions (les points et lignes en gras) sur trois axes. Ces axes représentent trois dimensions clés du débat sur la conservation provenant de l’analyse statistique des résultats des premiers 9264 participants à l’enquête Futur de la Conservation. Ces dimensions sont : A. « La conservation centrée sur les individus » (se rapportant au rôle que les individus devraient jouer pour la conservation), B. « L’écocentrisme scientifique » (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes), et C. « La conservation par le capitalisme » (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation).     </p>
     <p>
     Un score se situant vers la gauche du graphique indique une opinion moins en faveur de la dimension en question, alors qu’un score vers la droite du graphique indique une opinion plus en faveur de cette dimension.

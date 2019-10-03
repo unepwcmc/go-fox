@@ -106,11 +106,12 @@ es: #new start
   pagination:
     of: "De"
     page: Página
-    tooltip: "Faltan ${count} páginas para obtener sus resultados. Las preguntas obligatorias están marcadas con *."
-  
+    pages: Páginas
+    tooltip: "Faltan ${count} para obtener sus resultados. Las preguntas obligatorias están marcadas con *."
+
   validation:
     complete_questions: Complete las preguntas indicadas a continuación.
-    select_option: Seleccione una de las siguientes opciones. 
+    select_option: Seleccione una de las siguientes opciones.
     select_at_least_one: Seleccione al menos una de las siguientes opciones.
 
   social:
@@ -131,8 +132,8 @@ es: #new start
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
   homepage:
     hero:
-      title: Inform debates on the future of conservation
-      tagline: Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.
+      title: Contribuya al debate sobre el futuro de la conservación
+      tagline: Exprese su punto de vista sobre varios aspectos de la conservación y compare sus resultados con los de otros conservacionistas.
     intro:
       title: 'El Futuro de la Conservación'
       content: '<p>Hace tiempo que vienen produciéndose animados debates sobre el camino que debe seguir la conservación de la biodiversidad. Sin embargo, estos debates han estado dominados por unos pocos individuos de prestigio.</p>
