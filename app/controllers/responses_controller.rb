@@ -5,6 +5,7 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :results, :destroy]
   before_action :require_ownership, only: [:show, :destroy]
   before_action :require_survey_unlocked, only: [:new]
+
   layout :resolve_layout
 
   def index
