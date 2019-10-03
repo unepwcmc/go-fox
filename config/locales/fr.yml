@@ -54,69 +54,67 @@ fr:
     "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinaire (toute combinaison d’au moins deux de ces composantes: sciences naturelles, sciences sociales, sciences humaines)"
     "Not applicable": "Non applicable"
     "Academia/educational institution": "Académique/Etablissement d’éducation"
-    "Not for profit/non governmental organisation": "Organisation à but non lucratif/Organisation non-gouvernementale
-"
-    "Private sector": "Private sector"
-    "Government": "Government"
-    "Yes": "Yes"
-    "No": "No"
-    "Exclusively a researcher": "Exclusively a researcher"
-    "Mostly a researcher": "Mostly a researcher"
-    "Both a researcher and practitioner": "Both a researcher and practitioner"
-    "Mostly a practitioner": "Mostly a practitioner"
-    "Exclusively a practitioner": "Exclusively a practitioner"
-    "Very junior position": "Very junior position"
-    "Fairly junior position": "Fairly junior position"
-    "Neither senior nor junior position": "Neither senior nor junior position"
-    "Fairly senior position": "Fairly senior position"
-    "Very senior position": "Very senior position"
-    "I am not currently working in conservation": "I am not currently working in conservation"
-    "Very heavily modified ecosystems (e.g. urban areas)": "Very heavily modified ecosystems (e.g. urban areas)"
-    "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)": "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)"
-    "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)": "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)"
-    "Largely unmodified ecosystems (e.g. sustainable use area)": "Largely unmodified ecosystems (e.g. sustainable use area)"
-    "Unmodified or very little modified ecosystem (e.g. wilderness areas)": "Unmodified or very little modified ecosystem (e.g. wilderness areas)"
-    "Yes, as a researcher": "Yes, as a researcher"
-    "Yes, as a practitioner": "Yes, as a practitioner"
-    "Yes, both as a researcher and as a practitioner": "Yes, both as a researcher and as a practitioner"
-    "Values of family and friends during childhood": "Values of family and friends during childhood"
-    "Values of family and friends during adulthood": "Values of family and friends during adulthood"
-    "Outdoor play/recreation during childhood": "Outdoor play/recreation during childhood"
-    "Outdoor play/recreation during adulthood": "Outdoor play/recreation during adulthood"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood"
-    "Formal education experience (e.g. field trip, classroom session) during childhood": "Formal education experience (e.g. field trip, classroom session) during childhood"
-    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Formal education experience (e.g. field trip, classroom session) during adulthood"
-    "Professional experience during adulthood": "Professional experience during adulthood"
-    "None of the above": "None of the above"
+    "Not for profit/non governmental organisation": "Organisation à but non lucratif/Organisation non-gouvernementale"
+    "Private sector": "Secteur privé"
+    "Government": "Gouvernement"
+    "Yes": "Oui"
+    "No": "Non"
+    "Exclusively a researcher": "Exclusivement chercheur·se"
+    "Mostly a researcher": "Surtout chercheur·se"
+    "Both a researcher and practitioner": "Chercheur·se et practicien·ne"
+    "Mostly a practitioner": "Surtout practicien·ne"
+    "Exclusively a practitioner": "Exclusivement practicien·ne"
+    "Very junior position": "Niveau très subalterne"
+    "Fairly junior position": "Niveau plutôt subalterne"
+    "Neither senior nor junior position": "Ni supérieur ni subalterne"
+    "Fairly senior position": "Niveau plutôt supérieur"
+    "Very senior position": "Niveau très supérieur"
+    "I am not currently working in conservation": "Je ne travaille actuellement pas dans la conservation"
+    "Very heavily modified ecosystems (e.g. urban areas)": "Ecosystèmes considérablement modifiés (ex: zones urbaines)"
+    "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)": "Ecosystèmes largement modifiés (par ex.: agriculture intensive, pêche intensive)"
+    "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)": "Ecosystèmes quelque peu modifiés (par ex.: agriculture à faible intensité, pêche à faible intensité)"
+    "Largely unmodified ecosystems (e.g. sustainable use area)": "Ecosystèmes essentiellement non-modifiés (par ex.: zones d’utilisation durable)"
+    "Unmodified or very little modified ecosystem (e.g. wilderness areas)": "Ecosystèmes non ou très peu modifiés (par ex.: zones sauvages)"
+    "Yes, as a researcher": "Oui, en tant que chercheur·se"
+    "Yes, as a practitioner": "Oui, en tant que practicien·ne"
+    "Yes, both as a researcher and as a practitioner": "Oui, en tant que chercheur·se et practicien·ne"
+    "Values of family and friends during childhood": "Valeurs transmises par votre famille et vos amis pendant votre enfance"
+    "Values of family and friends during adulthood": "Valeurs transmises par votre famille et vos amis à l’âge adulte"
+    "Outdoor play/recreation during childhood": "Jeux et activités extérieurs pendant votre enfance"
+    "Outdoor play/recreation during adulthood": "Jeux et activités extérieurs à l’âge adulte"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Activités à l’intérieur (par ex.: lectures, visionnages de documentaires, jeux vidéos) pendant votre enfance"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Activités à l’intérieur (par ex.: lectures, visionnages de documentaires, jeux vidéos) à l’âge adulte"
+    "Formal education experience (e.g. field trip, classroom session) during childhood": "Éducation formelle (par ex.: visites sur le terrain, séances en salle de classe) pendant votre enfance"
+    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Éducation formelle (par ex.: visites sur le terrain, séances en salle de classe) à l’âge adulte"
+    "Professional experience during adulthood": "Expérience professionnelle à l’âge adulte "
+    "None of the above": "Aucune de ces réponses "
 
   buttons:
     accept: J’accepte
-    get_results: Get results
-    next: Next
-    previous: Previous
+    get_results: Obtenir les résultats
+    next: Suivant
+    previous: Précédent
     take_survey: Participez à l’enquête
 
   nav:
-    about_project: About the Project
-    about_debate: About the Debate
-    about_gofox: About GO-FOX
-    log_in: Log in
-    home: Page d'accueil
+    about_project: À propos du projet
+    about_debate: À propos du débat
+    about_gofox:  À propos de Go-Fox-FOX
+    log_in: S’identifier
+    home: Accueil 
 
   pagination:
     of: "sur"
     page: Page
-    pages: Pages
     tooltip: "Vous êtes à ${count} pages d’obtenir vos résultats. Les déclarations marquées d’un astérisque (*) sont obligatoires."
-
+  
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
     select_option: Please select an option below.
     select_at_least_one: Please select at least one option below.
-
+  
   social:
-    header: Share the survey
+    header: Partagez le sondage
 
   login:
     -
@@ -131,49 +129,48 @@ fr:
       title: 'Analyse data'
       icon: 'icons/icon-analyse.svg'
       description: 'To get started, just <a href="/users/sign_up?locale=en" title="register your GO-FOX account">register your GO-FOX account</a> and start creating surveys!'
-      
   homepage:
     intro:
       title: 'le Future avec la Conservation frances'
-      content: '<p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals.</p>
-      <p>This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey.</p>
-      <p>We hope that you enjoy the survey and encourage you to share your experience by asking others to take part!</p>'
-      ethics_statement: 'Your responses will be kept anonymous, stored securely and will only be used for this project. See full details of <a title="About the Project" href="/about-the-project">ethics and data security</a>.'
+      content: '<p>Bien que des débats concernant les directions futures de la conservation de la biodiversité aient eu lieu depuis longtemps, ceux-ci ont eu tendance à être dominés par quelques personnalités importantes. </p>
+      <p>Cette enquête vous permet d’y apporter votre propre opinion, afin qu’une plus grande diversité de points de vue soit exprimée. L’enquête ne vous prendra que 15 minutes. À la fin, vos opinions et leur comparaison avec celles des autres participants vous seront présentées graphiquement. </p>
+      <p>Nous espérons que vous apprécierez cette enquête et nous vous encourageons à partager votre expérience en suggérant à d’autres d’y participer! </p>'
+      ethics_statement: 'Vos réponses resteront anonymes, seront stockées de manière sécurisée et ne seront utilisées que pour ce projet. Pour plus d’informations, <a title="About the Project" href="/about-the-project">veuillez voir les détails sur le respect de la vie privée et l’éthique des données.</a>.'
     blocks:
       -
-        title: 'Group and Organisation Future of Conservation Survey (GO-FOX)'
+        title: 'Enquête « Futur de la Conservation pour les Groupes et Organisations » (GO-FOX)'
         description: '
-        <p>In response to demand, we have now launched a tool which allows you to create your own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents you are working with. Analysed survey results from this group are then made available to you, to use for the benefit of the group.  This can be used, for instance, to facilitate strategic planning within organisations, or to support teaching on contemporary conservation debates. Visit the <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX page</a> for more details, or <a href="/users/sign_in?locale=en" title="Register now">register now</a> and start creating surveys!</p>
-        <p>Already a GO-FOX user? <a href="/users/sign_in" title="Log in to GO-FOX">Log in to your account here</a>.</p>'
+        <p>En réponse à la demande existante, nous avons lancé un outil permettant de créer sa version personnalisée de l’enquête afin de la partager avec un groupe de participants fermé, tel que ses collègues. L’analyse des résultats de l’enquête pour ce groupe sont ensuite mis à votre disposition. Cette version de l’enquête peut être utilisée, par exemple, afin de faciliter la planification stratégique au sein d’une organisation ou afin de promouvoir l’enseignement sur les enjeux actuels de la conservation. Pour en savoir plus, <a href="/about-go-fox" title="Visit the About Go-FOX page">About GO-FOX page</a> for more details, or <a href="/users/sign_in?locale=en" title="Register now">visitez notre page À propos de GO-FOX ou inscrivez-vous maintenant</a> et commencer à créer votre enquête!</p>
+        <p>Vous êtes déjà un utilisateur·trice GO-FOX? <a href="/users/sign_in" title="Identifiez-vous ici GO-FOX">Identifiez-vous ici</a>.</p>'
         image: 'logos/logo-gofox.svg'
         image_alt: 'GO-FOX logo'
         image_class: 'gofox'
       -
-        title: 'Research and publications'
-        description: "Data from the Future of Conservation survey have been used to identify the values held by conservationists, and how these relate to their backgrounds (such as nationality, educational background, or experience of different ecosystems). The <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>first paper from this research</a> has been published in Nature Sustainability. The <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>Authors' Accepted Manuscript</a> is also available open access We continue to carry out new analyses using data collected through this website, and aim to continue disseminating our findings amongst the conservation community."
+        title: 'Recherche et publications'
+        description: "Les données de l’enquête Futur de la Conservation ont été utilisées afin d’identifier les valeurs chères aux conservationnistes et comment elles sont corrélées à leur milieu (par exemple: nationalité, niveau de formation ou expérience sur divers écosystèmes). <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>Le premier article issu de ces recherches</a> a été publié dans la revue Nature Sustainability. Cet <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>article est également disponible</a> en libre accès. Nous poursuivons de nouvelles analyses en utilisant les données collectées au travers de ce site web et avons pour objectif de continuer à diffuser nos conclusions au sein de la communauté de la conservation de la nature."
   survey_warning:
-      title: 'Welcome to the Future of Conservation survey'
+      title: 'Bienvenue à l’enquête Futur de la Conservation'
       description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
-      master_description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre, and used solely for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.'
+      master_description: 'Ce projet a été approuvé par le comité d’éthique de la recherche de l’Université de Leeds. <br><br>Vos réponses contribueront au projet de recherche continu Futur de la Conservation. Toutes données obtenues pour ce projet seront stockées de manière sécurisée par le Centre de Surveillance de la Conservation de la Nature qui fait partie du Programme des Nations Unies pour l’Environnement. Ces données ne seront utilisées qu’à des fins de recherche académique. Une version anonymisée des données, excluant toutes informations personnelles qui pourraient potentiellement mener à l’identification des réponses individuelles, peut être partagée avec d’autres chercheurs.<br><br> Vos réponses individuelles ne seront ni identifiables sur ce site web ni dans des publications ultérieures. Les adresses email des participants qui les auront fournies ne seront pas partagées avec d’autres parties et ne seront utilisées qu’afin d’envoyer la synthèse des résultats ainsi que des invitations pour participer à des versions futures de l’enquête.'
   sign_up_warning:
       title: 'Welcome to GO-FOX'
-      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
+      description: 'Ce projet a été approuvé par le comité d’éthique de la recherche de l’Université de Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
 
   about_project:
     -
-      link: 'Background'
-      title: 'Background'
-      content: '<p>The purpose of this project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. In this survey, we are exploring the range of views that exist within the conservation movement globally, and how this varies by key demographic characteristics such as age, gender, geography and educational background.</p>
-      <p>Funding for the Future of Conservation Project has been received from the Cambridge Conservation Initiative Collaborative Fund, which is supported by the Arcadia Fund, and from the Economic and Social Research Council (ESRC) Impact Acceleration Account at the University of Edinburgh. We are very grateful for the support of these donors.</p>'
+      link: 'Contexte'
+      title: 'Contexte'
+      content: '<p>L’objectif de ce projet est d’explorer les points de vue des conservationnistes sur diverses problématiques, afin d’alimenter les débats sur le futur de la conservation. Les débats récents sur le futur de la conservation ont été dominés par quelques personnalités de haut niveau, dont les opinions semblent correspondre à des positions fortement marquées. Dans cette enquête, nous explorons la diversité d’opinions existant au sein du mouvement mondial de la conservation, et comment celle-ci varie en fonction de caractéristiques démographiques principales telles que l’âge, le sexe, le lieu ou le niveau de formation.  </p>
+      <p>Nous sommes très reconnaissants de l’appui financier du Cambridge Conservation Initiative Collaborative Fund, qui est soutenu par l’Arcadia Fund et par l’Economic and Social Research Council (ESRC) Impact Acceleration Account de l’Université d’Edinbourg, pour le projet Futur de la Conservation.  </p>'
     -
-      link: 'How does it work'
-      title: 'How does it work?'
-      content: "<p>After taking the survey, the website will present your views on a plot with three axes. These are ‘people-centred conservation’ (relating to the role that people should play in conservation), ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation). These axes were derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey (see <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>this paper</a> in Nature Sustainability for further details of the analysis and results - the <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>Authors' Accepted Manuscript</a> is also available open access).</p>
-      <p>We have published, and aim to continue to publish, our findings on the views of conservationists in various ways. Where possible, we will include these on this website.</p>"
+      link: 'Comment ça fonctionne?'
+      title: 'Comment ça fonctionne?'
+      content: "<p>Après avoir participé à l’enquête, le site web représentera vos opinions sous forme de graphique avec trois axes. Le premier axe est centré sur les individus (se rapportant au rôle que les individus devraient jouer pour la conservation), le second sur l’écocentrisme scientifique (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes), et le troisième sur la conservation par le capitalisme (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation). Ces axes sont dérivés de la première analyse statistique effectuée sur les données obtenues pour les premiers 9264 participants de l’enquête Futur de la Conservation (voir <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>cet article</a> dans la revue Nature Sustainability pour plus d’informations sur l’analyse et les résultats, <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"l’article\" target='_blank'>Authors' Accepted Manuscript</a> est aussi disponible en libre accès). </p>
+      <p>Nous avons publié et avons pour objectif de continuer à publier nos conclusions sur les points de vue des conservationnistes de diverses manières. Si possible, nous inclurons celles-ci sur notre site web.</p>"
     -
-      link: 'About us'
-      title: 'About us'
-      content: '<p>We have jointly created the website and associated research projects. We are:
+      link: 'Qui sommes-nous?'
+      title: 'Qui sommes-nous?'
+      content: '<p>Ensemble, nous avons créé le site web et les projets de recherche qui y sont associés. Nous sommes:
       <ul>
       <li><a href="http://www.geog.cam.ac.uk/people/sandbrook/" title="Visit the profile of Chris Sandbrook">Chris Sandbrook (University of Cambridge)</a></li>
       <li><a href="http://www.see.leeds.ac.uk/people/g.holmes" title="Visit the profile of George Holmes">George Holmes (University of Leeds)</a></li>
@@ -181,52 +178,52 @@ fr:
       <li>Rogelio Luque-Lora (University of Cambridge)</li>
       <li><a href="https://www.ed.ac.uk/geosciences/people?indv=4057" title="Visit the profile of Aidan Keane">Aidan Keane (University of Edinburgh)</a></li>
       </ul>
-      The website is hosted by the <a href="https://www.unep-wcmc.org" title="Visit the UN Environment World Conservation Monitoring Centre website">UN Environment World Conservation Monitoring Centre.</a><p>'
+      Le site web est hébergé par le Centre de Surveillance de la Conservation de la Nature qui fait partie du <a href="https://www.unep-wcmc.org" title="Visit the UN Environment Programme World Conservation Monitoring Centre website">UN Environment Programme World Conservation Monitoring Centre.</a><p>'
     -
-      link: 'Ethics and Data'
-      title: 'Research Ethics and Data Storage'
-      content: '<p>This project has been approved by the Research Ethics committee at the University of Leeds.</p>
-      <p>Responses to the survey contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.</p>
-      <p>Individual responses will not be identifiable either in this website or in subsequent publications. When email addresses are provided, the project team will not share them with other parties, and will only use them to send summarised results and invitations to participate in future versions of the survey.</p>
-      <p>Some respondents may have received a link to the survey from a colleague, teacher or collaborator who is a user of the Group and Organisation Future of Conservation Survey (GO-FOX) tool. In this case, your responses will be available to the GO-FOX user, and they may be able to identify you by your answers. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses.</p>
-      <p>Should any data from the Future of Conservation Survey, including GO-FOX results, be used in any resultant publications or presentations, either internal to your organisation or externally facing, you should acknowledge the project team by citing Sandbrook, C., Fisher, J., Holmes, G., Luque-Lora, R., Keane, A., Ingle, R., Calcada, S., Carter, M. (2019). <em>The Group and Organisation Future of Conservation Survey.</em> <a href="www.futureconservation.org" title="Visit the Future of Conservation homepage">www.futureconservation.org</a></p>'
+      link: 'Ethique de recherche et stockage des données'
+      title: 'Ethique de recherche et stockage des données'
+      content: '<p>Ce projet a été approuvé par le comité d’éthique de la recherche de l’Université de Leeds.</p>
+      <p>Les réponses à l’enquête contribuent au projet de recherche continu Futur de la Conservation. Toutes données obtenues pour ce projet seront stockées de manière sécurisée par le Centre de Surveillance de la Conservation de la Nature qui fait partie du Programme des Nations Unies pour l’Environnement. Ces données ne seront utilisées qu’à des fins de recherche académique. Une version anonymisée des données, excluant toutes informations personnelles qui pourraient potentiellement mener à l’identification des réponses individuelles, peut être partagée avec d’autres chercheurs.</p>
+      <p>Les réponses individuelles ne seront ni identifiables sur ce site web ni dans des publications ultérieures. Les adresses email des participants qui les auront fournies ne seront pas partagées avec d’autres parties et ne seront utilisées qu’afin d’envoyer la synthèse des résultats ainsi que des invitations pour participer à des versions futures de l’enquête.</p>
+      <p>Certains participants auront peut-être reçu un lien pour participer à l’enquête de la part d’un collègue, professeur ou collaborateur qui est utilisateur·trice de l’outil Futur de la Conservation pour Groupes et Organisations (GO-FOX). Dans ce cas, leurs réponses seront disponibles par le biais de l’utilisateur·trice GO-FOX, qui pourra potentiellement identifier le·la participant·e par ses réponses. L’outil GO-FOX a pour but de soutenir l’apprentissage et le développement de capacités organisationnelles, mais l’équipe de projet décline toute responsabilité quant à la manière dont la personne qui vous envoie l’enquête l’utilise ou partage ses réponses.</p>
+      <p>Si toutes données de l’enquête Futur de la Conservation, y compris des résultats GO-FOX, sont utilisées dans des publications ou présentations, aussi bien interne à votre organisation qu’externe, vous devrez reconnaitre l’équipe de projet en citant Sandbrook, C., Fisher, J., Holmes, G., Luque-Lora, R., Keane, A., Ingle, R., Calcada, S., Carter, M. (2019). The Group and Organisation Future of Conservation Survey.</em> <a href="www.futureconservation.org" title="Visit the Future of Conservation homepage">www.futureconservation.org</a></p>'
     -
-      link: 'Contact'
-      title: 'Contact us'
-      content: '<p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a></p>'
+      link: 'Nous contacter'
+      title: 'Nous contacter'
+      content: '<p>Pour plus d’informations sur le projet « Futur de la Conservation », veuillez écrire à <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a></p>'
     -
-      link: 'FAQs'
-      title: 'FAQs'
-      content: 'Several people have been in touch with questions about various aspects of the Future of Conservation project. Rather than write to everyone individually, we have prepared the following answers to some frequently asked questions. If you still have a question that is not answered below, please do get in touch!'
+      link: 'FAQ'
+      title: 'FAQ'
+      content: 'De nombreuses personnes nous ont contactés avec des questions sur divers aspects du projet Futur de la Conservation. Au lieu de leur répondre individuellement, nous avons préparé les réponses suivantes aux questions les plus fréquemment demandées. Si les réponses à vos questions n’apparaissent pas ci-dessous, n’hésitez pas à nous contacter! '
       accordion:
         -
-          title: 'Q: What happened to the two-dimension results and figure that I saw last time I took this survey?'
-          content: '<p>A: The original two dimensions for the Future of Conservation Survey were created by the project team based on their expert understanding of recent conservation debates. However, now that over 10,000 people have taken the survey, we have generated new dimensions that are based on patterns in the way respondents have answered the questions. The best solution to this analysis has three dimensions rather than two, which is why the site has changed. We recognise that this change makes the results somewhat more complex to understand and interpret, but feel it is important to present results that are accurate rather than convenient!</p>'
+          title: 'Q: Qu’est-il advenu des résultats et du graphique en deux dimensions que j’ai obtenus la dernière fois que j’ai participé à l’enquête?'
+          content: '<p>A: Les deux dimensions originelles pour l’enquête Futur de la Conservation avaient été déterminées grâce à l’expertise de l’équipe de projet sur les débats de conservation actuels. Cependant, maintenant que plus de 10000 personnes ont participé à l’enquête, nous avons déterminé de nouvelles dimensions basées sur la manière dont les participants ont répondu aux questions. La meilleure façon d’analyser cette enquête est d’utiliser trois dimensions plutôt que deux, ce qui explique les changements sur ce site web. Nous admettons que ce changement peut rendre les résultats plus difficiles à comprendre et à interpréter mais pensons qu’il est important de présenter les résultats de manière précise plutôt que de manière pratique!</p>'
         -
-          title: 'Q: For some statements my answer would depend on the context - in some situations I would agree, and others I would disagree - but this isn’t covered by the response options I am given to choose from.'
-          content: '<p>A: This is a fair point, but we hope and assume that when faced with such a situation respondents will choose the mid point of the choices (labeled ‘neutral’), or close to the mid point if they think that on average they lean slightly towards agree/disagree on that question. If this happens then the survey is working well, because some other people will have unambiguous views about the same question and will choose ‘strongly agree’ or ‘strongly disagree’. In this way the survey is effective at revealing the difference between people who have mixed or nuanced views versus those who hold strong positions regardless of the context.</p>'
+          title: 'Q: Pour certaines déclarations, ma réponse dépend du contexte – dans certaines situations je suis d’accord mais d’en d’autres je ne le suis pas – cependant, cette option n’est pas couverte dans les réponses possibles. '
+          content: '<p>A: Ceci est exact mais nous espérons et supposons que, face à une telle situation, les participants pourront choisir le juste milieu pour leur choix (option « Neutre ») ou une option proche de ce juste milieu s’ils pensent qu’en moyenne ils penchent plutôt en accord/désaccord avec cette déclaration. Si cette situation se présente, cela indique que l’enquête fonctionne bien car certaines personnes auront une opinion bien définie et sans ambiguïté sur cette même question et choisiront l’option « Tout à fait d’accord » ou « Tout à fait en désaccord ». De cette façon, l’enquête est efficace dans la mesure où elle révèle la différence entre ceux qui ont des opinions plus nuancées par rapport à ceux qui ont des opinions fortes quel que soit le contexte.</p>'
         -
-          title: 'Q: The survey uses a quantitative approach, but the issues involved are complex and require qualitative data. There should be more opportunities to enter qualitative answers in the survey.'
-          content: '<p>A: We agree that the issues are complex, and we regularly use qualitative data in our own research. Indeed, the statements we used for the Future of Conservation Survey were first developed for a small sample size Q methodology study, which is a mixed quant/qual methodology. That study revealed some distinct ways of thinking about the issues covered by the Future of Conservation Survey, and in this project we wanted to see how prevalent these views might be in the wider conservation community and what factors might explain the views people hold. To do this we opted for a quantitative approach with a large sample size. It is worth noting that had we received the same number of survey responses (now 14000+) with detailed qualitative data we would have had no prospect of analysing all the survey responses.</p>'
+          title: 'Q: L’enquête utilise une approche quantitative mais les principaux enjeux sont complexes et requièrent des données qualitatives. Il devrait y avoir plus d’opportunités de répondre de manière qualitative dans l’enquête. '
+          content: '<p>A: Nous sommes d’accord que les enjeux sont complexes et nous utilisons souvent des données qualitatives dans notre propre recherche. En effet, les déclarations utilisées dans l’enquête Futur de la Conservation ont d’abord été développées pour une étude avec méthodologie Q et petit échantillonnage, une méthodologie à la fois quantitative et qualitative. Cette étude a montré qu’il existait diverses manières d’envisager les problématiques couvertes par l’enquête Futur de la Conservation. Dans ce projet, nous voulions évaluer la prévalence de ces opinions dans la communauté de la conservation en général ainsi que les facteurs expliquant les divers points de vue des participants. Pour ce faire, nous avons opté pour une approche quantitative et un large échantillonnage. Il est à noter que si nous avions reçu le même nombre de réponses à l’enquête (actuellement plus de 14000) avec des données qualitatives détaillées, nous n’aurions pu analyser toutes les réponses.</p>'
         -
-          title: 'Q: This is an exercise that oversimplifies the debate and is fundamentally reductive.'
-          content: '<p>A: We recognize that this is a relatively reductionist way of examining the issues, but we propose (and much of the feedback we’ve had indicates) that it is still useful to show the range of issues and allow people to explore one characterization of their position compared with those of other conservationists. In this particular research, we have prioritized breadth over depth: we were acutely aware that people would be less responsive to a survey taking more than roughly 15 minutes to complete, hence the choice to work with quantitative data related to pre-prepared statements that people could respond to relatively intuitively using a simple spectrum of agreement. We have now launched a version of the survey which can be taken internally by <a href="/about-go-fox" title="Visit the About Go-FOX page">groups and organisations</a>, with the survey serving as platform for more nuanced and detailed discussion.</p>
-          <p>We recognise that the three axes presented in the figure on the results page do not cover the full breadth of issues at stake in debates about the future of conservation, and indeed many of the questions in the survey do not contribute to respondents’ scores on these axes. This is why we have included an open question at the end of the survey, which asks respondents to contribute other issues which they think are pertinent to the future of conservation, but which were not at the time included in the survey. If there are other issues which you would like to see included in the survey, that is the place to suggest them (if you have already taken the survey, feel free to get in touch with us directly: <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a>).</p>'
+          title: 'Q: Cet exercice simplifie le débat et est fondamentalement réducteur.'
+          content: '<p>A: Nous reconnaissons que c’est une approche relativement réductionniste à ces problématiques mais nous proposons (et la plupart des retours que nous avons reçus le confirment) qu’il est malgré tout utile de montrer la diversité des enjeux existants et de permettre aux gens l’exploration d’une caractérisation de leur point de vue comparée à celle d’autres conservationnistes. Dans ce projet de recherche, l’étendue prime sur la profondeur: nous étions tout à fait conscients que les gens seraient moins réceptifs à une enquête prenant plus d’une quinzaine de minutes, d’où le choix de travailler avec des données quantitatives associées à des déclarations préparées à l’avance auxquelles les gens pouvaient répondre intuitivement en utilisant un éventail de réponses. Nous avons maintenant lancé une version de l’enquête qui peut être prise par les groupes ou organisations en interne, l’enquête servant de plateforme pour des discussions plus détaillées et nuancées.</p>
+          <p>Nous admettons que les trois axes présentés dans le graphique des résultats ne couvrent pas l’ampleur des enjeux dans les débats sur le futur de la conservation et, en effet, de nombreuses questions dans l’enquête ne contribuent pas aux scores des participants sur ces axes. C’est pour cela que nous avons inclus une question à la fin de l’enquête, demandant aux participants de fournir d’autres enjeux qu’ils perçoivent comme pertinents pour le futur de la conservation mais qui ne sont actuellement pas inclus dans l’enquête. S’il y a d’autres problématiques que vous aimeriez aborder dans cette enquête, veuillez les inclure en réponse à cette question (si vous avez déjà participé à l’enquête, n’hésitez pas à nous contacter directement : <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a>).</p>'
         -
-          title: 'Q: The wording of some of the questions is problematic, making it difficult to know how to answer.'
-          content: '<p>A: The survey went through a lengthy period of testing, but like all social surveys, we accept that not all the statements are perfect and that some people will dislike some of them. It is important to note that as the survey was intended to discover how conservationists responded to the points made in the new conservation debate in the literature. Many of the statements are direct quotes from published articles in that debate.</p>'
+          title: 'Q: La formulation de certaines questions est problématique, rendant difficile de savoir comment y répondre.'
+          content: 'A: L’enquête a connu une longue période d’essai mais, comme pour toutes les enquêtes sociales, nous reconnaissons que toutes les déclarations ne sont pas parfaites et que certaines personnes ne les apprécieront pas. Il est important de noter cela car cette enquête a aussi pour objectif de comprendre comment les conservationnistes réagissent aux points soulevés par le débat sur la Nouvelle Conservation dans la littérature. La plupart des déclarations sont des citations directes extraites d’articles publiés dans le cadre de ce débat.'
         -
-          title: 'Q: Isn’t this just an academic exercise? What difference can it make?'
-          content: '<p>A: We certainly want this survey to be more than just an academic exercise, and we see it as one stage of a process rather than an end in itself. We are delighted that it has already stimulated so much debate, and think that this is in itself very useful for the conservation community. At the request of several conservation NGOs, we have also developed <a href="/about-go-fox" title="Visit the About Go-FOX page">GO-FOX</a>, a version of the survey which can be run for a defined group, like colleagues within an organisation or a student cohort. We have so far received very positive feedback from the organisations involved, in terms of encouraging internal debate and informing strategic planning. We would be delighted to hear from you at <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a> if you would be interested to take part.</p>'
+          title: 'Q: Cette enquête peut-elle être utilisée uniquement pour mon groupe/organisation ? '
+          content: '<p> A: Plusieurs groupes nous ont déjà approchés pour demander une enquête fermée (uniquement disponible pour leur groupe) et nous avons créé <a href="/about-go-fox" title="Visit the About Go-FOX page">GO-FOX</a>, une version séparée de l’enquête qui peut être exécutée en interne au sein d’un groupe ou d’une organisation. </p>'
         -
-          title: 'Q: Can this survey be run for just my group / organisation?'
-          content: '<p>A: Several groups have already approached us asking for a closed survey for only their group, and we have responded to the demand by creating <a href="/about-go-fox" title="Visit the About Go-FOX page" title="About Go-Fox">GO-FOX</a>, a separate version of the survey which can be run internally within a group or organisation.</p>'
+          title: 'Q: Cette enquête n’est-elle qu’un exercice académique ? Quelle différence peut elle faire ?'
+          content: '<p>A: Nous espérons sincèrement que cette enquête soit plus qu’un exercice académique et nous la voyons plus comme la première étape d’un processus que comme une fin en soi. Nous sommes ravis qu’elle ait déjà stimulé tant de débats et pensons que cela sera très utile pour la communauté de la conservation. À la demande de plusieurs ONG, nous avons développé GO-FOX, une version de l’enquête qui peut être faite par un groupe clairement défini, comme des collègues au sein d’une organisation ou une cohorte étudiante. Nous avons reçu jusqu’à présent des retours très positifs de la part des organisations participantes, notamment en ce qui concerne la promotion de débats internes et la réflexion sur la planification stratégique. Nous serions ravis de lire votre avis sur <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a>) si vous souhaitez nous en faire part. </p>'
         -
-          title: 'Q: Why these questions? By limiting the questions to the issues already covered in the New Conservation debate, aren’t you reproducing its limitations?'
-          content: '<p>A: This is a fair point. Our research began as an investigation into how members of the wider conservation community felt about the issues raised in the new conservation debate, and that is what we have continued with this survey. These debates are broad enough to cover many key issues in conservation. But we do recognise that there are other important issues that matter for the future of conservation that have not featured in the New Conservation debate, which is why we have now included an open-ended question at the end of the survey which allows respondents to contribute new topics which they feel are pertinent to the future of conservation. We plan to consider these suggestions to produce new statements, to be then incorporated into the survey.</p>'
+          title: 'Q: Pourquoi ces questions ? En limitant les questions aux problématiques déjà couvertes dans le débat sur la Nouvelle Conservation, n’êtes vous pas en train de reproduire ses limitations ?'
+          content: '<p>A: Ce point est correct. Notre recherche a commencé en tant qu’investigation sur la façon dont les membres de la communauté de la conservation en général percevaient les enjeux soulevés par le débat sur la Nouvelle Conservation, et c’est ainsi que nous avons poursuivi avec cette enquête. Ces débats sont suffisamment vastes pour couvrir de nombreuses problématiques sur la conservation. Nous reconnaissons cependant qu’il y a d’autres problématiques importantes qui comptent pour le futur de la conservation et qui n’ont pas été évoqués dans le débat sur la Nouvelle Conservation, ce qui explique pourquoi nous avons inclus une question ouverte à la fin de l’enquête permettant aux participants de contribuer par de nouveaux sujets qu’ils perçoivent comme pertinents au futur de la conservation. Nous avons prévu de considérer ces suggestions pour créer de nouvelles déclarations qui seraient intégrées dans l’enquête par la suite.</p>'
         -
-          title: 'Q: The questions are leading questions, and this is poor research design.'
-          content: '<p>A: Please note that the survey is based on statements, rather than questions, and therefore cannot be considered leading. The statements are phrased as Likert items and are sometimes deliberately provocative such that they elicit responses with a spectrum of agreement. This is conventional in social science.</p>'
+          title: 'Q: Les questions sont suggestives, ce qui indique une mauvaise conception de la recherche. '
+          content: '<p>A: Cette enquête est basée sur des déclarations, et non sur des questions, et celles-ci ne peuvent donc être considérées comme suggestives. Les déclarations sont formulées en utilisant l’échelle de Likert et sont parfois délibérément provocatrices de manière à ce qu’elles suscitent un éventail de réponses. Ceci est une convention en sciences sociales. </p>'
 
   resources:
     -
@@ -343,67 +340,66 @@ fr:
 
   about_go_fox:
     -
-      link: 'Background'
-      title: 'Background'
-      content: '<p>The launch of the Future of Conservation Survey in 2017 triggered a series of requests from conservation organisations to be able to use the survey as an internal tool to characterise the range of views within groups and organisations. In response to these requests, we have created the Group and Organisation Future of Conservation Survey (GO-FOX).</p>
+      link: 'Contexte'
+      title: 'Contexte'
+      content: '<p>Le lancement de l’enquête « Futur de la Conservation » en 2017 a provoqué une série de demandes provenant d’organisations de conservation souhaitant utiliser cette enquête comme outil interne afin de caractériser la diversité d’opinions existant au sein de groupes et d’organisations. En réponse à ces demandes, nous avons créé l’enquête « Futur de la Conservation pour Groupes et Organisations (GO-FOX) ».</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/bZdwQAG-xI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <p>The GO-FOX tool allows the user to create their own unique version of the Future of Conservation Survey and distribute it to a closed group of respondents they are working with. Analysed survey results from this group are then made available to the GO-FOX user, who can then use them for the benefit of the group. Examples of how GO-FOX may be used include, but are not limited to:</p>
+      <p>L’outil GO-FOX permet à l’utilisateur·trice de créer sa version personnalisée de l’enquête afin de la partager avec un groupe de participants fermé, tel que ses collègues. L’analyse des résultats de l’enquête pour ce groupe sont ensuite mis à la disposition de cet utilisateur·trice GO-FOX, qui peut ensuite l’utiliser au bénéfice de son groupe. Voici, entre autres, quelques exemples illustrant comment GO-FOX peut être utilisé:</p>
       <ul>
-      <li>Conservation NGOs wishing to generate discussion amongst their staff or members about their individual conservation viewpoints and how these relate to the work of the organisation. This could be done as part of a strategic planning process</li>
-      <li>Teachers in conservation courses who wish to use the tool to support learning about diverse perspectives in conservation and self-reflection of students on their own views</li>
+      <li>Par les ONG de conservation souhaitant stimuler des discussions entre leurs membres sur leurs points de vue individuels sur la conservation ainsi que sur comment ces points de vue sont en lien avec le travail de l’organisation. Ceci pourrait être effectuer dans le cadre d’un processus de planification stratégique.</li>
+      <li>Par les enseignants de cours de conservation souhaitant utiliser cet outil pour soutenir l’apprentissage des divers points de vue dans la conservation ainsi que pousser les élèves à l’introspection sur leurs propres points de vue.</li>
       </ul>
-      <p>To get started, just <a href="/users/sign_in?locale=en" title="Register GO-FOX account">register your GO-FOX account</a> and start creating surveys!</p>
-      <p>Funding for GO-FOX has been received from the Cambridge Conservation Initiative Collaborative Fund, which is supported by the Arcadia Fund, and from the Economic and Social Research Council (ESRC) Impact Acceleration Account at the University of Edinburgh. We are very grateful for the support of these donors.</p>'
+      <p>Pour utiliser GO-FOX au sein de votre groupe ou organisation, <a href="/users/sign_in?locale=en" title="Register GO-FOX account">inscrivez votre</a> compte GO-FOX et commencez à créer votre enquête!</p>
+      <p>Nous sommes très reconnaissants de l’appui financier du Cambridge Conservation Initiative Collaborative Fund, qui est soutenu par l’Arcadia Fund et par l’Economic and Social Research Council (ESRC) Impact Acceleration Account de l’Université d’Edinbourg, pour le projet Futur de la Conservation.</p>'
 
   about_debate:
     -
-      link: 'About the debate'
-      title: 'About the Future of Conservation debate'
-      content: '<p>Although discussions about the aims and methods of conservation probably date back as far as conservation itself, the ‘new conservation’ debate as such was sparked by Kareiva and Marvier’s 2012 article entitled <a href="https://academic.oup.com/bioscience/article/62/11/962/263056" title="Visit the ‘What is conservation science’ paper" target="_blank">‘What is conservation science?’</a>.</p>
-      <p>Two prominent positions emerged in this debate, that of Kareiva and Marvier, which they called ‘new conservation’, and a strongly opposed viewpoint that we label ‘traditional conservation’. Our research emerged from our concern that these two positions did not adequately describe the range of views held by conservationists around the world.</p>
-      <p>The new and traditional conservation positions can be clearly distinguished by their views on the role of ‘people-centred conservation’ (relating to the role that people should play in conservation), ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).</p>
-      <p>This page describes these positions, as well as <a href="https://doi.org/10.1111/cobi.12811" title="Visit the paper ‘Understanding conservationists’ perspectives on the new‐conservation debate’" target="_blank">two others that have been previously identified in the literature</a> about the ‘new conservation’ debate. Using diagrams, it also shows how these positions relate to the three axes identified by <a href="https://www.nature.com/articles/s41893-019-0267-5" title="Visit our paper in Nature Sustainability" target="_blank">our research</a>. However, our work suggests that many conservationists do not belong to any of these four positions; or they hold different combinations of the views expressed in the literature. We include descriptions of these four positions here for information, but support efforts to move beyond characterising conservationists into separate ‘camps’.</p>'
+      link: 'À propos du débat sur le Futur de la Conservation'
+      title: 'À propos du débat sur le Futur de la Conservation'
+      content: '<p>Bien que les discussions sur les objectifs et les méthodes de conservation remontent sûrement à aussi loin que la conservation elle-même, le débat sur la « Nouvelle Conservation » fut suscité par l’article de 2012 de Kareiva et Marvier intitulé. <a href="https://academic.oup.com/bioscience/article/62/11/962/263056" title="Visit the ‘What is conservation science’ paper" target="_blank">‘ « Qu’est ce que la science de la conservation ? »’</a>.</p>      <p>Two prominent positions emerged in this debate, that of Kareiva and Marvier, which they called ‘new conservation’, and a strongly opposed viewpoint that we label ‘traditional conservation’. Our research emerged from our concern that these two positions did not adequately describe the range of views held by conservationists around the world.</p>
+      <p>Deux positions majeures ont émané de ce débat: celle de Kareiva et Marvier, que l’on surnomme la « Nouvelle Conservation », et un point de vue fermement opposé surnommé la « Conservation Traditionnelle ». Notre recherche fait suite à notre préoccupation que ces deux positions ne décrivent pas correctement les divers points de vue exprimés par les conversationnistes à travers le monde.</p>
+      <p>Ces deux positions peuvent se distinguer clairement par leurs points de vue sur le rôle des individus (se rapportant au rôle que les individus devraient jouer pour la conservation), sur le rôle de l’écocentrisme scientifique (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes) et sur la conservation par le capitalisme (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation).</p>'
     -
-      link: 'New Conservation'
-      title: 'New Conservation'
-      content: '<p>Central to the ‘new conservation’ position is a shift towards viewing conservation as being about protecting nature in order to improve human wellbeing (especially that of the poor), rather than for biodiversity’s own sake (hence the relatively high score on the people-centred conservation axis).</p>
-      <p>‘New conservationists’ believe that win-win situations in which people benefit from conservation can often be achieved by promoting economic growth and partnering with corporations, corresponding to a high score on the ‘conservation through capitalism’ axis.</p>
-      <p>Where new conservationists stand on the second dimension, science-led ecocentrism, is harder to say. On the one hand, new conservationists often criticise conservation approaches which mainly focus on protected areas, making their score on this dimension lower than for other positions, such as traditional conservation. Nonetheless, judging by the published literature, new conservation advocates are generally enthusiastic about conservation goals being based on evidence from the natural sciences, potentially making their score on this axis slightly less negative than that of critical social scientists, who often highlight the importance of input from other disciplines.</p>
-      <p>Although new conservation advocates have been criticised for doing away with nature’s intrinsic value, key authors within the movement have responded by clarifying that their motive is not so much an ethical as a strategic or pragmatic one. In other words, they claim that conservation needs to emphasise nature’s instrumental value to people because this better promotes support for conservation compared to arguments based solely on the rights of species to exist.</p>'
+      link: 'La Nouvelle Conservation'
+      title: 'La Nouvelle Conservation'
+      content: '<p>La position de la « Nouvelle Conservation » a connu un tournant en adoptant le point de vue de protéger la nature afin d’améliorer le bien-être humain (surtout celui des plus défavorisés) plutôt que de protéger la biodiversité pour son propre bien (d’où le score élevé sur l’axe de conservation centré sur les individus). </p>
+      <p>Les « nouveaux conservationnistes » pensent qu’une situation favorable où les gens bénéficient de la conservation peut souvent être obtenue en promouvant la croissance économique et en partenariat avec des entreprises, ce qui explique pourquoi la plupart des nouveaux conservationnistes ont un score plus élevé sur l’axe de la conservation par le capitalisme. </p>
+      <p>Il est plus difficile de dire où les nouveaux conservationnistes se situent quant à la deuxième dimension, l’écocentrisme scientifique. D’une part, les nouveaux conservationnistes critiquent souvent les approches de conservation qui se focalisent principalement sur les aires protégées, diminuant leur score sur cette dimension par rapport aux autres positions, telle que la conservation traditionnelle. Cependant, à en juger par la littérature publiée, les partisans de la Nouvelle Conservation sont généralement enthousiastes en ce qui concerne les objectifs de conservations basés sur les preuves obtenues grâce aux sciences naturelles, rendant leur score sur cet axe potentiellement moins négatif que celui des chercheurs en sciences sociales critiques, qui ont l’habitude de mettre en lumière l’importance des sciences sociales et humaines. </p>
+      <p>Bien que les partisans de la Nouvelle Conservation aient été critiqués pour s’être départis de la valeur intrinsèque de la nature, des auteurs essentiels au mouvement ont répondu en clarifiant que leur but n’est pas tant éthique que stratégique ou pragmatique. En d’autres termes, ils revendiquent que la conservation a besoin de souligner la valeur instrumentale de la nature aux yeux des gens car cela promeut mieux le soutien pour la conservation comparé aux arguments basés uniquement sur le droit aux espèces d’exister.</p>'
       image: 'fg1-new-conservation.png'
-      image_alt: 'New Conservation chart'
-      caption: 'Fig. 1 New Conservation. The white circles represent the neutral point for each of the dimensions (the result obtained by answering ‘neither agree nor disagree’ to every statement), and the dotted line represents the average result on each dimension for 9,264 conservationists from 149 countries. The faded lines represent the scores for all 9,264 respondents, and the blue area represents the dimensional space in which new conservationists are most likely to be.'
+      image_alt: 'La Nouvelle Conservation chart'
+      caption: 'Fig. 1 La Nouvelle Conservation. Les cercles blancs représentent les points neutres de chaque dimension (le résultat obtenu en répondant « Neutre » à chaque déclaration) et la ligne en pointillé représente la moyenne des résultats pour chaque dimension obtenue par 9264 conservationnistes de 149 pays. Les lignes grises représentent les scores de chacun des 9264 participants et la zone bleue représente l’espace dimensionnel dans lequel les nouveaux conservationnistes ont le plus de chance de se trouver. '
     -
-      link: 'Traditional conservation'
-      title: 'Traditional conservation'
-      content: '<p>Traditional conservationists often support the protection of nature for its own sake, often advocating the use of protected areas as the main tool for conservation (hence the high score on the science-led ecocentrism dimension).</p>
-      <p>This emphasis on nature’s intrinsic value typically leads traditional conservation advocates to score relatively negatively on the people-centred conservation dimension, as key figures, such as Michael Soulé, have claimed that conservation should be distinct from humanitarianism, and that, whilst the alleviation of poverty is of general moral concern, this should not become the primary focus of conservation organisations.</p>
-      <p>Traditional conservationists tend to also be critical of markets and economic growth as tools for conservation. This is because they believe that by embracing markets, we run the risk of ‘selling out nature’ by neglecting species that may be considered to be of little economic value. What’s more, economic growth itself is seen as a major driver of threats to biodiversity.</p>'
+      link: 'La conservation traditionnelle'
+      title: 'La conservation traditionnelle'
+      content: '<p>Les conservationnistes traditionnels soutiennent souvent la protection de la nature pour son propre bien, prônant habituellement l’usage d’aires protégées comme outil principal de conservation (d’où le score élevé sur la dimension d’écocentrisme scientifique).</p>
+      <p>L’accent sur la valeur intrinsèque de la nature amène généralement les partisans de la conservation traditionnelle à obtenir des scores relativement faibles sur la dimension centrée sur les individus. En effet, des personnalités clefs tel que Michael Soulé ont revendiqué que la conservation devrait être distincte de l’humanitaire, et que, malgré le fait que la réduction de la pauvreté soit un souci moral d’ordre général, celle-ci ne devrait pas être l’objectif principal des organisations de conservations. s</p>
+      <p>Les conservationnistes traditionnels ont aussi tendance à critiquer les marchés et la croissance économique comme outils de conservation. Ceci s’explique par le fait qu’en incluant les marchés, nous courrons le risque de « brader la nature» en négligeant les espèces considérées comme ayant une faible valeur économique. De plus, la croissance économique elle-même est vue comme un des principaux moteurs de menaces sur la biodiversité.</p>'
       image: 'fg2-traditional-conservation.png'
-      image_alt: 'Traditional Conservation chart'
-      caption: 'Fig. 2 Traditional Conservation. The white circles represent the neutral point for each of the dimensions (the result obtained by answering ‘neither agree nor disagree’ to every statement), and the dotted line represents the average result on each dimension for 9,264 conservationists from 149 countries. The faded lines represent the scores for all 9,264 respondents, and the green area represents the dimensional space in which traditional conservationists are most likely to be.'
+      image_alt: 'La conservation traditionnelle chart'
+      caption: 'Fig. 2 La Conservation Traditionnelle. Les cercles blancs représentent les points neutres de chaque dimension (le résultat obtenu en répondant « Neutre » à chaque déclaration) et la ligne en pointillé représente la moyenne des résultats pour chaque dimension obtenue par 9264 conservationnistes de 149 pays. Les lignes grises représentent les scores de chacun des 9264 participants et la zone verte représente l’espace dimensionnel dans lequel les conservationnistes traditionnels ont le plus de chance de se trouver. '
     -
-      link: 'Critical social science'
-      title: 'Critical social science'
-      content: '<p>According to what we call the critical social science position, the impacts of conservation on human wellbeing should be at the forefront of the conservation debate (hence the positive score on the people-centred conservation dimension). This entails being critical of conservation activities that can have negative effects on people, such as creating protected areas. It is also critical of a nature-for-nature’s sake rationale for conservation and the use of natural science within conservation (hence the negative score on the science-led ecocentrism dimension).</p>
-      <p>Critical social scientists tend to be sceptical of the ability of markets and capitalism to deliver benefits for both nature and people. For example, the economic valuation of nature might be perceived as a corporate strategy to open up avenues for its exploitation, whilst concealing the negative impacts of such activities by manipulating the way in which these activities are presented to the public (hence the negative score on conservation through capitalism).</p>
-      <p>This position is sometimes critiqued by others for offering a strong diagnosis of what is wrong with conservation practice, whilst failing to offer practical alternatives.</p>'
+      link: 'Sciences sociales critiques'
+      title: 'Sciences sociales critiques'
+      content: '<p>Selon les chercheurs en sciences sociales critiques, les impacts de la conservation sur le bien-être humain devraient être au premier plan dans le débat sur la conservation (d’où le score positif sur la dimension centrée sur les individus). Ceci implique d’être conscient et critique des effets secondaires négatifs que les activités de conservations peuvent avoir sur les humains, par exemple lors de la création d’aires protégées. Ce positionnement est aussi critique quant à l’importance de la nature pour elle-même et quant à l’utilisation des sciences naturelles au sein de la conservation (d’où le score negatif sur la dimension d’écocentrisme scientifique).</p>
+      <p>Certains chercheurs en sciences sociales critiques ont tendance à être sceptiques quant à la capacité des marchés et du capitalisme à procurer des avantages aussi bien à la nature et aux individus. Par exemple, l’évaluation économique de la nature peut être perçue comme une stratégie corporative qui ouvrirait des possibilités d’exploitation tout en cachant les impacts négatifs de telles activités en manipulant la manière dont elles sont présentées au public (d’où le score négatif sur la dimension conservation par le capitalisme).</p>
+      <p>Cette position est parfois critiquée par d’autres comme proposant un diagnostic sérieux de ce qui ne marche pas dans les pratiques de conservation tout en étant incapable d’offrir des alternatives viables.</p>'
       image:  'fg3-critical-social-science.png'
       image_alt: Critical Social Science chart
-      caption: 'Fig. 3 Critical Social Science. The white circles represent the neutral point for each of the dimensions (the result obtained by answering ‘neither agree nor disagree’ to every statement), and the dotted line represents the average result on each dimension for 9,264 conservationists from 149 countries. The faded lines represent the scores for all 9,264 respondents, and the light brown area represents the dimensional space in which critical social scientists are most likely to be.'
+      caption: 'Fig. 3 Les Sciences Sociales Critiques. Les cercles blancs représentent les points neutres de chaque dimension (le résultat obtenu en répondant « Neutre » à chaque déclaration) et la ligne en pointillé représente la moyenne des résultats pour chaque dimension obtenue par 9264 conservationnistes de 149 pays. Les lignes grises représentent les scores de chacun des 9264 participants et la zone marron représente l’espace dimensionnel dans lequel les chercheurs en sciences sociales critiques ont le plus de chance de se trouver.'
     -
-      link: 'Market ecocentrism'
-      title: 'Market ecocentrism'
-      content: '<p>Perhaps one example of ‘market ecocentrism’ is the recent Nature Needs Half movement (as well as the closely related Half-Earth movement). In his book entitled ‘Half-Earth’, biologist Edward O. Wilson uses scientific arguments about biogeography to advocate the setting aside of half of the world’s area as ‘inviolable nature reserves’. The motivation for these reserves would predominantly be to protect species and ecosystems for their own sakes; hence the positive score on the science-led ecocentrism dimension, and the relatively negative score on the people-centred conservation dimension. Aware that this ambitious target would require a drastic decrease in per capita environmental footprint worldwide, Wilson supports free markets as a means to favour those products which generate the maximum profit for the minimum energy and resource consumption (hence the positive score on the conservation through capitalism dimension).</p>
-      <p>However, Wilson’s pro-markets view seems to be more to do with ensuring that humanity can flourish on only 50% of the Earth’s surface rather than as a tool for carrying out conservation: that is, the pro-market strategy would be used to buffer the ‘human’ half of the Earth against the need to exploit the ‘natural’ half, rather than as a means to create economic value from protecting the ‘natural’ half.</p>
-      <p>Other instances of market ecocentrism include strategies in which market tools, such as ecotourism and ‘willingness to pay’ approaches are used to generate revenue to fund the creation and maintenance of protected areas.</p>'
+      link: 'L’écocentrisme de marché'
+      title: 'L’écocentrisme de marché'
+      content: '<p>Un exemple « d’écocentrisme de marché » est le jeune mouvement « Nature Needs Half » (ainsi que le mouvement « Half-Earth »). Dans son livre intitulé « Half Earth », le biologiste Edward O. Wilson utilise des arguments scientifiques sur la biogéographie afin de prôner qu’il faut mettre de côté la moitié de la planète en tant que « réserves naturelles inviolables ». Le but de ces réserves devrait principalement être de protéger les espèces et les écosystèmes pour leur propre bien ; d’où le score positif sur la dimension d’écocentrisme scientifique et le score relativement négatif sur la dimension centrée sur les individus. Conscient que cet objectif ambitieux exigerait une baisse substantielle de l’empreinte écologique par habitant globalement, Wilson soutient les libres marchés comme moyen de favoriser les produits qui génèrent le maximum de profit pour le minimum d’énergie et de consommation de ressources (d’où le score positif sur la dimension conservation par le capitalisme).</p>
+      <p>Cependant, l’opinion pro-marché de Wilson semble plus destinée à prouver que l’humanité pourrait prospérer avec seulement 50% de la surface de la Terre plutôt que comme outil de conservation: la stratégie de pro-marché serait en effet utilisée pour amortir la moitié « humaine » de la Terre par rapport au besoin d’exploiter la moitié « naturelle », plutôt que comme moyen de créer une valeur économique au travers de la protection de la moitié « naturelle ».</p>
+      <p>D’autres cas d’écocentrisme de marché incluent les stratégies dans lesquels les outils de marché, tels que l’écotourisme et la « propension à payer », sont utilisés pour engendrer des revenus finançant la création et la maintenance d’aires protégées.</p>'
       image: 'fg4-market-ecocentrism.png'
       image_alt: 'Market ecocentrism chart'
-      caption: 'Fig. 4 Market-based Ecocentrism. The white circles represent the neutral point for each of the dimensions (the result obtained by answering ‘neither agree nor disagree’ to every statement), and the dotted line represents the average result on each dimension for 9,264 conservationists from 149 countries. The faded lines represent the scores for all 9,264 respondents, and the purple area represents the dimensional space in which market ecocentrists are most likely to be.'
+      caption: 'Fig. 4 L’Écocentrisme de Marché. Les cercles blancs représentent les points neutres de chaque dimension (le résultat obtenu en répondant « Neutre » à chaque déclaration) et la ligne en pointillé représente la moyenne des résultats pour chaque dimension obtenue par 9264 conservationnistes de 149 pays. Les lignes grises représentent les scores de chacun des 9264 participants et la zone violette représente l’espace dimensionnel dans lequel les écocentristes de marché ont le plus de chance de se trouver.'
     -
-      link: 'Bibliography'
-      title: 'Bibliography'
-      content: '<p><em>New Conservation:</em></p>
+      link: 'Références'
+      title: 'Références'
+      content: '<p><em>La Nouvelle Conservation:</em></p>
       <ul class="static-page__bibliography-list">
       <li>“Conservation in the Anthropocene -- Beyond Solitude and Fragility.” Accessed February 24, 2015. http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene.
       <li>Kareiva, Peter, and Michelle Marvier. “What Is Conservation Science?” BioScience 62, no. 11 (November 1, 2012): 962–69. doi:10.1525/bio.2012.62.11.5.</li>
@@ -413,7 +409,7 @@ fr:
       <li>Marvier, Michelle, and Peter Kareiva. “The Evidence and Values Underlying ‘New Conservation’.” Trends in Ecology & Evolution 29, no. 3 (January 3, 2014): 131–32. doi:10.1016/j.tree.2014.01.005.</li>
       </ul>
 
-      <p><em>Traditional conservation:</em></p>
+      <p><em>La conservation traditionnelle:</em></p>
       <ul class="static-page__bibliography-list">
       <li>Soulé, Michael “What is conservation biology?” Bioscience 35, no. 11 (December, 1985): 727-734. Doi: 10.1111/cobi.12147</li>
       <li>Greenwald, Noah, Dominick A. Dellasala, and John W. Terborgh. “Nothing New in Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–241. Doi:10.1525/bio.2013.63.4.18.</li>
@@ -423,29 +419,29 @@ fr:
       <li>Miller, B., M.E. Soulé, and J. Terborgh. “’New Conservation’ or Surrender to Development?” Animal Conservation 17, no.6 (December 1, 2014): 509-15. Doi: 10.1111/acv.12127</li>
       </ul>
 
-      <p><em>Critical social science:</em></p>
+      <p><em>Sciences sociales critiques:</em></p>
       <ul class="static-page__bibliography-list">
       <li>Büscher, Bram, Sullivan, Sian, Neves, Katja, Igoe, Jim and Dan Brockington. “Towards a Synthesized Critique of Neoliberal Biodiversity Conservation” Capitalism Nature Socialism 23, no. 2 (June 2012): 4-30. Doi: 10.1080/10455752.2012.674149</li>
       <li>Spash, Clive L. “Bulldozing biodiversity: The economics of offsets and trading-in Nature”. Biological Conservation 192 (December 2015): 541-551 .Doi: 10.1016/j.biocon.2015.07.037</li>
       <li>Bockington, Dan and Rosaleen Duffy (eds.). Capitalism and Conservation. Chichester: Wiley-Blackwell, 2011.</li>
       </ul>
 
-      <p><em>Market ecocentrism:</em></p>
+      <p><em>L’écocentrisme de marché:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
   results:
-    header: Your results
+    header: Comment interpréter ses résultats
     chart:
-      less: Less
-      more: More
+      less: Moins
+      more: Plus
       dimensions:
-        people: People-centred conservation
-        science: Science-led ecocentrism
-        capitalism: Conservation through capitalism
+        people: « La conservation centrée sur les individus » 
+        science: « L’écocentrisme scientifique » 
+        capitalism:  « La conservation par le capitalisme »
     contact:
-      title: Contact
-      email_message: 'For more information about The Future of Conservation project please email:'
+      title: Nous contacter
+      email_message: 'Pour plus d’informations sur le projet « Futur de la Conservation », veuillez écrire à '
     title: "Comment interpréter ses résultats"
-    content: '<p>
+    content: '<p> 
     Le graphique ci-dessus présente un récapitulatif de vos opinions (les points et lignes en gras) sur trois axes. Ces axes représentent trois dimensions clés du débat sur la conservation provenant de l’analyse statistique des résultats des premiers 9264 participants à l’enquête Futur de la Conservation. Ces dimensions sont : A. « La conservation centrée sur les individus » (se rapportant au rôle que les individus devraient jouer pour la conservation), B. « L’écocentrisme scientifique » (se rapportant au rôle de la science dans la conservation des espèces et des écosystèmes), et C. « La conservation par le capitalisme » (se rapportant au rôle des entreprises et de l’économie de marché pour la conservation).     </p>
     <p>
     Un score se situant vers la gauche du graphique indique une opinion moins en faveur de la dimension en question, alors qu’un score vers la droite du graphique indique une opinion plus en faveur de cette dimension.
