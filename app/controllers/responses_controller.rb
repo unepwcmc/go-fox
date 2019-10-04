@@ -39,7 +39,7 @@ class ResponsesController < ApplicationController
     @response            = Response.new(answer_params[:response])
     @response.survey     = @survey
     @response.ip_address = request.remote_ip
-    @response.language   = params[:locale]
+    @response.language   = session[:locale]
 
     respond_to do |format|
       if @response.save
@@ -146,7 +146,7 @@ class ResponsesController < ApplicationController
     def question_section_counts(questions)
       base_count = 0
       questions.each {|q| base_count += 1 if q.is_a?(Question)}
-      
+
       [base_count, questions.count - base_count]
     end
 end

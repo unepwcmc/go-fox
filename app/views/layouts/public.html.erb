@@ -20,13 +20,13 @@
   </head>
 
   <body class="base--public">
-    <%= render 'global_public/topbar' %>
-    <%= render 'global_admin/flash_message' %>
-
     <div id="v-app">
-      <%= yield %>
-    </div>
+      <%= render 'global_public/topbar' %>
+      <%= render 'global_admin/flash_message' %>
 
-    <%= render 'global_public/footer' %>
+      <%= yield %>
+
+      <%= render 'global_public/footer' %>
+  </div>
   </body>
 </html>

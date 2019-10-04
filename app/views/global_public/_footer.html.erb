@@ -2,12 +2,12 @@
   <div class="footer--primary">
     <div class="container--public footer__content flex flex-v-center flex-h-between">
       <ul class="nav--footer ul-unstyled flex flex-wrap">
-        <li class="nav__li"><%= link_to 'Home', root_path, title: 'Future of Conservation', class: 'nav__a' %></li>
-        <li class="nav__li"><%= link_to 'About the Debate', about_the_debate_path, title: 'About the Debate', class: 'nav__a' %></li>
-        <li class="nav__li"><%= link_to 'About the Project', about_the_project_path, title: 'About the Project', class: 'nav__a' %></li>
+        <li class="nav__li"><%= link_to t('nav.home'), root_path, title: 'Future of Conservation', class: 'nav__a' %></li>
+        <li class="nav__li"><%= link_to t('nav.about_debate'), about_the_debate_path, title: t('nav.about_debate'), class: 'nav__a' %></li>
+        <li class="nav__li"><%= link_to t('nav.about_project'), about_the_project_path, title: t('nav.about_project'), class: 'nav__a' %></li>
         <!--li class="nav__li"><%#= link_to 'Legal', legal_path, title: 'Legal', class: 'nav__a' %></li--> 
         <% unless user_signed_in? %>
-          <li class="nav__li"><%= link_to 'Log in', new_user_session_path, title: 'Log in', class: 'nav__a' %></li>
+          <li class="nav__li"><%= link_to t('nav.log_in'), new_user_session_path, title: t('nav.log_in'), class: 'nav__a' %></li>
         <% end %>
       </ul>
       <%= link_to '', root_path, title: 'Future of Conservation', class: 'logo--foc-white' %>

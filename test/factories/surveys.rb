@@ -30,11 +30,11 @@ conservation_activities = [
 survey_settings = {
   course_url: "https://www.unep-wcmc.org",
   hope_to_achieve: "Awesome things!",
-  default_language: "fr",
+  default_language: "en",
   survey_previous_id: "12345667",
   participant_org_name: "UNEP-WCMC",
   kind_of_conservation_activities: conservation_activities
-}.to_json
+}
 
 FactoryBot.define do
   factory :survey do
