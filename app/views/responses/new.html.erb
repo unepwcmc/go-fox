@@ -3,7 +3,7 @@
 
 <div class="container--public content-padding">
 
-  <progress-bar></progress-bar>
+  <progress-bar :translations="<%= t('pagination').to_json %>"></progress-bar>
 
   <%= render 'form', response: @response, questions: @questions %>
 

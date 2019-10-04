@@ -1,3 +1,10 @@
+# 0.2.0
+
+**Add multilanguage feature**
+
+* Add french and spanish translations
+* Add the ability for users to switch language in the public interface only
+
 # v0.1.3
 
 **Update Powerpoint Slides**

@@ -1,25 +1,25 @@
 <nav-burger class="gutters">
   <nav-link
     href="<%= new_survey_response_path(Survey.master_survey) %>"
-    text="Take the Survey"
+    text="<%= t('buttons.take_survey') %>"
     :current-page="<%= is_current_page?(new_survey_response_path(Survey.master_survey)) %>">
   </nav-link>
 
   <nav-link
     href="<%= about_the_project_path %>"
-    text="About the Project"
+    text="<%= t('nav.about_project') %>"
     :current-page="<%= is_current_page?(about_the_project_path) %>">
   </nav-link>
 
   <nav-link
     href="<%= about_the_debate_path %>"
-    text="About the Debate"
+    text="<%= t('nav.about_debate') %>"
     :current-page="<%= is_current_page?(about_the_debate_path) %>">
   </nav-link>
 
   <nav-link
     href="<%= about_go_fox_path %>"
-    text="About Go-Fox"
+    text="<%= t('nav.about_gofox') %>"
     :current-page="<%= is_current_page?(about_go_fox_path) %>">
   </nav-link>
 </nav-burger>
