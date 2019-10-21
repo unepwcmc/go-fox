@@ -137,7 +137,7 @@ fr:
     intro:
       title: 'Le Futur de la Conservation'
       content: '<p>Bien que des débats concernant les directions futures de la conservation de la biodiversité aient lieu depuis longtemps, ceux-ci ont tendance à être dominés par quelques personnalités importantes. </p>
-      <p>Cette enquête vous permet d’y apporter votre propre opinion, afin qu’une plus grande diversité de points de vue soit exprimée. L’enquête ne vous prendra que 15 minutes. À la fin, vos opinions et leur comparaison avec celles des autres participants vous seront présentées graphiquement. </p>
+      <p>Cette enquête vous permet d’apporter votre propre opinion à ces débats, afin qu’une plus grande diversité de points de vue soit exprimée. L’enquête ne vous prendra que 15 minutes. À la fin, vos opinions et leur comparaison avec celles des autres participants vous seront présentées graphiquement. </p>
       <p>Nous espérons que vous apprécierez cette enquête et nous vous encourageons à partager votre expérience en suggérant à d’autres d’y participer! </p>'
       ethics_statement: 'Vos réponses resteront anonymes, seront stockées de manière sécurisée et ne seront utilisées que pour ce projet. Pour plus d’informations, <a title="About the Project" href="/about-the-project">veuillez voir les détails sur le respect de la vie privée et l’éthique des données.</a>.'
     blocks:
