@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es: #new start
-  login_prompt: 'Acceda a su cuenta'
   questions_options:
     'Strongly Disagree': 'Muy en desacuerdo'
     'Disagree': 'En desacuerdo'
