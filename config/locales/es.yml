@@ -8,7 +8,7 @@
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t('login_prompt') %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es: #new start
+  login_prompt: 'Acceda a su cuenta'
   questions_options:
     'Strongly Disagree': 'Muy en desacuerdo'
     'Disagree': 'En desacuerdo'
@@ -100,7 +101,7 @@ es: #new start
     about_project: Sobre el proyecto
     about_debate: Sobre el debate
     about_gofox: Sobre GO-FOX
-    log_in: Log in
+    log_in: Acceda a su cuenta
     home: Inicio
 
   pagination:
