@@ -91,7 +91,7 @@ es: #new start
 
   buttons:
     accept: Aceptar
-    get_results: Enviar
+    get_results: Ver mis resultados
     next: Siguiente
     previous: Anterior
     take_survey: Participe en la encuesta
