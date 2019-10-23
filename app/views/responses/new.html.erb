@@ -3,16 +3,16 @@
 
 <div class="container--public content-padding">
 
-  <progress-bar></progress-bar>
+  <progress-bar :translations="<%= t('pagination').to_json %>"></progress-bar>
 
   <%= render 'form', response: @response, questions: @questions %>
 
   <div class="flex flex-h-between">
     <pagination-button 
       type="previous"
-      :section-totals="<%= @question_section_counts %>">Previous</pagination-button>
+      :section-totals="<%= @question_section_counts %>"><%= t('buttons.previous') %></pagination-button>
     <pagination-button type="next" class="button--large-chevrons">
-      Next<i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
+      <%= t('buttons.next') %><i class="material-icons">chevron_right</i><i class="material-icons">chevron_right</i>
     </pagination-button>
   </div>
 </div>

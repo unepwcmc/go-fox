@@ -1,3 +1,9 @@
+# v0.1.4
+
+**Text Updates**
+
+* Small updates to translated text *
+
 # v0.1.3
 
 **Update Powerpoint Slides**

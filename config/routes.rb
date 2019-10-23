@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'set_language/english'
+
+  get 'set_language/spanish'
+
+  get 'set_language/french'
+
   resources :classifications, except: [:destroy]
   resources :demographic_questions, except: [:destroy]
   resources :questions, except: [:destroy]

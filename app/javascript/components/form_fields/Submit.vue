@@ -1,5 +1,5 @@
 <template>
-  <input @click.prevent="validate" v-show="lastPage" type="submit" value="Get results" class="button--blue-shadow">
+  <input @click.prevent="validate" v-show="lastPage" type="submit" :value="buttonText" class="button--blue-shadow">
 </template>
 
 <script>
@@ -9,7 +9,8 @@
     name: 'submit',
 
     props: {
-      id: { required: true }
+      id: { required: true },
+      buttonText: {type: String, required: true}
     },
 
     computed: {

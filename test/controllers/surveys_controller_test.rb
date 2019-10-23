@@ -47,7 +47,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
     sign_in @user
     get edit_survey_url(@survey)
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path
   end
 
   test "should get show page for logged in user" do
@@ -85,7 +85,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
       post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id } }
     end
 
-    assert_redirected_to survey_url(Survey.last, locale: :en)
+    assert_redirected_to survey_url(Survey.last)
   end
 
   test "can create survey with two custom questions" do
@@ -93,10 +93,10 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Survey.count') do
       post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id, customised_questions_attributes: [ {text: "A question?"}, {text: "another question"} ] } }
     end
-    assert_redirected_to survey_url(Survey.last, locale: :en)
+    assert_redirected_to survey_url(Survey.last)
     assert_equal 2, Survey.last.customised_questions.count
   end
-  
+
   test "can't create survey with more than three custom questions" do
     sign_in @user
     assert_difference('Survey.count', 0) do
@@ -110,7 +110,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Survey.count') do
       post surveys_url, params: { survey: { name: "My new survey", published: true, user_id: @user.id, customised_questions_attributes: [ {text: "A question?", options_attributes: [ {text: "True"}, {text: "False"} ] } ] } }
     end
-    assert_redirected_to survey_url(Survey.last, locale: :en)
+    assert_redirected_to survey_url(Survey.last)
     assert_equal 1, Survey.last.customised_questions.count
     assert_equal 2, Survey.last.customised_questions.last.options.count
   end
@@ -123,7 +123,7 @@ options_attributes: [ {text: "0"}, {text: "1"} , {text: "3"}, {text: "3"}, {text
     end
     assert_response :success # not sure why failed validation returns 200 !?
   end
-  
+
   test "should show survey" do
     @survey = create(:survey, user: @user, published: true)
 
@@ -176,6 +176,6 @@ options_attributes: [ {text: "0"}, {text: "1"} , {text: "3"}, {text: "3"}, {text
       delete survey_url(@survey)
     end
 
-    assert_redirected_to surveys_url(locale: :en)
+    assert_redirected_to surveys_url
   end
 end

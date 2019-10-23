@@ -1,6 +1,6 @@
 <%= form_with(model: [:survey, response], local: true, id: 'form-survey') do |form| %>
 
-  <validation-message message="Please complete the questions highlighted below to continue."></validation-message>
+  <validation-message message="<%= t('validation.complete_questions') %>"></validation-message>
 
   <%= form.fields_for :answers do |answer_form| %>
 
@@ -23,6 +23,6 @@
     </page-item>
   <% end %>
 
-  <submit id="form-survey"></submit>
+  <submit id="form-survey" button-text="<%= t('buttons.get_results')%>"></submit>
 
 <% end %>
