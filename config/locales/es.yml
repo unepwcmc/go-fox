@@ -8,7 +8,7 @@
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t('login_prompt') %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -91,7 +91,7 @@ es: #new start
 
   buttons:
     accept: Aceptar
-    get_results: Enviar
+    get_results: Ver mis resultados
     next: Siguiente
     previous: Anterior
     take_survey: Participe en la encuesta
@@ -100,7 +100,7 @@ es: #new start
     about_project: Sobre el proyecto
     about_debate: Sobre el debate
     about_gofox: Sobre GO-FOX
-    log_in: Log in
+    log_in: Acceda a su cuenta
     home: Inicio
 
   pagination:
@@ -144,14 +144,14 @@ es: #new start
       -
         title: 'La Encuesta del Futuro de la Conservación para Grupos y Organizaciones (GO-FOX)'
         description: '
-        <p>En respuesta al interés expresado por diversos conservacionistas, hemos desarrollado una herramienta online que le permite crear una versión personalizada de la Encuesta del Futuro de la Conservación y distribuirla dentro de un grupo cerrado de conservacionistas (por ejemplo, compañeros de trabajo o alumnos). Al completarse la Encuesta dentro de este grupo, se le enviarán los resultados directamente a usted, de manera que puedan presentarse, compararse y debatirse dentro de su organización o aula. La herramienta puede emplearse, entre otros usos, para facilitar debates internos sobre los objetivos de las organizaciones conservacionistas, o como herramienta de enseñanza en clases universitarias. Visite la página<a href="/about-go-fox" title="Acerca de GO-FOX">Acerca de GO-FOX</a> para descubrir más sobre la herramienta, o <a href="/users/sign_in?locale=en" title="cree una cuenta">rcree una cuenta</a> para comenzar a crear encuestas.</p>
+        <p>En respuesta al interés expresado por diversos conservacionistas, hemos desarrollado una herramienta online que le permite crear una versión personalizada de la Encuesta del Futuro de la Conservación y distribuirla dentro de un grupo cerrado de conservacionistas (por ejemplo, compañeros de trabajo o alumnos). Al completarse la Encuesta dentro de este grupo, se le enviarán los resultados directamente a usted, de manera que puedan presentarse, compararse y debatirse dentro de su organización o aula. La herramienta puede emplearse, entre otros usos, para facilitar debates internos sobre los objetivos de las organizaciones conservacionistas, o como herramienta de enseñanza en clases universitarias. Visite la página <a href="/about-go-fox" title="Acerca de GO-FOX">Acerca de GO-FOX</a> para descubrir más sobre la herramienta, o <a href="/users/sign_in?locale=en" title="cree una cuenta">cree una cuenta</a> para comenzar a crear encuestas.</p>
         <p>Si usted ya es un usuario de GO-FOX, <a href="/users/sign_in" title="acceda a su cuenta">acceda a su cuenta</a>.</p>'
         image: 'logos/logo-gofox.svg'
         image_alt: 'GO-FOX logo'
         image_class: 'gofox'
       -
         title: 'Investigación y publicaciones'
-        description: "Los datos de la Encuesta del Futuro de la Conservación han sido analizados con el objetivo de identificar los valores de los conservacionistas, y cómo estos varían según sus características (por ejemplo, su nacionalidad, especialidad y experiencia de trabajo en varios ecosistemas). El primer artículo relacionado con esta investigación ha sido <a href='https://www.nature.com/articles/s41893-019-0267-5' title='publicado en Nature Sustainability.' target='_blank'>publicado en Nature Sustainability</a>. El artículo aceptado para su publicación también es de acceso libre. A día de hoy, seguimos realizando análisis utilizando los datos recogidos en esta página web, y aspiramos a seguir divulgando los resultados en la comunidad de conservacionistas."
+        description: "Los datos de la Encuesta del Futuro de la Conservación han sido analizados con el objetivo de identificar los valores de los conservacionistas, y cómo estos varían según sus características (por ejemplo, su nacionalidad, especialidad y experiencia de trabajo en varios ecosistemas). El primer artículo relacionado con esta investigación ha sido <a href='https://www.nature.com/articles/s41893-019-0267-5' title='publicado en Nature Sustainability.' target='_blank'>publicado en Nature Sustainability</a>. El <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>artículo aceptado para su publicación</a> también es de acceso libre. A día de hoy, seguimos realizando análisis utilizando los datos recogidos en esta página web, y aspiramos a seguir divulgando los resultados en la comunidad de conservacionistas."
   survey_warning:
       title: 'Bienvenido a la Encuesta del Futuro de la Conservación'
       description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
@@ -170,7 +170,7 @@ es: #new start
       link: '¿Cómo funciona?'
       title: '¿Cómo funciona?'
       content: "<p>Una vez realizada la Encuesta, sus puntos de vista se podrán visualizar sobre un gráfico compuesto de tres ejes: ‘conservación centrada en las personas’ (sobre el papel que las personas deben tener en la conservación), ‘ecocentrismo científico’ (sobre el papel de la ciencia en la protección de las especies y ecosistemas), y ‘conservación a través del capitalismo’ (el papel de las corporaciones y las herramientas de mercado en la conservación). Dichos ejes fueron derivados a partir del análisis estadístico de los primeros 9.264 participantes en la Encuesta (estos análisis, y los acompañantes resultados, se detallan <a href='https://www.nature.com/articles/s41893-019-0267-5' title='en un artículo en Nature Sustainability' target='_blank'>en un artículo en Nature Sustainability</a> el <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title='artículo aceptado para su publicación' target='_blank'>artículo aceptado para su publicación</a> es de acceso libre).</p>
-      <p>Hemos publicado, seguimos trabajando para publicar, diversos artículos sobre los puntos de vista de los conservacionistas. Dentro de lo posible, incluiremos dichas publicaciones en esta página web.</p>"
+      <p>Hemos publicado, y seguimos trabajando para publicar, diversos artículos sobre los puntos de vista de los conservacionistas. Dentro de lo posible, incluiremos dichas publicaciones en esta página web.</p>"
     -
       link: 'Sobre el equipo'
       title: 'Sobre el equipo'
@@ -179,7 +179,7 @@ es: #new start
       <li><a href='http://www.geog.cam.ac.uk/people/sandbrook/' title='Visit the profile of Chris Sandbrook'>Chris Sandbrook (University of Cambridge)</a></li>
       <li><a href='http://www.see.leeds.ac.uk/people/g.holmes' title='Visit the profile of George Holmes'>George Holmes (University of Leeds)</a></li>
       <li><a href='http://www.geos.ed.ac.uk/homes/jfisher2/'>Janet Fisher (University of Edinburgh)</a></li>
-      <li>Rogelio Luque-Lora (University of Cambridge)</li>
+      <li><a href='https://www.geog.cam.ac.uk/people/luque-lora/'>Rogelio Luque-Lora (University of Cambridge)</a></li>
       <li><a href='https://www.ed.ac.uk/geosciences/people?indv=4057' title='Visit the profile of Aidan Keane'>Aidan Keane (University of Edinburgh)</a></li>
       </ul>
       La página web se encuentra bajo los auspicios del <a href='https://www.unep-wcmc.org' title='UN Environment World Conservation Monitoring Centre'>UN Environment World Conservation Monitoring Centre.</a><p>"
