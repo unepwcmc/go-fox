@@ -14,7 +14,9 @@ module CsvExporter
       filepath  = self.create_filepath("csv_export")
       @@responses = self.find_responses(survey, from_date, to_date)
 
-      CSV.open(filepath, "wb", {col_sep: ";", force_quotes: true}) do |csv|
+      #byebug
+
+      CSV.open(filepath, "wb", {col_sep: ";"}) do |csv|
         csv << self.headers
 
         @@responses.each do |batch|
