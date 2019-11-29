@@ -4,13 +4,17 @@ require 'securerandom'
 module CsvExporter
   extend CsvHelpers
 
-  @@batch_size = 250
-  @@default_na = "n/a"
-  @@questions  = Question.all + DemographicQuestion.all
-  @@responses  = nil
+  @@batch_size    = 250
+  @@default_na    = "n/a"
+  @@responses     = nil
+  @@skip_dq_text  = "Please provide us with your email address so that we can send you summarised results and keep in contact with you about future work based on this survey. We will not use your address for any other reason."
+  @@dq_skip_id    = DemographicQuestion.find_by(text: @@skip_dq_text).id
+  @@questions     = []
 
-  def self.export(survey=nil, from_date=nil, to_date=nil)
+  def self.export(survey=nil, from_date=nil, to_date=nil, user_id=nil)
     begin
+      dqs = User.find(user_id).admin? ? DemographicQuestion.all : DemographicQuestion.includes(:answers).where.not(answers: { answerable_id: @@dq_skip_id })
+      @@questions = Question.all + dqs
       filepath  = self.create_filepath("csv_export")
       @@responses = self.find_responses(survey, from_date, to_date)
 
@@ -24,7 +28,6 @@ module CsvExporter
             csv << row.flatten
           end
         end
-
       end
 
     rescue => e
