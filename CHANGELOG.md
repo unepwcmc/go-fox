@@ -1,3 +1,9 @@
+# v0.2.2
+
+**CSV export update**
+
+* Only show email in CSV output for an admin user *
+
 # v0.2.1
 
 **Text Updates**
