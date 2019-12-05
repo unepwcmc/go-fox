@@ -16,6 +16,11 @@ class SetLanguageController < ApplicationController
     set_session_and_redirect
   end
 
+  def portuguese
+    I18n.locale = :pt
+    set_session_and_redirect
+  end
+
   private
 
   def set_session_and_redirect
