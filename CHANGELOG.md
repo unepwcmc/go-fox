@@ -1,7 +1,7 @@
 
 # v0.2.3
 
-**Fix CSV exported**
+**Fix CSV export**
 
 * Remove all of the Demographic Questions from the survey CSV exported when a normal user is exporting
 * Only include those Demographic Questions and their answers when a superuser is exporting the CSV
