@@ -137,9 +137,9 @@ pt:
       tagline: Dê a sua opinião sobre conservação em uma série de questões, veja como você se compara aos outros participantes e contribua com seus pontos de vista na construção de futuros debates.
     intro:
       title: 'The Future of Conservation Survey'
-      content: '<p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals.</p>
-      <p>This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey.</p>
-      <p>We hope that you enjoy the survey and encourage you to share your experience by asking others to take part!</p>'
+      content: '<p>Há muito tempo tem havido debates sobre o caminho que a conservação da biodiversidade deve seguir. No entanto, estes debates têm sido dominados por poucos e poderosos indivíduos.</p>
+      <p>Esta pesquisa permite que você contribua com seus pontos de vista, de modo que uma ampla gama de vozes possa ser levada em conta. A pesquisa leva apenas 15 minutos para ser concluída, e no final será apresentada uma representação gráfica de seus pontos de vista e como se comparam em relação aos de outras pessoas que realizaram a pesquisa.</p>
+      <p>Esperamos que você curta participar da pesquisa, e encorajamos você a compartilhar sua experiência e incentivar outras pessoas a participarem também!</p>'
       ethics_statement: 'Your responses will be kept anonymous, stored securely and will only be used for this project. See full details of <a title="About the Project" href="/about-the-project">ethics and data security</a>.'
     blocks:
       -
