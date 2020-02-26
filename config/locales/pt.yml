@@ -94,14 +94,14 @@ pt:
     get_results: Get results
     next: Next
     previous: Previous
-    take_survey: Take the Survey
+    take_survey: Participe da pesquisa
 
   nav:
-    about_project: About the Project
-    about_debate: About the Debate
-    about_gofox: About GO-FOX
+    about_project: Sobre o projeto
+    about_debate: Sobre o debate
+    about_gofox: Sobre (a ferramenta) Go-Fox
     log_in: Log in
-    home: Home
+    home: Página inicial
 
   pagination:
     of: "Of"
