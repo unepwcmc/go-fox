@@ -57,8 +57,8 @@ pt:
     "Not for profit/non governmental organisation": "Not for profit/non governmental organisation"
     "Private sector": "Private sector"
     "Government": "Government"
-    "Yes": "Yes"
-    "No": "No"
+    "Yes": "Sim"
+    "No": "Não"
     "Exclusively a researcher": "Exclusively a researcher"
     "Mostly a researcher": "Mostly a researcher"
     "Both a researcher and practitioner": "Both a researcher and practitioner"
@@ -100,7 +100,7 @@ pt:
     about_project: Sobre o projeto
     about_debate: Sobre o debate
     about_gofox: Sobre (a ferramenta) Go-Fox
-    log_in: Log in
+    log_in: Entrar
     home: Página inicial
 
   pagination:
@@ -133,8 +133,8 @@ pt:
 
   homepage:
     hero:
-      title: Inform debates on the future of conservation
-      tagline: Give your views on conservation on a range of issues, see how you compare to others and contribute your views to shape future debates.
+      title: Contribua para o debate sobre o futuro da conservação
+      tagline: Dê a sua opinião sobre conservação em uma série de questões, veja como você se compara aos outros participantes e contribua com seus pontos de vista na construção de futuros debates.
     intro:
       title: 'The Future of Conservation Survey'
       content: '<p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals.</p>
