@@ -38,10 +38,10 @@ pt:
     'Slightly Agree': 'Concordo um pouco'
     'Agree': 'Concordo'
     'Strongly Agree': 'Concordo plenamente'
-    'Male': 'Male'
-    'Female': 'Female'
-    'Other': 'Other'
-    'Prefer not to say': 'Prefer not to say'
+    'Male': 'Masculino'
+    'Female': 'Feminino'
+    'Other': 'Outro'
+    'Prefer not to say': 'Prefiro não responder'
     "School level": "School level"
     "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
     "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
