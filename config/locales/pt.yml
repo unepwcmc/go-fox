@@ -31,13 +31,13 @@
 
 pt:
   questions_options:
-    'Strongly Disagree': 'Strongly Disagree'
-    'Disagree': 'Disagree'
-    'Slightly Disagree': 'Slightly Disagree'
-    'Neither Agree nor Disagree': 'Neither Agree nor Disagree'
-    'Slightly Agree': 'Slightly Agree'
-    'Agree': 'Agree'
-    'Strongly Agree': 'Strongly Agree'
+    'Strongly Disagree': 'Discordo plenamente'
+    'Disagree': 'Discordo'
+    'Slightly Disagree': 'Discordo um pouco'
+    'Neither Agree nor Disagree': 'Não concordo nem discordo'
+    'Slightly Agree': 'Concordo um pouco'
+    'Agree': 'Concordo'
+    'Strongly Agree': 'Concordo plenamente'
     'Male': 'Male'
     'Female': 'Female'
     'Other': 'Other'
