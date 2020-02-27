@@ -200,16 +200,16 @@ pt:
       The website is hosted by the <a href="https://www.unep-wcmc.org" title="Visit the UN Environment World Conservation Monitoring Centre website">UN Environment World Conservation Monitoring Centre.</a><p>'
     -
       link: 'Ethics and Data'
-      title: 'Research Ethics and Data Storage'
-      content: '<p>This project has been approved by the Research Ethics committee at the University of Leeds.</p>
-      <p>Responses to the survey contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.</p>
-      <p>Individual responses will not be identifiable either in this website or in subsequent publications. When email addresses are provided, the project team will not share them with other parties, and will only use them to send summarised results and invitations to participate in future versions of the survey.</p>
-      <p>Some respondents may have received a link to the survey from a colleague, teacher or collaborator who is a user of the Group and Organisation Future of Conservation Survey (GO-FOX) tool. In this case, your responses will be available to the GO-FOX user, and they may be able to identify you by your answers. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses.</p>
-      <p>Should any data from the Future of Conservation Survey, including GO-FOX results, be used in any resultant publications or presentations, either internal to your organisation or externally facing, you should acknowledge the project team by citing Sandbrook, C., Fisher, J., Holmes, G., Luque-Lora, R., Keane, A., Ingle, R., Calcada, S., Carter, M. (2019). <em>The Group and Organisation Future of Conservation Survey.</em> <a href="www.futureconservation.org" title="Visit the Future of Conservation homepage">www.futureconservation.org</a></p>'
+      title: 'Ética de pesquisa e armazenamento de dados'
+      content: '<p>Este projeto foi aprovado pelo Comitê de Ética em Pesquisa da Universidade de Leeds (Reino Unido).</p>
+      <p>Suas respostas contribuirão para o projeto da Pesquisa O Futuro da Conservação. Todos os dados coletados serão armazenados de forma segura pelo Centro de Monitoramento de Conservação Mundial da ONU, e serão utilizados exclusivamente para fins acadêmicos. É possível que uma versão dos dados totalmente anônima, excetuando toda informação pessoal que poderia identificar os participantes, seja compartilhada com outros pesquisadores.</p>
+      <p>Não será possível identificar suas respostas individuais neste site ou nas publicações subsequentes. Se optar por informar o seu endereço de e-mail, o mesmo não será compartilhado com outras partes, e somente será utilizado para lhe enviar um resumo dos seus resultados e convites para participar em futuras versões da pesquisa.</p>
+      <p>Alguns participantes da pesquisa podem ter recebido o link de um colega, professor ou colaborador que é usuário da ferramenta GO-FOX - Pesquisa do Futuro da Conservação para Grupos e Organizações. Nestes casos, as respostas estarão disponíveis para o usuário que enviou o link, quem possivelmente poderá identificar os respondentes a partir de suas respostas. Com a ferramenta GO-FOX, temos a intenção de promover o ensino e desenvolvimento estratégico das organizações que atuam com conservação, mas não nos responsabilizamos pelo uso das respostas por parte do usuário que enviou a pesquisa.</p>
+      <p>Se os resultados obtidos a partir da pesquisa, incluindo os resultados obtidos através da GO-FOX, forem utilizados em apresentações ou publicações, tanto interna ou externamente a uma organização, a equipe da Pesquisa O Futuro da Conservação deve ser reconhecida através da seguinte citação: Sandbrook, C., Fisher, J., Holmes, G., Luque-Lora, R., Keane, A., Ingle, R., Calcada, S., Carter, M. (2019). <em>The Group and Organisation Future of Conservation Survey.</em> <a href="www.futureconservation.org" title="Visit the Future of Conservation homepage">www.futureconservation.org</a></p>'
     -
-      link: 'Contact'
-      title: 'Contact us'
-      content: '<p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a></p>'
+      link: 'Contato'
+      title: 'Contato'
+      content: '<p>Caso tenha alguma dúvida ou queira obter mais informações sobre o Projeto O Futuro da Conservação, por favor, entre em contato através do seguinte e-mail: <a href="mailto:futureofconservation@gmail.com" title="Email Future of Conservation">futureofconservation@gmail.com</a></p>'
     -
       link: 'FAQs'
       title: 'FAQs'
