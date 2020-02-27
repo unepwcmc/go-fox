@@ -107,7 +107,7 @@ pt:
     of: "Of"
     page: Page
     pages: Pages
-    tooltip: "You are ${count} away from finding out your results. Required questions are marked with *."
+    tooltip: "Você está a ${count} páginas de conhecer seus resultados. As perguntas obrigatórias são marcadas com *."
 
   validation:
     complete_questions: Please complete the questions highlighted below to continue.
@@ -177,14 +177,15 @@ pt:
 
   about_project:
     -
-      link: 'Background'
-      title: 'Background'
-      content: '<p>The purpose of this project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. In this survey, we are exploring the range of views that exist within the conservation movement globally, and how this varies by key demographic characteristics such as age, gender, geography and educational background.</p>
-      <p>Funding for the Future of Conservation Project has been received from the Cambridge Conservation Initiative Collaborative Fund, which is supported by the Arcadia Fund, and from the Economic and Social Research Council (ESRC) Impact Acceleration Account at the University of Edinburgh. We are very grateful for the support of these donors.</p>'
+      link: 'Contexto'
+      title: 'Contexto'
+      content: '<p>O propósito de este projeto é explorar os pontos de vista de pessoas que trabalham com a conservação sobre várias questões, contribuindo com debates sobre o futuro da conservação. As recentes discussões têm sido conduzidas e as decisões controladas por poucos e poderosos indivíduos e grupos, cujos pontos de vista tendem a se encaixar em posições polarizadas. Nesta pesquisa, exploramos a diversidade de pontos de vista que existem na comunidade global de pessoas que trabalham com a conservação, e como variam de acordo com características demográficas idade, género, nacionalidade e formação/escolaridade.</p>
+      <p>O Projeto de Pesquisa O Futuro da Conservação recebeu financiamento da Cambridge Conservation Initiative Collaborative Fund, que recebe apoio da Arcadia Fund, e do Economic and Social Research Council (ESRC) Impact Acceleration Account da Universidade de Edimburgo. Agradecemos imensamente a estes financiadores.</p>'
     -
-      link: 'How does it work'
-      title: 'How does it work?'
+      link: 'Como funciona?'
+      title: 'Como funciona?'
       content: "<p>After taking the survey, the website will present your views on a plot with three axes. These are ‘people-centred conservation’ (relating to the role that people should play in conservation), ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation). These axes were derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey (see <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>this paper</a> in Nature Sustainability for further details of the analysis and results - the <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>Authors' Accepted Manuscript</a> is also available open access).</p>
+      <p>Após terminar de responder a pesquisa, você será apresentado a um gráfico com três eixos, representando seus resultados. Os três eixos são: ‘conservação centrada em pessoas’ (relacionado com o papel que as pessoas devem desempenhar na conservação), ‘ecocentrismo científico’ (relacionado com o papel da ciência na conservação de espécies e ecossistemas), e ‘conservação através do capitalismo’ (relacionado com o papel das corporações e as ferramentas de mercado na conservação). Estes eixos foram derivados com base em análises estatísticas dos resultados dos primeiros 9.264 participantes aa pesquisa (para mais informações sobre estes análises e resultados, veja este artigo [this paper] publicado na revista Nature Sustainability - uma versão do artigo aceito [Author’s Accepted Manuscript] também está disponível acessem Acesso Aberto.</p>
       <p>We have published, and aim to continue to publish, our findings on the views of conservationists in various ways. Where possible, we will include these on this website.</p>"
     -
       link: 'About us'
