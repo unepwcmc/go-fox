@@ -140,7 +140,8 @@ pt:
       content: '<p>Há muito tempo tem havido debates sobre o caminho que a conservação da biodiversidade deve seguir. No entanto, estes debates têm sido dominados por poucos e poderosos indivíduos.</p>
       <p>Esta pesquisa permite que você contribua com seus pontos de vista, de modo que uma ampla gama de vozes possa ser levada em conta. A pesquisa leva apenas 15 minutos para ser concluída, e no final será apresentada uma representação gráfica de seus pontos de vista e como se comparam em relação aos de outras pessoas que realizaram a pesquisa.</p>
       <p>Esperamos que você curta participar da pesquisa, e encorajamos você a compartilhar sua experiência e incentivar outras pessoas a participarem também!</p>'
-      ethics_statement: 'Your responses will be kept anonymous, stored securely and will only be used for this project. See full details of <a title="About the Project" href="/about-the-project">ethics and data security</a>.'
+      ethics_statement: '
+      Suas respostas serão mantidas anônimas, de forma segura e serão utilizadas somente para este projeto. Clique <a title="Sobre o projeto" href="/about-the-project">aqui</a> para obter todos os detalhes sobre a ética e segurança de dados.'
     blocks:
       -
         title: 'A Pesquisa O Futuro da Conservação para Grupos e Organizações (GO-FOX)'
