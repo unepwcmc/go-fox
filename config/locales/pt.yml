@@ -151,8 +151,12 @@ pt:
         image_alt: 'GO-FOX logo'
         image_class: 'gofox'
       -
-        title: 'Research and publications'
-        description: "Data from the Future of Conservation survey have been used to identify the values held by conservationists, and how these relate to their backgrounds (such as nationality, educational background, or experience of different ecosystems). The <a href='https://www.nature.com/articles/s41893-019-0267-5' title='Visit the paper in Nature Sustainability' target='_blank'>first paper from this research</a> has been published in Nature Sustainability. The <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"Visit the Authors' Accepted Manuscript\" target='_blank'>Authors' Accepted Manuscript</a> is also available open access We continue to carry out new analyses using data collected through this website, and aim to continue disseminating our findings amongst the conservation community."
+        title: 'Pesquisa e publicações'
+        description: "
+        <p>
+        Os dados da Pesquisa do Futuro da Conservação têm sido analisados com o objetivo de identificar os valores de pessoas que trabalham com a conservação, e como estes variam dependendo de suas características (por exemplo, nacionalidade, profissão e experiência de trabalho em diferentes ecossistemas). <a href='https://www.nature.com/articles/s41893-019-0267-5' title='foi publicado na revista Nature Sustainability' target='_blank'>O primeiro artigo resultante desta pesquisa</a> foi publicado na revista Nature Sustainability. <a href='https://wordpress.com/post/thinkinglikeahuman.com/458' title=\"A versão do artigo aceito\" target='_blank'>A versão do artigo aceito</a> também está disponível em Acesso Aberto. Seguimos realizando análises utilizando os dados coletados através desta página, e esperamos continuar divulgando os resultados dentro da comunidade de pessoas que trabalham com a conservação.
+        </p>
+        <p>"
 
   survey_warning:
       title: 'Welcome to the Future of Conservation survey'
