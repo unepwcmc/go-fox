@@ -160,9 +160,16 @@ pt:
         <p>"
 
   survey_warning:
-      title: 'Welcome to the Future of Conservation survey'
+      title: 'Bem-vindo à Pesquisa do Futuro da Conservação'
       description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
-      master_description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre, and used solely for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.'
+      master_description: 'Este projeto foi aprovado pelo Comitê de Ética em Pesquisa da Universidade de Leeds (Reino Unido).<br><br>
+      Suas respostas contribuirão para o projeto de pesquisa em andamento O Futuro da Conservação. Todos os dados coletados serão 
+      armazenados de forma segura pelo Centro de Monitoramento de Conservação Mundial da ONU (UN Environment World Conservation Monitoring 
+      Centre), e serão utilizados exclusivamente para fins acadêmicos. É possível que uma versão dos dados totalmente anônima, excetuando 
+      toda informação pessoal que poderia identificar os participantes, seja compartilhada com outros pesquisadores.<br><br>Não será possível 
+      identificar suas respostas individuais neste site ou nas publicações subsequentes. Se optar por informar o seu endereço de e-mail, 
+      o mesmo não será compartilhado com outras partes, e somente será utilizado para lhe enviar um resumo dos seus resultados e convites 
+      para participar em futuras versões da pesquisa.'
 
   sign_up_warning:
       title: 'Welcome to GO-FOX'
