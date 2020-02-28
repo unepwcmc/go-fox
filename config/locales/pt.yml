@@ -451,7 +451,7 @@ pt:
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
 
   results:
-    header: Your results
+    header: Seus resultados
     chart:
       less: Less
       more: More
