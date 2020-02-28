@@ -411,16 +411,16 @@ pt:
     -
       link: 'Ecocentrismo de mercado'
       title: 'Ecocentrismo de mercado'
-      content: '<p>Perhaps one example of ‘market ecocentrism’ is the recent Nature Needs Half movement (as well as the closely related Half-Earth movement). In his book entitled ‘Half-Earth’, biologist Edward O. Wilson uses scientific arguments about biogeography to advocate the setting aside of half of the world’s area as ‘inviolable nature reserves’. The motivation for these reserves would predominantly be to protect species and ecosystems for their own sakes; hence the positive score on the science-led ecocentrism dimension, and the relatively negative score on the people-centred conservation dimension. Aware that this ambitious target would require a drastic decrease in per capita environmental footprint worldwide, Wilson supports free markets as a means to favour those products which generate the maximum profit for the minimum energy and resource consumption (hence the positive score on the conservation through capitalism dimension).</p>
-      <p>However, Wilson’s pro-markets view seems to be more to do with ensuring that humanity can flourish on only 50% of the Earth’s surface rather than as a tool for carrying out conservation: that is, the pro-market strategy would be used to buffer the ‘human’ half of the Earth against the need to exploit the ‘natural’ half, rather than as a means to create economic value from protecting the ‘natural’ half.</p>
-      <p>Other instances of market ecocentrism include strategies in which market tools, such as ecotourism and ‘willingness to pay’ approaches are used to generate revenue to fund the creation and maintenance of protected areas.</p>'
+      content: '<p>Talvez um exemplo claro de "ecocentrismo de mercado" seja o recente movimento chamado Nature Needs Half (assim como o movimento Half-Earth, intimamente relacionado). Em seu livro intitulado "Half-Earth", o biólogo Edward O. Wilson usa argumentos científicos baseados na biogeografia para defender a proteção de metade da área do mundo como "reservas naturais invioláveis". A motivação para essas reservas seria predominantemente proteger espécies e ecossistemas por seu valor intrínseco; daí a pontuação positiva na dimensão “ecocentrismo científico” e a pontuação relativamente negativa na dimensão “conservação centrada nas pessoas”. Considerando que essa meta ambiciosa exigiria uma redução drástica na pegada ambiental per capita em todo o mundo, Wilson apoia mercados livres como um meio de favorecer os produtos que geram o máximo lucro para o consumo mínimo de energia e recursos (daí a pontuação positiva no eixo “conservação através do capitalismo”).</p>
+      <p>No entanto, a visão pró-mercados de Wilson parece ter mais a ver com garantir que a humanidade possa prosperar em apenas 50% da superfície da Terra do que com uma ferramenta para ser usada para a conservação. Em outras palavras, a estratégia pró-mercado seria usada para amortecer a metade "humana" da Terra contra a necessidade de explorar a metade "natural", e não como um meio para criar valor econômico a partir da proteção da metade "natural".</p>
+      <p>Outros exemplos de ecocentrismo de mercado incluem estratégias nas quais ferramentas de mercado, como ecoturismo e abordagens de "disposição para pagar", são usadas para gerar receita para financiar a criação e manutenção de áreas protegidas.</p>'
       image: 'fg4-market-ecocentrism.png'
       image_alt: 'Market ecocentrism chart'
-      caption: 'Fig. 4 Market-based Ecocentrism. The white circles represent the neutral point for each of the dimensions (the result obtained by answering ‘neither agree nor disagree’ to every statement), and the dotted line represents the average result on each dimension for 9,264 conservationists from 149 countries. The faded lines represent the scores for all 9,264 respondents, and the purple area represents the dimensional space in which market ecocentrists are most likely to be.'
+      caption: 'Figura 4: Ecocentrismo de mercado. Os círculos brancos representam o ponto neutro de cada uma das dimensões (o resultado obtido respondendo "não concordo nem discordo" para todas as afirmações), e a linha pontilhada representa o resultado médio de cada dimensão para 9.264 pessoas que trabalham com a conservação de 149 países. As linhas mais claras representam as pontuações para todos os 9.264 entrevistados, e a área roxa representa o espaço conceitual em que é mais provável que se encontrem os ecocentristas.'
     -
       link: 'Bibliography'
       title: 'Bibliography'
-      content: '<p><em>New Conservation:</em></p>
+      content: '<p><em>Nova Conservação:</em></p>
       <ul class="static-page__bibliography-list">
       <li>“Conservation in the Anthropocene -- Beyond Solitude and Fragility.” Accessed February 24, 2015. http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene.
       <li>Kareiva, Peter, and Michelle Marvier. “What Is Conservation Science?” BioScience 62, no. 11 (November 1, 2012): 962–69. doi:10.1525/bio.2012.62.11.5.</li>
@@ -430,7 +430,7 @@ pt:
       <li>Marvier, Michelle, and Peter Kareiva. “The Evidence and Values Underlying ‘New Conservation’.” Trends in Ecology & Evolution 29, no. 3 (January 3, 2014): 131–32. doi:10.1016/j.tree.2014.01.005.</li>
       </ul>
 
-      <p><em>Traditional conservation:</em></p>
+      <p><em>Conservação tradicional:</em></p>
       <ul class="static-page__bibliography-list">
       <li>Soulé, Michael “What is conservation biology?” Bioscience 35, no. 11 (December, 1985): 727-734. Doi: 10.1111/cobi.12147</li>
       <li>Greenwald, Noah, Dominick A. Dellasala, and John W. Terborgh. “Nothing New in Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–241. Doi:10.1525/bio.2013.63.4.18.</li>
@@ -440,14 +440,14 @@ pt:
       <li>Miller, B., M.E. Soulé, and J. Terborgh. “’New Conservation’ or Surrender to Development?” Animal Conservation 17, no.6 (December 1, 2014): 509-15. Doi: 10.1111/acv.12127</li>
       </ul>
 
-      <p><em>Critical social science:</em></p>
+      <p><em>Ciência social crítica:</em></p>
       <ul class="static-page__bibliography-list">
       <li>Büscher, Bram, Sullivan, Sian, Neves, Katja, Igoe, Jim and Dan Brockington. “Towards a Synthesized Critique of Neoliberal Biodiversity Conservation” Capitalism Nature Socialism 23, no. 2 (June 2012): 4-30. Doi: 10.1080/10455752.2012.674149</li>
       <li>Spash, Clive L. “Bulldozing biodiversity: The economics of offsets and trading-in Nature”. Biological Conservation 192 (December 2015): 541-551 .Doi: 10.1016/j.biocon.2015.07.037</li>
       <li>Bockington, Dan and Rosaleen Duffy (eds.). Capitalism and Conservation. Chichester: Wiley-Blackwell, 2011.</li>
       </ul>
 
-      <p><em>Market ecocentrism:</em></p>
+      <p><em>Ecocentrismo de mercado:</em></p>
       <ul class="static-page__bibliography-list"><li>Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016.</li></ul>'
 
   results:
