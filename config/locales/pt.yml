@@ -42,11 +42,11 @@ pt:
     'Female': 'Feminino'
     'Other': 'Outro'
     'Prefer not to say': 'Prefiro não responder'
-    "School level": "School level"
-    "Post-high school, but at an institution other than a university": "Post-high school, but at an institution other than a university"
-    "Undergraduate/bachelors university degree": "Undergraduate/bachelors university degree"
-    "Masters degree/postgraduate qualification": "Masters degree/postgraduate qualification"
-    "Doctorate": "Doctorate"
+    "School level": "Educação básica completa"
+    "Post-high school, but at an institution other than a university": "ducação superior completa, mas não em uma universidade."
+    "Undergraduate/bachelors university degree": "Graduação completa"
+    "Masters degree/postgraduate qualification": "Mestrado / pós-graduação completa"
+    "Doctorate": "Doutorado completo"
     'Biological sciences (e.g. zoology, plant sciences)': 'Biological sciences (e.g. zoology, plant sciences)'
     "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Non-biological natural sciences (e.g. chemistry, maths, engineering)"
     "Social sciences (e.g. economics, human geography, political science)": "Social sciences (e.g. economics, human geography, political science)"
