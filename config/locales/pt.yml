@@ -47,11 +47,11 @@ pt:
     "Undergraduate/bachelors university degree": "Graduação completa"
     "Masters degree/postgraduate qualification": "Mestrado / pós-graduação completa"
     "Doctorate": "Doutorado completo"
-    'Biological sciences (e.g. zoology, plant sciences)': 'Biological sciences (e.g. zoology, plant sciences)'
-    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Non-biological natural sciences (e.g. chemistry, maths, engineering)"
-    "Social sciences (e.g. economics, human geography, political science)": "Social sciences (e.g. economics, human geography, political science)"
-    "Humanities (e.g. literature, history, philosophy, languages)": "Humanities (e.g. literature, history, philosophy, languages)"
-    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinary (a combination of at least two of natural science, social science and humanities)"
+    'Biological sciences (e.g. zoology, plant sciences)': 'Ciências biológicas (por exemplo, zoologia, botânica)'
+    "Non-biological natural sciences (e.g. chemistry, maths, engineering)": "Ciências naturais não biológicas (por exemplo, química, matemática, engenharia)"
+    "Social sciences (e.g. economics, human geography, political science)": "Ciências sociais (por exemplo, economia, geografia humana, ciência política)"
+    "Humanities (e.g. literature, history, philosophy, languages)": "Humanidades (por exemplo, literatura, história, filosofia, idiomas)"
+    "Interdisciplinary (a combination of at least two of natural science, social science and humanities)": "Interdisciplinaridade (uma combinação de pelo menos dois de ciências naturais, ciências sociais e humanas)"
     "Not applicable": "Não se aplica"
     "Academia/educational institution": "Academia / instituição de ensino"
     "Not for profit/non governmental organisation": "Sem fins lucrativos / organização não governamental"
