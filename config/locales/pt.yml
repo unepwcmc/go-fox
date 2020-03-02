@@ -82,12 +82,12 @@ pt:
     "Values of family and friends during adulthood": "Valores da família e amigos durante a vida adulta"
     "Outdoor play/recreation during childhood": "Atividades ao ar livre / recreação durante a infância"
     "Outdoor play/recreation during adulthood": "Atividades ao ar livre / recreação durante a vida adulta"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood"
-    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood"
-    "Formal education experience (e.g. field trip, classroom session) during childhood": "Formal education experience (e.g. field trip, classroom session) during childhood"
-    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Formal education experience (e.g. field trip, classroom session) during adulthood"
-    "Professional experience during adulthood": "Professional experience during adulthood"
-    "None of the above": "None of the above"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood": "Experiências em lugares fechados (por exemplo, ler livros, assistir documentários, jogar videogames) durante a infância"
+    "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood": "Experiências em lugares fechados (por exemplo, ler livros, assistir documentários, jogar videogames) durante a vida adulta"
+    "Formal education experience (e.g. field trip, classroom session) during childhood": "Experiência em educação formal (por exemplo, aulas, viagem de campo) durante a infância"
+    "Formal education experience (e.g. field trip, classroom session) during adulthood": "Experiência de educação formal (por exemplo, aulas, viagem de campo) durante a vida adulta"
+    "Professional experience during adulthood": "Experiência profissional durante a vida adulta"
+    "None of the above": "Nenhuma das acima"
 
   buttons:
     accept: Accept
