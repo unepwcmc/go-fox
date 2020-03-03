@@ -115,7 +115,7 @@ pt:
     select_at_least_one: Por favor, selecione pelo menos uma das opções abaixo.
 
   social:
-    header: Share the survey
+    header: Compartilhe a pesquisa
 
   login:
     -
@@ -451,15 +451,15 @@ pt:
   results:
     header: Seus resultados
     chart:
-      less: Less
-      more: More
+      less: Menos
+      more: Mais
       dimensions:
-        people: People-centred conservation
-        science: Science-led ecocentrism
-        capitalism: Conservation through capitalism
+        people: Conservação centrada nas pessoas
+        science: Ecocentrismo científico
+        capitalism: Conservação através do capitalismo
     contact:
       title: Contact
-      email_message: 'For more information about The Future of Conservation project please email:'
+      email_message: 'Para mais informações sobre o projeto O Futuro da Conservação, envie um email para:'
     title: "Como interpretar seus resultados"
     content: '<p>
     O gráfico representa seus pontos de vista (os pontos e linhas mais grossas) sobre três eixos. Os eixos representam as três principais dimensões do debate sobre o futuro da conservação que identificamos a partir das respostas de 9.264 pessoas que trabalham com a conservação provenientes de 149 países. As três dimensões são: “conservação centrada nas pessoas” (sobre o papel que as pessoas devem desempenhar na conservação), “ecocentrismo científico” (sobre o papel da ciência na proteção de espécies e ecossistemas), e “conservação através do capitalismo” (sobre o papel das corporações e ferramentas de mercado na conservação).
