@@ -462,13 +462,13 @@ pt:
       email_message: 'For more information about The Future of Conservation project please email:'
     title: "Como interpretar seus resultados"
     content: '<p>
-    The plot above presents a summary of your views (the bold points and lines) on three axes. These axes represent three key dimensions of the conservation debate derived from statistical analysis of results from the first 9,264 respondents to the Future of Conservation survey. These dimensions are: A ‘people-centred conservation’ (relating to the role that people should play in conservation), B ‘science-led ecocentrism’ (relating to the role of science in the conservation of species and ecosystems), and C ‘conservation through capitalism’ (relating to the role of corporations and market based approaches in conservation).
+    O gráfico representa seus pontos de vista (os pontos e linhas mais grossas) sobre três eixos. Os eixos representam as três principais dimensões do debate sobre o futuro da conservação que identificamos a partir das respostas de 9.264 pessoas que trabalham com a conservação provenientes de 149 países. As três dimensões são: “conservação centrada nas pessoas” (sobre o papel que as pessoas devem desempenhar na conservação), “ecocentrismo científico” (sobre o papel da ciência na proteção de espécies e ecossistemas), e “conservação através do capitalismo” (sobre o papel das corporações e ferramentas de mercado na conservação).
     </p>
     <p>
-    A score towards the left hand side of the plot is less in favour of the relevant dimension, whereas a score to the right hand side of the plot is more in favour of the dimension.
+    Um deslocamento para a direita em cada um dos eixos representa maior aderência à posição que o eixo representa, e um deslocamento para a esquerda representa menor aderência.
     </p>
     <p>
-    You can compare your views with other people who have recently taken the survey, whose answers are represented by the small points and thin lines.
+    Você pode comparar seus pontos de vista com os de outras pessoas que realizaram a pesquisa (representados com pontos e linhas mais claros).
     </p>
-    <p>You can find out more about these dimensions and how they relate to established positions in the literature by visiting our <a href="/about-the-debate" title="Visit the About the Debate page">About the Debate</a> page.
+    <p>Você pode encontrar mais informação sobre cada uma das dimensões e suas relações com as posições que surgem da literatura sobre os debates sobre o futuro da conservação na página <a href="/about-the-debate" title="Visit the About the Debate page">Sobre o debate</a> page.
     </p>'
