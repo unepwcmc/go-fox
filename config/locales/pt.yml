@@ -364,11 +364,11 @@ pt:
       <iframe width="560" height="315" src="https://www.youtube.com/embed/bZdwQAG-xI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p>A ferramenta GO-FOX permite que o usuário crie sua própria versão da Pesquisa do Futuro da Conservação e distribua-a para um grupo fechado de respondentes. Os resultados analisados são disponibilizados para o usuário do GO-FOX, para que este possa usá-los em benefício do grupo. Exemplos de como o GO-FOX pode ser usado incluem, mas não estão limitados a:</p>
       <ul>
-      <li>Conservation NGOs wishing to generate discussion amongst their staff or members about their individual conservation viewpoints and how these relate to the work of the organisation. This could be done as part of a strategic planning process</li>
-      <li>Teachers in conservation courses who wish to use the tool to support learning about diverse perspectives in conservation and self-reflection of students on their own views</li>
+      <li>ONGs de conservação que desejem gerar discussões entre seus funcionários ou membros sobre seus pontos de vista individuais de conservação e como estes se relacionam com o trabalho da organização. Isto poderia ser feito como parte de um processo de planejamento estratégico</li>
+      <li>Professores em cursos de conservação que desejem usar a ferramenta para apoiar o aprendizado sobre diversas perspectivas sobre conservação e autorreflexão dos alunos em relação a suas próprias visões</li>
       </ul>
-      <p>To get started, just <a href="/users/sign_in?locale=en" title="Register GO-FOX account">register your GO-FOX account</a> and start creating surveys!</p>
-      <p>Funding for GO-FOX has been received from the Cambridge Conservation Initiative Collaborative Fund, which is supported by the Arcadia Fund, and from the Economic and Social Research Council (ESRC) Impact Acceleration Account at the University of Edinburgh. We are very grateful for the support of these donors.</p>'
+      <p>Para começar, basta <a href="/users/sign_in?locale=en" title="registrar sua conta GO-FOX">registrar sua conta GO-FOX</a> e começar a criar pesquisas!</p>
+      <p>O financiamento para o GO-FOX foi recebido da Cambridge Conservation Initiative Collaborative Fund, que recebe apoio da Arcadia Fund e do Economic and Social Research Council (ESRC) Impact Acceleration Account da Universidade de Edimburgo. Agradecemos imensamente a estes financiadores.</p>'
 
   about_debate:
     -
