@@ -110,9 +110,9 @@ pt:
     tooltip: "Você está a ${count} páginas de conhecer seus resultados. As perguntas obrigatórias são marcadas com *."
 
   validation:
-    complete_questions: Please complete the questions highlighted below to continue.
-    select_option: Please select an option below.
-    select_at_least_one: Please select at least one option below.
+    complete_questions: Por favor, complete as perguntas destacadas abaixo para continuar.
+    select_option: Por favor, selecione uma das opções abaixo.
+    select_at_least_one: Por favor, selecione pelo menos uma das opções abaixo.
 
   social:
     header: Share the survey
