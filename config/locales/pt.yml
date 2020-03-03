@@ -90,10 +90,10 @@ pt:
     "None of the above": "Nenhuma das acima"
 
   buttons:
-    accept: Accept
-    get_results: Get results
-    next: Next
-    previous: Previous
+    accept: Aceitar
+    get_results: Obter resultados
+    next: Seguinte
+    previous: Anterior
     take_survey: Participe da pesquisa
 
   nav:
@@ -104,9 +104,9 @@ pt:
     home: Página inicial
 
   pagination:
-    of: "Of"
-    page: Page
-    pages: Pages
+    of: "de"
+    page: página
+    pages: páginas
     tooltip: "Você está a ${count} páginas de conhecer seus resultados. As perguntas obrigatórias são marcadas com *."
 
   validation:
