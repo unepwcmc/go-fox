@@ -7,6 +7,9 @@
       <li><%= link_to_unless I18n.locale == :en , "English", set_language_english_path %></li>
       <li><%= link_to_unless I18n.locale == :es, "Español", set_language_spanish_path %></li>
       <li><%= link_to_unless I18n.locale == :fr, "Français", set_language_french_path %></li>
+      <!---
+      <li><%= link_to_unless I18n.locale == :pt, "Português", set_language_portuguese_path %></li>
+      --->
     </ul>
   </template>
 </expandable-item>

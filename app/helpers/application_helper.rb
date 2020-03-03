@@ -19,7 +19,8 @@ module ApplicationHelper
     {
       en: 'English',
       es: 'Español',
-      fr: 'Français'
+      fr: 'Français',
+      pt: 'Português'
     }
   end
 
