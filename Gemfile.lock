@@ -163,8 +163,8 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (3.0.1)
+    rack (2.0.8)
     puma (3.12.4)
-    rack (2.0.3)
     rack-protection (2.0.1)
       rack
     rack-proxy (0.6.3)
