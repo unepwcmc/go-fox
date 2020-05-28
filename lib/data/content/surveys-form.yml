@@ -2,6 +2,7 @@ default_language:
   en: "English"
   es: "Spanish"
   fr: "French"
+  pt: "Portuguese"
 
 participant_level_of_study:
   undergraduate: "Undergraduate degree"
