@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'set_language/french'
 
+  get 'set_language/portuguese'
+
   resources :classifications, except: [:destroy]
   resources :demographic_questions, except: [:destroy]
   resources :questions, except: [:destroy]
