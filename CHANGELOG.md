@@ -1,4 +1,10 @@
 
+# v0.2.4
+
+**Fix editing custom question functionality**
+
+* Fixes bugs when trying to add and remove options for a custom question.
+
 # v0.2.3
 
 **Fix CSV export**
