@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,7 +37,7 @@ gem 'activemodel-serializers-xml'
 gem 'cocoon', '~> 1.2.11'
 gem 'sidekiq', '~> 5.1.1'
 
-gem 'webpacker', '~> 3.2.2'
+gem 'webpacker', '~> 4.0.2'
 gem 'react-rails', '~> 2.4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
