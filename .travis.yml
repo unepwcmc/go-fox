@@ -19,3 +19,7 @@ before_script:
 - RAILS_ENV=test bundle exec rake db:migrate
 notifications:
   slack: wcmc:6TJZ2hRJCFwcK2fhAA4cWHzh
+language: node_js
+node_js:
+  - 10
+  - 15
