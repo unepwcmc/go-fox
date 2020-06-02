@@ -1,20 +1,32 @@
 {
-  "name": "go-fox",
+  "name": "ncfa",
   "private": true,
+  "scripts": {
+    "build": "RAILS_ENV=production NODE_ENV=production ./bin/webpack",
+    "dev": "./bin/webpack-dev-server",
+    "serve": "rails s",
+    "network-serve": "bash ./scripts/network-serve.sh",
+    "lint": "eslint --ext .js,.vue"
+  },
   "dependencies": {
-    "@rails/webpacker": "^3.2.2",
+    "@rails/webpacker": "^4.0.2",
     "babel-preset-react": "^6.24.1",
-    "es6-promise": "^4.2.4",
+    "es6-promise": "^4.2.5",
     "jquery": "^3.5.0",
+    "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.6.0",
     "scrollmagic": "^2.0.6",
     "select2": "^4.0.6-rc.1",
-    "vue": "^2.5.13",
-    "vue-loader": "^14.2.1",
-    "vue-template-compiler": "^2.5.13",
-    "vuex": "^3.0.1"
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.0.1",
+    "webpack-dev-server": "^3.3.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.11"
+    "eslint": "~5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.3",
+    "webpack-dev-server": "^3.3.1"
   }
 }

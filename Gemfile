@@ -37,7 +37,7 @@ gem 'activemodel-serializers-xml'
 gem 'cocoon', '~> 1.2.11'
 gem 'sidekiq', '~> 5.1.1'
 
-gem 'webpacker', '~> 3.2.2'
+gem 'webpacker', '~> 4.0.2'
 gem 'react-rails', '~> 2.4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
