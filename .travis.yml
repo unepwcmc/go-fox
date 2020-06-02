@@ -12,6 +12,7 @@ rvm:
 addons:
   postgresql: 9.6
 before_script:
+- bundle install
 - psql -c 'create database travis_ci_test' -U postgres
 - cp config/database.yml.travis config/database.yml
 - cp config/secrets.yml.travis config/secrets.yml
@@ -19,3 +20,6 @@ before_script:
 - RAILS_ENV=test bundle exec rake db:migrate
 notifications:
   slack: wcmc:6TJZ2hRJCFwcK2fhAA4cWHzh
+language: node_js
+node_js:
+  - 10

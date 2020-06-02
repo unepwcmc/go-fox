@@ -5,6 +5,7 @@
     "build": "RAILS_ENV=production NODE_ENV=production ./bin/webpack",
     "dev": "./bin/webpack-dev-server",
     "serve": "rails s",
+    "test": "rails test",
     "network-serve": "bash ./scripts/network-serve.sh",
     "lint": "eslint --ext .js,.vue"
   },
