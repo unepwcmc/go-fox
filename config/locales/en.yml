@@ -102,6 +102,7 @@ en:
     about_gofox: About GO-FOX
     log_in: Log in
     home: Home
+    scroll_nav_title: Sections on this page
 
   pagination:
     of: "Of"

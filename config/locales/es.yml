@@ -102,6 +102,7 @@ es: #new start
     about_gofox: Sobre GO-FOX
     log_in: Acceda a su cuenta
     home: Inicio
+    scroll_nav_title: "ES: Sections on this page"
 
   pagination:
     of: "De"

@@ -3,7 +3,7 @@
 <%= render partial: 'global_public/header', locals: { title: title } %>
 <div class="container--about">
 
-  <nav-scroll :nav-array="<%= page_sections(page) %>"></nav-scroll>
+  <nav-scroll :nav-array="<%= page_sections(page) %>" title="<%= t('nav.scroll_nav_title') %>"></nav-scroll>
 
   <div class="container--public static-page">
     <div class="gutters content-padding--public">

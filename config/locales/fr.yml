@@ -102,6 +102,7 @@ fr:
     about_gofox:  À propos de GO-FOX
     log_in: S’identifier
     home: Accueil
+    scroll_nav_title: "FR: Sections on this page"
 
   pagination:
     of: "sur"

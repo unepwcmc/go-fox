@@ -3,7 +3,7 @@
   <div id="scroll-nav" class="nav--side">
 
     <div id='scroll-nav-toggle' @click="toggleDropdown" class="nav__dropdown-toggle flex flex-v-center flex-h-between">
-      <span>Sections on this page</span>
+      <span>{{ title }}</span>
       <i class='material-icons nav__icon'>{{ dropIcon }}</i>
     </div>
 
@@ -38,6 +38,10 @@
       navArray: {
         required: true,
         type: Array
+      },
+      title: {
+        type: String,
+        default: ''
       }
     },
 
