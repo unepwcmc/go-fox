@@ -1,3 +1,8 @@
+# v0.2.5
+
+**Add Portuguese translations**
+
+* Adds new Portuguese translations to the public facing site
 
 # v0.2.4
 
