@@ -301,9 +301,8 @@
     Geographical scope of the group/organisation (please select all that apply):
   </p>
   <p>
-    <% geographical_scope = survey.settings["geographical_scope"].map{|k| surveys_data("geographical_scope")[k]}.compact! %>
     <ul>
-    <% geographical_scope.each do |gs| %>
+    <% geographical_scopes(survey).each do |gs| %>
       <li>
         <%= gs %>
       </li>
