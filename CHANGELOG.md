@@ -1,3 +1,9 @@
+# v0.2.6
+
+**Geographical_scope fix**
+
+* Fix error when trying to edit a survey
+
 # v0.2.5
 
 **Add Portuguese translations**
