@@ -4,13 +4,15 @@ module SurveysHelper
     master ? I18n.t('survey_warning.master_description') : I18n.t('survey_warning.description')
   end
 
-  def geographical_scopes(survey)
-    geographical_scope = survey.settings["geographical_scope"]
+  def multiple_choice_answers(survey, question_id)
+    question_answer = survey.settings[question_id]
 
-    if geographical_scope.is_a? String
-      [surveys_data("geographical_scope")[geographical_scope]].compact
+    if question_answer.is_a? String
+      [surveys_data(question_id)[question_answer]].compact
+    elsif question_answer.kind_of?(Array)
+      question_answer.map{ |k| surveys_data(question_id)[k] }.compact
     else
-      geographical_scope.map{ |k| surveys_data("geographical_scope")[k] }.compact
+      []
     end
   end
 

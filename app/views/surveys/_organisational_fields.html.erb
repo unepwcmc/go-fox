@@ -253,8 +253,7 @@
   <p>
     What kind of conservation activities does the organisation do?:
     <ul>
-    <% kinds = survey.settings["kind_of_conservation_activities"].map{|k| surveys_data("kind_of_conservation_activities")[k]}.compact! %>
-    <% kinds.each do |kind| %>
+    <% multiple_choice_answers(survey, "kind_of_conservation_activities").each do |kind| %>
       <li>
         <%= kind %>
       </li>
@@ -284,9 +283,8 @@
 
   <p>
     Organisation funding sources:
-    <% sources = survey.settings["organisation_funding_sources"].map{|k| surveys_data("organisation_funding_sources")[k]}.compact! %>
     <ul>
-    <% sources.each do |source| %>
+    <% multiple_choice_answers(survey, "organisation_funding_sources").each do |source| %>
       <li>
         <%= source %>
       </li>
@@ -302,7 +300,7 @@
   </p>
   <p>
     <ul>
-    <% geographical_scopes(survey).each do |gs| %>
+    <% multiple_choice_answers(survey, "geographical_scopes").each do |gs| %>
       <li>
         <%= gs %>
       </li>
