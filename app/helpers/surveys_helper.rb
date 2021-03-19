@@ -8,9 +8,9 @@ module SurveysHelper
     geographical_scope = survey.settings["geographical_scope"]
 
     if geographical_scope.is_a? String
-      [surveys_data("geographical_scope")[geographical_scope]]
+      [surveys_data("geographical_scope")[geographical_scope]].compact
     else
-      geographical_scope.map{ |k| surveys_data("geographical_scope")[k] }.compact!
+      geographical_scope.map{ |k| surveys_data("geographical_scope")[k] }.compact
     end
   end
 
