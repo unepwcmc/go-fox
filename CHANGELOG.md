@@ -1,3 +1,8 @@
+# v0.2.6
+
+**Update facilitation slides**
+
+* Update the faciliation slides pptx file
 # v0.2.5
 
 **Add Portuguese translations**
