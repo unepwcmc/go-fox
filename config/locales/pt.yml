@@ -160,7 +160,7 @@ pt:
 
   survey_warning:
       title: 'Bem-vindo à Pesquisa do Futuro da Conservação'
-      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
+      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>Your responses will contribute to the ongoing Future of Conservation Survey research project. All data gathered for this project will be stored securely by the UN Environment Programme World Conservation Monitoring Centre. This dataset will only be used for the purposes of academic research. An anonymised version of the dataset, excluding all personal information which could potentially lead to the identification of individual responses, may be shared with other researchers.<br><br>Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to send you summarised results and to invite you to participate in future versions of the survey.<br><br>Your responses will be also be made available to the Group and Organisation Future of Conservation Survey (GO-FOX) user who sent you the link for this survey. The GO-FOX tool is intended to support education and organisational capacity development, but the project team do not accept responsibility for how the person sending you the survey uses or distributes responses. You may be identifiable to the GO-FOX user by your responses. If you are not comfortable with this, please do not take the survey.'
       master_description: 'Este projeto foi aprovado pelo Comitê de Ética em Pesquisa da Universidade de Leeds (Reino Unido).<br><br>
       Suas respostas contribuirão para o projeto de pesquisa em andamento O Futuro da Conservação. Todos os dados coletados serão 
       armazenados de forma segura pelo Centro de Monitoramento de Conservação Mundial da ONU (UN Environment World Conservation Monitoring 
@@ -172,7 +172,7 @@ pt:
 
   sign_up_warning:
       title: 'Welcome to GO-FOX'
-      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
+      description: 'This project has been approved by the Research Ethics committee at the University of Leeds.<br><br>As you set up your account and survey(s), we will ask some questions about you, your group or organisation, and why you want to use the GO-FOX tool. This will allow us to understand how the tool is being used and the impact it is having. It will also allow us to better understand the views of conservationists, and how these vary according to the characteristics of their group or organisation.<br><br>All data gathered for this project will be stored securely by UN Environment Programme World Conservation Monitoring Centre. An anonymised version of the dataset, excluding all information which could potentially lead to the identification of individual groups or organisations, may be shared with other researchers.<br><br>Your responses will not be identifiable either in this website or in subsequent publications. If you provide your email address, the project team will not share it with other parties, and will only use it to contact you to discuss your use of GO-FOX (for example, to offer help with preparing materials for a session with your group of survey respondents). In any resulting publications, we will remove identifying features and take other measures such as aggregating responses to protect the anonymity of organisations and groups who participate in this survey.<br><br>The GO-FOX tool was developed to help measure and understand the views held by conservationists. We encourage you to use it responsibly, such as in education, training or strategy development. The GO-FOX project team do not accept responsibility for how you or your organisation uses or distributes responses. We expect users to carefully consider the implications of how the tool is used within their group or organisation, particularly the implications for participants of revealing divergent or minority opinions.'
 
   about_project:
     -
@@ -196,7 +196,7 @@ pt:
       <li><a href="https://www.geog.cam.ac.uk/people/luque-lora/">Rogelio Luque-Lora (University of Cambridge)</a></li>
       <li><a href="https://www.ed.ac.uk/geosciences/people?indv=4057" title="Visite o perfil de Aidan Keane">Aidan Keane (University of Edinburgh)</a></li>
       </ul>
-      Este website é alojado por <a href="https://www.unep-wcmc.org" title="UN Environment World Conservation Monitoring Centre">UN Environment World Conservation Monitoring Centre.</a><p>'
+      Este website é alojado por <a href="https://www.unep-wcmc.org" title="UN Environment Programme World Conservation Monitoring Centre">UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC).</a><p>'
     -
       link: 'Ética e dados'
       title: 'Ética de pesquisa e armazenamento de dados'
@@ -260,10 +260,9 @@ pt:
       research so that you are well placed to describe it to a group with whom you are working. You might alternatively
       consider sharing the video with the group directly, so that your students or participants can get better understand
       the project before you share their own results with them.
-      <br/><br/>
-      <a href="/GOFOX_lecture_slides.pptx" title="Download slide-deck">Download Slide-deck</a>
-
-      <br/><br/>
+      <ul><li>
+      <a href="/GOFOX_lecture_slides.pptx" title="Download slide-deck">Download Slide-deck (PowerPoint)</a>
+      </li></ul>
       This slide-deck covers similar material to the video above. You are welcome to use it as it is, or to edit it
       for your purposes. Please ensure that you acknowledge the source when doing so.
       </p>'
@@ -271,10 +270,10 @@ pt:
       link: 'Ideas for GO-FOX group activities'
       title: 'Ideas for GO-FOX group activities'
       content: '<p>
-      <a href="/GOFOX_facilitation_slides_fixed.pptx" title="Download Facilitation Slide-deck">Download Facilitation Slide-deck</a>
-      <a href="/GOFOX_facilitation_guide.pdf" title="Download Facilitation Guide">Download Facilitation Guide</a>
-      <br/>
-      <br/>
+      <ul>
+        <li><a href="/GOFOX_facilitation_slides_fixed.pptx" title="Download Facilitation Slide-deck">Download Facilitation Slide-deck (PowerPoint)</a></li>
+        <li><a href="/GOFOX_facilitation_guide.pdf" title="Download Facilitation Guide">Download Facilitation Guide (PDF)</a></li>
+      </ul>
       GO-FOX can be used in a facilitated workshop setting, either before or after the group have taken the online
       survey. Click the link above to download a full facilitation guide designed for two specific scenarios –
       “team building” and “organisational values and mission”. These activities can also work well in a student

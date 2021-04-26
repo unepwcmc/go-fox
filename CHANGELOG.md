@@ -1,3 +1,9 @@
+# v0.2.7
+
+**Update facilitation slides**
+
+* Update the faciliation slides pptx file
+
 # v0.2.6
 
 **Geographical_scope fix**
