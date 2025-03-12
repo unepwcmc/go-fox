@@ -1,3 +1,9 @@
+# v0.3.0
+
+**Sidekiq configuration**
+
+* Fix Sidekiq config to use specific Redis DB and avoid conflict on the server with multiple app using the same Redis instance
+
 # v0.2.7
 
 **Update facilitation slides**
