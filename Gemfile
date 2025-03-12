@@ -42,6 +42,10 @@ gem 'react-rails', '~> 2.4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'appsignal'
+# Add support for next gen ssh keys
+gem 'bcrypt_pbkdf'
+gem 'ed25519'
+gem 'rbnacl', '>= 3.2', '< 5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
