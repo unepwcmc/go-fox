@@ -35,7 +35,7 @@ gem 'activemodel-serializers-xml'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cocoon', '~> 1.2.11'
-gem 'sidekiq', '~> 5.1.1'
+gem 'sidekiq', '~> 6.4.0'
 
 gem 'webpacker', '~> 4.0.2'
 gem 'react-rails', '~> 2.4.3'
